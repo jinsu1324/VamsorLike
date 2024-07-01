@@ -15,13 +15,12 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //Debug.Log($"{this.gameObject.name} 인벤토리에 들어옴");
         InventoryManager._mouseCurrentInventory = this;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Debug.Log($"{this.gameObject.name} 인벤토리에서 나옴");
+        InventoryManager._mouseCurrentInventory = null;
     }
 
     
