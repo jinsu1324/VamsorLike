@@ -2,57 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {    
     private static Item _dragItem;
-    public static Inventory _mouseCurrentInventory;
-    public static Vector3 _itemStartPos;
+    public static Inventory _invenState;
+    public static Vector3 _startPos;
 
     private void Update()
-    {
-        //if (_mouseCurrentInventory == null)
-        //{
-        //    Debug.Log("sdfsdf");
-        //}
-        Debug.Log(_mouseCurrentInventory);
+    {   
         if (_dragItem)
             _dragItem.gameObject.transform.position = Input.mousePosition;
     }
 
+    // 마우스 눌렀을 때 처리함수
     public static void MouseDown(Item item)
     {
         _dragItem = item;
-        _itemStartPos = item.gameObject.transform.position;
-        _dragItem.GetComponent<Image>().raycastTarget = false;
+        _startPos = item.gameObject.transform.position;
         _dragItem.transform.SetParent(GameObject.FindGameObjectWithTag("UICanvas").transform);
+        _dragItem.GetComponent<Image>().raycastTarget = false;        
     }
 
+    // 마우스 뗐을 때 처리함수
     public static void MouseUp(Item item)
     {        
-        if (_mouseCurrentInventory == null)
+        if (_invenState == _dragItem._invenState || _invenState == null)
         {
-            _dragItem.transform.SetParent(_dragItem._itemCurrentInventory.transform);
-            _dragItem.transform.position = _itemStartPos;
-            _dragItem.GetComponent<Image>().raycastTarget = true;            
-            Debug.Log("널 재자리!");
-        }
-        else if (_mouseCurrentInventory == _dragItem._itemCurrentInventory)
-        {
-            _dragItem.transform.SetParent(_mouseCurrentInventory.gameObject.transform);
-            _dragItem.transform.position = _itemStartPos;
-            _dragItem.GetComponent<Image>().raycastTarget = true;            
-            Debug.Log("재자리!");
+            _dragItem.transform.SetParent(_dragItem._invenState.transform);
+            _dragItem.transform.position = _startPos;
+            _dragItem.GetComponent<Image>().raycastTarget = true;  
         }
         else
         {            
-            _dragItem.transform.SetParent(_mouseCurrentInventory.gameObject.transform);
-            _dragItem._itemCurrentInventory = _mouseCurrentInventory;
+            _dragItem.transform.SetParent(_invenState.gameObject.transform);
+            _dragItem._invenState = _invenState;
             _dragItem.GetComponent<Image>().raycastTarget = true;
-            Debug.Log("옮김!");
-        }        
-        
+        }      
         _dragItem = null;
     }
 }
