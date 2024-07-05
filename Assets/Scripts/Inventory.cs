@@ -5,11 +5,21 @@ using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    private Slot[] slots = new Slot[4];    
+    public Slot[] Slots { get { return slots; } set { slots = value; } }
+       
+
     private void Start()
     {
-        // 인벤토리 자식들 현재인벤토리로 바인딩
-        foreach (Item item in GetComponentsInChildren<Item>())
-            item._invenState = this;
+        // 현재 인벤토리의 슬롯들을, 슬롯배열에 할당
+        int index = 0;        
+        foreach (Slot slot in GetComponentsInChildren<Slot>())
+        {
+            slot._invenState = this;
+            slots[index] = slot;
+            index++;
+        }
+            
     }
 
     // 마우스가 인벤토리에 들어왔을 때 1회 호출
