@@ -5,27 +5,27 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public Inventory _invenState;
-    private Item _slotItem;
+    public Inventory _slotInventory;
+    public Item _slotItem;
 
     private void Start()
     {
-        BindSlotItem(transform.GetComponentInChildren<Item>());
+        PutInSlotItem(transform.GetComponentInChildren<Item>());
     }
 
-    // 슬롯내부의 아이템을 슬롯에있는 아이템이라고 바인딩
-    public void BindSlotItem(Item item)
+    // '매개변수로 받아온 아이템' 을, '현재 슬롯의 아이템' 자리에 넣어줌.
+    public void PutInSlotItem(Item item)
     {        
         _slotItem = item;
     }
 
-    // 마우스 눌렀을 때 1회 호출
+    // 슬롯에 마우스 눌렀을 때, InventoryManager의 MouseDown을 실행하고, '현재 슬롯의 아이템' 을 매개변수로 넘겨줌 (1회 호출)
     public void OnPointerDown(PointerEventData eventData)
     {
         InventoryManager.MouseDown(_slotItem);
     }
 
-    // 마우스 뗐을 때 1회 호출
+    // 슬롯에 마우스 뗐을 때, InventoryManager의 MouseDown을 실행하고, '현재 슬롯의 아이템' 을 매개변수로 넘겨줌 (1회 호출)
     public void OnPointerUp(PointerEventData eventData)
     {
         InventoryManager.MouseUp(_slotItem);
