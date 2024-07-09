@@ -15,30 +15,33 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
 
 
-    // 현재 마우스가 위치해있는 인벤토리를, 이 인벤토리로 설정 (마우스가 인벤토리에 들어왔을 때 1회 호출)
     public void OnPointerEnter(PointerEventData eventData)
     {
-        InventoryManager._mouseUnderInventory = this; 
+        InventoryManager._mousePosInventory = this; 
     }
 
 
-    // 현재 마우스가 위치해있는 인벤토리를, 이 null로 설정 (마우스가 인벤토리에서 나갔을 때 1회 호출 )
     public void OnPointerExit(PointerEventData eventData)
     {
-        InventoryManager._mouseUnderInventory = null; 
+        InventoryManager._mousePosInventory = null; 
     }
 
 
-    // 현재 인벤토리 자식에 있는 모든 슬롯들을 slots 배열에 넣음
+    // 이 인벤토리 자식에 있는 모든 슬롯들을, slots 배열에 넣고, 인벤토리도 모두 할당
     private void PutChildsInSlots()
     {
         int index = 0;
         foreach (Slot slot in GetComponentsInChildren<Slot>())
         {
             slot._slotInventory = this;
+            slot._slotItem = slot.transform.GetComponentInChildren<Item>();
+            if (slot._slotItem != null)
+            {
+                slot._slotItem._itemInventory = this;
+            }
+                
             slots[index] = slot;
             index++;
         }
-    }
-    
+    }    
 }

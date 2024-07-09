@@ -5,6 +5,5 @@ using UnityEngine.EventSystems;
 
 public class Item : MonoBehaviour
 {
-    public Inventory _itemInventory;
-    
+    public Inventory _itemInventory;    
 }
