@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryItemData
 {
     public string _itemID;
 
-    public virtual string ShowInfo()
+    public virtual void ShowInfo(TextMeshProUGUI tmPro)
     {
-        return _itemID;
+        tmPro.text = _itemID;
+        //return _itemID;
     }
 }
 
 
 public class ConsumeInventoryItemData : InventoryItemData
 {
-    public override string ShowInfo()
+    public override void ShowInfo(TextMeshProUGUI tmPro)
     {
-        return "Consume 아이템ID : " + base.ShowInfo();
+        base.ShowInfo(tmPro);
     }
 
     public void HI()
@@ -29,8 +32,8 @@ public class ConsumeInventoryItemData : InventoryItemData
 
 public class EquipInventoryItemData : InventoryItemData
 {
-    public override string ShowInfo()
+    public override void ShowInfo(TextMeshProUGUI tmPro)
     {
-        return "Equip 아이템ID : " + base.ShowInfo();
+        base.ShowInfo(tmPro);
     }
 }

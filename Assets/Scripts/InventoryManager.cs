@@ -9,29 +9,20 @@ public class InventoryManager : MonoBehaviour
     public static Inventory _mousePosInventory;
     public static Vector3 _startPos;
     public static Slot _startSlot;
-
-    private List<InventoryItemData> _inventoryItemDatas = new List<InventoryItemData>();
+        
+    public static List<InventoryItemData> _inventoryItemDatas = new List<InventoryItemData>();
 
     private void Start()
-    {
-        ConsumeInventoryItemData consumeInventoryItemData = new ConsumeInventoryItemData();
-        EquipInventoryItemData equipInventoryItemData = new EquipInventoryItemData();
+    {        
+        //foreach (InventoryItemData item in _inventoryItemDatas)
+        //{
+        //    ConsumeInventoryItemData consumeInventoryItem = (ConsumeInventoryItemData)item;
 
-        consumeInventoryItemData._itemID = "회복물약 001";
-        equipInventoryItemData._itemID = "전사장비 001";
+        //    consumeInventoryItem.HI();
 
-        _inventoryItemDatas.Add(consumeInventoryItemData);
-        _inventoryItemDatas.Add(equipInventoryItemData);
-
-        foreach (InventoryItemData item in _inventoryItemDatas)
-        {
-            ConsumeInventoryItemData consumeInventoryItem = (ConsumeInventoryItemData)item;
-
-            consumeInventoryItem.HI();
-
-            Debug.Log(item.ShowInfo());
-            Debug.Log(item.GetType());
-        }        
+        //    Debug.Log(item.ShowInfo());
+        //    Debug.Log(item.GetType());
+        //}        
     }
 
     private void Update()
