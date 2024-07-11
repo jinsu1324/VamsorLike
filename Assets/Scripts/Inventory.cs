@@ -12,6 +12,25 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void Start()
     {
+        BindingInventoryItemData();
+        PutChildsInSlots();
+    }
+    
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        InventoryManager._mousePosInventory = this; 
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InventoryManager._mousePosInventory = null; 
+    }
+
+
+    private static void BindingInventoryItemData()
+    {
         ConsumeInventoryItemData consumeInventoryItemData = new ConsumeInventoryItemData();
         ConsumeInventoryItemData consumeInventoryItemData2 = new ConsumeInventoryItemData();
         EquipInventoryItemData equipInventoryItemData = new EquipInventoryItemData();
@@ -26,20 +45,6 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         InventoryManager._inventoryItemDatas.Add(consumeInventoryItemData2);
         InventoryManager._inventoryItemDatas.Add(equipInventoryItemData);
         InventoryManager._inventoryItemDatas.Add(equipInventoryItemData2);
-
-        PutChildsInSlots();
-    }
-
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        InventoryManager._mousePosInventory = this; 
-    }
-
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        InventoryManager._mousePosInventory = null; 
     }
 
 
