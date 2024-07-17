@@ -32,22 +32,25 @@ public class SlotButton : MonoBehaviour, IPointerClickHandler
         _slotPath = Path.Combine(Application.persistentDataPath, $"{_slotNum}_saveData.json");
 
         ClickAction += CharacterDataFindBinding;
-
-        _characterData = GetComponent<SlotData>()._characterData;
-        
-        if (File.Exists(_slotPath))
-        {
-            Debug.Log($"{_slotNum}_세이브 데이터 있어서 그거 가져와서 할당");
-            _characterData = SlotSaveLoadManager.LoadData(_slotPath);
-        }
+        CharacterDataInit();
     }
-
 
     public void OnPointerClick(PointerEventData eventData)
     {
         ClickAction(_characterData);
     }
 
+
+    private void CharacterDataInit()
+    {
+        _characterData = GetComponent<SlotData>()._characterData;
+
+        if (File.Exists(_slotPath))
+        {
+            Debug.Log($"{_slotNum}_세이브 데이터 있어서 그거 가져와서 할당");
+            _characterData = SlotSaveLoadManager.LoadData(_slotPath);
+        }
+    }   
 
     public void CharacterDataFindBinding(CharacterData characterData)
     {
