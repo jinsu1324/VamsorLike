@@ -5,16 +5,8 @@ using UnityEngine;
 
 
 
-public class SlotSaveLoadManager : MonoBehaviour
+public class SaveLoadManager_CharacterData : MonoBehaviour
 {
-    // public static string _path;
-
-    private void Start()
-    {
-        //_path = Path.Combine(Application.persistentDataPath, "saveData.json");
-        //Debug.Log(_path);
-    }
-
     // ºº¿Ã∫Í
     public static void SaveData(CharacterData data, SlotNum slotNum, string path)
     {
@@ -31,7 +23,7 @@ public class SlotSaveLoadManager : MonoBehaviour
             return JsonUtility.FromJson<CharacterData>(jsonData);
         }
 
-        return new CharacterData();
+        return null;
 
     }
 }
