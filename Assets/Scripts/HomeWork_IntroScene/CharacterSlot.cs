@@ -13,51 +13,67 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private SlotNum _slotNum; 
 
-    private Action ClickAction;
+    private Action SlotClickAction;
 
     [SerializeField]
     private TextMeshProUGUI _text;
+   
+    private MakeCharacterPopup _makeNewCharacterPopup;
+
+    private IntroSceneManager _introSceneManager;
 
 
     private void Start()
     {
+        _introSceneManager = FindObjectOfType<IntroSceneManager>();
+        _makeNewCharacterPopup = _introSceneManager.MakeNewCharacterPopup;
+
         SettingSlot();
     }
 
     private void SettingSlot()
     {
         CharacterData characterData = CharacterDataManager.GetCharacterDataBySlot(_slotNum);
-        //Debug.Log(characterData._name);
 
         if (characterData == null)
-        {            
-            ClickAction += MakeNewData;
-            _text.text = "데이터 없음";
+        {
+            SlotClickAction += ON_MakeCharacterPopup;
+            _text.text = "No Data";
         }
         else
         {
-            ClickAction += GameStart;
+            SlotClickAction += GameStart;
             _text.text = characterData._name;
         }
     }    
 
-    private void MakeNewData()
+    private void MakeNewData(string nickName)
     {        
-        CharacterDataManager.MakeNewCharacterData(_slotNum);
-        ClickAction = null;
+        CharacterDataManager.MakeNewCharacterData(_slotNum, nickName);        
+        _makeNewCharacterPopup.CompleteButtonAction = null;        
+        _makeNewCharacterPopup.gameObject.SetActive(false);
         SettingSlot();
     }
 
     private void GameStart()
     {
-        Debug.Log("게임시작!");
+        Debug.Log("Game Start!");
         CharacterDataManager.SelectSlotNum = _slotNum;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ClickAction();        
+        SlotClickAction();        
     }
 
+
+    public void ON_MakeCharacterPopup()
+    {        
+        _makeNewCharacterPopup.gameObject.SetActive(true);
+        _makeNewCharacterPopup._titleText.text = $"{(int)_slotNum + 1}번 슬롯 캐릭터 생성화면";
+
+        _makeNewCharacterPopup.CompleteButtonAction += MakeNewData;
+        SlotClickAction = null;
+    }
 
 }

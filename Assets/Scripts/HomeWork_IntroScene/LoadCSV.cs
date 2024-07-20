@@ -42,8 +42,8 @@ public class LoadCSV
                 // µñ¼Å³Ê¸®¿¡ ÀúÀå : Å° = header ¹ë·ù = data
                 dataDictionary[header] = data;
 
-                Debug.Log("Key : " + header);
-                Debug.Log("Value : " + dataDictionary[header]);
+                //Debug.Log("Key : " + header);
+                //Debug.Log("Value : " + dataDictionary[header]);
             }
 
 

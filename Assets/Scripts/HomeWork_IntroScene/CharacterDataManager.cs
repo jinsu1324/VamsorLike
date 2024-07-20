@@ -54,28 +54,27 @@ public class CharacterDataManager
                 _characterData_Slot02 = SaveLoadManager_CharacterData.LoadData(slotPath);
             else if (i == SlotNum.Third)
                 _characterData_Slot03 = SaveLoadManager_CharacterData.LoadData(slotPath);
-
         }
     }
 
 
-    public static void MakeNewCharacterData(SlotNum slotNum)
+    public static void MakeNewCharacterData(SlotNum slotNum, string nickName)
     {
         string slotPath = GetSlotPath(slotNum);
 
         if (slotNum == SlotNum.First)
         {
-            _characterData_Slot01 = new CharacterData() { _name = "캐릭터 1 바바리안" };
+            _characterData_Slot01 = new CharacterData() { _name = nickName };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot01, slotNum, slotPath);
         }
         else if (slotNum == SlotNum.Second)
         {
-            _characterData_Slot02 = new CharacterData() { _name = "캐릭터 2 위자드" };
+            _characterData_Slot02 = new CharacterData() { _name = nickName };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot02, slotNum, slotPath);
         }
         else if (slotNum == SlotNum.Third)
         {
-            _characterData_Slot03 = new CharacterData() { _name = "캐릭터 3 아처" };
+            _characterData_Slot03 = new CharacterData() { _name = nickName };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot03, slotNum, slotPath);
         }
     }

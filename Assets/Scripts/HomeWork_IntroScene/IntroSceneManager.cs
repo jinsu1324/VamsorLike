@@ -10,6 +10,11 @@ public class IntroSceneManager : MonoBehaviour
 
     private Dictionary<string, int> HPDataDictionary = new Dictionary<string, int>();
 
+
+    [SerializeField]
+    private MakeCharacterPopup _makeNewCharacterPopup;
+    public MakeCharacterPopup MakeNewCharacterPopup { get { return _makeNewCharacterPopup; } }
+
     private void Awake()
     {
         CharacterDataManager.LoadCharacterData();
@@ -26,12 +31,12 @@ public class IntroSceneManager : MonoBehaviour
             Dictionary<string, string> dataDictionary = dataDictionaryList[i];
 
             string ID = dataDictionary["MonsterID"];
-            Debug.Log($"ID : {ID}");
+            //Debug.Log($"ID : {ID}");
 
             int HP = int.Parse(dataDictionary["HP"]);
-            Debug.Log($"HP : {HP}");
+            //Debug.Log($"HP : {HP}");
 
-            Debug.Log($"ID : {ID} - HP : {HP}");
+            //Debug.Log($"ID : {ID} - HP : {HP}");
         }
 
     }
