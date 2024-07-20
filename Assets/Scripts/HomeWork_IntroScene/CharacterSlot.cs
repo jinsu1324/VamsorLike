@@ -18,7 +18,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private TextMeshProUGUI _text;
    
-    private MakeCharacterPopup _makeNewCharacterPopup;
+    private CharacterMakePopup _characterMakePopup;
 
     private IntroSceneManager _introSceneManager;
 
@@ -26,19 +26,21 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         _introSceneManager = FindObjectOfType<IntroSceneManager>();
-        _makeNewCharacterPopup = _introSceneManager.MakeNewCharacterPopup;
+        _characterMakePopup = _introSceneManager.MakeNewCharacterPopup;
 
-        SettingSlot();
+        SettingSlot();        
     }
 
     private void SettingSlot()
     {
         CharacterData characterData = CharacterDataManager.GetCharacterDataBySlot(_slotNum);
+        _characterMakePopup.ExitButtonAction += OFF_CharacterMakePopup;
 
         if (characterData == null)
         {
-            SlotClickAction += ON_MakeCharacterPopup;
+            SlotClickAction += ON_CharacterMakePopup;
             _text.text = "No Data";
+            _text.color = Color.red;
         }
         else
         {
@@ -49,9 +51,9 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     private void MakeNewData(string nickName)
     {        
-        CharacterDataManager.MakeNewCharacterData(_slotNum, nickName);        
-        _makeNewCharacterPopup.CompleteButtonAction = null;        
-        _makeNewCharacterPopup.gameObject.SetActive(false);
+        CharacterDataManager.MakeNewCharacterData(_slotNum, nickName);
+
+        OFF_CharacterMakePopup();
         SettingSlot();
     }
 
@@ -67,13 +69,17 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     }
 
 
-    public void ON_MakeCharacterPopup()
-    {        
-        _makeNewCharacterPopup.gameObject.SetActive(true);
-        _makeNewCharacterPopup._titleText.text = $"{(int)_slotNum + 1}번 슬롯 캐릭터 생성화면";
+    public void ON_CharacterMakePopup()
+    {
+        _characterMakePopup._inputField.text = "";
 
-        _makeNewCharacterPopup.CompleteButtonAction += MakeNewData;
-        SlotClickAction = null;
+        _characterMakePopup.gameObject.SetActive(true);        
+        _characterMakePopup.CompleteButtonAction += MakeNewData;
     }
 
+    public void OFF_CharacterMakePopup()
+    {
+        _characterMakePopup.gameObject.SetActive(false);
+        _characterMakePopup.CompleteButtonAction = null; 
+    }
 }

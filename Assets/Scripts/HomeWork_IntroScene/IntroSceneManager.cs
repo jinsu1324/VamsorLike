@@ -12,8 +12,8 @@ public class IntroSceneManager : MonoBehaviour
 
 
     [SerializeField]
-    private MakeCharacterPopup _makeNewCharacterPopup;
-    public MakeCharacterPopup MakeNewCharacterPopup { get { return _makeNewCharacterPopup; } }
+    private CharacterMakePopup _makeNewCharacterPopup;
+    public CharacterMakePopup MakeNewCharacterPopup { get { return _makeNewCharacterPopup; } }
 
     private void Awake()
     {
