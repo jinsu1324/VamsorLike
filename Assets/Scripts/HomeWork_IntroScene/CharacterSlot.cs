@@ -44,6 +44,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            SlotClickAction = null;
             SlotClickAction += GameStart;
             _text.text = characterData._name;
         }
