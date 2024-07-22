@@ -19,7 +19,7 @@ public class LoadCSV
         string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(",");
 
 
-
+        // 실제로 잘라서 담을 마스터 데이터 딕셔너리 리스트
         List<Dictionary<string, string>> dataDictionaryList = new List<Dictionary<string, string>>();
 
         // 헤더를 미포함(header + 1)해서 ~ 마지막 행까지 for문
@@ -28,7 +28,7 @@ public class LoadCSV
             // 나머지 모든 행들도 쉼표를 기준으로 세로로 잘라줌
             string[] verticalSplitArray = horizontalSplitArray[i].Split(",");
 
-
+            // 마스터 데이터 딕셔너리 리스트에 넣을 딕셔너리
             Dictionary<string, string> dataDictionary = new Dictionary<string, string>();
 
 
