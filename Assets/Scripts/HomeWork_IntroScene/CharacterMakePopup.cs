@@ -37,8 +37,12 @@ public class CharacterMakePopup : MonoBehaviour
     [SerializeField]
     private int _costumeNum;
 
+    private void OnEnable()
+    {
+        CharacterImageInit();
+    }
 
-    private void Start()
+    private void CharacterImageInit()
     {
         _hairNum = 0;
         _faceNum = 0;
