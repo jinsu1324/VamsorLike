@@ -5,7 +5,9 @@ using System.IO;
 using TMPro;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEditor.U2D.Animation;
 
 
 public class CharacterSlot : MonoBehaviour, IPointerClickHandler
@@ -17,7 +19,18 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     [SerializeField]
     private TextMeshProUGUI _text;
-   
+    [SerializeField]
+    private GameObject _characterGO;
+    [SerializeField]
+    private Image _hairImage;
+    [SerializeField]
+    private Image _faceImage;
+    [SerializeField]
+    private Image _costumeImage;
+
+
+
+
     private CharacterMakePopup _characterMakePopup;
 
     private IntroSceneManager _introSceneManager;
@@ -40,19 +53,24 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         {
             SlotClickAction += ON_CharacterMakePopup;
             _text.text = "No Data";
-            _text.color = Color.red;
+            _characterGO.gameObject.SetActive(false);
         }
         else
         {
             SlotClickAction = null;
             SlotClickAction += GameStart;
             _text.text = characterData._name;
+            _characterGO.gameObject.SetActive(true);
+            _hairImage.sprite = characterData._hair;
+            _faceImage.sprite = characterData._face;
+            _costumeImage.sprite = characterData._costume;
+
         }
     }    
 
-    private void MakeNewData(string nickName)
+    private void MakeNewData(string nickName, Sprite hair, Sprite face, Sprite costume)
     {        
-        CharacterDataManager.MakeNewCharacterData(_slotNum, nickName);
+        CharacterDataManager.MakeNewCharacterData(_slotNum, nickName, hair, face, costume);
 
         OFF_CharacterMakePopup();
         SettingSlot();

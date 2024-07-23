@@ -13,6 +13,10 @@ public enum SlotNum
 public class CharacterData
 {
     public string _name;
+    public Sprite _hair;
+    public Sprite _face;
+    public Sprite _costume;
+
 }
 
 public class CharacterDataManager
@@ -58,23 +62,23 @@ public class CharacterDataManager
     }
 
 
-    public static void MakeNewCharacterData(SlotNum slotNum, string nickName)
+    public static void MakeNewCharacterData(SlotNum slotNum, string nickName, Sprite hair, Sprite face, Sprite costume)
     {
         string slotPath = GetSlotPath(slotNum);
 
         if (slotNum == SlotNum.First)
         {
-            _characterData_Slot01 = new CharacterData() { _name = nickName };
+            _characterData_Slot01 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot01, slotNum, slotPath);
         }
         else if (slotNum == SlotNum.Second)
         {
-            _characterData_Slot02 = new CharacterData() { _name = nickName };
+            _characterData_Slot02 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot02, slotNum, slotPath);
         }
         else if (slotNum == SlotNum.Third)
         {
-            _characterData_Slot03 = new CharacterData() { _name = nickName };
+            _characterData_Slot03 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
             SaveLoadManager_CharacterData.SaveData(_characterData_Slot03, slotNum, slotPath);
         }
     }
