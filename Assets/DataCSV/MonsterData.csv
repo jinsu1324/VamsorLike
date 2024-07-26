@@ -1,4 +1,6 @@
-,,
-MonsterID,HP,ATK
-Orc,10,50
-Skeleton,50,25
+,,,,
+ID,NAME,HP,ATK,SPEED
+Golem,Golem_Kid,100,10,1.1
+Skeleton,Skeleton_Kid,200,20,2.2
+Witch,Witch_Kid,300,30,3.3
+Dragon,Dragon_Kid,400,40,4.4

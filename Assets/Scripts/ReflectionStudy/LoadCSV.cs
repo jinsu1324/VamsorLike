@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class LoadCSV
@@ -16,11 +18,14 @@ public class LoadCSV
         int headerIndex = 1;
 
         // 헤더 라인만 ,을 기준으로 세로로 자름 (ID, HP, ATK 이렇게 나오겠지?)
-        string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(",");
-
+        string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(",");     
 
         // 실제로 잘라서 담을 마스터 데이터 딕셔너리 리스트
         List<Dictionary<string, string>> dataDictionaryList = new List<Dictionary<string, string>>();
+
+
+        Type monsterType = typeof(MonsterInfo);
+
 
         // 헤더를 미포함(header + 1)해서 ~ 마지막 행까지 for문
         for (int i = headerIndex + 1; i < horizontalSplitArray.Length; i++)
@@ -30,6 +35,10 @@ public class LoadCSV
 
             // 마스터 데이터 딕셔너리 리스트에 넣을 딕셔너리
             Dictionary<string, string> dataDictionary = new Dictionary<string, string>();
+
+
+            MonsterInfo monsterInfo = new MonsterInfo();
+            string ID = "";
 
 
             // 가로 세로로 다 자른 전체 데이터 셀만큼 반복
@@ -42,9 +51,36 @@ public class LoadCSV
                 // 딕셔너리에 저장 : 키 = header 밸류 = data
                 dataDictionary[header] = data;
 
-                //Debug.Log("Key : " + header);
-                //Debug.Log("Value : " + dataDictionary[header]);
+
+
+                if (header == "ID")
+                {
+                    ID = data;
+                    continue;
+                }
+
+                FieldInfo fieldInfo = monsterType.GetField(header);
+
+                if (fieldInfo.FieldType == typeof(int))
+                {
+                    int dataIntValue = int.Parse(data);
+                    fieldInfo.SetValue(monsterInfo, dataIntValue);
+                }
+
+                if (fieldInfo.FieldType == typeof(string))
+                {
+                    string dataStringValue = data.ToString();
+                    fieldInfo.SetValue(monsterInfo, dataStringValue);
+                }
+
+                if (fieldInfo.FieldType == typeof(float))
+                {
+                    float dataFloatValue = float.Parse(data);
+                    fieldInfo.SetValue(monsterInfo, dataFloatValue);
+                }
             }
+
+            MonsterInfo.monsterInfos[ID] = monsterInfo;
 
 
             dataDictionaryList.Add(dataDictionary);
