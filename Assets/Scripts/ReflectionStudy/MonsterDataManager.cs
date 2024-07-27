@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum monsterStat
+
+public enum MonsterKey
 {
-    NAME,
-    HP,
-    ATK,
-    SPEED
+    Golem,
+    Skeleton,
+    Witch,
+    Dragon
 }
 
-
+//[CreateAssetMenu(fileName = "NewMonster_", menuName = "Assets/NewMonster")]
 public class MonsterInfo
 {
     public string NAME;
@@ -18,10 +19,14 @@ public class MonsterInfo
     public int ATK;
     public float SPEED;
 
-    public static Dictionary<string, MonsterInfo> monsterInfos = new Dictionary<string, MonsterInfo>();
-
     public override string ToString()
     {
         return $"NAME : {NAME} / HP : {HP} / ATK : {ATK} / SPEED : {SPEED}";
     }
+}
+
+
+public class MonsterDataManager
+{
+    public static Dictionary<string, MonsterInfo> _monsterInfoDict = new Dictionary<string, MonsterInfo>();
 }

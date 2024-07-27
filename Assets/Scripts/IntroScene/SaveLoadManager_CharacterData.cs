@@ -8,7 +8,7 @@ using UnityEngine;
 public class SaveLoadManager_CharacterData : MonoBehaviour
 {
     // ºº¿Ã∫Í
-    public static void SaveData(CharacterData data, SlotNum slotNum, string path)
+    public static void SaveData(CharacterData data, string path)
     {
         string jsonData = JsonUtility.ToJson(data, true);
         File.WriteAllText(path, jsonData);

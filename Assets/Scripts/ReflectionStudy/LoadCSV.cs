@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 public class LoadCSV
@@ -39,7 +40,7 @@ public class LoadCSV
 
             MonsterInfo monsterInfo = new MonsterInfo();
             string ID = "";
-
+            
 
             // 가로 세로로 다 자른 전체 데이터 셀만큼 반복
             for (int k = 0; k < verticalSplitArray.Length; k++)
@@ -80,7 +81,7 @@ public class LoadCSV
                 }
             }
 
-            MonsterInfo.monsterInfos[ID] = monsterInfo;
+            MonsterDataManager._monsterInfoDict[ID] = monsterInfo;
 
 
             dataDictionaryList.Add(dataDictionary);

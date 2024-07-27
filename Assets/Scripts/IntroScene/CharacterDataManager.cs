@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using UnityEngine;
 
-public enum SlotNum
+
+public enum CharacterParts
 {
-    First,
-    Second,
-    Third
+    Hair,
+    Face,
+    Costume
 }
 
 public class CharacterData
@@ -16,8 +19,8 @@ public class CharacterData
     public Sprite _hair;
     public Sprite _face;
     public Sprite _costume;
-
 }
+
 
 public class CharacterDataManager
 {
@@ -62,24 +65,24 @@ public class CharacterDataManager
     }
 
 
-    public static void MakeNewCharacterData(SlotNum slotNum, string nickName, Sprite hair, Sprite face, Sprite costume)
+    public static void MakeNewCharacterData(SlotNum slotNum, CharacterData myCharacterData)
     {
         string slotPath = GetSlotPath(slotNum);
 
         if (slotNum == SlotNum.First)
         {
-            _characterData_Slot01 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot01, slotNum, slotPath);
+            _characterData_Slot01 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterData_Slot01, slotPath);
         }
         else if (slotNum == SlotNum.Second)
         {
-            _characterData_Slot02 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot02, slotNum, slotPath);
+            _characterData_Slot02 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterData_Slot02, slotPath);
         }
         else if (slotNum == SlotNum.Third)
         {
-            _characterData_Slot03 = new CharacterData() { _name = nickName, _hair = hair, _face = face, _costume = costume };
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot03, slotNum, slotPath);
+            _characterData_Slot03 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterData_Slot03, slotPath);
         }
     }
     
