@@ -10,29 +10,16 @@ public class ReflectionStudyScene : MonoBehaviour
 
     private void Awake()
     {
-        LoadCSV.CSV_to_Data(textAsset);
+        LoadCSV.CSV_to_MonsterData(textAsset);
 
-        foreach (MonsterData monsterInfo in MonsterDataManager._monsterDataDict.Values)
+        foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
         {
-            Debug.Log(monsterInfo);
+            //Debug.Log(monsterData);
+
+            AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
+
+            AssetDatabase.SaveAssets();
         }
-
-        Debug.Log(MonsterDataManager._monsterDataDict[MonsterKey.Golem.ToString()].HP);
-
-
-
-
-
-
-        //MonsterInfo monsterInfoScriptable = ScriptableObject.CreateInstance<MonsterInfo>();
-
-        //monsterInfoScriptable.NAME = "Goblin";
-        //monsterInfoScriptable.HP = 100;
-        //monsterInfoScriptable.ATK = 1000;
-        //monsterInfoScriptable.SPEED = 12.5f;
-
-        //AssetDatabase.CreateAsset(monsterInfoScriptable, $"Assets/Resources/{monsterInfoScriptable.NAME}.asset");
-
-        //AssetDatabase.SaveAssets();
+     
     }
 }

@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-public class LoadCSV
+public class LoadCSV : ScriptableObject
 {
     public static void CSV_to_MonsterData(TextAsset textAsset)
     {
@@ -21,15 +21,13 @@ public class LoadCSV
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
         {
             string[] datas = csvRaws[i].Split(',');
-            Dictionary<string, string> dataDict = new Dictionary<string, string>();
-            MonsterData monsterData = new MonsterData();
+            //MonsterData monsterData = new MonsterData();
+            MonsterData monsterData = CreateInstance<MonsterData>();
 
             for (int k = 0; k < datas.Length; k++)
             {
                 string header = headers[k];
                 string data = datas[k];
-
-                dataDict[header] = data;
 
                 if (header == "ID")
                 {
@@ -40,14 +38,22 @@ public class LoadCSV
                 FieldInfo fieldInfo = monsterDataType.GetField(header);
                 if (fieldInfo.FieldType == typeof(int))
                 {
-                    int data_Int = int.Parse(data);
-                    fieldInfo.SetValue(monsterData, data_Int);
+                    int data_int = int.Parse(data);
+                    fieldInfo.SetValue(monsterData, data_int);
+                }
+                else if (fieldInfo.FieldType == typeof(float))
+                {
+                    float data_float = float.Parse(data);
+                    fieldInfo.SetValue(monsterData, data_float);
+                }
+                else if (fieldInfo.FieldType == typeof(string))
+                {
+                    fieldInfo.SetValue(monsterData, data);
                 }
             }
 
             MonsterDataManager._monsterDataDict[ID] = monsterData;
         }
-
     }
 
     public static List<Dictionary<string, string>> CSV_to_Data_Public(TextAsset textAsset)

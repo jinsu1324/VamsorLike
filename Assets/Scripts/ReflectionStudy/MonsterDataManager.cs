@@ -11,18 +11,18 @@ public enum MonsterKey
     Dragon
 }
 
-//[CreateAssetMenu(fileName = "NewMonster_", menuName = "Assets/NewMonster")]
-public class MonsterData
+[CreateAssetMenu(fileName = "NewMonster_", menuName = "Assets/NewMonster")]
+public class MonsterData : ScriptableObject
 {
     public string NAME;
     public int HP;
     public int ATK;
     public float SPEED;
 
-    public override string ToString()
-    {
-        return $"NAME : {NAME} / HP : {HP} / ATK : {ATK} / SPEED : {SPEED}";
-    }
+    //public override string ToString()
+    //{
+    //    return $"NAME : {NAME} / HP : {HP} / ATK : {ATK} / SPEED : {SPEED}";
+    //}
 }
 
 
