@@ -57,7 +57,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     }
     public void CharacterMakePopupON()
     {
-        PopupONOFF<CharacterMakePopup>.Popup_ON(_introSceneManager.CharacterMakePopup);
+        _introSceneManager.CharacterMakePopup.gameObject.SetActive(true);
         _introSceneManager.CharacterMakePopup.SlotNum_Popup = _slotNum;
     }
 

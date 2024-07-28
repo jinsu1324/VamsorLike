@@ -144,6 +144,6 @@ public class CharacterMakePopup : MonoBehaviour
 
     public void OnClickExitButton()
     {
-        PopupONOFF<CharacterMakePopup>.Popup_OFF(this);
+        gameObject.SetActive(false);
     }
 }
