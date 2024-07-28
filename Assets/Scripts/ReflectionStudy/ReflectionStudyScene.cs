@@ -11,15 +11,15 @@ public class ReflectionStudyScene : MonoBehaviour
     private void Awake()
     {
         LoadCSV.CSV_to_MonsterData(textAsset);
+        SaveDataasScriptableObject();
+    }
 
+    private void SaveDataasScriptableObject()
+    {
         foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
         {
-            //Debug.Log(monsterData);
-
             AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
-
             AssetDatabase.SaveAssets();
         }
-     
     }
 }
