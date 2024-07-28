@@ -12,12 +12,12 @@ public class ReflectionStudyScene : MonoBehaviour
     {
         LoadCSV.CSV_to_Data(textAsset);
 
-        foreach (MonsterInfo monsterInfo in MonsterDataManager._monsterInfoDict.Values)
+        foreach (MonsterData monsterInfo in MonsterDataManager._monsterDataDict.Values)
         {
             Debug.Log(monsterInfo);
         }
 
-        Debug.Log(MonsterDataManager._monsterInfoDict[MonsterKey.Golem.ToString()].HP);
+        Debug.Log(MonsterDataManager._monsterDataDict[MonsterKey.Golem.ToString()].HP);
 
 
 

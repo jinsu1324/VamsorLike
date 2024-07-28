@@ -12,7 +12,7 @@ public enum MonsterKey
 }
 
 //[CreateAssetMenu(fileName = "NewMonster_", menuName = "Assets/NewMonster")]
-public class MonsterInfo
+public class MonsterData
 {
     public string NAME;
     public int HP;
@@ -28,5 +28,5 @@ public class MonsterInfo
 
 public class MonsterDataManager
 {
-    public static Dictionary<string, MonsterInfo> _monsterInfoDict = new Dictionary<string, MonsterInfo>();
+    public static Dictionary<string, MonsterData> _monsterDataDict = new Dictionary<string, MonsterData>();
 }
