@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.IO;
 
 public class ReflectionStudyScene : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class ReflectionStudyScene : MonoBehaviour
     {
         foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
         {
+            if (File.Exists($"Assets/Resources/{monsterData.NAME}.asset"))
+                continue;
+
             AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
             AssetDatabase.SaveAssets();
         }
