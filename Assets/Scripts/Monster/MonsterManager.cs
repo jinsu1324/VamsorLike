@@ -17,12 +17,12 @@ public class MonsterManager : MonoBehaviour
 
     private void Start()
     {
-        LoadEnemy();
+        //LoadEnemy();
     }
 
     private void Update()
     {
-        EnemySpawn();
+        //EnemySpawn();
     }
 
 

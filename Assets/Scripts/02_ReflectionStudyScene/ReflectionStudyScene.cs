@@ -19,11 +19,11 @@ public class ReflectionStudyScene : MonoBehaviour
     {
         foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
         {
-            if (File.Exists($"Assets/Resources/{monsterData.NAME}.asset"))
-                continue;
+            //if (File.Exists($"Assets/Resources/{monsterData.NAME}.asset"))
+            //    continue;
 
-            AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
-            AssetDatabase.SaveAssets();
+            //AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
+            //AssetDatabase.SaveAssets();
         }
     }
 }

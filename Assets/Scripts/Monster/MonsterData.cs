@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
-[CreateAssetMenu(menuName = "Assets/NewMonster")]
-public class MonsterData : ScriptableObject
+[System.Serializable]
+public class MonsterData
 {
     public string NAME;
     public int HP;

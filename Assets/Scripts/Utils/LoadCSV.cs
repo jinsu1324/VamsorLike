@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-public class LoadCSV : ScriptableObject
+public class LoadCSV
 {
     public static void CSV_to_MonsterData(TextAsset textAsset)
     {
@@ -21,8 +21,8 @@ public class LoadCSV : ScriptableObject
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
         {
             string[] datas = csvRaws[i].Split(',');
-            //MonsterData monsterData = new MonsterData();
-            MonsterData monsterData = CreateInstance<MonsterData>();
+            MonsterData monsterData = new MonsterData();
+            //MonsterData monsterData = CreateInstance<MonsterData>();
 
             for (int k = 0; k < datas.Length; k++)
             {
