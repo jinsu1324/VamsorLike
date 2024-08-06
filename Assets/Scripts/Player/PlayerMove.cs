@@ -32,14 +32,13 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _range, LayerMask.GetMask("Enemy"));
+        //Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _range, LayerMask.GetMask("Enemy"));
 
 
-        for (int i = 0; i < cols.Length; i++)
-        {
-            Debug.Log(cols[i].gameObject.name);
-        }
-        
+        //for (int i = 0; i < cols.Length; i++)
+        //{
+        //    Debug.Log(cols[i].gameObject.name);
+        //}       
 
     }
 
