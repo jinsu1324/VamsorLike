@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
 
 [System.Serializable]
-public class MonsterData
+public class MonsterData : ScriptableObject
 {
     public string NAME;
     public int HP;

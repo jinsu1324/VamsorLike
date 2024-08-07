@@ -6,27 +6,27 @@ using UnityEngine;
 
 public class PlaySceneManager : MonoBehaviour
 {
-    public MonsterDataInfo _monsterDataInfo;
+    ////public MonsterDataInfo _monsterDataInfo;
 
-    public TextAsset textAsset;
+    //public TextAsset textAsset;
 
-    private void Awake()
-    {
-        LoadCSV.CSV_to_MonsterData(textAsset);
-        SaveDataasScriptableObject();        
-    }
+    //private void Awake()
+    //{
+    //    LoadCSV.CSV_to_MonsterData(textAsset);
+    //    SaveDataasScriptableObject();        
+    //}
 
-    private void SaveDataasScriptableObject()
-    {
-        foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
-        {
-            _monsterDataInfo.monsterDataList.Add(monsterData);
+    //private void SaveDataasScriptableObject()
+    //{
+    //    foreach (MonsterData monsterData in MonsterDataManager._monsterDataDict.Values)
+    //    {
+    //        _monsterDataInfo.monsterDataList.Add(monsterData);
 
-            //if (File.Exists($"Assets/Resources/{monsterData.NAME}.asset"))
-            //    continue;
+    //        //if (File.Exists($"Assets/Resources/{monsterData.NAME}.asset"))
+    //        //    continue;
 
-            //AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
-            //AssetDatabase.SaveAssets();
-        }
-    }
+    //        //AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{monsterData.NAME}.asset");
+    //        //AssetDatabase.SaveAssets();
+    //    }
+    //}
 }

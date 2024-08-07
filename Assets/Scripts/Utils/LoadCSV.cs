@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 
 public class LoadCSV
 {
@@ -16,14 +17,13 @@ public class LoadCSV
         string[] headers = csvRaws[headerIndex].Split(',');
 
         Type monsterDataType = typeof(MonsterData);
-        string ID = "";
+        MonsterKey ID = MonsterKey.Skeleton;
 
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
         {
             string[] datas = csvRaws[i].Split(',');
-            MonsterData monsterData = new MonsterData();
-            //MonsterData monsterData = CreateInstance<MonsterData>();
-
+            MonsterData monsterData = null;
+       
             for (int k = 0; k < datas.Length; k++)
             {
                 string header = headers[k];
@@ -31,11 +31,36 @@ public class LoadCSV
 
                 if (header == "ID")
                 {
-                    ID = data;
+                    ID = (MonsterKey)Enum.Parse(typeof(MonsterKey),data);
+                    //monsterData = MonsterDataManager._monsterDataDict[ID];
+                    //Debug.Log(monsterData);
+
+                    string path = $"Assets/Resources/{ID}.asset";
+                    Debug.Log(path);
+                    ScriptableObject so = AssetDatabase.LoadAssetAtPath<MonsterData>(path);
+
+                    if(so == null)
+                    {
+                        //so = new MonsterData();
+                        so = ScriptableObject.CreateInstance<MonsterData>();
+
+                        AssetDatabase.CreateAsset(so, path);
+                        AssetDatabase.SaveAssets();
+                    }
+
+                    monsterData = so as MonsterData;
+
+                    //if (monsterData == null)
+                    //{                     
+                    //    //AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{ID}.asset");
+                    //    AssetDatabase.SaveAssets();
+                    //}
+
                     continue;
                 }
 
                 FieldInfo fieldInfo = monsterDataType.GetField(header);
+
                 if (fieldInfo.FieldType == typeof(int))
                 {
                     int data_int = int.Parse(data);
@@ -52,102 +77,101 @@ public class LoadCSV
                 }
             }
 
-            MonsterDataManager._monsterDataDict[ID] = monsterData;
+            //MonsterDataManager._monsterDataDict[ID] = monsterData;
         }
     }
 
-    public static List<Dictionary<string, string>> CSV_to_Data_Public(TextAsset textAsset)
-    {
-        string csv = textAsset.text;
-        string[] csvRaws = csv.Split(System.Environment.NewLine);
+    //public static List<Dictionary<string, string>> CSV_to_Data_Public(TextAsset textAsset)
+    //{
+    //    string csv = textAsset.text;
+    //    string[] csvRaws = csv.Split(System.Environment.NewLine);
 
-        int headerIndex = 1;
-        string[] headers = csvRaws[headerIndex].Split(',');
+    //    int headerIndex = 1;
+    //    string[] headers = csvRaws[headerIndex].Split(',');
 
-        List<Dictionary<string, string>> dataDictList = new List<Dictionary<string, string>>();
+    //    List<Dictionary<string, string>> dataDictList = new List<Dictionary<string, string>>();
 
-        for (int i = headerIndex + 1; i < csvRaws.Length; i++)
-        {
-            string[] datas = csvRaws[i].Split(',');
+    //    for (int i = headerIndex + 1; i < csvRaws.Length; i++)
+    //    {
+    //        string[] datas = csvRaws[i].Split(',');
 
-            Dictionary<string, string> dataDict = new Dictionary<string, string>();
+    //        Dictionary<string, string> dataDict = new Dictionary<string, string>();
 
-            for (int k = 0; k < datas.Length; k++)
-            {
-                string header = headers[k];
-                string data = datas[k];
+    //        for (int k = 0; k < datas.Length; k++)
+    //        {
+    //            string header = headers[k];
+    //            string data = datas[k];
 
-                dataDict[header] = data;
-            }
+    //            dataDict[header] = data;
+    //        }
 
-            dataDictList.Add(dataDict);
-        }
+    //        dataDictList.Add(dataDict);
+    //    }
 
-        return dataDictList;
-    }
+    //    return dataDictList;
+    //}
 
 
-    public static List<Dictionary<string, string>> CSV_to_Data(TextAsset textAsset)
-    {
-        string csv_string = textAsset.text;      
-        string[] horizontalSplitArray = csv_string.Split(System.Environment.NewLine); 
+    //public static List<Dictionary<string, string>> CSV_to_Data(TextAsset textAsset)
+    //{
+    //    string csv_string = textAsset.text;      
+    //    string[] horizontalSplitArray = csv_string.Split(System.Environment.NewLine); 
                                                                                      
-        int headerIndex = 1;       
-        string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(","); 
+    //    int headerIndex = 1;       
+    //    string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(","); 
         
-        List<Dictionary<string, string>> dataDictionaryList = new List<Dictionary<string, string>>();
+    //    List<Dictionary<string, string>> dataDictionaryList = new List<Dictionary<string, string>>();
 
-        Type monsterDataType = typeof(MonsterData);
-
+    //    Type monsterDataType = typeof(MonsterData);
         
-        for (int i = headerIndex + 1; i < horizontalSplitArray.Length; i++)
-        {
+    //    for (int i = headerIndex + 1; i < horizontalSplitArray.Length; i++)
+    //    {            
+    //        string[] verticalSplitArray = horizontalSplitArray[i].Split(",");            
+    //        Dictionary<string, string> dataDictionary = new Dictionary<string, string>();
+
+    //        MonsterData monsterData = new MonsterData();
+    //        string ID = "";          
             
-            string[] verticalSplitArray = horizontalSplitArray[i].Split(",");            
-            Dictionary<string, string> dataDictionary = new Dictionary<string, string>();
+    //        for (int k = 0; k < verticalSplitArray.Length; k++)
+    //        {
+    //            string header = headerVerticalSplitArray[k];
+    //            string data = verticalSplitArray[k];
 
-            MonsterData monsterData = new MonsterData();
-            string ID = "";          
-            
-            for (int k = 0; k < verticalSplitArray.Length; k++)
-            {
-                string header = headerVerticalSplitArray[k];
-                string data = verticalSplitArray[k];
+    //            dataDictionary[header] = data;
 
-                dataDictionary[header] = data;
+    //            if (header == "ID")
+    //            {
+    //                ID = data;
+    //                Debug.Log(ID);
+    //                continue;
+    //            }
 
-                if (header == "ID")
-                {
-                    ID = data;
-                    continue;
-                }
+    //            FieldInfo fieldInfo = monsterDataType.GetField(header);
 
-                FieldInfo fieldInfo = monsterDataType.GetField(header);
+    //            if (fieldInfo.FieldType == typeof(int))
+    //            {
+    //                int dataIntValue = int.Parse(data);
+    //                fieldInfo.SetValue(monsterData, dataIntValue);
+    //            }
 
-                if (fieldInfo.FieldType == typeof(int))
-                {
-                    int dataIntValue = int.Parse(data);
-                    fieldInfo.SetValue(monsterData, dataIntValue);
-                }
+    //            if (fieldInfo.FieldType == typeof(string))
+    //            {
+    //                string dataStringValue = data.ToString();
+    //                fieldInfo.SetValue(monsterData, dataStringValue);
+    //            }
 
-                if (fieldInfo.FieldType == typeof(string))
-                {
-                    string dataStringValue = data.ToString();
-                    fieldInfo.SetValue(monsterData, dataStringValue);
-                }
+    //            if (fieldInfo.FieldType == typeof(float))
+    //            {
+    //                float dataFloatValue = float.Parse(data);
+    //                fieldInfo.SetValue(monsterData, dataFloatValue);
+    //            }
+    //        }
 
-                if (fieldInfo.FieldType == typeof(float))
-                {
-                    float dataFloatValue = float.Parse(data);
-                    fieldInfo.SetValue(monsterData, dataFloatValue);
-                }
-            }
+    //        //MonsterDataManager._monsterDataDict[ID] = monsterData;
 
-            MonsterDataManager._monsterDataDict[ID] = monsterData;
+    //        dataDictionaryList.Add(dataDictionary);
+    //    }
 
-            dataDictionaryList.Add(dataDictionary);
-        }
-
-        return dataDictionaryList;
-    }
+    //    return dataDictionaryList;
+    //}
 }

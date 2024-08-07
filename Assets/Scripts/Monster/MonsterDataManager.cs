@@ -12,7 +12,8 @@ public enum MonsterKey
 }
 
 
-public class MonsterDataManager
+public class MonsterDataManager : MonoBehaviour
 {
-    public static Dictionary<string, MonsterData> _monsterDataDict = new Dictionary<string, MonsterData>();
+    public List<MonsterData> _monsterDataDict =
+        new List<MonsterData>();
 }
