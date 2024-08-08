@@ -8,21 +8,30 @@ using UnityEngine.U2D.IK;
 
 public class LoadCSV
 {
-    public static void CSV_to_MonsterData(TextAsset textAsset)
+    /// <summary>
+    /// 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
+    /// </summary>
+    /// <typeparam name="T1"> T1은 저장할 데이터임. ScriptableObject를 상속받는 Data여야 함 </typeparam>
+    /// <typeparam name="T2"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
+    /// <param name="textAsset"> textAsset 은 데이터를 가지고있는 CSV파일 </param>
+    public static void CSV_to_ScriptableObject<T1, T2>(TextAsset textAsset) where T1 : ScriptableObject where T2 : Enum
     {
+        // csv파일 행으로 잘라주기
         string csv = textAsset.text;
         string[] csvRaws = csv.Split(System.Environment.NewLine);
 
+        // header만 ,단위로 열로 잘라주기
         int headerIndex = 1;
         string[] headers = csvRaws[headerIndex].Split(',');
 
-        Type monsterDataType = typeof(MonsterData);
-        MonsterKey ID = MonsterKey.Skeleton;
+        Type dataType = typeof(T1);
+        T2 ID;
 
+        // header를 미포함해서 모든 행 수만큼 반복
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
         {
             string[] datas = csvRaws[i].Split(',');
-            MonsterData monsterData = null;
+            T1 T_Data = null;
        
             for (int k = 0; k < datas.Length; k++)
             {
@@ -31,147 +40,46 @@ public class LoadCSV
 
                 if (header == "ID")
                 {
-                    ID = (MonsterKey)Enum.Parse(typeof(MonsterKey),data);
-                    //monsterData = MonsterDataManager._monsterDataDict[ID];
-                    //Debug.Log(monsterData);
+                    // string 이었던 data를 MonsterKey enum 으로 형변환 (Header가 ID인 곳의 데이터는 Orc 이렇게 이름이 있음)
+                    ID = (T2)Enum.Parse(typeof(T2),data);
 
+                    // 프로젝트에서 ID를 파일명으로 한 파일들을 가져옴
                     string path = $"Assets/Resources/{ID}.asset";
-                    Debug.Log(path);
-                    ScriptableObject so = AssetDatabase.LoadAssetAtPath<MonsterData>(path);
+                    ScriptableObject so = AssetDatabase.LoadAssetAtPath<T1>(path);
 
+                    // 가져오지 못했으면, 그 경로에 파일을 만들어주고 저장
                     if(so == null)
                     {
-                        //so = new MonsterData();
-                        so = ScriptableObject.CreateInstance<MonsterData>();
+                        so = ScriptableObject.CreateInstance<T1>();
 
                         AssetDatabase.CreateAsset(so, path);
                         AssetDatabase.SaveAssets();
                     }
 
-                    monsterData = so as MonsterData;
-
-                    //if (monsterData == null)
-                    //{                     
-                    //    //AssetDatabase.CreateAsset(monsterData, $"Assets/Resources/{ID}.asset");
-                    //    AssetDatabase.SaveAssets();
-                    //}
+                    // 가져온 or 새로만든 파일을 monsterData로 형변환하고 대입
+                    T_Data = so as T1;
 
                     continue;
                 }
 
-                FieldInfo fieldInfo = monsterDataType.GetField(header);
+                // 리플렉션 사용해서 monsterData의 값들 설정 (ex) header 가 HP 이면 monsterData의 HP변수를 접근할수있음)
+                FieldInfo fieldInfo = dataType.GetField(header);
 
                 if (fieldInfo.FieldType == typeof(int))
                 {
                     int data_int = int.Parse(data);
-                    fieldInfo.SetValue(monsterData, data_int);
+                    fieldInfo.SetValue(T_Data, data_int);
                 }
                 else if (fieldInfo.FieldType == typeof(float))
                 {
                     float data_float = float.Parse(data);
-                    fieldInfo.SetValue(monsterData, data_float);
+                    fieldInfo.SetValue(T_Data, data_float);
                 }
                 else if (fieldInfo.FieldType == typeof(string))
                 {
-                    fieldInfo.SetValue(monsterData, data);
+                    fieldInfo.SetValue(T_Data, data);
                 }
             }
-
-            //MonsterDataManager._monsterDataDict[ID] = monsterData;
         }
     }
-
-    //public static List<Dictionary<string, string>> CSV_to_Data_Public(TextAsset textAsset)
-    //{
-    //    string csv = textAsset.text;
-    //    string[] csvRaws = csv.Split(System.Environment.NewLine);
-
-    //    int headerIndex = 1;
-    //    string[] headers = csvRaws[headerIndex].Split(',');
-
-    //    List<Dictionary<string, string>> dataDictList = new List<Dictionary<string, string>>();
-
-    //    for (int i = headerIndex + 1; i < csvRaws.Length; i++)
-    //    {
-    //        string[] datas = csvRaws[i].Split(',');
-
-    //        Dictionary<string, string> dataDict = new Dictionary<string, string>();
-
-    //        for (int k = 0; k < datas.Length; k++)
-    //        {
-    //            string header = headers[k];
-    //            string data = datas[k];
-
-    //            dataDict[header] = data;
-    //        }
-
-    //        dataDictList.Add(dataDict);
-    //    }
-
-    //    return dataDictList;
-    //}
-
-
-    //public static List<Dictionary<string, string>> CSV_to_Data(TextAsset textAsset)
-    //{
-    //    string csv_string = textAsset.text;      
-    //    string[] horizontalSplitArray = csv_string.Split(System.Environment.NewLine); 
-                                                                                     
-    //    int headerIndex = 1;       
-    //    string[] headerVerticalSplitArray = horizontalSplitArray[headerIndex].Split(","); 
-        
-    //    List<Dictionary<string, string>> dataDictionaryList = new List<Dictionary<string, string>>();
-
-    //    Type monsterDataType = typeof(MonsterData);
-        
-    //    for (int i = headerIndex + 1; i < horizontalSplitArray.Length; i++)
-    //    {            
-    //        string[] verticalSplitArray = horizontalSplitArray[i].Split(",");            
-    //        Dictionary<string, string> dataDictionary = new Dictionary<string, string>();
-
-    //        MonsterData monsterData = new MonsterData();
-    //        string ID = "";          
-            
-    //        for (int k = 0; k < verticalSplitArray.Length; k++)
-    //        {
-    //            string header = headerVerticalSplitArray[k];
-    //            string data = verticalSplitArray[k];
-
-    //            dataDictionary[header] = data;
-
-    //            if (header == "ID")
-    //            {
-    //                ID = data;
-    //                Debug.Log(ID);
-    //                continue;
-    //            }
-
-    //            FieldInfo fieldInfo = monsterDataType.GetField(header);
-
-    //            if (fieldInfo.FieldType == typeof(int))
-    //            {
-    //                int dataIntValue = int.Parse(data);
-    //                fieldInfo.SetValue(monsterData, dataIntValue);
-    //            }
-
-    //            if (fieldInfo.FieldType == typeof(string))
-    //            {
-    //                string dataStringValue = data.ToString();
-    //                fieldInfo.SetValue(monsterData, dataStringValue);
-    //            }
-
-    //            if (fieldInfo.FieldType == typeof(float))
-    //            {
-    //                float dataFloatValue = float.Parse(data);
-    //                fieldInfo.SetValue(monsterData, dataFloatValue);
-    //            }
-    //        }
-
-    //        //MonsterDataManager._monsterDataDict[ID] = monsterData;
-
-    //        dataDictionaryList.Add(dataDictionary);
-    //    }
-
-    //    return dataDictionaryList;
-    //}
 }

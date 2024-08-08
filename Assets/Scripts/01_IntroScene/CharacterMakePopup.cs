@@ -43,6 +43,7 @@ public class CharacterMakePopup : MonoBehaviour
         AllUIImageInit();
     }    
     
+    // 캐릭터의 스프라이트 변경
     private void ChangeSprite(CharacterParts characterParts, ArrowDir arrowDir)
     {
         List<Sprite> spriteList = new List<Sprite>();
@@ -64,6 +65,8 @@ public class CharacterMakePopup : MonoBehaviour
         }
     }
 
+
+    // 몇번째 이미지인지 알려주는 number를 변경하는 함수
     private int ChangeNum(ref int num, int listCount, ArrowDir arrowDir)
     {
         if (arrowDir == ArrowDir.Next)
@@ -90,6 +93,7 @@ public class CharacterMakePopup : MonoBehaviour
         return 111;
     }
 
+    // 실제 UI 이미지를 변경하는 함수
     private void ChangeUIImage(Image targetUIImage, List<Sprite> spriteList, int currentNum)
     {
         targetUIImage.sprite = spriteList[currentNum];
@@ -119,11 +123,13 @@ public class CharacterMakePopup : MonoBehaviour
         return _myCharacterData;
     }
 
+    // 다음 이미지 버튼
     public void OnClickNextButton(int characterPartsNum)
     {
         ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Next);
     }
 
+    // 이전 이미지 버튼
     public void OnClickPrevButton(int characterPartsNum)
     {
         ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Prev);

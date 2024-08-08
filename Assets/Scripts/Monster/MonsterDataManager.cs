@@ -1,19 +1,10 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum MonsterKey
+public class MonsterDataManager : SerializedMonoBehaviour
 {
-    Golem,
-    Skeleton,
-    Witch,
-    Dragon
-}
-
-
-public class MonsterDataManager : MonoBehaviour
-{
-    public List<MonsterData> _monsterDataDict =
-        new List<MonsterData>();
+    // 프로젝트의 몬스터 ScriptableObject를 모두 받아와서 저장할 딕셔너리
+    public Dictionary<MonsterID, MonsterData> _monsterDataDict = new Dictionary<MonsterID, MonsterData>();
 }
