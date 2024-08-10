@@ -11,10 +11,10 @@ public class LoadCSV
     /// <summary>
     /// 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
     /// </summary>
-    /// <typeparam name="T1"> T1은 저장할 데이터임. ScriptableObject를 상속받는 Data여야 함 </typeparam>
-    /// <typeparam name="T2"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
+    /// <typeparam name="DataType"> T1은 저장할 데이터임. ScriptableObject를 상속받는 Data여야 함 </typeparam>
+    /// <typeparam name="DataKey"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
     /// <param name="textAsset"> textAsset 은 데이터를 가지고있는 CSV파일 </param>
-    public static void CSV_to_ScriptableObject<T1, T2>(TextAsset textAsset) where T1 : ScriptableObject where T2 : Enum
+    public static void CSV_to_ScriptableObject<DataType, DataKey>(TextAsset textAsset) where DataType : ScriptableObject where DataKey : Enum
     {
         // csv파일 행으로 잘라주기
         string csv = textAsset.text;
@@ -24,14 +24,14 @@ public class LoadCSV
         int headerIndex = 1;
         string[] headers = csvRaws[headerIndex].Split(',');
 
-        Type dataType = typeof(T1);
-        T2 Id;
+        Type dataType = typeof(DataType);
+        DataKey Id;
 
         // header를 미포함해서 모든 행 수만큼 반복
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
         {
             string[] datas = csvRaws[i].Split(',');
-            T1 T_Data = null;
+            DataType T_Data = null;
        
             for (int k = 0; k < datas.Length; k++)
             {
@@ -41,23 +41,23 @@ public class LoadCSV
                 if (header == "Id")
                 {
                     // string 이었던 data를 MonsterKey enum 으로 형변환 (Header가 ID인 곳의 데이터는 Orc 이렇게 이름이 있음)
-                    Id = (T2)Enum.Parse(typeof(T2),data);
+                    Id = (DataKey)Enum.Parse(typeof(DataKey),data);
 
                     // 프로젝트에서 ID를 파일명으로 한 파일들을 가져옴
                     string path = $"Assets/Resources/{Id}.asset";
-                    ScriptableObject so = AssetDatabase.LoadAssetAtPath<T1>(path);
+                    ScriptableObject so = AssetDatabase.LoadAssetAtPath<DataType>(path);
 
                     // 가져오지 못했으면, 그 경로에 파일을 만들어주고 저장
                     if(so == null)
                     {
-                        so = ScriptableObject.CreateInstance<T1>();
+                        so = ScriptableObject.CreateInstance<DataType>();
 
                         AssetDatabase.CreateAsset(so, path);
                         AssetDatabase.SaveAssets();
                     }
 
                     // 가져온 or 새로만든 파일을 monsterData로 형변환하고 대입
-                    T_Data = so as T1;
+                    T_Data = so as DataType;
 
                     continue;
                 }
