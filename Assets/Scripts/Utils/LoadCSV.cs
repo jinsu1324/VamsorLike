@@ -6,6 +6,12 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D.IK;
 
+public enum SaveFolderName
+{
+    Monster,
+    Hero
+}
+
 public class LoadCSV
 {
     /// <summary>
@@ -14,7 +20,7 @@ public class LoadCSV
     /// <typeparam name="DataType"> T1은 저장할 데이터임. ScriptableObject를 상속받는 Data여야 함 </typeparam>
     /// <typeparam name="KeyEnum"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
     /// <param name="textAsset"> textAsset 은 데이터를 가지고있는 CSV파일 </param>
-    public static void CSV_to_ScriptableObject<DataType, KeyEnum>(TextAsset textAsset) where DataType : ScriptableObject where KeyEnum : Enum
+    public static void CSV_to_ScriptableObject<DataType, KeyEnum>(TextAsset textAsset, SaveFolderName saveFolderName) where DataType : ScriptableObject where KeyEnum : Enum
     {
         // csv파일 행으로 잘라주기
         string csv = textAsset.text;
@@ -44,7 +50,7 @@ public class LoadCSV
                     Id = (KeyEnum)Enum.Parse(typeof(KeyEnum),data);
 
                     // 프로젝트에서 ID를 파일명으로 한 파일들을 가져옴
-                    string path = $"Assets/Resources/{Id}.asset";
+                    string path = $"Assets/Resources/{saveFolderName}/{saveFolderName}_{Id}.asset";
                     ScriptableObject so = AssetDatabase.LoadAssetAtPath<DataType>(path);
 
                     // 가져오지 못했으면, 그 경로에 파일을 만들어주고 저장

@@ -40,14 +40,14 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("_monsterDataTextAsset이 null입니다.");
 
         // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
-        LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(_monsterDataTextAsset);
+        LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(_monsterDataTextAsset, SaveFolderName.Monster);
 
         // 하이어라키의 몬스터데이터매니저 속 딕셔너리를 한번 클리어
         MonsterDataManager monsterDataManager = FindObjectOfType<MonsterDataManager>();
         monsterDataManager.MonsterDataDict.Clear();
 
         // 몬스터ScriptableObject들을 딕셔너리에 세팅
-        ScriptableObject_to_Dict<MonsterID, MonsterData>(monsterDataManager.MonsterDataDict);
+        ScriptableObject_to_Dict<MonsterID, MonsterData>(monsterDataManager.MonsterDataDict, SaveFolderName.Monster);
     }
 
     // 히어로 Scriptable들을 딕셔너리에 세팅하기
@@ -58,19 +58,19 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("_heroDataTextAsset이  null입니다.");
 
         // 히어로CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
-        LoadCSV.CSV_to_ScriptableObject<HeroData, HeroID>(_heroDataTextAsset);
+        LoadCSV.CSV_to_ScriptableObject<HeroData, HeroID>(_heroDataTextAsset, SaveFolderName.Hero);
 
         // 하이어라키의 히어로데이터매니저 속 딕셔너리를 한번 클리어
         HeroDataManager heroDataManager = FindObjectOfType<HeroDataManager>();
         heroDataManager.HeroDataDict.Clear();
 
         // 히어로 ScriptableObject들을 딕셔너리에 세팅
-        ScriptableObject_to_Dict<HeroID, HeroData>(heroDataManager.HeroDataDict);
+        ScriptableObject_to_Dict<HeroID, HeroData>(heroDataManager.HeroDataDict, SaveFolderName.Hero);
     }
     
 
     // 프로젝트의 몬스터 ScriptableObject 들을 MonsterDataManager속 딕셔너리에 저장  
-    private void ScriptableObject_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict) where EnumKey : Enum  where DataType : ScriptableObject
+    private void ScriptableObject_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SaveFolderName saveFolderName) where EnumKey : Enum  where DataType : ScriptableObject
     {
         // MonsterKey enum의 모든 값들을 가져옴
         EnumKey[] enumKeys = Enum.GetValues(typeof(EnumKey)) as EnumKey[];
@@ -80,7 +80,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
             EnumKey enumKey = enumKeys[i];
 
             // 경로에 있는 모든 Scriptable Object를 가져옴
-            string path = $"Assets/Resources/{enumKey}.asset";
+            string path = $"Assets/Resources/{saveFolderName}/{saveFolderName}_{enumKey}.asset";
             ScriptableObject so = AssetDatabase.LoadAssetAtPath<DataType>(path);
 
             // Scriptable Object 를 못받아왔으면 넘어감

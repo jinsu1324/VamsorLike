@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8a65c92d5eca64f9a1e668dfafcbf2, type: 3}
-  m_Name: Witch
+  m_Script: {fileID: 11500000, guid: a157ced3d16a7db41a8b6ad9d48cc57b, type: 3}
+  m_Name: Hero_Warrior
   m_EditorClassIdentifier: 
-  Name: Witch_Kid
+  Name: Warrior_Kevin
   Hp: 300
   Atk: 30
-  Speed: 3.3
+  Speed: 0.5
