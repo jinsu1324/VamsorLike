@@ -3,62 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class GameData
+public class SaveLoadManager
 {
-    public string Name;
-    public int Score;
-    public ItemData ItemData;
-
-    public override string ToString()
-    {
-        return $"{Name}/{Score}/{ItemData.ItemName}/{ItemData.ItemCount}";
-    }
-}
-
-[System.Serializable]
-public class ItemData
-{
-    public int ItemCount;
-    public string ItemName;
-}
-
-public class SaveLoadManager : MonoBehaviour
-{
-    private string _path;
-
-    private void Start()
-    {
-        _path = Path.Combine(Application.persistentDataPath, "saveData.json");
-
-        Debug.Log(_path);
-
-        GameData gameData = new GameData()
-        {
-            Name = "name!!",
-            Score = 1000,
-            ItemData = new ItemData() { ItemCount = 10, ItemName = "체력포션" }
-        };
-
-        //SaveData(gameData);
-        GameData gameData2 = LoadData();
-        Debug.Log(gameData2);
-    }
-
-    public void SaveData(GameData data)
+    // 세이브
+    public static void SaveData<DataType>(DataType data, string path)
     {
         string jsonData = JsonUtility.ToJson(data, true);
-        File.WriteAllText(_path, jsonData);
+        File.WriteAllText(path, jsonData);
     }
 
-    public GameData LoadData()
+    // 로드
+    public static DataType LoadData<DataType>(string path) where DataType : class
     {
-        if (File.Exists(_path))
+        if (File.Exists(path))
         {
-            string jsonData = File.ReadAllText(_path);
-            return JsonUtility.FromJson<GameData>(jsonData);
+            string jsonData = File.ReadAllText(path);
+            return JsonUtility.FromJson<DataType>(jsonData);
         }
 
-        return new GameData();
-        
+        return null;
     }
 }

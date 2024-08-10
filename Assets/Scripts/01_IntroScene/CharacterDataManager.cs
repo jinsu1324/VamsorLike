@@ -39,11 +39,11 @@ public class CharacterDataManager : SerializedMonoBehaviour
             string slotPath = GetSlotPath(i);
 
             if (i == SlotNum.First)
-                _characterDataSlot01 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot01 = SaveLoadManager.LoadData<CharacterData>(slotPath);
             else if (i == SlotNum.Second)
-                _characterDataSlot02 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot02 = SaveLoadManager.LoadData<CharacterData>(slotPath);
             else if (i == SlotNum.Third)
-                _characterDataSlot03 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot03 = SaveLoadManager.LoadData<CharacterData>(slotPath);
         }
     }
 
@@ -55,17 +55,17 @@ public class CharacterDataManager : SerializedMonoBehaviour
         if (slotNum == SlotNum.First)
         {
             _characterDataSlot01 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterDataSlot01, slotPath);
+            SaveLoadManager.SaveData<CharacterData>(_characterDataSlot01, slotPath);
         }
         else if (slotNum == SlotNum.Second)
         {
             _characterDataSlot02 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterDataSlot02, slotPath);
+            SaveLoadManager.SaveData<CharacterData>(_characterDataSlot02, slotPath);
         }
         else if (slotNum == SlotNum.Third)
         {
             _characterDataSlot03 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterDataSlot03, slotPath);
+            SaveLoadManager.SaveData<CharacterData>(_characterDataSlot03, slotPath);
         }
     }
 
