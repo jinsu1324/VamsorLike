@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MonsterID
+public enum HeroID
 {
-    Golem,
-    Skeleton,
-    Witch,
-    Dragon
+    Warrior,
+    Archor, 
+    Wizard,
+    Thief
 }
 
 [System.Serializable]
-public class MonsterData : ScriptableObject
+public class HeroData : ScriptableObject
 {
     public string Name;
     public int Hp;

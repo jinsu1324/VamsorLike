@@ -12,9 +12,9 @@ public class LoadCSV
     /// 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
     /// </summary>
     /// <typeparam name="DataType"> T1은 저장할 데이터임. ScriptableObject를 상속받는 Data여야 함 </typeparam>
-    /// <typeparam name="DataKey"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
+    /// <typeparam name="KeyEnum"> T2는 저장할 데이터의 ID를 가지고있는 Enum이어야함 </typeparam>
     /// <param name="textAsset"> textAsset 은 데이터를 가지고있는 CSV파일 </param>
-    public static void CSV_to_ScriptableObject<DataType, DataKey>(TextAsset textAsset) where DataType : ScriptableObject where DataKey : Enum
+    public static void CSV_to_ScriptableObject<DataType, KeyEnum>(TextAsset textAsset) where DataType : ScriptableObject where KeyEnum : Enum
     {
         // csv파일 행으로 잘라주기
         string csv = textAsset.text;
@@ -25,7 +25,7 @@ public class LoadCSV
         string[] headers = csvRaws[headerIndex].Split(',');
 
         Type dataType = typeof(DataType);
-        DataKey Id;
+        KeyEnum Id;
 
         // header를 미포함해서 모든 행 수만큼 반복
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
@@ -41,7 +41,7 @@ public class LoadCSV
                 if (header == "Id")
                 {
                     // string 이었던 data를 MonsterKey enum 으로 형변환 (Header가 ID인 곳의 데이터는 Orc 이렇게 이름이 있음)
-                    Id = (DataKey)Enum.Parse(typeof(DataKey),data);
+                    Id = (KeyEnum)Enum.Parse(typeof(KeyEnum),data);
 
                     // 프로젝트에서 ID를 파일명으로 한 파일들을 가져옴
                     string path = $"Assets/Resources/{Id}.asset";
