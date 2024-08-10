@@ -18,62 +18,70 @@ public enum SlotNum
 
 public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField]
+    // 슬롯 번호
     private SlotNum _slotNum; 
+    public SlotNum SlotNum { get { return _slotNum; } set { _slotNum = value; } }
 
-    private Action _SlotClickAction;
+    // 슬롯 캐릭터 데이터
+    private CharacterData _slotCharacterData;
+    public CharacterData SlotCharacterData { get { return _slotCharacterData; } set { _slotCharacterData = value; } }
 
+    // ui 텍스트
     [SerializeField]
-    private TextMeshProUGUI _text;
+    private TextMeshProUGUI _uiText;
 
-    private IntroSceneManager _introSceneManager;
+    // 슬롯 클릭했을 때 액션
+    private Action _slotClickAction;
 
-    private void Start()
-    {
-        _introSceneManager = FindObjectOfType<IntroSceneManager>();
 
-        _introSceneManager.CharacterMakePopup.CompleteAction += MakeNewData;
-
-        SettingSlot();        
-    }
-
-    private void SettingSlot()
-    {
-        CharacterData characterDataSlot = CharacterDataManager.GetCharacterDataBySlot(_slotNum);
-
-        if (characterDataSlot == null)
-        {
-            _text.text = "No Data";
-            _SlotClickAction += CharacterMakePopupON;
-        }
-        else
-        {
-            _SlotClickAction = null;
-            _SlotClickAction += GameStart;
-            _text.text = characterDataSlot.Name;
-
-        }
-    }
-    public void CharacterMakePopupON()
-    {
-        _introSceneManager.CharacterMakePopup.gameObject.SetActive(true);
-        _introSceneManager.CharacterMakePopup.SlotNumPopup = _slotNum;
-    }
-
-    private void MakeNewData(SlotNum slotNum, CharacterData myCharacterData)
-    {
-        CharacterDataManager.MakeNewCharacterData(slotNum, myCharacterData);
-        SettingSlot();
-    }
-
-    private void GameStart()
-    {
-        Debug.Log("Game Start!");
-        CharacterDataManager.SelectSlotNum = _slotNum;
-    }    
-
+    // 슬롯 클릭했을때 호출
     public void OnPointerClick(PointerEventData eventData)
     {
-        _SlotClickAction();        
+        _slotClickAction();
     }
+
+    // 슬롯 넘버 각자에 맞게 초기화 해주는 함수
+    public void SlotNumInit(SlotNum slotNum)
+    {
+        this._slotNum = slotNum;
+    }
+
+    // 슬롯 캐릭터 데이터 초기화해주는 함수
+    public void SlotCharacterDataInit(SlotNum slotNum)
+    {
+        IntroSceneManager.Instance.CharacterDataManager.LoadCharacterData();
+        _slotCharacterData = IntroSceneManager.Instance.CharacterDataManager.GetCharacterDataBySlot(slotNum);
+
+        DataCheckAndChoiceNextAction();
+    }
+
+    // 데이터를 체크하고, 다음액션을 미리 정해서 액션에 넣어주는 함수 (생성창을 열지, 게임을 시작할지)
+    public void DataCheckAndChoiceNextAction()
+    {
+        // 데이터가 없으면, 다음액션에 캐릭터생성창을 열도록
+        if (_slotCharacterData == null)
+        {
+            _slotClickAction = OpenCharacterMakePopup;
+            _uiText.text = "No Data";
+        }
+        // 데이터가 있으면, 다음액션에 게임시작을 하도록
+        else if (_slotCharacterData != null)
+        {
+            _slotClickAction = GameStart;
+            _uiText.text = $"{_slotCharacterData.Name}";
+        }
+    }
+
+    // 캐릭터생성 팝업 ON (캐릭터생성팝업에게 열라고 명령)
+    public void OpenCharacterMakePopup()
+    {
+        Debug.Log("캐릭터 생성팝업을 엽니다.");
+        IntroSceneManager.Instance.CharacterMakePopup.OpenPopup(_slotNum);
+    }
+
+    // 게임 시작
+    private void GameStart()
+    {
+        Debug.Log("게임을 시작합니다.");
+    }   
 }

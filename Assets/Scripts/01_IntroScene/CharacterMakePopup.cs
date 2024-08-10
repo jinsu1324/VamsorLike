@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,18 +12,10 @@ public enum ArrowDir
     Prev
 }
 
-
-public class CharacterMakePopup : MonoBehaviour
-{   
-    public Action<SlotNum, CharacterData> CompleteAction;
-
-    [SerializeField]
-    private SlotNum _slotNumPopup;
-    public SlotNum SlotNumPopup { get { return _slotNumPopup; } set { _slotNumPopup = value; } }
-
-    [SerializeField]
-    private TMP_InputField _inputField;
-
+public class CharacterMakePopup : SerializedMonoBehaviour
+{
+    // UI 이미지들
+    [Title("UI Images", bold: false)]
     [SerializeField]
     private Image _hairImage;
     [SerializeField]
@@ -30,63 +23,128 @@ public class CharacterMakePopup : MonoBehaviour
     [SerializeField]
     private Image _costumeImage;
 
-    private int _hairNum;
-    private int _faceNum;
-    private int _costumeNum;
+    // 닉네임 인풋필드
+    [Title("")]
+    [SerializeField]
+    private TMP_InputField _nickNameinputField;
 
-    private CharacterData _myCharacterData = new CharacterData();
+    // 어떤슬롯을 선택해서 뜬 팝업인지
+    private SlotNum _selectedSlotNum;
 
-    private void OnEnable()
-    {
-        AllNumInit();
+    // 현재 선택되어있는 파츠 넘버
+    private int _curHairNum;
+    private int _curFaceNum;
+    private int _curCostumeNum;
+
+    // 완료된 캐릭터 데이터
+    private CharacterData _completeCharacterData = new CharacterData();
+
+
+    // 팝업 열릴때 호출
+    public void OpenPopup(SlotNum slotNum)
+    {        
+        _selectedSlotNum = slotNum;
+
+        AllCurNumInit();
         AllUIImageInit();
+
+        this.gameObject.SetActive(true);
     }    
-    
+
+    // Next버튼 누르면 호출
+    public void OnClickNextButton(int characterPartsNum)
+    {
+        // 다음 이미지로 변경
+        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Next);
+    }
+
+    // Prev버튼 누르면 호출
+    public void OnClickPrevButton(int characterPartsNum)
+    {
+        // 이전 이미지로 변경
+        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Prev);
+    }
+
+    // Complete버튼 누르면 호출
+    public void OnClickCompleteButton()
+    {
+        if (_nickNameinputField.text == "")
+        {
+            Debug.Log("닉네임을 입력하세요!");
+        }
+        else
+        {
+            IntroSceneManager.Instance.CharacterDataManager.MakeNewCharacterData(_selectedSlotNum, CompleteMyCharacterData()); 
+            IntroSceneManager.Instance.CharacterSlotManager.InitSlots();
+            OnClickExitButton();
+        }
+    }
+
+    // Exit버튼 누르면 호출
+    public void OnClickExitButton()
+    {
+        gameObject.SetActive(false);
+    }
+
+    // 모든 이미지Num 0으로 초기화
+    private void AllCurNumInit()
+    {
+        _curHairNum = 0;
+        _curFaceNum = 0;
+        _curCostumeNum = 0;
+    }
+
+    // 모든 UI이미지 0번째 이미지로 초기화
+    private void AllUIImageInit()
+    {
+        _hairImage.sprite = IntroSceneManager.Instance.CharacterResourcesManager.HairList[_curHairNum];
+        _faceImage.sprite = IntroSceneManager.Instance.CharacterResourcesManager.FaceList[_curFaceNum];
+        _costumeImage.sprite = IntroSceneManager.Instance.CharacterResourcesManager.CostumeList[_curCostumeNum];
+    }
+
     // 캐릭터의 스프라이트 변경
     private void ChangeSprite(CharacterParts characterParts, ArrowDir arrowDir)
     {
         List<Sprite> spriteList = new List<Sprite>();
+        int curNum = 0;
 
         if (characterParts == CharacterParts.Hair)
         {
-            spriteList = CharacterResourcesManager.Instance.HairList;
-            ChangeUIImage(_hairImage, spriteList, ChangeNum(ref _hairNum, spriteList.Count, arrowDir));
+            spriteList = IntroSceneManager.Instance.CharacterResourcesManager.HairList;
+            curNum = ChangeCurNum(ref _curHairNum, spriteList.Count, arrowDir);
+            ChangeUIImage(_hairImage, spriteList, curNum);
         }
         else if (characterParts == CharacterParts.Face)
         {
-            spriteList = CharacterResourcesManager.Instance.FaceList;
-            ChangeUIImage(_faceImage, spriteList, ChangeNum(ref _faceNum, spriteList.Count, arrowDir));
+            spriteList = IntroSceneManager.Instance.CharacterResourcesManager.FaceList;
+            curNum = ChangeCurNum(ref _curFaceNum, spriteList.Count, arrowDir);
+            ChangeUIImage(_faceImage, spriteList, curNum);
         }
         else if (characterParts == CharacterParts.Costume)
         {
-            spriteList = CharacterResourcesManager.Instance.CostumeList;
-            ChangeUIImage(_costumeImage, spriteList, ChangeNum(ref _costumeNum, spriteList.Count, arrowDir));        
+            spriteList = IntroSceneManager.Instance.CharacterResourcesManager.CostumeList;
+            curNum = ChangeCurNum(ref _curCostumeNum, spriteList.Count, arrowDir);
+            ChangeUIImage(_costumeImage, spriteList, curNum);        
         }
     }
 
-
-    // 몇번째 이미지인지 알려주는 number를 변경하는 함수
-    private int ChangeNum(ref int num, int listCount, ArrowDir arrowDir)
+    // 현재num을 방향에 맞게 변경해서 반환
+    private int ChangeCurNum(ref int curNum, int listCount, ArrowDir arrowDir)
     {
         if (arrowDir == ArrowDir.Next)
         {
-            num++;
-
-            if (num >= listCount)
-                num = 0;
-
-            return num;
+            curNum++;
+            if (curNum >= listCount)
+                curNum = 0;
+            return curNum;
         }
         else if (arrowDir == ArrowDir.Prev)
         {
-            num--;
-
-            if (num < 0)
-                num = listCount - 1;
-
-            return num;
+            curNum--;
+            if (curNum < 0)
+                curNum = listCount - 1;
+            return curNum;
         }
-
         Debug.Log("if에 안걸러짐");
         return 111;
     }
@@ -95,59 +153,16 @@ public class CharacterMakePopup : MonoBehaviour
     private void ChangeUIImage(Image targetUIImage, List<Sprite> spriteList, int currentNum)
     {
         targetUIImage.sprite = spriteList[currentNum];
-    }
+    }    
 
-    private void AllNumInit()
-    {
-        _hairNum = 0;
-        _faceNum = 0;
-        _costumeNum = 0;
-    }
-
-    private void AllUIImageInit()
-    {
-        _hairImage.sprite = CharacterResourcesManager.Instance.HairList[_hairNum];
-        _faceImage.sprite = CharacterResourcesManager.Instance.FaceList[_faceNum];
-        _costumeImage.sprite = CharacterResourcesManager.Instance.CostumeList[_costumeNum];
-    }
-
+    // 완료된 캐릭터정보 넣고 반환
     private CharacterData CompleteMyCharacterData()
     {
-        _myCharacterData.Name = _inputField.text;
-        _myCharacterData.Hair = _hairImage.sprite;
-        _myCharacterData.Face = _faceImage.sprite;
-        _myCharacterData.Costume = _costumeImage.sprite;
+        _completeCharacterData.Name = _nickNameinputField.text;
+        _completeCharacterData.Hair = _hairImage.sprite;
+        _completeCharacterData.Face = _faceImage.sprite;
+        _completeCharacterData.Costume = _costumeImage.sprite;
 
-        return _myCharacterData;
-    }
-
-    // 다음 이미지 버튼
-    public void OnClickNextButton(int characterPartsNum)
-    {
-        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Next);
-    }
-
-    // 이전 이미지 버튼
-    public void OnClickPrevButton(int characterPartsNum)
-    {
-        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Prev);
-    }
-
-    public void OnClickCompleteButton()
-    {
-        if (_inputField.text == "")
-        {
-            Debug.Log("닉네임을 입력하세요!");
-        }            
-        else
-        {
-            CompleteAction(_slotNumPopup, CompleteMyCharacterData());
-            OnClickExitButton();
-        }
-    }
-
-    public void OnClickExitButton()
-    {
-        gameObject.SetActive(false);
-    }
+        return _completeCharacterData;
+    }       
 }

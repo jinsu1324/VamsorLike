@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,37 +6,20 @@ using System.IO;
 using System.Xml;
 using UnityEngine;
 
-public enum CharacterParts
-{
-    Hair,
-    Face,
-    Costume
-}
-
-public class CharacterData
-{
-    public string Name;
-    public Sprite Hair;
-    public Sprite Face;
-    public Sprite Costume;
-}
-
-public class CharacterDataManager
+public class CharacterDataManager : SerializedMonoBehaviour
 {   
-    private static SlotNum _selectSlotNum;
-    public static SlotNum SelectSlotNum { set { _selectSlotNum = value; } }
-    private static CharacterData _characterData { get { return GetCharacterDataBySlot(_selectSlotNum); } }
+    private SlotNum _selectSlotNum;
+    public SlotNum SelectSlotNum { set { _selectSlotNum = value; } }
 
-    private static CharacterData _characterDataSlot01;
-    private static CharacterData _characterDataSlot02;
-    private static CharacterData _characterDataSlot03;    
+    private CharacterData _characterDataSlot01;
+    private CharacterData _characterDataSlot02;
+    private CharacterData _characterDataSlot03;
 
-    private static string GetSlotPath(SlotNum slotNum)
-    {
-        return Path.Combine(Application.persistentDataPath, $"{slotNum}_saveData.json");
-    }
+    // private static CharacterData _characterData { get { return GetCharacterDataBySlot(_selectSlotNum); } }
+        
 
-    public static CharacterData GetCharacterDataBySlot(SlotNum slotNum)
+    // 슬롯번호에 맞게 캐릭터 데이터를 반환해주는 함수
+    public CharacterData GetCharacterDataBySlot(SlotNum slotNum)
     {
         if (slotNum == SlotNum.First)
             return _characterDataSlot01;
@@ -47,7 +31,8 @@ public class CharacterDataManager
             return null;
     }
 
-    public static void LoadCharacterData()
+    // path에 저장된 캐릭터데이터를 불러와서 슬롯 캐릭터 데이터에 저장해주는 함수
+    public void LoadCharacterData()
     {
         for (SlotNum i = SlotNum.First; i <= SlotNum.Third; i++)
         {
@@ -62,7 +47,8 @@ public class CharacterDataManager
         }
     }
 
-    public static void MakeNewCharacterData(SlotNum slotNum, CharacterData myCharacterData)
+    // 새로운 캐릭터 만들고 path에 저장해주는 함수
+    public void MakeNewCharacterData(SlotNum slotNum, CharacterData myCharacterData)
     {
         string slotPath = GetSlotPath(slotNum);
 
@@ -82,5 +68,11 @@ public class CharacterDataManager
             SaveLoadManager_CharacterData.SaveData(_characterDataSlot03, slotPath);
         }
     }
-    
+
+    // 슬롯번호에 맞게 path를 반환해주는 함수
+    private string GetSlotPath(SlotNum slotNum)
+    {
+        return Path.Combine(Application.persistentDataPath, $"{slotNum}_saveData.json");
+    }
+
 }
