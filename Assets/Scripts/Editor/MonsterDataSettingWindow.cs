@@ -1,3 +1,5 @@
+using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,48 +7,40 @@ using UnityEditor;
 using UnityEditor.TerrainTools;
 using UnityEngine;
 
-public class MonsterDataSettingWindow : EditorWindow
+public class MonsterDataSettingWindow : OdinEditorWindow
 {
     // 몬스터 데이터
+    [Title("몬스터 데이터 CSV 파일", bold: false)]
     [SerializeField]
     private TextAsset TextAsset;
 
     // hp 배율
+    [Title("HP 배율", bold: false)]
     [SerializeField]
     private float Hp_Multiple = 1.0f;
 
 
     // 메뉴 생성
     [MenuItem("MyMenu/MonsterDataSettingWindow")]
-    public static void ShowWindow()
+    public static void OpenWindow()
     {
-        EditorWindow.GetWindow(typeof(MonsterDataSettingWindow));
+        GetWindow<MonsterDataSettingWindow>().Show();
     }
 
-
-    // 메뉴에 UI들 표시
-    private void OnGUI()
+    // 몬스터Scriptable들을 딕셔너리에 세팅하기
+    [Button("몬스터Scriptable 딕셔너리에 셋팅하기", ButtonSizes.Large)]
+    public void MonsterSettingButton()
     {
-        GUILayout.Label("몬스터데이터 관련");
+        if (TextAsset == null)
+            Debug.Log("textAsset이 null입니다.");
 
-        // 변수들 UI에 표시
-        TextAsset = (TextAsset)EditorGUILayout.ObjectField("몬스터 데이터 CSV 파일", TextAsset, typeof(TextAsset), true);
-        Hp_Multiple = EditorGUILayout.FloatField("HP 배율", Hp_Multiple);
+        // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
+        LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(TextAsset);
 
-        // 몬스터Scriptable들을 딕셔너리에 세팅하기
-        if (GUILayout.Button("몬스터Scriptable들을 딕셔너리에 세팅하기"))
-        {            
-            if (TextAsset == null)
-                Debug.Log("textAsset이 null입니다.");
-
-            // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
-            LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(TextAsset);
-
-            // 몬스터ScriptableObject들을 딕셔너리에 세팅
-            MonsterDataSave();
-
-        }
+        // 몬스터ScriptableObject들을 딕셔너리에 세팅
+        MonsterDataSave();
     }
+    
 
     /// <summary>
     /// 프로젝트의 몬스터 ScriptableObject 들을 MonsterDataManager속 딕셔너리에 저장
