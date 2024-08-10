@@ -5,39 +5,38 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-{
-    public Action<State, CustomButton> EnterAction;
-    public Action<State, CustomButton> ExitAction;
+{    
+    private List<ChangeType> _changeTypeList = new List<ChangeType>();
+    public List<ChangeType> ChangeTypeList { get { return _changeTypeList; } set { _changeTypeList = value; } }
 
-    public List<ChageType> _chageTypeList = new List<ChageType>();
+    private Action<State, CustomButton> _enterAction;
+    private Action<State, CustomButton> _exitAction;
 
     private void Start()
     {
-        foreach (ChageType chageType in _chageTypeList)
+        foreach (ChangeType chageType in _changeTypeList)
         {
-            if (chageType == ChageType.Color)
+            if (chageType == ChangeType.Color)
             {
-                EnterAction += CustomButtonMaker.ChangeColor;
-                ExitAction += CustomButtonMaker.ChangeColor;
+                _enterAction += CustomButtonMaker.ChangeColor;
+                _exitAction += CustomButtonMaker.ChangeColor;
             }
-            else if (chageType == ChageType.Size)
+            else if (chageType == ChangeType.Size)
             {
-                EnterAction += CustomButtonMaker.ChangeSize;
-                ExitAction += CustomButtonMaker.ChangeSize;
+                _enterAction += CustomButtonMaker.ChangeSize;
+                _exitAction += CustomButtonMaker.ChangeSize;
             }
-        }       
-        
+        } 
     }
    
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        EnterAction(State.Enter, this);
+        _enterAction(State.Enter, this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ExitAction(State.Exit, this);
+        _exitAction(State.Exit, this);
     }
 
     

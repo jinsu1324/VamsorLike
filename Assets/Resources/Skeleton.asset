@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8a65c92d5eca64f9a1e668dfafcbf2, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  NAME: Skeleton_Kid
-  HP: 200
-  ATK: 20
-  SPEED: 2.2
+  Name: Skeleton_Kid
+  Hp: 200
+  Atk: 20
+  Speed: 2.2

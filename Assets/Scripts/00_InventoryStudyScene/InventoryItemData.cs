@@ -6,15 +6,14 @@ using UnityEngine.UI;
 
 public class InventoryItemData
 {
-    public string _itemID;
+    private string _itemID;
+    public string ItemID { get { return _itemID; } set { _itemID = value; } }
 
     public virtual void ShowInfo(TextMeshProUGUI tmPro)
     {
-        tmPro.text = _itemID;
-        //return _itemID;
+        tmPro.text = ItemID;        
     }
 }
-
 
 public class ConsumeInventoryItemData : InventoryItemData
 {
@@ -28,7 +27,6 @@ public class ConsumeInventoryItemData : InventoryItemData
         Debug.Log("HI");
     }
 }
-
 
 public class EquipInventoryItemData : InventoryItemData
 {

@@ -9,7 +9,7 @@ public enum State
     Exit
 }
 
-public enum ChageType
+public enum ChangeType
 {
     Color,
     Size
@@ -40,5 +40,4 @@ public static class CustomButtonMaker
             customButton.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
     }
-
 }

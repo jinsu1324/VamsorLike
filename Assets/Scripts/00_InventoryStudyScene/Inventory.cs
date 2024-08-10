@@ -6,28 +6,24 @@ using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Slot[] slots = new Slot[4];   
-    public Slot[] Slots { get { return slots; } set { slots = value; } }
+    private Slot[] _slotArr = new Slot[4];   
+    public Slot[] SlotArr { get { return _slotArr; } set { _slotArr = value; } }
        
-
     private void Start()
     {
         BindingInventoryItemData();
         PutChildsInSlots();
     }
-    
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        InventoryManager._mousePosInventory = this; 
+        InventoryManager.MousePosInventory = this; 
     }
-
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        InventoryManager._mousePosInventory = null; 
+        InventoryManager.MousePosInventory = null; 
     }
-
 
     private static void BindingInventoryItemData()
     {
@@ -36,17 +32,16 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         EquipInventoryItemData equipInventoryItemData = new EquipInventoryItemData();
         EquipInventoryItemData equipInventoryItemData2 = new EquipInventoryItemData();
 
-        consumeInventoryItemData._itemID = "회복물약 001";
-        consumeInventoryItemData2._itemID = "마나물약 004";
-        equipInventoryItemData._itemID = "전사장비 001";
-        equipInventoryItemData2._itemID = "궁수장비 002";
+        consumeInventoryItemData.ItemID = "회복물약 001";
+        consumeInventoryItemData2.ItemID = "마나물약 004";
+        equipInventoryItemData.ItemID = "전사장비 001";
+        equipInventoryItemData2.ItemID = "궁수장비 002";
 
-        InventoryManager._inventoryItemDatas.Add(consumeInventoryItemData);
-        InventoryManager._inventoryItemDatas.Add(consumeInventoryItemData2);
-        InventoryManager._inventoryItemDatas.Add(equipInventoryItemData);
-        InventoryManager._inventoryItemDatas.Add(equipInventoryItemData2);
+        InventoryManager.InventoryItemDataList.Add(consumeInventoryItemData);
+        InventoryManager.InventoryItemDataList.Add(consumeInventoryItemData2);
+        InventoryManager.InventoryItemDataList.Add(equipInventoryItemData);
+        InventoryManager.InventoryItemDataList.Add(equipInventoryItemData2);
     }
-
 
     // 이 인벤토리 자식에 있는 모든 슬롯들을, slots 배열에 넣고, 인벤토리도 모두 할당
     private void PutChildsInSlots()
@@ -54,20 +49,20 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         int index = 0;
         foreach (Slot slot in GetComponentsInChildren<Slot>())
         {
-            slot._slotInventory = this;
-            slot._slotItem = slot.transform.GetComponentInChildren<Item>();
-            if (slot._slotItem != null)
+            slot.SlotInventory = this;
+            slot.SlotItem = slot.transform.GetComponentInChildren<Item>();
+            if (slot.SlotItem != null)
             {
-                slot._slotItem._itemInventory = this;
-                slot._slotItem._itemNameText = slot._slotItem.GetComponentInChildren<TextMeshProUGUI>();
-                slot._slotItem._inventoryItemData = 
-                    InventoryManager._inventoryItemDatas[Random.Range(0, InventoryManager._inventoryItemDatas.Count)];
+                slot.SlotItem.ItemInventory = this;
+                slot.SlotItem.ItemNameText = slot.SlotItem.GetComponentInChildren<TextMeshProUGUI>();
+                slot.SlotItem.InventoryItemData = 
+                    InventoryManager.InventoryItemDataList[Random.Range(0, InventoryManager.InventoryItemDataList.Count)];
                 
-                Debug.Log($"아이템 이름은 : {slot._slotItem.gameObject.name}");
-                slot._slotItem._inventoryItemData.ShowInfo(slot._slotItem._itemNameText);
+                Debug.Log($"아이템 이름은 : {slot.SlotItem.gameObject.name}");
+                slot.SlotItem.InventoryItemData.ShowInfo(slot.SlotItem.ItemNameText);
             }
                 
-            slots[index] = slot;
+            _slotArr[index] = slot;
             index++;
         }
     }    

@@ -5,16 +5,19 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public Inventory _slotInventory;
-    public Item _slotItem;
+    private Inventory _slotInventory;
+    public Inventory SlotInventory { get { return _slotInventory; } set { _slotInventory = value; } }
+
+    private Item _slotItem;
+    public Item SlotItem { get { return _slotItem; } set { _slotItem = value; } }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        InventoryManager.MouseDown(_slotItem);
+        InventoryManager.MouseDown(SlotItem);
     }
   
     public void OnPointerUp(PointerEventData eventData)
     {
-        InventoryManager.MouseUp(_slotItem);
+        InventoryManager.MouseUp(SlotItem);
     }
 }

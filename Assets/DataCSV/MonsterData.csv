@@ -1,5 +1,5 @@
 ,,,,
-ID,NAME,HP,ATK,SPEED
+Id,Name,Hp,Atk,Speed
 Golem,Golem_Kid,100,10,1.1
 Skeleton,Skeleton_Kid,200,20,2.2
 Witch,Witch_Kid,300,30,3.3

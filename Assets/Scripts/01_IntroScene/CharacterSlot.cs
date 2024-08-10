@@ -9,7 +9,6 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEditor.U2D.Animation;
 
-
 public enum SlotNum
 {
     First,
@@ -22,7 +21,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private SlotNum _slotNum; 
 
-    private Action SlotClickAction;
+    private Action _SlotClickAction;
 
     [SerializeField]
     private TextMeshProUGUI _text;
@@ -40,25 +39,25 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     private void SettingSlot()
     {
-        CharacterData characterData_Slot = CharacterDataManager.GetCharacterDataBySlot(_slotNum);
+        CharacterData characterDataSlot = CharacterDataManager.GetCharacterDataBySlot(_slotNum);
 
-        if (characterData_Slot == null)
+        if (characterDataSlot == null)
         {
             _text.text = "No Data";
-            SlotClickAction += CharacterMakePopupON;
+            _SlotClickAction += CharacterMakePopupON;
         }
         else
         {
-            SlotClickAction = null;
-            SlotClickAction += GameStart;
-            _text.text = characterData_Slot._name;
+            _SlotClickAction = null;
+            _SlotClickAction += GameStart;
+            _text.text = characterDataSlot.Name;
 
         }
     }
     public void CharacterMakePopupON()
     {
         _introSceneManager.CharacterMakePopup.gameObject.SetActive(true);
-        _introSceneManager.CharacterMakePopup.SlotNum_Popup = _slotNum;
+        _introSceneManager.CharacterMakePopup.SlotNumPopup = _slotNum;
     }
 
     private void MakeNewData(SlotNum slotNum, CharacterData myCharacterData)
@@ -75,6 +74,6 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SlotClickAction();        
+        _SlotClickAction();        
     }
 }

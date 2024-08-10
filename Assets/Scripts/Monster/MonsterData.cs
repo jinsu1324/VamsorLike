@@ -14,8 +14,8 @@ public enum MonsterID
 [System.Serializable]
 public class MonsterData : ScriptableObject
 {
-    public string NAME;
-    public int HP;
-    public int ATK;
-    public float SPEED;
+    public string Name;
+    public int Hp;
+    public int Atk;
+    public float Speed;
 }

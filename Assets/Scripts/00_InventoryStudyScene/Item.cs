@@ -7,7 +7,12 @@ using TMPro;
 
 public class Item : MonoBehaviour
 {
-    public Inventory _itemInventory;
-    public InventoryItemData _inventoryItemData;
-    public TextMeshProUGUI _itemNameText;
+    private Inventory _itemInventory;
+    public Inventory ItemInventory { get { return _itemInventory; } set { _itemInventory = value; } }
+
+    private InventoryItemData _inventoryItemData;
+    public InventoryItemData InventoryItemData { get { return _inventoryItemData; } set { _inventoryItemData = value; } }
+
+    private TextMeshProUGUI _itemNameText;
+    public TextMeshProUGUI ItemNameText { get { return _itemNameText; } set { _itemNameText = value; } }
 }

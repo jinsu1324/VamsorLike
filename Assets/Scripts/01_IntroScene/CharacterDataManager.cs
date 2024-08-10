@@ -5,7 +5,6 @@ using System.IO;
 using System.Xml;
 using UnityEngine;
 
-
 public enum CharacterParts
 {
     Hair,
@@ -15,22 +14,21 @@ public enum CharacterParts
 
 public class CharacterData
 {
-    public string _name;
-    public Sprite _hair;
-    public Sprite _face;
-    public Sprite _costume;
+    public string Name;
+    public Sprite Hair;
+    public Sprite Face;
+    public Sprite Costume;
 }
 
-
 public class CharacterDataManager
-{
-    private static CharacterData _characterData_Slot01;
-    private static CharacterData _characterData_Slot02;
-    private static CharacterData _characterData_Slot03;
-
+{   
     private static SlotNum _selectSlotNum;
-    public static SlotNum SelectSlotNum { set { _selectSlotNum = value; } } 
+    public static SlotNum SelectSlotNum { set { _selectSlotNum = value; } }
     private static CharacterData _characterData { get { return GetCharacterDataBySlot(_selectSlotNum); } }
+
+    private static CharacterData _characterDataSlot01;
+    private static CharacterData _characterDataSlot02;
+    private static CharacterData _characterDataSlot03;    
 
     private static string GetSlotPath(SlotNum slotNum)
     {
@@ -40,11 +38,11 @@ public class CharacterDataManager
     public static CharacterData GetCharacterDataBySlot(SlotNum slotNum)
     {
         if (slotNum == SlotNum.First)
-            return _characterData_Slot01;
+            return _characterDataSlot01;
         else if (slotNum == SlotNum.Second)
-            return _characterData_Slot02;
+            return _characterDataSlot02;
         else if (slotNum == SlotNum.Third)
-            return _characterData_Slot03;
+            return _characterDataSlot03;
         else 
             return null;
     }
@@ -56,14 +54,13 @@ public class CharacterDataManager
             string slotPath = GetSlotPath(i);
 
             if (i == SlotNum.First)
-                _characterData_Slot01 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot01 = SaveLoadManager_CharacterData.LoadData(slotPath);
             else if (i == SlotNum.Second)
-                _characterData_Slot02 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot02 = SaveLoadManager_CharacterData.LoadData(slotPath);
             else if (i == SlotNum.Third)
-                _characterData_Slot03 = SaveLoadManager_CharacterData.LoadData(slotPath);
+                _characterDataSlot03 = SaveLoadManager_CharacterData.LoadData(slotPath);
         }
     }
-
 
     public static void MakeNewCharacterData(SlotNum slotNum, CharacterData myCharacterData)
     {
@@ -71,18 +68,18 @@ public class CharacterDataManager
 
         if (slotNum == SlotNum.First)
         {
-            _characterData_Slot01 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot01, slotPath);
+            _characterDataSlot01 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterDataSlot01, slotPath);
         }
         else if (slotNum == SlotNum.Second)
         {
-            _characterData_Slot02 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot02, slotPath);
+            _characterDataSlot02 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterDataSlot02, slotPath);
         }
         else if (slotNum == SlotNum.Third)
         {
-            _characterData_Slot03 = myCharacterData;
-            SaveLoadManager_CharacterData.SaveData(_characterData_Slot03, slotPath);
+            _characterDataSlot03 = myCharacterData;
+            SaveLoadManager_CharacterData.SaveData(_characterDataSlot03, slotPath);
         }
     }
     

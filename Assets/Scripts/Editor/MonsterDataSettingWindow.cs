@@ -8,10 +8,12 @@ using UnityEngine;
 public class MonsterDataSettingWindow : EditorWindow
 {
     // 몬스터 데이터
-    public TextAsset textAsset;
+    [SerializeField]
+    private TextAsset TextAsset;
 
     // hp 배율
-    public float hp_Multiple = 1.0f;
+    [SerializeField]
+    private float Hp_Multiple = 1.0f;
 
 
     // 메뉴 생성
@@ -28,17 +30,17 @@ public class MonsterDataSettingWindow : EditorWindow
         GUILayout.Label("몬스터데이터 관련");
 
         // 변수들 UI에 표시
-        textAsset = (TextAsset)EditorGUILayout.ObjectField("몬스터 데이터 CSV 파일", textAsset, typeof(TextAsset), true);
-        hp_Multiple = EditorGUILayout.FloatField("HP 배율", hp_Multiple);
+        TextAsset = (TextAsset)EditorGUILayout.ObjectField("몬스터 데이터 CSV 파일", TextAsset, typeof(TextAsset), true);
+        Hp_Multiple = EditorGUILayout.FloatField("HP 배율", Hp_Multiple);
 
         // 몬스터Scriptable들을 딕셔너리에 세팅하기
         if (GUILayout.Button("몬스터Scriptable들을 딕셔너리에 세팅하기"))
         {            
-            if (textAsset == null)
+            if (TextAsset == null)
                 Debug.Log("textAsset이 null입니다.");
 
             // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
-            LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(textAsset);
+            LoadCSV.CSV_to_ScriptableObject<MonsterData, MonsterID>(TextAsset);
 
             // 몬스터ScriptableObject들을 딕셔너리에 세팅
             MonsterDataSave();
@@ -52,7 +54,7 @@ public class MonsterDataSettingWindow : EditorWindow
     private void MonsterDataSave()
     {        
         MonsterDataManager monsterDataManager = FindObjectOfType<MonsterDataManager>();
-        monsterDataManager._monsterDataDict.Clear();
+        monsterDataManager.MonsterDataDict.Clear();
 
         // MonsterKey enum의 모든 값들을 가져옴
         MonsterID[] monsterKeys = Enum.GetValues(typeof(MonsterID)) as MonsterID[];
@@ -76,10 +78,10 @@ public class MonsterDataSettingWindow : EditorWindow
             MonsterData monsterData = so as MonsterData;
 
             // HP값 변환
-            monsterData.HP = (int)((float)monsterData.HP * hp_Multiple);
+            monsterData.Hp = (int)((float)monsterData.Hp * Hp_Multiple);
 
             // 가져온 몬스터를 딕셔너리에 추가
-            monsterDataManager._monsterDataDict[monsterKey] = monsterData;
+            monsterDataManager.MonsterDataDict[monsterKey] = monsterData;
 
             // 클릭 및 저장
             EditorUtility.SetDirty(monsterData);

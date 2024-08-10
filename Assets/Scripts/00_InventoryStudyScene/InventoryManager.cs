@@ -6,30 +6,40 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {    
     private static Item _dragItem;
-    public static Inventory _mousePosInventory;
-    public static Vector3 _startPos;
-    public static Slot _startSlot;
-        
-    public static List<InventoryItemData> _inventoryItemDatas = new List<InventoryItemData>();
 
-    private void Start()
-    {        
-        //foreach (InventoryItemData item in _inventoryItemDatas)
-        //{
-        //    ConsumeInventoryItemData consumeInventoryItem = (ConsumeInventoryItemData)item;
+    private static Inventory _monsePosInventory;
+    public static Inventory MousePosInventory { get { return _monsePosInventory; } set { _monsePosInventory = value; } }
 
-        //    consumeInventoryItem.HI();
+    private static Vector3 _startPos;
+    public static Vector3 StartPos { get { return _startPos; } set { _startPos = value; } }
 
-        //    Debug.Log(item.ShowInfo());
-        //    Debug.Log(item.GetType());
-        //}        
-    }
+    private static Slot _startSlot;
+    public static Slot StartSlot { get { return _startSlot; } set { _startSlot = value; } }
 
+     private static List<InventoryItemData> _inventoryItemDataList = new List<InventoryItemData>();
+    public static List<InventoryItemData> InventoryItemDataList { get { return _inventoryItemDataList; } set { _inventoryItemDataList = value; } }
+      
     private void Update()
     {
         DragItemFollowMouse();
     }
 
+    // 마우스 눌렀을 때 처리
+    public static void MouseDown(Item item)
+    {
+        DragItemSetting(item); // 드래그아이템 셋팅
+    }
+
+    // 마우스 뗐을 때 처리
+    public static void MouseUp(Item item)
+    {
+        if (FindSlotUnderMouse() != null)
+            MoveItemToTargetSlot(); // 마우스위치에 슬롯이 있다면, 드래그아이템 그 슬롯으로 이동
+        else
+            MoveItemToOriginSlot(); // 마우스위치에 슬롯이 있다면, 드래그아이템 다시 원래슬롯으로 복귀
+
+        _dragItem = null;
+    }
 
     // 드래그아이템이 마우스 따라다니게
     private static void DragItemFollowMouse()
@@ -38,47 +48,26 @@ public class InventoryManager : MonoBehaviour
             _dragItem.gameObject.transform.position = Input.mousePosition;
     }    
 
-
-    // 마우스 눌렀을 때 처리
-    public static void MouseDown(Item item)
-    {
-        DragItemSetting(item); // 드래그아이템 셋팅
-    }
-
-
-    // 마우스 뗐을 때 처리
-    public static void MouseUp(Item item)
-    {        
-        if (FindSlotUnderMouse() != null) 
-            MoveItemToTargetSlot(); // 마우스위치에 슬롯이 있다면, 드래그아이템 그 슬롯으로 이동
-        else 
-            MoveItemToOriginSlot(); // 마우스위치에 슬롯이 있다면, 드래그아이템 다시 원래슬롯으로 복귀
-
-        _dragItem = null;
-    }
-
-
     // 드래그아이템 세팅
     public static void DragItemSetting(Item item)
     {
         _dragItem = item;
-        _startPos = item.gameObject.transform.position;
-        _startSlot = item.transform.parent.GetComponent<Slot>();
+        StartPos = item.gameObject.transform.position;
+        StartSlot = item.transform.parent.GetComponent<Slot>();
         _dragItem.transform.SetParent(GameObject.FindGameObjectWithTag("UICanvas").transform);
         _dragItem.GetComponent<Image>().raycastTarget = false;
     }
 
-
     // 현재 마우스가 어떤 슬롯위에 있는지 찾고, 그 슬롯을 반환
     public static Slot FindSlotUnderMouse()
     {
-        if (_mousePosInventory == null)
+        if (MousePosInventory == null)
         {
             Debug.Log("마우스 위치에 아무 인벤토리도 없습니다.");
             return null;
         }
 
-        foreach (Slot slot in _mousePosInventory.Slots)
+        foreach (Slot slot in MousePosInventory.SlotArr)
         {
             if (RectTransformUtility.RectangleContainsScreenPoint(
                 slot.GetComponent<RectTransform>(),
@@ -92,23 +81,21 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
-
     // 드래그아이템을 타겟슬롯으로 옮김
     public static void MoveItemToTargetSlot()
     {
         _dragItem.transform.SetParent(FindSlotUnderMouse().transform);
-        FindSlotUnderMouse()._slotItem = _dragItem;
-        FindSlotUnderMouse()._slotItem.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-        FindSlotUnderMouse()._slotItem.GetComponent<Image>().raycastTarget = true;
-        FindSlotUnderMouse()._slotItem._itemInventory = FindSlotUnderMouse()._slotInventory;
+        FindSlotUnderMouse().SlotItem = _dragItem;
+        FindSlotUnderMouse().SlotItem.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        FindSlotUnderMouse().SlotItem.GetComponent<Image>().raycastTarget = true;
+        FindSlotUnderMouse().SlotItem.ItemInventory = FindSlotUnderMouse().SlotInventory;
     }
-
 
     // 드래그아이템을 원래슬롯으로 복귀
     public static void MoveItemToOriginSlot()
     {
-        _dragItem.transform.SetParent(_startSlot.transform);
-        _dragItem.transform.position = _startPos;
+        _dragItem.transform.SetParent(StartSlot.transform);
+        _dragItem.transform.position = StartPos;
         _dragItem.GetComponent<Image>().raycastTarget = true;
     }
 }

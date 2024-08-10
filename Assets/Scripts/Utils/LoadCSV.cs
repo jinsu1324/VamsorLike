@@ -25,7 +25,7 @@ public class LoadCSV
         string[] headers = csvRaws[headerIndex].Split(',');
 
         Type dataType = typeof(T1);
-        T2 ID;
+        T2 Id;
 
         // header를 미포함해서 모든 행 수만큼 반복
         for (int i = headerIndex + 1; i < csvRaws.Length; i++)
@@ -38,13 +38,13 @@ public class LoadCSV
                 string header = headers[k];
                 string data = datas[k];
 
-                if (header == "ID")
+                if (header == "Id")
                 {
                     // string 이었던 data를 MonsterKey enum 으로 형변환 (Header가 ID인 곳의 데이터는 Orc 이렇게 이름이 있음)
-                    ID = (T2)Enum.Parse(typeof(T2),data);
+                    Id = (T2)Enum.Parse(typeof(T2),data);
 
                     // 프로젝트에서 ID를 파일명으로 한 파일들을 가져옴
-                    string path = $"Assets/Resources/{ID}.asset";
+                    string path = $"Assets/Resources/{Id}.asset";
                     ScriptableObject so = AssetDatabase.LoadAssetAtPath<T1>(path);
 
                     // 가져오지 못했으면, 그 경로에 파일을 만들어주고 저장

@@ -13,13 +13,12 @@ public enum ArrowDir
 
 
 public class CharacterMakePopup : MonoBehaviour
-{
-    [SerializeField]
-    private SlotNum _slotNum_Popup;
-    public SlotNum SlotNum_Popup { get { return _slotNum_Popup; } set { _slotNum_Popup = value; } }
-
-
+{   
     public Action<SlotNum, CharacterData> CompleteAction;
+
+    [SerializeField]
+    private SlotNum _slotNumPopup;
+    public SlotNum SlotNumPopup { get { return _slotNumPopup; } set { _slotNumPopup = value; } }
 
     [SerializeField]
     private TMP_InputField _inputField;
@@ -88,7 +87,6 @@ public class CharacterMakePopup : MonoBehaviour
             return num;
         }
 
-
         Debug.Log("if¿¡ ¾È°É·¯Áü");
         return 111;
     }
@@ -115,10 +113,10 @@ public class CharacterMakePopup : MonoBehaviour
 
     private CharacterData CompleteMyCharacterData()
     {
-        _myCharacterData._name = _inputField.text;
-        _myCharacterData._hair = _hairImage.sprite;
-        _myCharacterData._face = _faceImage.sprite;
-        _myCharacterData._costume = _costumeImage.sprite;
+        _myCharacterData.Name = _inputField.text;
+        _myCharacterData.Hair = _hairImage.sprite;
+        _myCharacterData.Face = _faceImage.sprite;
+        _myCharacterData.Costume = _costumeImage.sprite;
 
         return _myCharacterData;
     }
@@ -143,7 +141,7 @@ public class CharacterMakePopup : MonoBehaviour
         }            
         else
         {
-            CompleteAction(_slotNum_Popup, CompleteMyCharacterData());
+            CompleteAction(_slotNumPopup, CompleteMyCharacterData());
             OnClickExitButton();
         }
     }

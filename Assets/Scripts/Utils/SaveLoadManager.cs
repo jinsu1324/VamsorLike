@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class GameData
 {
-    public string _name;
-    public int _score;
-    public ItemData _itemData;
+    public string Name;
+    public int Score;
+    public ItemData ItemData;
 
     public override string ToString()
     {
-        return $"{_name}/{_score}/{_itemData._itemName}/{_itemData._itemCount}";
+        return $"{Name}/{Score}/{ItemData.ItemName}/{ItemData.ItemCount}";
     }
 }
 
 [System.Serializable]
 public class ItemData
 {
-    public int _itemCount;
-    public string _itemName;
+    public int ItemCount;
+    public string ItemName;
 }
 
 public class SaveLoadManager : MonoBehaviour
@@ -34,9 +34,9 @@ public class SaveLoadManager : MonoBehaviour
 
         GameData gameData = new GameData()
         {
-            _name = "name!!",
-            _score = 1000,
-            _itemData = new ItemData() { _itemCount = 10, _itemName = "체력포션" }
+            Name = "name!!",
+            Score = 1000,
+            ItemData = new ItemData() { ItemCount = 10, ItemName = "체력포션" }
         };
 
         //SaveData(gameData);
