@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a157ced3d16a7db41a8b6ad9d48cc57b, type: 3}
   m_Name: Hero_Thief
   m_EditorClassIdentifier: 
+  Id: Thief
   Name: Thief_Darkload
   Hp: 150
   Atk: 15
   Speed: 2
+  Sprite: {fileID: 21300000, guid: 4a9b6f6b086992f44bb7a3a86c79eb54, type: 3}

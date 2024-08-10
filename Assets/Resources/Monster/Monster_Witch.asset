@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8a65c92d5eca64f9a1e668dfafcbf2, type: 3}
   m_Name: Monster_Witch
   m_EditorClassIdentifier: 
+  Id: Witch
   Name: Witch_Kid
   Hp: 300
   Atk: 30
   Speed: 3.3
+  Sprite: {fileID: 21300000, guid: 5fecb929642b43f47a2698d30fd5ce4a, type: 3}

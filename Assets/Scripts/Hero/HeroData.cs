@@ -13,8 +13,10 @@ public enum HeroID
 [System.Serializable]
 public class HeroData : ScriptableObject
 {
+    public string Id;
     public string Name;
     public int Hp;
     public int Atk;
     public float Speed;
+    public Sprite Sprite;
 }

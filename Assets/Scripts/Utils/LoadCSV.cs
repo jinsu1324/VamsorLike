@@ -65,7 +65,8 @@ public class LoadCSV
                     // 가져온 or 새로만든 파일을 monsterData로 형변환하고 대입
                     T_Data = so as DataType;
 
-                    continue;
+                    // Id도 스크립터블 오브젝트에 넣어주기 위해 continue는 제거함
+                    //continue;
                 }
 
                 // 리플렉션 사용해서 monsterData의 값들 설정 (ex) header 가 HP 이면 monsterData의 HP변수를 접근할수있음)

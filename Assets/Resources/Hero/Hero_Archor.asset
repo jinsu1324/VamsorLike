@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a157ced3d16a7db41a8b6ad9d48cc57b, type: 3}
   m_Name: Hero_Archor
   m_EditorClassIdentifier: 
+  Id: Archor
   Name: Archor_Legol
   Hp: 200
   Atk: 20
   Speed: 1.5
+  Sprite: {fileID: 21300000, guid: bbea0361f57c69b41b5594c9e023ed4b, type: 3}

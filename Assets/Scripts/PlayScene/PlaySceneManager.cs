@@ -45,4 +45,21 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     private HeroDataManager _heroDataManager;
     public HeroDataManager HeroDataManager { get { return _heroDataManager; } }
+
+    // 몬스터 스폰 매니저
+    [SerializeField]
+    private MonsterSpawnManager _monsterSpawnManager;
+    public MonsterSpawnManager MonsterSpawnManager { get { return _monsterSpawnManager; } }
+
+    // 히어로 스폰 매니저
+    [SerializeField]
+    private HeroSpawnManager _heroSpawnManager;
+    public HeroSpawnManager HeroSpawnManager { get { return _heroSpawnManager; } }
+
+
+    [Title("Popups", bold: false)]
+    // 히어로 선택 팝업
+    [SerializeField]
+    private HeroSelectPopup _heroSelectPopup;
+    public HeroSelectPopup HeroSelectPopup { get { return _heroSelectPopup; } }
 }

@@ -9,4 +9,5 @@ public class MonsterDataManager : SerializedMonoBehaviour
     [SerializeField]
     private Dictionary<MonsterID, MonsterData> _monsterDataDict = new Dictionary<MonsterID, MonsterData>();    
     public Dictionary<MonsterID, MonsterData> MonsterDataDict { get { return _monsterDataDict; } set { _monsterDataDict = value; } }
+
 }
