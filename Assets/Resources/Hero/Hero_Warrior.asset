@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Warrior_Kevin
   Hp: 300
   Atk: 30
-  Speed: 0.5
+  Speed: 2
   Sprite: {fileID: 21300000, guid: d8520eeb10d145b40ab58ea8edd59a38, type: 3}

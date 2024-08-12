@@ -10,4 +10,8 @@ public class MonsterDataManager : SerializedMonoBehaviour
     private Dictionary<MonsterID, MonsterData> _monsterDataDict = new Dictionary<MonsterID, MonsterData>();    
     public Dictionary<MonsterID, MonsterData> MonsterDataDict { get { return _monsterDataDict; } set { _monsterDataDict = value; } }
 
+    // ∏ÛΩ∫≈Õ «¡∏Æ∆’µÈ µÒº≈≥ ∏Æ
+    [SerializeField]
+    private Dictionary<MonsterID, MonsterObject> _monsterObjectDict = new Dictionary<MonsterID, MonsterObject>();
+    public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get { return _monsterObjectDict; } set { _monsterObjectDict = value; } }
 }

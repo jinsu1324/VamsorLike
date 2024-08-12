@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class HeroSelectPopup : SerializedMonoBehaviour
 {
-    // 히어로 슬롯들 배열
+    // 영웅 슬롯들 배열
     [SerializeField]
     private HeroSlot[] _heroSlotArr;
 
@@ -15,7 +15,7 @@ public class HeroSelectPopup : SerializedMonoBehaviour
         HeroSlotsInit();
     }
 
-    // 히어로 슬롯들 초기화 (슬롯들에게 이닛하라고 전달)
+    // 영웅 슬롯들 초기화 (슬롯들에게 이닛하라고 전달)
     private void HeroSlotsInit()
     {
         Dictionary<HeroID, HeroData> heroDataDict = PlaySceneManager.Instance.HeroDataManager.HeroDataDict;

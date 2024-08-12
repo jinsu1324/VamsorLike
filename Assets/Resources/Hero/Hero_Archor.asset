@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Archor_Legol
   Hp: 200
   Atk: 20
-  Speed: 1.5
+  Speed: 5
   Sprite: {fileID: 21300000, guid: bbea0361f57c69b41b5594c9e023ed4b, type: 3}

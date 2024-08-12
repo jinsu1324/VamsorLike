@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 62730146}
   - component: {fileID: 62730147}
   m_Layer: 0
-  m_Name: '@_CharacterDataManager'
+  m_Name: CharacterDataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 130308568}
   - component: {fileID: 130308569}
   m_Layer: 0
-  m_Name: '@@_IntroSceneManager'
+  m_Name: S_IntroSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 434576700}
   - component: {fileID: 434576699}
   m_Layer: 0
-  m_Name: '@_CharacterSlotManager'
+  m_Name: CharacterSlotManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2982,7 +2982,7 @@ GameObject:
   - component: {fileID: 1433360835}
   - component: {fileID: 1433360836}
   m_Layer: 0
-  m_Name: '@_CharacterResourcesManager'
+  m_Name: CharacterResourcesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

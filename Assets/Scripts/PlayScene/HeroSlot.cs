@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class HeroSlot : SerializedMonoBehaviour
 {
-    // ui 에 표시될 히어로 정보들
+    // ui 에 표시될 영웅 정보들
     [SerializeField]
     private Image _heroImage;
     [SerializeField]
@@ -16,7 +16,7 @@ public class HeroSlot : SerializedMonoBehaviour
     [SerializeField]
     private Button _selectButton;
 
-    // 이 슬롯의 히어로 데이터
+    // 이 슬롯의 영웅 데이터
     private HeroData _heroData;
 
     // 팝업 닫힐때 사용할 액션
@@ -40,11 +40,10 @@ public class HeroSlot : SerializedMonoBehaviour
     // 선택버튼 눌렀을때
     public void OnClickSelectButton()
     {
-        // 그 히어로로 게임시작
-        PlaySceneManager.Instance.HeroSpawnManager.PlayStart(_heroData);
+        // 그 영웅으로 게임시작
+        PlaySceneManager.Instance.PlayStart(_heroData);
 
         // 팝업 종료액션 실행
         _popUpFinishAction();
     }
-
 }

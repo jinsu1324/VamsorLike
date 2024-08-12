@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Thief_Darkload
   Hp: 150
   Atk: 15
-  Speed: 2
+  Speed: 3
   Sprite: {fileID: 21300000, guid: 4a9b6f6b086992f44bb7a3a86c79eb54, type: 3}
