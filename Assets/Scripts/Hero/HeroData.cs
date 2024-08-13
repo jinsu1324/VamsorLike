@@ -18,5 +18,7 @@ public class HeroData : ScriptableObject
     public int Hp;
     public int Atk;
     public float Speed;
+    public float Range;
+    public float Delay;
     public Sprite Sprite;
 }
