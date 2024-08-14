@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 190549314}
   - component: {fileID: 190549315}
   m_Layer: 0
-  m_Name: '@DataManager'
+  m_Name: DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 220868468}
   - component: {fileID: 220868469}
   m_Layer: 0
-  m_Name: '@MonsterSpawnManager'
+  m_Name: MonsterSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,7 +1708,7 @@ MonoBehaviour:
     SerializationNodes: []
   _heroImage: {fileID: 1904707361}
   _nameText: {fileID: 886033555}
-  _selectButton: {fileID: 681904336}
+  _selectCompleteButton: {fileID: 681904336}
 --- !u!114 &1004959485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,7 +2091,7 @@ MonoBehaviour:
     SerializationNodes: []
   _heroImage: {fileID: 1126068697}
   _nameText: {fileID: 2117060327}
-  _selectButton: {fileID: 971094835}
+  _selectCompleteButton: {fileID: 971094835}
 --- !u!114 &1132896194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,7 +2185,7 @@ GameObject:
   - component: {fileID: 1156785497}
   - component: {fileID: 1156785498}
   m_Layer: 0
-  m_Name: '@PlaySceneManager'
+  m_Name: S_PlaySceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,6 +2228,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _heroSelectPopup: {fileID: 51982250}
+  _monsterSpawner: {fileID: 220868469}
 --- !u!1 &1289280223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2376,7 @@ MonoBehaviour:
     SerializationNodes: []
   _heroImage: {fileID: 1851078427}
   _nameText: {fileID: 1800245333}
-  _selectButton: {fileID: 1706971432}
+  _selectCompleteButton: {fileID: 1706971432}
 --- !u!1 &1355110418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2442,7 @@ MonoBehaviour:
     SerializationNodes: []
   _heroImage: {fileID: 1646925375}
   _nameText: {fileID: 669165543}
-  _selectButton: {fileID: 1785986097}
+  _selectCompleteButton: {fileID: 1785986097}
 --- !u!114 &1355110421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,7 +2853,7 @@ GameObject:
   - component: {fileID: 1795460579}
   - component: {fileID: 1795460580}
   m_Layer: 0
-  m_Name: '@S_Managers'
+  m_Name: S_Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2896,7 +2897,6 @@ MonoBehaviour:
     SerializationNodes: []
   _objectManager: {fileID: 2144417196}
   _dataManager: {fileID: 190549315}
-  _monsterSpawnManager: {fileID: 220868469}
 --- !u!1 &1800245331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,7 +3460,7 @@ GameObject:
   - component: {fileID: 2144417195}
   - component: {fileID: 2144417196}
   m_Layer: 0
-  m_Name: '@ObjectManager'
+  m_Name: ObjectManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

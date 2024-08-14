@@ -13,37 +13,44 @@ public class HeroSlot : SerializedMonoBehaviour
     private Image _heroImage;
     [SerializeField]
     private TextMeshProUGUI _nameText;
+
+    // 선택 완료 버튼
     [SerializeField]
-    private Button _selectButton;
+    private Button _selectCompleteButton;
 
     // 이 슬롯의 영웅 데이터
-    private HeroData _heroData;
+    private HeroData _HeroData;
 
-    // 팝업 닫힐때 사용할 액션
-    private Action _popUpFinishAction;
+    // 선택 완료상황일 때 호출시킬 액션
+    private Action _selectCompleteAction;
 
-    // 슬롯 UI 정보들 초기화
-    public void InitInfoUI(HeroData heroData, Action finishAction)
+    // UI 정보들 셋팅
+    public void UIInfoSetting(HeroData heroData, Action selectCompleteAction)
     {
-        _heroData = heroData;
-
+        // 이 슬롯 영웅데이터 셋팅
+        _HeroData = heroData;
+        
+        // UI 정보들 셋팅
         _heroImage.sprite = heroData.Sprite;
         _nameText.text = heroData.Name;
 
-        // 팝업 종료될때 액션 등록
-        _popUpFinishAction = finishAction;
+        // 선택 완료 상황일 때 호출할 액션에 함수 등록 (현재 팝업 닫기가 들어가있음)
+        _selectCompleteAction = selectCompleteAction;
 
-        // 선택버튼 눌렀을때 액션 등록
-        _selectButton.onClick.AddListener(OnClickSelectButton);
+        // 선택 완료 버튼 눌렀을때 호출할 함수 등록
+        _selectCompleteButton.onClick.AddListener(OnClickSelectCompleteButton);
     }
 
-    // 선택버튼 눌렀을때
-    public void OnClickSelectButton()
+    // 선택 완료 버튼 눌렀을때 호출될 함수
+    public void OnClickSelectCompleteButton()
     {
-        // 그 영웅으로 게임시작
-        PlaySceneManager.PlayStart(_heroData);
+        // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
+        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
 
-        // 팝업 종료액션 실행
-        _popUpFinishAction();
+        // 이 슬롯의 영웅으로 게임시작
+        PlaySceneManager.Instance.PlayStart(heroID);
+
+        // 선택 완료상황 액션 실행
+        _selectCompleteAction();
     }
 }

@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class HeroObject : SerializedMonoBehaviour
 {
+    [Title("데이터 본체", bold: false)]
+    // 영웅 오브젝트에 들어갈 데이터
     [SerializeField]
     private readonly HeroData _heroData;
 
+    [Title("할당될 데이터 값들", bold: false)]
     // 이름
     [SerializeField]
     private string _name;
@@ -33,29 +36,34 @@ public class HeroObject : SerializedMonoBehaviour
     private float _range;
     public float Range { get { return _range; } set { _range = value; } }
 
-    // 사거리
+    // 공격 딜레이
     [SerializeField]
     private float _delay;
     public float Delay { get { return _delay; } set { _delay = value; } }
 
-
+    [Title("필요한 컴포넌트들", bold: false)]
     // 공격범위 콜라이더
     [SerializeField]
     private BoxCollider2D _attackRangeCollider;
 
-    // 리지드바디와 움직임 방향
+    // 리지드바디
     private Rigidbody2D _rigid;
+
+    // 스프라이트 렌더러
+    private SpriteRenderer _spriteRenderer;
+
+    // 이동에 사용할 vector2 dir
     private Vector2 _moveDir;
 
-    private SpriteRenderer _spriteRenderer;
 
     private void FixedUpdate()
     {
+        // 이동
         Move();
     }
 
-    // 스폰
-    public void Spawn()
+    // 데이터 셋팅
+    public void DataSetting()
     {
         // 데이터 넣어주기
         _name = _heroData.Name;
@@ -66,19 +74,21 @@ public class HeroObject : SerializedMonoBehaviour
         _delay = _heroData.Delay;
         _attackRangeCollider.size = _attackRangeCollider.size * _range;
 
-
-        // 필요 컴포넌트
+        // 필요 컴포넌트들 가져와서 할당
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         _moveDir = Vector2.zero;
+    }
 
-
-        // 공격시작
+    // 공격 시작
+    public void AttackStart()
+    {
         StartCoroutine(Attack());
     }
 
+
     // 이동
-    private void Move()
+    public void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -86,19 +96,23 @@ public class HeroObject : SerializedMonoBehaviour
         _moveDir.x = _rigid.position.x + (horizontal * _speed * Time.deltaTime);
         _moveDir.y = _rigid.position.y + (vertical * _speed * Time.deltaTime);
 
-        _rigid.MovePosition(_moveDir);
-    }    
+        _rigid.MovePosition(_moveDir);        
+    }
+
 
     // 공격 코루틴
     private IEnumerator Attack()
-    {
-        while (true)
+    {        
+        // 게임 시작되면 반복
+        while (PlaySceneManager.IsGameStart)
         {         
+            // 사거리 범위 내 콜라이더 감지
             Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, _attackRangeCollider.size, 0.0f);
 
             foreach (Collider2D hit in hits)
             {
-                if (hit.gameObject.tag == "Monster")
+                // 태그가 몬스터면 공격력만큼 hp 감소
+                if (hit.gameObject.tag == Tag.Monster.ToString())
                 {
                     hit.GetComponent<MonsterObject>().HPMinus(_atk);
                 }
@@ -108,6 +122,7 @@ public class HeroObject : SerializedMonoBehaviour
                 }
             }
 
+            // 딜레이만큼 대기
             yield return new WaitForSeconds(_delay);
         }
     }
@@ -116,20 +131,13 @@ public class HeroObject : SerializedMonoBehaviour
     public void HPMinus(int atk)
     {
         _hp -= atk;
-        StartCoroutine(Blink());
+
+        // 스프라이트 깜빡이기
+        BlinkSprite blinkSprite = new BlinkSprite();
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         if (_hp < 0)
             Death();
-    }
-
-    // 피격시 깜빡이기
-    private IEnumerator Blink()
-    {
-        _spriteRenderer.color = Color.red;
-
-        yield return new WaitForSeconds(0.1f);
-
-        _spriteRenderer.color = Color.white;
     }
 
     // 죽음
@@ -137,6 +145,11 @@ public class HeroObject : SerializedMonoBehaviour
     {
         Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
+
+
+
+
+
 
 
     // 사거리 기즈모로 표시

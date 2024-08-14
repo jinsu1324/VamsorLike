@@ -35,7 +35,7 @@ public class Managers : SerializedMonoBehaviour
     }
     #endregion
 
-    [Title("Managers")]
+    [Title("매니저들", bold: false)]
     // 오브젝트 매니저
     [SerializeField]
     private ObjectManager _objectManager;
@@ -44,10 +44,5 @@ public class Managers : SerializedMonoBehaviour
     // 데이터 매니저
     [SerializeField]
     private DataManager _dataManager;
-    public DataManager DataManager { get { return _dataManager; } }
-
-    // 몬스터 스폰 매니저
-    [SerializeField]
-    private MonsterSpawnManager _monsterSpawnManager;
-    public MonsterSpawnManager MonsterSpawnManager { get { return _monsterSpawnManager; } }
+    public DataManager DataManager { get { return _dataManager; } }    
 }

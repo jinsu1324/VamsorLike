@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class MonsterObject : SerializedMonoBehaviour
 {
-    // 몬스터 데이터 스크립터블 오브젝트
+    [Title("데이터 본체", bold: false)]
+    // 몬스터 오브젝트에 들어갈 데이터
     [SerializeField]
     private readonly MonsterData _monsterData;
 
+    [Title("할당될 데이터 값들", bold: false)]
     // 이름
     [SerializeField]
     private string _name;
@@ -31,11 +33,17 @@ public class MonsterObject : SerializedMonoBehaviour
     private float _speed;
     public float Speed { get { return _speed; } set { _speed = value; } }
 
-
+    // 스프라이트 렌더러
     private SpriteRenderer _spriteRenderer;
 
-    // 스폰
-    public void Spawn()
+    private void FixedUpdate()
+    {
+        // 영웅 따라다니도록
+        FollowHero();
+    }
+
+    // 데이터 셋팅
+    public void DataSetting()
     {
         _name = _monsterData.Name;
         _hp = _monsterData.Hp;
@@ -49,21 +57,15 @@ public class MonsterObject : SerializedMonoBehaviour
     public void HPMinus(int atk)
     {
         _hp -= atk;
-        StartCoroutine(Blink());
+
+        // 스프라이트 깜빡이기
+        BlinkSprite blinkSprite = new BlinkSprite();
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         if (_hp < 0)
             Death();
     }
 
-    // 피격시 깜빡이기
-    private IEnumerator Blink()
-    {
-        _spriteRenderer.color = Color.red;
-
-        yield return new WaitForSeconds(0.1f);
-
-        _spriteRenderer.color = Color.white;
-    }
 
     // 죽음
     private void Death()
@@ -72,9 +74,13 @@ public class MonsterObject : SerializedMonoBehaviour
     }
 
 
-    private void Update()
+    // 영웅 충돌감지 및 공격
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        FollowHero();
+        if (collision.gameObject.tag == Tag.Hero.ToString())
+        {
+            collision.gameObject.GetComponent<HeroObject>().HPMinus(_atk);
+        }
     }
 
 
@@ -86,14 +92,4 @@ public class MonsterObject : SerializedMonoBehaviour
             PlaySceneManager.ThisGameHeroObject.transform.position,
             _speed * Time.deltaTime);
     }
-
-    // 영웅 충돌감지 및 공격
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Hero")
-        {
-            collision.gameObject.GetComponent<HeroObject>().HPMinus(_atk);
-        }        
-    }
-
 }

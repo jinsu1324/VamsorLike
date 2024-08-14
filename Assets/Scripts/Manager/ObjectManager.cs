@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObjectManager : SerializedMonoBehaviour
 {
-    [Title("Object Dictionary")]
+    [Title("ø¿∫Í¡ß∆Æ µÒº≈≥ ∏ÆµÈ", bold: false)]
     // øµøı ø¿∫Í¡ß∆ÆµÈ µÒº≈≥ ∏Æ
     [SerializeField]
     private Dictionary<HeroID, HeroObject> _heroObjectDict = new Dictionary<HeroID, HeroObject>();

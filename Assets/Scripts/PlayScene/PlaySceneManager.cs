@@ -5,7 +5,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaySceneManager : SerializedMonoBehaviour
-{  
+{
+    #region 싱글톤
+    private static PlaySceneManager _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public static PlaySceneManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                return null;
+            }
+
+            return _instance;
+        }
+    }
+    #endregion
+
     // 내가 이번 게임에 선택한 영웅
     private static HeroObject _thisGameHeroObject;
     public static HeroObject ThisGameHeroObject { get{ return _thisGameHeroObject; } }
@@ -19,21 +49,29 @@ public class PlaySceneManager : SerializedMonoBehaviour
     private HeroSelectPopup _heroSelectPopup;
     public HeroSelectPopup HeroSelectPopup { get { return _heroSelectPopup; } }
 
+    // 몬스터 스포너
+    [SerializeField]
+    private MonsterSpawner _monsterSpawner;
+    public MonsterSpawner MonsterSpawner { get { return _monsterSpawner; } }
+
 
     // 게임 시작
-    public static void PlayStart(HeroData SelectedHeroData)
-    {       
-        // 파라미터로 받아온 선택된 영웅데이터를, 내가 이번 게임에 선택한 영웅으로 설정해줌
-        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), SelectedHeroData.Id);
-        _thisGameHeroObject = Managers.Instance.ObjectManager.HeroObjectDict[heroID];
+    public void PlayStart(HeroID selectHeroID)
+    {
+        // 게임시작 bool 을 true로
+        _isGameStart = true;
+
+        // 선택한 영웅을 이번게임의 영웅으로 할당
+        _thisGameHeroObject = Managers.Instance.ObjectManager.HeroObjectDict[selectHeroID];
 
         // 필드에 스폰하고 스탯도 넣어줌
-        _thisGameHeroObject = Instantiate(Managers.Instance.ObjectManager.HeroObjectDict[heroID]);
-        _thisGameHeroObject.Spawn();
+        _thisGameHeroObject = Instantiate(Managers.Instance.ObjectManager.HeroObjectDict[selectHeroID]);
+        _thisGameHeroObject.DataSetting();
 
-        // 게임시작 bool 을 true로
-        Managers.Instance.MonsterSpawnManager.IsSpawned = true;
+        // 몬스터도 스폰
+        _monsterSpawner.StartMonsterSpawn();
 
-        Debug.Log($"{_thisGameHeroObject.Name}로 게임을 시작합니다!!!!");
+        // 준비 다 되었으니 공격도 시작
+        _thisGameHeroObject.AttackStart();
     }
 }
