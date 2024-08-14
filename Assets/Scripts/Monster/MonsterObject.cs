@@ -83,7 +83,7 @@ public class MonsterObject : SerializedMonoBehaviour
     {
         this.gameObject.transform.position = 
             Vector3.Lerp(this.gameObject.transform.position, 
-            PlaySceneManager.Instance.ThisGameHeroObject.transform.position,
+            PlaySceneManager.ThisGameHeroObject.transform.position,
             _speed * Time.deltaTime);
     }
 

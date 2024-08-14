@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterDataManager : SerializedMonoBehaviour
+public class ObjectManager : SerializedMonoBehaviour
 {
-    // 프로젝트의 몬스터 ScriptableObject를 모두 받아와서 저장할 딕셔너리
+    [Title("Object Dictionary")]
+    // 영웅 오브젝트들 딕셔너리
     [SerializeField]
-    private Dictionary<MonsterID, MonsterData> _monsterDataDict = new Dictionary<MonsterID, MonsterData>();    
-    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get { return _monsterDataDict; } set { _monsterDataDict = value; } }
+    private Dictionary<HeroID, HeroObject> _heroObjectDict = new Dictionary<HeroID, HeroObject>();
+    public Dictionary<HeroID, HeroObject> HeroObjectDict { get { return _heroObjectDict; } set { _heroObjectDict = value; } }
 
-    // 몬스터 프리팹들 딕셔너리
+    // 몬스터 오브젝트들 딕셔너리
     [SerializeField]
     private Dictionary<MonsterID, MonsterObject> _monsterObjectDict = new Dictionary<MonsterID, MonsterObject>();
     public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get { return _monsterObjectDict; } set { _monsterObjectDict = value; } }

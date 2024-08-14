@@ -15,10 +15,16 @@ public class HeroSelectPopup : SerializedMonoBehaviour
         HeroSlotsInit();
     }
 
+    // ÆË¾÷ ´Ý±â
+    public void ClosePopup()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     // ¿µ¿õ ½½·Ôµé ÃÊ±âÈ­ (½½·Ôµé¿¡°Ô ÀÌ´ÖÇÏ¶ó°í Àü´Þ)
     private void HeroSlotsInit()
     {
-        Dictionary<HeroID, HeroData> heroDataDict = PlaySceneManager.Instance.HeroDataManager.HeroDataDict;
+        Dictionary<HeroID, HeroData> heroDataDict = Managers.Instance.DataManager.HeroDataDict;
 
         for (int i = 0; i < _heroSlotArr.Length; i++)
         {
@@ -26,9 +32,5 @@ public class HeroSelectPopup : SerializedMonoBehaviour
         }
     }
 
-    // ÆË¾÷ ´Ý±â
-    public void ClosePopup()
-    {
-        this.gameObject.SetActive(false);
-    }
+    
 }

@@ -33,7 +33,7 @@ public class HeroSlot : SerializedMonoBehaviour
         // 팝업 종료될때 액션 등록
         _popUpFinishAction = finishAction;
 
-        // 선택버튼 눌렀을때 액션 리스너 등록
+        // 선택버튼 눌렀을때 액션 등록
         _selectButton.onClick.AddListener(OnClickSelectButton);
     }
 
@@ -41,7 +41,7 @@ public class HeroSlot : SerializedMonoBehaviour
     public void OnClickSelectButton()
     {
         // 그 영웅으로 게임시작
-        PlaySceneManager.Instance.PlayStart(_heroData);
+        PlaySceneManager.PlayStart(_heroData);
 
         // 팝업 종료액션 실행
         _popUpFinishAction();

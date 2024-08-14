@@ -15,10 +15,7 @@ public class MonsterSpawnManager : SerializedMonoBehaviour
     private bool _isSpawned = false;
     public bool IsSpawned 
     { 
-        get 
-        { 
-            return _isSpawned; 
-        } 
+        get { return _isSpawned; } 
         set 
         { 
             _isSpawned = value;
@@ -44,8 +41,8 @@ public class MonsterSpawnManager : SerializedMonoBehaviour
             MonsterID randomMonsterID = (MonsterID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
 
             // 랜덤으로 뽑힌 몬스터와 현재 플레이중인 영웅
-            MonsterObject pickedMonsterObject = PlaySceneManager.Instance.MonsterDataManager.MonsterObjectDict[randomMonsterID];
-            HeroObject thisGameHeroObject = PlaySceneManager.Instance.ThisGameHeroObject;
+            MonsterObject pickedMonsterObject = Managers.Instance.ObjectManager.MonsterObjectDict[randomMonsterID];
+            HeroObject thisGameHeroObject = PlaySceneManager.ThisGameHeroObject;
 
             //영웅에서 스폰될 원형거리 구해서 저장
             Vector2 pickedRandomRadialPos = RandomCirclePos(thisGameHeroObject.transform.position, _spawnDistance);
