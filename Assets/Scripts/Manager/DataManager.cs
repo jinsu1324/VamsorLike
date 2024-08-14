@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 게임에 필요한 데이터들(스크립터블 오브젝트 등) 딕셔너리 가지고있는 매니저
 public class DataManager : SerializedMonoBehaviour
 {
     [Title("데이터 딕셔너리들", bold: false)]

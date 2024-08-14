@@ -6,11 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D.IK;
 
-public enum SaveFolderName
-{
-    Monster,
-    Hero
-}
+
 
 public class LoadCSV
 {    

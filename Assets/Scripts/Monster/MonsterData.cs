@@ -10,6 +10,7 @@ public enum MonsterID
     Dragon
 }
 
+// 몬스터 데이터
 [System.Serializable]
 public class MonsterData : ScriptableObject
 {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 게임에 필요한 글로벌하게 가지고있는 매니저들 보유
 public class Managers : SerializedMonoBehaviour
 {
     #region 싱글톤

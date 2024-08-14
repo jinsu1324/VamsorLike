@@ -10,6 +10,7 @@ public enum HeroID
     Thief
 }
 
+// 영웅 데이터
 [System.Serializable]
 public class HeroData : ScriptableObject
 {

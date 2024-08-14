@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEditor.TerrainTools;
 using UnityEngine;
 
+// 데이터 셋팅 바로 가능하도록 에디터 윈도우
 public class DataSettingEditorWindow : OdinEditorWindow
 {
     // 몬스터 데이터

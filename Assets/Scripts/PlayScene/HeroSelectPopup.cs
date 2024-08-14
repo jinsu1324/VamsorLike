@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// 영웅 선택 팝업 : 영웅 슬롯들 / 각 영웅슬롯들 데이터초기화 명령 / 팝업 닫기
 public class HeroSelectPopup : SerializedMonoBehaviour
 {
     // 영웅 슬롯들

@@ -5,6 +5,7 @@ using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 몬스터 게임오브젝트 : 몬스터관련 데이터 / 본인 데이터 이닛 / 공격 / 플레이어 따라 이동 / HP감소 / 죽음
 public class MonsterObject : SerializedMonoBehaviour
 {
     [Title("데이터 본체", bold: false)]

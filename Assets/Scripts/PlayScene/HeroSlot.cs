@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 영웅 슬롯 : 영웅 정보들 / 영웅 선택 완료 확정 및 처리 (게임시작 명령, 팝업 닫기 액션)
 public class HeroSlot : SerializedMonoBehaviour
 {
     // ui 에 표시될 영웅 정보들

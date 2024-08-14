@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 게임에 필요한 게임오브젝트들(프리팹 등) 딕셔너리 가지고있는 매니저
 public class ObjectManager : SerializedMonoBehaviour
 {
     [Title("오브젝트 딕셔너리들", bold: false)]
