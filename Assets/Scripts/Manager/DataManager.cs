@@ -9,11 +9,9 @@ public class DataManager : SerializedMonoBehaviour
     [Title("µ•¿Ã≈Õ µÒº≈≥ ∏ÆµÈ", bold: false)]
     // øµøı µ•¿Ã≈Õ µÒº≈≥ ∏Æ
     [SerializeField]
-    private Dictionary<HeroID, HeroData> _heroDataDict = new Dictionary<HeroID, HeroData>();
-    public Dictionary<HeroID, HeroData> HeroDataDict { get { return _heroDataDict; } set { _heroDataDict = value; } }
+    public Dictionary<HeroID, HeroData> HeroDataDict { get; set; } = new Dictionary<HeroID, HeroData>();
 
     // ∏ÛΩ∫≈Õ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
     [SerializeField]
-    private Dictionary<MonsterID, MonsterData> _monsterDataDict = new Dictionary<MonsterID, MonsterData>();
-    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get { return _monsterDataDict; } set { _monsterDataDict = value; } }
+    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
 }

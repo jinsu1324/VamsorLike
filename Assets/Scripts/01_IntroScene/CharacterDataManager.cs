@@ -8,8 +8,7 @@ using UnityEngine;
 
 public class CharacterDataManager : SerializedMonoBehaviour
 {   
-    private SlotNum _selectSlotNum;
-    public SlotNum SelectSlotNum { set { _selectSlotNum = value; } }
+    public SlotNum SelectSlotNum { get; set; }
 
     private CharacterData _characterDataSlot01;
     private CharacterData _characterDataSlot02;

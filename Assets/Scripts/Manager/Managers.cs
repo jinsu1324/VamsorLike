@@ -39,11 +39,9 @@ public class Managers : SerializedMonoBehaviour
     [Title("매니저들", bold: false)]
     // 오브젝트 매니저
     [SerializeField]
-    private ObjectManager _objectManager;
-    public ObjectManager ObjectManager { get { return _objectManager; } }
+    public ObjectManager ObjectManager { get; set; }
 
     // 데이터 매니저
     [SerializeField]
-    private DataManager _dataManager;
-    public DataManager DataManager { get { return _dataManager; } }    
+    public DataManager DataManager { get; set; }    
 }

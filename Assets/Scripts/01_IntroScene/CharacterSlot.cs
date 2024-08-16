@@ -19,12 +19,10 @@ public enum SlotNum
 public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 {
     // 슬롯 번호
-    private SlotNum _slotNum; 
-    public SlotNum SlotNum { get { return _slotNum; } set { _slotNum = value; } }
+    public SlotNum SlotNum { get; set; }
 
     // 슬롯 캐릭터 데이터
-    private CharacterData _slotCharacterData;
-    public CharacterData SlotCharacterData { get { return _slotCharacterData; } set { _slotCharacterData = value; } }
+    public CharacterData SlotCharacterData { get; set; }
 
     // ui 텍스트
     [SerializeField]
@@ -43,14 +41,14 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     // 슬롯 넘버 각자에 맞게 초기화 해주는 함수
     public void SlotNumInit(SlotNum slotNum)
     {
-        this._slotNum = slotNum;
+        this.SlotNum = slotNum;
     }
 
     // 슬롯 캐릭터 데이터 초기화해주는 함수
     public void SlotCharacterDataInit(SlotNum slotNum)
     {
         IntroSceneManager.Instance.CharacterDataManager.LoadCharacterData();
-        _slotCharacterData = IntroSceneManager.Instance.CharacterDataManager.GetCharacterDataBySlot(slotNum);
+        SlotCharacterData = IntroSceneManager.Instance.CharacterDataManager.GetCharacterDataBySlot(slotNum);
 
         DataCheckAndChoiceNextAction();
     }
@@ -59,16 +57,16 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     public void DataCheckAndChoiceNextAction()
     {
         // 데이터가 없으면, 다음액션에 캐릭터생성창을 열도록
-        if (_slotCharacterData == null)
+        if (SlotCharacterData == null)
         {
             _slotClickAction = OpenCharacterMakePopup;
             _uiText.text = "No Data";
         }
         // 데이터가 있으면, 다음액션에 게임시작을 하도록
-        else if (_slotCharacterData != null)
+        else if (SlotCharacterData != null)
         {
             _slotClickAction = GameStart;
-            _uiText.text = $"{_slotCharacterData.Name}";
+            _uiText.text = $"{SlotCharacterData.Name}";
         }
     }
 
@@ -76,7 +74,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     public void OpenCharacterMakePopup()
     {
         Debug.Log("캐릭터 생성팝업을 엽니다.");
-        IntroSceneManager.Instance.CharacterMakePopup.OpenPopup(_slotNum);
+        IntroSceneManager.Instance.CharacterMakePopup.OpenPopup(SlotNum);
     }
 
     // 게임 시작

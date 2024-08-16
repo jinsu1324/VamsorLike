@@ -291,7 +291,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: _heroDataDict
+    - Name: HeroDataDict
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[HeroID, Assembly-CSharp],[HeroData,
         Assembly-CSharp]], mscorlib
@@ -365,7 +365,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: _monsterDataDict
+    - Name: MonsterDataDict
       Entry: 7
       Data: 2|System.Collections.Generic.Dictionary`2[[MonsterID, Assembly-CSharp],[MonsterData,
         Assembly-CSharp]], mscorlib
@@ -2220,14 +2220,20 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 51982250}
+    - {fileID: 220868469}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _heroSelectPopup: {fileID: 51982250}
-  _monsterSpawner: {fileID: 220868469}
+    SerializationNodes:
+    - Name: HeroSelectPopup
+      Entry: 10
+      Data: 0
+    - Name: MonsterSpawner
+      Entry: 10
+      Data: 1
 --- !u!1 &1289280223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,14 +2947,20 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 2144417196}
+    - {fileID: 190549315}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _objectManager: {fileID: 2144417196}
-  _dataManager: {fileID: 190549315}
+    SerializationNodes:
+    - Name: ObjectManager
+      Entry: 10
+      Data: 0
+    - Name: DataManager
+      Entry: 10
+      Data: 1
 --- !u!1 &1800245331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,7 +3574,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: _heroObjectDict
+    - Name: HeroObjectDict
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[HeroID, Assembly-CSharp],[HeroObject,
         Assembly-CSharp]], mscorlib
@@ -3636,7 +3648,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: _monsterObjectDict
+    - Name: MonsterObjectDict
       Entry: 7
       Data: 2|System.Collections.Generic.Dictionary`2[[MonsterID, Assembly-CSharp],[MonsterObject,
         Assembly-CSharp]], mscorlib
@@ -3719,7 +3731,7 @@ SceneRoots:
   - {fileID: 2144417195}
   - {fileID: 1156785497}
   - {fileID: 220868468}
+  - {fileID: 1698161015}
   - {fileID: 1043313708}
   - {fileID: 481769592}
   - {fileID: 1124377171}
-  - {fileID: 1698161015}

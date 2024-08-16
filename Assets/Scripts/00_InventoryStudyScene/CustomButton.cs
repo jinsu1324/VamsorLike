@@ -6,15 +6,14 @@ using UnityEngine.EventSystems;
 
 public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {    
-    private List<ChangeType> _changeTypeList = new List<ChangeType>();
-    public List<ChangeType> ChangeTypeList { get { return _changeTypeList; } set { _changeTypeList = value; } }
+    public List<ChangeType> ChangeTypeList { get; set; } = new List<ChangeType>();
 
     private Action<State, CustomButton> _enterAction;
     private Action<State, CustomButton> _exitAction;
 
     private void Start()
     {
-        foreach (ChangeType chageType in _changeTypeList)
+        foreach (ChangeType chageType in ChangeTypeList)
         {
             if (chageType == ChangeType.Color)
             {

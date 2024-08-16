@@ -7,14 +7,11 @@ using UnityEngine;
 public class CharacterResourcesManager : SerializedMonoBehaviour
 {
     [SerializeField]
-    private List<Sprite> _hairList = new List<Sprite>();
-    public List<Sprite> HairList { get { return _hairList; }}
+    public List<Sprite> HairList { get; set; }
 
     [SerializeField]
-    private List<Sprite> _faceList = new List<Sprite>();
-    public List<Sprite> FaceList { get { return _faceList; } }
+    public List<Sprite> FaceList { get; set; }
 
     [SerializeField]
-    private List<Sprite> _costumeList = new List<Sprite>();
-    public List<Sprite> CostumeList { get { return _costumeList; } }
+    public List<Sprite> CostumeList { get; set; }
 }

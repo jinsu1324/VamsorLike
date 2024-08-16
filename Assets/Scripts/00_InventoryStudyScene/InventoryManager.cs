@@ -6,18 +6,10 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {    
     private static Item _dragItem;
-
-    private static Inventory _monsePosInventory;
-    public static Inventory MousePosInventory { get { return _monsePosInventory; } set { _monsePosInventory = value; } }
-
-    private static Vector3 _startPos;
-    public static Vector3 StartPos { get { return _startPos; } set { _startPos = value; } }
-
-    private static Slot _startSlot;
-    public static Slot StartSlot { get { return _startSlot; } set { _startSlot = value; } }
-
-     private static List<InventoryItemData> _inventoryItemDataList = new List<InventoryItemData>();
-    public static List<InventoryItemData> InventoryItemDataList { get { return _inventoryItemDataList; } set { _inventoryItemDataList = value; } }
+    public static Inventory MousePosInventory { get; set; }
+    public static Vector3 StartPos { get; set; }
+    public static Slot StartSlot { get; set; }
+    public static List<InventoryItemData> InventoryItemDataList { get; set; } = new List<InventoryItemData>();
       
     private void Update()
     {

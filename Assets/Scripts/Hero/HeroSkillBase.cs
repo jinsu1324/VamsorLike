@@ -98,14 +98,13 @@ public class HeroSKillBow : HeroSkillBase
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
         closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _heroSkillStatus.Range);
 
+        //closeMonsterList[Random.Range(0, closeMonsterList.Count)].HPMinus(_heroSkillStatus.ATK);
+
         for (int i = 0; i < closeMonsterList.Count; i++)
         {
             closeMonsterList[i].HPMinus(_heroSkillStatus.ATK);
             break;
         }
-
-        Debug.Log("attack");
     }
-
 }
 

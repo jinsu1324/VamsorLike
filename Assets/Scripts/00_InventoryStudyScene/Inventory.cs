@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Slot[] _slotArr = new Slot[4];   
-    public Slot[] SlotArr { get { return _slotArr; } set { _slotArr = value; } }
+    [SerializeField]
+    public Slot[] SlotArr { get; set; }
        
     private void Start()
     {
+        SlotArr = new Slot[4];
+
         BindingInventoryItemData();
         PutChildsInSlots();
     }
@@ -61,8 +63,8 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 Debug.Log($"아이템 이름은 : {slot.SlotItem.gameObject.name}");
                 slot.SlotItem.InventoryItemData.ShowInfo(slot.SlotItem.ItemNameText);
             }
-                
-            _slotArr[index] = slot;
+
+            SlotArr[index] = slot;
             index++;
         }
     }    

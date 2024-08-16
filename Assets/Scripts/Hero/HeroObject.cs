@@ -14,33 +14,28 @@ public class HeroObject : SerializedMonoBehaviour
     [Title("할당될 데이터 값들", bold: false)]
     // 이름
     [SerializeField]
-    private string _name;
-    public string Name { get { return _name; } set { _name = value; } }
+    public string Name { get; set; }
 
     // 체력
     [SerializeField]
-    private int _hp;
-    public int Hp { get { return _hp; } set { _hp = value; } }
+    public int Hp { get; set; }
 
     // 공격력
     [SerializeField]
-    private int _atk;
-    public int Atk { get { return _atk; } set { _atk = value; } }
+    public int Atk { get; set; }
 
     // 이동속도
     [SerializeField]
-    private float _speed;
-    public float Speed { get { return _speed; } set { _speed = value; } }
+    public float Speed { get; set; }
 
     // 사거리
     [SerializeField]
-    private float _range;
-    public float Range { get { return _range; } set { _range = value; } }
+    public float Range { get; set; }
 
     // 공격 딜레이
     [SerializeField]
-    private float _delay;
-    public float Delay { get { return _delay; } set { _delay = value; } }
+    public float Delay { get; set; }
+
 
     [Title("필요한 컴포넌트들", bold: false)]
     // 공격범위 콜라이더
@@ -59,7 +54,6 @@ public class HeroObject : SerializedMonoBehaviour
     [SerializeField]
     private float _attackRange;
 
-    float time = 0;
 
     private List<HeroSkillBase> _skillList = new List<HeroSkillBase>();
 
@@ -76,13 +70,13 @@ public class HeroObject : SerializedMonoBehaviour
     public void DataSetting()
     {
         // 데이터 넣어주기
-        _name = _heroData.Name;
-        _hp = _heroData.Hp;
-        _atk = _heroData.Atk;
-        _speed = _heroData.Speed;
-        _range = _heroData.Range;
-        _delay = _heroData.Delay;
-        _attackRangeCollider.size = _attackRangeCollider.size * _range;
+        Name = _heroData.Name;
+        Hp = _heroData.Hp;
+        Atk = _heroData.Atk;
+        Speed = _heroData.Speed;
+        Range = _heroData.Range;
+        Delay = _heroData.Delay;
+        _attackRangeCollider.size = _attackRangeCollider.size * Range;
 
         // 필요 컴포넌트들 가져와서 할당
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -90,10 +84,10 @@ public class HeroObject : SerializedMonoBehaviour
         _moveDir = Vector2.zero;
 
 
-        HeroSKillSword heroSkillSword = new HeroSKillSword(_atk, _range, _delay);
+        HeroSKillSword heroSkillSword = new HeroSKillSword(Atk, Range, Delay);
         _skillList.Add(heroSkillSword);
 
-        HeroSKillBow heroSKillBow = new HeroSKillBow(_atk, _range, _delay);
+        HeroSKillBow heroSKillBow = new HeroSKillBow(Atk, Range, Delay);
         _skillList.Add(heroSKillBow);
     }
 
@@ -110,8 +104,8 @@ public class HeroObject : SerializedMonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        _moveDir.x = _rigid.position.x + (horizontal * _speed * Time.deltaTime);
-        _moveDir.y = _rigid.position.y + (vertical * _speed * Time.deltaTime);
+        _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
+        _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
 
         _rigid.MovePosition(_moveDir);        
     }
@@ -142,7 +136,7 @@ public class HeroObject : SerializedMonoBehaviour
     // HP 감소
     public void HPMinus(int atk)
     {
-        _hp -= atk;
+        Hp -= atk;
 
         // 스프라이트 깜빡이기
 
@@ -152,7 +146,7 @@ public class HeroObject : SerializedMonoBehaviour
         coroutine = BlinkSprite.Blink(_spriteRenderer, 0.1f);
         StartCoroutine(coroutine);
 
-        if (_hp < 0)
+        if (Hp < 0)
             Death();
     }
 

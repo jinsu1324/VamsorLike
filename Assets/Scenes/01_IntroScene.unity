@@ -432,16 +432,28 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 62730147}
+    - {fileID: 1433360836}
+    - {fileID: 434576699}
+    - {fileID: 576675348}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _characterDataManager: {fileID: 62730147}
-  _characterResourcesManager: {fileID: 1433360836}
-  _characterSlotManager: {fileID: 434576699}
-  _characterMakePopup: {fileID: 576675348}
+    SerializationNodes:
+    - Name: CharacterDataManager
+      Entry: 10
+      Data: 0
+    - Name: CharacterResourcesManager
+      Entry: 10
+      Data: 1
+    - Name: CharacterSlotManager
+      Entry: 10
+      Data: 2
+    - Name: CharacterMakePopup
+      Entry: 10
+      Data: 3
 --- !u!1 &249469016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,24 +3030,87 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 035802e9aa4be234ba82212da11793bd, type: 3}
+    - {fileID: 21300000, guid: a40930c58c948ad40b0a5e72f34950f9, type: 3}
+    - {fileID: 21300000, guid: bade82b1f1158f7499ba2decd0d51ee0, type: 3}
+    - {fileID: 21300000, guid: d4bcd1835ca4e9940ae7dc12ae40d633, type: 3}
+    - {fileID: 21300000, guid: 8b19b14f9d616b94a9f216d2d2120e1d, type: 3}
+    - {fileID: 21300000, guid: cafe0ecab99f56e409bc9782b64fca29, type: 3}
+    - {fileID: 21300000, guid: f8df602d3228980479e826010510f70a, type: 3}
+    - {fileID: 21300000, guid: 2d24ff3a554d21d4ea699b47211d7ab9, type: 3}
+    - {fileID: 21300000, guid: ce6c1c28ea4f9d046a113720cf71d4e8, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _hairList:
-  - {fileID: 21300000, guid: 035802e9aa4be234ba82212da11793bd, type: 3}
-  - {fileID: 21300000, guid: a40930c58c948ad40b0a5e72f34950f9, type: 3}
-  - {fileID: 21300000, guid: bade82b1f1158f7499ba2decd0d51ee0, type: 3}
-  _faceList:
-  - {fileID: 21300000, guid: d4bcd1835ca4e9940ae7dc12ae40d633, type: 3}
-  - {fileID: 21300000, guid: 8b19b14f9d616b94a9f216d2d2120e1d, type: 3}
-  - {fileID: 21300000, guid: cafe0ecab99f56e409bc9782b64fca29, type: 3}
-  _costumeList:
-  - {fileID: 21300000, guid: f8df602d3228980479e826010510f70a, type: 3}
-  - {fileID: 21300000, guid: 2d24ff3a554d21d4ea699b47211d7ab9, type: 3}
-  - {fileID: 21300000, guid: ce6c1c28ea4f9d046a113720cf71d4e8, type: 3}
+    SerializationNodes:
+    - Name: HairList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[UnityEngine.Sprite, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FaceList
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[UnityEngine.Sprite, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: CostumeList
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[UnityEngine.Sprite, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &1508978890
 GameObject:
   m_ObjectHideFlags: 0

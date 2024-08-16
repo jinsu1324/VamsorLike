@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryItemData
 {
-    private string _itemID;
-    public string ItemID { get { return _itemID; } set { _itemID = value; } }
+    public string ItemID { get; set; }
 
     public virtual void ShowInfo(TextMeshProUGUI tmPro)
     {
