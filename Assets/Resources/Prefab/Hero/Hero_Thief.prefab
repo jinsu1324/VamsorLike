@@ -269,3 +269,4 @@ MonoBehaviour:
   _range: 0
   _delay: 0
   _attackRangeCollider: {fileID: 2536299243617925981}
+  _attackRange: 2

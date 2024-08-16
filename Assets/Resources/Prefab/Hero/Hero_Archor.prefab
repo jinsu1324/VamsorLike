@@ -192,6 +192,7 @@ MonoBehaviour:
   _range: 0
   _delay: 0
   _attackRangeCollider: {fileID: 1647875742402903368}
+  _attackRange: 2
 --- !u!1 &6318772091901637152
 GameObject:
   m_ObjectHideFlags: 0

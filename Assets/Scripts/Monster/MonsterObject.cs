@@ -52,6 +52,8 @@ public class MonsterObject : SerializedMonoBehaviour
         _speed = _monsterData.Speed;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        SceneSingleton<MonsterManager>.Instance.SpawnMonster(this);
     }
 
     // HP ∞®º“
@@ -60,8 +62,8 @@ public class MonsterObject : SerializedMonoBehaviour
         _hp -= atk;
 
         // Ω∫«¡∂Û¿Ã∆Æ ±Ù∫˝¿Ã±‚
-        BlinkSprite blinkSprite = new BlinkSprite();
-        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
+        //BlinkSprite blinkSprite = new BlinkSprite();
+        //StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         if (_hp < 0)
             Death();
@@ -71,6 +73,7 @@ public class MonsterObject : SerializedMonoBehaviour
     // ¡◊¿Ω
     private void Death()
     {
+        SceneSingleton<MonsterManager>.Instance.DieMonster(this);
         Destroy(this.gameObject);
     }
 

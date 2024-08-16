@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // ½ºÇÁ¶óÀÌÆ® ±ôºıÀÌ´Â ¿ªÇÒ
-public class BlinkSprite
+public static class BlinkSprite
 {
     // ÇÇ°İ½Ã ±ôºıÀÌ±â
-    public IEnumerator Blink(SpriteRenderer spriteRenderer, float blinkTime)
+    public static IEnumerator Blink(SpriteRenderer spriteRenderer, float blinkTime)
     {
         spriteRenderer.color = Color.red;
 
