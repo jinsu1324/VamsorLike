@@ -51,19 +51,17 @@ public class HeroObject : SerializedMonoBehaviour
     // 이동에 사용할 vector2 dir
     private Vector2 _moveDir;
 
-    [SerializeField]
-    private float _attackRange;
+    // 가지고 있는 스킬 리스트
+    //private List<Skill> _skillList = new List<Skill>();
 
-
-    private List<HeroSkillBase> _skillList = new List<HeroSkillBase>();
 
     private void FixedUpdate()
     {
-        // 이동
-        Move();
-
-        Attack();
-
+        if (PlaySceneManager.IsGameStart)
+        {
+            Move();
+            Attack();
+        }            
     }
 
     // 데이터 셋팅
@@ -83,18 +81,9 @@ public class HeroObject : SerializedMonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
         _moveDir = Vector2.zero;
 
-
-        HeroSKillSword heroSkillSword = new HeroSKillSword(Atk, Range, Delay);
-        _skillList.Add(heroSkillSword);
-
-        HeroSKillBow heroSKillBow = new HeroSKillBow(Atk, Range, Delay);
-        _skillList.Add(heroSKillBow);
-    }
-
-    // 공격 시작
-    public void AttackStart()
-    {
-        //StartCoroutine(Attack());
+        // 임시
+        // SkillBoomerang skillBoomerang = new SkillBoomerang(Managers.Instance.DataManager.SkillDataDict[SkillID.Boomerang], transform.position);
+        // _skillList.Add(skillBoomerang);
     }
 
 
@@ -111,40 +100,28 @@ public class HeroObject : SerializedMonoBehaviour
     }
 
 
-    // 공격 코루틴
+    // 공격
     private void Attack()
-    {        
-        // 게임 시작되면 반복
-        if (PlaySceneManager.IsGameStart)
+    {     
+        for (int i = 0; i < SkillManager.Instance.SkillList.Count; i++)
         {
+            Skill skill = SkillManager.Instance.SkillList[i];
 
-            for (int i = 0; i < _skillList.Count; i++)
+            if (skill.SkillUpdate())
             {
-                HeroSkillBase skill = _skillList[i];
-
-                if (skill.SkillUpdate())
-                {
-                    skill.AttackFunc(transform.position);
-                }
-
-
+                skill.AttackFunc(transform.position);
             }
         }
     }
 
-    IEnumerator coroutine;
     // HP 감소
     public void HPMinus(int atk)
     {
         Hp -= atk;
 
         // 스프라이트 깜빡이기
-
-        if(coroutine != null)
-            StopCoroutine(coroutine);
-
-        coroutine = BlinkSprite.Blink(_spriteRenderer, 0.1f);
-        StartCoroutine(coroutine);
+        BlinkSprite blinkSprite = new BlinkSprite();
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         if (Hp < 0)
             Death();
@@ -160,12 +137,10 @@ public class HeroObject : SerializedMonoBehaviour
 
 
 
-
-
-    // 사거리 기즈모로 표시
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, _attackRange);
-    }  
+    //// 사거리 기즈모로 표시
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(transform.position, _attackRange);
+    //}  
 }

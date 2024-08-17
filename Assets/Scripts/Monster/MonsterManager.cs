@@ -18,7 +18,6 @@ public class MonsterManager : SerializedMonoBehaviour
     public void SpawnMonster(MonsterObject monsterObject)
     {
         _spawnMonsterList.Add(monsterObject);
-        Debug.Log("SpawnMonster");
     }
 
     public void DieMonster(MonsterObject monsterObject)

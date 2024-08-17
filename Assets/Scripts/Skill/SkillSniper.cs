@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class HeroSKillBow : HeroSkillBase
+// 이 스킬은 어떤 스킬인지 정의해 주는 역할
+public class SkillSniper : Skill
 {
-
-    public HeroSKillBow(int atk, float range, float delay)
+    public SkillSniper(int atk, float range, float delay)
     {
-        _heroSkillStatus.ATK = atk;
-        _heroSkillStatus.Range = range;
-        _heroSkillStatus.Delay = delay;
+        _skillData.Atk = atk;
+        _skillData.Range = range;
+        _skillData.Delay = delay;
     }
 
     public override bool SkillUpdate()
@@ -32,9 +31,9 @@ public class HeroSKillBow : HeroSkillBase
     public override void AttackFunc(Vector3 skillPos)
     {
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
-        closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _heroSkillStatus.Range);
+        closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _skillData.Range);
 
-        closeMonsterList[Random.Range(0, closeMonsterList.Count)].HPMinus(_heroSkillStatus.ATK);
+        closeMonsterList[Random.Range(0, closeMonsterList.Count)].HPMinus(_skillData.Atk);
 
         //for (int i = 0; i < closeMonsterList.Count; i++)
         //{

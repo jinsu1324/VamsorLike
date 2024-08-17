@@ -20,7 +20,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
     // 히어로 스킬 데이터
     [SerializeField]
-    private TextAsset _heroSkillDataTextAsset;
+    private TextAsset _skillDataTextAsset;
 
     // 메뉴 생성
     [MenuItem("내 메뉴/데이터 셋팅")]
@@ -78,26 +78,26 @@ public class DataSettingEditorWindow : OdinEditorWindow
     }
 
 
-    // 영웅 스킬 데이터를 -> 데이터 딕셔너리에 셋팅하기
-    [Button("영웅스킬 데이터 딕셔너리 셋팅!", ButtonSizes.Large)]
-    public void HeroSkillDataSettingButton()
+    // 스킬 데이터를 -> 데이터 딕셔너리에 셋팅하기
+    [Button("스킬 데이터 딕셔너리 셋팅!", ButtonSizes.Large)]
+    public void SkillDataSettingButton()
     {
-        if (_heroSkillDataTextAsset == null)
+        if (_skillDataTextAsset == null)
             Debug.Log("영웅 TextAsset이 null입니다.");
 
         // 영웅 CSV를 -> 데이터로 저장
-        LoadCSV.CSV_to_Data<HeroSkillData, HeroSkillID>(_heroSkillDataTextAsset, SaveFolderName.HeroSkill);
+        LoadCSV.CSV_to_Data<SkillData, SkillID>(_skillDataTextAsset, SaveFolderName.Skill);
 
         // 데이터 매니저들 가져와서
         DataManager dataManager = FindObjectOfType<DataManager>();
         //ObjectManager objectManager = FindObjectOfType<ObjectManager>();
 
         // 딕셔너리 클리어
-        dataManager.HeroSkillDataDict.Clear();
+        dataManager.SkillDataDict.Clear();
         //objectManager.HeroObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.HeroSkillDataDict, SaveFolderName.HeroSkill);
+        Data_to_Dict(dataManager.SkillDataDict, SaveFolderName.Skill);
         //Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
     }
 

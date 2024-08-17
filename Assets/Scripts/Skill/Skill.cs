@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class HeroSkillStatus
+// 스킬 베이스
+public abstract class Skill
 {
-    public int ATK;
-    public float Range;
-    public float Delay;
-}
-
-
-public abstract class HeroSkillBase
-{
-    protected HeroSkillStatus _heroSkillStatus = new HeroSkillStatus();
+    protected SkillData _skillData = new SkillData();
 
     protected float _time;
 

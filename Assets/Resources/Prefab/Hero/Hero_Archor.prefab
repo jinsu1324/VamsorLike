@@ -182,17 +182,30 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Name
+      Entry: 6
+      Data: 
+    - Name: Hp
+      Entry: 3
+      Data: 0
+    - Name: Atk
+      Entry: 3
+      Data: 0
+    - Name: Speed
+      Entry: 4
+      Data: 0
+    - Name: Range
+      Entry: 4
+      Data: 0
+    - Name: Delay
+      Entry: 4
+      Data: 0
     - Name: _heroData
       Entry: 10
       Data: 0
-  _name: 
-  _hp: 0
-  _atk: 0
-  _speed: 0
-  _range: 0
-  _delay: 0
   _attackRangeCollider: {fileID: 1647875742402903368}
   _attackRange: 2
+  _projectile: {fileID: 3473738657826628467, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
 --- !u!1 &6318772091901637152
 GameObject:
   m_ObjectHideFlags: 0

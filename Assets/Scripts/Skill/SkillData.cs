@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum HeroSkillID
+public enum SkillID
 {
     SlashAttack,
     Sniper,
@@ -10,8 +10,8 @@ public enum HeroSkillID
     Heal
 }
 
-
-public class HeroSkillData : ScriptableObject
+// 영웅 스킬 데이터
+public class SkillData : ScriptableObject
 {
     public string Id;
     public string Name;
@@ -21,4 +21,6 @@ public class HeroSkillData : ScriptableObject
     public float Range;
     public float Delay;
     public string Desc;
+
+    public Projectile Projectile;
 }

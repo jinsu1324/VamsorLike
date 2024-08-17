@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        //HeroSKillSword heroSKillSword = new HeroSKillSword();
-    }
+    //[SerializeField]
+    //Projectile proj;
 
-   
+    //private void FixedUpdate()
+    //{
+    //    proj.RotateProjectile(transform);
+    //}
+
 }

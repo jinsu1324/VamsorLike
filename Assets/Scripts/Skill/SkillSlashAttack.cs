@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class HeroSKillSword : HeroSkillBase
+public class SkillSlashAttack : Skill
 {
 
-    public HeroSKillSword(int atk, float range, float delay)
+    public SkillSlashAttack(int atk, float range, float delay)
     {
-        _heroSkillStatus.ATK = atk;
-        _heroSkillStatus.Range = range;
-        _heroSkillStatus.Delay = delay;
+        _skillData.Atk = atk;
+        _skillData.Range = range;
+        _skillData.Delay = delay;
     }
 
     public override bool SkillUpdate()
     {
         _time += Time.fixedDeltaTime;
 
-        if (_time > _heroSkillStatus.Delay)
+        if (_time > _skillData.Delay)
         {
-            _time %= _heroSkillStatus.Delay;
+            _time %= _skillData.Delay;
             return true;
         }
         else
@@ -33,11 +33,11 @@ public class HeroSKillSword : HeroSkillBase
     public override void AttackFunc(Vector3 skillPos)
     {
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
-        closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _heroSkillStatus.Range);
+        closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _skillData.Range);
 
         for (int i = 0; i < closeMonsterList.Count; i++)
         {
-            closeMonsterList[i].HPMinus(_heroSkillStatus.ATK);
+            closeMonsterList[i].HPMinus(_skillData.Atk);
         }
 
         Debug.Log("attack");
