@@ -102,10 +102,16 @@ public class HeroObject : SerializedMonoBehaviour
 
     // 공격
     private void Attack()
-    {     
-        for (int i = 0; i < SkillManager.Instance.SkillList.Count; i++)
+    {
+        if (EquipedSkills.Instance.EquipedSkillList.Count == 0)
         {
-            Skill skill = SkillManager.Instance.SkillList[i];
+            Debug.Log("EquipedSkillList Count 0");
+            return;
+        }
+
+        for (int i = 0; i < EquipedSkills.Instance.EquipedSkillList.Count; i++)
+        {
+            Skill skill = EquipedSkills.Instance.EquipedSkillList[i];
 
             if (skill.SkillUpdate())
             {
@@ -130,7 +136,7 @@ public class HeroObject : SerializedMonoBehaviour
     // 죽음
     private void Death()
     {
-        Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
 
