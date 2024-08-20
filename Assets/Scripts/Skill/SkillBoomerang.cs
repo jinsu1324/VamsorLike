@@ -19,7 +19,6 @@ public class SkillBoomerang : Skill
         // 스킬 부메랑이 인스턴스화 되는 순간, 매개변수로 받아온 데이터값을 이 SkillBoomerang의 데이터로 넣어줌
         _skillData = skillData;
 
-
         // 프로젝타일 생성
         _SpawnedProjectile = Object.Instantiate(_skillData.Projectile, pos, Quaternion.identity);
 
@@ -41,6 +40,8 @@ public class SkillBoomerang : Skill
     public override void AttackFunc(Vector3 skillPos)
     {
         _SpawnedProjectile.RotateProjectile(skillPos);
+        _SpawnedProjectile.TakeSkillAtkStatus(_skillData.Atk);
+
     }
 
     

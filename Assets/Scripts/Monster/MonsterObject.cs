@@ -57,9 +57,10 @@ public class MonsterObject : SerializedMonoBehaviour
     {
         Hp -= atk;
 
+
         // Ω∫«¡∂Û¿Ã∆Æ ±Ù∫˝¿Ã±‚
-        //BlinkSprite blinkSprite = new BlinkSprite();
-        //StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
+        BlinkSprite blinkSprite = new BlinkSprite();
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         if (Hp < 0)
             Death();
