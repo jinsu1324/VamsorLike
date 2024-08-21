@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // 영웅이 장착하고있는 스킬들 : 장착중인 스킬 리스트 / 리스트에 스킬 더하기 / 리스트에 스킬 빼기
-public class EquipedSkills : SerializedMonoBehaviour
+public class HeroEquipedSkill : SerializedMonoBehaviour
 {
     #region 싱글톤
-    private static EquipedSkills _instance;
+    private static HeroEquipedSkill _instance;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class EquipedSkills : SerializedMonoBehaviour
         }
     }
 
-    public static EquipedSkills Instance
+    public static HeroEquipedSkill Instance
     {
         get
         {
@@ -67,17 +67,20 @@ public class EquipedSkills : SerializedMonoBehaviour
         switch (skillID)
         {
             case SkillID.SlashAttack:
-                SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("SlashAttack 이 선택되었습니다!(임시로 부메랑 들어가있음)");
+                SkillSlashAttack skillBoomerang = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
+                Debug.Log("SlashAttack 이 선택되었습니다!");
                 return skillBoomerang;
+
             case SkillID.Sniper:
                 SkillBoomerang skillBoomerang2 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("Sniper 이 선택되었습니다!(임시로 부메랑 들어가있음)");
                 return skillBoomerang2;
+
             case SkillID.Boomerang:
                 SkillBoomerang skillBoomerang3 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("Boomerang 이 선택되었습니다!(임시로 부메랑 들어가있음)");
+                Debug.Log("Boomerang 이 선택되었습니다!");
                 return skillBoomerang3;
+
             case SkillID.Heal:
                 SkillBoomerang skillBoomerang4 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("Heal 이 선택되었습니다!(임시로 부메랑 들어가있음)");

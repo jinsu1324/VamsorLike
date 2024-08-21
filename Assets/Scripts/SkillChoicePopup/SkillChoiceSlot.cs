@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // 스킬 선택슬롯
-public class ChoiceSkillSlot : SerializedMonoBehaviour, IPointerClickHandler
+public class SkillChoiceSlot : SerializedMonoBehaviour, IPointerClickHandler
 {
     // 이 슬롯에 들어가는 스키 이름
     [SerializeField]
@@ -31,7 +31,7 @@ public class ChoiceSkillSlot : SerializedMonoBehaviour, IPointerClickHandler
     // 장착된 스킬리스트에 추가
     private void AddEquipedSkillList(SkillID skillID)
     {
-        EquipedSkills.Instance.AddSkill(skillID);
+        HeroEquipedSkill.Instance.AddSkill(skillID);
     }
 
 }

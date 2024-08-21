@@ -11,7 +11,7 @@ public class SkillBoomerang : Skill
     private bool _isBoomerangStarted = false;
 
     // 프로젝타일
-    private Projectile _SpawnedProjectile;
+    private ProjectileBoomerang _SpawnedProjectileBoomerang;
 
     // 생성자
     public SkillBoomerang(SkillData skillData, Vector3 pos)
@@ -20,7 +20,8 @@ public class SkillBoomerang : Skill
         _skillData = skillData;
 
         // 프로젝타일 생성
-        _SpawnedProjectile = Object.Instantiate(_skillData.Projectile, pos, Quaternion.identity);
+        _SpawnedProjectileBoomerang = 
+            Object.Instantiate(skillData.Projectile, pos, Quaternion.identity) as ProjectileBoomerang;
 
         // 부메랑은 생성되면 계속 공격하게끔 만들 예정
         _isBoomerangStarted = true;
@@ -39,10 +40,7 @@ public class SkillBoomerang : Skill
     // 공격 로직
     public override void AttackFunc(Vector3 skillPos)
     {
-        _SpawnedProjectile.RotateProjectile(skillPos);
-        _SpawnedProjectile.TakeSkillAtkStatus(_skillData.Atk);
-
-    }
-
-    
+        _SpawnedProjectileBoomerang.AroundBoomerang(skillPos);
+        _SpawnedProjectileBoomerang.TakeSkillAtk(_skillData.Atk);
+    }    
 }

@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 스킬선택슬롯들 있는 팝업 : 스킬슬롯 배열 / 스킬선택슬롯에 랜덤하게 스킬 넣어줌
-public class ChoiceSkillPopup : MonoBehaviour
+public class SkillChoicePopup : MonoBehaviour
 {
+    // 선택하는 스킬 슬롯들
     [SerializeField]
-    private ChoiceSkillSlot[] _choiceSkillSlotArr;
+    private SkillChoiceSlot[] _skillChoiceSlotArr;
 
     private void Start()
     {
-        SettingChoiceSkillSlot();
+        SettingSkillChoiceSlot();
     }
 
-    private void SettingChoiceSkillSlot()
+    // 스킬슬롯들 초기화
+    private void SettingSkillChoiceSlot()
     {
-        for (int i = 0; i < _choiceSkillSlotArr.Length; i++)
+        for (int i = 0; i < _skillChoiceSlotArr.Length; i++)
         {
             // SkillID중 랜덤으로 하나만 뽑아옴
             SkillID[] skillIDs = System.Enum.GetValues(typeof(SkillID)) as SkillID[];
             SkillID skillID = (SkillID)skillIDs.GetValue(Random.Range(0, skillIDs.Length));
 
-            _choiceSkillSlotArr[i].SetSlotInfos(skillID);
+            _skillChoiceSlotArr[i].SetSlotInfos(skillID);
         }
     }
 }

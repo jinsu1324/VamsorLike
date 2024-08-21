@@ -21,4 +21,4 @@ MonoBehaviour:
   Delay: 2
   Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 \uB2E8\uC77C
     \uD55C\uBA85\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
-  Projectile: {fileID: 3473738657826628467, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
+  Projectile: {fileID: 7099822812404318758, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}

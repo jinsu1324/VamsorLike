@@ -51,9 +51,6 @@ public class HeroObject : SerializedMonoBehaviour
     // 이동에 사용할 vector2 dir
     private Vector2 _moveDir;
 
-    // 가지고 있는 스킬 리스트
-    //private List<Skill> _skillList = new List<Skill>();
-
 
     private void FixedUpdate()
     {
@@ -80,10 +77,6 @@ public class HeroObject : SerializedMonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         _moveDir = Vector2.zero;
-
-        // 임시
-        // SkillBoomerang skillBoomerang = new SkillBoomerang(Managers.Instance.DataManager.SkillDataDict[SkillID.Boomerang], transform.position);
-        // _skillList.Add(skillBoomerang);
     }
 
 
@@ -103,15 +96,17 @@ public class HeroObject : SerializedMonoBehaviour
     // 공격
     private void Attack()
     {
-        if (EquipedSkills.Instance.EquipedSkillList.Count == 0)
+        // 스킬리스트에 아무것도 없으면 그냥 리턴
+        if (HeroEquipedSkill.Instance.EquipedSkillList.Count == 0)
         {
             Debug.Log("EquipedSkillList Count 0");
             return;
         }
 
-        for (int i = 0; i < EquipedSkills.Instance.EquipedSkillList.Count; i++)
+        // 스킬리스트에 있는 모든 스킬들 순환, 확인, 공격
+        for (int i = 0; i < HeroEquipedSkill.Instance.EquipedSkillList.Count; i++)
         {
-            Skill skill = EquipedSkills.Instance.EquipedSkillList[i];
+            Skill skill = HeroEquipedSkill.Instance.EquipedSkillList[i];
 
             if (skill.SkillUpdate())
             {
@@ -138,9 +133,6 @@ public class HeroObject : SerializedMonoBehaviour
     {
         //Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
-
-
-
 
 
     //// 사거리 기즈모로 표시
