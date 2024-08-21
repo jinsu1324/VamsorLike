@@ -17,13 +17,24 @@ public class SkillChoicePopup : MonoBehaviour
     // 스킬슬롯들 초기화
     private void SettingSkillChoiceSlot()
     {
-        for (int i = 0; i < _skillChoiceSlotArr.Length; i++)
-        {
-            // SkillID중 랜덤으로 하나만 뽑아옴
-            SkillID[] skillIDs = System.Enum.GetValues(typeof(SkillID)) as SkillID[];
-            SkillID skillID = (SkillID)skillIDs.GetValue(Random.Range(0, skillIDs.Length));
 
-            _skillChoiceSlotArr[i].SetSlotInfos(skillID);
-        }
+        // 스킬 테스트용 임시
+        _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack);
+        _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang);
+        _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper);
+        _skillChoiceSlotArr[3].SetSlotInfos(SkillID.Heal);
+
+
+
+        // 랜덤으로 해주기
+
+        //for (int i = 0; i < _skillChoiceSlotArr.Length; i++)
+        //{
+        //    // SkillID중 랜덤으로 하나만 뽑아옴
+        //    SkillID[] skillIDs = System.Enum.GetValues(typeof(SkillID)) as SkillID[];
+        //    SkillID skillID = (SkillID)skillIDs.GetValue(Random.Range(0, skillIDs.Length));
+
+        //    _skillChoiceSlotArr[i].SetSlotInfos(skillID);
+        //}
     }
 }

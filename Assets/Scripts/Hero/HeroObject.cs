@@ -38,10 +38,6 @@ public class HeroObject : SerializedMonoBehaviour
 
 
     [Title("필요한 컴포넌트들", bold: false)]
-    // 공격범위 콜라이더
-    [SerializeField]
-    private BoxCollider2D _attackRangeCollider;
-
     // 리지드바디
     private Rigidbody2D _rigid;
 
@@ -71,7 +67,6 @@ public class HeroObject : SerializedMonoBehaviour
         Speed = _heroData.Speed;
         Range = _heroData.Range;
         Delay = _heroData.Delay;
-        _attackRangeCollider.size = _attackRangeCollider.size * Range;
 
         // 필요 컴포넌트들 가져와서 할당
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -99,7 +94,6 @@ public class HeroObject : SerializedMonoBehaviour
         // 스킬리스트에 아무것도 없으면 그냥 리턴
         if (HeroEquipedSkill.Instance.EquipedSkillList.Count == 0)
         {
-            Debug.Log("EquipedSkillList Count 0");
             return;
         }
 
@@ -133,12 +127,4 @@ public class HeroObject : SerializedMonoBehaviour
     {
         //Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
-
-
-    //// 사거리 기즈모로 표시
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawSphere(transform.position, _attackRange);
-    //}  
 }

@@ -67,24 +67,24 @@ public class HeroEquipedSkill : SerializedMonoBehaviour
         switch (skillID)
         {
             case SkillID.SlashAttack:
-                SkillSlashAttack skillBoomerang = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("SlashAttack 이 선택되었습니다!");
-                return skillBoomerang;
+                SkillSlashAttack skillSlashAttack = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
+                Debug.Log("skillSlashAttack 선택!");
+                return skillSlashAttack;
 
             case SkillID.Sniper:
-                SkillBoomerang skillBoomerang2 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("Sniper 이 선택되었습니다!(임시로 부메랑 들어가있음)");
-                return skillBoomerang2;
+                SkillSniper skillSniper = new SkillSniper(skillDataDict[skillID], thisGameHeroObject.transform.position);
+                Debug.Log("skillSniper 선택!");
+                return skillSniper;
 
             case SkillID.Boomerang:
-                SkillBoomerang skillBoomerang3 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("Boomerang 이 선택되었습니다!");
-                return skillBoomerang3;
+                SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
+                Debug.Log("skillBoomerang 선택!");
+                return skillBoomerang;
 
             case SkillID.Heal:
-                SkillBoomerang skillBoomerang4 = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("Heal 이 선택되었습니다!(임시로 부메랑 들어가있음)");
-                return skillBoomerang4;
+                SkillBoomerang skillHeal = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
+                Debug.Log("skillHeal 선택! (임시로 부메랑 들어가있음)");
+                return skillHeal;
         }
 
         Debug.Log("ReturnSkillByID 아무것도 반환하지 못했습니다");
