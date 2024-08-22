@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 영웅 게임오브젝트 : 영웅관련 데이터 / 본인 데이터 이닛 / 공격 / 이동 / HP감소 / 죽음
 public class HeroObject : SerializedMonoBehaviour
@@ -47,6 +48,9 @@ public class HeroObject : SerializedMonoBehaviour
     // 이동에 사용할 vector2 dir
     private Vector2 _moveDir;
 
+    // HP바
+    private HPBar _hpBar;
+
 
     private void FixedUpdate()
     {
@@ -72,6 +76,11 @@ public class HeroObject : SerializedMonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         _moveDir = Vector2.zero;
+
+        // HP바도 할당
+        _hpBar = Instantiate(PlaySceneManager.Instance.HPBar, transform.position, Quaternion.identity);
+        _hpBar.SetParent(this.transform);
+        _hpBar.GetComponent<Slider>().value = Hp / _heroData.Hp;
     }
 
 
@@ -117,6 +126,8 @@ public class HeroObject : SerializedMonoBehaviour
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
+
+        _hpBar.GetComponent<Slider>().value = (float)Hp / (float)_heroData.Hp;
 
         if (Hp < 0)
             Death();

@@ -52,6 +52,13 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public MonsterSpawner MonsterSpawner { get; set; }
 
+    // HP바
+    [SerializeField]
+    public HPBar HPBar { get; set; }
+
+    // 메인 UI 캔버스
+    [SerializeField]
+    public Canvas MainCanvas { get; set; }
 
     // 게임 시작
     public void PlayStart(HeroID selectHeroID)

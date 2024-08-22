@@ -2595,6 +2595,8 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 51982250}
     - {fileID: 220868469}
+    - {fileID: 7659548947330973971, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
+    - {fileID: 481769591}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2606,6 +2608,12 @@ MonoBehaviour:
     - Name: MonsterSpawner
       Entry: 10
       Data: 1
+    - Name: HPBar
+      Entry: 10
+      Data: 2
+    - Name: MainCanvas
+      Entry: 10
+      Data: 3
 --- !u!1 &1289280223
 GameObject:
   m_ObjectHideFlags: 0
