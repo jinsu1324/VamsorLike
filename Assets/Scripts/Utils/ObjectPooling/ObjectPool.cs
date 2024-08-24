@@ -33,7 +33,7 @@ public class ObjectPool : MonoBehaviour
     }
 
     // 오브젝트 사용헐때 가져오기
-    private ObjectPoolObject GetObj()
+    public ObjectPoolObject GetObj()
     {
         if (transform.childCount <= 0)
             CreateObj();
