@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
-using System;
 
-public class ObjectPoolObj : SerializedMonoBehaviour
+public class ObjectPoolObject : MonoBehaviour
 {
-    Transform _parent;
-    Action backact;
+    // 하이어라키에서 들어가있을 부모
+    private Transform _parent;
 
-    public void Setting(Transform _trans)
+    // 부모 셋팅
+    public void Setting(Transform trans)
     {
-        _parent = _trans;
+        _parent = trans;
+    }
+    
+    // 스폰 (사용하기 위해 ON)
+    public virtual void Spawn()
+    {
+        gameObject.SetActive(true);
     }
 
-    public void Setting(Transform _trans, Action _act)
-    {
-        _parent = _trans;
-        backact = _act;
-    }
-
+    // 사용안하게 되었을때 다시 돌려보내기
     public virtual void BackTrans()
     {
         gameObject.SetActive(false);
@@ -27,40 +27,6 @@ public class ObjectPoolObj : SerializedMonoBehaviour
         if (_parent != null)
             transform.SetParent(_parent);
 
-        backact?.Invoke();
-    }
-}
-
-public class ObjectPoolObj<T> : SerializedMonoBehaviour
-{
-    System.Action<ObjectPoolObj<T>> BackTransAct;
-
-    T Compontent;
-
-    Transform _parent;
-
-    public void Setting(Transform _trans, System.Action<ObjectPoolObj<T>> _act)
-    {
-        BackTransAct = _act;
-        Compontent = gameObject.GetComponent<T>();
-
-        _parent = _trans;
-    }
-
-    public T GetComponent()
-    {
-        if (Compontent == null)
-            Compontent = gameObject.GetComponent<T>();
-
-        return Compontent;
-    }
-
-    public virtual void BackTrans()
-    {
-        gameObject.SetActive(false);
-
-        transform.SetParent(_parent);
-
-        BackTransAct?.Invoke(this);
+        transform.SetAsFirstSibling();
     }
 }

@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    // 오브젝트 풀에 생성할 프리팹
     [SerializeField]
-    ObjectPoolObj prefab = null;
+    private ObjectPoolObject _prefab;
 
+    // 한번에 생성할 갯수
     [SerializeField]
-    int pluscount = 10;
+    private int _count = 10;
+
 
     private void Awake()
     {
-        CreateObjs();
+        CreateObj();
     }
 
-    void CreateObjs()
+
+    // 오브젝트 생성
+    private void CreateObj()
     {
-        for (int i = 0; i < pluscount; ++i)
+        for (int i = 0; i < _count; i++)
         {
-            ObjectPoolObj obj = Instantiate(prefab, transform);
+            ObjectPoolObject obj = Instantiate(_prefab, transform);
 
             obj.gameObject.SetActive(false);
 
@@ -27,122 +32,32 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public GameObject GetObj()
+    // 오브젝트 사용헐때 가져오기
+    private ObjectPoolObject GetObj()
     {
         if (transform.childCount <= 0)
-        {
-            CreateObjs();
-        }
+            CreateObj();
 
         int count = 0;
 
-        GameObject returnobj = transform.GetChild(count).gameObject;
-
-        while (returnobj.activeInHierarchy)
+        ObjectPoolObject childObj = transform.GetChild(count).GetComponent<ObjectPoolObject>();
+        
+        // 순회하면서 가져온 자식오브젝트가 켜져있다면 (사용중이라면) 다음 자식오브젝트로 넘어감
+        if (childObj.gameObject.activeInHierarchy)
         {
-            //여기서 방금 가져온녀석 그대로 가져가니 그거 방지해줘야합니다~
             if (++count >= transform.childCount)
-                CreateObjs();
+                CreateObj();
 
-            returnobj = transform.GetChild(count).gameObject;
+            childObj = transform.GetChild(count).GetComponent<ObjectPoolObject>();
         }
 
-        returnobj.transform.localScale = Vector3.one;
+        childObj.transform.localScale = Vector3.one;
 
-        return returnobj;
-    }
+        childObj.Spawn();
 
-    public GameObject GetObj(Transform _trans)
-    {
-        if (transform.childCount <= 0)
-        {
-            CreateObjs();
-        }
+        return childObj;
 
-        GameObject returnobj = transform.GetChild(0).gameObject;
 
-        returnobj.transform.SetParent(_trans);
 
-        returnobj.transform.localScale = Vector3.one;
-        return returnobj;
-    }
-}
-
-public class ObjectPool<T> : MonoBehaviour where T : ObjectPoolObj
-{
-    [SerializeField]
-    T prefab = null;
-
-    [SerializeField]
-    int pluscount = 10;
-
-    List<T> Objs = new List<T>();
-
-    private void Awake()
-    {
-        CreateObjs();
-    }
-
-    void CreateObjs()
-    {
-        for (int i = 0; i < pluscount; ++i)
-        {
-            T obj = Instantiate(prefab, transform);
-
-            obj.gameObject.SetActive(false);
-
-            obj.Setting(transform, delegate
-            {
-                //Debug.Log("Add");
-                Objs.Add(obj);
-            });
-
-            //Debug.Log("Add");
-            Objs.Add(obj);
-        }
-
-        //Debug.Log("Plus");
-    }
-
-    public T GetObj()
-    {
-        if (Objs.Count <= 0)
-        {
-            CreateObjs();
-        }
-
-        int count = 0;
-
-        T returnobj = Objs[count];
-
-        while (returnobj.gameObject.activeInHierarchy)
-        {
-            if (++count >= Objs.Count)
-                CreateObjs();
-
-            returnobj = Objs[count];
-        }
-
-        returnobj.transform.localScale = Vector3.one;
-
-        //Debug.Log("Remove");
-
-        Objs.Remove(returnobj);
-
-        return returnobj;
-    }
-
-    public T GetObj(Transform _trans)
-    {
-        if (Objs.Count <= 0)
-        {
-            CreateObjs();
-        }
-
-        T returnobj = Objs[0];
-
-        Objs.Remove(returnobj);
-
-        return returnobj;
     }
 }
