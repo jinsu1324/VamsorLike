@@ -12,6 +12,7 @@ public class ObjectPoolObject : MonoBehaviour
     {
         _parent = trans;
     }
+
     
     // 스폰 (사용하기 위해 ON)
     public virtual void Spawn()
@@ -28,7 +29,5 @@ public class ObjectPoolObject : MonoBehaviour
             transform.SetParent(_parent);
 
         transform.SetAsFirstSibling();
-
-        Debug.Log("BackTrans");
     }
 }

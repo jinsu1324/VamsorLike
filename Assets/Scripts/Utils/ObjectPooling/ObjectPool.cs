@@ -15,12 +15,12 @@ public class ObjectPool : MonoBehaviour
 
     private void Awake()
     {
-        CreateObj();
+        CreateObjs();
     }
 
 
     // 오브젝트 생성
-    private void CreateObj()
+    private void CreateObjs()
     {
         for (int i = 0; i < _count; i++)
         {
@@ -36,28 +36,25 @@ public class ObjectPool : MonoBehaviour
     public GameObject GetObj()
     {
         if (transform.childCount <= 0)
-            CreateObj();
+            CreateObjs();
 
         int count = 0;
 
-        GameObject childObj = transform.GetChild(count).gameObject;
-        
-        // 순회하면서 가져온 자식오브젝트가 켜져있다면 (사용중이라면) 다음 자식오브젝트로 넘어감
-        if (childObj.activeInHierarchy)
+        GameObject returnObj = transform.GetChild(count).gameObject;
+
+        while (returnObj.activeInHierarchy) // -----> 첫번째 자식이 켜져있어서 true면, count를 올려줘서 다시 다음자식을 받아와봄
         {
             if (++count >= transform.childCount)
-                CreateObj();
+                CreateObjs();
 
-            childObj = transform.GetChild(count).gameObject;
+            returnObj = transform.GetChild(count).gameObject;
         }
 
-        childObj.transform.localScale = Vector3.one;
+        returnObj.transform.localScale = Vector3.one;
 
-        childObj.GetComponent<ObjectPoolObject>().Spawn();
+        returnObj.GetComponent<ObjectPoolObject>().Spawn();
 
-        Debug.Log("GetObj");
-
-        return childObj;
+        return returnObj;
 
 
 
