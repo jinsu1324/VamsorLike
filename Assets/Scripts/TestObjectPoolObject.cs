@@ -19,7 +19,7 @@ public class TestObjectPoolObject : ObjectPoolObject
 
     public override void Spawn()
     {
-        _lifeTime = Random.Range(1.0f, 3.0f);
+        _lifeTime = Random.Range(1.0f, 10.0f);
         _time = 0;
 
         base.Spawn();

@@ -33,27 +33,29 @@ public class ObjectPool : MonoBehaviour
     }
 
     // 오브젝트 사용헐때 가져오기
-    public ObjectPoolObject GetObj()
+    public GameObject GetObj()
     {
         if (transform.childCount <= 0)
             CreateObj();
 
         int count = 0;
 
-        ObjectPoolObject childObj = transform.GetChild(count).GetComponent<ObjectPoolObject>();
+        GameObject childObj = transform.GetChild(count).gameObject;
         
         // 순회하면서 가져온 자식오브젝트가 켜져있다면 (사용중이라면) 다음 자식오브젝트로 넘어감
-        if (childObj.gameObject.activeInHierarchy)
+        if (childObj.activeInHierarchy)
         {
             if (++count >= transform.childCount)
                 CreateObj();
 
-            childObj = transform.GetChild(count).GetComponent<ObjectPoolObject>();
+            childObj = transform.GetChild(count).gameObject;
         }
 
         childObj.transform.localScale = Vector3.one;
 
-        childObj.Spawn();
+        childObj.GetComponent<ObjectPoolObject>().Spawn();
+
+        Debug.Log("GetObj");
 
         return childObj;
 

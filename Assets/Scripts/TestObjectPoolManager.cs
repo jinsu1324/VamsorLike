@@ -18,7 +18,7 @@ public class TestObjectPoolManager : MonoBehaviour
 
         if (_time >= _spawnTime)
         {
-            ObjectPoolObject obj = _objectPool.GetObj();
+            GameObject go = _objectPool.GetObj();
             _time = 0;
         }
     }

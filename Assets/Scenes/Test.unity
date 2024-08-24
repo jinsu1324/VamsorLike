@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPool: {fileID: 1488662222}
-  _spawnTime: 0.2
+  _spawnTime: 0.5
 --- !u!4 &1864243337
 Transform:
   m_ObjectHideFlags: 0
@@ -562,5 +562,5 @@ SceneRoots:
   - {fileID: 1746568372}
   - {fileID: 156068160}
   - {fileID: 920274967}
-  - {fileID: 1864243337}
   - {fileID: 1488662223}
+  - {fileID: 1864243337}

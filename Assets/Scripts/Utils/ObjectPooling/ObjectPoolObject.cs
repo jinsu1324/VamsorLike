@@ -28,5 +28,7 @@ public class ObjectPoolObject : MonoBehaviour
             transform.SetParent(_parent);
 
         transform.SetAsFirstSibling();
+
+        Debug.Log("BackTrans");
     }
 }
