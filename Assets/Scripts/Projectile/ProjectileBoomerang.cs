@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileBoomerang : Projectile
+public class ProjectileBoomerang : ProjectileBase
 {
     private float _radius = 2.0f; // 반지름
     private float _speed = 2.0f;  // 속도

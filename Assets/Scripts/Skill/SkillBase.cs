@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+public struct SkillAttackArgs
+{
+    public Vector3 StartSkillPos;   
+}
 
-// 이넘으로 스킬타입만들어서 그 이넘을 버튼ㅇ네 넣고, 그 이넘이면 뭐 이런식으로?
 // 스킬 베이스
-public abstract class Skill
+public abstract class SkillBase
 {
     protected SkillData _skillData;
 
@@ -14,7 +17,7 @@ public abstract class Skill
 
     public abstract bool SkillUpdate();
 
-    public abstract void AttackFunc(Vector3 skillPos);
+    public abstract void AttackFunc(SkillAttackArgs skillAttackArgs);
 
 }
 

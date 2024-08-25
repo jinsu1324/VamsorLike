@@ -36,7 +36,7 @@ public class MonsterObject : SerializedMonoBehaviour
     private void FixedUpdate()
     {
         // 영웅 따라다니도록
-        FollowHero();
+        //FollowHero();
     }
 
     // 데이터 셋팅
@@ -49,7 +49,7 @@ public class MonsterObject : SerializedMonoBehaviour
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        SceneSingleton<MonsterManager>.Instance.SpawnMonster(this);
+        SceneSingleton<MonsterManager>.Instance.AddFieldMonsterList(this);
     }
 
     // HP 감소
@@ -70,7 +70,7 @@ public class MonsterObject : SerializedMonoBehaviour
     // 죽음
     private void Death()
     {
-        SceneSingleton<MonsterManager>.Instance.DieMonster(this);
+        SceneSingleton<MonsterManager>.Instance.RemoveFieldMonsterList(this);
         Destroy(this.gameObject);
     }
 
@@ -86,11 +86,11 @@ public class MonsterObject : SerializedMonoBehaviour
 
 
     // 영웅 따라다니도록
-    private void FollowHero()
+    public void FollowHero()
     {
-        this.gameObject.transform.position = 
-            Vector3.Lerp(this.gameObject.transform.position, 
+        transform.position = Vector3.MoveTowards(
+            transform.position,
             PlaySceneManager.ThisGameHeroObject.transform.position,
-            Speed * Time.deltaTime);
+            Speed * Time.fixedDeltaTime);
     }
 }

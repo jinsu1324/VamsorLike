@@ -5,61 +5,55 @@ using UnityEngine;
 
 public class MonsterManager : SerializedMonoBehaviour
 {
-    // public delegate List<MonsterObject> GetMonstersByLength(Vector3 pos, float distance);
-    // public static event GetMonstersByLength GetMonstersByLengthEvent;
+    // 필드에 스폰되어있는 몬스터 리스트
+    private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 
-    private List<MonsterObject> _spawnMonsterList = new List<MonsterObject>();
 
-    private void Start()
+    private void Update()
     {
-        //GetMonstersByLengthEvent += 
+        AllFieldMonsterFollowHero();
+    }    
+
+    // 필드몬스터 리스트에 추가
+    public void AddFieldMonsterList(MonsterObject monsterObject)
+    {
+        _fieldMonsterList.Add(monsterObject);
     }
 
-    public void SpawnMonster(MonsterObject monsterObject)
+    // 필드몬스터 리스트에서 삭제
+    public void RemoveFieldMonsterList(MonsterObject monsterObject)
     {
-        _spawnMonsterList.Add(monsterObject);
+        _fieldMonsterList.Remove(monsterObject);
     }
 
-    public void DieMonster(MonsterObject monsterObject)
-    {
-        _spawnMonsterList.Remove(monsterObject);
 
-        
-        //for (int i = 0; i < _spawnMonsterList.Count; i++)
-        //{
-        //    if (_spawnMonsterList[i] == monsterObject)
-        //    {
-        //        _spawnMonsterList.RemoveAt(i);
-        //    }
-        //}
-
-    }
-
+    // 일정 거리 내 몬스터의 리스트를 받아옴
     public List<MonsterObject> GetMonstersByDistance(Vector3 pos, float distance)
     {
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
 
-        for (int i = 0; i < _spawnMonsterList.Count; i++)
+        for (int i = 0; i < _fieldMonsterList.Count; i++)
         {
-            if (distance >= Vector3.Distance(pos, _spawnMonsterList[i].transform.position))
+            if (distance >= Vector3.Distance(pos, _fieldMonsterList[i].transform.position))
             {
-                closeMonsterList.Add(_spawnMonsterList[i]);                
+                closeMonsterList.Add(_fieldMonsterList[i]);                
             }
         }
 
         return closeMonsterList;
     }
 
+    // 일정 거리 내 몬스터 리스트 중에서, 플레이어에게 가장 가까운 몬스터 1마리를 반환
     public MonsterObject GetClosestMonstersByDistance(Vector3 pos, float distance)
     {
         // 사거리 내 몬스터 모두 리스트에 저장
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
 
-        for (int i = 0; i < _spawnMonsterList.Count; i++)
+        for (int i = 0; i < _fieldMonsterList.Count; i++)
         {
-            if (distance >= Vector3.Distance(pos, _spawnMonsterList[i].transform.position))
+            if (distance >= Vector3.Distance(pos, _fieldMonsterList[i].transform.position))
             {
-                closeMonsterList.Add(_spawnMonsterList[i]);
+                closeMonsterList.Add(_fieldMonsterList[i]);
             }
         }
 
@@ -80,5 +74,13 @@ public class MonsterManager : SerializedMonoBehaviour
 
         return closestMonster;
 
+    }
+
+
+    // 필드몬스터들 전부 영웅 따라다니도록 
+    private void AllFieldMonsterFollowHero()
+    {
+        foreach (MonsterObject monster in _fieldMonsterList)
+            monster.FollowHero();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
 // 스킬 부메랑 공격로직, 쿨타임
-public class SkillBoomerang : Skill
+public class SkillBoomerang : SkillBase
 {
     // 부메랑 시작해도 되는지
     private bool _isBoomerangStarted = false;
@@ -38,9 +38,9 @@ public class SkillBoomerang : Skill
     }
 
     // 공격 로직
-    public override void AttackFunc(Vector3 skillPos)
+    public override void AttackFunc(SkillAttackArgs skillAttackArgs)
     {
-        _SpawnedProjectileBoomerang.AroundBoomerang(skillPos);
+        _SpawnedProjectileBoomerang.AroundBoomerang(skillAttackArgs.StartSkillPos);
         _SpawnedProjectileBoomerang.TakeSkillAtk(_skillData.Atk);
     }    
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillHeal : Skill
+public class SkillHeal : SkillBase
 {
-    public override void AttackFunc(Vector3 skillPos)
+    public override void AttackFunc(SkillAttackArgs skillAttackArgs)
     {
         throw new System.NotImplementedException();
     }

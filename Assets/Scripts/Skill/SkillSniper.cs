@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 // 이 스킬은 어떤 스킬인지 정의해 주는 역할
-public class SkillSniper : Skill
+public class SkillSniper : SkillBase
 {
     // 프로젝타일
     private ProjectileSniper _spawnedProjectileSniper;
@@ -32,22 +32,15 @@ public class SkillSniper : Skill
     }
 
     // 공격 로직
-    public override void AttackFunc(Vector3 skillPos)
+    public override void AttackFunc(SkillAttackArgs skillAttackArgs)
     {
-        // 사거리 내 랜덤한 몬스터 찾기
-        //List<MonsterObject> closeMonsterList = new List<MonsterObject>();
-        //closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByDistance(skillPos, _skillData.Range);
-
-        //MonsterObject targetMonster = closeMonsterList[Random.Range(0, closeMonsterList.Count)];
-
-
         // 사거리 내 가장 가까운 몬스터 찾기
         MonsterObject closestTargetMonster = 
-            SceneSingleton<MonsterManager>.Instance.GetClosestMonstersByDistance(skillPos, _skillData.Range);
+            SceneSingleton<MonsterManager>.Instance.GetClosestMonstersByDistance(skillAttackArgs.StartSkillPos, _skillData.Range);
 
         // 프로젝타일 생성
         _spawnedProjectileSniper =
-            Object.Instantiate(_skillData.Projectile, skillPos, Quaternion.identity) as ProjectileSniper;
+            Object.Instantiate(_skillData.Projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) as ProjectileSniper;
 
         // 공격력 건네줌
         _spawnedProjectileSniper.TakeSkillAtk(_skillData.Atk);

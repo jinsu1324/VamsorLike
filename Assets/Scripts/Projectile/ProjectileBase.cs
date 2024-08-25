@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 프로젝타일 부모
-public class Projectile : SerializedMonoBehaviour
+public class ProjectileBase : SerializedMonoBehaviour
 {   
     // 스킬의 공격력을 받아올 변수
     protected int _skillAtk;    

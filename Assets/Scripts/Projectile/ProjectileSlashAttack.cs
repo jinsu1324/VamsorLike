@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSlashAttack : Projectile
+public class ProjectileSlashAttack : ProjectileBase
 {
     private void Start()
     {

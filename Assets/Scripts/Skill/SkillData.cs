@@ -22,5 +22,5 @@ public class SkillData : ScriptableObject
     public float Delay;
     public string Desc;
 
-    public Projectile Projectile;
+    public ProjectileBase Projectile;
 }

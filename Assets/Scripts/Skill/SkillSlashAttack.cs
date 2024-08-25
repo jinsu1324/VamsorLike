@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
 
-public class SkillSlashAttack : Skill
+public class SkillSlashAttack : SkillBase
 {
     // 프로젝타일
     private ProjectileSlashAttack _spawnedProjectileSlashAttack;
@@ -34,24 +34,14 @@ public class SkillSlashAttack : Skill
     }
 
     // 공격 로직
-    public override void AttackFunc(Vector3 skillPos)
+    public override void AttackFunc(SkillAttackArgs skillAttackArgs)
     {
         // 프로젝타일 생성
         _spawnedProjectileSlashAttack =
-            Object.Instantiate(_skillData.Projectile, skillPos, Quaternion.identity) as ProjectileSlashAttack;
+            Object.Instantiate(_skillData.Projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) as ProjectileSlashAttack;
 
         // 프로젝타일에 공격력 건네줌
         _spawnedProjectileSlashAttack.TakeSkillAtk(_skillData.Atk);
 
-
-        //List<MonsterObject> closeMonsterList = new List<MonsterObject>();
-        //closeMonsterList = SceneSingleton<MonsterManager>.Instance.GetMonstersByLength(skillPos, _skillData.Range);
-
-        //for (int i = 0; i < closeMonsterList.Count; i++)
-        //{
-        //    closeMonsterList[i].HPMinus(_skillData.Atk);
-        //}
-
-        //Debug.Log("attack");
     }
 }

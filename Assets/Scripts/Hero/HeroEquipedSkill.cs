@@ -38,25 +38,25 @@ public class HeroEquipedSkill : SerializedMonoBehaviour
     #endregion
 
     // 영웅이 장착하고있는 스킬들
-    public List<Skill> EquipedSkillList { get; set; } = new List<Skill>();
+    public List<SkillBase> EquipedSkillList { get; set; } = new List<SkillBase>();
        
 
     // 장착 스킬 리스트에 스킬 추가
     public void AddSkill(SkillID choicedSkillID)
     {
-        Skill choicedSkill = ReturnSkillByID(choicedSkillID);
+        SkillBase choicedSkill = ReturnSkillByID(choicedSkillID);
         EquipedSkillList.Add(choicedSkill);
     }
 
     // 장착 스킬 리스트에 스킬 삭제
     public void RemoveSkill(SkillID choicedSkillID)
     {
-        Skill choicedSkill = ReturnSkillByID(choicedSkillID);
+        SkillBase choicedSkill = ReturnSkillByID(choicedSkillID);
         EquipedSkillList.Remove(choicedSkill);
     }
 
     // SkillID에 따라 Skill을 반환해주는 함수
-    private Skill ReturnSkillByID(SkillID skillID)
+    private SkillBase ReturnSkillByID(SkillID skillID)
     {
         // 스킬 데이터 딕셔너리
         Dictionary<SkillID, SkillData> skillDataDict = Managers.Instance.DataManager.SkillDataDict;

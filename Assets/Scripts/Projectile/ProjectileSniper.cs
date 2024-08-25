@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSniper : Projectile
+public class ProjectileSniper : ProjectileBase
 {
     private MonsterObject _targetMonster;
 
