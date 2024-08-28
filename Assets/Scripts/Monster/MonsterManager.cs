@@ -8,6 +8,10 @@ public class MonsterManager : SerializedMonoBehaviour
     // 필드에 스폰되어있는 몬스터 리스트
     private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 
+    private void Start()
+    {
+        MonsterObject.OnMonsterDeath += RemoveFieldMonsterList;
+    }
 
     private void Update()
     {
@@ -25,7 +29,6 @@ public class MonsterManager : SerializedMonoBehaviour
     {
         _fieldMonsterList.Remove(monsterObject);
     }
-
 
     // 일정 거리 내 몬스터의 리스트를 받아옴
     public List<MonsterObject> GetMonstersByDistance(Vector3 pos, float distance)
@@ -73,7 +76,6 @@ public class MonsterManager : SerializedMonoBehaviour
         }
 
         return closestMonster;
-
     }
 
 

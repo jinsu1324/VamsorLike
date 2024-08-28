@@ -56,6 +56,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public HPBar HPBar { get; set; }
 
+    
+
     // 메인 UI 캔버스
     [SerializeField]
     public Canvas MainCanvas { get; set; }

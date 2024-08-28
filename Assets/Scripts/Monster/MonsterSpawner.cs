@@ -7,14 +7,22 @@ using UnityEngine;
 // 몬스터 스폰해주는 기계 : 일정 시간마다 랜덤 스폰 / 스폰 딜레이 / 스폰 거리
 public class MonsterSpawner : SerializedMonoBehaviour
 {
+    [SerializeField]
+    private ObjectPool _objectPool;
+
     // 몬스터 스폰 딜레이
     [SerializeField]
     private float _spawnDelay;
 
     // 몬스터 스폰 거리
     [SerializeField]
-    private float _spawnDistance;    
+    private float _spawnDistance;
 
+
+    private void Start()
+    {
+        MonsterObject.OnMonsterDeath += MonsterBackTrans;
+    }
 
     // 몬스터 스폰 시작
     public void StartMonsterSpawn()
@@ -27,21 +35,24 @@ public class MonsterSpawner : SerializedMonoBehaviour
     {
         while (PlaySceneManager.IsGameStart)
         {
-            // 랜덤으로 몬스터 한개 뽑기 (MonsterID 중에)
-            MonsterObject randomMonsterObject = RandomMonsterObject();
-
             // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.ThisGameHeroObject.transform.position, _spawnDistance);
 
-            // 그 몬스터 ID에 맞는 MonsterObject를, 영웅위치에 생성하고 스탯도 넣어줌
-            MonsterObject monsterObject = Instantiate(randomMonsterObject, randomCirclePos, Quaternion.identity);
-            monsterObject.DataSetting();
+            // 오브젝트 풀에서 몬스터 가져와서 원형 포지션에 스폰하고 데이터 초기화까지
+            GameObject go = _objectPool.GetObj();
+            go.transform.position = randomCirclePos;
+            go.GetComponent<MonsterObject>().DataSetting();
 
             // 스폰 딜레이만큼 대기
             yield return new WaitForSecondsRealtime(_spawnDelay);
         }
     }
 
+    // 몬스터 다시 풀으로 돌려보내기
+    public void MonsterBackTrans(MonsterObject monsterObject)
+    {
+        monsterObject.GetComponent<ObjectPoolObject>().BackTrans();
+    }
 
     // MonsterID Enum 값들을 다 가져와서 랜덤으로 하나의 몬스터만 뽑기
     public MonsterObject RandomMonsterObject()
@@ -52,7 +63,6 @@ public class MonsterSpawner : SerializedMonoBehaviour
 
         return randomMonsterObject;
     }
-
 
     // targetPos에서 distance 만큼 떨어진 원의 표면중 랜덤한 포지션을 리턴해주는 함수
     private Vector3 RandomCircleSurfacePos(Vector2 targetPos, float distance)

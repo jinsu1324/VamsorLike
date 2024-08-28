@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
@@ -33,11 +34,9 @@ public class MonsterObject : SerializedMonoBehaviour
     // 스프라이트 렌더러
     private SpriteRenderer _spriteRenderer;
 
-    private void FixedUpdate()
-    {
-        // 영웅 따라다니도록
-        //FollowHero();
-    }
+    // 몬스터 죽었을때 처리될 함수들 액션
+    public static event Action<MonsterObject> OnMonsterDeath;
+
 
     // 데이터 셋팅
     public void DataSetting()
@@ -70,7 +69,9 @@ public class MonsterObject : SerializedMonoBehaviour
     // 죽음
     private void Death()
     {
-        SceneSingleton<MonsterManager>.Instance.RemoveFieldMonsterList(this);
+        // 몬스터 죽었을때 액션들 실행 (필드 몬스터 리스트에서 이 몬스터 삭제 / 바닥에 경험치 떨구기 / 다시 오브젝트 풀로 돌려보내기)
+        OnMonsterDeath?.Invoke(this);
+
         Destroy(this.gameObject);
     }
 

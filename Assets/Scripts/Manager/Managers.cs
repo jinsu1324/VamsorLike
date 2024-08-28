@@ -43,5 +43,5 @@ public class Managers : SerializedMonoBehaviour
 
     // 데이터 매니저
     [SerializeField]
-    public DataManager DataManager { get; set; }    
+    public DataManager DataManager { get; set; }
 }
