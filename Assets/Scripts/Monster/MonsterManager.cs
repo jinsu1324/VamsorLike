@@ -5,6 +5,36 @@ using UnityEngine;
 
 public class MonsterManager : SerializedMonoBehaviour
 {
+    #region 싱글톤
+    private static MonsterManager _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public static MonsterManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                return null;
+            }
+
+            return _instance;
+        }
+    }
+    #endregion
+
     // 필드에 스폰되어있는 몬스터 리스트
     private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 

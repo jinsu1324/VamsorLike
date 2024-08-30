@@ -13,7 +13,7 @@ public class SkillChoiceSlot : SerializedMonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI SkillNameText { get; set; }
 
     // 이 슬롯에 들어가는 스킬 ID
-    public SkillID SkillID { get; set; }
+    public SKILLID SkillID { get; set; }
 
     // 슬롯 클릭했을 때
     public void OnPointerClick(PointerEventData eventData)
@@ -22,16 +22,17 @@ public class SkillChoiceSlot : SerializedMonoBehaviour, IPointerClickHandler
     }
 
     // 슬롯 정보들 셋팅
-    public void SetSlotInfos(SkillID skillID)
+    public void SetSlotInfos(SKILLID skillID)
     {
         SkillID = skillID;
-        SkillNameText.text = Managers.Instance.DataManager.SkillDataDict[skillID].Name;
+        SkillNameText.text = DataManager.Instance.SkillDataDict[skillID].Name;
     }
 
     // 장착된 스킬리스트에 추가
-    private void AddEquipedSkillList(SkillID skillID)
+    private void AddEquipedSkillList(SKILLID skillID)
     {
-        HeroEquipedSkill.Instance.AddSkill(skillID);
+        HeroEquipedSkill heroEquipedSKill = new HeroEquipedSkill();
+        heroEquipedSKill.AddSkill(skillID);
     }
 
 }

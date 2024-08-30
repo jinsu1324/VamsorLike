@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8452398754171341373}
   - component: {fileID: 6772414112220703794}
   - component: {fileID: 292746907305262869}
-  - component: {fileID: 4653972574189497617}
   m_Layer: 0
   m_Name: Monster_Skeleton
   m_TagString: Monster
@@ -182,30 +181,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: Name
-      Entry: 6
-      Data: 
-    - Name: Hp
-      Entry: 3
-      Data: 0
-    - Name: Atk
-      Entry: 3
-      Data: 0
-    - Name: Speed
-      Entry: 4
-      Data: 0
-    - Name: _monsterData
+    - Name: _baseMonsterData
       Entry: 10
       Data: 0
---- !u!114 &4653972574189497617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6035231500714037800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 060d50b406faf4d48a96b7fe0dbea260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

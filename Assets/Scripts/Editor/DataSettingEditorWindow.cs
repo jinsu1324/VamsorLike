@@ -38,7 +38,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("몬스터 TextAsset이 null입니다.");
 
         // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
-        LoadCSV.CSV_to_Data<MonsterData, MonsterID>(_monsterDataTextAsset, SaveFolderName.Monster);
+        LoadCSV.CSV_to_Data<MonsterData, MONSTERID>(_monsterDataTextAsset, SAVEFOLDERNAME.Monster);
 
         // 데이터 매니저들 가져와서
         DataManager dataManager = FindObjectOfType<DataManager>();
@@ -49,8 +49,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
         objectManager.MonsterObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.MonsterDataDict, SaveFolderName.Monster);
-        Object_to_Dict(objectManager.MonsterObjectDict, SaveFolderName.Monster);
+        Data_to_Dict(dataManager.MonsterDataDict, SAVEFOLDERNAME.Monster);
+        Object_to_Dict(objectManager.MonsterObjectDict, SAVEFOLDERNAME.Monster);
     }
 
 
@@ -62,7 +62,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("영웅 TextAsset이 null입니다.");
 
         // 영웅 CSV를 -> 데이터로 저장
-        LoadCSV.CSV_to_Data<HeroData, HeroID>(_heroDataTextAsset, SaveFolderName.Hero);
+        LoadCSV.CSV_to_Data<HeroData, HEROID>(_heroDataTextAsset, SAVEFOLDERNAME.Hero);
 
         // 데이터 매니저들 가져와서
         DataManager dataManager = FindObjectOfType<DataManager>();
@@ -73,8 +73,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
         objectManager.HeroObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.HeroDataDict, SaveFolderName.Hero);
-        Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
+        Data_to_Dict(dataManager.HeroDataDict, SAVEFOLDERNAME.Hero);
+        Object_to_Dict(objectManager.HeroObjectDict, SAVEFOLDERNAME.Hero);
     }
 
 
@@ -86,7 +86,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("영웅 TextAsset이 null입니다.");
 
         // 영웅 CSV를 -> 데이터로 저장
-        LoadCSV.CSV_to_Data<SkillData, SkillID>(_skillDataTextAsset, SaveFolderName.Skill);
+        LoadCSV.CSV_to_Data<SkillData, SKILLID>(_skillDataTextAsset, SAVEFOLDERNAME.Skill);
 
         // 데이터 매니저들 가져와서
         DataManager dataManager = FindObjectOfType<DataManager>();
@@ -97,13 +97,13 @@ public class DataSettingEditorWindow : OdinEditorWindow
         //objectManager.HeroObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.SkillDataDict, SaveFolderName.Skill);
+        Data_to_Dict(dataManager.SkillDataDict, SAVEFOLDERNAME.Skill);
         //Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
     }
 
 
     // 데이터를 딕셔너리에 저장  
-    private void Data_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SaveFolderName saveFolderName) where EnumKey : Enum  where DataType : ScriptableObject
+    private void Data_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SAVEFOLDERNAME saveFolderName) where EnumKey : Enum  where DataType : ScriptableObject
     {
         // EnumKey의 모든 값들을 가져옴
         EnumKey[] enumKeys = Enum.GetValues(typeof(EnumKey)) as EnumKey[];
@@ -135,7 +135,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
 
     // 오브젝트를 딕셔너리에 저장
-    private void Object_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SaveFolderName saveFolderName) where EnumKey : Enum where DataType : UnityEngine.Object
+    private void Object_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SAVEFOLDERNAME saveFolderName) where EnumKey : Enum where DataType : UnityEngine.Object
     {
         // EnumKey의 모든 값들을 가져옴
         EnumKey[] enumKeys = Enum.GetValues(typeof(EnumKey)) as EnumKey[];

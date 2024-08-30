@@ -19,10 +19,10 @@ public class SkillChoicePopup : MonoBehaviour
     {
 
         // 스킬 테스트용 임시
-        _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack);
-        _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang);
-        _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper);
-        _skillChoiceSlotArr[3].SetSlotInfos(SkillID.Heal);
+        _skillChoiceSlotArr[0].SetSlotInfos(SKILLID.SlashAttack);
+        _skillChoiceSlotArr[1].SetSlotInfos(SKILLID.Boomerang);
+        _skillChoiceSlotArr[2].SetSlotInfos(SKILLID.Sniper);
+        _skillChoiceSlotArr[3].SetSlotInfos(SKILLID.Heal);
 
 
 

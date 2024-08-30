@@ -181,24 +181,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: Name
-      Entry: 6
-      Data: 
-    - Name: Hp
-      Entry: 3
-      Data: 0
-    - Name: Atk
-      Entry: 3
-      Data: 0
-    - Name: Speed
-      Entry: 4
-      Data: 0
-    - Name: Range
-      Entry: 4
-      Data: 0
-    - Name: Delay
-      Entry: 4
-      Data: 0
-    - Name: _heroData
+    - Name: _baseHeroData
       Entry: 10
       Data: 0

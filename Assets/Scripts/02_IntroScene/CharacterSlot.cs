@@ -9,7 +9,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEditor.U2D.Animation;
 
-public enum SlotNum
+public enum SLOTNUM
 {
     First,
     Second,
@@ -19,7 +19,7 @@ public enum SlotNum
 public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 {
     // 슬롯 번호
-    public SlotNum SlotNum { get; set; }
+    public SLOTNUM SlotNum { get; set; }
 
     // 슬롯 캐릭터 데이터
     public CharacterData SlotCharacterData { get; set; }
@@ -39,13 +39,13 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     }
 
     // 슬롯 넘버 각자에 맞게 초기화 해주는 함수
-    public void SlotNumInit(SlotNum slotNum)
+    public void SlotNumInit(SLOTNUM slotNum)
     {
         this.SlotNum = slotNum;
     }
 
     // 슬롯 캐릭터 데이터 초기화해주는 함수
-    public void SlotCharacterDataInit(SlotNum slotNum)
+    public void SlotCharacterDataInit(SLOTNUM slotNum)
     {
         IntroSceneManager.Instance.CharacterDataManager.LoadCharacterData();
         SlotCharacterData = IntroSceneManager.Instance.CharacterDataManager.GetCharacterDataBySlot(slotNum);

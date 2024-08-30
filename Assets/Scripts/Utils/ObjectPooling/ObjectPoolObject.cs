@@ -1,8 +1,9 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolObject : MonoBehaviour
+public class ObjectPoolObject : SerializedMonoBehaviour
 {
     // 하이어라키에서 들어가있을 부모
     private Transform _parent;

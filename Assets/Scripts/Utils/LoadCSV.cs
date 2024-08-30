@@ -11,7 +11,7 @@ using UnityEngine.U2D.IK;
 public class LoadCSV
 {    
     // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌   
-    public static void CSV_to_Data<DataType, KeyEnum>(TextAsset textAsset, SaveFolderName saveFolderName) where DataType : ScriptableObject where KeyEnum : Enum
+    public static void CSV_to_Data<DataType, KeyEnum>(TextAsset textAsset, SAVEFOLDERNAME saveFolderName) where DataType : ScriptableObject where KeyEnum : Enum
     {
         // csv파일 행으로 잘라주기
         string csv = textAsset.text;

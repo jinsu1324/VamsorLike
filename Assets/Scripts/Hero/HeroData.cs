@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum HeroID
+public enum HEROID
 {
     Warrior,
     Archor, 

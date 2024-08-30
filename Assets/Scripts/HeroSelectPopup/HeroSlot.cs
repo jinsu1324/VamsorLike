@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,11 +23,17 @@ public class HeroSlot : SerializedMonoBehaviour
     // 이 슬롯의 영웅 데이터
     private HeroData _HeroData;
 
+    #region 선택 완료되었을때 해야할것들
+    // 1. 팝업 닫기
+    // 2. 해당 슬롯의 영웅으로 게임 시작
+    // 3. 그 영웅 필드에 스폰하고 스탯도 넣어줌
+    #endregion
     // 선택 완료상황일 때 호출시킬 액션
-    private Action _selectCompleteAction;
+    public static event Action OnHeroSelectComplete;    
+
 
     // UI 정보들 셋팅
-    public void UIInfoSetting(HeroData heroData, Action selectCompleteAction)
+    public void UIInfoSetting(HeroData heroData, Action closeAction)
     {
         // 이 슬롯 영웅데이터 셋팅
         _HeroData = heroData;
@@ -35,8 +42,7 @@ public class HeroSlot : SerializedMonoBehaviour
         _heroImage.sprite = heroData.Sprite;
         _nameText.text = heroData.Name;
 
-        // 선택 완료 상황일 때 호출할 액션에 함수 등록 (현재 팝업 닫기가 들어가있음)
-        _selectCompleteAction = selectCompleteAction;
+        OnHeroSelectComplete += closeAction;
 
         // 선택 완료 버튼 눌렀을때 호출할 함수 등록
         _selectCompleteButton.onClick.AddListener(OnClickSelectCompleteButton);
@@ -46,12 +52,18 @@ public class HeroSlot : SerializedMonoBehaviour
     public void OnClickSelectCompleteButton()
     {
         // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
-        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
+        HEROID heroID = (HEROID)Enum.Parse(typeof(HEROID), _HeroData.Id);
 
-        // 이 슬롯의 영웅으로 게임시작
-        PlaySceneManager.Instance.PlayStart(heroID);
+        // 게임시작됨을 true로
+        PlaySceneManager.Instance.IsGameStartTrue();
 
-        // 선택 완료상황 액션 실행
-        _selectCompleteAction();
+        // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
+        PlaySceneManager.Instance.ThisGameHeroSetting(heroID);
+
+        // 선택 완료상황 액션 실행 (영웅선택 팝업 닫기)
+        OnHeroSelectComplete();
+
+        // 몬스터 스폰 시작
+        MonsterSpawner.Instance.StartMonsterSpawn();
     }
 }

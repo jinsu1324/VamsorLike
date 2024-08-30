@@ -36,7 +36,7 @@ public class SkillSniper : SkillBase
     {
         // 사거리 내 가장 가까운 몬스터 찾기
         MonsterObject closestTargetMonster = 
-            SceneSingleton<MonsterManager>.Instance.GetClosestMonstersByDistance(skillAttackArgs.StartSkillPos, _skillData.Range);
+            MonsterManager.Instance.GetClosestMonstersByDistance(skillAttackArgs.StartSkillPos, _skillData.Range);
 
         // 프로젝타일 생성
         _spawnedProjectileSniper =
