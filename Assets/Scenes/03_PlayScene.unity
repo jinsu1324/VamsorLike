@@ -167,11 +167,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _monsterObjectPoolDict
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[MONSTERID, Assembly-CSharp],[ObjectPool,
+      Data: 0|System.Collections.Generic.Dictionary`2[[MonsterID, Assembly-CSharp],[ObjectPool,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[MONSTERID, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[MonsterID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -471,6 +471,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f1834d363604a90478a958b7ca9912f9, type: 2}
     - {fileID: 11400000, guid: 4a401c3b50461ef4ab3483eb1de4275a, type: 2}
     - {fileID: 11400000, guid: 761c785c3d263ce4a958047207e35210, type: 2}
+    - {fileID: 11400000, guid: 3d9c99260771cae4d948d3d6454f2151, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -478,11 +479,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: HeroDataDict
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[HEROID, Assembly-CSharp],[HeroData,
+      Data: 0|System.Collections.Generic.Dictionary`2[[HeroID, Assembly-CSharp],[HeroData,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HEROID, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HeroID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -552,11 +553,11 @@ MonoBehaviour:
       Data: 
     - Name: MonsterDataDict
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[MONSTERID, Assembly-CSharp],[MonsterData,
+      Data: 2|System.Collections.Generic.Dictionary`2[[MonsterID, Assembly-CSharp],[MonsterData,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[MONSTERID, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[MonsterID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -626,11 +627,11 @@ MonoBehaviour:
       Data: 
     - Name: SkillDataDict
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[SKILLID, Assembly-CSharp],[SkillData,
+      Data: 4|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[SkillData,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 5|System.Collections.Generic.EnumEqualityComparer`1[[SKILLID, Assembly-CSharp]],
+      Data: 5|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -698,6 +699,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: LevelDataList
+      Entry: 10
+      Data: 12
 --- !u!1 &197709707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2923,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 51982250}
-    - {fileID: 220868469}
     - {fileID: 7659548947330973971, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
     - {fileID: 481769591}
     SerializedBytesString: 
@@ -2930,15 +2933,12 @@ MonoBehaviour:
     - Name: HeroSelectPopup
       Entry: 10
       Data: 0
-    - Name: MonsterSpawner
-      Entry: 10
-      Data: 1
     - Name: HPBar
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: MainCanvas
       Entry: 10
-      Data: 3
+      Data: 2
 --- !u!1 &1157762338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,11 +5155,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: HeroObjectDict
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[HEROID, Assembly-CSharp],[HeroObject,
+      Data: 0|System.Collections.Generic.Dictionary`2[[HeroID, Assembly-CSharp],[HeroObject,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HEROID, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HeroID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5229,11 +5229,11 @@ MonoBehaviour:
       Data: 
     - Name: MonsterObjectDict
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[MONSTERID, Assembly-CSharp],[MonsterObject,
+      Data: 2|System.Collections.Generic.Dictionary`2[[MonsterID, Assembly-CSharp],[MonsterObject,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[MONSTERID, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[MonsterID, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12

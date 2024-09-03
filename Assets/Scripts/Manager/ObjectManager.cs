@@ -39,10 +39,10 @@ public class ObjectManager : SerializedMonoBehaviour
     [Title("ø¿∫Í¡ß∆Æ µÒº≈≥ ∏ÆµÈ", bold: false)]
     // øµøı ø¿∫Í¡ß∆ÆµÈ µÒº≈≥ ∏Æ
     [SerializeField]
-    public Dictionary<HEROID, HeroObject> HeroObjectDict { get; set; } = new Dictionary<HEROID, HeroObject>();
+    public Dictionary<HeroID, HeroObject> HeroObjectDict { get; set; } = new Dictionary<HeroID, HeroObject>();
 
 
     // ∏ÛΩ∫≈Õ ø¿∫Í¡ß∆ÆµÈ µÒº≈≥ ∏Æ
     [SerializeField]
-    public Dictionary<MONSTERID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MONSTERID, MonsterObject>();
+    public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
 }

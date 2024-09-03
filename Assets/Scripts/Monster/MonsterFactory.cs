@@ -37,11 +37,11 @@ public class MonsterFactory : SerializedMonoBehaviour
 
     // 몬스터 오브젝트 풀 딕셔너리
     [SerializeField]
-    private Dictionary<MONSTERID, ObjectPool> _monsterObjectPoolDict = new Dictionary<MONSTERID, ObjectPool>(); 
+    private Dictionary<MonsterID, ObjectPool> _monsterObjectPoolDict = new Dictionary<MonsterID, ObjectPool>(); 
 
 
     // 몬스터 데이터 셋팅해서 리턴
-    public MonsterObject SettingMonster(MONSTERID monsterID)
+    public MonsterObject SettingMonster(MonsterID monsterID)
     {
         // 오브젝트 풀에서 몬스터 가져옴
         GameObject go = _monsterObjectPoolDict[monsterID].GetObj();

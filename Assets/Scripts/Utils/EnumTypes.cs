@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 태그
-public enum TAG
+public enum Tag
 {
     Monster,
     Hero
 }
 
 // 저장폴더 이름
-public enum SAVEFOLDERNAME
+public enum SaveFolderName
 {
     Monster,
     Hero,

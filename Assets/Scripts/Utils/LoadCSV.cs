@@ -5,13 +5,80 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D.IK;
-
+using static UnityEditor.LightingExplorerTableColumn;
 
 
 public class LoadCSV
 {    
+    public static void CSV_to_DataList(TextAsset textAsset)
+    {
+        // Scriptable Object로 저장하고 불러오는 부분
+        string path = $"Assets/Resources/Data/Level/LevelDataList.asset";
+        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDataList>(path);
+
+        if (so == null)
+        {
+            so = ScriptableObject.CreateInstance<LevelDataList>();
+
+            AssetDatabase.CreateAsset(so, path);
+            AssetDatabase.SaveAssets();
+        }
+
+        LevelDataList levelDataList = so as LevelDataList;
+        if (levelDataList.LevelDatas != null)
+            levelDataList.LevelDatas.Clear();
+
+
+        // TextAsset 분할하는 부분
+        string csv = textAsset.text;
+        string[] raws = csv.Split(System.Environment.NewLine);
+
+        int headerIndex = 1;
+        string[] headers = raws[headerIndex].Split(',');
+
+
+
+        // 전체 행 반복해서 데이터를 리스트에 넣어주는 부분
+        for (int i = headerIndex + 1; i < raws.Length; i++)
+        {
+            // 행을 , 로 자름 (이제 실제 데이터)
+            string[] datas = raws[i].Split(',');
+
+
+            // 리플렉션 활용해서 header == field 이름 통해 데이터 넣어줌
+            Type type = typeof(LevelData);
+            LevelData levelData = new LevelData();
+
+            for (int k = 0; k < datas.Length; k++)
+            {
+                //Debug.Log("header : " + headers[k] + " / data : " + datas[k]);
+                FieldInfo fieldInfo = type.GetField(headers[k]);
+
+                if (fieldInfo.FieldType == typeof(int))
+                {
+                    int data_int = int.Parse(datas[k]);
+                    fieldInfo.SetValue(levelData, data_int);
+                }
+                else if (fieldInfo.FieldType == typeof(float))
+                {
+                    float data_float = float.Parse(datas[k]);
+                    fieldInfo.SetValue(levelData, data_float);
+                }
+                else if (fieldInfo.FieldType == typeof(string))
+                {
+                    fieldInfo.SetValue(levelData, datas[k]);
+                }
+            }
+
+            // 다 완성된 레벨데이터를 리스트에 넣어줌
+            levelDataList.LevelDatas.Add(levelData);
+        }
+    }
+
+
+
     // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌   
-    public static void CSV_to_Data<DataType, KeyEnum>(TextAsset textAsset, SAVEFOLDERNAME saveFolderName) where DataType : ScriptableObject where KeyEnum : Enum
+    public static void CSV_to_Data<DataType, KeyEnum>(TextAsset textAsset, SaveFolderName saveFolderName) where DataType : ScriptableObject where KeyEnum : Enum
     {
         // csv파일 행으로 잘라주기
         string csv = textAsset.text;

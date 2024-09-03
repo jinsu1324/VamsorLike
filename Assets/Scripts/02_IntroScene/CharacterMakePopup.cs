@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ARROWDIR
+public enum ArrowDir
 {
     Next,
     Prev
@@ -29,7 +29,7 @@ public class CharacterMakePopup : SerializedMonoBehaviour
     private TMP_InputField _nickNameinputField;
 
     // 어떤슬롯을 선택해서 뜬 팝업인지
-    private SLOTNUM _selectedSlotNum;
+    private SlotNum _selectedSlotNum;
 
     // 현재 선택되어있는 파츠 넘버
     private int _curHairNum;
@@ -41,7 +41,7 @@ public class CharacterMakePopup : SerializedMonoBehaviour
 
 
     // 팝업 열릴때 호출
-    public void OpenPopup(SLOTNUM slotNum)
+    public void OpenPopup(SlotNum slotNum)
     {        
         _selectedSlotNum = slotNum;
 
@@ -55,14 +55,14 @@ public class CharacterMakePopup : SerializedMonoBehaviour
     public void OnClickNextButton(int characterPartsNum)
     {
         // 다음 이미지로 변경
-        ChangeSprite((CHARACTERPARTS)characterPartsNum, ARROWDIR.Next);
+        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Next);
     }
 
     // Prev버튼 누르면 호출
     public void OnClickPrevButton(int characterPartsNum)
     {
         // 이전 이미지로 변경
-        ChangeSprite((CHARACTERPARTS)characterPartsNum, ARROWDIR.Prev);
+        ChangeSprite((CharacterParts)characterPartsNum, ArrowDir.Prev);
     }
 
     // Complete버튼 누르면 호출
@@ -103,24 +103,24 @@ public class CharacterMakePopup : SerializedMonoBehaviour
     }
 
     // 캐릭터의 스프라이트 변경
-    private void ChangeSprite(CHARACTERPARTS characterParts, ARROWDIR arrowDir)
+    private void ChangeSprite(CharacterParts characterParts, ArrowDir arrowDir)
     {
         List<Sprite> spriteList = new List<Sprite>();
         int curNum = 0;
 
-        if (characterParts == CHARACTERPARTS.Hair)
+        if (characterParts == CharacterParts.Hair)
         {
             spriteList = IntroSceneManager.Instance.CharacterResourcesManager.HairList;
             curNum = ChangeCurNum(ref _curHairNum, spriteList.Count, arrowDir);
             ChangeUIImage(_hairImage, spriteList, curNum);
         }
-        else if (characterParts == CHARACTERPARTS.Face)
+        else if (characterParts == CharacterParts.Face)
         {
             spriteList = IntroSceneManager.Instance.CharacterResourcesManager.FaceList;
             curNum = ChangeCurNum(ref _curFaceNum, spriteList.Count, arrowDir);
             ChangeUIImage(_faceImage, spriteList, curNum);
         }
-        else if (characterParts == CHARACTERPARTS.Costume)
+        else if (characterParts == CharacterParts.Costume)
         {
             spriteList = IntroSceneManager.Instance.CharacterResourcesManager.CostumeList;
             curNum = ChangeCurNum(ref _curCostumeNum, spriteList.Count, arrowDir);
@@ -129,16 +129,16 @@ public class CharacterMakePopup : SerializedMonoBehaviour
     }
 
     // 현재num을 방향에 맞게 변경해서 반환
-    private int ChangeCurNum(ref int curNum, int listCount, ARROWDIR arrowDir)
+    private int ChangeCurNum(ref int curNum, int listCount, ArrowDir arrowDir)
     {
-        if (arrowDir == ARROWDIR.Next)
+        if (arrowDir == ArrowDir.Next)
         {
             curNum++;
             if (curNum >= listCount)
                 curNum = 0;
             return curNum;
         }
-        else if (arrowDir == ARROWDIR.Prev)
+        else if (arrowDir == ArrowDir.Prev)
         {
             curNum--;
             if (curNum < 0)

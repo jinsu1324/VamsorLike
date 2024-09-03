@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CharacterDataManager : SerializedMonoBehaviour
 {   
-    public SLOTNUM SelectSlotNum { get; set; }
+    public SlotNum SelectSlotNum { get; set; }
 
     private CharacterData _characterDataSlot01;
     private CharacterData _characterDataSlot02;
@@ -18,13 +18,13 @@ public class CharacterDataManager : SerializedMonoBehaviour
         
 
     // 슬롯번호에 맞게 캐릭터 데이터를 반환해주는 함수
-    public CharacterData GetCharacterDataBySlot(SLOTNUM slotNum)
+    public CharacterData GetCharacterDataBySlot(SlotNum slotNum)
     {
-        if (slotNum == SLOTNUM.First)
+        if (slotNum == SlotNum.First)
             return _characterDataSlot01;
-        else if (slotNum == SLOTNUM.Second)
+        else if (slotNum == SlotNum.Second)
             return _characterDataSlot02;
-        else if (slotNum == SLOTNUM.Third)
+        else if (slotNum == SlotNum.Third)
             return _characterDataSlot03;
         else 
             return null;
@@ -33,35 +33,35 @@ public class CharacterDataManager : SerializedMonoBehaviour
     // path에 저장된 캐릭터데이터를 불러와서 슬롯 캐릭터 데이터에 저장해주는 함수
     public void LoadCharacterData()
     {
-        for (SLOTNUM i = SLOTNUM.First; i <= SLOTNUM.Third; i++)
+        for (SlotNum i = SlotNum.First; i <= SlotNum.Third; i++)
         {
             string slotPath = GetSlotPath(i);
 
-            if (i == SLOTNUM.First)
+            if (i == SlotNum.First)
                 _characterDataSlot01 = SaveLoadManager.LoadData<CharacterData>(slotPath);
-            else if (i == SLOTNUM.Second)
+            else if (i == SlotNum.Second)
                 _characterDataSlot02 = SaveLoadManager.LoadData<CharacterData>(slotPath);
-            else if (i == SLOTNUM.Third)
+            else if (i == SlotNum.Third)
                 _characterDataSlot03 = SaveLoadManager.LoadData<CharacterData>(slotPath);
         }
     }
 
     // 새로운 캐릭터 만들고 path에 저장해주는 함수
-    public void MakeNewCharacterData(SLOTNUM slotNum, CharacterData myCharacterData)
+    public void MakeNewCharacterData(SlotNum slotNum, CharacterData myCharacterData)
     {
         string slotPath = GetSlotPath(slotNum);
 
-        if (slotNum == SLOTNUM.First)
+        if (slotNum == SlotNum.First)
         {
             _characterDataSlot01 = myCharacterData;
             SaveLoadManager.SaveData<CharacterData>(_characterDataSlot01, slotPath);
         }
-        else if (slotNum == SLOTNUM.Second)
+        else if (slotNum == SlotNum.Second)
         {
             _characterDataSlot02 = myCharacterData;
             SaveLoadManager.SaveData<CharacterData>(_characterDataSlot02, slotPath);
         }
-        else if (slotNum == SLOTNUM.Third)
+        else if (slotNum == SlotNum.Third)
         {
             _characterDataSlot03 = myCharacterData;
             SaveLoadManager.SaveData<CharacterData>(_characterDataSlot03, slotPath);
@@ -69,7 +69,7 @@ public class CharacterDataManager : SerializedMonoBehaviour
     }
 
     // 슬롯번호에 맞게 path를 반환해주는 함수
-    private string GetSlotPath(SLOTNUM slotNum)
+    private string GetSlotPath(SlotNum slotNum)
     {
         return Path.Combine(Application.persistentDataPath, $"{slotNum}_saveData.json");
     }

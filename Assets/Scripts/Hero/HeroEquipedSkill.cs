@@ -12,46 +12,46 @@ public class HeroEquipedSkill
        
 
     // 장착 스킬 리스트에 스킬 추가
-    public void AddSkill(SKILLID choicedSkillID)
+    public void AddSkill(SkillID choicedSkillID)
     {
         SkillBase choicedSkill = ReturnSkillByID(choicedSkillID);
         EquipedSkillList.Add(choicedSkill);
     }
 
     // 장착 스킬 리스트에 스킬 삭제
-    public void RemoveSkill(SKILLID choicedSkillID)
+    public void RemoveSkill(SkillID choicedSkillID)
     {
         SkillBase choicedSkill = ReturnSkillByID(choicedSkillID);
         EquipedSkillList.Remove(choicedSkill);
     }
 
     // SkillID에 따라 Skill을 반환해주는 함수
-    private SkillBase ReturnSkillByID(SKILLID skillID)
+    private SkillBase ReturnSkillByID(SkillID skillID)
     {
         // 스킬 데이터 딕셔너리
-        Dictionary<SKILLID, SkillData> skillDataDict = DataManager.Instance.SkillDataDict;
+        Dictionary<SkillID, SkillData> skillDataDict = DataManager.Instance.SkillDataDict;
         // 이번게임 플레이중인 영웅
         HeroObject thisGameHeroObject = PlaySceneManager.ThisGameHeroObject;
 
         // 스킬ID에 따라 Skill 인스턴스화 해서 반환
         switch (skillID)
         {
-            case SKILLID.SlashAttack:
+            case SkillID.SlashAttack:
                 SkillSlashAttack skillSlashAttack = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("skillSlashAttack 선택!");
                 return skillSlashAttack;
 
-            case SKILLID.Sniper:
+            case SkillID.Sniper:
                 SkillSniper skillSniper = new SkillSniper(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("skillSniper 선택!");
                 return skillSniper;
 
-            case SKILLID.Boomerang:
+            case SkillID.Boomerang:
                 SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("skillBoomerang 선택!");
                 return skillBoomerang;
 
-            case SKILLID.Heal:
+            case SkillID.Heal:
                 SkillBoomerang skillHeal = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("skillHeal 선택! (임시로 부메랑 들어가있음)");
                 return skillHeal;

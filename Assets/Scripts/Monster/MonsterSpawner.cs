@@ -85,10 +85,10 @@ public class MonsterSpawner : SerializedMonoBehaviour
 
 
     // MonsterID Enum 값들을 다 가져와서 랜덤으로 하나의 몬스터만 뽑기
-    public MONSTERID RandomMonsterID()
+    public MonsterID RandomMonsterID()
     {
-        MONSTERID[] monsterIDValues = System.Enum.GetValues(typeof(MONSTERID)) as MONSTERID[];
-        MONSTERID randomMonsterID = (MONSTERID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
+        MonsterID[] monsterIDValues = System.Enum.GetValues(typeof(MonsterID)) as MonsterID[];
+        MonsterID randomMonsterID = (MonsterID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
 
         return randomMonsterID;
     }

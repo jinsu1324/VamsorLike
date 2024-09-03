@@ -6,21 +6,21 @@ using UnityEngine.EventSystems;
 
 public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {    
-    public List<CHANGETYPE> ChangeTypeList { get; set; } = new List<CHANGETYPE>();
+    public List<ChangeType> ChangeTypeList { get; set; } = new List<ChangeType>();
 
-    private Action<STATE, CustomButton> _enterAction;
-    private Action<STATE, CustomButton> _exitAction;
+    private Action<State, CustomButton> _enterAction;
+    private Action<State, CustomButton> _exitAction;
 
     private void Start()
     {
-        foreach (CHANGETYPE chageType in ChangeTypeList)
+        foreach (ChangeType chageType in ChangeTypeList)
         {
-            if (chageType == CHANGETYPE.Color)
+            if (chageType == ChangeType.Color)
             {
                 _enterAction += CustomButtonMaker.ChangeColor;
                 _exitAction += CustomButtonMaker.ChangeColor;
             }
-            else if (chageType == CHANGETYPE.Size)
+            else if (chageType == ChangeType.Size)
             {
                 _enterAction += CustomButtonMaker.ChangeSize;
                 _exitAction += CustomButtonMaker.ChangeSize;
@@ -30,12 +30,12 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _enterAction(STATE.Enter, this);
+        _enterAction(State.Enter, this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _exitAction(STATE.Exit, this);
+        _exitAction(State.Exit, this);
     }
 
     

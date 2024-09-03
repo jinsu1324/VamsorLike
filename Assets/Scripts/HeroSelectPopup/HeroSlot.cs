@@ -52,7 +52,7 @@ public class HeroSlot : SerializedMonoBehaviour
     public void OnClickSelectCompleteButton()
     {
         // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
-        HEROID heroID = (HEROID)Enum.Parse(typeof(HEROID), _HeroData.Id);
+        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
 
         // 게임시작됨을 true로
         PlaySceneManager.Instance.IsGameStartTrue();

@@ -63,7 +63,7 @@ public class MonsterObject : ObjectPoolObject
     // 영웅 충돌감지 및 공격
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == TAG.Hero.ToString())
+        if (collision.gameObject.tag == Tag.Hero.ToString())
         {
             collision.gameObject.GetComponent<HeroObject>().HPMinus(_objMonsterData.Atk);
         }

@@ -64,7 +64,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     }
 
     // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
-    public void ThisGameHeroSetting(HEROID selectHeroID)
+    public void ThisGameHeroSetting(HeroID selectHeroID)
     {
         // 선택한 영웅을 이번게임의 영웅으로 할당
         ThisGameHeroObject = ObjectManager.Instance.HeroObjectDict[selectHeroID];
