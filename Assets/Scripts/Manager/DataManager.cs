@@ -53,5 +53,5 @@ public class DataManager : SerializedMonoBehaviour
     [Title("데이터 리스트들", bold: false)]
     // 레벨데이터 리스트
     [SerializeField]
-    public LevelDataList LevelDataList { get; set; }
+    public LevelDatas LevelDatas { get; set; }
 }

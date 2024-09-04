@@ -14,19 +14,19 @@ public class LoadCSV
     {
         // Scriptable Object로 저장하고 불러오는 부분
         string path = $"Assets/Resources/Data/Level/LevelDataList.asset";
-        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDataList>(path);
+        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDatas>(path);
 
         if (so == null)
         {
-            so = ScriptableObject.CreateInstance<LevelDataList>();
+            so = ScriptableObject.CreateInstance<LevelDatas>();
 
             AssetDatabase.CreateAsset(so, path);
             AssetDatabase.SaveAssets();
         }
 
-        LevelDataList levelDataList = so as LevelDataList;
-        if (levelDataList.LevelDatas != null)
-            levelDataList.LevelDatas.Clear();
+        LevelDatas levelDataList = so as LevelDatas;
+        if (levelDataList.LevelDataList != null)
+            levelDataList.LevelDataList.Clear();
 
 
         // TextAsset 분할하는 부분
@@ -71,7 +71,7 @@ public class LoadCSV
             }
 
             // 다 완성된 레벨데이터를 리스트에 넣어줌
-            levelDataList.LevelDatas.Add(levelData);
+            levelDataList.LevelDataList.Add(levelData);
         }
     }
 

@@ -18,6 +18,8 @@ public class HPBar : SerializedMonoBehaviour
     public void SetParent(Transform tf)
     {
         _parentTF = tf;
-        this.transform.parent = PlaySceneManager.Instance.MainCanvas.transform;
+
+        // 캔버스에서 hp바 하이어라키 위치 설정
+        this.transform.parent = PlaySceneManager.Instance.GuageBarsTF;
     }
 }

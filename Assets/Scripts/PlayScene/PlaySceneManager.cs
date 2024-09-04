@@ -48,19 +48,34 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public HeroSelectPopup HeroSelectPopup { get; set; }
 
+    // 스킬 선택 팝업
+    [SerializeField]
+    public SkillChoicePopup SkillChoicePopup { get; set; }
+
     // HP바
     [SerializeField]
     public HPBar HPBar { get; set; }    
 
     // 메인 UI 캔버스
     [SerializeField]
-    public Canvas MainCanvas { get; set; }
+    public Transform GuageBarsTF { get; set; }
 
+    private void Start()
+    {
+        ScenePopupsInitialize();
+    }
 
-    // 게임시작 bool 을 true로
-    public void IsGameStartTrue()
+    // 씬 팝업들 ON OFF 초기화
+    private void ScenePopupsInitialize()
+    {
+        HeroSelectPopup.OpenPopup();
+        SkillChoicePopup.ClosePopup();
+    }
+
+    // 게임시작 bool 파라미터로 변경
+    public void IsGameStartChange(bool state)
     {        
-        IsGameStart = true;
+        IsGameStart = state;
     }
 
     // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰

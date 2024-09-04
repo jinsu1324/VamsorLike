@@ -17,13 +17,11 @@ public class SkillChoicePopup : MonoBehaviour
     // 스킬슬롯들 초기화
     private void SettingSkillChoiceSlot()
     {
-
         // 스킬 테스트용 임시
-        _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack);
-        _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang);
-        _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper);
-        _skillChoiceSlotArr[3].SetSlotInfos(SkillID.Heal);
-
+        _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack, ClosePopup);
+        _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang, ClosePopup);
+        _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper, ClosePopup);
+        _skillChoiceSlotArr[3].SetSlotInfos(SkillID.Heal, ClosePopup);
 
 
         // 랜덤으로 해주기
@@ -36,5 +34,19 @@ public class SkillChoicePopup : MonoBehaviour
 
         //    _skillChoiceSlotArr[i].SetSlotInfos(skillID);
         //}
+    }
+
+
+    // 팝업 열기
+    public void OpenPopup()
+    {
+        gameObject.SetActive(true);
+    }
+
+
+    // 팝업 닫기
+    public void ClosePopup()
+    {
+        gameObject.SetActive(false);
     }
 }

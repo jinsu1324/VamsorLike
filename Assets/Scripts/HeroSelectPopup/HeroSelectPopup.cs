@@ -28,9 +28,16 @@ public class HeroSelectPopup : SerializedMonoBehaviour
         }
     }
 
-    // ÆË¾÷ ´Ý±â
-    private void ClosePopup()
+    // ÆË¾÷ ¿­±â
+    public void OpenPopup()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(true);
+    }
+
+
+    // ÆË¾÷ ´Ý±â
+    public void ClosePopup()
+    {
+        gameObject.SetActive(false);
     }
 }

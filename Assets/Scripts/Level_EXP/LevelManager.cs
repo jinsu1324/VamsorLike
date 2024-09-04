@@ -21,10 +21,10 @@ public class EXP
     }
 }
 
-public class EXPManager : SerializedMonoBehaviour
+public class LevelManager : SerializedMonoBehaviour
 {
     #region 싱글톤
-    private static EXPManager _instance;
+    private static LevelManager _instance;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class EXPManager : SerializedMonoBehaviour
         }
     }
 
-    public static EXPManager Instance
+    public static LevelManager Instance
     {
         get
         {
@@ -53,8 +53,13 @@ public class EXPManager : SerializedMonoBehaviour
     }
     #endregion
 
+
+    private LevelData _heroLevelData;
+
     // 마스터 영웅 EXP
     public EXP HeroExp { get; set; } = new EXP(0, 100, 0);
+
+
 
     // 바닥에 떨어져있을 EXP 오브젝트
     [SerializeField]
@@ -66,12 +71,20 @@ public class EXPManager : SerializedMonoBehaviour
 
     private void Start()
     {
+        // 레벨 0 값으로 초기설정
+        _heroLevelData = DataManager.Instance.LevelDatas.LevelDataList[0];
+
+
+
+
+
         EXPObject.OnGetEXP += EXPUp;
 
         MonsterObject.OnMonsterDeath += InstantiateEXPObj;
 
         EXPBarUpdate();
     }
+
 
     // EXP바 정보들 업데이트
     private void EXPBarUpdate()

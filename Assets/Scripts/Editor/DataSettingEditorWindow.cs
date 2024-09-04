@@ -43,7 +43,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
 
         DataManager dataManager = FindObjectOfType<DataManager>();
-        dataManager.LevelDataList = null;
+        dataManager.LevelDatas = null;
 
 
         LoadCSV.CSV_to_DataList(_levelDataTextAsset);
@@ -52,7 +52,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
         // 경로에 있는 모든 데이터를 가져옴
         string path = $"Assets/Resources/Data/Level/LevelDataList.asset";
-        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDataList>(path);
+        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDatas>(path);
 
         // 데이터를 못받아왔으면 넘어감
         if (so == null)
@@ -60,8 +60,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.LogWarning($" so 의 데이터가 null 입니다");
         }
 
-        LevelDataList levelDataList = so as LevelDataList;
-        dataManager.LevelDataList = levelDataList;
+        LevelDatas levelDataList = so as LevelDatas;
+        dataManager.LevelDatas = levelDataList;
 
         // 클릭 및 저장
         EditorUtility.SetDirty(levelDataList);

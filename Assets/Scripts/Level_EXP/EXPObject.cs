@@ -13,7 +13,7 @@ public class EXPObject : MonoBehaviour
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
         {          
-            OnGetEXP(EXPManager.Instance.HeroExp);
+            OnGetEXP(LevelManager.Instance.HeroExp);
             Destroy(this.gameObject);
         }
     }
