@@ -6,18 +6,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 클래스로 하니까 되네...?
-public class EXP
+public class ThisGameHeroLevelData
 {
-    public int currentEXP;
-    public int NextEXP;
-    public int Level;
+    public int CurrentEXP;
+    public int CurrentLevel;
 
-    public EXP(int currentExp, int nextExp, int level)
+    public ThisGameHeroLevelData(int currentExp, int currentLevel)
     {
-        currentEXP = currentExp;
-        NextEXP = nextExp;
-        Level = level;
+        CurrentEXP = currentExp;
+        CurrentLevel = currentLevel;
     }
 }
 
@@ -53,13 +50,8 @@ public class LevelManager : SerializedMonoBehaviour
     }
     #endregion
 
-
-    private LevelData _heroLevelData;
-
-    // 마스터 영웅 EXP
-    public EXP HeroExp { get; set; } = new EXP(0, 100, 0);
-
-
+    // 이번게임 영웅 레벨 경험치 데이터
+    public ThisGameHeroLevelData ThisGameHeroLevelData { get; set; } = new ThisGameHeroLevelData(0, 0);
 
     // 바닥에 떨어져있을 EXP 오브젝트
     [SerializeField]
@@ -69,48 +61,38 @@ public class LevelManager : SerializedMonoBehaviour
     [SerializeField]
     public EXPBar EXPBar { get; set; }
 
+
     private void Start()
     {
-        // 레벨 0 값으로 초기설정
-        _heroLevelData = DataManager.Instance.LevelDatas.LevelDataList[0];
-
-
-
-
-
-        EXPObject.OnGetEXP += EXPUp;
+        EXPBar.UpdateEXPBarInfos();
 
         MonsterObject.OnMonsterDeath += InstantiateEXPObj;
+        EXPObject.OnGetExp += EXPUp;
 
-        EXPBarUpdate();
     }
 
-
-    // EXP바 정보들 업데이트
-    private void EXPBarUpdate()
-    {
-        EXPBar.EXPSliderUpdate(HeroExp);
-        EXPBar.LevelTextUpdate(HeroExp);
-    }
 
     // 경험치 증가
-    private void EXPUp(EXP exp)
+    public void EXPUp()
     {
-        exp.currentEXP += 10;
-        Debug.Log(exp.currentEXP + "   " + exp.NextEXP);
+        ThisGameHeroLevelData.CurrentEXP += 10;
 
-        if (exp.currentEXP >= exp.NextEXP)
+        if (ThisGameHeroLevelData.CurrentEXP >= DataManager.Instance.LevelDatas.LevelDataList[ThisGameHeroLevelData.CurrentLevel].MaxExp)
         {
-            LevelUp(exp);
+            LevelUp();
         }
     }
 
+
     // 레벨 증가
-    private void LevelUp(EXP exp)
+    private void LevelUp()
     {
-        exp.Level++;
-        EXPBar.LevelTextUpdate(exp);
+        ThisGameHeroLevelData.CurrentLevel++;
+        ThisGameHeroLevelData.CurrentEXP = 0; 
+
+        EXPBar.UpdateEXPBarInfos();
     }
+
 
     // 몬스터 죽으면 바닥에 EXP 오브젝트 생성
     private void InstantiateEXPObj(MonsterObject monsterObject)

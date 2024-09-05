@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,22 +12,40 @@ public class EXPBar : SerializedMonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _levelText;
 
+    [SerializeField]
+    private TextMeshProUGUI _expStateText;
 
     private void Start()
     {
-        EXPObject.OnGetEXP += LevelTextUpdate;
-        EXPObject.OnGetEXP += EXPSliderUpdate;
+        EXPObject.OnGetExp += UpdateEXPBarInfos;
+    }
+
+    // EXP Bar 관련 정보들 업데이트
+    public void UpdateEXPBarInfos()
+    {
+        LevelTextUpdate();
+        ExpStateTextUpdate();
+        EXPSliderUpdate();
     }
 
     // 레벨텍스트 업데이트
-    public void LevelTextUpdate(EXP exp)
+    public void LevelTextUpdate()
     {
-        _levelText.text = exp.Level.ToString();
+        _levelText.text = LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel.ToString();
+    }
+
+    // 경험치 상태 텍스트 업데이트
+    public void ExpStateTextUpdate()
+    {
+        _expStateText.text =
+            $"{LevelManager.Instance.ThisGameHeroLevelData.CurrentEXP} / {DataManager.Instance.LevelDatas.LevelDataList[LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel].MaxExp}";
     }
 
     // 경험치 슬라이더 게이지바 업데이트
-    public void EXPSliderUpdate(EXP exp)
-    {
-        GetComponent<Slider>().value = (float)exp.currentEXP / (float)exp.NextEXP;
+    public void EXPSliderUpdate()
+    {       
+        GetComponent<Slider>().value = 
+            (float)LevelManager.Instance.ThisGameHeroLevelData.CurrentEXP / 
+            (float)DataManager.Instance.LevelDatas.LevelDataList[LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel].MaxExp;
     }
 }
