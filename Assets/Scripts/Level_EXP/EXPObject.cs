@@ -14,7 +14,8 @@ public class EXPObject : MonoBehaviour
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
         {
-            OnGetExp();
+            OnGetExp?.Invoke();
+
             Destroy(this.gameObject);
         }
     }

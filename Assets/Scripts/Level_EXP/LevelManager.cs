@@ -6,15 +6,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThisGameHeroLevelData
+public class HeroLvExp
 {
-    public int CurrentEXP;
-    public int CurrentLevel;
+    public int EXP;
+    public int Level;
 
-    public ThisGameHeroLevelData(int currentExp, int currentLevel)
+    public HeroLvExp(int exp, int level)
     {
-        CurrentEXP = currentExp;
-        CurrentLevel = currentLevel;
+        EXP = exp;
+        Level = level;
     }
 }
 
@@ -50,8 +50,8 @@ public class LevelManager : SerializedMonoBehaviour
     }
     #endregion
 
-    // 이번게임 영웅 레벨 경험치 데이터
-    public ThisGameHeroLevelData ThisGameHeroLevelData { get; set; } = new ThisGameHeroLevelData(0, 0);
+    // 이번게임 영웅 레벨 경험치
+    public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 0);
 
     // 바닥에 떨어져있을 EXP 오브젝트
     [SerializeField]
@@ -64,33 +64,32 @@ public class LevelManager : SerializedMonoBehaviour
 
     private void Start()
     {
-        EXPBar.UpdateEXPBarInfos();
+        EXPBar.Update_EXPBarInfos();
 
         MonsterObject.OnMonsterDeath += InstantiateEXPObj;
         EXPObject.OnGetExp += EXPUp;
-
     }
-
 
     // 경험치 증가
     public void EXPUp()
     {
-        ThisGameHeroLevelData.CurrentEXP += 10;
+        MyHeroLvExp.EXP += 10;
 
-        if (ThisGameHeroLevelData.CurrentEXP >= DataManager.Instance.LevelDatas.LevelDataList[ThisGameHeroLevelData.CurrentLevel].MaxExp)
+        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+
+        if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
         {
             LevelUp();
         }
     }
 
-
     // 레벨 증가
     private void LevelUp()
     {
-        ThisGameHeroLevelData.CurrentLevel++;
-        ThisGameHeroLevelData.CurrentEXP = 0; 
+        MyHeroLvExp.Level++;
+        MyHeroLvExp.EXP = 0; 
 
-        EXPBar.UpdateEXPBarInfos();
+        EXPBar.Update_EXPBarInfos();
     }
 
 

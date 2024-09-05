@@ -12,40 +12,45 @@ public class EXPBar : SerializedMonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _levelText;
 
+    // 경험치 상태 텍스트
     [SerializeField]
     private TextMeshProUGUI _expStateText;
 
     private void Start()
     {
-        EXPObject.OnGetExp += UpdateEXPBarInfos;
+        EXPObject.OnGetExp += Update_EXPBarInfos;
     }
 
     // EXP Bar 관련 정보들 업데이트
-    public void UpdateEXPBarInfos()
+    public void Update_EXPBarInfos()
     {
-        LevelTextUpdate();
-        ExpStateTextUpdate();
-        EXPSliderUpdate();
+        HeroLvExp heroLvExp = LevelManager.Instance.MyHeroLvExp;
+        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+
+        Update_LevelText(heroLvExp);
+        Update_ExpStateText(heroLvExp, levelDataList);
+        Update_EXPSlider(heroLvExp, levelDataList);
     }
 
     // 레벨텍스트 업데이트
-    public void LevelTextUpdate()
+    public void Update_LevelText(HeroLvExp heroLvExp)
     {
-        _levelText.text = LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel.ToString();
+        _levelText.text = heroLvExp.Level.ToString();
     }
 
     // 경험치 상태 텍스트 업데이트
-    public void ExpStateTextUpdate()
+    public void Update_ExpStateText(HeroLvExp heroLvExp, List<LevelData> levelDataList)
     {
-        _expStateText.text =
-            $"{LevelManager.Instance.ThisGameHeroLevelData.CurrentEXP} / {DataManager.Instance.LevelDatas.LevelDataList[LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel].MaxExp}";
+        _expStateText.text = 
+            $"{heroLvExp.EXP} / " +
+            $"{levelDataList[heroLvExp.Level].MaxExp}";
     }
 
     // 경험치 슬라이더 게이지바 업데이트
-    public void EXPSliderUpdate()
+    public void Update_EXPSlider(HeroLvExp heroLvExp, List<LevelData> levelDataList)
     {       
         GetComponent<Slider>().value = 
-            (float)LevelManager.Instance.ThisGameHeroLevelData.CurrentEXP / 
-            (float)DataManager.Instance.LevelDatas.LevelDataList[LevelManager.Instance.ThisGameHeroLevelData.CurrentLevel].MaxExp;
+            (float)heroLvExp.EXP / 
+            (float)levelDataList[heroLvExp.Level].MaxExp;
     }
 }
