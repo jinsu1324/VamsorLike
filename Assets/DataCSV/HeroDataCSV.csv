@@ -1,5 +1,5 @@
 ,,,,,,
-Id,Name,Hp,Atk,Speed,Range,Delay
+Id,Name,MaxHp,Atk,Speed,Range,Delay
 Warrior,Warrior_Kevin,300,80,2,3,1
 Archor,Archor_Legol,200,50,5,4,1.5
 Wizard,Wizard_Harry,100,90,2,5,2

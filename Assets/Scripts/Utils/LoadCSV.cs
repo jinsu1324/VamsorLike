@@ -24,9 +24,9 @@ public class LoadCSV
             AssetDatabase.SaveAssets();
         }
 
-        LevelDatas levelDataList = so as LevelDatas;
-        if (levelDataList.LevelDataList != null)
-            levelDataList.LevelDataList.Clear();
+        LevelDatas levelDatas = so as LevelDatas;
+        if (levelDatas.LevelDataList != null)
+            levelDatas.LevelDataList.Clear();
 
 
         // TextAsset 분할하는 부분
@@ -71,7 +71,7 @@ public class LoadCSV
             }
 
             // 다 완성된 레벨데이터를 리스트에 넣어줌
-            levelDataList.LevelDataList.Add(levelData);
+            levelDatas.LevelDataList.Add(levelData);
         }
     }
 

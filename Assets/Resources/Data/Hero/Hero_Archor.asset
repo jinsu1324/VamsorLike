@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Archor
   Name: Archor_Legol
-  Hp: 200
+  MaxHp: 200
   Atk: 50
   Speed: 5
   Range: 4

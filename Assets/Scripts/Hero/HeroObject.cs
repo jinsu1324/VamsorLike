@@ -14,7 +14,10 @@ public class HeroObject : SerializedMonoBehaviour
     private readonly HeroData _baseHeroData;
 
     // 오브젝트에 할당될 데이터
-    private HeroData _objHeroData;
+    public int Hp { get; set; }
+    public int Atk { get; set; }
+    public float Speed { get; set; }
+
 
 
     [Title("필요한 컴포넌트들", bold: false)]
@@ -44,7 +47,9 @@ public class HeroObject : SerializedMonoBehaviour
     public void DataSetting()
     {
         // 데이터 넣어주기
-        _objHeroData = _baseHeroData;
+        Hp = _baseHeroData.MaxHp;
+        Atk = _baseHeroData.Atk;
+        Speed = _baseHeroData.Speed;
 
         // 필요 컴포넌트들 가져와서 할당
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,7 +59,7 @@ public class HeroObject : SerializedMonoBehaviour
         // HP바도 할당
         _hpBar = Instantiate(PlaySceneManager.Instance.HPBar, transform.position, Quaternion.identity);
         _hpBar.SetParent(this.transform);
-        _hpBar.Update_HPSlider(_objHeroData.Hp, _baseHeroData.Hp);
+        _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
     }
 
 
@@ -64,8 +69,8 @@ public class HeroObject : SerializedMonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        _moveDir.x = _rigid.position.x + (horizontal * _objHeroData.Speed * Time.deltaTime);
-        _moveDir.y = _rigid.position.y + (vertical * _objHeroData.Speed * Time.deltaTime);
+        _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
+        _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
 
         _rigid.MovePosition(_moveDir);        
     }
@@ -96,18 +101,15 @@ public class HeroObject : SerializedMonoBehaviour
     // HP 감소
     public void HPMinus(int atk)
     {
-        _objHeroData.Hp -= atk;
+        Hp -= atk;
 
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
-        Debug.Log($"_objHeroData.Hp : {_objHeroData.Hp}");
-        Debug.Log($"_baseHeroData.Hp : {_baseHeroData.Hp}");
+        _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
 
-        _hpBar.Update_HPSlider(_objHeroData.Hp, _baseHeroData.Hp);
-
-        if (_objHeroData.Hp < 0)
+        if (Hp < 0)
             Death();
     }
 

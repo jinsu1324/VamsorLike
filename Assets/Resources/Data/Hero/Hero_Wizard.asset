@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Wizard
   Name: Wizard_Harry
-  Hp: 100
+  MaxHp: 100
   Atk: 90
   Speed: 2
   Range: 5

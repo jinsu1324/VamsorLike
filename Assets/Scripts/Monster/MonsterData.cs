@@ -12,12 +12,7 @@ public enum MonsterID
 
 // 몬스터 데이터
 [System.Serializable]
-public class MonsterData : ScriptableObject
+public class MonsterData : Creature
 {
-    public string Id;
-    public string Name;
-    public int Hp;
-    public int Atk;
-    public float Speed;
     public Sprite Sprite;
 }

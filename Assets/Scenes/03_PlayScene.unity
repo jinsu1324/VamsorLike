@@ -699,7 +699,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LevelDataList
+    - Name: LevelDatas
       Entry: 10
       Data: 12
 --- !u!1 &197709707

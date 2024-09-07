@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Warrior
   Name: Warrior_Kevin
-  Hp: 300
+  MaxHp: 300
   Atk: 80
   Speed: 2
   Range: 3

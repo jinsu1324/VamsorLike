@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Thief
   Name: Thief_Darkload
-  Hp: 150
+  MaxHp: 150
   Atk: 60
   Speed: 3
   Range: 4

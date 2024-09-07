@@ -44,7 +44,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
         DataManager dataManager = FindObjectOfType<DataManager>();
         dataManager.LevelDatas = null;
-
+        
 
         LoadCSV.CSV_to_DataList(_levelDataTextAsset);
 
@@ -64,7 +64,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
         dataManager.LevelDatas = levelDatas;
 
         // 클릭 및 저장
-        EditorUtility.SetDirty(levelDatas);
+        EditorUtility.SetDirty(dataManager);
         AssetDatabase.SaveAssets();
 
     }
@@ -166,7 +166,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
             // 클릭 및 저장
             EditorUtility.SetDirty(data);
-            AssetDatabase.SaveAssets();            
+            AssetDatabase.SaveAssets();
+
         }
     }
 

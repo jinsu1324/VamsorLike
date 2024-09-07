@@ -14,8 +14,10 @@ public class MonsterObject : ObjectPoolObject
     [SerializeField]
     private readonly MonsterData _baseMonsterData;
 
-    // 오브젝트 몬스터 데이터
-    private MonsterData _objMonsterData;
+    // 오브젝트에 할당될 데이터
+    public int Hp { get; set; }
+    public int Atk { get; set; }
+    public float Speed { get; set; }
 
     // 스프라이트 렌더러
     private SpriteRenderer _spriteRenderer;
@@ -27,7 +29,10 @@ public class MonsterObject : ObjectPoolObject
     // 데이터 셋팅
     public void DataSetting()
     {
-        _objMonsterData = _baseMonsterData;
+        // 데이터 할당
+        Hp = _baseMonsterData.MaxHp;
+        Atk = _baseMonsterData.Atk;
+        Speed = _baseMonsterData.Speed;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -37,14 +42,14 @@ public class MonsterObject : ObjectPoolObject
     // HP 감소
     public void HPMinus(int atk)
     {
-        _objMonsterData.Hp -= atk;
+        Hp -= atk;
 
 
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
-        if (_objMonsterData.Hp < 0)
+        if (Hp < 0)
             Death();
     }
 
@@ -65,7 +70,7 @@ public class MonsterObject : ObjectPoolObject
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
         {
-            collision.gameObject.GetComponent<HeroObject>().HPMinus(_objMonsterData.Atk);
+            collision.gameObject.GetComponent<HeroObject>().HPMinus(Atk);
         }
     }
 
@@ -76,6 +81,6 @@ public class MonsterObject : ObjectPoolObject
         transform.position = Vector3.MoveTowards(
             transform.position,
             PlaySceneManager.ThisGameHeroObject.transform.position,
-            _objMonsterData.Speed * Time.fixedDeltaTime);
+            Speed * Time.fixedDeltaTime);
     }
 }
