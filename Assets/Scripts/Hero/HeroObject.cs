@@ -116,6 +116,6 @@ public class HeroObject : SerializedMonoBehaviour
     // 죽음
     private void Death()
     {
-        //Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 }
