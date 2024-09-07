@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HPBar : SerializedMonoBehaviour
 {
@@ -21,5 +22,13 @@ public class HPBar : SerializedMonoBehaviour
 
         // 캔버스에서 hp바 하이어라키 위치 설정
         this.transform.parent = PlaySceneManager.Instance.GuageBarsTF;
+    }
+
+    // HP 게이지바 업데이트
+    public void Update_HPSlider(int currentHp, int baseHp)
+    {
+        GetComponent<Slider>().value =
+            (float)currentHp /
+            (float)baseHp;
     }
 }

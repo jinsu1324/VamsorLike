@@ -90,6 +90,9 @@ public class LevelManager : SerializedMonoBehaviour
         MyHeroLvExp.EXP = 0; 
 
         EXPBar.Update_EXPBarInfos();
+
+        PlaySceneManager.Instance.SkillChoicePopup.OpenPopup();
+        PlaySceneManager.Instance.IsGameStartChange(false);
     }
 
 

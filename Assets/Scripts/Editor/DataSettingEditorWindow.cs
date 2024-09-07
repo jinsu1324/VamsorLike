@@ -60,11 +60,11 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.LogWarning($" so 의 데이터가 null 입니다");
         }
 
-        LevelDatas levelDataList = so as LevelDatas;
-        dataManager.LevelDatas = levelDataList;
+        LevelDatas levelDatas = so as LevelDatas;
+        dataManager.LevelDatas = levelDatas;
 
         // 클릭 및 저장
-        EditorUtility.SetDirty(levelDataList);
+        EditorUtility.SetDirty(levelDatas);
         AssetDatabase.SaveAssets();
 
     }

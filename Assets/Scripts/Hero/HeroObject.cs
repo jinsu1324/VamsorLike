@@ -54,7 +54,7 @@ public class HeroObject : SerializedMonoBehaviour
         // HP바도 할당
         _hpBar = Instantiate(PlaySceneManager.Instance.HPBar, transform.position, Quaternion.identity);
         _hpBar.SetParent(this.transform);
-        _hpBar.GetComponent<Slider>().value = _objHeroData.Hp / _baseHeroData.Hp;
+        _hpBar.Update_HPSlider(_objHeroData.Hp, _baseHeroData.Hp);
     }
 
 
@@ -102,7 +102,10 @@ public class HeroObject : SerializedMonoBehaviour
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
-        _hpBar.GetComponent<Slider>().value = (float)_objHeroData.Hp / (float)_baseHeroData.Hp;
+        Debug.Log($"_objHeroData.Hp : {_objHeroData.Hp}");
+        Debug.Log($"_baseHeroData.Hp : {_baseHeroData.Hp}");
+
+        _hpBar.Update_HPSlider(_objHeroData.Hp, _baseHeroData.Hp);
 
         if (_objHeroData.Hp < 0)
             Death();

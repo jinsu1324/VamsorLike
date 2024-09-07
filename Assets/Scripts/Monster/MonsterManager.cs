@@ -45,7 +45,10 @@ public class MonsterManager : SerializedMonoBehaviour
 
     private void Update()
     {
-        AllFieldMonsterFollowHero();
+        if (PlaySceneManager.Instance.IsGameStart)
+        {
+            AllFieldMonsterFollowHero();
+        }        
     }    
 
     // 필드몬스터 리스트에 추가
