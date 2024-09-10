@@ -43,10 +43,10 @@ public class SkillChoiceSlot : SerializedMonoBehaviour, IPointerClickHandler
     // 슬롯 정보들 셋팅
     public void SetSlotInfos(SkillID skillID, Action popupClose)
     {
-        SkillID = skillID;
-        SkillNameText.text = DataManager.Instance.SkillDataDict[skillID].Name;
+        //SkillID = skillID;
+        //SkillNameText.text = DataManager.Instance.SkillDataDict[skillID].Name;
 
-        _onSelectFinish += popupClose;
+        //_onSelectFinish += popupClose;
     }
 
     // 장착된 스킬리스트에 추가

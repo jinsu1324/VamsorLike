@@ -29,7 +29,7 @@ public class HeroEquipedSkill
     private SkillBase ReturnSkillByID(SkillID skillID)
     {
         // 스킬 데이터 딕셔너리
-        Dictionary<SkillID, SkillData> skillDataDict = DataManager.Instance.SkillDataDict;
+        Dictionary<SkillID, SkillDataBase> skillDataDict = DataManager.Instance.SkillDataDict;
         // 이번게임 플레이중인 영웅
         HeroObject thisGameHeroObject = PlaySceneManager.ThisGameHeroObject;
 
@@ -50,11 +50,6 @@ public class HeroEquipedSkill
                 SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
                 Debug.Log("skillBoomerang 선택!");
                 return skillBoomerang;
-
-            case SkillID.Heal:
-                SkillBoomerang skillHeal = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("skillHeal 선택! (임시로 부메랑 들어가있음)");
-                return skillHeal;
         }
 
         Debug.Log("ReturnSkillByID 아무것도 반환하지 못했습니다");

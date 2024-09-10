@@ -14,14 +14,14 @@ public class SkillBoomerang : SkillBase
     private ProjectileBoomerang _SpawnedProjectileBoomerang;
 
     // 생성자
-    public SkillBoomerang(SkillData skillData, Vector3 pos)
+    public SkillBoomerang(SkillDataBase skillData, Vector3 pos)
     {
         // 스킬 부메랑이 인스턴스화 되는 순간, 매개변수로 받아온 데이터값을 이 SkillBoomerang의 데이터로 넣어줌
         _skillData = skillData;
 
         // 프로젝타일 생성
-        _SpawnedProjectileBoomerang = 
-            Object.Instantiate(skillData.Projectile, pos, Quaternion.identity) as ProjectileBoomerang;
+        // Imsi _SpawnedProjectileBoomerang = 
+        // Imsi Object.Instantiate(skillData.Projectile, pos, Quaternion.identity) as ProjectileBoomerang;
 
         // 부메랑은 생성되면 계속 공격하게끔 만들 예정
         _isBoomerangStarted = true;
@@ -40,7 +40,7 @@ public class SkillBoomerang : SkillBase
     // 공격 로직
     public override void AttackFunc(SkillAttackArgs skillAttackArgs)
     {
-        _SpawnedProjectileBoomerang.AroundBoomerang(skillAttackArgs.StartSkillPos);
-        _SpawnedProjectileBoomerang.TakeSkillAtk(_skillData.Atk);
+        //_SpawnedProjectileBoomerang.AroundBoomerang(skillAttackArgs.StartSkillPos);
+        //_SpawnedProjectileBoomerang.TakeSkillAtk(_skillData.Atk);
     }    
 }

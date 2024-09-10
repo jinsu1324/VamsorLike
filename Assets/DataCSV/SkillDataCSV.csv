@@ -1,6 +1,5 @@
-,,,,,,,
-Id,Name,Atk,HealPoint,ProjectileSpeed,Range,Delay,Desc
-SlashAttack,N_Slash,50,0,1,5,1,느리고 사거리가 짧지만 근처 유닛 모두를 벱니다.
-Sniper,N_Sniper,100,0,1,10,2,느리지만 사거리가 길고 단일 한명을 공격합니다.
-Boomerang,N_Boomerang,90,0,1,5,1,영웅 주변을 회전하면서 공격하는 부메랑을 소환합니다.
-Heal,N_Heal,60,50,1,5,1,일정 시간마다 영웅의 체력을 회복합니다.
+,
+Id,Name
+SlashAttack,슬래시 어택
+Sniper,스나이퍼 총
+Boomerang,회전 부메랑

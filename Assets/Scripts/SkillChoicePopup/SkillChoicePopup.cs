@@ -21,7 +21,6 @@ public class SkillChoicePopup : MonoBehaviour
         _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack, ClosePopup);
         _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang, ClosePopup);
         _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper, ClosePopup);
-        _skillChoiceSlotArr[3].SetSlotInfos(SkillID.Heal, ClosePopup);
 
 
         // 랜덤으로 해주기

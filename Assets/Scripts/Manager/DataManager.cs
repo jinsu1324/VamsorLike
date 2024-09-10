@@ -47,7 +47,7 @@ public class DataManager : SerializedMonoBehaviour
 
     // 스킬 데이터 딕셔너리
     [SerializeField]
-    public Dictionary<SkillID, SkillData> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillData>();
+    public Dictionary<SkillID, SkillDataBase> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillDataBase>();
 
 
     [Title("데이터 리스트들", bold: false)]

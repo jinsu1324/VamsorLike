@@ -11,7 +11,7 @@ public struct SkillAttackArgs
 // 스킬 베이스
 public abstract class SkillBase
 {
-    protected SkillData _skillData;
+    protected SkillDataBase _skillData;
 
     protected float _time;
 
