@@ -467,9 +467,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 2aa0868359422c84a95c2d1daaa226d7, type: 2}
     - {fileID: 11400000, guid: 14bc6baa1eaa22d4e9e29b7ec2f472f5, type: 2}
     - {fileID: 11400000, guid: 64a8dff9472a85841b840dad6d04d22a, type: 2}
-    - {fileID: 11400000, guid: 7bd8f62e6e5b622458fca7c394b9fb47, type: 2}
-    - {fileID: 11400000, guid: f1834d363604a90478a958b7ca9912f9, type: 2}
-    - {fileID: 11400000, guid: 4a401c3b50461ef4ab3483eb1de4275a, type: 2}
+    - {fileID: 11400000, guid: bf686461e00eccc4dbd7ff2bdf5bda39, type: 2}
     - {fileID: 11400000, guid: 3d9c99260771cae4d948d3d6454f2151, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -626,7 +624,7 @@ MonoBehaviour:
       Data: 
     - Name: SkillDataDict
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[SkillDataBase,
+      Data: 4|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[SkillLevelDataBase,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -643,19 +641,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 10
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
@@ -664,19 +650,7 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 10
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 10
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -688,7 +662,7 @@ MonoBehaviour:
       Data: 
     - Name: LevelDatas
       Entry: 10
-      Data: 11
+      Data: 9
 --- !u!1 &197709707
 GameObject:
   m_ObjectHideFlags: 0

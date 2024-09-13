@@ -29,30 +29,30 @@ public class HeroEquipedSkill
     private SkillBase ReturnSkillByID(SkillID skillID)
     {
         // 스킬 데이터 딕셔너리
-        Dictionary<SkillID, SkillDataBase> skillDataDict = DataManager.Instance.SkillDataDict;
-        // 이번게임 플레이중인 영웅
-        HeroObject thisGameHeroObject = PlaySceneManager.ThisGameHeroObject;
+        //Dictionary<SkillID, SkillDataBase> skillDataDict = DataManager.Instance.SkillDataDict;
+        //// 이번게임 플레이중인 영웅
+        //HeroObject thisGameHeroObject = PlaySceneManager.ThisGameHeroObject;
 
-        // 스킬ID에 따라 Skill 인스턴스화 해서 반환
-        switch (skillID)
-        {
-            case SkillID.SlashAttack:
-                SkillSlashAttack skillSlashAttack = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("skillSlashAttack 선택!");
-                return skillSlashAttack;
+        //// 스킬ID에 따라 Skill 인스턴스화 해서 반환
+        //switch (skillID)
+        //{
+        //    case SkillID.SlashAttack:
+        //        SkillSlashAttack skillSlashAttack = new SkillSlashAttack(skillDataDict[skillID], thisGameHeroObject.transform.position);
+        //        Debug.Log("skillSlashAttack 선택!");
+        //        return skillSlashAttack;
 
-            case SkillID.Sniper:
-                SkillSniper skillSniper = new SkillSniper(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("skillSniper 선택!");
-                return skillSniper;
+        //    case SkillID.Sniper:
+        //        SkillSniper skillSniper = new SkillSniper(skillDataDict[skillID], thisGameHeroObject.transform.position);
+        //        Debug.Log("skillSniper 선택!");
+        //        return skillSniper;
 
-            case SkillID.Boomerang:
-                SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
-                Debug.Log("skillBoomerang 선택!");
-                return skillBoomerang;
-        }
+        //    case SkillID.Boomerang:
+        //        SkillBoomerang skillBoomerang = new SkillBoomerang(skillDataDict[skillID], thisGameHeroObject.transform.position);
+        //        Debug.Log("skillBoomerang 선택!");
+        //        return skillBoomerang;
+        //}
 
-        Debug.Log("ReturnSkillByID 아무것도 반환하지 못했습니다");
+        //Debug.Log("ReturnSkillByID 아무것도 반환하지 못했습니다");
         return null;
     }
 }

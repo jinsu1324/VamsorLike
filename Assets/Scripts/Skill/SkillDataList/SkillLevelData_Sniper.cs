@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SkillLevelData_Sniper : SkillLevelDataBase<SkillData_Sniper>
+public class SkillLevelData_Sniper : SkillLevelDataBase
 {
-
+    
 }
 

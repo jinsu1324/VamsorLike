@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SkillLevelDataBase<SkillData> : ScriptableObject
+public class SkillLevelDataBase : ScriptableObject
 {
-    public List<SkillData> SkillDataList = new List<SkillData>();
+    public List<SkillDataBase> SkillDataList = new List<SkillDataBase>();
 }
