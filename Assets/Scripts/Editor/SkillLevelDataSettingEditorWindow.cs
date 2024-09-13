@@ -44,8 +44,8 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
     public void SkillLevelDataSettingButton()
     {
         CSV_Save_SkillLevelData<SkillLevelData_SlashAttack, SkillData_SlashAttack>(TextAsset_SlashAttack, FILENAME_SlashAttack, SkillID.SlashAttack);
-        CSV_Save_SkillLevelData<SkillLevelData_Boomerang, SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
-        CSV_Save_SkillLevelData<SkillLevelData_Sniper, SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
+        //CSV_Save_SkillLevelData<SkillLevelData_Boomerang, SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
+        //CSV_Save_SkillLevelData<SkillLevelData_Sniper, SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
     }
 
 
@@ -80,8 +80,6 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
 
 
-
-
         for (int i = headerIndex + 1; i < csvLines.Length; i++)
         {
 
@@ -108,6 +106,9 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
             skillLevelData.SkillDataList.Add(skillData);
 
+
+
+
             // 클릭 및 저장
             EditorUtility.SetDirty(skillLevelData);
             AssetDatabase.SaveAssets();
@@ -127,8 +128,6 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
             {
                 dataManager.SkillDataDict[skillID] = skillLevelData;
             }
-
-
 
             
 
