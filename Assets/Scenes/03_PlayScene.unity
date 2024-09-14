@@ -467,7 +467,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 2aa0868359422c84a95c2d1daaa226d7, type: 2}
     - {fileID: 11400000, guid: 14bc6baa1eaa22d4e9e29b7ec2f472f5, type: 2}
     - {fileID: 11400000, guid: 64a8dff9472a85841b840dad6d04d22a, type: 2}
-    - {fileID: 11400000, guid: 4448c31044021e145b8760721a57b4c4, type: 2}
     - {fileID: 11400000, guid: 3d9c99260771cae4d948d3d6454f2151, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -623,46 +622,11 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: SkillDataDict
-      Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[SkillLevelDataBase,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 5|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 10
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
     - Name: LevelDatas
       Entry: 10
-      Data: 9
+      Data: 8
 --- !u!1 &197709707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,6 +2853,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1185347700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185347702}
+  - component: {fileID: 1185347701}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1185347701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185347700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fbea01a62ebab44a7fb351dc1019d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1185347702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185347700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 651.5048, y: 801.7179, z: -2.521847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5316,3 +5324,4 @@ SceneRoots:
   - {fileID: 1043313708}
   - {fileID: 481769592}
   - {fileID: 1124377171}
+  - {fileID: 1185347702}

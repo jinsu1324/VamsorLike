@@ -31,6 +31,7 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
     }
 
 
+
     [Button("텍스트 에셋들 로드")]
     private void LoadTextAssets()
     {
@@ -65,24 +66,21 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
         }
 
         SkillLevelData skillLevelData = so as SkillLevelData;
-        if (skillLevelData.SkillDataList != null)
-            skillLevelData.SkillDataList.Clear();
+        if (skillLevelData.SkillLevelDataList != null)
+            skillLevelData.SkillLevelDataList.Clear();
 
 
         // 텍스트 쪼갬
         string csv = textAsset.text;
         string[] csvLines = csv.Split(System.Environment.NewLine);
-
-        // 헤더줄은 가로로도 분리
+        
         int headerIndex = 1;
         string[] headers = csvLines[headerIndex].Split(',');
 
 
-
-
+        // 데이터 할당
         for (int i = headerIndex + 1; i < csvLines.Length; i++)
         {
-
             // 리플렉션 준비
             Type type = typeof(SkillData);
             SkillData skillData = new SkillData();
@@ -101,13 +99,8 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
                 else if (fieldInfo.FieldType == typeof(string))
                     fieldInfo.SetValue(skillData, datas[k]);
-
             }
-
-            skillLevelData.SkillDataList.Add(skillData);
-
-
-
+            skillLevelData.SkillLevelDataList.Add(skillData);
 
             // 클릭 및 저장
             EditorUtility.SetDirty(skillLevelData);
@@ -129,16 +122,10 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
                 dataManager.SkillDataDict[skillID] = skillLevelData;
             }
 
-
-
             // 클릭 및 저장
             EditorUtility.SetDirty(dataManager);
             AssetDatabase.SaveAssets();
         }
-
-
-
-        
 
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISkillLevelData
+[System.Serializable]
+public class SkillLevelDataBaseParent : ScriptableObject
 {
-    
 }

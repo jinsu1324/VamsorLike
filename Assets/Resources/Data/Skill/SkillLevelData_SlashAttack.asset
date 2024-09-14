@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645a8ca895c1ec540b828f91c34db24b, type: 3}
   m_Name: SkillLevelData_SlashAttack
   m_EditorClassIdentifier: 
-  SkillDataList:
+  SkillLevelDataList:
   - Name: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD"
     Level: 1
     Atk: 50

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa520ac9cb3256c4ba9bc2b165e504f6, type: 3}
   m_Name: SkillLevelData_Sniper
   m_EditorClassIdentifier: 
-  SkillDataList:
+  SkillLevelDataList:
   - Name: "\uC2A4\uB098\uC774\uD37C \uCD1D"
     Level: 1
     Atk: 150

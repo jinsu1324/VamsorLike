@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82404dd1c0cddfe41b3f90b0f25218a9, type: 3}
   m_Name: SkillLevelData_Boomerang
   m_EditorClassIdentifier: 
-  SkillDataList:
+  SkillLevelDataList:
   - Name: "\uD68C\uC804 \uBD80\uBA54\uB791"
     Level: 1
     Atk: 90
