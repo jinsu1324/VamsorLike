@@ -44,30 +44,30 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
     [Button("스킬 레벨 데이터 셋팅", ButtonSizes.Large)]
     public void SkillLevelDataSettingButton()
     {
-        CSV_Save_SkillLevelData<SkillLevelData_SlashAttack, SkillData_SlashAttack>(TextAsset_SlashAttack, FILENAME_SlashAttack, SkillID.SlashAttack);
-        CSV_Save_SkillLevelData<SkillLevelData_Boomerang, SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
-        CSV_Save_SkillLevelData<SkillLevelData_Sniper, SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
+        CSV_Save_SkillLevelData<SkillData_SlashAttack>(TextAsset_SlashAttack, FILENAME_SlashAttack, SkillID.SlashAttack);
+        CSV_Save_SkillLevelData<SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
+        CSV_Save_SkillLevelData<SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
     }
 
 
     // csv를 SkillLevelData 스크립터블로 저장
-    public static void CSV_Save_SkillLevelData<SkillLevelData, SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillLevelData : SkillLevelDataBase<SkillData> where SkillData : SkillDataBase, new()
+    public static void CSV_Save_SkillLevelData<SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillData : SkillDataBase, new()
     {
         // 스크립터블 가져오는 부분
         string path = $"Assets/Resources/Data/Skill/{fileName}.asset";
-        ScriptableObject so = AssetDatabase.LoadAssetAtPath<SkillLevelData>(path);
+        ScriptableObject so = AssetDatabase.LoadAssetAtPath<SkillLevelDataSO>(path);
 
         if (so == null)
         {
-            so = ScriptableObject.CreateInstance<SkillLevelData>();
+            so = ScriptableObject.CreateInstance<SkillLevelDataSO>();
 
             AssetDatabase.CreateAsset(so, path);
             AssetDatabase.SaveAssets();
         }
 
-        SkillLevelData skillLevelData = so as SkillLevelData;
-        if (skillLevelData.SkillLevelDataList != null)
-            skillLevelData.SkillLevelDataList.Clear();
+        SkillLevelDataSO skillLevelDataSO = so as SkillLevelDataSO;
+        if (skillLevelDataSO.SkillDataList != null)
+            skillLevelDataSO.SkillDataList.Clear();
 
 
         // 텍스트 쪼갬
@@ -99,11 +99,12 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
                 else if (fieldInfo.FieldType == typeof(string))
                     fieldInfo.SetValue(skillData, datas[k]);
-            }
-            skillLevelData.SkillLevelDataList.Add(skillData);
+            }            
+
+            skillLevelDataSO.SkillDataList.Add(skillData);
 
             // 클릭 및 저장
-            EditorUtility.SetDirty(skillLevelData);
+            EditorUtility.SetDirty(skillLevelDataSO);
             AssetDatabase.SaveAssets();
 
 
@@ -115,11 +116,11 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
             if (dataManager.SkillDataDict.ContainsKey(skillID))
             {
                 dataManager.SkillDataDict.Remove(skillID);
-                dataManager.SkillDataDict[skillID] = skillLevelData;
+                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
             }
             else
             {
-                dataManager.SkillDataDict[skillID] = skillLevelData;
+                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
             }
 
             // 클릭 및 저장

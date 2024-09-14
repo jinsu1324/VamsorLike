@@ -9,32 +9,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa520ac9cb3256c4ba9bc2b165e504f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5285c5204cc189845af3ce87e7c37ce8, type: 3}
   m_Name: SkillLevelData_Sniper
   m_EditorClassIdentifier: 
-  SkillLevelDataList:
-  - Name: "\uC2A4\uB098\uC774\uD37C \uCD1D"
-    Level: 1
-    Atk: 150
-    ProjectileSpeed: 1
-    Range: 10
-    Delay: 2
-    Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 \uB2E8\uC77C
-      \uD55C\uBA85\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
-    Projectile: {fileID: 0}
-  - Name: "[\uC9C4] \uC2A4\uB098\uC774\uD37C \uCD1D"
-    Level: 2
-    Atk: 200
-    ProjectileSpeed: 1
-    Range: 10
-    Delay: 2
-    Desc: "\uACF5\uACA9\uB825\uC774 130%\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    Projectile: {fileID: 0}
-  - Name: "[\uD608] \uC2A4\uB098\uC774\uD37C \uCD1D"
-    Level: 3
-    Atk: 200
-    ProjectileSpeed: 1
-    Range: 10
-    Delay: 1
-    Desc: "\uC5F0\uC0AC\uB825\uC774 2\uBC30 \uC0C1\uC2B9\uD569\uB2C8\uB2E4!"
-    Projectile: {fileID: 0}
+  SkillDataList:
+  - rid: 7648909104468459526
+  - rid: 7648909104468459527
+  - rid: 7648909104468459528
+  references:
+    version: 2
+    RefIds:
+    - rid: 7648909104468459526
+      type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
+      data:
+        Id: Sniper
+        Name: "\uC2A4\uB098\uC774\uD37C \uCD1D"
+        Level: 1
+        Atk: 150
+        ProjectileSpeed: 1
+        Range: 10
+        Delay: 2
+        Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 \uB2E8\uC77C
+          \uD55C\uBA85\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
+        Projectile: {fileID: 0}
+    - rid: 7648909104468459527
+      type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
+      data:
+        Id: Sniper
+        Name: "[\uC9C4] \uC2A4\uB098\uC774\uD37C \uCD1D"
+        Level: 2
+        Atk: 200
+        ProjectileSpeed: 1
+        Range: 10
+        Delay: 2
+        Desc: "\uACF5\uACA9\uB825\uC774 130%\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
+        Projectile: {fileID: 0}
+    - rid: 7648909104468459528
+      type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
+      data:
+        Id: Sniper
+        Name: "[\uD608] \uC2A4\uB098\uC774\uD37C \uCD1D"
+        Level: 3
+        Atk: 200
+        ProjectileSpeed: 1
+        Range: 10
+        Delay: 1
+        Desc: "\uC5F0\uC0AC\uB825\uC774 2\uBC30 \uC0C1\uC2B9\uD569\uB2C8\uB2E4!"
+        Projectile: {fileID: 0}

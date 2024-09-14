@@ -23,5 +23,18 @@ public class Test : MonoBehaviour
         //    Debug.Log(skillLevelData_slashAttack.SkillLevelDataList[0].Atk);
         //}
 
+
+
+
+        SkillData_SlashAttack slashAttack = DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0] as SkillData_SlashAttack;
+
+        Debug.Log(slashAttack.Atk);
+
+
+        //Debug.Log(DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0].GetType().GetField("Name"));
+
+        //Debug.Log(DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0].Name);
+        //Debug.Log(skillData_SlashAttack_Lv1.Name);
+
     }
 }
