@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SkillLevelData_Boomerang : SkillLevelDataBase
+public class SkillLevelData_Boomerang : SkillLevelDataBase<SkillData_Boomerang>, ISkillLevelData
 {
     
 }

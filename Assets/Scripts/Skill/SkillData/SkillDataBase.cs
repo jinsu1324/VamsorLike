@@ -13,5 +13,7 @@ public enum SkillID
 [System.Serializable]
 public class SkillDataBase
 {
-    // public string Id;
+    //public string Name;
+
+
 }

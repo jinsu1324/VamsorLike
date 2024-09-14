@@ -220,9 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fbea01a62ebab44a7fb351dc1019d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextAsset_SlashAttack: {fileID: 0}
-  TextAsset_Boomerang: {fileID: 0}
-  TextAsset_Sniper: {fileID: 0}
 --- !u!1 &471528743
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,9 +515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fbea01a62ebab44a7fb351dc1019d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextAsset_SlashAttack: {fileID: 0}
-  TextAsset_Boomerang: {fileID: 0}
-  TextAsset_Sniper: {fileID: 0}
 --- !u!4 &1746568372
 Transform:
   m_ObjectHideFlags: 0
@@ -552,7 +546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1815528718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,9 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fbea01a62ebab44a7fb351dc1019d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextAsset_SlashAttack: {fileID: 4900000, guid: 8c6b572c8fa7adb4ea6617047a48a39d, type: 3}
-  TextAsset_Boomerang: {fileID: 4900000, guid: 80bc51d99a3a5c247acb47fd9f53454e, type: 3}
-  TextAsset_Sniper: {fileID: 4900000, guid: 5576426aa2ba7d743ab17207d9f84816, type: 3}
 --- !u!4 &1815528719
 Transform:
   m_ObjectHideFlags: 0
