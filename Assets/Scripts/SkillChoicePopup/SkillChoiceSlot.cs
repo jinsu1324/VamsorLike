@@ -43,10 +43,27 @@ public class SkillChoiceSlot : SerializedMonoBehaviour, IPointerClickHandler
     // 슬롯 정보들 셋팅
     public void SetSlotInfos(SkillID skillID, Action popupClose)
     {
-        //SkillID = skillID;
-        //SkillNameText.text = DataManager.Instance.SkillDataDict[skillID].Name;
+        SkillID = skillID;      
 
-        //_onSelectFinish += popupClose;
+        switch (skillID)
+        {
+            case SkillID.SlashAttack:
+                SkillData_SlashAttack slashAttack = DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0] as SkillData_SlashAttack;
+                SkillNameText.text = slashAttack.Name;
+                break;
+            case SkillID.Sniper:
+                SkillData_Sniper sniper = DataManager.Instance.SkillDataDict[SkillID.Sniper].SkillDataList[0] as SkillData_Sniper;
+                SkillNameText.text = sniper.Name;
+                break;
+            case SkillID.Boomerang:
+                SkillData_Boomerang boomerang = DataManager.Instance.SkillDataDict[SkillID.Boomerang].SkillDataList[0] as SkillData_Boomerang;
+                SkillNameText.text = boomerang.Name;
+                break;
+            default:
+                break;
+        }
+        
+        _onSelectFinish += popupClose;
     }
 
     // 장착된 스킬리스트에 추가

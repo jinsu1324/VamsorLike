@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_Sniper
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909104468459526
-  - rid: 7648909104468459527
-  - rid: 7648909104468459528
+  - rid: 7648909104468459535
+  - rid: 7648909104468459536
+  - rid: 7648909104468459537
   references:
     version: 2
     RefIds:
-    - rid: 7648909104468459526
+    - rid: 7648909104468459535
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper
@@ -32,7 +32,7 @@ MonoBehaviour:
         Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 \uB2E8\uC77C
           \uD55C\uBA85\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
         Projectile: {fileID: 0}
-    - rid: 7648909104468459527
+    - rid: 7648909104468459536
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper
@@ -44,7 +44,7 @@ MonoBehaviour:
         Delay: 2
         Desc: "\uACF5\uACA9\uB825\uC774 130%\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
         Projectile: {fileID: 0}
-    - rid: 7648909104468459528
+    - rid: 7648909104468459537
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper

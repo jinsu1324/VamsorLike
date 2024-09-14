@@ -18,21 +18,21 @@ public class SkillChoicePopup : MonoBehaviour
     private void SettingSkillChoiceSlot()
     {
         // 스킬 테스트용 임시
-        _skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack, ClosePopup);
-        _skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang, ClosePopup);
-        _skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper, ClosePopup);
+        //_skillChoiceSlotArr[0].SetSlotInfos(SkillID.SlashAttack, ClosePopup);
+        //_skillChoiceSlotArr[1].SetSlotInfos(SkillID.Boomerang, ClosePopup);
+        //_skillChoiceSlotArr[2].SetSlotInfos(SkillID.Sniper, ClosePopup);
 
 
-        // 랜덤으로 해주기
+        //// 랜덤으로 해주기
 
-        //for (int i = 0; i < _skillChoiceSlotArr.Length; i++)
-        //{
-        //    // SkillID중 랜덤으로 하나만 뽑아옴
-        //    SkillID[] skillIDs = System.Enum.GetValues(typeof(SkillID)) as SkillID[];
-        //    SkillID skillID = (SkillID)skillIDs.GetValue(Random.Range(0, skillIDs.Length));
+        for (int i = 0; i < _skillChoiceSlotArr.Length; i++)
+        {
+            // SkillID중 랜덤으로 하나만 뽑아옴
+            SkillID[] skillIDs = System.Enum.GetValues(typeof(SkillID)) as SkillID[];
+            SkillID skillID = skillIDs[Random.Range(0, skillIDs.Length)];
 
-        //    _skillChoiceSlotArr[i].SetSlotInfos(skillID);
-        //}
+            _skillChoiceSlotArr[i].SetSlotInfos(skillID, ClosePopup);
+        }
     }
 
 

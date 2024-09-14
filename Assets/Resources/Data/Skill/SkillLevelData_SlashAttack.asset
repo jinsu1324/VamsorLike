@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_SlashAttack
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909104468459520
-  - rid: 7648909104468459521
-  - rid: 7648909104468459522
+  - rid: 7648909104468459529
+  - rid: 7648909104468459530
+  - rid: 7648909104468459531
   references:
     version: 2
     RefIds:
-    - rid: 7648909104468459520
+    - rid: 7648909104468459529
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -30,7 +30,7 @@ MonoBehaviour:
         Desc: "\uB290\uB9AC\uACE0 \uC0AC\uAC70\uB9AC\uAC00 \uC9E7\uC9C0\uB9CC \uADFC\uCC98
           \uC720\uB2DB \uBAA8\uB450\uB97C \uBCB1\uB2C8\uB2E4."
         Projectile: {fileID: 0}
-    - rid: 7648909104468459521
+    - rid: 7648909104468459530
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -41,7 +41,7 @@ MonoBehaviour:
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uB370\uBBF8\uC9C0\uAC00 200%
           \uC99D\uAC00\uD569\uB2C8\uB2E4"
         Projectile: {fileID: 0}
-    - rid: 7648909104468459522
+    - rid: 7648909104468459531
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
