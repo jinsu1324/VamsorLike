@@ -106,5 +106,6 @@ public class LevelManager : SerializedMonoBehaviour
     public void OnClickExpUpCheatButton()
     {
         EXPUp();
+        EXPBar.Update_EXPBarInfos();
     }
 }
