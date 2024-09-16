@@ -12,4 +12,5 @@ public class SkillData_Boomerang : SkillData_Base
     public float Range;
     public string Desc;
     public ProjectileBase Projectile;
+    public Sprite Icon;
 }

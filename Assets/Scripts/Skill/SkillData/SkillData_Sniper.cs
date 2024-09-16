@@ -12,4 +12,5 @@ public class SkillData_Sniper : SkillData_Base
     public float Delay;
     public string Desc;
     public ProjectileBase Projectile;
+    public Sprite Icon;
 }

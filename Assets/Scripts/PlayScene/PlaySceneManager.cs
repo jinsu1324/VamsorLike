@@ -50,7 +50,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     // 스킬 선택 팝업
     [SerializeField]
-    public SkillChoicePopup SkillChoicePopup { get; set; }
+    public SkillPopupUI SkillPopupUI { get; set; }
 
     // HP바
     [SerializeField]
@@ -69,7 +69,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     private void ScenePopupsInitialize()
     {
         HeroSelectPopup.OpenPopup();
-        SkillChoicePopup.ClosePopup();
+        SkillPopupUI.CloseSkillPopup();
     }
 
     // 게임시작 bool 파라미터로 변경

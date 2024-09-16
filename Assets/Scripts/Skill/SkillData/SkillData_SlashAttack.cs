@@ -10,4 +10,5 @@ public class SkillData_SlashAttack : SkillData_Base
     public float Delay;
     public string Desc;
     public ProjectileBase Projectile;
+    public Sprite Icon;
 }
