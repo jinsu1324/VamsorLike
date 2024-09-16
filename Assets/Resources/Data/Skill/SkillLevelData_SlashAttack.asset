@@ -29,7 +29,7 @@ MonoBehaviour:
         Delay: 1
         Desc: "\uB290\uB9AC\uACE0 \uC0AC\uAC70\uB9AC\uAC00 \uC9E7\uC9C0\uB9CC \uADFC\uCC98
           \uC720\uB2DB \uBAA8\uB450\uB97C \uBCB1\uB2C8\uB2E4."
-        Projectile: {fileID: 0}
+        Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
     - rid: 7648909104468459530
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
@@ -40,7 +40,7 @@ MonoBehaviour:
         Delay: 1
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uB370\uBBF8\uC9C0\uAC00 200%
           \uC99D\uAC00\uD569\uB2C8\uB2E4"
-        Projectile: {fileID: 0}
+        Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
     - rid: 7648909104468459531
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
@@ -51,4 +51,4 @@ MonoBehaviour:
         Delay: 0.75
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uACF5\uACA9\uBE48\uB3C4\uAC00
           1.25\uBC30 \uBE68\uB77C\uC9D1\uB2C8\uB2E4"
-        Projectile: {fileID: 0}
+        Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}

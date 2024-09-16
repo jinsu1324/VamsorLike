@@ -54,4 +54,14 @@ public class DataManager : SerializedMonoBehaviour
     // 레벨데이터 리스트
     [SerializeField]
     public LevelDatas LevelDatas { get; set; }
+
+
+    /// <summary>
+    /// 스킬 데이터 딕셔너리에서 -> 원하는 스킬 + 레벨 로 형변환하여 반환해주는 함수
+    /// </summary>
+    public SkillData SkillData_as_SkillDataDict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
+    {
+        SkillData skillData = SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
+        return skillData;
+    }
 }

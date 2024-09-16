@@ -51,7 +51,7 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
 
     // csv를 SkillLevelData 스크립터블로 저장
-    public static void CSV_Save_SkillLevelData<SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillData : SkillDataBase, new()
+    public static void CSV_Save_SkillLevelData<SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillData : SkillData_Base, new()
     {
         // 스크립터블 가져오는 부분
         string path = $"Assets/Resources/Data/Skill/{fileName}.asset";

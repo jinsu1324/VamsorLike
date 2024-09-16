@@ -88,7 +88,7 @@ public class HeroObject : SerializedMonoBehaviour
         // 스킬리스트에 있는 모든 스킬들 순환, 확인, 공격
         for (int i = 0; i < HeroEquipedSkill.EquipedSkillList.Count; i++)
         {
-            SkillBase skill = HeroEquipedSkill.EquipedSkillList[i];
+            Skill_Base skill = HeroEquipedSkill.EquipedSkillList[i];
 
             if (skill.SkillUpdate())
             {

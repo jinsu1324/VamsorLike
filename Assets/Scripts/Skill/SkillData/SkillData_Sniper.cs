@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SkillData_Sniper : SkillDataBase
+public class SkillData_Sniper : SkillData_Base
 {
     public int Level;
     public int Atk;
