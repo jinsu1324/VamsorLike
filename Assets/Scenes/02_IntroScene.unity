@@ -169,13 +169,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
-    SerializedBytes: 
+    SerializedBytes: []
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  <SelectSlotNum>k__BackingField: 0
 --- !u!1 &126022038
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
-    SerializedBytes: 
+    SerializedBytes: []
     ReferencedUnityObjects:
     - {fileID: 62730147}
     - {fileID: 1433360836}
@@ -454,6 +455,10 @@ MonoBehaviour:
     - Name: CharacterMakePopup
       Entry: 10
       Data: 3
+  <CharacterDataManager>k__BackingField: {fileID: 62730147}
+  <CharacterResourcesManager>k__BackingField: {fileID: 1433360836}
+  <CharacterSlotManager>k__BackingField: {fileID: 434576699}
+  <CharacterMakePopup>k__BackingField: {fileID: 576675348}
 --- !u!1 &249469016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
-    SerializedBytes: 
+    SerializedBytes: []
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -1189,6 +1194,10 @@ MonoBehaviour:
   _faceImage: {fileID: 129589631}
   _costumeImage: {fileID: 914975296}
   _nickNameinputField: {fileID: 1911341316}
+  _selectedSlotNum: 0
+  _curHairNum: 0
+  _curFaceNum: 0
+  _curCostumeNum: 0
 --- !u!1 &642157705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e131fbd6b5c9140a36ab39c697d76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SlotNum>k__BackingField: 0
   _uiText: {fileID: 474189064}
 --- !u!114 &1025934872
 MonoBehaviour:
@@ -3029,7 +3039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
-    SerializedBytes: 
+    SerializedBytes: []
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: 035802e9aa4be234ba82212da11793bd, type: 3}
     - {fileID: 21300000, guid: a40930c58c948ad40b0a5e72f34950f9, type: 3}
@@ -3111,6 +3121,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  <HairList>k__BackingField:
+  - {fileID: 21300000, guid: 035802e9aa4be234ba82212da11793bd, type: 3}
+  - {fileID: 21300000, guid: a40930c58c948ad40b0a5e72f34950f9, type: 3}
+  - {fileID: 21300000, guid: bade82b1f1158f7499ba2decd0d51ee0, type: 3}
+  <FaceList>k__BackingField:
+  - {fileID: 21300000, guid: d4bcd1835ca4e9940ae7dc12ae40d633, type: 3}
+  - {fileID: 21300000, guid: 8b19b14f9d616b94a9f216d2d2120e1d, type: 3}
+  - {fileID: 21300000, guid: cafe0ecab99f56e409bc9782b64fca29, type: 3}
+  <CostumeList>k__BackingField:
+  - {fileID: 21300000, guid: f8df602d3228980479e826010510f70a, type: 3}
+  - {fileID: 21300000, guid: 2d24ff3a554d21d4ea699b47211d7ab9, type: 3}
+  - {fileID: 21300000, guid: ce6c1c28ea4f9d046a113720cf71d4e8, type: 3}
 --- !u!1 &1508978890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e131fbd6b5c9140a36ab39c697d76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SlotNum>k__BackingField: 0
   _uiText: {fileID: 821221558}
 --- !u!1 &1688857347
 GameObject:
@@ -3979,6 +4002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e131fbd6b5c9140a36ab39c697d76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SlotNum>k__BackingField: 0
   _uiText: {fileID: 1065476402}
 --- !u!114 &1753759478
 MonoBehaviour:
