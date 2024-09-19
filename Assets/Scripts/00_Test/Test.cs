@@ -26,6 +26,8 @@ public class Test : MonoBehaviour
 
 
 
+        SkillData_SlashAttack skillData = DataManager.Instance.SkillData_as_SkillDataDict<SkillData_SlashAttack>(SkillID.SlashAttack, 0);
+        Debug.Log(skillData.Atk);
 
 
         //SkillData_SlashAttack slashAttack = DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0] as SkillData_SlashAttack;

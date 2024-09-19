@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_Boomerang
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909104468459532
-  - rid: 7648909104468459533
-  - rid: 7648909104468459534
+  - rid: 7648909215021400067
+  - rid: 7648909215021400068
+  - rid: 7648909215021400069
   references:
     version: 2
     RefIds:
-    - rid: 7648909104468459532
+    - rid: 7648909215021400067
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang
@@ -31,9 +31,9 @@ MonoBehaviour:
         Range: 5
         Desc: "\uC601\uC6C5 \uC8FC\uBCC0\uC744 \uD68C\uC804\uD558\uBA74\uC11C \uACF5\uACA9\uD558\uB294
           \uBD80\uBA54\uB791\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4."
-        Projectile: {fileID: 7099822812404318758, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-        Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
-    - rid: 7648909104468459533
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}
+    - rid: 7648909215021400068
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang
@@ -44,9 +44,9 @@ MonoBehaviour:
         ProjectileCount: 1
         Range: 5
         Desc: "\uBD80\uBA54\uB791\uC758 \uC18D\uB3C4\uAC00 1.5\uBC30 \uC0C1\uC2B9\uD569\uB2C8\uB2E4."
-        Projectile: {fileID: 7099822812404318758, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-        Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
-    - rid: 7648909104468459534
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}
+    - rid: 7648909215021400069
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang
@@ -57,5 +57,5 @@ MonoBehaviour:
         ProjectileCount: 2
         Range: 5
         Desc: "\uBD80\uBA54\uB791\uC758 \uAC2F\uC218\uAC00 2\uAC1C\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
-        Projectile: {fileID: 7099822812404318758, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-        Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}

@@ -62,6 +62,7 @@ public class DataManager : SerializedMonoBehaviour
     public SkillData SkillData_as_SkillDataDict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
     {
         SkillData skillData = SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
+
         return skillData;
     }
 }

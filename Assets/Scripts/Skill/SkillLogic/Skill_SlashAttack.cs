@@ -8,20 +8,26 @@ using static UnityEditor.PlayerSettings;
 /// </summary>
 public class Skill_SlashAttack : Skill_Base
 {
+    // 스킬 데이터 변수
+    private int _atk;
+    private float _delay;
+    private ProjectileBase _projectile;
 
-    private SkillData_SlashAttack _skillData_SlashAttack = new SkillData_SlashAttack();
-
-    // 프로젝타일
-    private ProjectileSlashAttack _spawnedProjectileSlashAttack;
-
-
-
-    // 생성자
-    public Skill_SlashAttack() : base("SlashAttack", "슬래시 어택", "앞으로 빠르게 베어 공격합니다.", 3)
+    /// <summary>
+    /// 생성자
+    /// </summary>
+    public Skill_SlashAttack(/*SkillData_SlashAttack skillData_SlashAttack*/)
     {
-        
-    }
+        //Id = skillData_SlashAttack.Id;
+        //Name = skillData_SlashAttack.Name;
+        //Desc = skillData_SlashAttack.Desc;
+        //CurrentLevel = 0;
+        //MaxLevel = 3;
 
+        //_atk = skillData_SlashAttack.Atk;
+        //_delay = skillData_SlashAttack.Delay;
+        //_projectile = skillData_SlashAttack.Projectile;
+    }
 
     /// <summary>
     /// 스킬 쿨타임 관리 (시간 지남에 따라 스킬 공격 가능한지 true false 반환)
@@ -30,16 +36,15 @@ public class Skill_SlashAttack : Skill_Base
     {
         _time += Time.fixedDeltaTime;
 
-        if (_time > _skillData_SlashAttack.Delay)
+        if (_time > _delay)
         {
-            _time %= _skillData_SlashAttack.Delay;
+            _time %= _delay;
             return true;
         }
         else
         {
             return false;
         }
-
     }
 
     /// <summary>
@@ -48,13 +53,14 @@ public class Skill_SlashAttack : Skill_Base
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
         //// 프로젝타일 생성
-        //_spawnedProjectileSlashAttack =
-        //    Object.Instantiate(_skillData_SlashAttack.Projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) as ProjectileSlashAttack;
+        //ProjectileSlashAttack projectile =
+        //    Object.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) 
+        //    as ProjectileSlashAttack;
 
         //// 프로젝타일에 공격력 건네줌
-        //_spawnedProjectileSlashAttack.TakeSkillAtk(_skillData_SlashAttack.Atk);
+        //projectile.SetProjectileAtk(_atk);
 
-        Debug.Log("SlashAttack 스킬 공격");
+        //Debug.Log("SlashAttack 스킬 공격");
 
     }
 }

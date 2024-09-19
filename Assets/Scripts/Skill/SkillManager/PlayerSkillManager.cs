@@ -10,22 +10,25 @@ using UnityEngine.UI;
 public class PlayerSkillManager
 {
     // 가지고 있는 스킬들
-    public static List<Skill_Base> playerSkillsList { get; set; } = new List<Skill_Base>();
+    public static List<Skill_Base> PlayerSkillsList { get; set; } = new List<Skill_Base>();
 
     /// <summary>
     /// 스킬 인벤토리에 스킬 추가해주는 함수
     /// </summary>
     public void AddSkill(Skill_Base newSkill)
     {
-        Skill_Base foundSkill = playerSkillsList.Find(skill => skill.Id == newSkill.Id);
+        // 리스트에서 이미 가지고 있는 스킬인지 확인
+        Skill_Base foundSkill = PlayerSkillsList.Find(skill => skill.Id == newSkill.Id);
 
+        // 이미 가지고 있는 스킬이라면 레벨업
         if (foundSkill != null)
         {
             foundSkill.LevelUp();
         }
+        // 가지고 있지 않다면 새로 추가
         else
         {
-            playerSkillsList.Add(newSkill);
+            PlayerSkillsList.Add(newSkill);
         }
     }
 
@@ -34,7 +37,8 @@ public class PlayerSkillManager
     /// </summary>
     public bool HasSkill(Skill_Base skill)
     {
-        return playerSkillsList.Exists(x => x.Id == skill.Id);
+        // 리스트에서 이미 가지고 있는 스킬인지 확인해서 bool 반환
+        return PlayerSkillsList.Exists(x => x.Id == skill.Id);
     }
 
     /// <summary>
@@ -42,7 +46,8 @@ public class PlayerSkillManager
     /// </summary>
     public int GetSkillLevel(Skill_Base skill)
     {
-        Skill_Base foundSkill = playerSkillsList.Find(x => x.Id == skill.Id);
+        // 리스트에서 이미 가지고 있는 스킬인지 확인해서 레벨 반환
+        Skill_Base foundSkill = PlayerSkillsList.Find(x => x.Id == skill.Id);
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
     }
 }

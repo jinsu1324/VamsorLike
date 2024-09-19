@@ -14,7 +14,7 @@ public class Skill_Sniper : Skill_Base
     private ProjectileSniper _spawnedProjectileSniper;
 
     // 생성자
-    public Skill_Sniper() : base("Sniper", "스나이퍼 총", "원거리 공격을 합니다.", 3)
+    public Skill_Sniper(/*SkillData_Sniper skillData_Sniper*/)
     {
 
     }

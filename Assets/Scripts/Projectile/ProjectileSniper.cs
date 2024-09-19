@@ -12,7 +12,7 @@ public class ProjectileSniper : ProjectileBase
 
         if (IsArrivedAtMonster())
         {
-            _targetMonster.HPMinus(_skillAtk);
+            _targetMonster.HPMinus(_atk);
             ProjectileDestroy();
         }
     }

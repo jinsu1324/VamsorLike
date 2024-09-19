@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_Sniper
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909104468459535
-  - rid: 7648909104468459536
-  - rid: 7648909104468459537
+  - rid: 7648909215021400070
+  - rid: 7648909215021400071
+  - rid: 7648909215021400072
   references:
     version: 2
     RefIds:
-    - rid: 7648909104468459535
+    - rid: 7648909215021400070
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper
@@ -31,9 +31,9 @@ MonoBehaviour:
         Delay: 2
         Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 \uB2E8\uC77C
           \uD55C\uBA85\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
-        Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-        Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
-    - rid: 7648909104468459536
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}
+    - rid: 7648909215021400071
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper
@@ -44,9 +44,9 @@ MonoBehaviour:
         Range: 10
         Delay: 2
         Desc: "\uACF5\uACA9\uB825\uC774 130%\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
-        Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-        Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
-    - rid: 7648909104468459537
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}
+    - rid: 7648909215021400072
       type: {class: SkillData_Sniper, ns: , asm: Assembly-CSharp}
       data:
         Id: Sniper
@@ -57,5 +57,5 @@ MonoBehaviour:
         Range: 10
         Delay: 1
         Desc: "\uC5F0\uC0AC\uB825\uC774 2\uBC30 \uC0C1\uC2B9\uD569\uB2C8\uB2E4!"
-        Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-        Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
+        Projectile: {fileID: 0}
+        Icon: {fileID: 0}

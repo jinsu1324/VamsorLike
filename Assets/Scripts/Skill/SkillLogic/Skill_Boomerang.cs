@@ -18,7 +18,7 @@ public class Skill_Boomerang : Skill_Base
     private ProjectileBoomerang _SpawnedProjectileBoomerang;
 
     // 생성자
-    public Skill_Boomerang() : base("Boomerang", "회전 부메랑", "주변을 회전하며 공격합니다", 3)
+    public Skill_Boomerang(/*SkillData_Boomerang skillData_Boomerang*/)
     {      
         //// 프로젝타일 생성
         // _SpawnedProjectileBoomerang = Object.Instantiate(

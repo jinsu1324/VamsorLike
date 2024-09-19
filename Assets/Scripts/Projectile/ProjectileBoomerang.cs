@@ -20,7 +20,7 @@ public class ProjectileBoomerang : ProjectileBase
     {
         if (collision.gameObject.tag == Tag.Monster.ToString())
         {
-            collision.GetComponent<MonsterObject>().HPMinus(_skillAtk);
+            collision.GetComponent<MonsterObject>().HPMinus(_atk);
         }
     }
 }
