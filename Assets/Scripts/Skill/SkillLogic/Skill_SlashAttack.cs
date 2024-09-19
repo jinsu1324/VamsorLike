@@ -18,6 +18,7 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public Skill_SlashAttack(/*SkillData_SlashAttack skillData_SlashAttack*/)
     {
+
         //Id = skillData_SlashAttack.Id;
         //Name = skillData_SlashAttack.Name;
         //Desc = skillData_SlashAttack.Desc;
@@ -27,6 +28,13 @@ public class Skill_SlashAttack : Skill_Base
         //_atk = skillData_SlashAttack.Atk;
         //_delay = skillData_SlashAttack.Delay;
         //_projectile = skillData_SlashAttack.Projectile;
+
+        Id = "SlashAttack";
+        Name = "슬래시어택";
+        Desc = "근거리 공격입니다";
+        CurrentLevel = 1;
+        MaxLevel = 3;
+
     }
 
     /// <summary>

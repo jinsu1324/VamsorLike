@@ -16,6 +16,11 @@ public class Skill_Sniper : Skill_Base
     // 생성자
     public Skill_Sniper(/*SkillData_Sniper skillData_Sniper*/)
     {
+        Id = "Sniper";
+        Name = "스나이퍼";
+        Desc = "스나이퍼 공격입니다";
+        CurrentLevel = 1;
+        MaxLevel = 3;
 
     }
 

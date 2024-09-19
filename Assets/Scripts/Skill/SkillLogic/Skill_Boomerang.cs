@@ -19,7 +19,15 @@ public class Skill_Boomerang : Skill_Base
 
     // 생성자
     public Skill_Boomerang(/*SkillData_Boomerang skillData_Boomerang*/)
-    {      
+    {
+
+        Id = "Boomerang";
+        Name = "부메랑";
+        Desc = "부메랑 공격입니다";
+        CurrentLevel = 1;
+        MaxLevel = 3;
+
+
         //// 프로젝타일 생성
         // _SpawnedProjectileBoomerang = Object.Instantiate(
         //    _skillData_Boomerang.Projectile, 
