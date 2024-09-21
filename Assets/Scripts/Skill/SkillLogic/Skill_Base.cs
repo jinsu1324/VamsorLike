@@ -14,29 +14,13 @@ public struct SkillAttackArgs
 /// </summary>
 public abstract class Skill_Base
 {
-    public string Id;
-    public string Name;
-    public string Desc;
+    public SkillID Id;
     public int CurrentLevel;
     public int MaxLevel;
 
     protected float _time;    
 
-    /// <summary>
-    /// 스킬 레벨업 함수
-    /// </summary>
-    public bool LevelUp()
-    {
-        if (CurrentLevel < MaxLevel)
-        {
-            CurrentLevel++;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    public abstract void LevelUp();
 
     public abstract bool SkillCooltime();
 

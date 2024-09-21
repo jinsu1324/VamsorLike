@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,27 +18,61 @@ public class Skill_Boomerang : Skill_Base
     // 프로젝타일
     private ProjectileBoomerang _SpawnedProjectileBoomerang;
 
-    // 생성자
-    public Skill_Boomerang(/*SkillData_Boomerang skillData_Boomerang*/)
-    {
 
-        Id = "Boomerang";
-        Name = "부메랑";
-        Desc = "부메랑 공격입니다";
+    // 스킬 데이터 변수
+    private int _atk;
+    private float _projectileSpeed;
+    private int _projectileCount;
+    private float _range;
+
+
+    /// <summary>
+    /// 스탯 셋팅
+    /// </summary>
+    private void StatSetting(SkillData_Boomerang skillData_Boomerang)
+    {
+        _atk = skillData_Boomerang.Atk;
+        _projectileSpeed = skillData_Boomerang.ProjectileSpeed;
+        _projectileCount = skillData_Boomerang.ProjectileCount;
+        _range = skillData_Boomerang.Range;
+    }
+
+    /// <summary>
+    /// 레벨업 함수 : 생성되어있는 얘를 다른 데이터로 덮어씌우기 위함
+    /// </summary>
+    public override void LevelUp()
+    {
+        SkillData_Boomerang skillData_Boomerang =
+            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Boomerang>(Id, ++CurrentLevel);
+
+        StatSetting(skillData_Boomerang);
+    }
+
+    /// <summary>
+    /// 생성자
+    /// </summary>
+    public Skill_Boomerang(SkillData_Boomerang skillData_Boomerang)
+    {
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.Id);
         CurrentLevel = 1;
         MaxLevel = 3;
 
+        StatSetting(skillData_Boomerang);
 
-        //// 프로젝타일 생성
+
+
+        // // 프로젝타일 생성
         // _SpawnedProjectileBoomerang = Object.Instantiate(
-        //    _skillData_Boomerang.Projectile, 
-        //    PlaySceneManager.ThisGameHeroObject.transform.position, 
-        //    Quaternion.identity) 
+        //    _skillData_Boomerang.Projectile,
+        //    PlaySceneManager.ThisGameHeroObject.transform.position,
+        //    Quaternion.identity)
         //as ProjectileBoomerang;
 
-        //// 부메랑은 생성되면 계속 공격하게끔 만들 예정
-        //_isBoomerangStarted = true;
+        // // 부메랑은 생성되면 계속 공격하게끔 만들 예정
+        // _isBoomerangStarted = true;
     }
+
+    
 
 
     /// <summary>

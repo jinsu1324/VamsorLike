@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,29 +14,41 @@ public class Skill_SlashAttack : Skill_Base
     private float _delay;
     private ProjectileBase _projectile;
 
+
+    /// <summary>
+    /// 스탯 셋팅
+    /// </summary>
+    private void StatSetting(SkillData_SlashAttack skillData_SlashAttack)
+    {
+        _atk = skillData_SlashAttack.Atk;
+        _delay = skillData_SlashAttack.Delay;
+        _projectile = skillData_SlashAttack.Projectile;
+    }
+
+
+    /// <summary>
+    /// 레벨업 함수 : 생성되어있는 얘를 다른 데이터로 덮어씌우기 위함
+    /// </summary>
+    public override void LevelUp()
+    {
+        SkillData_SlashAttack skillData_SlashAttack =
+            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_SlashAttack>(Id, ++CurrentLevel);
+
+        StatSetting(skillData_SlashAttack);
+    }   
+
     /// <summary>
     /// 생성자
     /// </summary>
-    public Skill_SlashAttack(/*SkillData_SlashAttack skillData_SlashAttack*/)
+    public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
     {
-
-        //Id = skillData_SlashAttack.Id;
-        //Name = skillData_SlashAttack.Name;
-        //Desc = skillData_SlashAttack.Desc;
-        //CurrentLevel = 0;
-        //MaxLevel = 3;
-
-        //_atk = skillData_SlashAttack.Atk;
-        //_delay = skillData_SlashAttack.Delay;
-        //_projectile = skillData_SlashAttack.Projectile;
-
-        Id = "SlashAttack";
-        Name = "슬래시어택";
-        Desc = "근거리 공격입니다";
+        Id = (SkillID)Enum.Parse(typeof(SkillID),skillData_SlashAttack.Id);
         CurrentLevel = 1;
         MaxLevel = 3;
 
+        StatSetting(skillData_SlashAttack);
     }
+
 
     /// <summary>
     /// 스킬 쿨타임 관리 (시간 지남에 따라 스킬 공격 가능한지 true false 반환)

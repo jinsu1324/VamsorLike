@@ -21,20 +21,12 @@ public class SkillPopupUI : MonoBehaviour
     private PlayerSkillManager _playerSkillManager = new PlayerSkillManager();
 
     // 사용 가능한 스킬 리스트
-    private List<Skill_Base> _availableSkillList = new List<Skill_Base>()
+    private List<SkillID> _availableSkillList = new List<SkillID>()
     {
-        new Skill_SlashAttack(),
-        new Skill_Boomerang(),
-        new Skill_Sniper()
+        SkillID.SlashAttack,
+        SkillID.Boomerang,
+        SkillID.Sniper
     };
-
-    //private void Awake()
-    //{
-    //    _availableSkillList.Add(new Skill_SlashAttack(DataManager.Instance.SkillData_as_SkillDataDict<SkillData_SlashAttack>(SkillID.SlashAttack, 0)));
-    //    _availableSkillList.Add(new Skill_Boomerang(DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Boomerang>(SkillID.Boomerang, 0)));
-    //    _availableSkillList.Add(new Skill_Sniper(DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Sniper>(SkillID.Sniper, 0)));
-
-    //}
 
 
     /// <summary>
@@ -49,26 +41,29 @@ public class SkillPopupUI : MonoBehaviour
         }
 
         // 사용 가능한 스킬들을 버튼으로 생성
-        foreach (Skill_Base skill in _availableSkillList)
+        foreach (SkillID skillID in _availableSkillList)
         {
+            int skillLevel = _playerSkillManager.GetSkillLevel(skillID);
+            var skillData = DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Base>(skillID, skillLevel);
+
             GameObject skillButtonPrefab = Instantiate(_skillButtonPrefab, _buttonParent);
             Button skillButton = skillButtonPrefab.GetComponent<Button>();
             TextMeshProUGUI skillText = skillButtonPrefab.GetComponentInChildren<TextMeshProUGUI>();
 
             // 이미 스킬을 가지고 있다면 레벨 표시
-            if (_playerSkillManager.HasSkill(skill))
+            if (_playerSkillManager.HasSkill(skillID))
             {
-                int currentLevel = _playerSkillManager.GetSkillLevel(skill);
-                skillText.text = $"{skill.Name} (Level {currentLevel + 1})";
+                int currentLevel = _playerSkillManager.GetSkillLevel(skillID);
+                skillText.text = $"{skillData.Name} (Level {currentLevel + 1})";
             }
             // 가지고 있지 않다면 스킬 이름만 표시
             else
             {
-                skillText.text = skill.Name;
+                skillText.text = skillData.Name;
             }
 
             // 버튼 클릭 시 스킬 선택
-            skillButton.onClick.AddListener(() => OnSkillSelected(skill));
+            skillButton.onClick.AddListener(() => OnSkillSelected(skillID));
 
             // 팝업 켜기
             gameObject.SetActive(true);
@@ -78,9 +73,9 @@ public class SkillPopupUI : MonoBehaviour
     /// <summary>
     /// 스킬 선택 시 호출되는 함수
     /// </summary>
-    public void OnSkillSelected(Skill_Base skill)
+    public void OnSkillSelected(SkillID skillID)
     {
-        _playerSkillManager.AddSkill(skill);
+        _playerSkillManager.AddSkill(skillID);
 
         // 게임시작 안되어있었다면
         if (PlaySceneManager.Instance.IsGameStart == false)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,20 +10,55 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 /// </summary>
 public class Skill_Sniper : Skill_Base
 {
+    private int _atk;
+    private float _projectileSpeed;
+    private float _range;
+    private float _delay;
+
+
     private SkillData_Sniper _skillData_Sniper = new SkillData_Sniper();
     // 프로젝타일
     private ProjectileSniper _spawnedProjectileSniper;
 
-    // 생성자
-    public Skill_Sniper(/*SkillData_Sniper skillData_Sniper*/)
+
+
+    /// <summary>
+    /// 스탯 셋팅
+    /// </summary>
+    private void StatSetting(SkillData_Sniper skillData_Sniper)
     {
-        Id = "Sniper";
-        Name = "스나이퍼";
-        Desc = "스나이퍼 공격입니다";
+        _atk = skillData_Sniper.Atk;
+        _projectileSpeed = skillData_Sniper.ProjectileSpeed;
+        _range = skillData_Sniper.Range;
+        _delay = skillData_Sniper.Delay;
+    }
+
+
+    /// <summary>
+    /// 레벨업 함수 : 생성되어있는 얘를 다른 데이터로 덮어씌우기 위함
+    /// </summary>
+    public override void LevelUp()
+    {
+        SkillData_Sniper skillData_Sniper =
+            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Sniper>(Id, ++CurrentLevel);
+
+        StatSetting(skillData_Sniper);
+
+    }
+
+    /// <summary>
+    /// 생성자
+    /// </summary>
+    public Skill_Sniper(SkillData_Sniper skillData_Sniper)
+    {
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Sniper.Id);
         CurrentLevel = 1;
         MaxLevel = 3;
 
+        StatSetting(skillData_Sniper);
+
     }
+
 
 
     /// <summary>

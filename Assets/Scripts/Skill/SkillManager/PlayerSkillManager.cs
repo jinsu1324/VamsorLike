@@ -15,10 +15,10 @@ public class PlayerSkillManager
     /// <summary>
     /// 스킬 인벤토리에 스킬 추가해주는 함수
     /// </summary>
-    public void AddSkill(Skill_Base newSkill)
+    public void AddSkill(SkillID newSkillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인
-        Skill_Base foundSkill = PlayerSkillsList.Find(skill => skill.Id == newSkill.Id);
+        Skill_Base foundSkill = PlayerSkillsList.Find(skill => skill.Id == newSkillID);
 
         // 이미 가지고 있는 스킬이라면 레벨업
         if (foundSkill != null)
@@ -28,26 +28,27 @@ public class PlayerSkillManager
         // 가지고 있지 않다면 새로 추가
         else
         {
-            PlayerSkillsList.Add(newSkill);
+            Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 1);
+            PlayerSkillsList.Add(skill);
         }
     }
 
     /// <summary>
     /// 스킬 보유 여부 확인하는 함수
     /// </summary>
-    public bool HasSkill(Skill_Base skill)
+    public bool HasSkill(SkillID skillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 bool 반환
-        return PlayerSkillsList.Exists(x => x.Id == skill.Id);
+        return PlayerSkillsList.Exists(x => x.Id == skillID);
     }
 
     /// <summary>
     /// 스킬 레벨 가져오는 함수
     /// </summary>
-    public int GetSkillLevel(Skill_Base skill)
+    public int GetSkillLevel(SkillID skillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 레벨 반환
-        Skill_Base foundSkill = PlayerSkillsList.Find(x => x.Id == skill.Id);
+        Skill_Base foundSkill = PlayerSkillsList.Find(x => x.Id == skillID);
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
     }
 }
