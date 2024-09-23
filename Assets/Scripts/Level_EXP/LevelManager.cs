@@ -50,6 +50,10 @@ public class LevelManager : SerializedMonoBehaviour
     }
     #endregion
 
+    // 레벨데이터 리스트
+    [SerializeField]
+    public LevelDatas LevelDatas { get; set; }
+
     // 이번게임 영웅 레벨 경험치
     public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 0);
 
@@ -75,7 +79,7 @@ public class LevelManager : SerializedMonoBehaviour
     {
         MyHeroLvExp.EXP += 10;
 
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+        List<LevelData> levelDataList = LevelManager.Instance.LevelDatas.LevelDataList;
 
         if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
         {

@@ -19,10 +19,6 @@ public class DataSettingEditorWindow : OdinEditorWindow
     [SerializeField]
     private TextAsset _heroDataTextAsset;
 
-    // 히어로 스킬 데이터
-    [SerializeField]
-    private TextAsset _skillDataTextAsset;
-
     // 레벨 데이터
     [SerializeField]
     private TextAsset _levelDataTextAsset;
@@ -42,8 +38,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("레벨데이터 TextAsset이 null입니다.");
 
 
-        DataManager dataManager = FindObjectOfType<DataManager>();
-        dataManager.LevelDatas = null;
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        levelManager.LevelDatas = null;
         
 
         LoadCSV.CSV_to_DataList(_levelDataTextAsset);
@@ -61,10 +57,10 @@ public class DataSettingEditorWindow : OdinEditorWindow
         }
 
         LevelDatas levelDatas = so as LevelDatas;
-        dataManager.LevelDatas = levelDatas;
+        levelManager.LevelDatas = levelDatas;
 
         // 클릭 및 저장
-        EditorUtility.SetDirty(dataManager);
+        EditorUtility.SetDirty(levelManager);
         AssetDatabase.SaveAssets();
 
     }
@@ -79,17 +75,16 @@ public class DataSettingEditorWindow : OdinEditorWindow
         // 몬스터CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
         LoadCSV.CSV_to_Data<MonsterData, MonsterID>(_monsterDataTextAsset, SaveFolderName.Monster);
 
-        // 데이터 매니저들 가져와서
-        DataManager dataManager = FindObjectOfType<DataManager>();
-        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
+        // 몬스터 매니저들 가져와서
+        MonsterManager monsterManager = FindObjectOfType<MonsterManager>();
 
         // 딕셔너리 클리어
-        dataManager.MonsterDataDict.Clear();        
-        objectManager.MonsterObjectDict.Clear();
+        monsterManager.MonsterDataDict.Clear();
+        monsterManager.MonsterObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.MonsterDataDict, SaveFolderName.Monster);
-        Object_to_Dict(objectManager.MonsterObjectDict, SaveFolderName.Monster);
+        Data_to_Dict(monsterManager.MonsterDataDict, SaveFolderName.Monster);
+        Object_to_Dict(monsterManager.MonsterObjectDict, SaveFolderName.Monster);
     }
 
 
@@ -102,17 +97,16 @@ public class DataSettingEditorWindow : OdinEditorWindow
         // 영웅 CSV를 -> 데이터로 저장
         LoadCSV.CSV_to_Data<HeroData, HeroID>(_heroDataTextAsset, SaveFolderName.Hero);
 
-        // 데이터 매니저들 가져와서
-        DataManager dataManager = FindObjectOfType<DataManager>();
-        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
+        // 영웅 매니저 가져와서
+        HeroManager heroManager = FindObjectOfType<HeroManager>();
 
         // 딕셔너리 클리어
-        dataManager.HeroDataDict.Clear();
-        objectManager.HeroObjectDict.Clear();
+        heroManager.HeroDataDict.Clear();
+        heroManager.HeroObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(dataManager.HeroDataDict, SaveFolderName.Hero);
-        Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
+        Data_to_Dict(heroManager.HeroDataDict, SaveFolderName.Hero);
+        Object_to_Dict(heroManager.HeroObjectDict, SaveFolderName.Hero);
     }
 
 

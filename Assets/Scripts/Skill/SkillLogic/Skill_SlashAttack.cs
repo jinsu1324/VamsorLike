@@ -32,7 +32,7 @@ public class Skill_SlashAttack : Skill_Base
     public override void LevelUp()
     {
         SkillData_SlashAttack skillData_SlashAttack =
-            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_SlashAttack>(Id, ++CurrentLevel);
+            SkillManager.Instance.SkillData_as_Dict<SkillData_SlashAttack>(Id, ++CurrentLevel);
 
         StatSetting(skillData_SlashAttack);
     }   

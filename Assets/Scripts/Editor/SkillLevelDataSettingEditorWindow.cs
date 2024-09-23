@@ -110,21 +110,21 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
 
 
             // 데이터 매니저들 가져와서
-            DataManager dataManager = FindObjectOfType<DataManager>();
+            SkillManager skillManager = FindObjectOfType<SkillManager>();
 
             // 딕셔너리 클리어
-            if (dataManager.SkillDataDict.ContainsKey(skillID))
+            if (skillManager.SkillDataDict.ContainsKey(skillID))
             {
-                dataManager.SkillDataDict.Remove(skillID);
-                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
+                skillManager.SkillDataDict.Remove(skillID);
+                skillManager.SkillDataDict[skillID] = skillLevelDataSO;
             }
             else
             {
-                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
+                skillManager.SkillDataDict[skillID] = skillLevelDataSO;
             }
 
             // 클릭 및 저장
-            EditorUtility.SetDirty(dataManager);
+            EditorUtility.SetDirty(skillManager);
             AssetDatabase.SaveAssets();
         }
 

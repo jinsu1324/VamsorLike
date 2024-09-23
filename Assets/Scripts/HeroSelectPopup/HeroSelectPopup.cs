@@ -19,7 +19,7 @@ public class HeroSelectPopup : SerializedMonoBehaviour
     // 각각 영웅슬롯 속 ui정보들 데이터 셋팅 (슬롯들에게 셋팅하라고 전달)
     private void HeroSlotsSetting()
     {
-        Dictionary<HeroID, HeroData> heroDataDict = DataManager.Instance.HeroDataDict;
+        Dictionary<HeroID, HeroData> heroDataDict = HeroManager.Instance.HeroDataDict;
 
         for (int i = 0; i < _heroSlotArr.Length; i++)
         {

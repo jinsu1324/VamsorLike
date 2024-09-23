@@ -40,7 +40,7 @@ public class Skill_Sniper : Skill_Base
     public override void LevelUp()
     {
         SkillData_Sniper skillData_Sniper =
-            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Sniper>(Id, ++CurrentLevel);
+            SkillManager.Instance.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
 
         StatSetting(skillData_Sniper);
 

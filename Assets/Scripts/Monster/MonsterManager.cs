@@ -35,6 +35,16 @@ public class MonsterManager : SerializedMonoBehaviour
     }
     #endregion
 
+    // 몬스터 데이터 딕셔너리
+    [SerializeField]
+    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
+
+
+    // 몬스터 오브젝트들 딕셔너리
+    [SerializeField]
+    public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
+
+
     // 필드에 스폰되어있는 몬스터 리스트
     private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 

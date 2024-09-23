@@ -50,7 +50,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     // 스킬 선택 팝업
     [SerializeField]
-    public SkillPopupUI SkillPopupUI { get; set; }
+    public SkillChoicePopup SkillPopupUI { get; set; }
 
     // HP바
     [SerializeField]
@@ -82,10 +82,10 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public void ThisGameHeroSetting(HeroID selectHeroID)
     {
         // 선택한 영웅을 이번게임의 영웅으로 할당
-        ThisGameHeroObject = ObjectManager.Instance.HeroObjectDict[selectHeroID];
+        ThisGameHeroObject = HeroManager.Instance.HeroObjectDict[selectHeroID];
 
         // 이번게임으로 선택된 영웅을 필드에 스폰
-        ThisGameHeroObject = Instantiate(ObjectManager.Instance.HeroObjectDict[selectHeroID]);
+        ThisGameHeroObject = Instantiate(HeroManager.Instance.HeroObjectDict[selectHeroID]);
 
         // 이번게임으로 선택된 영웅 데이터 셋팅
         ThisGameHeroObject.DataSetting();

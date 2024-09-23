@@ -25,7 +25,7 @@ public class EXPBar : SerializedMonoBehaviour
     public void Update_EXPBarInfos()
     {
         HeroLvExp heroLvExp = LevelManager.Instance.MyHeroLvExp;
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+        List<LevelData> levelDataList = LevelManager.Instance.LevelDatas.LevelDataList;
 
         Update_LevelText(heroLvExp);
         Update_ExpStateText(heroLvExp, levelDataList);

@@ -43,7 +43,7 @@ public class Skill_Boomerang : Skill_Base
     public override void LevelUp()
     {
         SkillData_Boomerang skillData_Boomerang =
-            DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Boomerang>(Id, ++CurrentLevel);
+           SkillManager.Instance.SkillData_as_Dict<SkillData_Boomerang>(Id, ++CurrentLevel);
 
         StatSetting(skillData_Boomerang);
     }

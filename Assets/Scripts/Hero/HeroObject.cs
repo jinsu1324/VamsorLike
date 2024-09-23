@@ -80,15 +80,15 @@ public class HeroObject : SerializedMonoBehaviour
     private void Attack()
     {
         // 스킬리스트에 아무것도 없으면 그냥 리턴
-        if (PlayerSkillManager.PlayerSkillsList.Count == 0)
+        if (SkillManager.Instance.HaveSkillList.Count == 0)
         {
             return;
         }
 
         // 스킬리스트에 있는 모든 스킬들 순환, 확인, 공격
-        for (int i = 0; i < PlayerSkillManager.PlayerSkillsList.Count; i++)
+        for (int i = 0; i < SkillManager.Instance.HaveSkillList.Count; i++)
         {
-            Skill_Base skill = PlayerSkillManager.PlayerSkillsList[i];
+            Skill_Base skill = SkillManager.Instance.HaveSkillList[i];
 
             if (skill.SkillCooltime())
             {

@@ -9,7 +9,7 @@ public static class SkillFactory
         if (skillID == SkillID.SlashAttack)
         {
             SkillData_SlashAttack skillData_SlashAttack
-                = DataManager.Instance.SkillData_as_SkillDataDict<SkillData_SlashAttack>(SkillID.SlashAttack, level);
+                = SkillManager.Instance.SkillData_as_Dict<SkillData_SlashAttack>(SkillID.SlashAttack, level);
 
             Skill_SlashAttack skill_SlashAttack = new Skill_SlashAttack(skillData_SlashAttack);
             return skill_SlashAttack;
@@ -18,7 +18,7 @@ public static class SkillFactory
         else if (skillID == SkillID.Sniper)
         {
             SkillData_Sniper skillData_Sniper
-                = DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Sniper>(SkillID.Sniper, level);
+                = SkillManager.Instance.SkillData_as_Dict<SkillData_Sniper>(SkillID.Sniper, level);
 
             Skill_Sniper skill_Sniper = new Skill_Sniper(skillData_Sniper);
             return skill_Sniper;
@@ -27,7 +27,7 @@ public static class SkillFactory
         else if (skillID == SkillID.Boomerang)
         {
             SkillData_Boomerang skillData_Boomerang
-                = DataManager.Instance.SkillData_as_SkillDataDict<SkillData_Boomerang>(SkillID.Boomerang, level);
+                = SkillManager.Instance.SkillData_as_Dict<SkillData_Boomerang>(SkillID.Boomerang, level);
 
             Skill_Boomerang skill_Boomerang = new Skill_Boomerang(skillData_Boomerang);
             return skill_Boomerang;

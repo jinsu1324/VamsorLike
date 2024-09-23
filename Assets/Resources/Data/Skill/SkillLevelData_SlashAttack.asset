@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_SlashAttack
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909215021400064
-  - rid: 7648909215021400065
-  - rid: 7648909215021400066
+  - rid: 7648909303075307538
+  - rid: 7648909303075307539
+  - rid: 7648909303075307540
   references:
     version: 2
     RefIds:
-    - rid: 7648909215021400064
+    - rid: 7648909303075307538
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -31,7 +31,7 @@ MonoBehaviour:
           \uC720\uB2DB \uBAA8\uB450\uB97C \uBCB1\uB2C8\uB2E4."
         Projectile: {fileID: 0}
         Icon: {fileID: 0}
-    - rid: 7648909215021400065
+    - rid: 7648909303075307539
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -43,7 +43,7 @@ MonoBehaviour:
           \uC99D\uAC00\uD569\uB2C8\uB2E4"
         Projectile: {fileID: 0}
         Icon: {fileID: 0}
-    - rid: 7648909215021400066
+    - rid: 7648909303075307540
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
