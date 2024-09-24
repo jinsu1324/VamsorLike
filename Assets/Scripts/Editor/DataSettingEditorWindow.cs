@@ -110,29 +110,6 @@ public class DataSettingEditorWindow : OdinEditorWindow
     }
 
 
-    [Button("스킬 데이터 딕셔너리 셋팅!", ButtonSizes.Large)]
-    public void SkillDataSettingButton()
-    {
-        //if (_skillDataTextAsset == null)
-        //    Debug.Log("영웅 TextAsset이 null입니다.");
-
-        //// 영웅 CSV를 -> 데이터로 저장
-        //LoadCSV.CSV_to_Data<SkillDataBase, SkillID>(_skillDataTextAsset, SaveFolderName.Skill);
-
-        //// 데이터 매니저들 가져와서
-        //DataManager dataManager = FindObjectOfType<DataManager>();
-        ////ObjectManager objectManager = FindObjectOfType<ObjectManager>();
-
-        //// 딕셔너리 클리어
-        //dataManager.SkillDataDict.Clear();
-        ////objectManager.HeroObjectDict.Clear();
-
-        //// 딕셔너리에 파일들 넣어주기
-        //Data_to_Dict(dataManager.SkillDataDict, SaveFolderName.Skill);
-        ////Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
-    }
-
-
     // 데이터를 딕셔너리에 저장  
     private void Data_to_Dict<EnumKey, DataType>(Dictionary<EnumKey, DataType> dict, SaveFolderName saveFolderName) where EnumKey : Enum  where DataType : ScriptableObject
     {

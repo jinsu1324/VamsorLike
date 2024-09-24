@@ -17,6 +17,7 @@ MonoBehaviour:
   MaxHp: 200
   Atk: 50
   Speed: 5
-  Range: 4
-  Delay: 1.5
+  Range: 0
+  Delay: 0
+  Desc: "\uACF5\uACA9\uB825\uC774 \uB0AE\uC9C0\uB9CC \uB9E4\uC6B0 \uBBFC\uCCA9\uD569\uB2C8\uB2E4."
   Sprite: {fileID: 21300000, guid: bbea0361f57c69b41b5594c9e023ed4b, type: 3}

@@ -15,6 +15,8 @@ public class HeroSlot : SerializedMonoBehaviour
     private Image _heroImage;
     [SerializeField]
     private TextMeshProUGUI _nameText;
+    [SerializeField]
+    private TextMeshProUGUI _descText;
 
     // 선택 완료 버튼
     [SerializeField]
@@ -36,6 +38,7 @@ public class HeroSlot : SerializedMonoBehaviour
         // UI 정보들 셋팅
         _heroImage.sprite = heroData.Sprite;
         _nameText.text = heroData.Name;
+        _descText.text = heroData.Desc;
 
         _onSelectFinish += popupClose;
 

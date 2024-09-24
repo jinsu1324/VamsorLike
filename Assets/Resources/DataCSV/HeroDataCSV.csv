@@ -1,6 +1,5 @@
-,,,,,,
-Id,Name,MaxHp,Atk,Speed,Range,Delay
-Warrior,Warrior_Kevin,300,80,2,3,1
-Archor,Archor_Legol,200,50,5,4,1.5
-Wizard,Wizard_Harry,100,90,2,5,2
-Thief,Thief_Darkload,150,60,3,4,0.5
+,,,,,
+Id,Name,MaxHp,Atk,Speed,Desc
+Warrior,Warrior_Kevin,300,80,1.5,공격력과 체력이 높지만 이동속도가 매우 느립니다.
+Archor,Archor_Legol,200,50,5,공격력이 낮지만 매우 민첩합니다.
+Wizard,Wizard_Harry,100,120,2,체력이 낮지만 공격력이 매우 높습니다.

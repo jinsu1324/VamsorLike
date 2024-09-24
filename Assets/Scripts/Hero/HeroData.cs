@@ -6,8 +6,7 @@ public enum HeroID
 {
     Warrior,
     Archor, 
-    Wizard,
-    Thief
+    Wizard
 }
 
 // 영웅 데이터
@@ -16,5 +15,6 @@ public class HeroData : Creature
 {
     public float Range;
     public float Delay;
+    public string Desc;
     public Sprite Sprite;
 }
