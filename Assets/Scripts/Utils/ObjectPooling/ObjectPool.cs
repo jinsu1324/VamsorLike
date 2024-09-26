@@ -32,7 +32,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    // 오브젝트 사용헐때 가져오기
+    // 오브젝트 사용할때 가져오기
     public GameObject GetObj()
     {
         if (transform.childCount <= 0)
@@ -55,8 +55,5 @@ public class ObjectPool : MonoBehaviour
         returnObj.GetComponent<ObjectPoolObject>().Spawn();
 
         return returnObj;
-
-
-
     }
 }

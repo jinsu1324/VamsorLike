@@ -20,7 +20,7 @@ public class Skill_Boomerang : Skill_Base
 
 
     // 스킬 데이터 변수
-    private int _atk;
+    private float _skillAtk;
     private float _projectileSpeed;
     private int _projectileCount;
     private float _range;
@@ -31,7 +31,7 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_Boomerang skillData_Boomerang)
     {
-        _atk = skillData_Boomerang.Atk;
+        _skillAtk = skillData_Boomerang.AtkPercentage;
         _projectileSpeed = skillData_Boomerang.ProjectileSpeed;
         _projectileCount = skillData_Boomerang.ProjectileCount;
         _range = skillData_Boomerang.Range;
@@ -60,19 +60,16 @@ public class Skill_Boomerang : Skill_Base
         StatSetting(skillData_Boomerang);
 
 
+       // // 프로젝타일 생성
+       // _SpawnedProjectileBoomerang = GameObject.Instantiate(
+       //    _skillData_Boomerang.Projectile,
+       //    PlaySceneManager.ThisGameHeroObject.transform.position,
+       //    Quaternion.identity)
+       //as ProjectileBoomerang;
 
-        // // 프로젝타일 생성
-        // _SpawnedProjectileBoomerang = Object.Instantiate(
-        //    _skillData_Boomerang.Projectile,
-        //    PlaySceneManager.ThisGameHeroObject.transform.position,
-        //    Quaternion.identity)
-        //as ProjectileBoomerang;
-
-        // // 부메랑은 생성되면 계속 공격하게끔 만들 예정
-        // _isBoomerangStarted = true;
-    }
-
-    
+       // // 부메랑은 생성되면 계속 공격하게끔 만들 예정
+       // _isBoomerangStarted = true;
+    }   
 
 
     /// <summary>
@@ -94,7 +91,7 @@ public class Skill_Boomerang : Skill_Base
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
         //_SpawnedProjectileBoomerang.AroundBoomerang(skillAttackArgs.StartSkillPos);
-        //_SpawnedProjectileBoomerang.TakeSkillAtk(_skillData_Boomerang.Atk);
+        //_SpawnedProjectileBoomerang.SetProjectileAtk(_skillAtk);
 
         Debug.Log("Boomerang 스킬 공격");
     }    

@@ -30,5 +30,5 @@ public class ObjectPoolObject : SerializedMonoBehaviour
             transform.SetParent(_parent);
 
         transform.SetAsFirstSibling();
-    }
+    }    
 }

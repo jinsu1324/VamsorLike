@@ -10,7 +10,7 @@ using static UnityEditor.PlayerSettings;
 public class Skill_SlashAttack : Skill_Base
 {
     // 스킬 데이터 변수
-    private int _atk;
+    private float _skillAtk;
     private float _delay;
     private ProjectileBase _projectile;
 
@@ -20,7 +20,7 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_SlashAttack skillData_SlashAttack)
     {
-        _atk = skillData_SlashAttack.Atk;
+        _skillAtk = skillData_SlashAttack.AtkPercentage * PlaySceneManager.ThisGameHeroObject.Atk;
         _delay = skillData_SlashAttack.Delay;
         _projectile = skillData_SlashAttack.Projectile;
     }
@@ -73,13 +73,12 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
-        //// 프로젝타일 생성
-        //ProjectileSlashAttack projectile =
-        //    Object.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) 
-        //    as ProjectileSlashAttack;
+        ProjectileSlashAttack projectile =
+            GameObject.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity)
+            as ProjectileSlashAttack;
 
-        //// 프로젝타일에 공격력 건네줌
-        //projectile.SetProjectileAtk(_atk);
+        // 프로젝타일에 공격력 건네줌
+        projectile.SetProjectileAtk(_skillAtk);
 
         //Debug.Log("SlashAttack 스킬 공격");
 

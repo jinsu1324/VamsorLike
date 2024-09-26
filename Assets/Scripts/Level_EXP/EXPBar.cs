@@ -50,7 +50,7 @@ public class EXPBar : SerializedMonoBehaviour
     public void Update_EXPSlider(HeroLvExp heroLvExp, List<LevelData> levelDataList)
     {       
         GetComponent<Slider>().value = 
-            (float)heroLvExp.EXP / 
+            (float)heroLvExp.EXP /
             (float)levelDataList[heroLvExp.Level].MaxExp;
     }
 }

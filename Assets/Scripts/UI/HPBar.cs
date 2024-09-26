@@ -25,7 +25,7 @@ public class HPBar : SerializedMonoBehaviour
     }
 
     // HP 게이지바 업데이트
-    public void Update_HPSlider(int currentHp, int maxHp)
+    public void Update_HPSlider(float currentHp, float maxHp)
     {
         GetComponent<Slider>().value = (float)currentHp / (float)maxHp;
     }

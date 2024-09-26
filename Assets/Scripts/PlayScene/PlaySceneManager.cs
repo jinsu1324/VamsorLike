@@ -60,6 +60,10 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public Transform GuageBarsTF { get; set; }
 
+    // 데미지 텍스트 UI 오브젝트 풀
+    [SerializeField]
+    public ObjectPool DamageTextUIPool { get; set; }
+
     private void Start()
     {
         ScenePopupsInitialize();

@@ -14,8 +14,8 @@ public class HeroObject : SerializedMonoBehaviour
     private readonly HeroData _baseHeroData;
 
     // 오브젝트에 할당될 데이터
-    public int Hp { get; set; }
-    public int Atk { get; set; }
+    public float Hp { get; set; }
+    public float Atk { get; set; }
     public float Speed { get; set; }
 
 
@@ -99,7 +99,7 @@ public class HeroObject : SerializedMonoBehaviour
     }
 
     // HP 감소
-    public void HPMinus(int atk)
+    public void HPMinus(float atk)
     {
         Hp -= atk;
 

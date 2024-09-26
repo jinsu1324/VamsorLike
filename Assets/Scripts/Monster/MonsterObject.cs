@@ -15,8 +15,8 @@ public class MonsterObject : ObjectPoolObject
     private readonly MonsterData _baseMonsterData;
 
     // 오브젝트에 할당될 데이터
-    public int Hp { get; set; }
-    public int Atk { get; set; }
+    public float Hp { get; set; }
+    public float Atk { get; set; }
     public float Speed { get; set; }
 
     // 스프라이트 렌더러
@@ -40,10 +40,12 @@ public class MonsterObject : ObjectPoolObject
     }
 
     // HP 감소
-    public void HPMinus(int atk)
+    public void HPMinus(float atk)
     {
         Hp -= atk;
 
+        // 데미지 텍스트 UI 생성하고 띄워주기
+        TurnOn_DamageTextUI_fromPool(atk);
 
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
@@ -54,12 +56,22 @@ public class MonsterObject : ObjectPoolObject
     }
 
 
+    // 영웅 따라다니도록
+    public void FollowHero()
+    {
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            PlaySceneManager.ThisGameHeroObject.transform.position,
+            Speed * Time.fixedDeltaTime);
+    }
+
+
+
     // 죽음
     private void Death()
     {
         // 몬스터 죽었을때 액션들 실행 (필드 몬스터 리스트에서 이 몬스터 삭제 / 바닥에 경험치 떨구기 / 다시 오브젝트 풀로 돌려보내기)
         OnMonsterDeath?.Invoke(this);
-
 
         Destroy(this.gameObject);
     }
@@ -75,12 +87,21 @@ public class MonsterObject : ObjectPoolObject
     }
 
 
-    // 영웅 따라다니도록
-    public void FollowHero()
+    /// <summary>
+    /// 데미지텍스트UI 생성하고 띄워주는 함수
+    /// </summary>
+    private void TurnOn_DamageTextUI_fromPool(float atk)
     {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            PlaySceneManager.ThisGameHeroObject.transform.position,
-            Speed * Time.fixedDeltaTime);
+        // 데미지 텍스트 오브젝트 풀에서 가져와 생성하기
+        GameObject go = PlaySceneManager.Instance.DamageTextUIPool.GetObj();
+        DamageTextUI damageTextUI = go.GetComponent<DamageTextUI>();
+
+        // 생성 포지션 설정
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        RectTransform rectTransform = damageTextUI.GetComponent<RectTransform>();
+        rectTransform.position = screenPosition;
+
+        // 데미지 텍스트 초기화
+        damageTextUI.Init(atk);
     }
 }

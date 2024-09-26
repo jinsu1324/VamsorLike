@@ -6,7 +6,7 @@ using UnityEngine;
 public class SkillData_Sniper : SkillData_Base
 {
     public int Level;
-    public int Atk;
+    public float AtkPercentage;
     public float ProjectileSpeed;
     public float Range;
     public float Delay;

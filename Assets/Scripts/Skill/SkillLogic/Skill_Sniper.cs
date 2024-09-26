@@ -10,7 +10,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 /// </summary>
 public class Skill_Sniper : Skill_Base
 {
-    private int _atk;
+    private float _skillAtk;
     private float _projectileSpeed;
     private float _range;
     private float _delay;
@@ -27,7 +27,7 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_Sniper skillData_Sniper)
     {
-        _atk = skillData_Sniper.Atk;
+        _skillAtk = skillData_Sniper.AtkPercentage;
         _projectileSpeed = skillData_Sniper.ProjectileSpeed;
         _range = skillData_Sniper.Range;
         _delay = skillData_Sniper.Delay;

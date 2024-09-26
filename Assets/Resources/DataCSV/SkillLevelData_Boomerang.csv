@@ -1,5 +1,5 @@
 ,,,,,,,
-Id,Name,Level,Atk,ProjectileSpeed,ProjectileCount,Range,Desc
-Boomerang,회전 부메랑,1,90,1,1,5,영웅 주변을 회전하면서 공격하는 부메랑을 소환합니다.
-Boomerang,[진] 회전 부메랑,2,90,1.5,1,5,부메랑의 속도가 1.5배 상승합니다.
-Boomerang,[혈] 회전 부메랑,3,90,1.5,2,5,부메랑의 갯수가 2개로 증가합니다.
+Id,Name,Level,AtkPercentage,ProjectileSpeed,ProjectileCount,Range,Desc
+Boomerang,회전 부메랑,1,0.75,1,1,5,영웅 주변을 회전하면서 공격하는 부메랑을 소환합니다.
+Boomerang,[진] 회전 부메랑,2,1.25,1.5,1,5,부메랑의 속도가 1.5배 상승합니다.
+Boomerang,[혈] 회전 부메랑,3,1.5,1.5,2,5,부메랑의 갯수가 2개로 증가합니다.
