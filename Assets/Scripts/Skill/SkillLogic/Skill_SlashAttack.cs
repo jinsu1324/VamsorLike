@@ -14,6 +14,17 @@ public class Skill_SlashAttack : Skill_Base
     private float _delay;
     private ProjectileBase _projectile;
 
+    /// <summary>
+    /// 생성자
+    /// </summary>
+    public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
+    {
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.Id);
+        CurrentLevel = 1;
+        MaxLevel = 3;
+
+        StatSetting(skillData_SlashAttack);
+    }
 
     /// <summary>
     /// 스탯 셋팅
@@ -25,7 +36,6 @@ public class Skill_SlashAttack : Skill_Base
         _projectile = skillData_SlashAttack.Projectile;
     }
 
-
     /// <summary>
     /// 레벨업 함수 : 생성되어있는 얘를 다른 데이터로 덮어씌우기 위함
     /// </summary>
@@ -35,20 +45,7 @@ public class Skill_SlashAttack : Skill_Base
             SkillManager.Instance.SkillData_as_Dict<SkillData_SlashAttack>(Id, ++CurrentLevel);
 
         StatSetting(skillData_SlashAttack);
-    }   
-
-    /// <summary>
-    /// 생성자
-    /// </summary>
-    public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
-    {
-        Id = (SkillID)Enum.Parse(typeof(SkillID),skillData_SlashAttack.Id);
-        CurrentLevel = 1;
-        MaxLevel = 3;
-
-        StatSetting(skillData_SlashAttack);
     }
-
 
     /// <summary>
     /// 스킬 쿨타임 관리 (시간 지남에 따라 스킬 공격 가능한지 true false 반환)
@@ -79,8 +76,6 @@ public class Skill_SlashAttack : Skill_Base
 
         // 프로젝타일에 공격력 건네줌
         projectile.SetProjectileAtk(_skillAtk);
-
-        //Debug.Log("SlashAttack 스킬 공격");
 
     }
 }
