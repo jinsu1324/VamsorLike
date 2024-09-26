@@ -41,7 +41,7 @@ MonoBehaviour:
         Delay: 1
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uB370\uBBF8\uC9C0\uAC00 200%
           \uC99D\uAC00\uD569\uB2C8\uB2E4"
-        Projectile: {fileID: 7099822812404318758, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
+        Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
         Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
     - rid: 7648909370329399316
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
