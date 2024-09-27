@@ -10,7 +10,7 @@ public class ProjectileBase : SerializedMonoBehaviour
     protected float _atk;    
 
     // 스킬의 공격력을 받아옴
-    public void SetProjectileAtk(float atk)
+    public void SetAtk(float atk)
     {
         _atk = atk;
     }    

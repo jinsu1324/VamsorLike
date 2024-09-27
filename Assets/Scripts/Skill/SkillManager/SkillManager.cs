@@ -52,9 +52,6 @@ public class SkillManager : SerializedMonoBehaviour
     public SkillData SkillData_as_Dict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
     {
         SkillData skillData = SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
-
-        Debug.Log(skillData.Id);
-
         return skillData;
     }
 
@@ -74,7 +71,7 @@ public class SkillManager : SerializedMonoBehaviour
         // 가지고 있지 않다면 새로 추가
         else
         {
-            Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 1);
+            Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 0);
             HaveSkillList.Add(skill);
         }
     }

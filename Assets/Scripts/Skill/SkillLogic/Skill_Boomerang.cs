@@ -10,17 +10,15 @@ using static UnityEditor.PlayerSettings;
 /// </summary>
 public class Skill_Boomerang : Skill_Base
 {
-    // 부메랑 시작해도 되는지
-    private bool _isBoomerangStarted = false;
-
-    // 프로젝타일
-    private ProjectileBoomerang _SpawnedProjectileBoomerang;
-
     // 스킬 데이터 변수
     private float _skillAtk;
     private float _projectileSpeed;
     private int _projectileCount;
     private float _range;
+    private ProjectileBoomerang _spawnedProjectile;
+
+    // 부메랑 시작해도 되는지
+    private bool _isBoomerangStarted = false;
 
     /// <summary>
     /// 생성자
@@ -28,8 +26,8 @@ public class Skill_Boomerang : Skill_Base
     public Skill_Boomerang(SkillData_Boomerang skillData_Boomerang)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.Id);
-        CurrentLevel = 1;
-        MaxLevel = 3;
+        CurrentLevel = 0;
+        MaxLevel = 2;
 
         StatSetting(skillData_Boomerang);
     }
@@ -39,13 +37,12 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_Boomerang skillData_Boomerang)
     {
-        _skillAtk = skillData_Boomerang.AtkPercentage;
+        _skillAtk = skillData_Boomerang.AtkPercentage * PlaySceneManager.ThisGameHeroObject.Atk;
         _projectileSpeed = skillData_Boomerang.ProjectileSpeed;
         _projectileCount = skillData_Boomerang.ProjectileCount;
         _range = skillData_Boomerang.Range;
-        _SpawnedProjectileBoomerang = skillData_Boomerang.Projectile as ProjectileBoomerang;
 
-        CreateBoomerangProjectile();
+        CreateBoomerangProjectile(skillData_Boomerang);
     }
     
     /// <summary>
@@ -62,13 +59,13 @@ public class Skill_Boomerang : Skill_Base
     /// <summary>
     /// 부메랑 프로젝타일 생성
     /// </summary>
-    private void CreateBoomerangProjectile()
+    private void CreateBoomerangProjectile(SkillData_Boomerang skillData_Boomerang)
     {
         // 프로젝타일 생성
-        GameObject.Instantiate(
-            _SpawnedProjectileBoomerang,
-            PlaySceneManager.ThisGameHeroObject.transform.position,
-            Quaternion.identity);
+        _spawnedProjectile = GameObject.Instantiate(
+                skillData_Boomerang.Projectile,
+                PlaySceneManager.ThisGameHeroObject.transform.position,
+                Quaternion.identity) as ProjectileBoomerang;
 
         // 부메랑은 생성되면 계속 공격하게끔 만들 예정
         _isBoomerangStarted = true;
@@ -90,7 +87,7 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
-        _SpawnedProjectileBoomerang.AroundBoomerang(skillAttackArgs.StartSkillPos);
-        _SpawnedProjectileBoomerang.SetProjectileAtk(_skillAtk);
+        _spawnedProjectile.AroundBoomerang(skillAttackArgs.StartSkillPos);
+        _spawnedProjectile.SetAtk(_skillAtk);
     }    
 }

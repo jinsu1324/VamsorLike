@@ -7,42 +7,26 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    private void Start()
-    {
-        //SkillLevelDataBaseParent master = DataManager.Instance.SkillDataDict[SkillID.SlashAttack];
+    //private float _radius = 2.0f; // 반지름
+    //private float _speed = 2.0f;  // 속도
+    //private float _angle = 0; // 각도 저장할 변수
 
-        //if (master is SkillLevelData_SlashAttack skillLevelData_slashAttack)
-        //{
-        //    Debug.Log(skillLevelData_slashAttack.SkillLevelDataList[0].Atk);
-        //}
+    //public GameObject pos;
 
-        //SkillLevelData_SlashAttack skillLevelData_slashAttack = DataManager.Instance.SkillDataDict[SkillID.SlashAttack] as SkillLevelData_SlashAttack;
+    //private void FixedUpdate()
+    //{
+    //    if (PlaySceneManager.Instance.IsGameStart)
+    //    {
 
-        //if (skillLevelData_slashAttack != null)
-        //{
-        //    Debug.Log(skillLevelData_slashAttack.SkillLevelDataList[0].Atk);
-        //}
+    //        AroundBoomerang(PlaySceneManager.ThisGameHeroObject.transform.position);
+    //    }
+    //}
 
-
-
-
-        //SkillData_SlashAttack skillData = DataManager.Instance.SkillData_as_Dict<SkillData_SlashAttack>(SkillID.SlashAttack, 0);
-        //Debug.Log(skillData.Atk);
-
-
-        //SkillData_SlashAttack slashAttack = DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0] as SkillData_SlashAttack;
-
-        //Debug.Log(slashAttack.Atk);
-
-
-
-
-
-
-        //Debug.Log(DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0].GetType().GetField("Name"));
-
-        //Debug.Log(DataManager.Instance.SkillDataDict[SkillID.SlashAttack].SkillDataList[0].Name);
-        //Debug.Log(skillData_SlashAttack_Lv1.Name);
-
-    }
+    //// 부메랑 영웅 주변으로 회전
+    //public void AroundBoomerang(Vector3 pos)
+    //{
+    //    Debug.Log("부메랑 회전");
+    //    _angle += _speed * Time.fixedDeltaTime;
+    //    transform.position = pos + new Vector3(Mathf.Cos(_angle), Mathf.Sin(_angle), 0) * _radius;
+    //}
 }

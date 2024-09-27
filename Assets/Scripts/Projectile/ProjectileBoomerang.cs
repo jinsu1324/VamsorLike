@@ -10,7 +10,7 @@ public class ProjectileBoomerang : ProjectileBase
 
     // 부메랑 영웅 주변으로 회전
     public void AroundBoomerang(Vector3 pos)
-    {        
+    {
         _angle += _speed * Time.fixedDeltaTime;
         transform.position = pos + new Vector3(Mathf.Cos(_angle), Mathf.Sin(_angle), 0) * _radius;
     }

@@ -20,8 +20,8 @@ public class Skill_SlashAttack : Skill_Base
     public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.Id);
-        CurrentLevel = 1;
-        MaxLevel = 3;
+        CurrentLevel = 0;
+        MaxLevel = 2;
 
         StatSetting(skillData_SlashAttack);
     }
@@ -75,7 +75,7 @@ public class Skill_SlashAttack : Skill_Base
             as ProjectileSlashAttack;
 
         // 프로젝타일에 공격력 건네줌
-        projectile.SetProjectileAtk(_skillAtk);
+        projectile.SetAtk(_skillAtk);
 
     }
 }
