@@ -38,31 +38,27 @@ public class PlaySceneManager : SerializedMonoBehaviour
     }
     #endregion
 
-    // 내가 이번 게임에 선택한 영웅
-    public static HeroObject ThisGameHeroObject { get; set; }
+    public static HeroObject ThisGameHeroObject { get; set; }   // 내가 이번 게임에 선택한 영웅
+    public bool IsGameStart { get; set; }                       // 영웅 선택해서 게임 시작 되었는지
 
-    // 영웅 선택해서 게임 시작 되었는지
-    public bool IsGameStart { get; set; }
-
-    // 영웅 선택 팝업
     [SerializeField]
-    public HeroSelectPopup HeroSelectPopup { get; set; }
+    public HeroSelectPopup HeroSelectPopupUI { get; set; }      // 영웅 선택 팝업    
 
-    // 스킬 선택 팝업
     [SerializeField]
-    public SkillChoicePopup SkillPopupUI { get; set; }
+    public SkillChoicePopup SkillChoicePopupUI { get; set; }    // 스킬 선택 팝업
+    
+    [SerializeField]
+    public HPBar HPBarPrefab { get; set; }                      // HP바
+    
+    [SerializeField]
+    public Transform HpBarParentTransform { get; set; }         // HP바 부모 트랜스폼
 
-    // HP바
     [SerializeField]
-    public HPBar HPBar { get; set; }    
+    public ObjectPool DamageTextUIPool { get; set; }            // 데미지 텍스트 UI 오브젝트 풀
+    
+    [SerializeField]
+    public Joystick JoystickUI { get; set; }                    // 조이스틱UI
 
-    // 메인 UI 캔버스
-    [SerializeField]
-    public Transform GuageBarsTF { get; set; }
-
-    // 데미지 텍스트 UI 오브젝트 풀
-    [SerializeField]
-    public ObjectPool DamageTextUIPool { get; set; }
 
     private void Start()
     {
@@ -72,8 +68,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
     // 씬 팝업들 ON OFF 초기화
     private void ScenePopupsInitialize()
     {
-        HeroSelectPopup.OpenPopup();
-        SkillPopupUI.CloseSkillPopup();
+        HeroSelectPopupUI.OpenPopup();
+        SkillChoicePopupUI.CloseSkillPopup();
     }
 
     // 게임시작 bool 파라미터로 변경

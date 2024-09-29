@@ -20,7 +20,6 @@ public class ProjectileSlashAttack : ProjectileBase
     {
         if (collision.gameObject.tag == Tag.Monster.ToString())
         {
-            Debug.Log(_atk);
             collision.GetComponent<MonsterObject>().HPMinus(_atk);
         }
     }

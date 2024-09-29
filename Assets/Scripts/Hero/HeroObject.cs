@@ -57,7 +57,7 @@ public class HeroObject : SerializedMonoBehaviour
         _moveDir = Vector2.zero;
 
         // HP바도 할당
-        _hpBar = Instantiate(PlaySceneManager.Instance.HPBar, transform.position, Quaternion.identity);
+        _hpBar = Instantiate(PlaySceneManager.Instance.HPBarPrefab, transform.position, Quaternion.identity);
         _hpBar.SetParent(this.transform);
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
     }
@@ -66,8 +66,11 @@ public class HeroObject : SerializedMonoBehaviour
     // 이동
     public void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        //float vertical = Input.GetAxisRaw("Vertical");
+
+        float horizontal = PlaySceneManager.Instance.JoystickUI.Horizontal;
+        float vertical = PlaySceneManager.Instance.JoystickUI.Vertical;
 
         _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
         _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);

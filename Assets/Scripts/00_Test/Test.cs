@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,26 +8,34 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    //private float _radius = 2.0f; // 반지름
-    //private float _speed = 2.0f;  // 속도
-    //private float _angle = 0; // 각도 저장할 변수
+    public Rigidbody2D _rigid;
 
-    //public GameObject pos;
+    // 이동에 사용할 vector2 dir
+    private Vector2 _moveDir;
 
-    //private void FixedUpdate()
-    //{
-    //    if (PlaySceneManager.Instance.IsGameStart)
-    //    {
+    public Joystick _joystick;
 
-    //        AroundBoomerang(PlaySceneManager.ThisGameHeroObject.transform.position);
-    //    }
-    //}
+    private float Speed = 3.0f;
 
-    //// 부메랑 영웅 주변으로 회전
-    //public void AroundBoomerang(Vector3 pos)
-    //{
-    //    Debug.Log("부메랑 회전");
-    //    _angle += _speed * Time.fixedDeltaTime;
-    //    transform.position = pos + new Vector3(Mathf.Cos(_angle), Mathf.Sin(_angle), 0) * _radius;
-    //}
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    public void Move()
+    {
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        //float vertical = Input.GetAxisRaw("Vertical");
+
+        float horizontal = _joystick.Horizontal;
+        float vertical = _joystick.Vertical;
+
+        _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
+        _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
+
+        _rigid.MovePosition(_moveDir);
+    }
 }
+
+

@@ -56,7 +56,7 @@ public class HeroSlot : SerializedMonoBehaviour
         PlaySceneManager.Instance.ThisGameHeroSetting(heroID);
 
         // ½ºÅ³ ¼±ÅÃÆË¾÷ ON
-        PlaySceneManager.Instance.SkillPopupUI.OpenSkillPopup();
+        PlaySceneManager.Instance.SkillChoicePopupUI.OpenSkillPopup();
 
         // ¿µ¿õ¼±ÅÃ ÆË¾÷ ´Ý±â
         _onSelectFinish();

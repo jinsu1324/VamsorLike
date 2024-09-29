@@ -21,7 +21,7 @@ public class HPBar : SerializedMonoBehaviour
         _parentTF = tf;
 
         // 캔버스에서 hp바 하이어라키 위치 설정
-        this.transform.parent = PlaySceneManager.Instance.GuageBarsTF;
+        this.transform.parent = PlaySceneManager.Instance.HpBarParentTransform;
     }
 
     // HP 게이지바 업데이트
