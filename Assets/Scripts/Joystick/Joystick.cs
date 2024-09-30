@@ -28,6 +28,8 @@ public class Joystick : SerializedMonoBehaviour, IDragHandler, IPointerUpHandler
     /// </summary>
     public void OnPointerDown(PointerEventData eventData)
     {
+        _background.position = eventData.position;
+
         // 터치 시 즉시 드래그 이벤트 처리
         OnDrag(eventData);
     }
@@ -42,7 +44,7 @@ public class Joystick : SerializedMonoBehaviour, IDragHandler, IPointerUpHandler
         _handle.anchoredPosition = Vector2.ClampMagnitude(_handle.anchoredPosition, _background.sizeDelta.x / 2);
 
         // 핸들 방향   
-        _inputVector = _handle.anchoredPosition - _background.anchoredPosition;
+        _inputVector = _handle.anchoredPosition - Vector2.zero;
         _inputVector.Normalize();
     }
 
@@ -54,5 +56,6 @@ public class Joystick : SerializedMonoBehaviour, IDragHandler, IPointerUpHandler
         // 값들 초기화
         _inputVector = Vector2.zero;
         _handle.anchoredPosition = Vector2.zero;
+        _background.anchoredPosition = new Vector2(0, -600);
     }
 }
