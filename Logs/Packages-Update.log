@@ -43,3 +43,47 @@ The following packages were updated:
   com.unity.ide.visualstudio from version 2.0.17 to 2.0.18
   com.unity.timeline from version 1.7.3 to 1.7.5
   com.unity.visualscripting from version 1.8.0 to 1.9.0
+
+=== Wed Oct  2 03:14:03 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.2d.animation from version 7.0.11 to 9.0.3
+  com.unity.2d.common from version 6.0.6 to 8.0.1
+  com.unity.2d.psdimporter from version 6.0.7 to 8.0.2
+  com.unity.2d.spriteshape from version 7.0.7 to 9.0.2
+  com.unity.2d.tilemap.extras from version 2.2.6 to 3.1.1
+  com.unity.burst from version 1.6.6 to 1.8.8
+  com.unity.timeline from version 1.6.5 to 1.7.5
+The following packages were removed:
+  com.unity.2d.path@5.0.2
+
+=== Wed Oct  2 03:14:04 2024
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.2d.animation@9.0.3
+  com.unity.2d.aseprite@1.0.1
+  com.unity.2d.common@8.0.1
+  com.unity.2d.pixel-perfect@5.0.3
+  com.unity.2d.psdimporter@8.0.2
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.spriteshape@9.0.2
+  com.unity.2d.tilemap@1.0.0
+  com.unity.2d.tilemap.extras@3.1.1
+  com.unity.burst@1.8.8
+  com.unity.ext.nunit@1.0.6
+  com.unity.ide.vscode@1.2.5
+  com.unity.mathematics@1.2.6
+  com.unity.nuget.newtonsoft-json@3.2.1
+  com.unity.services.core@1.11.0
+  com.unity.modules.subsystems@1.0.0
+  com.unity.modules.uielementsnative@1.0.0
+The following packages were updated:
+  com.unity.ide.rider from version 3.0.24 to 3.0.25
+  com.unity.ide.visualstudio from version 2.0.18 to 2.0.21
+  com.unity.visualscripting from version 1.9.0 to 1.9.1
