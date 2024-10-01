@@ -1,0 +1,1284 @@
+fileFormatVersion: 2
+guid: 178e552838b5d6244884857866a448b3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbc18f8155085043be3267cd080dca9
+      internalID: 1162636051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b713064d4b3cf474b85613d417b28646
+      internalID: -749829179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb319cae44f8f24d8dfb18008d931c7
+      internalID: 289665358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24823edb2d02ae40b4db1f698bdfc96
+      internalID: -1009218357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57331fbec6170e445a424d88fdec3fc1
+      internalID: 477377907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41471826633c71c4cb3b26b540d9f5a8
+      internalID: 399991994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a5a1031de82f74cbdd12739f3c38dd
+      internalID: -47702169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f46e88b0e6c52478282c1c733c6e67
+      internalID: 705320370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_8
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372f5dce2c0d12846beb851421de1acf
+      internalID: 1248827113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542cf7cfc2ccb3d49b8a11da02f3f5e4
+      internalID: 1158260880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_10
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f7453f1d32d1c48b260953f706721d
+      internalID: 2081842841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_11
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8455404ec11a5b45bf42e0c67aa1d59
+      internalID: -722537280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_12
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb279b59a1cc41499e51615695cd5be
+      internalID: -1736764192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_13
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b6c178d66ded54f8f7ae32eb3f12bc
+      internalID: 1032957960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_14
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42f6afa3ee662a4db990ab807c13c7e
+      internalID: -1077588192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_15
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6121590f42ce045b3d2e52bacc29b0
+      internalID: 1356100313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_16
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9748a58681eb97748b567abe4a1a4e86
+      internalID: -1255811831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_17
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16c94749d1d2004480b071e9f36eef0
+      internalID: 279472786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_18
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb38907b4e23c344ab586ea88b06fdd
+      internalID: 846995963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502258fee8879594db3c9d2da2bd899c
+      internalID: 68458252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_20
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd18bfee09983b49a15c1d10d7e47cb
+      internalID: -93896287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_21
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06447407a8bad1489524c40ead7bfd9
+      internalID: -1255024770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_22
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561a669ef9b967a46a8c3cc54da5dbf0
+      internalID: -326239660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_23
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ba162410b76ea4f80b5c0e1bfd3eec
+      internalID: 1111999748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_24
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163f9a80dc2577d4f922fb8492aecc14
+      internalID: 2053207834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_25
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2d9016c6482cc4e8c24992b380d653
+      internalID: -966391021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_26
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f837ee079633794a92c965f9e535fd2
+      internalID: -2143506770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_27
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9666f606b9317eb41b2ed702479a7408
+      internalID: 562802287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_28
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f23d5a582310848b3aba2cb384d9ac
+      internalID: 2010995545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e745975ac99365419e579887e014165
+      internalID: -507724287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_30
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8fda28df2c84d499e9d5ad2c7c95f8
+      internalID: 397811506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_31
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b672fe8f3a7a0914c8ca7c5e9f67444c
+      internalID: 1628094185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_32
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5d2c9e8c83932449b2cc119b8a8bda
+      internalID: -682271300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_33
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b86c343ec111734490b2457cc4a12a7
+      internalID: 46289949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_34
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5c78c2fe05c774cbc097a28684a72c
+      internalID: -173304531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_35
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc5095de96d2d447884d3c3246ef723
+      internalID: -1949997895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_36
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e949532cf605e45bc381acfcdeecab
+      internalID: 473475476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_37
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67eafec590e47c24b85123a73325aed6
+      internalID: -803802957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3acd7a76350b6b41b4fdbeb12ec4ee5
+      internalID: 922580512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a122d416151e8b4f822a134be012b32
+      internalID: 640138369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_40
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f45a67281d63994d8a475cb909a27a4
+      internalID: -1957607105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_41
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a83eecd516e094d8d0f99a14424bfb
+      internalID: -328877997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7afcb92e22245694a92d09ac2d641242
+      internalID: 1037521857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_43
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402c35f0d609f6a498467525af832f66
+      internalID: 1274652646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_44
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92beb69cfdb98184f9a4020fda9a8a19
+      internalID: -2054796140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_45
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff17b7f4ef6a204e8cad1b0f603df0d
+      internalID: -1162347339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365ecef8eef56084d99007adf1d4bdc8
+      internalID: 1839922359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_47
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d138c5caffe2a004ea32902e2ba87f65
+      internalID: -1428938030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_48
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f472a525459ff47a112f6c6fea01eb
+      internalID: 728258021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_49
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df5726ff9fbe7b4c96f4ab0d19df76a
+      internalID: 1561373286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_50
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ff556ff2afd3b4eb4a8c874b93f4f6
+      internalID: 915728562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-Gun-SS_51
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaa1f106001f7b4990331b71aed3c4b
+      internalID: 685341616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bounty-Hunter-Add-Gun-SS_0: 1162636051
+      Bounty-Hunter-Add-Gun-SS_1: -749829179
+      Bounty-Hunter-Add-Gun-SS_10: 2081842841
+      Bounty-Hunter-Add-Gun-SS_11: -722537280
+      Bounty-Hunter-Add-Gun-SS_12: -1736764192
+      Bounty-Hunter-Add-Gun-SS_13: 1032957960
+      Bounty-Hunter-Add-Gun-SS_14: -1077588192
+      Bounty-Hunter-Add-Gun-SS_15: 1356100313
+      Bounty-Hunter-Add-Gun-SS_16: -1255811831
+      Bounty-Hunter-Add-Gun-SS_17: 279472786
+      Bounty-Hunter-Add-Gun-SS_18: 846995963
+      Bounty-Hunter-Add-Gun-SS_19: 68458252
+      Bounty-Hunter-Add-Gun-SS_2: 289665358
+      Bounty-Hunter-Add-Gun-SS_20: -93896287
+      Bounty-Hunter-Add-Gun-SS_21: -1255024770
+      Bounty-Hunter-Add-Gun-SS_22: -326239660
+      Bounty-Hunter-Add-Gun-SS_23: 1111999748
+      Bounty-Hunter-Add-Gun-SS_24: 2053207834
+      Bounty-Hunter-Add-Gun-SS_25: -966391021
+      Bounty-Hunter-Add-Gun-SS_26: -2143506770
+      Bounty-Hunter-Add-Gun-SS_27: 562802287
+      Bounty-Hunter-Add-Gun-SS_28: 2010995545
+      Bounty-Hunter-Add-Gun-SS_29: -507724287
+      Bounty-Hunter-Add-Gun-SS_3: -1009218357
+      Bounty-Hunter-Add-Gun-SS_30: 397811506
+      Bounty-Hunter-Add-Gun-SS_31: 1628094185
+      Bounty-Hunter-Add-Gun-SS_32: -682271300
+      Bounty-Hunter-Add-Gun-SS_33: 46289949
+      Bounty-Hunter-Add-Gun-SS_34: -173304531
+      Bounty-Hunter-Add-Gun-SS_35: -1949997895
+      Bounty-Hunter-Add-Gun-SS_36: 473475476
+      Bounty-Hunter-Add-Gun-SS_37: -803802957
+      Bounty-Hunter-Add-Gun-SS_38: 922580512
+      Bounty-Hunter-Add-Gun-SS_39: 640138369
+      Bounty-Hunter-Add-Gun-SS_4: 477377907
+      Bounty-Hunter-Add-Gun-SS_40: -1957607105
+      Bounty-Hunter-Add-Gun-SS_41: -328877997
+      Bounty-Hunter-Add-Gun-SS_42: 1037521857
+      Bounty-Hunter-Add-Gun-SS_43: 1274652646
+      Bounty-Hunter-Add-Gun-SS_44: -2054796140
+      Bounty-Hunter-Add-Gun-SS_45: -1162347339
+      Bounty-Hunter-Add-Gun-SS_46: 1839922359
+      Bounty-Hunter-Add-Gun-SS_47: -1428938030
+      Bounty-Hunter-Add-Gun-SS_48: 728258021
+      Bounty-Hunter-Add-Gun-SS_49: 1561373286
+      Bounty-Hunter-Add-Gun-SS_5: 399991994
+      Bounty-Hunter-Add-Gun-SS_50: 915728562
+      Bounty-Hunter-Add-Gun-SS_51: 685341616
+      Bounty-Hunter-Add-Gun-SS_6: -47702169
+      Bounty-Hunter-Add-Gun-SS_7: 705320370
+      Bounty-Hunter-Add-Gun-SS_8: 1248827113
+      Bounty-Hunter-Add-Gun-SS_9: 1158260880
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

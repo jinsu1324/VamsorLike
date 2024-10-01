@@ -1,0 +1,991 @@
+fileFormatVersion: 2
+guid: 99e2f373f581c024c9d6faac420a75bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6458245678916776479
+    second: Shoot-Effect_0
+  - first:
+      213: 7564758742318398580
+    second: Shoot-Effect_1
+  - first:
+      213: -5370684237981103176
+    second: Shoot-Effect_2
+  - first:
+      213: -1408580227653766281
+    second: Shoot-Effect_3
+  - first:
+      213: 7818647481352794987
+    second: Shoot-Effect_4
+  - first:
+      213: -7990512036116385120
+    second: Shoot-Effect_5
+  - first:
+      213: -3821985173651712947
+    second: Shoot-Effect_6
+  - first:
+      213: -3643315511425086718
+    second: Shoot-Effect_7
+  - first:
+      213: 3904214405229525874
+    second: Shoot-Effect_8
+  - first:
+      213: 3379290847790904107
+    second: Shoot-Effect_9
+  - first:
+      213: 8471448217702028050
+    second: Shoot-Effect_10
+  - first:
+      213: 2766224450543563620
+    second: Shoot-Effect_11
+  - first:
+      213: -2617250731018655445
+    second: Shoot-Effect_12
+  - first:
+      213: -4288478690205765593
+    second: Shoot-Effect_13
+  - first:
+      213: 6119371526762617507
+    second: Shoot-Effect_14
+  - first:
+      213: 6062774115887205860
+    second: Shoot-Effect_15
+  - first:
+      213: 7917196561164372271
+    second: Shoot-Effect_16
+  - first:
+      213: -6955714975123427538
+    second: Shoot-Effect_17
+  - first:
+      213: -5867144467138309957
+    second: Shoot-Effect_18
+  - first:
+      213: 4407726890553162924
+    second: Shoot-Effect_19
+  - first:
+      213: 8257752798107809921
+    second: Shoot-Effect_20
+  - first:
+      213: 599052278274792829
+    second: Shoot-Effect_21
+  - first:
+      213: 7828091725025735225
+    second: Shoot-Effect_22
+  - first:
+      213: -3699857985953592317
+    second: Shoot-Effect_23
+  - first:
+      213: 2220781374919916914
+    second: Shoot-Effect_24
+  - first:
+      213: -8533122332385564344
+    second: Shoot-Effect_25
+  - first:
+      213: 3686356756519826716
+    second: Shoot-Effect_26
+  - first:
+      213: 3927593359699322756
+    second: Shoot-Effect_27
+  - first:
+      213: -7123640536654827802
+    second: Shoot-Effect_28
+  - first:
+      213: 8153518504561806753
+    second: Shoot-Effect_29
+  - first:
+      213: 3598011906634703270
+    second: Shoot-Effect_30
+  - first:
+      213: 661495481570073169
+    second: Shoot-Effect_31
+  - first:
+      213: -7056908783687311463
+    second: Shoot-Effect_32
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shoot-Effect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12390c4a3c40a950800000000000000
+      internalID: 6458245678916776479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 266
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c3b6f0ffb6bf860800000000000000
+      internalID: 7564758742318398580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 266
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbc852042f7775b0800000000000000
+      internalID: -5370684237981103176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773fe05feb7b37ce0800000000000000
+      internalID: -1408580227653766281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 228
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b633906957a618c60800000000000000
+      internalID: 7818647481352794987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 228
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2bcc183affb1190800000000000000
+      internalID: -7990512036116385120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_6
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 228
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d441eabfbb495fac0800000000000000
+      internalID: -3821985173651712947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b46d078d7507dc0800000000000000
+      internalID: -3643315511425086718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 190
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b3baee05e8e2630800000000000000
+      internalID: 3904214405229525874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 190
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b233e4f2f17a5ee20800000000000000
+      internalID: 3379290847790904107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 190
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213de353541a09570800000000000000
+      internalID: 8471448217702028050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46336af4b7a936620800000000000000
+      internalID: 2766224450543563620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 152
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b296081b358adabd0800000000000000
+      internalID: -2617250731018655445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 152
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720f3734a534c74c0800000000000000
+      internalID: -4288478690205765593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa53555bff5ce450800000000000000
+      internalID: 6119371526762617507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_15
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 114
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edc3eabfec432450800000000000000
+      internalID: 6062774115887205860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 114
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29852543588fdd60800000000000000
+      internalID: 7917196561164372271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f27e44516587f90800000000000000
+      internalID: -6955714975123427538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 76
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0925e4137b39ea0800000000000000
+      internalID: -5867144467138309957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 76
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacbb5af0446b2d30800000000000000
+      internalID: 4407726890553162924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_20
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 76
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188343e1b6e699270800000000000000
+      internalID: 8257752798107809921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_21
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 76
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d15788fd2405800800000000000000
+      internalID: 599052278274792829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932755be2f7f2ac60800000000000000
+      internalID: 7828091725025735225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_23
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c08d3b3c677acc0800000000000000
+      internalID: -3699857985953592317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_24
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27db7efe4ecc1de10800000000000000
+      internalID: 2220781374919916914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849a439f272449980800000000000000
+      internalID: -8533122332385564344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_26
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15b9bb50f1982330800000000000000
+      internalID: 3686356756519826716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_27
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 38
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487af03f95d918630800000000000000
+      internalID: 3927593359699322756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eead11bcaeb32d90800000000000000
+      internalID: -7123640536654827802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_29
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad0bf571ed172170800000000000000
+      internalID: 8153518504561806753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_30
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1669814c4bee130800000000000000
+      internalID: 3598011906634703270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a928fb2aa1e2900800000000000000
+      internalID: 661495481570073169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot-Effect_32
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fdbffa9d2d01e90800000000000000
+      internalID: -7056908783687311463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shoot-Effect_0: 6458245678916776479
+      Shoot-Effect_1: 7564758742318398580
+      Shoot-Effect_10: 8471448217702028050
+      Shoot-Effect_11: 2766224450543563620
+      Shoot-Effect_12: -2617250731018655445
+      Shoot-Effect_13: -4288478690205765593
+      Shoot-Effect_14: 6119371526762617507
+      Shoot-Effect_15: 6062774115887205860
+      Shoot-Effect_16: 7917196561164372271
+      Shoot-Effect_17: -6955714975123427538
+      Shoot-Effect_18: -5867144467138309957
+      Shoot-Effect_19: 4407726890553162924
+      Shoot-Effect_2: -5370684237981103176
+      Shoot-Effect_20: 8257752798107809921
+      Shoot-Effect_21: 599052278274792829
+      Shoot-Effect_22: 7828091725025735225
+      Shoot-Effect_23: -3699857985953592317
+      Shoot-Effect_24: 2220781374919916914
+      Shoot-Effect_25: -8533122332385564344
+      Shoot-Effect_26: 3686356756519826716
+      Shoot-Effect_27: 3927593359699322756
+      Shoot-Effect_28: -7123640536654827802
+      Shoot-Effect_29: 8153518504561806753
+      Shoot-Effect_3: -1408580227653766281
+      Shoot-Effect_30: 3598011906634703270
+      Shoot-Effect_31: 661495481570073169
+      Shoot-Effect_32: -7056908783687311463
+      Shoot-Effect_4: 7818647481352794987
+      Shoot-Effect_5: -7990512036116385120
+      Shoot-Effect_6: -3821985173651712947
+      Shoot-Effect_7: -3643315511425086718
+      Shoot-Effect_8: 3904214405229525874
+      Shoot-Effect_9: 3379290847790904107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1284 @@
+fileFormatVersion: 2
+guid: 56a56c188b7b3f241940c98f34907731
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93da675f590bbca47afda78cf9c03723
+      internalID: -59528012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ad98ae120299647865756c04736fb9
+      internalID: -911715025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 520
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3c2ab18ef6bf34b884080461530f39
+      internalID: -1804936489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc1b6adf9c4bc3459f339c722008d70
+      internalID: 1412122596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66ab9e9835ad414da3433b023d96b04
+      internalID: -826708095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 455
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9542125d9f819eb47bcfbb5bcbdccc82
+      internalID: 178866947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692279d196537434393afffc378c7294
+      internalID: 510929099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfdcaf974c295594194b5d98e44c3eee
+      internalID: -2082907285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_8
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4646b770df42f2a43ba93d99763fa526
+      internalID: -1607356983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7782b983b543c1049a91a69a49cbbc54
+      internalID: -764856335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_10
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a86391482e2d342b62aa320a69f3c7
+      internalID: 696783726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_11
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340d2aefd5b266849b22a6fdd343976c
+      internalID: -134421262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_12
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2f5404a2811574b9e018063b3718d1
+      internalID: -455872899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_13
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31c402879319cd45b431f298922b194
+      internalID: -1219024065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_14
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d9fca59dbecec4e8072e0ad3ef3174
+      internalID: 1636088702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_15
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fdb8d0078242a248a5131aab77cb86a
+      internalID: 236743913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_16
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f626c25a8aa89489d8d4f4f65ecd4b
+      internalID: 684728321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_17
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b33f236ce0f0604aaf183095093661c
+      internalID: -534802427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_18
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 390
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55d8c14b641b3642a086687305e0799
+      internalID: -342824981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c78505d18a3d3849b4e9bd0e629715e
+      internalID: 1348245249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_20
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac6b7da3d86d2c44afe36d4ee43305c
+      internalID: -1998140210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_21
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1749e5e3794110840848e6911dbf9b66
+      internalID: -1368884885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_22
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f070029848420a34980dd4f21c0a4701
+      internalID: 1085429035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_23
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cba5146a22d5114e83888498db3085f
+      internalID: 1429500324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_24
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60455ffa865fbe744b1e774456b5ac1f
+      internalID: -1440302601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_25
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192b7310d5e435f41be62a281ff2cd40
+      internalID: -960167924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_26
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e178d58aecfaf4caae08d017fbf981
+      internalID: 781663982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_27
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838364ff470451c4986d4ef46dc9a7de
+      internalID: -619655961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_28
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 325
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d3d6004e27a52479ff4a5bf41a3353
+      internalID: 1841649240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e798d621d14c514496fc42bd8ddad4c
+      internalID: 959784502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_30
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f728156c79deb41a8f360154235b7e
+      internalID: 195814512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_31
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1589367144c289f4991ca60a560f052e
+      internalID: -1645142263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_32
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71e413972bfa45469f0bb2fed72ba5f
+      internalID: -1696436101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_33
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8a91ced0b1d754da0511341be4f3e4
+      internalID: -1195322593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_34
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ccb4338c3b1744a96743f6f70d48e4
+      internalID: -1211507359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_35
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f3a9b128c467945b0cd1aea54938fd
+      internalID: 1874133851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_36
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497efdb802f1fe9499eb6830505dc4f7
+      internalID: 1124423148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_37
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 260
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb4f2ffc64739d4288bf6a005129ca0
+      internalID: -1969216449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cb0d2c1f59a084a96ce364881019da
+      internalID: -694453604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc62fec1236462f42b2698b13891e7a5
+      internalID: -2092053248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_40
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfadb81fb65439446a2526cdf8d99d65
+      internalID: -1925285706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_41
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 130
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe00afa7521cd6d478ac3117b58b5b03
+      internalID: -885287570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58885645eedfaed44807842bf59ebc90
+      internalID: -7056028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_43
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d515f98daddb094a9f1645cd3b53a89
+      internalID: -1791236009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_44
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cfe56097f268e4cb3b412968ba55c7
+      internalID: -979638216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_45
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 65
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f59ed740d059774cb31dbdef580e764
+      internalID: -456753037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee9a207605cdad4593a766618619d38
+      internalID: -446668154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_47
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1990fb22c7e566f4eaa9ca4e1bee0124
+      internalID: -945946602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_48
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b08ab49f7a56a7448902b6f21c1bba6
+      internalID: 1934603028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_49
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4d36227b577884ca7eeae0e899f6ab
+      internalID: 1582951601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_50
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245573da325ba994e80b9aa23f72cb18
+      internalID: 1313948764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bounty-Hunter-Add-CB-SS_51
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 89
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2593143fbedc9b4b8b0758bd0da4e2a
+      internalID: 2026773366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bounty-Hunter-Add-CB-SS_0: -59528012
+      Bounty-Hunter-Add-CB-SS_1: -911715025
+      Bounty-Hunter-Add-CB-SS_10: 696783726
+      Bounty-Hunter-Add-CB-SS_11: -134421262
+      Bounty-Hunter-Add-CB-SS_12: -455872899
+      Bounty-Hunter-Add-CB-SS_13: -1219024065
+      Bounty-Hunter-Add-CB-SS_14: 1636088702
+      Bounty-Hunter-Add-CB-SS_15: 236743913
+      Bounty-Hunter-Add-CB-SS_16: 684728321
+      Bounty-Hunter-Add-CB-SS_17: -534802427
+      Bounty-Hunter-Add-CB-SS_18: -342824981
+      Bounty-Hunter-Add-CB-SS_19: 1348245249
+      Bounty-Hunter-Add-CB-SS_2: -1804936489
+      Bounty-Hunter-Add-CB-SS_20: -1998140210
+      Bounty-Hunter-Add-CB-SS_21: -1368884885
+      Bounty-Hunter-Add-CB-SS_22: 1085429035
+      Bounty-Hunter-Add-CB-SS_23: 1429500324
+      Bounty-Hunter-Add-CB-SS_24: -1440302601
+      Bounty-Hunter-Add-CB-SS_25: -960167924
+      Bounty-Hunter-Add-CB-SS_26: 781663982
+      Bounty-Hunter-Add-CB-SS_27: -619655961
+      Bounty-Hunter-Add-CB-SS_28: 1841649240
+      Bounty-Hunter-Add-CB-SS_29: 959784502
+      Bounty-Hunter-Add-CB-SS_3: 1412122596
+      Bounty-Hunter-Add-CB-SS_30: 195814512
+      Bounty-Hunter-Add-CB-SS_31: -1645142263
+      Bounty-Hunter-Add-CB-SS_32: -1696436101
+      Bounty-Hunter-Add-CB-SS_33: -1195322593
+      Bounty-Hunter-Add-CB-SS_34: -1211507359
+      Bounty-Hunter-Add-CB-SS_35: 1874133851
+      Bounty-Hunter-Add-CB-SS_36: 1124423148
+      Bounty-Hunter-Add-CB-SS_37: -1969216449
+      Bounty-Hunter-Add-CB-SS_38: -694453604
+      Bounty-Hunter-Add-CB-SS_39: -2092053248
+      Bounty-Hunter-Add-CB-SS_4: -826708095
+      Bounty-Hunter-Add-CB-SS_40: -1925285706
+      Bounty-Hunter-Add-CB-SS_41: -885287570
+      Bounty-Hunter-Add-CB-SS_42: -7056028
+      Bounty-Hunter-Add-CB-SS_43: -1791236009
+      Bounty-Hunter-Add-CB-SS_44: -979638216
+      Bounty-Hunter-Add-CB-SS_45: -456753037
+      Bounty-Hunter-Add-CB-SS_46: -446668154
+      Bounty-Hunter-Add-CB-SS_47: -945946602
+      Bounty-Hunter-Add-CB-SS_48: 1934603028
+      Bounty-Hunter-Add-CB-SS_49: 1582951601
+      Bounty-Hunter-Add-CB-SS_5: 178866947
+      Bounty-Hunter-Add-CB-SS_50: 1313948764
+      Bounty-Hunter-Add-CB-SS_51: 2026773366
+      Bounty-Hunter-Add-CB-SS_6: 510929099
+      Bounty-Hunter-Add-CB-SS_7: -2082907285
+      Bounty-Hunter-Add-CB-SS_8: -1607356983
+      Bounty-Hunter-Add-CB-SS_9: -764856335
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

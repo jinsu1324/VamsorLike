@@ -1,0 +1,3841 @@
+fileFormatVersion: 2
+guid: 15e3ba5442bcffa4baa7339fa5f119f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4536585280519004551
+    second: BH-CrosBow_0
+  - first:
+      213: 1044081822230326407
+    second: BH-CrosBow_1
+  - first:
+      213: 6651141834900979144
+    second: BH-CrosBow_2
+  - first:
+      213: 2137457755080443611
+    second: BH-CrosBow_3
+  - first:
+      213: -2515939670355302226
+    second: BH-CrosBow_4
+  - first:
+      213: 6338643482906728456
+    second: BH-CrosBow_5
+  - first:
+      213: 5099907831442582649
+    second: BH-CrosBow_6
+  - first:
+      213: -3182272273957580097
+    second: BH-CrosBow_7
+  - first:
+      213: -2005048787948829937
+    second: BH-CrosBow_8
+  - first:
+      213: 1611954962779731225
+    second: BH-CrosBow_9
+  - first:
+      213: 523575674631787457
+    second: BH-CrosBow_10
+  - first:
+      213: 2698427469413296231
+    second: BH-CrosBow_11
+  - first:
+      213: 7205866833522263734
+    second: BH-CrosBow_12
+  - first:
+      213: 7561978614551448890
+    second: BH-CrosBow_13
+  - first:
+      213: -7818510554286558953
+    second: BH-CrosBow_14
+  - first:
+      213: -9116777597124632024
+    second: BH-CrosBow_15
+  - first:
+      213: 6904762930522680795
+    second: BH-CrosBow_16
+  - first:
+      213: -3664970520776520134
+    second: BH-CrosBow_17
+  - first:
+      213: -6407807458124240779
+    second: BH-CrosBow_18
+  - first:
+      213: 3001324217096556918
+    second: BH-CrosBow_19
+  - first:
+      213: -8767871629915496216
+    second: BH-CrosBow_20
+  - first:
+      213: 6340827838971464458
+    second: BH-CrosBow_21
+  - first:
+      213: -6718290588386034182
+    second: BH-CrosBow_22
+  - first:
+      213: -4332316492234096086
+    second: BH-CrosBow_23
+  - first:
+      213: 5853262938118217184
+    second: BH-CrosBow_24
+  - first:
+      213: 3221114765780527813
+    second: BH-CrosBow_25
+  - first:
+      213: 363744974500667276
+    second: BH-CrosBow_26
+  - first:
+      213: -1521574753939757544
+    second: BH-CrosBow_27
+  - first:
+      213: -5348312917132421179
+    second: BH-CrosBow_28
+  - first:
+      213: -1358626878325442023
+    second: BH-CrosBow_29
+  - first:
+      213: -1709499115977920185
+    second: BH-CrosBow_30
+  - first:
+      213: 7683202791079873936
+    second: BH-CrosBow_31
+  - first:
+      213: -9092880201583760956
+    second: BH-CrosBow_32
+  - first:
+      213: -3702944337118725417
+    second: BH-CrosBow_33
+  - first:
+      213: 2878526093015537167
+    second: BH-CrosBow_34
+  - first:
+      213: -3764033743437334185
+    second: BH-CrosBow_35
+  - first:
+      213: -7627346954116627743
+    second: BH-CrosBow_36
+  - first:
+      213: 5785680116975250414
+    second: BH-CrosBow_37
+  - first:
+      213: 1902462817459885522
+    second: BH-CrosBow_38
+  - first:
+      213: 5572636080142982570
+    second: BH-CrosBow_39
+  - first:
+      213: -4830982773355763120
+    second: BH-CrosBow_40
+  - first:
+      213: -5295343527747408273
+    second: BH-CrosBow_41
+  - first:
+      213: 748551272033895837
+    second: BH-CrosBow_42
+  - first:
+      213: -7620884479762612467
+    second: BH-CrosBow_43
+  - first:
+      213: -2468320653434338110
+    second: BH-CrosBow_44
+  - first:
+      213: 5698386695828243399
+    second: BH-CrosBow_45
+  - first:
+      213: -7334145148178675457
+    second: BH-CrosBow_46
+  - first:
+      213: 3931148088247536339
+    second: BH-CrosBow_47
+  - first:
+      213: -7327346001424114025
+    second: BH-CrosBow_48
+  - first:
+      213: -3149065470039575290
+    second: BH-CrosBow_49
+  - first:
+      213: 727044446071275695
+    second: BH-CrosBow_50
+  - first:
+      213: 9145004329159028794
+    second: BH-CrosBow_51
+  - first:
+      213: 1878463819581777998
+    second: BH-CrosBow_52
+  - first:
+      213: -1994338578175034842
+    second: BH-CrosBow_53
+  - first:
+      213: -6879170158013495815
+    second: BH-CrosBow_54
+  - first:
+      213: -8066248917948361420
+    second: BH-CrosBow_55
+  - first:
+      213: 357224486183028733
+    second: BH-CrosBow_56
+  - first:
+      213: -3341808524711593113
+    second: BH-CrosBow_57
+  - first:
+      213: 5356001576535719717
+    second: BH-CrosBow_58
+  - first:
+      213: 8568700180483973562
+    second: BH-CrosBow_59
+  - first:
+      213: -1840732621064081285
+    second: BH-CrosBow_60
+  - first:
+      213: 1470400004625110308
+    second: BH-CrosBow_61
+  - first:
+      213: -8990906662487838756
+    second: BH-CrosBow_62
+  - first:
+      213: 8485686260509672396
+    second: BH-CrosBow_63
+  - first:
+      213: -8401140691029637351
+    second: BH-CrosBow_64
+  - first:
+      213: -2552773492514810261
+    second: BH-CrosBow_65
+  - first:
+      213: 4174469951464495102
+    second: BH-CrosBow_66
+  - first:
+      213: -5358909228762038435
+    second: BH-CrosBow_67
+  - first:
+      213: -1315259781922604363
+    second: BH-CrosBow_68
+  - first:
+      213: 2777860195431670753
+    second: BH-CrosBow_69
+  - first:
+      213: -6148546163060039146
+    second: BH-CrosBow_70
+  - first:
+      213: -6681718744760430957
+    second: BH-CrosBow_71
+  - first:
+      213: 980224875555364718
+    second: BH-CrosBow_72
+  - first:
+      213: 7326350639181645425
+    second: BH-CrosBow_73
+  - first:
+      213: -8660561010142757388
+    second: BH-CrosBow_74
+  - first:
+      213: -6710699307947851004
+    second: BH-CrosBow_75
+  - first:
+      213: -6974447161752534741
+    second: BH-CrosBow_76
+  - first:
+      213: 6104526517012332291
+    second: BH-CrosBow_77
+  - first:
+      213: 6210783986114657448
+    second: BH-CrosBow_78
+  - first:
+      213: -7056058433540515684
+    second: BH-CrosBow_79
+  - first:
+      213: 5756930174814307078
+    second: BH-CrosBow_80
+  - first:
+      213: -6234587831973569678
+    second: BH-CrosBow_81
+  - first:
+      213: -641824778593813016
+    second: BH-CrosBow_82
+  - first:
+      213: 6586602583153189367
+    second: BH-CrosBow_83
+  - first:
+      213: 2038515432318297069
+    second: BH-CrosBow_84
+  - first:
+      213: 772534984368283183
+    second: BH-CrosBow_85
+  - first:
+      213: -7796216014178230809
+    second: BH-CrosBow_86
+  - first:
+      213: -1493568777870593179
+    second: BH-CrosBow_87
+  - first:
+      213: -8772243020633004117
+    second: BH-CrosBow_88
+  - first:
+      213: -8366110852143891744
+    second: BH-CrosBow_89
+  - first:
+      213: -2616165760596177275
+    second: BH-CrosBow_90
+  - first:
+      213: -5130314646349607106
+    second: BH-CrosBow_91
+  - first:
+      213: -1585729434390311527
+    second: BH-CrosBow_92
+  - first:
+      213: 3431220375358797757
+    second: BH-CrosBow_93
+  - first:
+      213: 3074057354000137300
+    second: BH-CrosBow_94
+  - first:
+      213: -7517716564265477970
+    second: BH-CrosBow_95
+  - first:
+      213: -2805006095854640462
+    second: BH-CrosBow_96
+  - first:
+      213: -7013248587791753456
+    second: BH-CrosBow_97
+  - first:
+      213: 3192044873646655082
+    second: BH-CrosBow_98
+  - first:
+      213: -1280000082473881712
+    second: BH-CrosBow_99
+  - first:
+      213: 2139911152130082424
+    second: BH-CrosBow_100
+  - first:
+      213: 9029951879061643311
+    second: BH-CrosBow_101
+  - first:
+      213: -8266929600815509962
+    second: BH-CrosBow_102
+  - first:
+      213: -3682917051653063488
+    second: BH-CrosBow_103
+  - first:
+      213: 7192617106422622765
+    second: BH-CrosBow_104
+  - first:
+      213: -6713973853696065271
+    second: BH-CrosBow_105
+  - first:
+      213: -536819171467797193
+    second: BH-CrosBow_106
+  - first:
+      213: 2891806736355188002
+    second: BH-CrosBow_107
+  - first:
+      213: -1431404867803169497
+    second: BH-CrosBow_108
+  - first:
+      213: -3834621152372392106
+    second: BH-CrosBow_109
+  - first:
+      213: -566169141483008651
+    second: BH-CrosBow_110
+  - first:
+      213: -1129799918797153529
+    second: BH-CrosBow_111
+  - first:
+      213: 5149466516464281118
+    second: BH-CrosBow_112
+  - first:
+      213: -8178737914612267633
+    second: BH-CrosBow_113
+  - first:
+      213: -2367167017858783360
+    second: BH-CrosBow_114
+  - first:
+      213: 4288668805260052144
+    second: BH-CrosBow_115
+  - first:
+      213: -6975219105993417115
+    second: BH-CrosBow_116
+  - first:
+      213: 7343203130485305916
+    second: BH-CrosBow_117
+  - first:
+      213: 1266873726159552105
+    second: BH-CrosBow_118
+  - first:
+      213: -7107268482877173781
+    second: BH-CrosBow_119
+  - first:
+      213: 5339336413718992258
+    second: BH-CrosBow_120
+  - first:
+      213: 4133575122111881440
+    second: BH-CrosBow_121
+  - first:
+      213: -5471993640089407354
+    second: BH-CrosBow_122
+  - first:
+      213: 3039565714034663760
+    second: BH-CrosBow_123
+  - first:
+      213: 3673754708507212048
+    second: BH-CrosBow_124
+  - first:
+      213: -8461612253813289263
+    second: BH-CrosBow_125
+  - first:
+      213: -7958407130960801405
+    second: BH-CrosBow_126
+  - first:
+      213: -3428052114693805303
+    second: BH-CrosBow_127
+  - first:
+      213: -6182599166758829457
+    second: BH-CrosBow_128
+  - first:
+      213: -3212957407847940638
+    second: BH-CrosBow_129
+  - first:
+      213: -6389637075496671727
+    second: BH-CrosBow_130
+  - first:
+      213: 6198126687466479298
+    second: BH-CrosBow_131
+  - first:
+      213: -1316695779285305923
+    second: BH-CrosBow_132
+  - first:
+      213: -6520440312667365827
+    second: BH-CrosBow_133
+  - first:
+      213: 118450637390673454
+    second: BH-CrosBow_134
+  - first:
+      213: 8785703907181807084
+    second: BH-CrosBow_135
+  - first:
+      213: 2941430551650142694
+    second: BH-CrosBow_136
+  - first:
+      213: -8160192283007048478
+    second: BH-CrosBow_137
+  - first:
+      213: 3560007255643197273
+    second: BH-CrosBow_138
+  - first:
+      213: 910128614901386900
+    second: BH-CrosBow_139
+  - first:
+      213: 2527233960881877773
+    second: BH-CrosBow_140
+  - first:
+      213: 4755039304006057866
+    second: BH-CrosBow_141
+  - first:
+      213: -2906529325332560307
+    second: BH-CrosBow_142
+  - first:
+      213: -6448641596832481077
+    second: BH-CrosBow_143
+  - first:
+      213: -7440553920219248541
+    second: BH-CrosBow_144
+  - first:
+      213: 4030652853956735530
+    second: BH-CrosBow_145
+  - first:
+      213: -5894520786700079386
+    second: BH-CrosBow_146
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BH-CrosBow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781e99ad64035fe30800000000000000
+      internalID: 4536585280519004551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c2b72b2e25d7e00800000000000000
+      internalID: 1044081822230326407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd3304724a9d4c50800000000000000
+      internalID: 6651141834900979144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd649f5e086c9ad10800000000000000
+      internalID: 2137457755080443611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8a8282336951dd0800000000000000
+      internalID: -2515939670355302226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_5
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80810840aa267f750800000000000000
+      internalID: 6338643482906728456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_6
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c2e58f62386c640800000000000000
+      internalID: 5099907831442582649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1566
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb21f2c2a3c46d3d0800000000000000
+      internalID: -3182272273957580097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f038bf420c2ac24e0800000000000000
+      internalID: -2005048787948829937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915f9668f70de5610800000000000000
+      internalID: 1611954962779731225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_10
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c396735d4d144700800000000000000
+      internalID: 523575674631787457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768298e8c7db27520800000000000000
+      internalID: 2698427469413296231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b60ddee4b1600460800000000000000
+      internalID: 7205866833522263734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d807f1c7b81f860800000000000000
+      internalID: 7561978614551448890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_14
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7117b1b33121f7390800000000000000
+      internalID: -7818510554286558953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1512
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822a5230413ba7180800000000000000
+      internalID: -9116777597124632024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdde6146d45a2df50800000000000000
+      internalID: 6904762930522680795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e46dcaab8632dc0800000000000000
+      internalID: -3664970520776520134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578e76d1115e217a0800000000000000
+      internalID: -6407807458124240779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67151d74978d6a920800000000000000
+      internalID: 3001324217096556918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e069aee433425680800000000000000
+      internalID: -8767871629915496216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_21
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b4dcb03552ff750800000000000000
+      internalID: 6340827838971464458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_22
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd766d0e46d3c2a0800000000000000
+      internalID: -6718290588386034182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1458
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2202d99a1580e3c0800000000000000
+      internalID: -4332316492234096086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edde7b51a7fa3150800000000000000
+      internalID: 5853262938118217184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_25
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca2d1330d2b3bc20800000000000000
+      internalID: 3221114765780527813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_26
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f12f980284c0500800000000000000
+      internalID: 363744974500667276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_27
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816e73ca2d742eae0800000000000000
+      internalID: -1521574753939757544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_28
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c750ba0db9f6c5b0800000000000000
+      internalID: -5348312917132421179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_29
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a3d1f6d00352de0800000000000000
+      internalID: -1358626878325442023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_30
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741ba408c93a648e0800000000000000
+      internalID: -1709499115977920185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_31
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1404
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d0b9b2b3830aa60800000000000000
+      internalID: 7683202791079873936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9ea6ff1a99fc180800000000000000
+      internalID: -9092880201583760956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_33
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1350
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da7ef29ebf7c9cc0800000000000000
+      internalID: -3702944337118725417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_34
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1350
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0652e20b3492f720800000000000000
+      internalID: 2878526093015537167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_35
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1350
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75975d7c04773cbc0800000000000000
+      internalID: -3764033743437334185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2883d4b58362690800000000000000
+      internalID: -7627346954116627743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1296
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeba95c996dda4050800000000000000
+      internalID: 5785680116975250414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_38
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1296
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5d5115ad7e66a10800000000000000
+      internalID: 1902462817459885522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1242
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad92736dfaf55d40800000000000000
+      internalID: 5572636080142982570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1242
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a291663c6e4fcb0800000000000000
+      internalID: -4830982773355763120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_41
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1242
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ea3f01e192386b0800000000000000
+      internalID: -5295343527747408273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1188
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d954fb97a63636a00800000000000000
+      internalID: 748551272033895837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_43
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1188
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f367d51fd2d3690800000000000000
+      internalID: -7620884479762612467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_44
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1188
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c449448173cebdd0800000000000000
+      internalID: -2468320653434338110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c387ad228cb41f40800000000000000
+      internalID: 5698386695828243399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_46
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1134
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8c7af78d1e73a90800000000000000
+      internalID: -7334145148178675457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_47
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1134
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da437fab5e3e8630800000000000000
+      internalID: 3931148088247536339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e9cb632a9005a90800000000000000
+      internalID: -7327346001424114025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_49
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605b7d3b3a54c44d0800000000000000
+      internalID: -3149065470039575290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_50
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0cff7521bf61a00800000000000000
+      internalID: 727044446071275695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_51
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30feec2cf499ee70800000000000000
+      internalID: 9145004329159028794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_52
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48689134e4a11a10800000000000000
+      internalID: 1878463819581777998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_53
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62af40e21afa254e0800000000000000
+      internalID: -1994338578175034842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_54
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1080
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5432e40374880a0800000000000000
+      internalID: -6879170158013495815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1026
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4351fcf885dee0090800000000000000
+      internalID: -8066248917948361420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_56
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1026
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7c20c07cd15f400800000000000000
+      internalID: 357224486183028733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_57
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1026
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b71393ad28f91d0800000000000000
+      internalID: -3341808524711593113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 972
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ff7d97e07545a40800000000000000
+      internalID: 5356001576535719717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_59
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 972
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1a29c4a632ae670800000000000000
+      internalID: 8568700180483973562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_60
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 972
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70700b0f676476e0800000000000000
+      internalID: -1840732621064081285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 918
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42599618309e76410800000000000000
+      internalID: 1470400004625110308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_62
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 918
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf28bdb602e93380800000000000000
+      internalID: -8990906662487838756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_63
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 918
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc38711e1b633c570800000000000000
+      internalID: 8485686260509672396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917491b7d07296b80800000000000000
+      internalID: -8401140691029637351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_65
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 864
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b661f92a80ab29cd0800000000000000
+      internalID: -2552773492514810261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_66
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 864
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef75596bd42bee930800000000000000
+      internalID: 4174469951464495102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f731cf27451a5b0800000000000000
+      internalID: -5358909228762038435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_68
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 810
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba352762324fbde0800000000000000
+      internalID: -1315259781922604363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_69
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 810
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3e6684121fc8620800000000000000
+      internalID: 2777860195431670753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61227b157d9fbaaa0800000000000000
+      internalID: -6148546163060039146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_71
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 756
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e4c71f334c543a0800000000000000
+      internalID: -6681718744760430957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_72
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 756
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f9a73b4557a9d00800000000000000
+      internalID: 980224875555364718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 702
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176c064f61d6ca560800000000000000
+      internalID: 7326350639181645425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_74
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 702
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdb7da95a18fc780800000000000000
+      internalID: -8660561010142757388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_75
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 702
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4030f43c88eced2a0800000000000000
+      internalID: -6710699307947851004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_76
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 702
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2142033249c53f90800000000000000
+      internalID: -6974447161752534741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_77
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 702
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ff8782682a7b450800000000000000
+      internalID: 6104526517012332291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac7c051123213650800000000000000
+      internalID: 6210783986114657448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_79
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 648
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c981b624d38d31e90800000000000000
+      internalID: -7056058433540515684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_80
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 648
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603c8821e79b4ef40800000000000000
+      internalID: 5756930174814307078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_81
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 648
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b1e3a266b4a79a0800000000000000
+      internalID: -6234587831973569678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_82
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 648
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed3fdfa3c7c717f0800000000000000
+      internalID: -641824778593813016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1248de620586b50800000000000000
+      internalID: 6586602583153189367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_84
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3eb743cf24a4c10800000000000000
+      internalID: 2038515432318297069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_85
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e55d7a97898ba00800000000000000
+      internalID: 772534984368283183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_86
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edd1ba57d64ec390800000000000000
+      internalID: -7796216014178230809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_87
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563b86b1c17c54be0800000000000000
+      internalID: -1493568777870593179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_88
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba725c7337bb24680800000000000000
+      internalID: -8772243020633004117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_89
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 594
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea3c6a618a95eb80800000000000000
+      internalID: -8366110852143891744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e002e0a1381bbd0800000000000000
+      internalID: -2616165760596177275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_91
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 540
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f095eb2067dc8b0800000000000000
+      internalID: -5130314646349607106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_92
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 540
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dc8412b7b5ef9e0800000000000000
+      internalID: -1585729434390311527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7f75380c42e9f20800000000000000
+      internalID: 3431220375358797757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_94
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 486
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cfa5c50ee39aa20800000000000000
+      internalID: 3074057354000137300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_95
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 486
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8d2e88d94bba790800000000000000
+      internalID: -7517716564265477970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_96
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 486
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b267cf31dd9219d0800000000000000
+      internalID: -2805006095854640462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f9923319febae90800000000000000
+      internalID: -7013248587791753456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_98
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 432
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66c0d086eb6c4c20800000000000000
+      internalID: 3192044873646655082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_99
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 432
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f6cabe4b68c3ee0800000000000000
+      internalID: -1280000082473881712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8764c99eadd72bd10800000000000000
+      internalID: 2139911152130082424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_101
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 378
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20275a2465d05d70800000000000000
+      internalID: 9029951879061643311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_102
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 378
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63eca300457f54d80800000000000000
+      internalID: -8266929600815509962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_103
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 378
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc7df65476a3ecc0800000000000000
+      internalID: -3682917051653063488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ae7b1762f41d360800000000000000
+      internalID: 7192617106422622765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_105
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9018f2b2a5c23d2a0800000000000000
+      internalID: -6713973853696065271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_106
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73dda08cec5dc88f0800000000000000
+      internalID: -536819171467797193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_107
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d588fb7e2c12820800000000000000
+      internalID: 2891806736355188002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_108
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72db3dc4bd0a22ce0800000000000000
+      internalID: -1431404867803169497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_109
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ff4ace060b8cac0800000000000000
+      internalID: -3834621152372392106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_110
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 324
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d0e1f5a209428f0800000000000000
+      internalID: -566169141483008651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b94d4b5f42250f0800000000000000
+      internalID: -1129799918797153529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_112
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e162f908384967740800000000000000
+      internalID: 5149466516464281118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_113
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85448013394f7e80800000000000000
+      internalID: -8178737914612267633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_114
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087a1889322262fd0800000000000000
+      internalID: -2367167017858783360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_115
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b603d85e89648b30800000000000000
+      internalID: 4288668805260052144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_116
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e9ebced2b033f90800000000000000
+      internalID: -6975219105993417115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_117
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32fc1a575c48e560800000000000000
+      internalID: 7343203130485305916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_118
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 270
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ef30711f6d49110800000000000000
+      internalID: 1266873726159552105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befc6c288f8ed5d90800000000000000
+      internalID: -7107268482877173781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_120
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2855704ed22291a40800000000000000
+      internalID: 5339336413718992258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_121
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0eed54ca86d5930800000000000000
+      internalID: 4133575122111881440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_122
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6803645b6c29f04b0800000000000000
+      internalID: -5471993640089407354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_123
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0512e70a9e4be2a20800000000000000
+      internalID: 3039565714034663760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_124
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019bd78617ccbf230800000000000000
+      internalID: 3673754708507212048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_125
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1decd589c70529a80800000000000000
+      internalID: -8461612253813289263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_126
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 216
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381552d31ee0e8190800000000000000
+      internalID: -7958407130960801405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_127
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b2628a3cc1d60d0800000000000000
+      internalID: -3428052114693805303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_128
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62c6bc80def23aa0800000000000000
+      internalID: -6182599166758829457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_129
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed73c2b2484963d0800000000000000
+      internalID: -3212957407847940638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_130
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116ea5ffee27357a0800000000000000
+      internalID: -6389637075496671727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_131
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cede47126b240650800000000000000
+      internalID: 6198126687466479298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_132
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 162
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db571763a282abde0800000000000000
+      internalID: -1316695779285305923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e1358151eb285a0800000000000000
+      internalID: -6520440312667365827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_134
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26f6152a32d4a100800000000000000
+      internalID: 118450637390673454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_135
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce54559a7271de970800000000000000
+      internalID: 8785703907181807084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_136
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9869a908f02d820800000000000000
+      internalID: 2941430551650142694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_137
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e42b786a5c21ce80800000000000000
+      internalID: -8160192283007048478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_138
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f0d6ebcbfa76130800000000000000
+      internalID: 3560007255643197273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_139
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e8d17372d61ac00800000000000000
+      internalID: 910128614901386900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_140
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03faa6c5e9821320800000000000000
+      internalID: 2527233960881877773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_141
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f3d40cd0b4df140800000000000000
+      internalID: 4755039304006057866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_142
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d460c426afee9a7d0800000000000000
+      internalID: -2906529325332560307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_143
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc00ef052a2d186a0800000000000000
+      internalID: -6448641596832481077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_144
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368013d91a7ddb890800000000000000
+      internalID: -7440553920219248541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_145
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2271055a61cfe730800000000000000
+      internalID: 4030652853956735530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BH-CrosBow_146
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eee5933394723ea0800000000000000
+      internalID: -5894520786700079386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BH-CrosBow_0: 4536585280519004551
+      BH-CrosBow_1: 1044081822230326407
+      BH-CrosBow_10: 523575674631787457
+      BH-CrosBow_100: 2139911152130082424
+      BH-CrosBow_101: 9029951879061643311
+      BH-CrosBow_102: -8266929600815509962
+      BH-CrosBow_103: -3682917051653063488
+      BH-CrosBow_104: 7192617106422622765
+      BH-CrosBow_105: -6713973853696065271
+      BH-CrosBow_106: -536819171467797193
+      BH-CrosBow_107: 2891806736355188002
+      BH-CrosBow_108: -1431404867803169497
+      BH-CrosBow_109: -3834621152372392106
+      BH-CrosBow_11: 2698427469413296231
+      BH-CrosBow_110: -566169141483008651
+      BH-CrosBow_111: -1129799918797153529
+      BH-CrosBow_112: 5149466516464281118
+      BH-CrosBow_113: -8178737914612267633
+      BH-CrosBow_114: -2367167017858783360
+      BH-CrosBow_115: 4288668805260052144
+      BH-CrosBow_116: -6975219105993417115
+      BH-CrosBow_117: 7343203130485305916
+      BH-CrosBow_118: 1266873726159552105
+      BH-CrosBow_119: -7107268482877173781
+      BH-CrosBow_12: 7205866833522263734
+      BH-CrosBow_120: 5339336413718992258
+      BH-CrosBow_121: 4133575122111881440
+      BH-CrosBow_122: -5471993640089407354
+      BH-CrosBow_123: 3039565714034663760
+      BH-CrosBow_124: 3673754708507212048
+      BH-CrosBow_125: -8461612253813289263
+      BH-CrosBow_126: -7958407130960801405
+      BH-CrosBow_127: -3428052114693805303
+      BH-CrosBow_128: -6182599166758829457
+      BH-CrosBow_129: -3212957407847940638
+      BH-CrosBow_13: 7561978614551448890
+      BH-CrosBow_130: -6389637075496671727
+      BH-CrosBow_131: 6198126687466479298
+      BH-CrosBow_132: -1316695779285305923
+      BH-CrosBow_133: -6520440312667365827
+      BH-CrosBow_134: 118450637390673454
+      BH-CrosBow_135: 8785703907181807084
+      BH-CrosBow_136: 2941430551650142694
+      BH-CrosBow_137: -8160192283007048478
+      BH-CrosBow_138: 3560007255643197273
+      BH-CrosBow_139: 910128614901386900
+      BH-CrosBow_14: -7818510554286558953
+      BH-CrosBow_140: 2527233960881877773
+      BH-CrosBow_141: 4755039304006057866
+      BH-CrosBow_142: -2906529325332560307
+      BH-CrosBow_143: -6448641596832481077
+      BH-CrosBow_144: -7440553920219248541
+      BH-CrosBow_145: 4030652853956735530
+      BH-CrosBow_146: -5894520786700079386
+      BH-CrosBow_15: -9116777597124632024
+      BH-CrosBow_16: 6904762930522680795
+      BH-CrosBow_17: -3664970520776520134
+      BH-CrosBow_18: -6407807458124240779
+      BH-CrosBow_19: 3001324217096556918
+      BH-CrosBow_2: 6651141834900979144
+      BH-CrosBow_20: -8767871629915496216
+      BH-CrosBow_21: 6340827838971464458
+      BH-CrosBow_22: -6718290588386034182
+      BH-CrosBow_23: -4332316492234096086
+      BH-CrosBow_24: 5853262938118217184
+      BH-CrosBow_25: 3221114765780527813
+      BH-CrosBow_26: 363744974500667276
+      BH-CrosBow_27: -1521574753939757544
+      BH-CrosBow_28: -5348312917132421179
+      BH-CrosBow_29: -1358626878325442023
+      BH-CrosBow_3: 2137457755080443611
+      BH-CrosBow_30: -1709499115977920185
+      BH-CrosBow_31: 7683202791079873936
+      BH-CrosBow_32: -9092880201583760956
+      BH-CrosBow_33: -3702944337118725417
+      BH-CrosBow_34: 2878526093015537167
+      BH-CrosBow_35: -3764033743437334185
+      BH-CrosBow_36: -7627346954116627743
+      BH-CrosBow_37: 5785680116975250414
+      BH-CrosBow_38: 1902462817459885522
+      BH-CrosBow_39: 5572636080142982570
+      BH-CrosBow_4: -2515939670355302226
+      BH-CrosBow_40: -4830982773355763120
+      BH-CrosBow_41: -5295343527747408273
+      BH-CrosBow_42: 748551272033895837
+      BH-CrosBow_43: -7620884479762612467
+      BH-CrosBow_44: -2468320653434338110
+      BH-CrosBow_45: 5698386695828243399
+      BH-CrosBow_46: -7334145148178675457
+      BH-CrosBow_47: 3931148088247536339
+      BH-CrosBow_48: -7327346001424114025
+      BH-CrosBow_49: -3149065470039575290
+      BH-CrosBow_5: 6338643482906728456
+      BH-CrosBow_50: 727044446071275695
+      BH-CrosBow_51: 9145004329159028794
+      BH-CrosBow_52: 1878463819581777998
+      BH-CrosBow_53: -1994338578175034842
+      BH-CrosBow_54: -6879170158013495815
+      BH-CrosBow_55: -8066248917948361420
+      BH-CrosBow_56: 357224486183028733
+      BH-CrosBow_57: -3341808524711593113
+      BH-CrosBow_58: 5356001576535719717
+      BH-CrosBow_59: 8568700180483973562
+      BH-CrosBow_6: 5099907831442582649
+      BH-CrosBow_60: -1840732621064081285
+      BH-CrosBow_61: 1470400004625110308
+      BH-CrosBow_62: -8990906662487838756
+      BH-CrosBow_63: 8485686260509672396
+      BH-CrosBow_64: -8401140691029637351
+      BH-CrosBow_65: -2552773492514810261
+      BH-CrosBow_66: 4174469951464495102
+      BH-CrosBow_67: -5358909228762038435
+      BH-CrosBow_68: -1315259781922604363
+      BH-CrosBow_69: 2777860195431670753
+      BH-CrosBow_7: -3182272273957580097
+      BH-CrosBow_70: -6148546163060039146
+      BH-CrosBow_71: -6681718744760430957
+      BH-CrosBow_72: 980224875555364718
+      BH-CrosBow_73: 7326350639181645425
+      BH-CrosBow_74: -8660561010142757388
+      BH-CrosBow_75: -6710699307947851004
+      BH-CrosBow_76: -6974447161752534741
+      BH-CrosBow_77: 6104526517012332291
+      BH-CrosBow_78: 6210783986114657448
+      BH-CrosBow_79: -7056058433540515684
+      BH-CrosBow_8: -2005048787948829937
+      BH-CrosBow_80: 5756930174814307078
+      BH-CrosBow_81: -6234587831973569678
+      BH-CrosBow_82: -641824778593813016
+      BH-CrosBow_83: 6586602583153189367
+      BH-CrosBow_84: 2038515432318297069
+      BH-CrosBow_85: 772534984368283183
+      BH-CrosBow_86: -7796216014178230809
+      BH-CrosBow_87: -1493568777870593179
+      BH-CrosBow_88: -8772243020633004117
+      BH-CrosBow_89: -8366110852143891744
+      BH-CrosBow_9: 1611954962779731225
+      BH-CrosBow_90: -2616165760596177275
+      BH-CrosBow_91: -5130314646349607106
+      BH-CrosBow_92: -1585729434390311527
+      BH-CrosBow_93: 3431220375358797757
+      BH-CrosBow_94: 3074057354000137300
+      BH-CrosBow_95: -7517716564265477970
+      BH-CrosBow_96: -2805006095854640462
+      BH-CrosBow_97: -7013248587791753456
+      BH-CrosBow_98: 3192044873646655082
+      BH-CrosBow_99: -1280000082473881712
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

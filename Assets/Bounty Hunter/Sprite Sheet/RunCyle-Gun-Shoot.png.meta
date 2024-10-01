@@ -1,0 +1,766 @@
+fileFormatVersion: 2
+guid: cd00af87cef51be4c8988e3779d58284
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8671179995059184298
+    second: RunCyle-Gun-Shoot_0
+  - first:
+      213: 933043194827751384
+    second: RunCyle-Gun-Shoot_1
+  - first:
+      213: -8838803118902097172
+    second: RunCyle-Gun-Shoot_2
+  - first:
+      213: -591659119030252478
+    second: RunCyle-Gun-Shoot_3
+  - first:
+      213: -2751741679118346967
+    second: RunCyle-Gun-Shoot_4
+  - first:
+      213: 8731610277659080626
+    second: RunCyle-Gun-Shoot_5
+  - first:
+      213: 2598567700180965851
+    second: RunCyle-Gun-Shoot_6
+  - first:
+      213: -8638106485794292572
+    second: RunCyle-Gun-Shoot_7
+  - first:
+      213: 6832041808043553538
+    second: RunCyle-Gun-Shoot_8
+  - first:
+      213: -8301751192185096384
+    second: RunCyle-Gun-Shoot_9
+  - first:
+      213: -3985257710038248686
+    second: RunCyle-Gun-Shoot_10
+  - first:
+      213: 7105114662130485090
+    second: RunCyle-Gun-Shoot_11
+  - first:
+      213: -1332113414831363723
+    second: RunCyle-Gun-Shoot_12
+  - first:
+      213: -6699124416882564360
+    second: RunCyle-Gun-Shoot_13
+  - first:
+      213: 4052600962520897764
+    second: RunCyle-Gun-Shoot_14
+  - first:
+      213: -8607113041395022233
+    second: RunCyle-Gun-Shoot_15
+  - first:
+      213: 4814534319456176527
+    second: RunCyle-Gun-Shoot_16
+  - first:
+      213: -6651978181319169338
+    second: RunCyle-Gun-Shoot_17
+  - first:
+      213: 79954554812962409
+    second: RunCyle-Gun-Shoot_18
+  - first:
+      213: -4974639456648550166
+    second: RunCyle-Gun-Shoot_19
+  - first:
+      213: 1651102085627394626
+    second: RunCyle-Gun-Shoot_20
+  - first:
+      213: -3407149968681962514
+    second: RunCyle-Gun-Shoot_21
+  - first:
+      213: -443178719945544136
+    second: RunCyle-Gun-Shoot_22
+  - first:
+      213: 2274609414124046799
+    second: RunCyle-Gun-Shoot_23
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d16038cb7c9a780800000000000000
+      internalID: -8671179995059184298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfbdcb97d5d2fc00800000000000000
+      internalID: 933043194827751384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceac932b463465580800000000000000
+      internalID: -8838803118902097172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cc41e7a210ac7f0800000000000000
+      internalID: -591659119030252478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925938ea589dfc9d0800000000000000
+      internalID: -2751741679118346967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_5
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7f4051949ec2970800000000000000
+      internalID: 8731610277659080626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_6
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd917163e87ff0420800000000000000
+      internalID: 2598567700180965851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acbb36fae74f1880800000000000000
+      internalID: -8638106485794292572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203bd03a3d940de50800000000000000
+      internalID: 6832041808043553538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047b12876414acc80800000000000000
+      internalID: -8301751192185096384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_10
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21398ce3a3581b8c0800000000000000
+      internalID: -3985257710038248686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26705b404207a9260800000000000000
+      internalID: 7105114662130485090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579a17438e1638de0800000000000000
+      internalID: -1332113414831363723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2a19916dde703a0800000000000000
+      internalID: -6699124416882564360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_14
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8d6739a1bbd3830800000000000000
+      internalID: 4052600962520897764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76684029a446d8880800000000000000
+      internalID: -8607113041395022233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89cc1e7479a0d240800000000000000
+      internalID: 4814534319456176527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca62d8761d6fa3a0800000000000000
+      internalID: -6651978181319169338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9661dc57e3e0c1100800000000000000
+      internalID: 79954554812962409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae822dc55c786fab0800000000000000
+      internalID: -4974639456648550166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a3ab55994e9e610800000000000000
+      internalID: 1651102085627394626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_21
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee37a34c72f57b0d0800000000000000
+      internalID: -3407149968681962514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_22
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e22a16d4389d9f0800000000000000
+      internalID: -443178719945544136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-Gun-Shoot_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc98f93f539019f10800000000000000
+      internalID: 2274609414124046799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RunCyle-Gun-Shoot_0: -8671179995059184298
+      RunCyle-Gun-Shoot_1: 933043194827751384
+      RunCyle-Gun-Shoot_10: -3985257710038248686
+      RunCyle-Gun-Shoot_11: 7105114662130485090
+      RunCyle-Gun-Shoot_12: -1332113414831363723
+      RunCyle-Gun-Shoot_13: -6699124416882564360
+      RunCyle-Gun-Shoot_14: 4052600962520897764
+      RunCyle-Gun-Shoot_15: -8607113041395022233
+      RunCyle-Gun-Shoot_16: 4814534319456176527
+      RunCyle-Gun-Shoot_17: -6651978181319169338
+      RunCyle-Gun-Shoot_18: 79954554812962409
+      RunCyle-Gun-Shoot_19: -4974639456648550166
+      RunCyle-Gun-Shoot_2: -8838803118902097172
+      RunCyle-Gun-Shoot_20: 1651102085627394626
+      RunCyle-Gun-Shoot_21: -3407149968681962514
+      RunCyle-Gun-Shoot_22: -443178719945544136
+      RunCyle-Gun-Shoot_23: 2274609414124046799
+      RunCyle-Gun-Shoot_3: -591659119030252478
+      RunCyle-Gun-Shoot_4: -2751741679118346967
+      RunCyle-Gun-Shoot_5: 8731610277659080626
+      RunCyle-Gun-Shoot_6: 2598567700180965851
+      RunCyle-Gun-Shoot_7: -8638106485794292572
+      RunCyle-Gun-Shoot_8: 6832041808043553538
+      RunCyle-Gun-Shoot_9: -8301751192185096384
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

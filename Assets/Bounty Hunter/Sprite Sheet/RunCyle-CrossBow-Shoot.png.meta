@@ -1,0 +1,766 @@
+fileFormatVersion: 2
+guid: 5b998b0817aac484a91eed3e2f587c6a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5916432664855140249
+    second: RunCyle-CrossBow-Shoot_0
+  - first:
+      213: -4718357566485712090
+    second: RunCyle-CrossBow-Shoot_1
+  - first:
+      213: -6961919531306297165
+    second: RunCyle-CrossBow-Shoot_2
+  - first:
+      213: 2379668494155258140
+    second: RunCyle-CrossBow-Shoot_3
+  - first:
+      213: -6424542127533764807
+    second: RunCyle-CrossBow-Shoot_4
+  - first:
+      213: -4785592065011252983
+    second: RunCyle-CrossBow-Shoot_5
+  - first:
+      213: -163099293833187301
+    second: RunCyle-CrossBow-Shoot_6
+  - first:
+      213: -160869446123284973
+    second: RunCyle-CrossBow-Shoot_7
+  - first:
+      213: 7523307463884297265
+    second: RunCyle-CrossBow-Shoot_8
+  - first:
+      213: -7164576138702215079
+    second: RunCyle-CrossBow-Shoot_9
+  - first:
+      213: -6231645348210207942
+    second: RunCyle-CrossBow-Shoot_10
+  - first:
+      213: -3436604645660949091
+    second: RunCyle-CrossBow-Shoot_11
+  - first:
+      213: -6870927565123440314
+    second: RunCyle-CrossBow-Shoot_12
+  - first:
+      213: 5761377715679739670
+    second: RunCyle-CrossBow-Shoot_13
+  - first:
+      213: -1161930467975696313
+    second: RunCyle-CrossBow-Shoot_14
+  - first:
+      213: -3258681683929153694
+    second: RunCyle-CrossBow-Shoot_15
+  - first:
+      213: -250437968760443045
+    second: RunCyle-CrossBow-Shoot_16
+  - first:
+      213: 8589790362225569767
+    second: RunCyle-CrossBow-Shoot_17
+  - first:
+      213: -140312265164716534
+    second: RunCyle-CrossBow-Shoot_18
+  - first:
+      213: -8363766776453657835
+    second: RunCyle-CrossBow-Shoot_19
+  - first:
+      213: 3628872413279193156
+    second: RunCyle-CrossBow-Shoot_20
+  - first:
+      213: -119865196744382859
+    second: RunCyle-CrossBow-Shoot_21
+  - first:
+      213: -3876205624025422558
+    second: RunCyle-CrossBow-Shoot_22
+  - first:
+      213: 6463723027810971132
+    second: RunCyle-CrossBow-Shoot_23
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768aac186db94eda0800000000000000
+      internalID: -5916432664855140249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623b75ecac6058eb0800000000000000
+      internalID: -4718357566485712090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b852a5721b426f90800000000000000
+      internalID: -6961919531306297165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19105d23e7460120800000000000000
+      internalID: 2379668494155258140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f41d349f077d6a0800000000000000
+      internalID: -6424542127533764807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_5
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901831d3f59269db0800000000000000
+      internalID: -4785592065011252983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_6
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10b4ff6e0e8cbdf0800000000000000
+      internalID: -163099293833187301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 108
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3169b90571a74cdf0800000000000000
+      internalID: -160869446123284973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1345ed83748286860800000000000000
+      internalID: 7523307463884297265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9582a6e16ff429c90800000000000000
+      internalID: -7164576138702215079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_10
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3317bd829fb489a0800000000000000
+      internalID: -6231645348210207942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d950ced584abe40d0800000000000000
+      internalID: -3436604645660949091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641b06388cf85a0a0800000000000000
+      internalID: -6870927565123440314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f31ffd18684ff40800000000000000
+      internalID: 5761377715679739670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_14
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740fa92456effdfe0800000000000000
+      internalID: -1161930467975696313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 54
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fb4511646d6c2d0800000000000000
+      internalID: -3258681683929153694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f63c98ef3468cf0800000000000000
+      internalID: -250437968760443045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef6783e2d0153770800000000000000
+      internalID: 8589790362225569767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a060a3dfcb28d0ef0800000000000000
+      internalID: -140312265164716534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b04411e6eedeb80800000000000000
+      internalID: -8363766776453657835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44888b8bb385c5230800000000000000
+      internalID: 3628872413279193156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_21
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5766e171d37265ef0800000000000000
+      internalID: -119865196744382859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_22
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225e79f9583f43ac0800000000000000
+      internalID: -3876205624025422558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCyle-CrossBow-Shoot_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd6f27f8d1c3b950800000000000000
+      internalID: 6463723027810971132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RunCyle-CrossBow-Shoot_0: -5916432664855140249
+      RunCyle-CrossBow-Shoot_1: -4718357566485712090
+      RunCyle-CrossBow-Shoot_10: -6231645348210207942
+      RunCyle-CrossBow-Shoot_11: -3436604645660949091
+      RunCyle-CrossBow-Shoot_12: -6870927565123440314
+      RunCyle-CrossBow-Shoot_13: 5761377715679739670
+      RunCyle-CrossBow-Shoot_14: -1161930467975696313
+      RunCyle-CrossBow-Shoot_15: -3258681683929153694
+      RunCyle-CrossBow-Shoot_16: -250437968760443045
+      RunCyle-CrossBow-Shoot_17: 8589790362225569767
+      RunCyle-CrossBow-Shoot_18: -140312265164716534
+      RunCyle-CrossBow-Shoot_19: -8363766776453657835
+      RunCyle-CrossBow-Shoot_2: -6961919531306297165
+      RunCyle-CrossBow-Shoot_20: 3628872413279193156
+      RunCyle-CrossBow-Shoot_21: -119865196744382859
+      RunCyle-CrossBow-Shoot_22: -3876205624025422558
+      RunCyle-CrossBow-Shoot_23: 6463723027810971132
+      RunCyle-CrossBow-Shoot_3: 2379668494155258140
+      RunCyle-CrossBow-Shoot_4: -6424542127533764807
+      RunCyle-CrossBow-Shoot_5: -4785592065011252983
+      RunCyle-CrossBow-Shoot_6: -163099293833187301
+      RunCyle-CrossBow-Shoot_7: -160869446123284973
+      RunCyle-CrossBow-Shoot_8: 7523307463884297265
+      RunCyle-CrossBow-Shoot_9: -7164576138702215079
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
