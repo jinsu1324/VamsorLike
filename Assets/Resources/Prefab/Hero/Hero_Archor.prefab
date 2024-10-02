@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5701165894349616612}
   - component: {fileID: 5138826497306880006}
   - component: {fileID: 5013478474749727135}
+  - component: {fileID: 1141315834995498379}
   m_Layer: 0
   m_Name: Hero_Archor
   m_TagString: Hero
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.24332786, y: 0.1392478, z: -0.74996394}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -206,3 +207,35 @@ MonoBehaviour:
     - Name: _baseHeroData
       Entry: 10
       Data: 0
+--- !u!114 &1141315834995498379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161387283230732105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.17255425, y: 0.015603721, z: 0}
+  - {x: -0.19108254, y: 0.1860154, z: 0}
+  - {x: -0.1595512, y: 0.34235314, z: 0}
+  - {x: -0.027693272, y: 0.34235314, z: 0}
+  - {x: 0.011765659, y: 0.19901845, z: 0}
+  - {x: -0.0042877197, y: 0.013003081, z: 0}
+  m_ShapePathHash: -1422831187
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -210984
+  m_LocalBounds:
+    m_Center: {x: -0.08965844, y: 0.17767811, z: 0}
+    m_Extent: {x: 0.1014241, y: 0.16467503, z: 0}

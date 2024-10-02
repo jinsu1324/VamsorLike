@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 179622529328408031}
   - component: {fileID: 6891989612063910491}
   - component: {fileID: 2152995444838469517}
+  - component: {fileID: 1536656544904682252}
   m_Layer: 0
   m_Name: Hero_Wizard
   m_TagString: Hero
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -206,3 +207,35 @@ MonoBehaviour:
     - Name: _baseHeroData
       Entry: 10
       Data: 0
+--- !u!114 &1536656544904682252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504679844688792888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.12513638, y: 0.001958102, z: 0}
+  - {x: -0.160941, y: 0.1509223, z: 0}
+  - {x: -0.12122011, y: 0.34754986, z: 0}
+  - {x: -0.068716586, y: 0.35929853, z: 0}
+  - {x: 0.013330817, y: 0.2272886, z: 0}
+  - {x: 0.0037335157, y: 0.0019581318, z: 0}
+  m_ShapePathHash: -1006717763
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -210978
+  m_LocalBounds:
+    m_Center: {x: -0.073805094, y: 0.18062831, z: 0}
+    m_Extent: {x: 0.08713591, y: 0.17867021, z: 0}
