@@ -14,9 +14,9 @@ using static UnityEditor.PlayerSettings;
 public class Joystick : SerializedMonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]
-    private RectTransform _background;       // 조이스틱 배경
+    private RectTransform _background;               // 조이스틱 배경
     [SerializeField]
-    private RectTransform _handle;           // 조이스틱 핸들
+    private RectTransform _handle;                   // 조이스틱 핸들
 
     private Vector2 _inputVector;                    // 조이스틱 입력 벡터
     public float Horizontal => _inputVector.x;       // 조이스틱 입력 벡터 x값(수평 입력 값) 반환 (get 프로퍼티임(return 000))
