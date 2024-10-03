@@ -31,7 +31,12 @@ public class HeroObject : SerializedMonoBehaviour
     private Vector2 _moveDir;
 
     // HP바
+    [SerializeField]
     private HPBar _hpBar;
+
+    // 영웅 UI 캔버스
+    [SerializeField]
+    private Canvas _heroCanvas;
 
 
     private void FixedUpdate()
@@ -56,10 +61,12 @@ public class HeroObject : SerializedMonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
         _moveDir = Vector2.zero;
 
-        // HP바도 할당
-        _hpBar = Instantiate(PlaySceneManager.Instance.HPBarPrefab, transform.position, Quaternion.identity);
-        _hpBar.SetParent(this.transform);
+        // 카메라 지정
+        _heroCanvas.worldCamera = Camera.main;
+
+        // HP 바 업데이트
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+
     }
 
 
