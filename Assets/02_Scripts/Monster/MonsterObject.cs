@@ -6,30 +6,28 @@ using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 몬스터 게임오브젝트 : 몬스터관련 데이터 / 본인 데이터 이닛 / 공격 / 플레이어 따라 이동 / HP감소 / 죽음
+/// <summary>
+/// 몬스터 게임오브젝트 : 몬스터관련 데이터 / 본인 데이터 이닛 / 공격 / 플레이어 따라 이동 / HP감소 / 죽음
+/// </summary>
 public class MonsterObject : ObjectPoolObject
 {
-    [Title("데이터 본체", bold: false)]
-    // 몬스터 오브젝트에 들어갈 데이터
+    public static event Action<MonsterObject> OnMonsterDeath;   // 몬스터 죽었을때 처리될 함수들 액션
+
     [SerializeField]
-    private readonly MonsterData _baseMonsterData;
+    private readonly MonsterData _baseMonsterData;              // 몬스터 오브젝트에 들어갈 데이터 
 
-    // 오브젝트에 할당될 데이터
-    public float Hp { get; set; }
-    public float Atk { get; set; }
-    public float Speed { get; set; }
+    public float Hp { get; set; }                               // 오브젝트 HP
+    public float Atk { get; set; }                              // 오브젝트 Atk
+    public float Speed { get; set; }                            // 오브젝트 Speed
 
-    // 스프라이트 렌더러
-    private SpriteRenderer _spriteRenderer;
-
-    // 몬스터 죽었을때 처리될 함수들 액션
-    public static event Action<MonsterObject> OnMonsterDeath;
-
-
-    // 데이터 셋팅
+    private SpriteRenderer _spriteRenderer;                     // 스프라이트 렌더러  
+    
+    /// <summary>
+    /// 데이터 셋팅
+    /// </summary>
     public void DataSetting()
     {
-        // 데이터 할당
+        // 데이터 넣어주기
         Hp = _baseMonsterData.MaxHp;
         Atk = _baseMonsterData.Atk;
         Speed = _baseMonsterData.Speed;
@@ -39,7 +37,9 @@ public class MonsterObject : ObjectPoolObject
         MonsterManager.Instance.AddFieldMonsterList(this);
     }
 
-    // HP 감소
+    /// <summary>
+    /// HP 감소
+    /// </summary>
     public void HPMinus(float atk)
     {
         Hp -= atk;
@@ -55,8 +55,9 @@ public class MonsterObject : ObjectPoolObject
             Death();
     }
 
-
-    // 영웅 따라다니도록
+    /// <summary>
+    /// 영웅 따라다니도록
+    /// </summary>
     public void FollowHero()
     {
         transform.position = Vector3.MoveTowards(
@@ -65,19 +66,10 @@ public class MonsterObject : ObjectPoolObject
             Speed * Time.fixedDeltaTime);
     }
 
-
-
-    // 죽음
-    private void Death()
-    {
-        // 몬스터 죽었을때 액션들 실행 (필드 몬스터 리스트에서 이 몬스터 삭제 / 바닥에 경험치 떨구기 / 다시 오브젝트 풀로 돌려보내기)
-        OnMonsterDeath?.Invoke(this);
-
-        Destroy(this.gameObject);
-    }
-
-
-    // 영웅 충돌감지 및 공격
+    /// <summary>
+    /// 공격 (+ 영웅 충돌 감지)
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
@@ -86,6 +78,16 @@ public class MonsterObject : ObjectPoolObject
         }
     }
 
+    /// <summary>
+    /// 죽음
+    /// </summary>
+    private void Death()
+    {
+        // 몬스터 죽었을때 액션들 실행 (필드 몬스터 리스트에서 이 몬스터 삭제 / 바닥에 경험치 떨구기 / 다시 오브젝트 풀로 돌려보내기)
+        OnMonsterDeath?.Invoke(this);
+
+        Destroy(this.gameObject);
+    }
 
     /// <summary>
     /// 데미지텍스트UI 생성하고 띄워주는 함수

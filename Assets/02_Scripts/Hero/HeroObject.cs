@@ -5,40 +5,33 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-// 영웅 게임오브젝트 : 영웅관련 데이터 / 본인 데이터 이닛 / 공격 / 이동 / HP감소 / 죽음
+/// <summary>
+/// 영웅 게임오브젝트 : 영웅관련 데이터 / 본인 데이터 이닛 / 공격 / 이동 / HP감소 / 죽음
+/// </summary>
 public class HeroObject : SerializedMonoBehaviour
 {
-    [Title("데이터 본체", bold: false)]
-    // 영웅 오브젝트에 들어갈 데이터
     [SerializeField]
-    private readonly HeroData _baseHeroData;
+    private readonly HeroData _baseHeroData;        // 영웅 오브젝트에 들어갈 데이터
 
-    // 오브젝트에 할당될 데이터
-    public float Hp { get; set; }
-    public float Atk { get; set; }
-    public float Speed { get; set; }
+    public float Hp { get; set; }                   // 오브젝트 HP
+    public float Atk { get; set; }                  // 오브젝트 Atk
+    public float Speed { get; set; }                // 오브젝트 Speed
 
-
-
-    [Title("필요한 컴포넌트들", bold: false)]
-    // 리지드바디
-    private Rigidbody2D _rigid;
-
-    // 스프라이트 렌더러
-    private SpriteRenderer _spriteRenderer;
-
-    // 이동에 사용할 vector2 dir
-    private Vector2 _moveDir;
-
-    // HP바
     [SerializeField]
-    private HPBar _hpBar;
+    private HPBar _hpBar;                           // HP바
 
-    // 영웅 UI 캔버스
     [SerializeField]
-    private Canvas _heroCanvas;
+    private Canvas _heroCanvas;                     // 영웅 UI 캔버스
 
+    private Rigidbody2D _rigid;                     // 리지드바디
+    private SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러
+    private Animator _animator;                     // 애니메이터
 
+    private Vector2 _moveDir;                       // 이동에 사용할 vector2 dir    
+
+    /// <summary>
+    /// FixedUpdate
+    /// </summary>
     private void FixedUpdate()
     {
         if (PlaySceneManager.Instance.IsGameStart)
@@ -48,7 +41,9 @@ public class HeroObject : SerializedMonoBehaviour
         }            
     }
 
-    // 데이터 셋팅
+    /// <summary>
+    /// 데이터 셋팅
+    /// </summary>
     public void DataSetting()
     {
         // 데이터 넣어주기
@@ -59,6 +54,7 @@ public class HeroObject : SerializedMonoBehaviour
         // 필요 컴포넌트들 가져와서 할당
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _moveDir = Vector2.zero;
 
         // 카메라 지정
@@ -66,34 +62,33 @@ public class HeroObject : SerializedMonoBehaviour
 
         // HP 바 업데이트
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
-
     }
 
-
-    // 이동
+    /// <summary>
+    /// 이동
+    /// </summary>
     public void Move()
     {
-        //float horizontal = Input.GetAxisRaw("Horizontal");
-        //float vertical = Input.GetAxisRaw("Vertical");
-
         float horizontal = PlaySceneManager.Instance.JoystickUI.Horizontal;
         float vertical = PlaySceneManager.Instance.JoystickUI.Vertical;
 
         _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
         _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
 
-        _rigid.MovePosition(_moveDir);        
+        _rigid.MovePosition(_moveDir);
+
+        // 애니메이션 설정 (움직임값에 따라서 isMove를 true false)
+        _animator.SetBool("isMove", horizontal != 0 || vertical != 0);
     }
 
-
-    // 공격
+    /// <summary>
+    /// 공격 함수
+    /// </summary>
     private void Attack()
     {
         // 스킬리스트에 아무것도 없으면 그냥 리턴
         if (SkillManager.Instance.HaveSkillList.Count == 0)
-        {
             return;
-        }
 
         // 스킬리스트에 있는 모든 스킬들 순환, 확인, 공격
         for (int i = 0; i < SkillManager.Instance.HaveSkillList.Count; i++)
@@ -108,7 +103,9 @@ public class HeroObject : SerializedMonoBehaviour
         }
     }
 
-    // HP 감소
+    /// <summary>
+    /// HP 감소
+    /// </summary>
     public void HPMinus(float atk)
     {
         Hp -= atk;
@@ -123,7 +120,9 @@ public class HeroObject : SerializedMonoBehaviour
             Death();
     }
 
-    // 죽음
+    /// <summary>
+    /// 죽음
+    /// </summary>
     private void Death()
     {
         Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

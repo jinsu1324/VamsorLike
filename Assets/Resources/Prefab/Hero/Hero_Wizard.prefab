@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7889448636979395147}
+  - component: {fileID: 2152995444838469517}
   - component: {fileID: 8218874805445245439}
   - component: {fileID: 8905745888641856180}
   - component: {fileID: 179622529328408031}
   - component: {fileID: 6891989612063910491}
-  - component: {fileID: 2152995444838469517}
   - component: {fileID: 1536656544904682252}
   m_Layer: 0
   m_Name: Hero_Wizard
@@ -38,6 +38,33 @@ Transform:
   - {fileID: 1835877137640373021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2152995444838469517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504679844688792888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c6a6e98139c4548bc1372295177a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 485a7ce4c6b33c94eba7ad8d0b6cc1f6, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _baseHeroData
+      Entry: 10
+      Data: 0
+  _hpBar: {fileID: 3022937229577247773}
+  _heroCanvas: {fileID: 7737802345890651265}
 --- !u!212 &8218874805445245439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,9 +125,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8504679844688792888}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e76f51cffe426e44583bf2157489c9af, type: 2}
+  m_Controller: {fileID: 22100000, guid: 73672b86def6672449260d1280040295, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -183,33 +210,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2152995444838469517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504679844688792888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c6a6e98139c4548bc1372295177a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 485a7ce4c6b33c94eba7ad8d0b6cc1f6, type: 2}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseHeroData
-      Entry: 10
-      Data: 0
-  _hpBar: {fileID: 3022937229577247773}
-  _heroCanvas: {fileID: 7737802345890651265}
 --- !u!114 &1536656544904682252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   - {x: 0.0037335157, y: 0.0019581318, z: 0}
   m_ShapePathHash: -1006717763
   m_Mesh: {fileID: 0}
-  m_InstanceId: 71326
+  m_InstanceId: -26000
   m_LocalBounds:
     m_Center: {x: -0.073805094, y: 0.18062831, z: 0}
     m_Extent: {x: 0.08713591, y: 0.17867021, z: 0}

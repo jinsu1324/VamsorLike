@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8259152464859635771}
+  - component: {fileID: 5013478474749727135}
   - component: {fileID: 5552972316452667015}
   - component: {fileID: 434328264143836463}
   - component: {fileID: 5701165894349616612}
   - component: {fileID: 5138826497306880006}
-  - component: {fileID: 5013478474749727135}
   - component: {fileID: 1141315834995498379}
   m_Layer: 0
   m_Name: Hero_Archor
@@ -38,6 +38,33 @@ Transform:
   - {fileID: 2697667426767450231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5013478474749727135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161387283230732105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c6a6e98139c4548bc1372295177a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: b66e2647fff275941b6d8d9b6da1e32b, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _baseHeroData
+      Entry: 10
+      Data: 0
+  _hpBar: {fileID: 1583564853397444471}
+  _heroCanvas: {fileID: 6298390183330060267}
 --- !u!212 &5552972316452667015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,7 +111,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.89, y: 0.65}
+  m_Size: {x: 0.73, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,9 +125,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2161387283230732105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31ed8bdcc33824d4ea557c8d2e2953e3, type: 2}
+  m_Controller: {fileID: 22100000, guid: 93bcb186ed7cbba47b310c9858b38ac2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -148,7 +175,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.73, y: 0.54}
-    newSize: {x: 0.89, y: 0.65}
+    newSize: {x: 0.73, y: 0.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -183,33 +210,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5013478474749727135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2161387283230732105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c6a6e98139c4548bc1372295177a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: b66e2647fff275941b6d8d9b6da1e32b, type: 2}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseHeroData
-      Entry: 10
-      Data: 0
-  _hpBar: {fileID: 1583564853397444471}
-  _heroCanvas: {fileID: 6298390183330060267}
 --- !u!114 &1141315834995498379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   - {x: -0.0042877197, y: 0.013003081, z: 0}
   m_ShapePathHash: -1422831187
   m_Mesh: {fileID: 0}
-  m_InstanceId: 71238
+  m_InstanceId: -14362
   m_LocalBounds:
     m_Center: {x: -0.08965844, y: 0.17767811, z: 0}
     m_Extent: {x: 0.1014241, y: 0.16467503, z: 0}
