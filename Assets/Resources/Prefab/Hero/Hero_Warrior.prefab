@@ -170,10 +170,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09167097, y: 0.16237824}
+  m_Offset: {x: 0, y: 0.16237824}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.4, y: 0}
     oldSize: {x: 0.69, y: 0.44}
     newSize: {x: 0.69, y: 0.44}
     adaptiveTilingThreshold: 0.5
@@ -228,20 +228,18 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 
   m_ShapePath:
-  - {x: -0.13287795, y: 0.011676371, z: 0}
-  - {x: -0.16131699, y: 0.17559361, z: 0}
-  - {x: -0.13482404, y: 0.3193435, z: 0}
-  - {x: -0.020861872, y: 0.3290738, z: 0}
-  - {x: -0.0075771883, y: 0.17948574, z: 0}
-  - {x: -0.03059221, y: 0.009730339, z: 0}
-  m_ShapePathHash: 1386268853
+  - {x: -0.06445201, y: 0.008272815, z: 0}
+  - {x: -0.05263367, y: 0.32063493, z: 0}
+  - {x: 0.04447856, y: 0.32128495, z: 0}
+  - {x: 0.042806506, y: 0.008360219, z: 0}
+  m_ShapePathHash: -475781047
   m_Mesh: {fileID: 0}
-  m_InstanceId: -17114
+  m_InstanceId: -58862
   m_LocalBounds:
-    m_Center: {x: -0.084447086, y: 0.16940206, z: 0}
-    m_Extent: {x: 0.076869905, y: 0.15967172, z: 0}
+    m_Center: {x: -0.009986721, y: 0.16477887, z: 0}
+    m_Extent: {x: 0.054465286, y: 0.15650606, z: 0}
 --- !u!1001 &6712384440058072547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.051
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

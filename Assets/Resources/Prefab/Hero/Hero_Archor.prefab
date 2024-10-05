@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5013478474749727135}
   - component: {fileID: 5552972316452667015}
   - component: {fileID: 434328264143836463}
-  - component: {fileID: 5701165894349616612}
+  - component: {fileID: 8687524959983968984}
   - component: {fileID: 5138826497306880006}
-  - component: {fileID: 1141315834995498379}
+  - component: {fileID: 7037680032270668457}
   m_Layer: 0
   m_Name: Hero_Archor
   m_TagString: Hero
@@ -33,7 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.24332786, y: 0.1392478, z: -0.74996394}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2697667426767450231}
   m_Father: {fileID: 0}
@@ -138,7 +138,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &5701165894349616612
+--- !u!61 &8687524959983968984
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,10 +170,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09196104, y: 0.1708882}
+  m_Offset: {x: -0.010966346, y: 0.17352805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.4, y: 0}
     oldSize: {x: 0.73, y: 0.54}
     newSize: {x: 0.73, y: 0.54}
     adaptiveTilingThreshold: 0.5
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18728313, y: 0.3417764}
+  m_Size: {x: 0.15474129, y: 0.3470561}
   m_EdgeRadius: 0
 --- !u!50 &5138826497306880006
 Rigidbody2D:
@@ -210,7 +210,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1141315834995498379
+--- !u!114 &7037680032270668457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,18 +230,16 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.17255425, y: 0.015603721, z: 0}
-  - {x: -0.19108254, y: 0.1860154, z: 0}
-  - {x: -0.1595512, y: 0.34235314, z: 0}
-  - {x: -0.027693272, y: 0.34235314, z: 0}
-  - {x: 0.011765659, y: 0.19901845, z: 0}
-  - {x: -0.0042877197, y: 0.013003081, z: 0}
-  m_ShapePathHash: -1422831187
+  - {x: -0.09094582, y: 0.008230257, z: 0}
+  - {x: -0.085067034, y: 0.34247306, z: 0}
+  - {x: 0.052080583, y: 0.34205002, z: 0}
+  - {x: 0.06871505, y: 0.008317232, z: 0}
+  m_ShapePathHash: 85298713
   m_Mesh: {fileID: 0}
-  m_InstanceId: -14362
+  m_InstanceId: 76256
   m_LocalBounds:
-    m_Center: {x: -0.08965844, y: 0.17767811, z: 0}
-    m_Extent: {x: 0.1014241, y: 0.16467503, z: 0}
+    m_Center: {x: -0.01111538, y: 0.17535165, z: 0}
+    m_Extent: {x: 0.07983044, y: 0.1671214, z: 0}
 --- !u!1001 &7648166710798981378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.051
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

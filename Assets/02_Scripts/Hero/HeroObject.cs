@@ -28,6 +28,7 @@ public class HeroObject : SerializedMonoBehaviour
     private Animator _animator;                     // 애니메이터
 
     private Vector2 _moveDir;                       // 이동에 사용할 vector2 dir    
+    private float _lastHorizontalDirection = 1.0f;  // 마지막으로 바라본 방향 (기본적으로 오른쪽을 본 상태로 시작)
 
     /// <summary>
     /// FixedUpdate
@@ -77,8 +78,32 @@ public class HeroObject : SerializedMonoBehaviour
 
         _rigid.MovePosition(_moveDir);
 
+        // 좌우 움직임에 따라 스프라이트 플립
+        SpriteFlip(horizontal);
+
         // 애니메이션 설정 (움직임값에 따라서 isMove를 true false)
         _animator.SetBool("isMove", horizontal != 0 || vertical != 0);
+    }
+
+    /// <summary>
+    /// 좌우 움직임에 따라 스프라이트 플립
+    /// </summary>
+    private void SpriteFlip(float horizontal)
+    {
+        // horizontal이 0이 아닐 때만 방향을 업데이트
+        if (horizontal != 0)
+        {
+            // 마지막 방향 저장
+            _lastHorizontalDirection = horizontal;
+
+            // horizontal이 0보다 작으면 flipX를 true로, 0보다 크면 flipX를 false로
+            _spriteRenderer.flipX = horizontal < 0; 
+        }
+        else
+        {
+            // 멈췄을 때 _lastHorizontalDirection이 0보다 작으면 뒤집고, 아니면 그대로 (flip을 true false)
+            _spriteRenderer.flipX = _lastHorizontalDirection < 0;
+        }
     }
 
     /// <summary>
