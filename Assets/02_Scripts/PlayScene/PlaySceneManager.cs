@@ -59,7 +59,6 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public Joystick JoystickUI { get; set; }                    // 조이스틱UI
 
-
     private void Start()
     {
         ScenePopupsInitialize();
@@ -85,7 +84,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
         ThisGameHeroObject = HeroManager.Instance.HeroObjectDict[selectHeroID];
 
         // 이번게임으로 선택된 영웅을 필드에 스폰
-        ThisGameHeroObject = Instantiate(HeroManager.Instance.HeroObjectDict[selectHeroID]);
+        ThisGameHeroObject = Instantiate(HeroManager.Instance.HeroObjectDict[selectHeroID], new Vector3(0, 0, 0), Quaternion.identity);
 
         // 이번게임으로 선택된 영웅 데이터 셋팅
         ThisGameHeroObject.DataSetting();

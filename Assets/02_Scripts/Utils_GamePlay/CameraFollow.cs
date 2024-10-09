@@ -20,6 +20,11 @@ public class CameraFollow : MonoBehaviour
         {
             Vector3 targetPosition = PlaySceneManager.ThisGameHeroObject.transform.position + new Vector3(0, 0, -10);
 
+
+            // Cinemachine을 사용하면 이렇게 간단하게 카메라 따라가기 가능
+            // Late -> Lerp   / FixedUpdate -> SmoothDamp
+
+
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, 0.3f * Time.deltaTime);
         }
     }
