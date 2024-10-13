@@ -55,6 +55,9 @@ public class HeroSlot : SerializedMonoBehaviour
         // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
         PlaySceneManager.Instance.ThisGameHeroSetting(heroID);
 
+        // 카메라 따라다닐 타겟 설정
+        Camera.main.GetComponent<CameraFollow>().SetFollowTarget(PlaySceneManager.ThisGameHeroObject);
+
         // 스킬 선택팝업 ON
         PlaySceneManager.Instance.SkillChoicePopupUI.OpenSkillPopup();
 

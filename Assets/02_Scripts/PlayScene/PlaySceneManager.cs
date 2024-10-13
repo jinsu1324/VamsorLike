@@ -64,20 +64,26 @@ public class PlaySceneManager : SerializedMonoBehaviour
         ScenePopupsInitialize();
     }
 
-    // 씬 팝업들 ON OFF 초기화
+    /// <summary>
+    /// 씬 팝업들 ON OFF 초기화
+    /// </summary>
     private void ScenePopupsInitialize()
     {
         HeroSelectPopupUI.OpenPopup();
         SkillChoicePopupUI.CloseSkillPopup();
     }
 
-    // 게임시작 bool 파라미터로 변경
+    /// <summary>
+    /// 게임시작 bool 파라미터로 변경
+    /// </summary>
     public void IsGameStartChange(bool state)
     {        
         IsGameStart = state;
     }
 
-    // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
+    /// <summary>
+    /// 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
+    /// </summary>
     public void ThisGameHeroSetting(HeroID selectHeroID)
     {
         // 선택한 영웅을 이번게임의 영웅으로 할당
