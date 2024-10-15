@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,12 +40,16 @@ public class SkillManager : SerializedMonoBehaviour
     }
     #endregion
 
-    [SerializeField]
+    // 가지고 있는 스킬 UI 갱신 이벤트
+    public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           
+
     // 스킬 데이터 딕셔너리
+    [SerializeField]
     public Dictionary<SkillID, SkillLevelDataSO> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillLevelDataSO>();
 
-    // 가지고 있는 스킬들
-    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();
+    // 가지고 있는 스킬들  
+    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();       
+
 
     /// <summary>
     /// 스킬 데이터 딕셔너리에서 -> 원하는 스킬 + 레벨 로 형변환하여 반환해주는 함수
@@ -74,6 +79,9 @@ public class SkillManager : SerializedMonoBehaviour
             Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 0);
             HaveSkillList.Add(skill);
         }
+
+        // UI 갱신
+        OnRefreshHaveSkillUI(HaveSkillList);
     }
 
     /// <summary>
@@ -94,8 +102,5 @@ public class SkillManager : SerializedMonoBehaviour
         Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
 
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
-    }
-
-
-    
+    }    
 }
