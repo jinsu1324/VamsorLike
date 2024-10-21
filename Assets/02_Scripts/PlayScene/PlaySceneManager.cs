@@ -60,15 +60,15 @@ public class PlaySceneManager : SerializedMonoBehaviour
     /// </summary>
     private void PlayTimeCalculate_UIRefresh()
     {
-        if (IsGameStart)
-        {
-            _playTime += Time.deltaTime;
+        if (IsGameStart == false)
+            return;
 
-            int minute = Mathf.FloorToInt(_playTime / 60F);
-            int second = Mathf.FloorToInt(_playTime % 60F);
+        _playTime += Time.deltaTime;
 
-            PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
-        }
+        int minute = Mathf.FloorToInt(_playTime / 60F);
+        int second = Mathf.FloorToInt(_playTime % 60F);
+
+        PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
     }
 
     /// <summary>

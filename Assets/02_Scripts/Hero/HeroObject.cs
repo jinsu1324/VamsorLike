@@ -35,11 +35,11 @@ public class HeroObject : SerializedMonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (PlaySceneManager.Instance.IsGameStart)
-        {
-            Move();
-            Attack();
-        }            
+        if (PlaySceneManager.Instance.IsGameStart == false)
+            return;
+
+        Move();
+        Attack();
     }
 
     /// <summary>
