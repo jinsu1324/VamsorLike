@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7404919397918585516}
   - component: {fileID: 8445952988725121507}
   - component: {fileID: 7452402949985050037}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Monster_Golem
   m_TagString: Monster
   m_Icon: {fileID: 0}

@@ -31,7 +31,6 @@ public class SkillInvenUI : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// 슬롯들 기본값 꺼짐으로 설정하는 함수
     /// </summary>

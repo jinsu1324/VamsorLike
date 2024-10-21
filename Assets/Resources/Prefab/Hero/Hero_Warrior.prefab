@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3065971047073138123}
   - component: {fileID: 4322474735086839742}
   - component: {fileID: 2479029061349610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hero_Warrior
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: -3318188226485093758, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -248,6 +248,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2167651307713679911}
     m_Modifications:
+    - target: {fileID: 1337096595769009893, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500824351904044506, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4357414221122982406, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -256,9 +264,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4766085038670375930, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Name
       value: HeroCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Pivot.x
@@ -339,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641829200255241583, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9212760384277597813, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: serializationData.Prefab
