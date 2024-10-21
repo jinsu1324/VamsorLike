@@ -70,8 +70,8 @@ public class HeroObject : SerializedMonoBehaviour
     /// </summary>
     public void Move()
     {
-        float horizontal = PlaySceneManager.Instance.JoystickUI.Horizontal;
-        float vertical = PlaySceneManager.Instance.JoystickUI.Vertical;
+        float horizontal = PlaySceneManager.Instance.PlaySceneCanvas.JoystickUI.Horizontal;
+        float vertical = PlaySceneManager.Instance.PlaySceneCanvas.JoystickUI.Vertical;
 
         _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
         _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);

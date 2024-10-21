@@ -35,9 +35,9 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
     [Button("텍스트 에셋들 로드")]
     private void LoadTextAssets()
     {
-        TextAsset_SlashAttack = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/DataCSV/{FILENAME_SlashAttack}.csv");
-        TextAsset_Boomerang = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/DataCSV/{FILENAME_Boomerang}.csv");
-        TextAsset_Sniper = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/DataCSV/{FILENAME_Sniper}.csv");
+        TextAsset_SlashAttack = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/CSV/{FILENAME_SlashAttack}.csv");
+        TextAsset_Boomerang = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/CSV/{FILENAME_Boomerang}.csv");
+        TextAsset_Sniper = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Resources/CSV/{FILENAME_Sniper}.csv");
     }
 
 

@@ -59,7 +59,7 @@ public class HeroSlot : SerializedMonoBehaviour
         Camera.main.GetComponent<CameraFollow>().SetFollowTarget(PlaySceneManager.ThisGameHeroObject);
 
         // ½ºÅ³ ¼±ÅÃÆË¾÷ ON
-        PlaySceneManager.Instance.SkillChoicePopupUI.OpenSkillPopup();
+        PlaySceneManager.Instance.PlaySceneCanvas.SkillChoicePopupUI.OpenSkillPopup();
 
         // ¿µ¿õ¼±ÅÃ ÆË¾÷ ´Ý±â
         _onSelectFinish();

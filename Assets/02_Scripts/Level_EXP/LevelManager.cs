@@ -95,7 +95,7 @@ public class LevelManager : SerializedMonoBehaviour
 
         EXPBar.Update_EXPBarInfos();
 
-        PlaySceneManager.Instance.SkillChoicePopupUI.OpenSkillPopup();
+        PlaySceneManager.Instance.PlaySceneCanvas.SkillChoicePopupUI.OpenSkillPopup();
         PlaySceneManager.Instance.IsGameStartChange(false);
     }
 

@@ -95,8 +95,8 @@ public class MonsterObject : ObjectPoolObject
     private void TurnOn_DamageTextUI_fromPool(float atk)
     {
         // 데미지 텍스트 오브젝트 풀에서 가져와 생성하기
-        GameObject go = PlaySceneManager.Instance.DamageTextUIPool.GetObj();
-        DamageTextUI damageTextUI = go.GetComponent<DamageTextUI>();
+        GameObject go = PlaySceneManager.Instance.PlaySceneCanvas.DamageTextsPool.GetObj();
+        DamageText damageTextUI = go.GetComponent<DamageText>();
 
         // 생성 포지션 설정
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
