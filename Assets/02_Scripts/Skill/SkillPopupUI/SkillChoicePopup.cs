@@ -32,6 +32,9 @@ public class SkillChoicePopup : SerializedMonoBehaviour
     /// </summary>
     public void OpenSkillPopup()
     {
+        // 게임시작을 false로
+        PlaySceneManager.Instance.IsGameStartChange(false);
+
         // 자식 버튼들 삭제
         foreach (Transform child in _buttonParent)
         {

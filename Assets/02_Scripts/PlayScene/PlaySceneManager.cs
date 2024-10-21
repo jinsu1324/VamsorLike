@@ -42,8 +42,34 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public bool IsGameStart { get; set; }                       // 영웅 선택해서 게임 시작 되었는지
 
     [SerializeField]
-    public PlaySceneCanvas PlaySceneCanvas { get; set; }      // 플레이씬 캔버스 
+    public PlaySceneCanvas PlaySceneCanvas { get; set; }        // 플레이씬 캔버스 
 
+    private float _playTime = 0.0f;                             // 플레이타임
+
+
+    /// <summary>
+    /// Update 함수
+    /// </summary>
+    private void Update()
+    {        
+        PlayTimeCalculate_UIRefresh();
+    }
+
+    /// <summary>
+    /// 플레이타임 계산 + 갱신
+    /// </summary>
+    private void PlayTimeCalculate_UIRefresh()
+    {
+        if (IsGameStart)
+        {
+            _playTime += Time.deltaTime;
+
+            int minute = Mathf.FloorToInt(_playTime / 60F);
+            int second = Mathf.FloorToInt(_playTime % 60F);
+
+            PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
+        }
+    }
 
     /// <summary>
     /// 게임시작 bool 파라미터로 변경

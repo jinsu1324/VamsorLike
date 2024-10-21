@@ -17,6 +17,9 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [SerializeField]
     public ObjectPool DamageTextsPool { get; set; }            // 데미지 텍스트 UI 오브젝트 풀
 
+    [SerializeField]
+    public PlayTimeUI PlayTimeUI { get; set; }                  // 플레이 타임 UI
+
 
     [Title("Interactions")]
     [SerializeField]
