@@ -14,5 +14,7 @@ public enum SkillID
 public class SkillData_Base
 {
     public string Id;
+    public int Level;
     public string Name;
+    public string Desc;
 }

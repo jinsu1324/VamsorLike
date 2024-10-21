@@ -13,45 +13,42 @@ MonoBehaviour:
   m_Name: SkillLevelData_SlashAttack
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 7648909370329399314
-  - rid: 7648909370329399315
-  - rid: 7648909370329399316
+  - rid: 5954332170387456
+  - rid: 5954332170387457
+  - rid: 5954332170387458
   references:
     version: 2
     RefIds:
-    - rid: 7648909370329399314
+    - rid: 5954332170387456
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
+        Level: 0
         Name: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-        Level: 1
-        AtkPercentage: 1.25
-        Delay: 1
         Desc: "\uB290\uB9AC\uACE0 \uC0AC\uAC70\uB9AC\uAC00 \uC9E7\uC9C0\uB9CC \uADFC\uCC98
           \uC720\uB2DB \uBAA8\uB450\uB97C \uBCB1\uB2C8\uB2E4."
+        AtkPercentage: 1.25
+        Delay: 1
         Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-        Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
-    - rid: 7648909370329399315
+    - rid: 5954332170387457
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
+        Level: 1
         Name: "[\uC9C4] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-        Level: 2
-        AtkPercentage: 1.75
-        Delay: 1
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uB370\uBBF8\uC9C0\uAC00 200%
           \uC99D\uAC00\uD569\uB2C8\uB2E4"
+        AtkPercentage: 1.75
+        Delay: 1
         Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-        Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
-    - rid: 7648909370329399316
+    - rid: 5954332170387458
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
+        Level: 2
         Name: "[\uD608] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-        Level: 3
-        AtkPercentage: 2.5
-        Delay: 0.75
         Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 \uACF5\uACA9\uBE48\uB3C4\uAC00
           1.25\uBC30 \uBE68\uB77C\uC9D1\uB2C8\uB2E4"
+        AtkPercentage: 2.5
+        Delay: 0.75
         Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-        Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}

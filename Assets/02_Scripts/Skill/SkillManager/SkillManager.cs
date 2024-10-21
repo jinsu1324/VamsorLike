@@ -41,6 +41,7 @@ public class SkillManager : SerializedMonoBehaviour
     #endregion
 
     // 가지고 있는 스킬 UI 갱신 이벤트
+    [HideInInspector]
     public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           
 
     // 스킬 데이터 딕셔너리
@@ -102,5 +103,5 @@ public class SkillManager : SerializedMonoBehaviour
         Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
 
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
-    }    
+    }       
 }

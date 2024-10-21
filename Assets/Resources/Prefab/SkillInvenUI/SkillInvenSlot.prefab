@@ -84,9 +84,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4110134017571257428}
-  - component: {fileID: 5876200218458250431}
+  - component: {fileID: 6220643330659028821}
   m_Layer: 5
-  m_Name: HaveSkillUISlot
+  m_Name: SkillInvenSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5876200218458250431
+--- !u!114 &6220643330659028821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5406943243476398938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7abed85b3c5cb44803958c7fc22db9, type: 3}
+  m_Script: {fileID: 11500000, guid: 594e9acaf2babd34da69391b6837dd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -171,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.18409, y: -16.0386}
-  m_SizeDelta: {x: -34.3682, y: -32.077}
+  m_AnchoredPosition: {x: 5.6262, y: -16.0386}
+  m_SizeDelta: {x: -11.2524, y: -32.077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1477065065596950356
 CanvasRenderer:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3372dfa07e4da8b4a93ca0d566c10df5, type: 2}
   m_sharedMaterial: {fileID: -4854972942651188321, guid: 3372dfa07e4da8b4a93ca0d566c10df5, type: 2}

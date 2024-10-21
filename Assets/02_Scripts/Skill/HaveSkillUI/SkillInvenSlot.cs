@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HaveSkillUISlot : SerializedMonoBehaviour
+public class SkillInvenSlot : SerializedMonoBehaviour
 {
     [SerializeField]
     private Image _icon;                    // 스킬 아이콘
@@ -13,8 +13,14 @@ public class HaveSkillUISlot : SerializedMonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _levelText;     // 레벨 텍스트
 
-    public void SlotONOFF(bool isCount)
+
+    /// <summary>
+    /// 슬롯 정보들 셋팅 + ON / OFF
+    /// </summary>
+    public void SetSlot(bool isOnOFF, int level, Sprite icon)
     {
-        gameObject.SetActive(isCount);
+        _levelText.text = (level + 1).ToString();
+        _icon.sprite = icon;
+        gameObject.SetActive(isOnOFF);
     }
 }
