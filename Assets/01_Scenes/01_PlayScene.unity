@@ -464,8 +464,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _spawnDelay: 1
-  _spawnDistance: 7
+  _spawnDistance: 10
 --- !u!1 &360757204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,7 +2837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530514362
 RectTransform:
   m_ObjectHideFlags: 0

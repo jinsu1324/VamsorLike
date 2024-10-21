@@ -36,28 +36,31 @@ public class MonsterSpawner : SerializedMonoBehaviour
         }
     }
     #endregion
-
-    // 몬스터 스폰 딜레이
+        
     [SerializeField]
-    private float _spawnDelay;
-
-    // 몬스터 스폰 거리
-    [SerializeField]
-    private float _spawnDistance;
+    private float _spawnDistance;       // 몬스터 스폰 거리
 
 
+    /// <summary>
+    /// Start 함수
+    /// </summary>
     private void Start()
     {
+        // 몬스터 죽었을 때
         MonsterObject.OnMonsterDeath += MonsterBackTrans;
     }
 
-    // 몬스터 스폰 시작
+    /// <summary>
+    /// 몬스터 스폰 시작
+    /// </summary>
     public void StartMonsterSpawn()
     {
         StartCoroutine(MonsterRandomSpawn());
     }
 
-    // 일정시간마다 몬스터 랜덤 스폰 코루틴
+    /// <summary>
+    /// 일정시간마다 몬스터 랜덤 스폰 코루틴
+    /// </summary>
     private IEnumerator MonsterRandomSpawn()
     {
         while (PlaySceneManager.Instance.IsGameStart)
@@ -65,36 +68,74 @@ public class MonsterSpawner : SerializedMonoBehaviour
             // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.ThisGameHeroObject.transform.position, _spawnDistance);
 
-            // 팩도리에서 셋팅완료된 랜덤몬스터
-            MonsterObject settingCompleteRandomMonster = MonsterFactory.Instance.SettingMonster(RandomMonsterID());
+            // 스테이지 레벨에 맞게 몬스터 ID 가져오기
+            MonsterID monsterID_by_StageLevel = GetMonsterID_by_StageLevel(PlaySceneManager.Instance.StageLevel);
+
+            // 스테이지 레벨에 맞게 스폰딜레이 가져오기
+            float spawnDelay_by_StageLevel = GetSpawnDelay_by_StageLevel(PlaySceneManager.Instance.StageLevel);
+
+            // 팩도리에서 셋팅 + 풀에서 꺼내오기
+            MonsterObject settingCompleteRandomMonster = MonsterFactory.Instance.SettingMonster(monsterID_by_StageLevel);
 
             // 랜덤 원형 포지션으로 위치 설정
             settingCompleteRandomMonster.transform.position = randomCirclePos;
 
             // 스폰 딜레이만큼 대기
-            yield return new WaitForSecondsRealtime(_spawnDelay);
+            yield return new WaitForSecondsRealtime(spawnDelay_by_StageLevel);
         }
     }
 
-
-    // 몬스터 다시 풀으로 돌려보내기
+    /// <summary>
+    /// 몬스터 다시 풀으로 돌려보내기
+    /// </summary>
     public void MonsterBackTrans(MonsterObject monsterObject)
     {
         monsterObject.GetComponent<ObjectPoolObject>().BackTrans();
-    }
+    }    
 
-
-    // MonsterID Enum 값들을 다 가져와서 랜덤으로 하나의 몬스터만 뽑기
-    public MonsterID RandomMonsterID()
+    /// <summary>
+    /// 스테이지 레벨에 따른 몬스터 아이디 반환
+    /// </summary>
+    private MonsterID GetMonsterID_by_StageLevel(int stageLevel)
     {
-        MonsterID[] monsterIDValues = System.Enum.GetValues(typeof(MonsterID)) as MonsterID[];
-        MonsterID randomMonsterID = (MonsterID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
-
-        return randomMonsterID;
+        switch (stageLevel)
+        {
+            case 1:
+                return MonsterID.Golem;
+            case 2:
+                return MonsterID.Skeleton;
+            case 3:
+                return MonsterID.Witch;
+            case 4:
+                return MonsterID.Dragon;
+            default:
+                return MonsterID.Golem;
+        }
     }
 
+    /// <summary>
+    /// 몬스터 스폰 딜레이 줄임
+    /// </summary>
+    public float GetSpawnDelay_by_StageLevel(int stageLevel)
+    {
+        switch (stageLevel)
+        {
+            case 1:
+                return 1.0f;
+            case 2:
+                return 0.95f;
+            case 3:
+                return 0.9f;
+            case 4:
+                return 0.85f;
+            default:
+                return 1.0f;
+        }
+    }
 
-    // targetPos에서 distance 만큼 떨어진 원의 표면중 랜덤한 포지션을 리턴해주는 함수
+    /// <summary>
+    /// targetPos에서 distance 만큼 떨어진 원의 표면중 랜덤한 포지션을 리턴해주는 함수
+    /// </summary>
     private Vector3 RandomCircleSurfacePos(Vector2 targetPos, float distance)
     {
         // 원형 내부 임의의 지점 얻어옴
@@ -111,4 +152,17 @@ public class MonsterSpawner : SerializedMonoBehaviour
         return targetRandomCirclePos;
     }
 
+
+
+
+    ///// <summary>
+    ///// MonsterID Enum 값들을 다 가져와서 랜덤으로 하나의 몬스터만 뽑기
+    ///// </summary>
+    //public MonsterID RandomMonsterID()
+    //{
+    //    MonsterID[] monsterIDValues = System.Enum.GetValues(typeof(MonsterID)) as MonsterID[];
+    //    MonsterID randomMonsterID = (MonsterID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
+
+    //    return randomMonsterID;
+    //}
 }

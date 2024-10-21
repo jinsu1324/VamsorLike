@@ -38,13 +38,16 @@ public class PlaySceneManager : SerializedMonoBehaviour
     }
     #endregion
 
-    public static HeroObject ThisGameHeroObject { get; set; }   // 내가 이번 게임에 선택한 영웅
-    public bool IsGameStart { get; set; }                       // 영웅 선택해서 게임 시작 되었는지
+    public static HeroObject ThisGameHeroObject { get; set; }       // 내가 이번 게임에 선택한 영웅
+    public bool IsGameStart { get; set; }                           // 영웅 선택해서 게임 시작 되었는지
 
     [SerializeField]
-    public PlaySceneCanvas PlaySceneCanvas { get; set; }        // 플레이씬 캔버스 
+    public PlaySceneCanvas PlaySceneCanvas { get; set; }            // 플레이씬 캔버스
+    public int StageLevel { get; set; } = 1;                        // 스테이지 레벨 
+    public int MaxStageLevel { get; set; } = 4;                    // 최대 스테이지 레벨  
+    public float StageLevelUpIntervelTime { get; set; } = 10.0f;    // 스테이지 레벨업 간격
 
-    private float _playTime = 0.0f;                             // 플레이타임
+    private float _playTime = 0.0f;                                 // 플레이타임
 
 
     /// <summary>
@@ -69,6 +72,10 @@ public class PlaySceneManager : SerializedMonoBehaviour
         int second = Mathf.FloorToInt(_playTime % 60F);
 
         PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
+
+        // 플레이타임 체크해서 스테이지 레벨업
+        if (_playTime >= StageLevel * StageLevelUpIntervelTime)
+            ChangeStageLevel();
     }
 
     /// <summary>
@@ -92,5 +99,20 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         // 이번게임으로 선택된 영웅 데이터 셋팅
         ThisGameHeroObject.DataSetting();
+    }
+
+    /// <summary>
+    /// 스테이지 레벨업
+    /// </summary>
+    public void ChangeStageLevel()
+    {
+        if (StageLevel >= MaxStageLevel)
+        {
+            Debug.Log("최대 스테이지 레벨입니다.");
+            return;
+        }
+
+        StageLevel++;
+        Debug.Log($"스테이지 레벨업! : {StageLevel}");
     }
 }

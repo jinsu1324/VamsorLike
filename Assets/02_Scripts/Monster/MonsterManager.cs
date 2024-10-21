@@ -39,20 +39,24 @@ public class MonsterManager : SerializedMonoBehaviour
     [SerializeField]
     public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
 
-
     // 몬스터 오브젝트들 딕셔너리
     [SerializeField]
     public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
 
-
     // 필드에 스폰되어있는 몬스터 리스트
     private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 
+    /// <summary>
+    /// Start
+    /// </summary>
     private void Start()
     {
         MonsterObject.OnMonsterDeath += RemoveFieldMonsterList;
     }
 
+    /// <summary>
+    /// Update
+    /// </summary>
     private void Update()
     {
         if (PlaySceneManager.Instance.IsGameStart == false)
@@ -61,19 +65,25 @@ public class MonsterManager : SerializedMonoBehaviour
         AllFieldMonsterFollowHero();
     }    
 
-    // 필드몬스터 리스트에 추가
+    /// <summary>
+    /// 필드몬스터 리스트에 추가
+    /// </summary>
     public void AddFieldMonsterList(MonsterObject monsterObject)
     {
         _fieldMonsterList.Add(monsterObject);
     }
 
-    // 필드몬스터 리스트에서 삭제
+    /// <summary>
+    /// 필드몬스터 리스트에서 삭제
+    /// </summary>
     public void RemoveFieldMonsterList(MonsterObject monsterObject)
     {
         _fieldMonsterList.Remove(monsterObject);
     }
 
-    // 일정 거리 내 몬스터의 리스트를 받아옴
+    /// <summary>
+    /// 일정 거리 내 몬스터의 리스트를 받아옴
+    /// </summary>
     public List<MonsterObject> GetMonstersByDistance(Vector3 pos, float distance)
     {
         List<MonsterObject> closeMonsterList = new List<MonsterObject>();
@@ -89,7 +99,9 @@ public class MonsterManager : SerializedMonoBehaviour
         return closeMonsterList;
     }
 
-    // 일정 거리 내 몬스터 리스트 중에서, 플레이어에게 가장 가까운 몬스터 1마리를 반환
+    /// <summary>
+    /// 일정 거리 내 몬스터 리스트 중에서, 플레이어에게 가장 가까운 몬스터 1마리를 반환
+    /// </summary>
     public MonsterObject GetClosestMonstersByDistance(Vector3 pos, float distance)
     {
         // 사거리 내 몬스터 모두 리스트에 저장
@@ -121,8 +133,9 @@ public class MonsterManager : SerializedMonoBehaviour
         return closestMonster;
     }
 
-
-    // 필드몬스터들 전부 영웅 따라다니도록 
+    /// <summary>
+    /// 필드몬스터들 전부 영웅 따라다니도록 
+    /// </summary>
     private void AllFieldMonsterFollowHero()
     {
         foreach (MonsterObject monster in _fieldMonsterList)
