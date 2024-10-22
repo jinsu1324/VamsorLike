@@ -61,7 +61,9 @@ public class LevelManager : SerializedMonoBehaviour
     [SerializeField]
     public EXPBar EXPBar { get; set; }
 
-
+    /// <summary>
+    /// Start 함수
+    /// </summary>
     private void Start()
     {
         EXPBar.Update_EXPBarInfos();
@@ -70,7 +72,9 @@ public class LevelManager : SerializedMonoBehaviour
         EXPObject.OnGetExp += EXPUp;
     }
 
-    // 경험치 증가
+    /// <summary>
+    /// 경험치 증가
+    /// </summary>
     public void EXPUp()
     {
         MyHeroLvExp.EXP += 10;
@@ -83,7 +87,9 @@ public class LevelManager : SerializedMonoBehaviour
         }
     }
 
-    // 레벨 증가
+    /// <summary>
+    /// 레벨 증가
+    /// </summary>
     private void LevelUp()
     {
         MyHeroLvExp.Level++;
@@ -95,13 +101,27 @@ public class LevelManager : SerializedMonoBehaviour
         PlaySceneManager.Instance.IsGameStartChange(false);
     }
 
-
-    // 몬스터 죽으면 바닥에 EXP 오브젝트 생성
+    /// <summary>
+    /// 몬스터 죽으면 바닥에 EXP 오브젝트 생성
+    /// </summary>
     private void InstantiateEXPObj(MonsterObject monsterObject)
     {
         Instantiate(ExpObj, monsterObject.transform.position, Quaternion.identity);
+    }   
+
+    /// <summary>
+    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
+    /// </summary>
+    public void OnDisable()
+    {
+        MonsterObject.OnMonsterDeath -= InstantiateEXPObj;
+        EXPObject.OnGetExp -= EXPUp;
     }
 
+
+
+
+    // 치트
     public void OnClickExpUpCheatButton()
     {
         EXPUp();

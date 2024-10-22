@@ -145,4 +145,12 @@ public class MonsterManager : SerializedMonoBehaviour
         foreach (MonsterObject monster in _fieldMonsterList)
             monster.StopFollow();
     }
+
+    /// <summary>
+    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
+    /// </summary>
+    public void OnDisable()
+    {
+        MonsterObject.OnMonsterDeath -= RemoveFieldMonsterList;
+    }
 }

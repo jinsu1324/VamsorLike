@@ -55,8 +55,9 @@ public class HeroSlot : MonoBehaviour
         // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
         GameManager.Instance.MyHeroIDSetting(heroID);
 
-        // 영웅선택 팝업 닫기
+        // 영웅선택 팝업 닫기 + 이벤트 제거
         _onSelectFinish();
+        _onSelectFinish = null;
 
         // 씬 전환
         SceneSwitcher.LoadScene("02_PlayScene");

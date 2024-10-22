@@ -44,4 +44,14 @@ public class GoldManager : MonoBehaviour
         else 
             return;
     }
+
+
+    /// <summary>
+    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
+    /// </summary>
+    public void OnDisable()
+    {
+        GoldObject.OnGetGold -= GoldUp;
+        MonsterObject.OnMonsterDeath -= InstantiateGoldObj;
+    }
 }

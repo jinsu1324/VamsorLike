@@ -152,17 +152,11 @@ public class MonsterSpawner : SerializedMonoBehaviour
         return targetRandomCirclePos;
     }
 
-
-
-
-    ///// <summary>
-    ///// MonsterID Enum 값들을 다 가져와서 랜덤으로 하나의 몬스터만 뽑기
-    ///// </summary>
-    //public MonsterID RandomMonsterID()
-    //{
-    //    MonsterID[] monsterIDValues = System.Enum.GetValues(typeof(MonsterID)) as MonsterID[];
-    //    MonsterID randomMonsterID = (MonsterID)monsterIDValues.GetValue(Random.Range(0, monsterIDValues.Length));
-
-    //    return randomMonsterID;
-    //}
+    /// <summary>
+    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
+    /// </summary>
+    public void OnDisable()
+    {
+        MonsterObject.OnMonsterDeath -= MonsterBackTrans;
+    }
 }

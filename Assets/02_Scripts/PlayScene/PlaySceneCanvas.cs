@@ -18,6 +18,9 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [SerializeField]
     public PlayTimeUI PlayTimeUI { get; set; }                  // 플레이 타임 UI
 
+    [SerializeField]
+    public SkillInvenUI SkillInvenUI { get; set; }              // 스킬 인벤토리 UI
+
     [Title("Interactions")]
     [SerializeField]
     public Joystick JoystickUI { get; set; }                    // 조이스틱

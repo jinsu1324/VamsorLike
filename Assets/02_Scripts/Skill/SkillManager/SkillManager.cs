@@ -79,8 +79,9 @@ public class SkillManager : SerializedMonoBehaviour
             HaveSkillList.Add(skill);
         }
 
+
         // UI °»½Å
-        OnRefreshHaveSkillUI(HaveSkillList);
+        PlaySceneManager.Instance.PlaySceneCanvas.SkillInvenUI.SlotRefresh(HaveSkillList);        
     }
 
     /// <summary>
