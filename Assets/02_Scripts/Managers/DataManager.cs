@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroManager : SerializedMonoBehaviour
+public class DataManager : SerializedMonoBehaviour
 {
-    #region ΩÃ±€≈Ê
-    private static HeroManager _instance;
+    #region ΩÃ±€≈Ê_æ¿¿Ãµø O
+    private static DataManager _instance;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class HeroManager : SerializedMonoBehaviour
         }
     }
 
-    public static HeroManager Instance
+    public static DataManager Instance
     {
         get
         {
@@ -39,8 +39,15 @@ public class HeroManager : SerializedMonoBehaviour
     [SerializeField]
     public Dictionary<HeroID, HeroData> HeroDataDict { get; set; } = new Dictionary<HeroID, HeroData>();
 
-    // øµøı ø¿∫Í¡ß∆ÆµÈ µÒº≈≥ ∏Æ
+    // ∏ÛΩ∫≈Õ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
     [SerializeField]
-    public Dictionary<HeroID, HeroObject> HeroObjectDict { get; set; } = new Dictionary<HeroID, HeroObject>();
+    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
 
+    // Ω∫≈≥ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
+    [SerializeField]
+    public Dictionary<SkillID, SkillLevelDataSO> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillLevelDataSO>();
+
+    // ∑π∫ßµ•¿Ã≈Õ ∏ÆΩ∫∆Æ
+    [SerializeField]
+    public LevelDatas LevelDatas { get; set; }
 }

@@ -66,7 +66,7 @@ public class MonsterSpawner : SerializedMonoBehaviour
         while (PlaySceneManager.Instance.IsGameStart)
         {
             // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
-            Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.ThisGameHeroObject.transform.position, _spawnDistance);
+            Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
 
             // 스테이지 레벨에 맞게 몬스터 ID 가져오기
             MonsterID monsterID_by_StageLevel = GetMonsterID_by_StageLevel(PlaySceneManager.Instance.StageLevel);

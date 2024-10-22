@@ -38,8 +38,8 @@ public class DataSettingEditorWindow : OdinEditorWindow
             Debug.Log("레벨데이터 TextAsset이 null입니다.");
 
 
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        levelManager.LevelDatas = null;
+        DataManager dataManager = FindObjectOfType<DataManager>();
+        dataManager.LevelDatas = null;
         
 
         LoadCSV.CSV_to_DataList(_levelDataTextAsset);
@@ -57,10 +57,10 @@ public class DataSettingEditorWindow : OdinEditorWindow
         }
 
         LevelDatas levelDatas = so as LevelDatas;
-        levelManager.LevelDatas = levelDatas;
+        dataManager.LevelDatas = levelDatas;
 
         // 클릭 및 저장
-        EditorUtility.SetDirty(levelManager);
+        EditorUtility.SetDirty(dataManager);
         AssetDatabase.SaveAssets();
 
     }
@@ -76,15 +76,16 @@ public class DataSettingEditorWindow : OdinEditorWindow
         LoadCSV.CSV_to_Data<MonsterData, MonsterID>(_monsterDataTextAsset, SaveFolderName.Monster);
 
         // 몬스터 매니저들 가져와서
-        MonsterManager monsterManager = FindObjectOfType<MonsterManager>();
+        DataManager dataManager = FindObjectOfType<DataManager>();
+        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
 
         // 딕셔너리 클리어
-        monsterManager.MonsterDataDict.Clear();
-        monsterManager.MonsterObjectDict.Clear();
+        dataManager.MonsterDataDict.Clear();
+        objectManager.MonsterObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(monsterManager.MonsterDataDict, SaveFolderName.Monster);
-        Object_to_Dict(monsterManager.MonsterObjectDict, SaveFolderName.Monster);
+        Data_to_Dict(dataManager.MonsterDataDict, SaveFolderName.Monster);
+        Object_to_Dict(objectManager.MonsterObjectDict, SaveFolderName.Monster);
     }
 
 
@@ -98,15 +99,16 @@ public class DataSettingEditorWindow : OdinEditorWindow
         LoadCSV.CSV_to_Data<HeroData, HeroID>(_heroDataTextAsset, SaveFolderName.Hero);
 
         // 영웅 매니저 가져와서
-        HeroManager heroManager = FindObjectOfType<HeroManager>();
+        DataManager dataManager = FindObjectOfType<DataManager>();
+        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
 
         // 딕셔너리 클리어
-        heroManager.HeroDataDict.Clear();
-        heroManager.HeroObjectDict.Clear();
+        dataManager.HeroDataDict.Clear();
+        objectManager.HeroObjectDict.Clear();
 
         // 딕셔너리에 파일들 넣어주기
-        Data_to_Dict(heroManager.HeroDataDict, SaveFolderName.Hero);
-        Object_to_Dict(heroManager.HeroObjectDict, SaveFolderName.Hero);
+        Data_to_Dict(dataManager.HeroDataDict, SaveFolderName.Hero);
+        Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
     }
 
 

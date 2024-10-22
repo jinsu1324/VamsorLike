@@ -1,15 +1,11 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 리소스 매니저
-/// </summary>
-public class ResourceManager : SerializedMonoBehaviour
+public class GameManager : MonoBehaviour
 {
     #region 싱글톤_씬이동 O
-    private static ResourceManager _instance;
+    private static GameManager _instance;
 
     private void Awake()
     {
@@ -24,7 +20,7 @@ public class ResourceManager : SerializedMonoBehaviour
         }
     }
 
-    public static ResourceManager Instance
+    public static GameManager Instance
     {
         get
         {
@@ -38,16 +34,14 @@ public class ResourceManager : SerializedMonoBehaviour
     }
     #endregion
 
-    // 스킬 아이콘 딕셔너리
-    [SerializeField]
-    private Dictionary<SkillID, Sprite> _skillIconDict = new Dictionary<SkillID, Sprite>();
+    public HeroID myHeroID { get; set; }              // 내가 이번 게임에 선택한 영웅 ID
 
 
     /// <summary>
-    /// 스킬 아이콘 가져오는 함수
+    /// 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
     /// </summary>
-    public Sprite GetSkillIcon(SkillID skillID)
+    public void MyHeroIDSetting(HeroID selectHeroID)
     {
-        return _skillIconDict[skillID];
+        myHeroID = selectHeroID;
     }
 }

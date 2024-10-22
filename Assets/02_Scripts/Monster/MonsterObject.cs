@@ -66,7 +66,7 @@ public class MonsterObject : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
-        _navMeshAgent.SetDestination(PlaySceneManager.ThisGameHeroObject.transform.position);
+        _navMeshAgent.SetDestination(PlaySceneManager.Instance.MyHeroObj.transform.position);
 
         //transform.position = Vector3.MoveTowards(
         //    transform.position,
@@ -114,4 +114,6 @@ public class MonsterObject : ObjectPoolObject
         // 데미지 텍스트 초기화
         damageTextUI.Init(atk);
     }
+
+
 }

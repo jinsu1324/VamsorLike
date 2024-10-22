@@ -6,20 +6,24 @@ using UnityEngine;
 
 // 영웅 선택 팝업 : 영웅 슬롯들 / 각 영웅슬롯들 데이터초기화 명령 / 팝업 닫기
 public class HeroSelectPopup : SerializedMonoBehaviour
-{
-    // 영웅 슬롯들
+{    
     [SerializeField]
-    private HeroSlot[] _heroSlotArr;
+    private HeroSlot[] _heroSlotArr;                // 영웅 슬롯들
 
+    /// <summary>
+    /// Start 함수
+    /// </summary>
     private void Start()
     {
         HeroSlotsSetting();
     }   
     
-    // 각각 영웅슬롯 속 ui정보들 데이터 셋팅 (슬롯들에게 셋팅하라고 전달)
+    /// <summary>
+    /// 각각 영웅슬롯 속 ui정보들 데이터 셋팅 (슬롯들에게 셋팅하라고 전달)
+    /// </summary>
     private void HeroSlotsSetting()
     {
-        Dictionary<HeroID, HeroData> heroDataDict = HeroManager.Instance.HeroDataDict;
+        Dictionary<HeroID, HeroData> heroDataDict = DataManager.Instance.HeroDataDict;
 
         for (int i = 0; i < _heroSlotArr.Length; i++)
         {
@@ -28,14 +32,17 @@ public class HeroSelectPopup : SerializedMonoBehaviour
         }
     }
 
-    // 팝업 열기
+    /// <summary>
+    /// 팝업 열기
+    /// </summary>
     public void OpenPopup()
     {
         gameObject.SetActive(true);
     }
 
-
-    // 팝업 닫기
+    /// <summary>
+    /// 팝업 닫기
+    /// </summary>
     public void ClosePopup()
     {
         gameObject.SetActive(false);

@@ -7,11 +7,7 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
 {
     [Title("Popups")]
     [SerializeField]
-    public HeroSelectPopup HeroSelectPopupUI { get; set; }      // 영웅 선택 팝업    
-
-    [SerializeField]
     public SkillChoicePopup SkillChoicePopupUI { get; set; }    // 스킬 선택 팝업    
-
 
     [Title("Views")]
     [SerializeField]
@@ -19,7 +15,6 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
 
     [SerializeField]
     public PlayTimeUI PlayTimeUI { get; set; }                  // 플레이 타임 UI
-
 
     [Title("Interactions")]
     [SerializeField]
@@ -39,7 +34,6 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     /// </summary>
     private void ScenePopupsInitialize()
     {
-        HeroSelectPopupUI.OpenPopup();
-        SkillChoicePopupUI.CloseSkillPopup();
+        SkillChoicePopupUI.OpenSkillPopup();
     }
 }

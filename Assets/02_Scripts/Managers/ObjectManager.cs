@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 리소스 매니저
-/// </summary>
-public class ResourceManager : SerializedMonoBehaviour
+public class ObjectManager : SerializedMonoBehaviour
 {
     #region 싱글톤_씬이동 O
-    private static ResourceManager _instance;
+    private static ObjectManager _instance;
 
     private void Awake()
     {
@@ -24,7 +21,7 @@ public class ResourceManager : SerializedMonoBehaviour
         }
     }
 
-    public static ResourceManager Instance
+    public static ObjectManager Instance
     {
         get
         {
@@ -38,16 +35,11 @@ public class ResourceManager : SerializedMonoBehaviour
     }
     #endregion
 
-    // 스킬 아이콘 딕셔너리
+    // 영웅 오브젝트들 딕셔너리
     [SerializeField]
-    private Dictionary<SkillID, Sprite> _skillIconDict = new Dictionary<SkillID, Sprite>();
+    public Dictionary<HeroID, HeroObject> HeroObjectDict { get; set; } = new Dictionary<HeroID, HeroObject>();
 
-
-    /// <summary>
-    /// 스킬 아이콘 가져오는 함수
-    /// </summary>
-    public Sprite GetSkillIcon(SkillID skillID)
-    {
-        return _skillIconDict[skillID];
-    }
+    // 몬스터 오브젝트들 딕셔너리
+    [SerializeField]
+    public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
 }

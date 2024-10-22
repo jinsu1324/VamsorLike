@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MonsterManager : SerializedMonoBehaviour
 {
-    #region 싱글톤
+    #region 싱글톤_씬이동x
     private static MonsterManager _instance;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class MonsterManager : SerializedMonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -33,16 +33,8 @@ public class MonsterManager : SerializedMonoBehaviour
             return _instance;
         }
     }
-    #endregion
-
-    // 몬스터 데이터 딕셔너리
-    [SerializeField]
-    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
-
-    // 몬스터 오브젝트들 딕셔너리
-    [SerializeField]
-    public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
-
+    #endregion   
+        
     // 필드에 스폰되어있는 몬스터 리스트
     private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
 

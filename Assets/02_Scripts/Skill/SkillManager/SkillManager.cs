@@ -10,7 +10,7 @@ using UnityEngine.UI;
 /// </summary>
 public class SkillManager : SerializedMonoBehaviour
 {
-    #region ΩÃ±€≈Ê
+    #region ΩÃ±€≈Ê_æ¿¿Ãµøx
     private static SkillManager _instance;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class SkillManager : SerializedMonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -44,9 +44,7 @@ public class SkillManager : SerializedMonoBehaviour
     [HideInInspector]
     public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           
 
-    // Ω∫≈≥ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
-    [SerializeField]
-    public Dictionary<SkillID, SkillLevelDataSO> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillLevelDataSO>();
+    
 
     // ∞°¡ˆ∞Ì ¿÷¥¬ Ω∫≈≥µÈ  
     public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();       
@@ -57,7 +55,7 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public SkillData SkillData_as_Dict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
     {
-        SkillData skillData = SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
+        SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
         return skillData;
     }
 

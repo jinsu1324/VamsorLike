@@ -34,7 +34,7 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_Sniper skillData_Sniper)
     {
-        _skillAtk = skillData_Sniper.AtkPercentage * PlaySceneManager.ThisGameHeroObject.Atk;
+        _skillAtk = skillData_Sniper.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _projectileSpeed = skillData_Sniper.ProjectileSpeed;
         _range = skillData_Sniper.Range;
         _delay = skillData_Sniper.Delay;

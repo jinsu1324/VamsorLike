@@ -37,7 +37,7 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_Boomerang skillData_Boomerang)
     {
-        _skillAtk = skillData_Boomerang.AtkPercentage * PlaySceneManager.ThisGameHeroObject.Atk;
+        _skillAtk = skillData_Boomerang.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _projectileSpeed = skillData_Boomerang.ProjectileSpeed;
         _projectileCount = skillData_Boomerang.ProjectileCount;
         _range = skillData_Boomerang.Range;
@@ -64,7 +64,7 @@ public class Skill_Boomerang : Skill_Base
         // 프로젝타일 생성
         _spawnedProjectile = GameObject.Instantiate(
                 skillData_Boomerang.Projectile,
-                PlaySceneManager.ThisGameHeroObject.transform.position,
+                PlaySceneManager.Instance.MyHeroObj.transform.position,
                 Quaternion.identity) as ProjectileBoomerang;
 
         // 부메랑은 생성되면 계속 공격하게끔 만들 예정

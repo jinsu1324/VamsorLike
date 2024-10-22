@@ -8,28 +8,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // 영웅 슬롯 : 영웅 정보들 / 영웅 선택 완료 확정 및 처리 (게임시작 명령, 팝업 닫기 액션)
-public class HeroSlot : SerializedMonoBehaviour
-{
-    // ui 에 표시될 영웅 정보들
+public class HeroSlot : MonoBehaviour
+{    
     [SerializeField]
-    private Image _heroImage;
+    private Image _heroImage;                       // ui 에 표시될 영웅 이미지
     [SerializeField]
-    private TextMeshProUGUI _nameText;
+    private TextMeshProUGUI _nameText;              // ui 에 표시될 영웅 이름 텍스트
     [SerializeField]
-    private TextMeshProUGUI _descText;
+    private TextMeshProUGUI _descText;              // ui 에 표시될 영웅 설명 텍스트
 
-    // 선택 완료 버튼
     [SerializeField]
-    private Button _selectCompleteButton;
-
-    // 이 슬롯의 영웅 데이터
-    private HeroData _HeroData;
-
-    // 선택 완료상황일 때 호출시킬 액션
-    private Action _onSelectFinish;    
+    private Button _selectCompleteButton;           // 선택 완료 버튼
+                                                     
+    private HeroData _HeroData;                     // 이 슬롯의 영웅 데이터
+    
+    private Action _onSelectFinish;                 // 선택 완료상황일 때 호출시킬 액션
 
 
-    // UI 정보들 셋팅
+    /// <summary>
+    /// UI 정보들 셋팅
+    /// </summary>
     public void UIInfoSetting(HeroData heroData, Action popupClose)
     {
         // 이 슬롯 영웅데이터 셋팅
@@ -46,22 +44,21 @@ public class HeroSlot : SerializedMonoBehaviour
         _selectCompleteButton.onClick.AddListener(OnClickSelectCompleteButton);
     }
 
-    // 선택 완료 버튼 눌렀을때 호출될 함수
+    /// <summary>
+    /// 선택 완료 버튼 눌렀을때 호출될 함수
+    /// </summary>
     public void OnClickSelectCompleteButton()
-    {
+    {       
         // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
         HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
 
         // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
-        PlaySceneManager.Instance.ThisGameHeroSetting(heroID);
-
-        // 카메라 따라다닐 타겟 설정
-        Camera.main.GetComponent<CameraFollow>().SetFollowTarget(PlaySceneManager.ThisGameHeroObject);
-
-        // 스킬 선택팝업 ON
-        PlaySceneManager.Instance.PlaySceneCanvas.SkillChoicePopupUI.OpenSkillPopup();
+        GameManager.Instance.MyHeroIDSetting(heroID);
 
         // 영웅선택 팝업 닫기
         _onSelectFinish();
+
+        // 씬 전환
+        SceneSwitcher.LoadScene("02_PlayScene");
     }
 }

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_SlashAttack
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 5954332170387456
-  - rid: 5954332170387457
-  - rid: 5954332170387458
+  - rid: 5954356529332224
+  - rid: 5954356529332225
+  - rid: 5954356529332226
   references:
     version: 2
     RefIds:
-    - rid: 5954332170387456
+    - rid: 5954356529332224
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -30,7 +30,7 @@ MonoBehaviour:
         AtkPercentage: 1.25
         Delay: 1
         Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-    - rid: 5954332170387457
+    - rid: 5954356529332225
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack
@@ -41,7 +41,7 @@ MonoBehaviour:
         AtkPercentage: 1.75
         Delay: 1
         Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-    - rid: 5954332170387458
+    - rid: 5954356529332226
       type: {class: SkillData_SlashAttack, ns: , asm: Assembly-CSharp}
       data:
         Id: SlashAttack

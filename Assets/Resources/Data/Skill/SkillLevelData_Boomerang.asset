@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SkillLevelData_Boomerang
   m_EditorClassIdentifier: 
   SkillDataList:
-  - rid: 5954332170387459
-  - rid: 5954332170387460
-  - rid: 5954332170387461
+  - rid: 5954356529332227
+  - rid: 5954356529332228
+  - rid: 5954356529332229
   references:
     version: 2
     RefIds:
-    - rid: 5954332170387459
+    - rid: 5954356529332227
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang
@@ -32,7 +32,7 @@ MonoBehaviour:
         ProjectileCount: 1
         Range: 5
         Projectile: {fileID: 8301173413366998324, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-    - rid: 5954332170387460
+    - rid: 5954356529332228
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang
@@ -44,7 +44,7 @@ MonoBehaviour:
         ProjectileCount: 1
         Range: 5
         Projectile: {fileID: 8301173413366998324, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-    - rid: 5954332170387461
+    - rid: 5954356529332229
       type: {class: SkillData_Boomerang, ns: , asm: Assembly-CSharp}
       data:
         Id: Boomerang

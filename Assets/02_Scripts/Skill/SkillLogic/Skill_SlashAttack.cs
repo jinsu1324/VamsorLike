@@ -31,7 +31,7 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     private void StatSetting(SkillData_SlashAttack skillData_SlashAttack)
     {
-        _skillAtk = skillData_SlashAttack.AtkPercentage * PlaySceneManager.ThisGameHeroObject.Atk;
+        _skillAtk = skillData_SlashAttack.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _delay = skillData_SlashAttack.Delay;
         _projectile = skillData_SlashAttack.Projectile;
     }
@@ -76,6 +76,5 @@ public class Skill_SlashAttack : Skill_Base
 
         // 프로젝타일에 공격력 건네줌
         projectile.SetAtk(_skillAtk);
-
     }
 }

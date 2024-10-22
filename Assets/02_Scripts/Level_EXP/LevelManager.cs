@@ -20,7 +20,7 @@ public class HeroLvExp
 
 public class LevelManager : SerializedMonoBehaviour
 {
-    #region ΩÃ±€≈Ê
+    #region ΩÃ±€≈Ê_æ¿¿Ãµøx
     private static LevelManager _instance;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class LevelManager : SerializedMonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -49,10 +49,6 @@ public class LevelManager : SerializedMonoBehaviour
         }
     }
     #endregion
-
-    // ∑π∫ßµ•¿Ã≈Õ ∏ÆΩ∫∆Æ
-    [SerializeField]
-    public LevelDatas LevelDatas { get; set; }
 
     // ¿Ãπ¯∞‘¿” øµøı ∑π∫ß ∞Ê«Ëƒ°
     public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 0);
@@ -79,7 +75,7 @@ public class LevelManager : SerializedMonoBehaviour
     {
         MyHeroLvExp.EXP += 10;
 
-        List<LevelData> levelDataList = LevelManager.Instance.LevelDatas.LevelDataList;
+        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
 
         if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
         {
