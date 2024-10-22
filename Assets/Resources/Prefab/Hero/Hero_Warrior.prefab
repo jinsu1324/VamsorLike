@@ -63,7 +63,7 @@ MonoBehaviour:
     - Name: _baseHeroData
       Entry: 10
       Data: 0
-  _hpBar: {fileID: 2521280045044794262}
+  _hpBar: {fileID: 1475540970768844320}
   _heroCanvas: {fileID: 6948193925694964490}
 --- !u!212 &5031101564520488128
 SpriteRenderer:
@@ -236,7 +236,7 @@ MonoBehaviour:
   - {x: 0.042806506, y: 0.008360219, z: 0}
   m_ShapePathHash: -475781047
   m_Mesh: {fileID: 0}
-  m_InstanceId: -58862
+  m_InstanceId: 196184
   m_LocalBounds:
     m_Center: {x: -0.009986721, y: 0.16477887, z: 0}
     m_Extent: {x: 0.054465286, y: 0.15650606, z: 0}
@@ -374,15 +374,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
   m_PrefabInstance: {fileID: 6712384440058072547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2521280045044794262 stripped
+--- !u!114 &1475540970768844320 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9212760384277597813, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5286384442472074179, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
   m_PrefabInstance: {fileID: 6712384440058072547}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efa2aba33bfb484bad8d81d22389ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: e02eea4df19f10c4fbb3fa0acc639e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!223 &6948193925694964490 stripped

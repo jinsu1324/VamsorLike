@@ -63,7 +63,7 @@ MonoBehaviour:
     - Name: _baseHeroData
       Entry: 10
       Data: 0
-  _hpBar: {fileID: 1583564853397444471}
+  _hpBar: {fileID: 2557690263671083713}
   _heroCanvas: {fileID: 6298390183330060267}
 --- !u!212 &5552972316452667015
 SpriteRenderer:
@@ -236,7 +236,7 @@ MonoBehaviour:
   - {x: 0.06871505, y: 0.008317232, z: 0}
   m_ShapePathHash: 85298713
   m_Mesh: {fileID: 0}
-  m_InstanceId: 76256
+  m_InstanceId: 196248
   m_LocalBounds:
     m_Center: {x: -0.01111538, y: 0.17535165, z: 0}
     m_Extent: {x: 0.07983044, y: 0.1671214, z: 0}
@@ -369,15 +369,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
---- !u!114 &1583564853397444471 stripped
+--- !u!114 &2557690263671083713 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9212760384277597813, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5286384442472074179, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
   m_PrefabInstance: {fileID: 7648166710798981378}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efa2aba33bfb484bad8d81d22389ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: e02eea4df19f10c4fbb3fa0acc639e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &2697667426767450231 stripped
