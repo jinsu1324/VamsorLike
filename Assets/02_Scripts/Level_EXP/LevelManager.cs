@@ -91,7 +91,7 @@ public class LevelManager : SerializedMonoBehaviour
 
         EXPBar.Update_EXPBarInfos();
 
-        PlaySceneManager.Instance.PlaySceneCanvas.SkillChoicePopupUI.OpenSkillPopup();
+        PlaySceneManager.Instance.PlaySceneCanvas.SkillChoicePopupUI.OpenPopup();
         PlaySceneManager.Instance.IsGameStartChange(false);
     }
 
@@ -101,7 +101,6 @@ public class LevelManager : SerializedMonoBehaviour
     {
         Instantiate(ExpObj, monsterObject.transform.position, Quaternion.identity);
     }
-
 
     public void OnClickExpUpCheatButton()
     {

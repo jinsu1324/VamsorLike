@@ -52,9 +52,12 @@ public class MonsterManager : SerializedMonoBehaviour
     private void Update()
     {
         if (PlaySceneManager.Instance.IsGameStart == false)
+        {
+            Stop_AllMonster();
             return;
+        }            
 
-        AllFieldMonsterFollowHero();
+        FollowHero_AllMonster();
     }    
 
     /// <summary>
@@ -128,9 +131,18 @@ public class MonsterManager : SerializedMonoBehaviour
     /// <summary>
     /// 필드몬스터들 전부 영웅 따라다니도록 
     /// </summary>
-    private void AllFieldMonsterFollowHero()
+    private void FollowHero_AllMonster()
     {
         foreach (MonsterObject monster in _fieldMonsterList)
             monster.FollowHero();
+    }
+
+    /// <summary>
+    /// 필드몬스터들 전부 멈추도록
+    /// </summary>
+    private void Stop_AllMonster()
+    {
+        foreach (MonsterObject monster in _fieldMonsterList)
+            monster.StopFollow();
     }
 }

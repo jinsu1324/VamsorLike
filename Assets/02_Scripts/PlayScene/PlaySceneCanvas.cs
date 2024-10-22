@@ -8,6 +8,8 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [Title("Popups")]
     [SerializeField]
     public SkillChoicePopup SkillChoicePopupUI { get; set; }    // ½ºÅ³ ¼±ÅÃ ÆË¾÷    
+    [SerializeField]
+    public ResultPopup ResultPopupUI { get; set; }              // °á°ú ÆË¾÷
 
     [Title("Views")]
     [SerializeField]
@@ -26,14 +28,15 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     /// </summary>
     private void Start()
     {
-        ScenePopupsInitialize();
+        PopupsInitialize();
     }
 
     /// <summary>
     /// ¾À ÆË¾÷µé ON OFF ÃÊ±âÈ­
     /// </summary>
-    private void ScenePopupsInitialize()
+    private void PopupsInitialize()
     {
-        SkillChoicePopupUI.OpenSkillPopup();
+        SkillChoicePopupUI.OpenPopup();
+        ResultPopupUI.ClosePopup();
     }
 }

@@ -30,7 +30,7 @@ public class SkillChoicePopup : SerializedMonoBehaviour
     /// <summary>
     /// 팝업 열기
     /// </summary>
-    public void OpenSkillPopup()
+    public void OpenPopup()
     {
         // 게임시작을 false로
         PlaySceneManager.Instance.IsGameStartChange(false);
@@ -88,13 +88,13 @@ public class SkillChoicePopup : SerializedMonoBehaviour
             MonsterSpawner.Instance.StartMonsterSpawn();
         }
 
-        CloseSkillPopup();
+        ClosePopup();
     }
 
     /// <summary>
     /// 팝업 닫기
     /// </summary>
-    public void CloseSkillPopup()
+    public void ClosePopup()
     {
         gameObject.SetActive(false);
     }

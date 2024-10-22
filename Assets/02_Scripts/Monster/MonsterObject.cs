@@ -66,12 +66,16 @@ public class MonsterObject : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
+        _navMeshAgent.isStopped = false;
         _navMeshAgent.SetDestination(PlaySceneManager.Instance.MyHeroObj.transform.position);
+    }
 
-        //transform.position = Vector3.MoveTowards(
-        //    transform.position,
-        //    PlaySceneManager.ThisGameHeroObject.transform.position,
-        //    Speed * Time.fixedDeltaTime);
+    /// <summary>
+    /// 따라다니는것 멈추기
+    /// </summary>
+    public void StopFollow()
+    {
+        _navMeshAgent.isStopped = true;
     }
 
     /// <summary>
