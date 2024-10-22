@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 
 /// <summary>
@@ -148,8 +149,12 @@ public class HeroObject : SerializedMonoBehaviour
     /// <summary>
     /// 죽음
     /// </summary>
-    private void Death()
+    public void Death()
     {
-        Debug.Log("게임오버!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Debug.Log("게임오버");
+        _animator.SetTrigger("Dead");
+
+        PlaySceneManager.Instance.IsGameStartChange(false);
+        PlaySceneManager.Instance.PlaySceneCanvas.ResultPopupUI.OpenPopup();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MonsterFactory : SerializedMonoBehaviour
 {
-    #region ΩÃ±€≈Ê
+    #region ΩÃ±€≈Ê_æ¿¿Ãµøx
     private static MonsterFactory _instance;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class MonsterFactory : SerializedMonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {

@@ -186,10 +186,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 2153271984480548064}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _playTimeText: {fileID: 2153271984480548064}
+    SerializationNodes:
+    - Name: PlayTimeText
+      Entry: 10
+      Data: 0

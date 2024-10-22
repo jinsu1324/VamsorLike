@@ -7,7 +7,7 @@ using UnityEngine;
 // 몬스터 스폰해주는 기계 : 일정 시간마다 랜덤 스폰 / 스폰 딜레이 / 스폰 거리
 public class MonsterSpawner : SerializedMonoBehaviour
 {
-    #region 싱글톤
+    #region 싱글톤_씬이동x
     private static MonsterSpawner _instance;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class MonsterSpawner : SerializedMonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {

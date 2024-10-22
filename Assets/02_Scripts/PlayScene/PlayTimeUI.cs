@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayTimeUI : SerializedMonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI _playTimeText;          // 플레이 타임 UI 텍스트
+    public TextMeshProUGUI PlayTimeText { get; set; }          // 플레이 타임 UI 텍스트
 
 
     /// <summary>
@@ -15,6 +15,6 @@ public class PlayTimeUI : SerializedMonoBehaviour
     /// </summary>
     public void RefreshUIText(float minute, float second)
     {
-        _playTimeText.text = string.Format("{0:00}:{1:00}", minute, second);
+        PlayTimeText.text = string.Format("{0:00}:{1:00}", minute, second);
     }
 }

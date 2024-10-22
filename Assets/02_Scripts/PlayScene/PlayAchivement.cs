@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class PlayAchivement : MonoBehaviour
 {
-    private int _totalKillCount = 0;                // ÅëÇÕ Å³ ¼ö
-    private int _totalGold = 0;                     // È¹µæÇÑ °ñµå
+    public int TotalKillCount { get; set; }                // ÅëÇÕ Å³ ¼ö
+    public int TotalGold { get; set; }                     // È¹µæÇÑ °ñµå
 
     /// <summary>
     /// Start ÇÔ¼ö
     /// </summary>
     private void Start()
     {
+        TotalKillCount = 0;
+        TotalGold = 0;
+
+        Debug.Log($"TotalKillCount : {TotalKillCount}");
+        Debug.Log($"TotalGold : {TotalGold}");
+
         MonsterObject.OnMonsterDeath += AddKillCount;
         GoldObject.OnGetGold += AddGold;
     }
@@ -23,8 +29,8 @@ public class PlayAchivement : MonoBehaviour
     /// </summary>
     public void AddKillCount(MonsterObject monsterObject)
     {
-        _totalKillCount++;
-        Debug.Log($"TotalKillCount : {_totalKillCount}");
+        TotalKillCount++;
+        Debug.Log($"TotalKillCount : {TotalKillCount}");
     }
 
     /// <summary>
@@ -32,8 +38,8 @@ public class PlayAchivement : MonoBehaviour
     /// </summary>
     public void AddGold()
     {
-        _totalGold++;
-        Debug.Log($"TotalGold : {_totalGold}");
+        TotalGold++;
+        Debug.Log($"TotalGold : {TotalGold}");
     }
 
 }

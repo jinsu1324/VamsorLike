@@ -43,6 +43,10 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     [SerializeField]
     public PlaySceneCanvas PlaySceneCanvas { get; set; }            // 플레이씬 캔버스
+    
+    [SerializeField]
+    public PlayAchivement PlayAchivement { get; set; }              // 플레이 통계, 업적
+
     public int StageLevel { get; set; } = 1;                        // 스테이지 레벨 
     public int MaxStageLevel { get; set; } = 4;                     // 최대 스테이지 레벨  
     public float StageLevelUpIntervelTime { get; set; } = 10.0f;    // 스테이지 레벨업 간격
@@ -127,5 +131,11 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         StageLevel++;
         Debug.Log($"스테이지 레벨업! : {StageLevel}");
+    }
+
+
+    public void DeadCheat()
+    {
+        MyHeroObj.Death();
     }
 }

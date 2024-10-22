@@ -192,9 +192,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _killCountText: {fileID: 0}
-  _playTimeText: {fileID: 0}
-  _earnedGoldText: {fileID: 0}
+  _killCountText: {fileID: 8132458343369096403}
+  _earnedGoldText: {fileID: 5966277846467826948}
+  _playTimeText: {fileID: 8041750757174568111}
+  _lobbyButton: {fileID: 5676350962269029236}
 --- !u!1 &3433442525714978618
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 972519227330189879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9036300904180402699}
+        m_TargetAssemblyTypeName: ResultPopup, Assembly-CSharp
+        m_MethodName: OnClickLobbyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5394830393999134957
 GameObject:
   m_ObjectHideFlags: 0
