@@ -8,33 +8,20 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    public Rigidbody2D _rigid;
+    [SerializeField] Transform target;
 
-    // 이동에 사용할 vector2 dir
-    private Vector2 _moveDir;
+    UnityEngine.AI.NavMeshAgent agent;
 
-    public Joystick _joystick;
-
-    private float Speed = 3.0f;
-
-
-    private void FixedUpdate()
+    private void Start()
     {
-        Move();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
-    public void Move()
+    private void Update()
     {
-        //float horizontal = Input.GetAxisRaw("Horizontal");
-        //float vertical = Input.GetAxisRaw("Vertical");
-
-        float horizontal = _joystick.Horizontal;
-        float vertical = _joystick.Vertical;
-
-        _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
-        _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
-
-        _rigid.MovePosition(_moveDir);
+        agent.SetDestination(target.position);
     }
 }
 
