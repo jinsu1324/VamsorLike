@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 /// <summary>
@@ -21,7 +22,8 @@ public class MonsterObject : ObjectPoolObject
     public float Speed { get; set; }                            // 오브젝트 Speed
 
     private SpriteRenderer _spriteRenderer;                     // 스프라이트 렌더러  
-    
+    private NavMeshAgent _navMeshAgent;                         // 네비메쉬 에이전트
+
     /// <summary>
     /// 데이터 셋팅
     /// </summary>
@@ -33,6 +35,10 @@ public class MonsterObject : ObjectPoolObject
         Speed = _baseMonsterData.Speed;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
+        _navMeshAgent.speed = Speed;
 
         MonsterManager.Instance.AddFieldMonsterList(this);
     }
@@ -60,10 +66,12 @@ public class MonsterObject : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            PlaySceneManager.ThisGameHeroObject.transform.position,
-            Speed * Time.fixedDeltaTime);
+        _navMeshAgent.SetDestination(PlaySceneManager.ThisGameHeroObject.transform.position);
+
+        //transform.position = Vector3.MoveTowards(
+        //    transform.position,
+        //    PlaySceneManager.ThisGameHeroObject.transform.position,
+        //    Speed * Time.fixedDeltaTime);
     }
 
     /// <summary>
