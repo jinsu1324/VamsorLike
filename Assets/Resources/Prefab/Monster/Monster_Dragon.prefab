@@ -49,18 +49,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
+    SerializedFormat: 0
+    SerializedBytes: 0b01100000005f0062006100730065004d006f006e007300740065007200440061007400610000000000
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: 64a8dff9472a85841b840dad6d04d22a, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseMonsterData
-      Entry: 10
-      Data: 0
+    SerializationNodes: []
+  _spriteRenderer: {fileID: 0}
+  _navMeshAgent: {fileID: 0}
 --- !u!212 &8918829551441420933
 SpriteRenderer:
   m_ObjectHideFlags: 0

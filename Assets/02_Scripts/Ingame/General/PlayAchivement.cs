@@ -17,9 +17,6 @@ public class PlayAchivement : MonoBehaviour
         TotalKillCount = 0;
         TotalGold = 0;
 
-        Debug.Log($"TotalKillCount : {TotalKillCount}");
-        Debug.Log($"TotalGold : {TotalGold}");
-
         MonsterObject.OnMonsterDeath += AddKillCount;
         GoldObject.OnGetGold += AddGold;
     }
@@ -30,7 +27,6 @@ public class PlayAchivement : MonoBehaviour
     public void AddKillCount(MonsterObject monsterObject)
     {
         TotalKillCount++;
-        Debug.Log($"TotalKillCount : {TotalKillCount}");
     }
 
     /// <summary>
@@ -39,7 +35,6 @@ public class PlayAchivement : MonoBehaviour
     public void AddGold()
     {
         TotalGold++;
-        Debug.Log($"TotalGold : {TotalGold}");
     }
 
     /// <summary>

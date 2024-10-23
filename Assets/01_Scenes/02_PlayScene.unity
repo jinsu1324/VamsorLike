@@ -4668,6 +4668,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoldInvenUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4604482834547313191, guid: a13a04f56feef8d4aa03edd165b153e0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100.3999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604482834547313191, guid: a13a04f56feef8d4aa03edd165b153e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -128.8999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
