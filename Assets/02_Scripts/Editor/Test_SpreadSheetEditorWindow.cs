@@ -28,22 +28,22 @@ public class Test_SpreadSheetEditorWindow : OdinEditorWindow
     {
         string url = $"https://sheets.googleapis.com/v4/spreadsheets/{sheetId}/values/{range}?key={apiKey}";
 
-        using (HttpClient client = new HttpClient())
+        using (HttpClient client = new HttpClient()) // HttpClient 객체 생성 (이 객체를 사용해 인터넷을 통해 Google Sheets API에 요청)
         {
-            try
+            try // 서버로 데이터를 요청하는 코드
             {
-                HttpResponseMessage response = await client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
+                HttpResponseMessage response = await client.GetAsync(url); // GET 요청 보내기 (비동기적이며, 서버가 응답할 때까지 기다림)
+                if (response.IsSuccessStatusCode) // 요청이 성공했는지 확인
                 {
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    Debug.Log(responseBody); // 에디터 콘솔에 데이터를 출력
+                    string responseBody = await response.Content.ReadAsStringAsync(); // 서버로부터 받은 데이터를 문자열로 반환
+                    Debug.Log(responseBody);
                 }
                 else
                 {
                     Debug.LogError($"Failed to fetch data. Error Status Code: {response.StatusCode}");
                 }
             }
-            catch (HttpRequestException e)
+            catch (HttpRequestException e) // HTTP 요청 중 오류가 발생한 경우 실행
             {
                 Debug.LogError($"Failed to fetch data. Request Error : {e.Message}");
             }

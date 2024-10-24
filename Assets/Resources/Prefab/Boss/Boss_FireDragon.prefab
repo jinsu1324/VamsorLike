@@ -61,7 +61,7 @@ MonoBehaviour:
     - Name: _baseBossData
       Entry: 10
       Data: 0
-  groundEffectPrefab: {fileID: 266230440304802606, guid: 13f9090e747db13469dc771eb08743cb, type: 3}
+  _groundSkillPrefab: {fileID: 7161424573565925507, guid: 13f9090e747db13469dc771eb08743cb, type: 3}
 --- !u!212 &2270371982025365338
 SpriteRenderer:
   m_ObjectHideFlags: 0
