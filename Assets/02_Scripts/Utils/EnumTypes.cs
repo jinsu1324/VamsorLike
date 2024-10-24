@@ -14,7 +14,8 @@ public enum SaveFolderName
 {
     Monster,
     Hero,
-    Skill
+    Skill,
+    Boss
 }
 
 // 다양한 enum 타입들 흩어지지 않도록 한곳에 모아놓는 곳

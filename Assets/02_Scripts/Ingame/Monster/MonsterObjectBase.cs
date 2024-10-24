@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,14 @@ using UnityEngine.AI;
 
 public abstract class MonsterObjectBase : ObjectPoolObject
 {
-    protected float Hp { get; set; }                               // 오브젝트 HP
-    protected float Atk { get; set; }                              // 오브젝트 Atk
-    protected float Speed { get; set; }                            // 오브젝트 Speed
+    public static event Action<MonsterObjectBase> OnMonsterDeath;   // 몬스터 죽었을때 처리될 delegate
 
-    protected SpriteRenderer _spriteRenderer;                      // 스프라이트 렌더러  
-    protected NavMeshAgent _navMeshAgent;                          // 네비메쉬 에이전트
+    protected float _hp;                              // 오브젝트 HP
+    protected float _atk;                             // 오브젝트 Atk
+    protected float _speed;                           // 오브젝트 Speed
+
+    protected SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러  
+    protected NavMeshAgent _navMeshAgent;             // 네비메쉬 에이전트
 
 
     /// <summary>
@@ -21,7 +24,10 @@ public abstract class MonsterObjectBase : ObjectPoolObject
     /// <summary>
     /// 죽음
     /// </summary>
-    public abstract void Death();    
+    public virtual void Death()
+    {
+        OnMonsterDeath?.Invoke(this);
+    }    
 
     /// <summary>
     /// 공격 (+ 영웅 충돌 감지)
@@ -30,7 +36,7 @@ public abstract class MonsterObjectBase : ObjectPoolObject
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
         {
-            collision.gameObject.GetComponent<HeroObject>().HPMinus(Atk);
+            collision.gameObject.GetComponent<HeroObject>().HPMinus(_atk);
         }
     }
 
@@ -39,7 +45,7 @@ public abstract class MonsterObjectBase : ObjectPoolObject
     /// </summary>
     public void HPMinus(float atk)
     {
-        Hp -= atk;
+        _hp -= atk;
 
         // 데미지 텍스트 UI 생성하고 띄워주기
         TurnOn_DamageTextUI_fromPool(atk);
@@ -48,7 +54,7 @@ public abstract class MonsterObjectBase : ObjectPoolObject
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
-        if (Hp < 0)
+        if (_hp < 0)
             Death();
     }
 

@@ -131,6 +131,11 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         StageLevel++;
         Debug.Log($"스테이지 레벨업! : {StageLevel}");
+
+        if (StageLevel == 2)
+        {
+            MonsterSpawner.Instance.BossSpawn();
+        }        
     }
 
 

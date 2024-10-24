@@ -17,14 +17,14 @@ public class PlayAchivement : MonoBehaviour
         TotalKillCount = 0;
         TotalGold = 0;
 
-        MonsterObject.OnMonsterDeath += AddKillCount;
+        MonsterObjectBase.OnMonsterDeath += AddKillCount;
         GoldObject.OnGetGold += AddGold;
     }
 
     /// <summary>
     /// 통합 킬수 증가
     /// </summary>
-    public void AddKillCount(MonsterObject monsterObject)
+    public void AddKillCount(MonsterObjectBase monster)
     {
         TotalKillCount++;
     }
@@ -42,7 +42,7 @@ public class PlayAchivement : MonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        MonsterObject.OnMonsterDeath -= AddKillCount;
+        MonsterObjectBase.OnMonsterDeath -= AddKillCount;
         GoldObject.OnGetGold -= AddGold;
     }
 

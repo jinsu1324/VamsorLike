@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3474304727003764676}
-  - component: {fileID: 1604801159522969629}
+  - component: {fileID: 4912041143223762295}
   - component: {fileID: 7404919397918585516}
   - component: {fileID: 8445952988725121507}
   - component: {fileID: 7452402949985050037}
@@ -36,7 +36,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1604801159522969629
+--- !u!114 &4912041143223762295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,21 +45,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4818382196405052621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98bceacb535a30840b83c1170b5ac482, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8288a8fc0061140adbea37694ba5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 0b01100000005f0062006100730065004d006f006e007300740065007200440061007400610000000000
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: 5314aa37166af0a48b0ac75d74153f7d, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  _spriteRenderer: {fileID: 0}
-  _navMeshAgent: {fileID: 0}
+    SerializationNodes:
+    - Name: _baseMonsterData
+      Entry: 10
+      Data: 0
 --- !u!212 &7404919397918585516
 SpriteRenderer:
   m_ObjectHideFlags: 0

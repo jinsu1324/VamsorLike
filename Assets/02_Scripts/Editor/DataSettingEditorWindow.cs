@@ -15,6 +15,10 @@ public class DataSettingEditorWindow : OdinEditorWindow
     [SerializeField]
     private TextAsset _monsterDataTextAsset;
 
+    // 보스 데이터
+    [SerializeField]
+    private TextAsset _bossDataTextAsset;
+
     // 히어로 데이터
     [SerializeField]
     private TextAsset _heroDataTextAsset;
@@ -109,6 +113,28 @@ public class DataSettingEditorWindow : OdinEditorWindow
         // 딕셔너리에 파일들 넣어주기
         Data_to_Dict(dataManager.HeroDataDict, SaveFolderName.Hero);
         Object_to_Dict(objectManager.HeroObjectDict, SaveFolderName.Hero);
+    }
+
+    [Button("보스 딕셔너리들 셋팅!", ButtonSizes.Large)]
+    public void BossSettingButton()
+    {
+        if (_bossDataTextAsset == null)
+            Debug.Log("몬스터 TextAsset이 null입니다.");
+
+        // 보스CSV를 ScriptableObject로 저장하고 CSV데이터값들도 넣어줌
+        LoadCSV.CSV_to_Data<BossData, BossID>(_bossDataTextAsset, SaveFolderName.Boss);
+
+        // 매니저들 가져와서
+        DataManager dataManager = FindObjectOfType<DataManager>();
+        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
+
+        // 딕셔너리 클리어
+        dataManager.BossDataDict.Clear();
+        objectManager.BossObjectDict.Clear();
+
+        // 딕셔너리에 파일들 넣어주기
+        Data_to_Dict(dataManager.BossDataDict, SaveFolderName.Boss);
+        Object_to_Dict(objectManager.BossObjectDict, SaveFolderName.Boss);
     }
 
 

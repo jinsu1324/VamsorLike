@@ -20,7 +20,7 @@ public class GoldManager : MonoBehaviour
         _goldInvenUI.RefreshGoldText(_earnedGold);
 
         GoldObject.OnGetGold += GoldUp;
-        MonsterObject.OnMonsterDeath += InstantiateGoldObj;
+        MonsterObjectBase.OnMonsterDeath += InstantiateGoldObj;
     }
 
     /// <summary>
@@ -35,12 +35,12 @@ public class GoldManager : MonoBehaviour
     /// <summary>
     /// ¹Ù´Ú¿¡ °ñµå »ý¼º
     /// </summary>
-    private void InstantiateGoldObj(MonsterObject monsterObject)
+    private void InstantiateGoldObj(MonsterObjectBase monster)
     {
         int randomGold = Random.Range(1, 4);
 
         if (randomGold == 1)
-            Instantiate(_goldObject, monsterObject.transform.position, Quaternion.identity);
+            Instantiate(_goldObject, monster.transform.position, Quaternion.identity);
         else 
             return;
     }
@@ -52,6 +52,6 @@ public class GoldManager : MonoBehaviour
     public void OnDisable()
     {
         GoldObject.OnGetGold -= GoldUp;
-        MonsterObject.OnMonsterDeath -= InstantiateGoldObj;
+        MonsterObjectBase.OnMonsterDeath -= InstantiateGoldObj;
     }
 }

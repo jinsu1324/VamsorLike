@@ -36,14 +36,14 @@ public class MonsterManager : SerializedMonoBehaviour
     #endregion   
         
     // 필드에 스폰되어있는 몬스터 리스트
-    private List<MonsterObject> _fieldMonsterList = new List<MonsterObject>();
+    private List<MonsterObjectBase> _fieldMonsterList = new List<MonsterObjectBase>();
 
     /// <summary>
     /// Start
     /// </summary>
     private void Start()
     {
-        MonsterObject.OnMonsterDeath += RemoveFieldMonsterList;
+        MonsterObjectBase.OnMonsterDeath += RemoveFieldMonsterList;
     }
 
     /// <summary>
@@ -63,25 +63,25 @@ public class MonsterManager : SerializedMonoBehaviour
     /// <summary>
     /// 필드몬스터 리스트에 추가
     /// </summary>
-    public void AddFieldMonsterList(MonsterObject monsterObject)
+    public void AddFieldMonsterList(MonsterObjectBase monster)
     {
-        _fieldMonsterList.Add(monsterObject);
+        _fieldMonsterList.Add(monster);
     }
 
     /// <summary>
     /// 필드몬스터 리스트에서 삭제
     /// </summary>
-    public void RemoveFieldMonsterList(MonsterObject monsterObject)
+    public void RemoveFieldMonsterList(MonsterObjectBase monster)
     {
-        _fieldMonsterList.Remove(monsterObject);
+        _fieldMonsterList.Remove(monster);
     }
 
     /// <summary>
     /// 일정 거리 내 몬스터의 리스트를 받아옴
     /// </summary>
-    public List<MonsterObject> GetMonstersByDistance(Vector3 pos, float distance)
+    public List<MonsterObjectBase> GetMonstersByDistance(Vector3 pos, float distance)
     {
-        List<MonsterObject> closeMonsterList = new List<MonsterObject>();
+        List<MonsterObjectBase> closeMonsterList = new List<MonsterObjectBase>();
 
         for (int i = 0; i < _fieldMonsterList.Count; i++)
         {
@@ -97,10 +97,10 @@ public class MonsterManager : SerializedMonoBehaviour
     /// <summary>
     /// 일정 거리 내 몬스터 리스트 중에서, 플레이어에게 가장 가까운 몬스터 1마리를 반환
     /// </summary>
-    public MonsterObject GetClosestMonstersByDistance(Vector3 pos, float distance)
+    public MonsterObjectBase GetClosestMonstersByDistance(Vector3 pos, float distance)
     {
         // 사거리 내 몬스터 모두 리스트에 저장
-        List<MonsterObject> closeMonsterList = new List<MonsterObject>();
+        List<MonsterObjectBase> closeMonsterList = new List<MonsterObjectBase>();
 
         for (int i = 0; i < _fieldMonsterList.Count; i++)
         {
@@ -111,10 +111,10 @@ public class MonsterManager : SerializedMonoBehaviour
         }
 
         // 그 리스트에서 가장 가까운 몬스터 반환
-        MonsterObject closestMonster = null;
+        MonsterObjectBase closestMonster = null;
         float maxDistance = distance;
 
-        foreach (MonsterObject monster in closeMonsterList)
+        foreach (MonsterObjectBase monster in closeMonsterList)
         {
             float targetDistance = Vector3.Distance(pos, monster.transform.position);
 
@@ -133,7 +133,7 @@ public class MonsterManager : SerializedMonoBehaviour
     /// </summary>
     private void FollowHero_AllMonster()
     {
-        foreach (MonsterObject monster in _fieldMonsterList)
+        foreach (MonsterObjectBase monster in _fieldMonsterList)
             monster.FollowHero();
     }
 
@@ -142,7 +142,7 @@ public class MonsterManager : SerializedMonoBehaviour
     /// </summary>
     private void Stop_AllMonster()
     {
-        foreach (MonsterObject monster in _fieldMonsterList)
+        foreach (MonsterObjectBase monster in _fieldMonsterList)
             monster.StopFollow();
     }
 
@@ -151,6 +151,6 @@ public class MonsterManager : SerializedMonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        MonsterObject.OnMonsterDeath -= RemoveFieldMonsterList;
+        MonsterObjectBase.OnMonsterDeath -= RemoveFieldMonsterList;
     }
 }

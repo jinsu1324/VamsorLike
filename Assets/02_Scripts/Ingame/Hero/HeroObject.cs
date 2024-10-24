@@ -136,6 +136,8 @@ public class HeroObject : SerializedMonoBehaviour
     {
         Hp -= atk;
 
+        Debug.Log("남은 HP : " + Hp);
+
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));

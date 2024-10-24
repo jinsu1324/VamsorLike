@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class MonsterSpawner : SerializedMonoBehaviour
     private void Start()
     {
         // 몬스터 죽었을 때
-        MonsterObject.OnMonsterDeath += MonsterBackTrans;
+        MonsterObjectBase.OnMonsterDeath += MonsterBackTrans;
     }
 
     /// <summary>
@@ -75,10 +76,10 @@ public class MonsterSpawner : SerializedMonoBehaviour
             float spawnDelay_by_StageLevel = GetSpawnDelay_by_StageLevel(PlaySceneManager.Instance.StageLevel);
 
             // 팩도리에서 셋팅 + 풀에서 꺼내오기
-            MonsterObject settingCompleteRandomMonster = MonsterFactory.Instance.SettingMonster(monsterID_by_StageLevel);
+            MonsterObject monster = MonsterFactory.Instance.SettingMonster(monsterID_by_StageLevel);
 
             // 랜덤 원형 포지션으로 위치 설정
-            settingCompleteRandomMonster.transform.position = randomCirclePos;
+            monster.transform.position = randomCirclePos;
 
             // 스폰 딜레이만큼 대기
             yield return new WaitForSecondsRealtime(spawnDelay_by_StageLevel);
@@ -86,11 +87,29 @@ public class MonsterSpawner : SerializedMonoBehaviour
     }
 
     /// <summary>
+    /// 보스 스폰
+    /// </summary>
+    public void BossSpawn()
+    {
+        if (PlaySceneManager.Instance.StageLevel == 2)
+        {
+            // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
+            Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
+
+            // 팩도리에서 셋팅 + 풀에서 꺼내오기
+            BossObject boss = MonsterFactory.Instance.SettingMonster(BossID.FireDragon);
+
+            // 랜덤 원형 포지션으로 위치 설정
+            boss.transform.position = randomCirclePos;
+        }
+    }
+
+    /// <summary>
     /// 몬스터 다시 풀으로 돌려보내기
     /// </summary>
-    public void MonsterBackTrans(MonsterObject monsterObject)
+    public void MonsterBackTrans(MonsterObjectBase monster)
     {
-        monsterObject.GetComponent<ObjectPoolObject>().BackTrans();
+        monster.GetComponent<ObjectPoolObject>().BackTrans();
     }    
 
     /// <summary>
@@ -157,6 +176,6 @@ public class MonsterSpawner : SerializedMonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        MonsterObject.OnMonsterDeath -= MonsterBackTrans;
+        MonsterObjectBase.OnMonsterDeath -= MonsterBackTrans;
     }
 }

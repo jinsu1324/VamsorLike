@@ -43,6 +43,10 @@ public class DataManager : SerializedMonoBehaviour
     [SerializeField]
     public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
 
+    // ∫∏Ω∫ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
+    [SerializeField]
+    public Dictionary<BossID, BossData> BossDataDict { get; set; } = new Dictionary<BossID, BossData>();
+
     // Ω∫≈≥ µ•¿Ã≈Õ µÒº≈≥ ∏Æ
     [SerializeField]
     public Dictionary<SkillID, SkillLevelDataSO> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillLevelDataSO>();

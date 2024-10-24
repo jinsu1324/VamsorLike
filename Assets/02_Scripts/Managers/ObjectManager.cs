@@ -42,4 +42,8 @@ public class ObjectManager : SerializedMonoBehaviour
     // 몬스터 오브젝트들 딕셔너리
     [SerializeField]
     public Dictionary<MonsterID, MonsterObject> MonsterObjectDict { get; set; } = new Dictionary<MonsterID, MonsterObject>();
+
+    // 보스 오브젝트들 딕셔너리
+    [SerializeField]
+    public Dictionary<BossID, BossObject> BossObjectDict { get; set; } = new Dictionary<BossID, BossObject>();
 }

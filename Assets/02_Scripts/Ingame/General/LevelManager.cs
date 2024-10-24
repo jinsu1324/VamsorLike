@@ -68,7 +68,7 @@ public class LevelManager : SerializedMonoBehaviour
     {
         EXPBar.Update_EXPBarInfos();
 
-        MonsterObject.OnMonsterDeath += InstantiateEXPObj;
+        MonsterObjectBase.OnMonsterDeath += InstantiateEXPObj;
         EXPObject.OnGetExp += EXPUp;
     }
 
@@ -104,9 +104,9 @@ public class LevelManager : SerializedMonoBehaviour
     /// <summary>
     /// 몬스터 죽으면 바닥에 EXP 오브젝트 생성
     /// </summary>
-    private void InstantiateEXPObj(MonsterObject monsterObject)
+    private void InstantiateEXPObj(MonsterObjectBase monster)
     {
-        Instantiate(ExpObj, monsterObject.transform.position, Quaternion.identity);
+        Instantiate(ExpObj, monster.transform.position, Quaternion.identity);
     }   
 
     /// <summary>
@@ -114,7 +114,7 @@ public class LevelManager : SerializedMonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        MonsterObject.OnMonsterDeath -= InstantiateEXPObj;
+        MonsterObjectBase.OnMonsterDeath -= InstantiateEXPObj;
         EXPObject.OnGetExp -= EXPUp;
     }
 

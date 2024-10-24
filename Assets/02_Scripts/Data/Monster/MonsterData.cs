@@ -7,7 +7,7 @@ public enum MonsterID
     Golem,
     Skeleton,
     Witch,
-    Dragon
+    Dragon,
 }
 
 // 몬스터 데이터
