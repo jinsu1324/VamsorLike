@@ -77,8 +77,8 @@ public class Skill_Sniper : Skill_Base
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
         // 사거리 내 가장 가까운 몬스터 찾기
-        MonsterObjectBase closestTargetMonster =
-            MonsterManager.Instance.GetClosestMonstersByDistance(skillAttackArgs.StartSkillPos, _range);
+        Enemy closestTargetMonster =
+            EnemyManager.Instance.Get_ClosestEnemy_In_Distance(skillAttackArgs.StartSkillPos, _range);
 
         // 프로젝타일 생성
         ProjectileSniper _spawnedProjectile =

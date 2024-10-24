@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3474304727003764676}
-  - component: {fileID: 4912041143223762295}
+  - component: {fileID: 3587793208570856011}
   - component: {fileID: 7404919397918585516}
   - component: {fileID: 8445952988725121507}
   - component: {fileID: 7452402949985050037}
   - component: {fileID: 728994601631824}
   m_Layer: 8
   m_Name: Monster_Golem
-  m_TagString: Monster
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4912041143223762295
+--- !u!114 &3587793208570856011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4818382196405052621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8288a8fc0061140adbea37694ba5db, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a2ae8078acc3f479ae4364e43737c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:

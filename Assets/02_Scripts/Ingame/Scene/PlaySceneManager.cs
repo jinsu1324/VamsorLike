@@ -38,7 +38,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     }
     #endregion
 
-    public HeroObject MyHeroObj { get; set; }                       // 내가 이번 게임에 선택한 영웅
+    public HeroObj MyHeroObj { get; set; }                       // 내가 이번 게임에 선택한 영웅
     public bool IsGameStart { get; set; }                           // 게임 시작 되었는지
 
     [SerializeField]
@@ -134,7 +134,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         if (StageLevel == 2)
         {
-            MonsterSpawner.Instance.BossSpawn();
+            EnemySpawner.Instance.BossSpawn();
         }        
     }
 

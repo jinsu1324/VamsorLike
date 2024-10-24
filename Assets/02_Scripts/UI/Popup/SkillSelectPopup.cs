@@ -85,7 +85,7 @@ public class SkillSelectPopup : SerializedMonoBehaviour
             PlaySceneManager.Instance.IsGameStartChange(true);
 
             // 몬스터 스폰 시작
-            MonsterSpawner.Instance.StartMonsterSpawn();
+            EnemySpawner.Instance.StartMonsterSpawn();
         }
 
         ClosePopup();

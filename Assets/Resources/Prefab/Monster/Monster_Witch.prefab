@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8044806612036673611}
-  - component: {fileID: 858546219056259422}
+  - component: {fileID: 1289704635950418708}
   - component: {fileID: 9156713683305921239}
   - component: {fileID: 6638139934168087472}
   - component: {fileID: 6059670099297528020}
   - component: {fileID: 3570025605183771837}
   m_Layer: 8
   m_Name: Monster_Witch
-  m_TagString: Monster
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &858546219056259422
+--- !u!114 &1289704635950418708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 432054109156213965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8288a8fc0061140adbea37694ba5db, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a2ae8078acc3f479ae4364e43737c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:

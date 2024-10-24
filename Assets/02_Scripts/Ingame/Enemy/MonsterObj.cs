@@ -10,7 +10,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 실제 몬스터 게임 오브젝트
 /// </summary>
-public class MonsterObject : MonsterObjectBase
+public class MonsterObj : Enemy
 {
     [SerializeField]
     private readonly MonsterData _baseMonsterData;              // 몬스터 데이터 원본
@@ -30,7 +30,7 @@ public class MonsterObject : MonsterObjectBase
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
 
-        MonsterManager.Instance.AddFieldMonsterList(this);
+        EnemyManager.Instance.AddFieldEnemyList(this);
     }
 
     /// <summary>

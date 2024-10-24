@@ -32,7 +32,7 @@ public class GroundEffect : MonoBehaviour
         if (playerCollider != null)
         {
             Debug.Log($"입힌 데미지 : {damageAmount}");
-            playerCollider.GetComponent<HeroObject>().HPMinus(damageAmount);
+            playerCollider.GetComponent<HeroObj>().HPMinus(damageAmount);
         }
     }
 }

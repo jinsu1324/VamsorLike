@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileSniper : ProjectileBase
 {
-    private MonsterObjectBase _targetMonster;
+    private Enemy _targetMonster;
 
     private void FixedUpdate()
     {
@@ -18,7 +18,7 @@ public class ProjectileSniper : ProjectileBase
     }
 
     // 프로젝타일 필요 정보들 셋팅
-    public void SettingProjectileInfo(MonsterObjectBase targetMonster)
+    public void SettingProjectileInfo(Enemy targetMonster)
     {
         _targetMonster = targetMonster;
     }

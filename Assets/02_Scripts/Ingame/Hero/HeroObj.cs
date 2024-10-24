@@ -9,7 +9,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 /// <summary>
 /// 영웅 게임오브젝트 : 영웅관련 데이터 / 본인 데이터 이닛 / 공격 / 이동 / HP감소 / 죽음
 /// </summary>
-public class HeroObject : SerializedMonoBehaviour
+public class HeroObj : SerializedMonoBehaviour
 {
     [SerializeField]
     private readonly HeroData _baseHeroData;        // 영웅 오브젝트에 들어갈 데이터

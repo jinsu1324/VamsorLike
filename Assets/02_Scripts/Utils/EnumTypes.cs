@@ -5,7 +5,7 @@ using UnityEngine;
 // 태그
 public enum Tag
 {
-    Monster,
+    Enemy,
     Hero
 }
 
@@ -18,8 +18,9 @@ public enum SaveFolderName
     Boss
 }
 
-// 다양한 enum 타입들 흩어지지 않도록 한곳에 모아놓는 곳
+/// <summary>
+/// 다양한 enum 타입들 흩어지지 않도록 한곳에 모아놓는 곳
+/// </summary>
 public class EnumTypes
-{
-    
+{    
 }

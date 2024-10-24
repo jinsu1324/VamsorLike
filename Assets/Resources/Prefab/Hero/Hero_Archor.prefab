@@ -47,7 +47,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2161387283230732105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c6a6e98139c4548bc1372295177a6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 44d39db0245adcf47a6e1746a2229047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -236,7 +236,7 @@ MonoBehaviour:
   - {x: 0.06871505, y: 0.008317232, z: 0}
   m_ShapePathHash: 85298713
   m_Mesh: {fileID: 0}
-  m_InstanceId: 196248
+  m_InstanceId: 221096
   m_LocalBounds:
     m_Center: {x: -0.01111538, y: 0.17535165, z: 0}
     m_Extent: {x: 0.07983044, y: 0.1671214, z: 0}

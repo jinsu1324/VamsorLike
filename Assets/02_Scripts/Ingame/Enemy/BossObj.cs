@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class BossObject : MonsterObjectBase
+public class BossObj : Enemy
 {
     [SerializeField]
     private readonly BossData _baseBossData;    // 보스 데이터 원본
@@ -49,7 +49,7 @@ public class BossObject : MonsterObjectBase
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
 
-        MonsterManager.Instance.AddFieldMonsterList(this);
+        EnemyManager.Instance.AddFieldEnemyList(this);
     }
 
     private void Start()
@@ -107,11 +107,13 @@ public class BossObject : MonsterObjectBase
         groundEffect.GetComponent<GroundEffect>().ActivateDamage();
     }
 
-    
-
-  
+    /// <summary>
+    /// 죽음
+    /// </summary>
     public override void Death()
     {
-        throw new NotImplementedException();
+        base.Death();
+
+        Destroy(this.gameObject);
     }
 }

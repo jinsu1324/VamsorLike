@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class MonsterObjectBase : ObjectPoolObject
+public abstract class Enemy : ObjectPoolObject
 {
-    public static event Action<MonsterObjectBase> OnMonsterDeath;   // 몬스터 죽었을때 처리될 delegate
+    public static event Action<Enemy> OnEnemyDead;   // 적 죽었을때 처리될 delegate
 
     protected float _hp;                              // 오브젝트 HP
     protected float _atk;                             // 오브젝트 Atk
@@ -26,17 +26,17 @@ public abstract class MonsterObjectBase : ObjectPoolObject
     /// </summary>
     public virtual void Death()
     {
-        OnMonsterDeath?.Invoke(this);
+        OnEnemyDead?.Invoke(this);
     }    
 
     /// <summary>
-    /// 공격 (+ 영웅 충돌 감지)
+    /// 공격 (영웅 충돌 감지로 인해)
     /// </summary>
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == Tag.Hero.ToString())
         {
-            collision.gameObject.GetComponent<HeroObject>().HPMinus(_atk);
+            collision.gameObject.GetComponent<HeroObj>().HPMinus(_atk);
         }
     }
 
@@ -54,6 +54,7 @@ public abstract class MonsterObjectBase : ObjectPoolObject
         BlinkSprite blinkSprite = new BlinkSprite();
         StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
+        // HP 0 이하면 죽음
         if (_hp < 0)
             Death();
     }
@@ -88,7 +89,7 @@ public abstract class MonsterObjectBase : ObjectPoolObject
     /// <summary>
     /// 따라다니는것 멈추기
     /// </summary>
-    public void StopFollow()
+    public void Stop()
     {
         _navMeshAgent.isStopped = true;
     }

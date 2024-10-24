@@ -18,9 +18,9 @@ public class ProjectileSlashAttack : ProjectileBase
     /// </summary>
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Monster.ToString())
+        if (collision.gameObject.tag == Tag.Enemy.ToString())
         {
-            collision.GetComponent<MonsterObjectBase>().HPMinus(_atk);
+            collision.GetComponent<Enemy>().HPMinus(_atk);
         }
     }
 

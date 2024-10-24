@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     /// <summary>
     /// 따라다닐 대상 설정
     /// </summary>
-    public void SetFollowTarget(HeroObject heroObject)
+    public void SetFollowTarget(HeroObj heroObject)
     {
         _virtualCamera.Follow = heroObject.transform;
     }

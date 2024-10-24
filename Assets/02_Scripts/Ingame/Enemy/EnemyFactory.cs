@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterFactory : SerializedMonoBehaviour
+public class EnemyFactory : SerializedMonoBehaviour
 {
     #region 싱글톤_씬이동x
-    private static MonsterFactory _instance;
+    private static EnemyFactory _instance;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class MonsterFactory : SerializedMonoBehaviour
         }
     }
 
-    public static MonsterFactory Instance
+    public static EnemyFactory Instance
     {
         get
         {
@@ -39,20 +39,21 @@ public class MonsterFactory : SerializedMonoBehaviour
     [SerializeField]
     private Dictionary<MonsterID, ObjectPool> _monsterObjectPoolDict = new Dictionary<MonsterID, ObjectPool>();
 
-    // 보스 오브젝트 풀
+    // 보스 오브젝트 풀 딕셔너리
     [SerializeField]
     private Dictionary<BossID, ObjectPool> _bossObjectPoolDict = new Dictionary<BossID, ObjectPool>();
+
 
     /// <summary>
     /// 몬스터 데이터 셋팅해서 리턴
     /// </summary>
-    public MonsterObject SettingMonster(MonsterID monsterID)
+    public MonsterObj SettingMonster(MonsterID monsterID)
     {
         // 오브젝트 풀에서 몬스터 가져옴
         GameObject go = _monsterObjectPoolDict[monsterID].GetObj();
 
         // 몬스터 데이터 초기화 (셋팅)
-        MonsterObject monster = go.GetComponent<MonsterObject>();
+        MonsterObj monster = go.GetComponent<MonsterObj>();
         monster.DataSetting();
 
         // 그 몬스터를 반환
@@ -62,13 +63,13 @@ public class MonsterFactory : SerializedMonoBehaviour
     /// <summary>
     /// 보스 데이터 셋팅해서 리턴
     /// </summary>
-    public BossObject SettingMonster(BossID bossID)
+    public BossObj SettingMonster(BossID bossID)
     {
         // 오브젝트 풀에서 보스 가져옴
         GameObject go = _bossObjectPoolDict[bossID].GetObj();
 
         // 보스 데이터 초기화 (셋팅)
-        BossObject boss = go.GetComponent<BossObject>();
+        BossObj boss = go.GetComponent<BossObj>();
         boss.DataSetting();
 
         // 그 보스를 반환
