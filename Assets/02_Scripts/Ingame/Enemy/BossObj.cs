@@ -7,24 +7,26 @@ using Random = UnityEngine.Random;
 
 public class BossObj : Enemy
 {
-    [SerializeField]
-    private readonly BossData _baseBossData;                // 보스 데이터 원본
+    public static event Action<float, float> OnBossHPChanged;   // 보스 HP 변경되었을 때 이벤트
 
     [SerializeField]
-    private GroundSkill _groundSkillPrefab;                 // 원형 범위 스킬 프리팹
+    private readonly BossData _baseBossData;                    // 보스 데이터 원본
 
-    private float _appearTime;                              // 보스 등장 시간
-    private float _skillRadius;                             // 스킬의 반지름
-    private float _skillDuration;                           // 스킬이 차오르는 시간
-    private float _skillDamage;                             // 스킬 데미지
-    private float _skillRangeMin;                           // 스킬이 생성되는 최소 범위
-    private float _skillRangeMax;                           // 스킬이 생성되는 최대 범위
-    private float _skillCount;                              // 스킬 생성 개수
-    private float _skillCoolTime;                           // 스킬 쿨타임
+    [SerializeField]
+    private GroundSkill _groundSkillPrefab;                     // 원형 범위 스킬 프리팹
+
+    private float _appearTime;                                  // 보스 등장 시간
+    private float _skillRadius;                                 // 스킬의 반지름
+    private float _skillDuration;                               // 스킬이 차오르는 시간
+    private float _skillDamage;                                 // 스킬 데미지
+    private float _skillRangeMin;                               // 스킬이 생성되는 최소 범위
+    private float _skillRangeMax;                               // 스킬이 생성되는 최대 범위
+    private float _skillCount;                                  // 스킬 생성 개수
+    private float _skillCoolTime;                               // 스킬 쿨타임
 
     private List<GroundSkill> _activeGroundSkillsList = new List<GroundSkill>();  // 활성화된 원형범위 스킬 리스트
 
-    private float _time;                                    // 스킬 쿨타임 계산할 시간 변수
+    private float _time;                                        // 스킬 쿨타임 계산할 시간 변수
 
     
     /// <summary>
@@ -64,6 +66,19 @@ public class BossObj : Enemy
         _navMeshAgent.speed = _speed;
 
         EnemyManager.Instance.AddFieldEnemyList(this);
+    }
+
+    /// <summary>
+    /// HP 감소
+    /// </summary>
+    public override void HPMinus(float atk)
+    {
+        base.HPMinus(atk);
+
+        OnBossHPChanged(_hp, _baseBossData.MaxHp);
+
+        if (_hp <= 0)
+            Death();
     }
 
     /// <summary>

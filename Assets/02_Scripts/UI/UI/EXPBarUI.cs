@@ -8,13 +8,11 @@ using UnityEngine.UI;
 
 public class EXPBarUI : SerializedMonoBehaviour
 {
-    // 레벨 텍스트
     [SerializeField]
-    private TextMeshProUGUI _levelText;
-
-    // 경험치 상태 텍스트
+    private TextMeshProUGUI _levelText;             // 레벨 텍스트
+    
     [SerializeField]
-    private TextMeshProUGUI _expStateText;
+    private TextMeshProUGUI _expStateText;          // 경험치 상태 텍스트
 
     /// <summary>
     /// Start 함수

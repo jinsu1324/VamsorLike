@@ -43,7 +43,7 @@ public abstract class Enemy : ObjectPoolObject
     /// <summary>
     /// HP 감소
     /// </summary>
-    public void HPMinus(float atk)
+    public virtual void HPMinus(float atk)
     {
         _hp -= atk;
 
@@ -52,11 +52,7 @@ public abstract class Enemy : ObjectPoolObject
 
         // 스프라이트 깜빡이기
         BlinkSprite blinkSprite = new BlinkSprite();
-        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
-
-        // HP 0 이하면 죽음
-        if (_hp < 0)
-            Death();
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));        
     }
 
     /// <summary>

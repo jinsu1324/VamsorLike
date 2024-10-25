@@ -34,6 +34,17 @@ public class MonsterObj : Enemy
     }
 
     /// <summary>
+    /// HP °¨¼Ò
+    /// </summary>
+    public override void HPMinus(float atk)
+    {
+        base.HPMinus(atk);
+
+        if (_hp <= 0)
+            Death();
+    }
+
+    /// <summary>
     /// Á×À½
     /// </summary>
     public override void Death()

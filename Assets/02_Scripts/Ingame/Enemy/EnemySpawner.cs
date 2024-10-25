@@ -89,7 +89,7 @@ public class EnemySpawner : SerializedMonoBehaviour
     /// <summary>
     /// 보스 스폰
     /// </summary>
-    public void BossSpawn()
+    public void BossSpawn(BossID bossID)
     {
         if (PlaySceneManager.Instance.StageLevel == 2)
         {
@@ -97,7 +97,7 @@ public class EnemySpawner : SerializedMonoBehaviour
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
 
             // 팩도리에서 셋팅 + 풀에서 꺼내오기
-            BossObj boss = EnemyFactory.Instance.SettingMonster(BossID.FireDragon);
+            BossObj boss = EnemyFactory.Instance.SettingMonster(bossID);
 
             // 랜덤 원형 포지션으로 위치 설정
             boss.transform.position = randomCirclePos;
