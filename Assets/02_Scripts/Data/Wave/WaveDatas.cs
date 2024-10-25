@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class WaveDatas : ScriptableObject
 {
+    [SerializeReference]
     public WaveData[] waveDataArr;
 }

@@ -13,41 +13,72 @@ MonoBehaviour:
   m_Name: WaveDatas
   m_EditorClassIdentifier: 
   waveDataArr:
-  - MonsterType:
-    - Golem
-    Quantity: 05000000
-    SpawnInterval: 2
-    BossType: 
-    BossSpawnTime: 
-    AdditionalNotes: "\uCD08\uAE30 \uC77C\uBC18 \uBAAC\uC2A4\uD130"
-  - MonsterType:
-    - Golem
-    Quantity: 0a000000
-    SpawnInterval: 1.5
-    BossType: FireDragon
-    BossSpawnTime: 0:10
-    AdditionalNotes: "\uBCF4\uC2A4 FireDragon \uB4F1\uC7A5"
-  - MonsterType:
-    - Golem
-    - ' Skeleton'
-    Quantity: 0800000005000000
-    SpawnInterval: 2
-    BossType: 
-    BossSpawnTime: 
-    AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791 1"
-  - MonsterType:
-    - Skeleton
-    - ' Witch'
-    Quantity: 0f00000014000000
-    SpawnInterval: 1
-    BossType: 
-    BossSpawnTime: 
-    AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791 2"
-  - MonsterType:
-    - Witch
-    - ' Dragon'
-    Quantity: 0a00000008000000
-    SpawnInterval: 1.25
-    BossType: 
-    BossSpawnTime: 
-    AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791 3"
+  - rid: 5954429717577833
+  - rid: 5954429717577834
+  - rid: 5954429717577835
+  - rid: 5954429717577836
+  - rid: 5954429717577837
+  references:
+    version: 2
+    RefIds:
+    - rid: 5954429717577833
+      type: {class: WaveData, ns: , asm: Assembly-CSharp}
+      data:
+        Wave: 00:00:05
+        MonsterType:
+        - Golem
+        Quantity: 05000000
+        SpawnInterval: 2
+        BossType: 
+        BossSpawnTime: 
+        AdditionalNotes: "\uCD08\uAE30 \uC77C\uBC18 \uBAAC\uC2A4\uD130"
+    - rid: 5954429717577834
+      type: {class: WaveData, ns: , asm: Assembly-CSharp}
+      data:
+        Wave: 00:00:10
+        MonsterType:
+        - Golem
+        Quantity: 0a000000
+        SpawnInterval: 1.5
+        BossType: FireDragon
+        BossSpawnTime: 00:00:10
+        AdditionalNotes: "\uBCF4\uC2A4 FireDragon \uB4F1\uC7A5"
+    - rid: 5954429717577835
+      type: {class: WaveData, ns: , asm: Assembly-CSharp}
+      data:
+        Wave: 00:00:30
+        MonsterType:
+        - Golem
+        - ' Skeleton'
+        Quantity: 0800000005000000
+        SpawnInterval: 2
+        BossType: 
+        BossSpawnTime: 
+        AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791
+          1"
+    - rid: 5954429717577836
+      type: {class: WaveData, ns: , asm: Assembly-CSharp}
+      data:
+        Wave: 00:00:50
+        MonsterType:
+        - Skeleton
+        - ' Witch'
+        Quantity: 0f00000014000000
+        SpawnInterval: 1
+        BossType: 
+        BossSpawnTime: 
+        AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791
+          2"
+    - rid: 5954429717577837
+      type: {class: WaveData, ns: , asm: Assembly-CSharp}
+      data:
+        Wave: 00:01:00
+        MonsterType:
+        - Witch
+        - ' Dragon'
+        Quantity: 0a00000008000000
+        SpawnInterval: 1.25
+        BossType: 
+        BossSpawnTime: 
+        AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791
+          3"
