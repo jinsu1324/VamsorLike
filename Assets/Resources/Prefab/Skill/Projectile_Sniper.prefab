@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3607654249523320694}
   - component: {fileID: 6058071106617137270}
   - component: {fileID: 4066447221230318575}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Projectile_Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
