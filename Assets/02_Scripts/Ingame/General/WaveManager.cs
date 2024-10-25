@@ -4,25 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
-{
+{    
     [SerializeField]
     private WaveDatas _waveDatas;                               // 웨이브 데이터
     
-    [SerializeField]
     private int _curWaveIndex = 0;                              // 현재 웨이브 인덱스
+    private TimeSpan _elapsedTime = TimeSpan.Zero;              // 경과시간
 
-    private TimeSpan _elapsedTime = TimeSpan.Zero;              // 경과시간을 0초로 초기화
-
+    /// <summary>
+    /// Start
+    /// </summary>
     private void Start()
     {
         CheckWaveDatasEmpty();
     }
 
+    /// <summary>
+    /// Update
+    /// </summary>
     private void Update()
     {
         CheckWaveTime();
     }
 
+    /// <summary>
+    /// 웨이브 데이터 유무 체크
+    /// </summary>
     private void CheckWaveDatasEmpty()
     {
         if (_waveDatas == null || _waveDatas.waveDataArr.Length == 0)
@@ -32,7 +39,9 @@ public class WaveManager : MonoBehaviour
         }
     }   
 
-
+    /// <summary>
+    /// 웨이브 시간 체크
+    /// </summary>
     public void CheckWaveTime()
     {
         // Time.deltaTime을 이용해 매 프레임마다 시간을 누적하고 TimeSpan으로 변환
@@ -58,6 +67,9 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 웨이브 이벤트
+    /// </summary>
     private void WaveEvent(WaveData waveData)
     {
         Debug.Log($"{waveData.Wave} : 이벤트 발생!!!!!!!!!");
