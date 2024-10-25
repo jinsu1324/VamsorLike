@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        CheckWaveDatasEmpty();
+        EmptyCheck_WaveDatas();
     }
 
     /// <summary>
@@ -24,13 +24,13 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        CheckWaveTime();
+        Check_WaveTime();
     }
 
     /// <summary>
     /// 웨이브 데이터 유무 체크
     /// </summary>
-    private void CheckWaveDatasEmpty()
+    private void EmptyCheck_WaveDatas()
     {
         if (_waveDatas == null || _waveDatas.waveDataArr.Length == 0)
         {
@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
     /// <summary>
     /// 웨이브 시간 체크
     /// </summary>
-    public void CheckWaveTime()
+    public void Check_WaveTime()
     {
         // Time.deltaTime을 이용해 매 프레임마다 시간을 누적하고 TimeSpan으로 변환
         _elapsedTime += TimeSpan.FromSeconds(Time.deltaTime);
