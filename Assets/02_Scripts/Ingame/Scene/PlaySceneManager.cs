@@ -134,8 +134,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         if (StageLevel == 2)
         {
-            EnemySpawner.Instance.BossSpawn(BossID.FireDragon);
             PlaySceneCanvas.BossHPBarUI.initialize(BossID.FireDragon);
+            EnemySpawner.Instance.BossSpawn(BossID.FireDragon);
         }        
     }
 

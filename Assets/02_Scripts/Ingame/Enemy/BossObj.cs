@@ -15,7 +15,7 @@ public class BossObj : Enemy
     [SerializeField]
     private GroundSkill _groundSkillPrefab;                     // 원형 범위 스킬 프리팹
 
-    private float _appearTime;                                  // 보스 등장 시간
+    private float _appearStageLevel;                            // 보스 등장 스테이지 레벨
     private float _skillRadius;                                 // 스킬의 반지름
     private float _skillDuration;                               // 스킬이 차오르는 시간
     private float _skillDamage;                                 // 스킬 데미지
@@ -50,7 +50,7 @@ public class BossObj : Enemy
         _atk = _baseBossData.Atk;
         _speed = _baseBossData.Speed;
 
-        _appearTime = _baseBossData.AppearTime;
+        _appearStageLevel = _baseBossData.AppearStageLevel;
         _skillRadius = _baseBossData.SkillRadius;
         _skillDuration = _baseBossData.SkillDuration;
         _skillDamage = _baseBossData.SkillDamage;

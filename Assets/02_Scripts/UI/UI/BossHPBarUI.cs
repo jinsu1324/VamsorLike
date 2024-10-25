@@ -26,12 +26,21 @@ public class BossHPBarUI : MonoBehaviour
     /// </summary>
     public void initialize(BossID bossID)
     {
-        BossData bossData = DataManager.Instance.BossDataDict[bossID];
 
+        Debug.Log("0");
+
+        BossData bossData = DataManager.Instance.BossDataDict[bossID];
+        Debug.Log("1");
+
+        
         _bossNameText.text = bossData.Name;
+        Debug.Log("2");
+
         Refresh_BossHPBar(bossData.MaxHp, bossData.MaxHp);
+        Debug.Log("3");
 
         gameObject.SetActive(true);
+        Debug.Log("4");
     }
 
     /// <summary>

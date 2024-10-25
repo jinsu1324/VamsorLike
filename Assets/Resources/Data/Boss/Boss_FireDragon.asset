@@ -17,11 +17,11 @@ MonoBehaviour:
   MaxHp: 1000
   Atk: 40
   Speed: 2
-  AppearTime: 5
+  AppearStageLevel: 2
   SkillDamage: 80
   SkillRadius: 3
   SkillDuration: 3
-  SkillRangeMin: 2
-  SkillRangeMax: 5
+  SkillRangeMin: 5
+  SkillRangeMax: 10
   SkillCount: 2
   SkillCoolTime: 5

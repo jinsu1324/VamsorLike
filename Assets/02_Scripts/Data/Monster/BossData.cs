@@ -9,7 +9,7 @@ public enum BossID
 
 public class BossData : Creature
 {
-    public float AppearTime;
+    public int AppearStageLevel;
     public float SkillDamage; 
     public float SkillRadius; 
     public float SkillDuration; 
