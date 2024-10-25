@@ -13,24 +13,21 @@ MonoBehaviour:
   m_Name: WaveDatas
   m_EditorClassIdentifier: 
   waveDataArr:
-  - Wave: 0
-    MonsterType:
+  - MonsterType:
     - Golem
     Quantity: 05000000
     SpawnInterval: 2
     BossType: 
     BossSpawnTime: 
     AdditionalNotes: "\uCD08\uAE30 \uC77C\uBC18 \uBAAC\uC2A4\uD130"
-  - Wave: 0:10
-    MonsterType:
+  - MonsterType:
     - Golem
     Quantity: 0a000000
     SpawnInterval: 1.5
     BossType: FireDragon
-    BossSpawnTime: 3:00
+    BossSpawnTime: 0:10
     AdditionalNotes: "\uBCF4\uC2A4 FireDragon \uB4F1\uC7A5"
-  - Wave: 0:30
-    MonsterType:
+  - MonsterType:
     - Golem
     - ' Skeleton'
     Quantity: 0800000005000000
@@ -38,8 +35,7 @@ MonoBehaviour:
     BossType: 
     BossSpawnTime: 
     AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791 1"
-  - Wave: 1:00
-    MonsterType:
+  - MonsterType:
     - Skeleton
     - ' Witch'
     Quantity: 0f00000014000000
@@ -47,8 +43,7 @@ MonoBehaviour:
     BossType: 
     BossSpawnTime: 
     AdditionalNotes: "\uBCF5\uD569 \uBAAC\uC2A4\uD130 \uC2A4\uD3F0 \uC2DC\uC791 2"
-  - Wave: 1:30
-    MonsterType:
+  - MonsterType:
     - Witch
     - ' Dragon'
     Quantity: 0a00000008000000

@@ -96,7 +96,7 @@ public class JsonToScriptableObjectWindow : OdinEditorWindow
             // WaveData 객체를 생성하고 JSON의 값을 해당 필드에 할당
             WaveData waveData = new WaveData
             {
-                Wave = values[0],                                            // 첫 번째 값: Wave
+                Wave = TimeSpan.Parse(values[0]),                            // 첫 번째 값: Wave ("00:10" 형식의 문자열을 TimeSpan으로 변환)
                 MonsterType = values[1].Split(','),                          // 두 번째 값: MonsterType, 콤마로 구분된 여러 몬스터 타입.
                 Quantity = Array.ConvertAll(values[2].Split(','), int.Parse),// 세 번째 값: Quantity, 콤마로 구분된 몬스터 수를 int 배열로 변환.
                 SpawnInterval = float.Parse(values[3]),                      // 네 번째 값: SpawnInterval, 몬스터 스폰 간격을 float으로 변환.

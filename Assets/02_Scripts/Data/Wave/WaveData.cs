@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class WaveData
 {
-    public string Wave;
+    public TimeSpan Wave;
     public string[] MonsterType;
     public int[] Quantity;
     public float SpawnInterval;
