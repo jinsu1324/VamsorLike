@@ -5,46 +5,7 @@ using UnityEngine;
 
 public class EnemyManager : SerializedMonoBehaviour
 {
-    #region 싱글톤_씬이동x
-    private static EnemyManager _instance;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            //DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static EnemyManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                return null;
-            }
-
-            return _instance;
-        }
-    }
-    #endregion   
-        
-    // 필드에 스폰되어있는 적 리스트
-    private List<Enemy> _fieldEnemyList = new List<Enemy>();
-
-    /// <summary>
-    /// Start
-    /// </summary>
-    private void Start()
-    {
-        Enemy.OnEnemyDead += RemoveFieldEnemyList;
-    }
+    private List<Enemy> _fieldEnemyList = new List<Enemy>();    // 필드에 스폰되어있는 적 리스트
 
     /// <summary>
     /// Update
@@ -144,13 +105,5 @@ public class EnemyManager : SerializedMonoBehaviour
     {
         foreach (Enemy enemy in _fieldEnemyList)
             enemy.Stop();
-    }
-
-    /// <summary>
-    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
-    /// </summary>
-    public void OnDisable()
-    {
-        Enemy.OnEnemyDead -= RemoveFieldEnemyList;
     }
 }

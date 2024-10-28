@@ -54,4 +54,8 @@ public class DataManager : SerializedMonoBehaviour
     // 레벨데이터 리스트
     [SerializeField]
     public LevelDatas LevelDatas { get; set; }
+
+    // 웨이브 데이터
+    [SerializeField]
+    public WaveDatas WaveDatas { get; set; }
 }

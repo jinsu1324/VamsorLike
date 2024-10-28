@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class BossObj : Enemy
 {
-    public static event Action<float, float> OnBossHPChanged;   // 보스 HP 변경되었을 때 이벤트
-
     [SerializeField]
     private readonly BossData _baseBossData;                    // 보스 데이터 원본
 
@@ -65,7 +63,17 @@ public class BossObj : Enemy
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
 
-        EnemyManager.Instance.AddFieldEnemyList(this);
+        PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
+    }
+
+    /// <summary>
+    /// 아이템 드랍
+    /// </summary>
+    public override void DropItem()
+    {
+        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.EXP, transform.position);
+        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.Gold, transform.position + new Vector3(0, 0.1f, 0));
+        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.RewardBox, transform.position + new Vector3(0, 0.2f, 0));
     }
 
     /// <summary>
@@ -75,7 +83,7 @@ public class BossObj : Enemy
     {
         base.HPMinus(atk);
 
-        OnBossHPChanged(_hp, _baseBossData.MaxHp);
+        PlaySceneCanvas.Instance.BossHPBarUI.Refresh_BossHPBar(_hp, _baseBossData.MaxHp);
 
         if (_hp <= 0)
             Death();
@@ -87,6 +95,8 @@ public class BossObj : Enemy
     public override void Death()
     {
         base.Death();
+        PlaySceneCanvas.Instance.BossHPBarUI.Popup_OFF();
+
         Destroy(this.gameObject);
     }
 

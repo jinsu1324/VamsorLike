@@ -383,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 499658139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 158.99738, y: 686.20044, z: -4.2460938}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,6 +434,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4af5fdfb9c5c81a429c83090aae6ab8b, type: 2}
     - {fileID: 11400000, guid: 654e44744737e024b8ac6e2577b460b3, type: 2}
     - {fileID: 11400000, guid: 3d9c99260771cae4d948d3d6454f2151, type: 2}
+    - {fileID: 11400000, guid: e5d244acdc37db540af8dd4794f4039f, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -678,6 +679,9 @@ MonoBehaviour:
     - Name: LevelDatas
       Entry: 10
       Data: 11
+    - Name: WaveDatas
+      Entry: 10
+      Data: 12
 --- !u!4 &561069452
 Transform:
   m_ObjectHideFlags: 0

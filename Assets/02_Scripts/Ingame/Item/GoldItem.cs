@@ -3,20 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldItem : MonoBehaviour
+public class GoldItem : ItemBase
 {
-    // °ñµå È¹µæÇßÀ» ¶§ ¾×¼Ç
-    public static event Action OnGetGold;
+    private int _goldAmount = 1;    // °ñµå ¾ç
 
-
-    // °ñµå¿¡ ´ê¾ÒÀ»¶§
-    private void OnTriggerEnter2D(Collider2D collision)
+    /// <summary>
+    /// Gold È¹µæ ¿äÃ»
+    /// </summary>
+    protected override void ItemPickUp(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Hero.ToString())
-        {
-            OnGetGold?.Invoke();
-
-            Destroy(this.gameObject);
-        }
+        base.ItemPickUp(collision);
+        Debug.Log($"{_goldAmount} °ñµå¸¦ È¹µæÇß½À´Ï´Ù.");
+        collision.GetComponent<HeroObj>().AcquireEXP_RequestGoldManager(_goldAmount);
     }
 }

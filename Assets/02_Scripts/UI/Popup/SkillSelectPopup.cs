@@ -44,17 +44,17 @@ public class SkillSelectPopup : SerializedMonoBehaviour
         // 사용 가능한 스킬들을 버튼으로 생성
         foreach (SkillID skillID in _availableSkillList)
         {
-            int skillLevel = SkillManager.Instance.GetSkillLevel(skillID);
-            var skillData = SkillManager.Instance.SkillData_as_Dict<SkillData_Base>(skillID, skillLevel);
+            int skillLevel = PlaySceneManager.Instance.SkillManager.GetSkillLevel(skillID);
+            var skillData = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Base>(skillID, skillLevel);
 
             GameObject skillButtonPrefab = Instantiate(_skillButtonPrefab, _buttonParent);
             Button skillButton = skillButtonPrefab.GetComponent<Button>();
             TextMeshProUGUI skillText = skillButtonPrefab.GetComponentInChildren<TextMeshProUGUI>();
 
             // 이미 스킬을 가지고 있다면 레벨 표시
-            if (SkillManager.Instance.HasSkill(skillID))
+            if (PlaySceneManager.Instance.SkillManager.HasSkill(skillID))
             {
-                int currentLevel = SkillManager.Instance.GetSkillLevel(skillID);
+                int currentLevel = PlaySceneManager.Instance.SkillManager.GetSkillLevel(skillID);
                 skillText.text = $"{skillData.Name} (Level {currentLevel + 1})";
             }
             // 가지고 있지 않다면 스킬 이름만 표시
@@ -76,7 +76,7 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void OnSkillSelected(SkillID skillID)
     {
-        SkillManager.Instance.AddSkill(skillID);
+        PlaySceneManager.Instance.SkillManager.AddSkill(skillID);
 
         // 게임시작 안되어있었다면 게임시작을 true로
         if (PlaySceneManager.Instance.IsGameStart == false)

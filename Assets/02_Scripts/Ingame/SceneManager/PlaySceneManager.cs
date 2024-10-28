@@ -38,16 +38,37 @@ public class PlaySceneManager : SerializedMonoBehaviour
     }
     #endregion
 
-    public HeroObj MyHeroObj { get; set; }                       // 내가 이번 게임에 선택한 영웅
+    public HeroObj MyHeroObj { get; set; }                          // 내가 이번 게임에 선택한 영웅
     public bool IsGameStart { get; set; }                           // 게임 시작 되었는지
 
+    [Title("Managers")]
     [SerializeField]
-    public PlaySceneCanvas PlaySceneCanvas { get; set; }            // 플레이씬 캔버스
+    public AchivementManager AchivementManager { get; set; }       // 플레이 통계, 업적
     
     [SerializeField]
-    public PlayAchivement PlayAchivement { get; set; }              // 플레이 통계, 업적
-    
-    
+    public EnemyManager EnemyManager { get; set; }                 // 적 매니저
+
+    [SerializeField]
+    public EnemyFactory EnemyFactory { get; set; }                 // 적 팩토리
+
+    [SerializeField]
+    public EnemySpawner EnemySpawner { get; set; }                 // 적 스포너
+
+    [SerializeField]
+    public WaveManager WaveManager { get; set; }                   // 웨이브매니저
+
+    [SerializeField]
+    public SkillManager SkillManager { get; set; }                 // 스킬매니저
+
+    [SerializeField]
+    public EXPManager EXPManager { get; set; }                     // 레벨매니저
+
+    [SerializeField]
+    public GoldManager GoldManager { get; set; }                   // 골드매니저
+
+    [SerializeField]
+    public ItemManager ItemManager { get; set; }                   // 아이템매니저
+        
     /// <summary>
     /// Start 함수
     /// </summary>
@@ -86,6 +107,11 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
 
 
+
+
+
+
+    // 치트
     public void DeadCheat()
     {
         MyHeroObj.Death();

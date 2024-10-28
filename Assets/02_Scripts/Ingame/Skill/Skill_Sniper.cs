@@ -47,7 +47,7 @@ public class Skill_Sniper : Skill_Base
     public override void LevelUp()
     {
         SkillData_Sniper skillData_Sniper =
-            SkillManager.Instance.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
+            PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
 
         StatSetting(skillData_Sniper);
     }
@@ -78,7 +78,7 @@ public class Skill_Sniper : Skill_Base
     {
         // 사거리 내 가장 가까운 몬스터 찾기
         Enemy closestTargetMonster =
-            EnemyManager.Instance.Get_ClosestEnemy_In_Distance(skillAttackArgs.StartSkillPos, _range);
+            PlaySceneManager.Instance.EnemyManager.Get_ClosestEnemy_In_Distance(skillAttackArgs.StartSkillPos, _range);
 
         // 프로젝타일 생성
         ProjectileSniper _spawnedProjectile =

@@ -3,20 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EXPItem : MonoBehaviour
+public class EXPItem : ItemBase
 {
-    // 경험치 획득했을 때 액션
-    public static event Action OnGetExp;
+    private int _expAmount = 10;    // 경험치 양
 
-
-    // 경험치에 닿았을때
-    private void OnTriggerEnter2D(Collider2D collision)
+    /// <summary>
+    /// EXP 획득 요청
+    /// </summary>
+    protected override void ItemPickUp(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Hero.ToString())
-        {
-            OnGetExp?.Invoke();
-
-            Destroy(this.gameObject);
-        }
+        base.ItemPickUp(collision);
+        Debug.Log($"{_expAmount} 경험치를 획득했습니다.");
+        collision.GetComponent<HeroObj>().AcquireExp_RequestLevelManager(_expAmount);
     }
 }

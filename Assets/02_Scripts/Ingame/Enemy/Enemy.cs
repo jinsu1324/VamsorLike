@@ -6,8 +6,6 @@ using UnityEngine.AI;
 
 public abstract class Enemy : ObjectPoolObject
 {
-    public static event Action<Enemy> OnEnemyDead;   // 적 죽었을때 처리될 delegate
-
     protected float _hp;                              // 오브젝트 HP
     protected float _atk;                             // 오브젝트 Atk
     protected float _speed;                           // 오브젝트 Speed
@@ -22,12 +20,27 @@ public abstract class Enemy : ObjectPoolObject
     public abstract void DataSetting();
 
     /// <summary>
+    /// 아이템 드랍
+    /// </summary>
+    public abstract void DropItem();
+
+    /// <summary>
     /// 죽음
     /// </summary>
     public virtual void Death()
     {
-        OnEnemyDead?.Invoke(this);
-    }    
+        // 필드 적 목록에서 제거
+        PlaySceneManager.Instance.EnemyManager.RemoveFieldEnemyList(this);
+
+        // 다시 오브젝트 풀로 돌려보내기
+        PlaySceneManager.Instance.EnemySpawner.EnemyBackTrans(this);
+
+        // 토탈 적 죽인횟수 증가
+        PlaySceneManager.Instance.AchivementManager.AddKillCount();
+        
+        // 아이템 드랍
+        DropItem();
+    }
 
     /// <summary>
     /// 공격 (영웅 충돌 감지로 인해)
@@ -61,7 +74,7 @@ public abstract class Enemy : ObjectPoolObject
     public void TurnOn_DamageTextUI_fromPool(float atk)
     {
         // 데미지 텍스트 오브젝트 풀에서 가져와 생성하기
-        GameObject go = PlaySceneManager.Instance.PlaySceneCanvas.DamageTextsPool.GetObj();
+        GameObject go = PlaySceneCanvas.Instance.DamageTextsPool.GetObj();
         DamageText damageTextUI = go.GetComponent<DamageText>();
 
         // 생성 포지션 설정

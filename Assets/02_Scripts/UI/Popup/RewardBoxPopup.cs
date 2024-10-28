@@ -17,16 +17,7 @@ public class RewardBoxPopup : MonoBehaviour
     private TextMeshProUGUI _skillLevelText;        // 스킬 레벨 텍스트
     [SerializeField]
     private TextMeshProUGUI _skillDescText;         // 스킬 설명 텍스트
-
-    /// <summary>
-    /// Start 함수
-    /// </summary>
-    private void Start()
-    {
-        // 보상상자 얻었을 때 이벤트 등록
-        RewardBoxItem.OnGetRewardBox += Initialize_Popup;
-    }
-
+    
     /// <summary>
     /// 팝업 시작 시 초기화
     /// </summary>
@@ -63,7 +54,7 @@ public class RewardBoxPopup : MonoBehaviour
     /// </summary>
     private void SetAndAdd_RandomRewardSkill()
     {
-        SkillManager skillManager = SkillManager.Instance;
+        SkillManager skillManager = PlaySceneManager.Instance.SkillManager;
 
         // 랜덤한 스킬ID를 받아옴
         SkillID randomSkillID = skillManager.RandomSkillID();
@@ -81,13 +72,5 @@ public class RewardBoxPopup : MonoBehaviour
         _skillNameText.text = skillName;
         _skillLevelText.text = $"Level {skillLevel}";
         _skillDescText.text = skillDesc;
-    }
-
-    /// <summary>
-    /// 비활성화 시 이벤트 해제 (따로 빼서 더 인지되도록 함)
-    /// </summary>
-    private void OnDisable()
-    {
-        RewardBoxItem.OnGetRewardBox -= Initialize_Popup;
     }
 }

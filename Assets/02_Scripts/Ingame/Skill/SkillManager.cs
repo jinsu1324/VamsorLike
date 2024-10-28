@@ -10,36 +10,6 @@ using UnityEngine.UI;
 /// </summary>
 public class SkillManager : SerializedMonoBehaviour
 {
-    #region 싱글톤_씬이동x
-    private static SkillManager _instance;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            //DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static SkillManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                return null;
-            }
-
-            return _instance;
-        }
-    }
-    #endregion
-    
     [HideInInspector]
     public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           // 가지고 있는 스킬 UI 갱신 이벤트                    
 
@@ -89,7 +59,7 @@ public class SkillManager : SerializedMonoBehaviour
 
 
         // UI 갱신
-        PlaySceneManager.Instance.PlaySceneCanvas.SkillInvenUI.SlotRefresh(HaveSkillList);        
+        PlaySceneCanvas.Instance.SkillInvenUI.SlotRefresh(HaveSkillList);        
     }
 
     /// <summary>

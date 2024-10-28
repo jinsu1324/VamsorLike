@@ -13,66 +13,66 @@ MonoBehaviour:
   m_Name: WaveDatas
   m_EditorClassIdentifier: 
   waveDataArr:
-  - rid: 5954493600235629
-  - rid: 5954493600235630
-  - rid: 5954493600235631
-  - rid: 5954493600235632
-  - rid: 5954493600235633
+  - rid: 5954505674063872
+  - rid: 5954505674063873
+  - rid: 5954505674063874
+  - rid: 5954505674063875
+  - rid: 5954505674063876
   references:
     version: 2
     RefIds:
-    - rid: 5954493600235629
+    - rid: 5954505674063872
       type: {class: WaveData, ns: , asm: Assembly-CSharp}
       data:
         WaveTime: 5
         MonsterType:
         - Golem
-        TotalSpawnCount: 0a000000
+        TotalSpawnCount: 05000000
         SpawnInterval:
         - 0.5
         BossType: None
-    - rid: 5954493600235630
+    - rid: 5954505674063873
       type: {class: WaveData, ns: , asm: Assembly-CSharp}
       data:
         WaveTime: 10
         MonsterType:
         - Golem
-        TotalSpawnCount: 0a000000
+        TotalSpawnCount: 05000000
         SpawnInterval:
         - 0.5
         BossType: FireDragon
-    - rid: 5954493600235631
+    - rid: 5954505674063874
       type: {class: WaveData, ns: , asm: Assembly-CSharp}
       data:
         WaveTime: 15
         MonsterType:
         - Golem
         - ' Skeleton'
-        TotalSpawnCount: 0a00000005000000
+        TotalSpawnCount: 0500000002000000
         SpawnInterval:
         - 0.5
         - 0.5
         BossType: None
-    - rid: 5954493600235632
+    - rid: 5954505674063875
       type: {class: WaveData, ns: , asm: Assembly-CSharp}
       data:
         WaveTime: 20
         MonsterType:
         - Skeleton
         - ' Witch'
-        TotalSpawnCount: 0a00000005000000
+        TotalSpawnCount: 0500000002000000
         SpawnInterval:
         - 0.5
         - 0.5
         BossType: None
-    - rid: 5954493600235633
+    - rid: 5954505674063876
       type: {class: WaveData, ns: , asm: Assembly-CSharp}
       data:
         WaveTime: 25
         MonsterType:
         - Witch
         - ' Dragon'
-        TotalSpawnCount: 0a00000005000000
+        TotalSpawnCount: 0500000002000000
         SpawnInterval:
         - 0.5
         - 0.5

@@ -15,19 +15,11 @@ public class EXPBarUI : SerializedMonoBehaviour
     private TextMeshProUGUI _expStateText;          // 경험치 상태 텍스트
 
     /// <summary>
-    /// Start 함수
-    /// </summary>
-    private void Start()
-    {
-        EXPItem.OnGetExp += Update_EXPBarInfos;
-    }
-
-    /// <summary>
     /// EXP Bar 관련 정보들 업데이트
     /// </summary>
     public void Update_EXPBarInfos()
     {
-        HeroLvExp heroLvExp = LevelManager.Instance.MyHeroLvExp;
+        HeroLvExp heroLvExp = PlaySceneManager.Instance.EXPManager.MyHeroLvExp;
         List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
 
         Update_LevelText(heroLvExp);
@@ -61,13 +53,5 @@ public class EXPBarUI : SerializedMonoBehaviour
         GetComponent<Slider>().value = 
             (float)heroLvExp.EXP /
             (float)levelDataList[heroLvExp.Level].MaxExp;
-    }
-
-    /// <summary>
-    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
-    /// </summary>
-    public void OnDisable()
-    {
-        EXPItem.OnGetExp -= Update_EXPBarInfos;
     }
 }

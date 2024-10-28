@@ -30,7 +30,16 @@ public class MonsterObj : Enemy
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
 
-        EnemyManager.Instance.AddFieldEnemyList(this);
+        PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
+    }
+
+    /// <summary>
+    /// 아이템 드랍
+    /// </summary>
+    public override void DropItem()
+    {
+        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.EXP, transform.position);
+        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.Gold, transform.position + new Vector3(0, 0.1f, 0));
     }
 
     /// <summary>

@@ -12,15 +12,7 @@ public class BossHPBarUI : MonoBehaviour
     [SerializeField]
     private Slider _hpSlider;                        // HP 슬라이더
 
-
-    /// <summary>
-    /// Start
-    /// </summary>
-    private void Start()
-    {
-        BossObj.OnBossHPChanged += Refresh_BossHPBar;
-    }
-
+        
     /// <summary>
     /// UI 준비
     /// </summary>
@@ -43,12 +35,10 @@ public class BossHPBarUI : MonoBehaviour
     }
 
     /// <summary>
-    /// 씬 전환이나 오브젝트 파괴될 때 이벤트 제거
+    /// 팝업 끄기
     /// </summary>
-    private void OnDisable()
+    public void Popup_OFF()
     {
-        BossObj.OnBossHPChanged -= Refresh_BossHPBar;
-
         gameObject.SetActive(false);
     }
 }

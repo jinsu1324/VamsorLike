@@ -3,19 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewardBoxItem : MonoBehaviour
+public class RewardBoxItem : ItemBase
 {
-    // 리워드상자 획득했을 때 액션
-    public static event Action OnGetRewardBox;
-
-    // 상자에 닿았을때
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == Tag.Hero.ToString())
-        {
-            OnGetRewardBox?.Invoke();
-
-            Destroy(this.gameObject);
-        }
+    /// <summary>
+    /// 보상상자 획득 요청
+    /// </summary>
+    protected override void ItemPickUp(Collider2D collision)
+    {        
+        base.ItemPickUp(collision);
+        Debug.Log($"보상상자를 획득했습니다.");
+        collision.GetComponent<HeroObj>().AcquireRewardBox_RequestRewardBoxPopup();        
     }
 }

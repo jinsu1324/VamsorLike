@@ -5,36 +5,6 @@ using UnityEngine;
 
 public class EnemyFactory : SerializedMonoBehaviour
 {
-    #region ΩÃ±€≈Ê_æ¿¿Ãµøx
-    private static EnemyFactory _instance;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            //DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static EnemyFactory Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                return null;
-            }
-
-            return _instance;
-        }
-    }
-    #endregion
-
     // ∏ÛΩ∫≈Õ ø¿∫Í¡ß∆Æ «Æ µÒº≈≥ ∏Æ
     [SerializeField]
     private Dictionary<MonsterID, ObjectPool> _monsterObjectPoolDict = new Dictionary<MonsterID, ObjectPool>();

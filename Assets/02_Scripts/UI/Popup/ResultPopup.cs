@@ -23,9 +23,9 @@ public class ResultPopup : SerializedMonoBehaviour
     /// </summary>
     private void InfoInitialize()
     {
-        _killCountText.text = PlaySceneManager.Instance.PlayAchivement.TotalKillCount.ToString();
-        _earnedGoldText.text = PlaySceneManager.Instance.PlayAchivement.TotalGold.ToString();
-        _playTimeText.text = PlaySceneManager.Instance.PlaySceneCanvas.PlayTimeUI.PlayTimeText.text;
+        _killCountText.text = PlaySceneManager.Instance.AchivementManager.TotalKillCount.ToString();
+        _earnedGoldText.text = PlaySceneManager.Instance.AchivementManager.TotalGold.ToString();
+        _playTimeText.text = PlaySceneCanvas.Instance.PlayTimeUI.PlayTimeText.text;
     }
 
     /// <summary>

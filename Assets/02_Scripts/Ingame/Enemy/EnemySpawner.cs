@@ -9,48 +9,9 @@ using UnityEngine;
 // 몬스터 스폰해주는 기계 : 일정 시간마다 랜덤 스폰 / 스폰 딜레이 / 스폰 거리
 public class EnemySpawner : SerializedMonoBehaviour
 {
-    #region 싱글톤_씬이동x
-    private static EnemySpawner _instance;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            //DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static EnemySpawner Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                return null;
-            }
-
-            return _instance;
-        }
-    }
-    #endregion
-        
     [SerializeField]
     private float _spawnDistance;       // 몬스터 스폰 거리
 
-
-    /// <summary>
-    /// Start 함수
-    /// </summary>
-    private void Start()
-    {
-        // 몬스터 죽었을 때
-        Enemy.OnEnemyDead += MonsterBackTrans;
-    }
 
     /// <summary>
     /// 몬스터 스폰
@@ -71,7 +32,7 @@ public class EnemySpawner : SerializedMonoBehaviour
         {
             // 팩토리에서 셋팅 + 풀에서 가져오기
             MonsterID monsterID = Enum.Parse<MonsterID>(waveData.MonsterType[index]);
-            MonsterObj monsterObj = EnemyFactory.Instance.SettingMonster(monsterID);
+            MonsterObj monsterObj = PlaySceneManager.Instance.EnemyFactory.SettingMonster(monsterID);
 
             // 스폰 위치 지정
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
@@ -91,10 +52,10 @@ public class EnemySpawner : SerializedMonoBehaviour
     {
         // 팩토리에서 셋팅 + 풀에서 가져오기
         BossID bossID = Enum.Parse<BossID>(waveData.BossType);     
-        BossObj boss = EnemyFactory.Instance.SettingMonster(bossID);
+        BossObj boss = PlaySceneManager.Instance.EnemyFactory.SettingMonster(bossID);
 
         // HP Bar UI 초기화
-        PlaySceneManager.Instance.PlaySceneCanvas.BossHPBarUI.initialize(bossID);
+        PlaySceneCanvas.Instance.BossHPBarUI.initialize(bossID);
         
         // 스폰 위치 지정
         Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
@@ -102,11 +63,11 @@ public class EnemySpawner : SerializedMonoBehaviour
     }
 
     /// <summary>
-    /// 몬스터 다시 풀으로 돌려보내기
+    /// 적 다시 풀으로 돌려보내기
     /// </summary>
-    public void MonsterBackTrans(Enemy monster)
+    public void EnemyBackTrans(Enemy enemy)
     {
-        monster.GetComponent<ObjectPoolObject>().BackTrans();
+        enemy.GetComponent<ObjectPoolObject>().BackTrans();
     }    
 
     /// <summary>
@@ -126,13 +87,5 @@ public class EnemySpawner : SerializedMonoBehaviour
         // 그 값을 타겟위치에 더해줘서 최종 위치를 저장한 다음 리턴
         Vector2 targetRandomCirclePos = targetPos + randomCirclePos;
         return targetRandomCirclePos;
-    }
-
-    /// <summary>
-    /// 씬 전환되거나 오브젝트 파괴될 때 이벤트 제거
-    /// </summary>
-    public void OnDisable()
-    {
-        Enemy.OnEnemyDead -= MonsterBackTrans;
     }
 }

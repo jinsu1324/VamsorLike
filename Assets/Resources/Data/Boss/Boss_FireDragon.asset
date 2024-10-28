@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: FireDragon
   Name: FireDragonName
-  MaxHp: 1000
+  MaxHp: 200
   Atk: 40
   Speed: 2
   AppearStageLevel: 2

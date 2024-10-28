@@ -71,8 +71,8 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void Move()
     {
-        float horizontal = PlaySceneManager.Instance.PlaySceneCanvas.Joystick.Horizontal;
-        float vertical = PlaySceneManager.Instance.PlaySceneCanvas.Joystick.Vertical;
+        float horizontal = PlaySceneCanvas.Instance.Joystick.Horizontal;
+        float vertical = PlaySceneCanvas.Instance.Joystick.Vertical;
 
         _moveDir.x = _rigid.position.x + (horizontal * Speed * Time.deltaTime);
         _moveDir.y = _rigid.position.y + (vertical * Speed * Time.deltaTime);
@@ -113,13 +113,13 @@ public class HeroObj : SerializedMonoBehaviour
     private void Attack()
     {
         // 스킬리스트에 아무것도 없으면 그냥 리턴
-        if (SkillManager.Instance.HaveSkillList.Count == 0)
+        if (PlaySceneManager.Instance.SkillManager.HaveSkillList.Count == 0)
             return;
 
         // 스킬리스트에 있는 모든 스킬들 순환, 확인, 공격
-        for (int i = 0; i < SkillManager.Instance.HaveSkillList.Count; i++)
+        for (int i = 0; i < PlaySceneManager.Instance.SkillManager.HaveSkillList.Count; i++)
         {
-            Skill_Base skill = SkillManager.Instance.HaveSkillList[i];
+            Skill_Base skill = PlaySceneManager.Instance.SkillManager.HaveSkillList[i];
 
             if (skill.SkillCooltime())
             {
@@ -157,6 +157,26 @@ public class HeroObj : SerializedMonoBehaviour
         _animator.SetTrigger("Dead");
 
         PlaySceneManager.Instance.IsGameStartChange(false);
-        PlaySceneManager.Instance.PlaySceneCanvas.ResultPopup.OpenPopup();
+        PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
+    }
+
+    
+
+
+
+    public void AcquireExp_RequestLevelManager(int amount)
+    {
+        PlaySceneManager.Instance.EXPManager.EXPUp(amount);
+    }
+
+    public void AcquireEXP_RequestGoldManager(int amount)
+    {
+        PlaySceneManager.Instance.GoldManager.GoldUp(amount);
+        PlaySceneManager.Instance.AchivementManager.AddGold(amount);
+    }
+
+    public void AcquireRewardBox_RequestRewardBoxPopup()
+    {
+        PlaySceneCanvas.Instance.RewardBoxPopup.Initialize_Popup();
     }
 }
