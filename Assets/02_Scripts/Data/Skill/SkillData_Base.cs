@@ -17,4 +17,6 @@ public class SkillData_Base
     public int Level;
     public string Name;
     public string Desc;
+
+    public Sprite Icon;
 }

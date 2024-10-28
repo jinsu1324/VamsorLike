@@ -24,7 +24,8 @@ public class SkillInvenUI : MonoBehaviour
         for (int i = 0; i < haveSkillList.Count; i++)
         {
             int skillLevel = SkillManager.Instance.GetSkillLevel(haveSkillList[i].Id);
-            Sprite skillIcon = ResourceManager.Instance.GetSkillIcon(haveSkillList[i].Id);
+            Sprite skillIcon = SkillManager.Instance.GetSkillIcon(haveSkillList[i].Id);
+
 
             _skillInvenSlotList[i].SetSlot(true, skillLevel, skillIcon);
         }

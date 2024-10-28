@@ -39,15 +39,11 @@ public class SkillManager : SerializedMonoBehaviour
         }
     }
     #endregion
-
-    // 가지고 있는 스킬 UI 갱신 이벤트
-    [HideInInspector]
-    public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           
-
     
+    [HideInInspector]
+    public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           // 가지고 있는 스킬 UI 갱신 이벤트                    
 
-    // 가지고 있는 스킬들  
-    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();       
+    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();   // 가지고 있는 스킬들      
 
 
     /// <summary>
@@ -57,6 +53,18 @@ public class SkillManager : SerializedMonoBehaviour
     {
         SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
         return skillData;
+    }
+
+    /// <summary>
+    /// 랜덤한 스킬ID를 반환해주는 함수
+    /// </summary>
+    public SkillID RandomSkillID()
+    {
+        SkillID[] skillIDs = (SkillID[])Enum.GetValues(typeof(SkillID));
+        int randomIndex = UnityEngine.Random.Range(0, skillIDs.Length);
+
+        SkillID randomSkillID = skillIDs[randomIndex];
+        return randomSkillID;
     }
 
     /// <summary>
@@ -102,5 +110,62 @@ public class SkillManager : SerializedMonoBehaviour
         Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
 
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
-    }       
+    }
+    
+    /// <summary>
+    /// 스킬 아이콘 가져오는 함수
+    /// </summary>
+    public Sprite GetSkillIcon(SkillID skillID)
+    {
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+
+        if (foundSkill == null)
+        {
+            Debug.Log("GetSkillIcon Failed!");
+            return null;
+        }
+        else
+        {
+            Sprite icon = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Icon;
+            return icon;
+        }
+    }
+
+    /// <summary>
+    /// 스킬 이름 가져오는 함수
+    /// </summary>
+    public string GetSkillName(SkillID skillID)
+    {
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+
+        if (foundSkill == null)
+        {
+            Debug.Log("GetSkillName Failed!");
+            return null;
+        }
+        else
+        {
+            string name = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Name;
+            return name;
+        }
+    }
+
+    /// <summary>
+    /// 스킬 설명 가져오는 함수
+    /// </summary>
+    public string GetSkillDesc(SkillID skillID)
+    {
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+
+        if (foundSkill == null)
+        {
+            Debug.Log("GetSkillDesc Failed!");
+            return null;
+        }
+        else
+        {
+            string desc = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Desc;
+            return desc;
+        }
+    }
 }
