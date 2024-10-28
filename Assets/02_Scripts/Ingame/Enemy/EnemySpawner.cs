@@ -69,12 +69,13 @@ public class EnemySpawner : SerializedMonoBehaviour
         // 몬스터 토탈 스폰 카운트 만큼 반복
         for (int count = 0; count < waveData.TotalSpawnCount[index];)
         {
+            // 팩토리에서 셋팅 + 풀에서 가져오기
             MonsterID monsterID = Enum.Parse<MonsterID>(waveData.MonsterType[index]);
             MonsterObj monsterObj = EnemyFactory.Instance.SettingMonster(monsterID);
 
+            // 스폰 위치 지정
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
             monsterObj.transform.position = randomCirclePos;
-
             //Debug.Log($"{monsterObj.name} : {count + 1} / {waveData.TotalSpawnCount[index]}");
 
             // 대기 후 카운트 올림
@@ -88,9 +89,14 @@ public class EnemySpawner : SerializedMonoBehaviour
     /// </summary>
     public void BossSpawn(WaveData waveData)
     {
+        // 팩토리에서 셋팅 + 풀에서 가져오기
         BossID bossID = Enum.Parse<BossID>(waveData.BossType);     
         BossObj boss = EnemyFactory.Instance.SettingMonster(bossID);
 
+        // HP Bar UI 초기화
+        PlaySceneManager.Instance.PlaySceneCanvas.BossHPBarUI.initialize(bossID);
+        
+        // 스폰 위치 지정
         Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
         boss.transform.position = randomCirclePos;
     }

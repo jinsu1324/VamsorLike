@@ -13,8 +13,8 @@ public class PlayTimeUI : SerializedMonoBehaviour
     /// <summary>
     /// 텍스트 갱신
     /// </summary>
-    public void RefreshUIText(float minute, float second)
+    public void RefreshUIText(string playTime)
     {
-        PlayTimeText.text = string.Format("{0:00}:{1:00}", minute, second);
+        PlayTimeText.text = playTime;
     }
 }

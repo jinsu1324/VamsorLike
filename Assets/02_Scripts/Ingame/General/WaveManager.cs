@@ -10,7 +10,9 @@ public class WaveManager : MonoBehaviour
     private WaveDatas _waveDatas;                               // 웨이브 데이터
     
     private int _curWaveIndex = 0;                              // 현재 웨이브 인덱스
-    private float _elapsedTime = 0;                             // 경과시간
+    private float _playTime = 0;                                // 게임플레이시간
+
+    private PlayTimeUI _playTimeUI;                             // 플레이타임 UI를 담을 변수
 
     /// <summary>
     /// Start
@@ -18,6 +20,8 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         EmptyCheck_WaveDatas();
+
+        _playTimeUI = PlaySceneManager.Instance.PlaySceneCanvas.PlayTimeUI;
     }
 
     /// <summary>
@@ -44,12 +48,28 @@ public class WaveManager : MonoBehaviour
     }   
 
     /// <summary>
+    /// 플레이타임 UI 갱신
+    /// </summary>
+    private void Refresh_PlayTimeUI(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+
+        string playTime_Format =  string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        _playTimeUI.RefreshUIText(playTime_Format);
+    }
+
+    /// <summary>
     /// 웨이브 시간 체크
     /// </summary>
     public void Check_WaveTime()
     {
         // Time.deltaTime을 이용해 매 프레임마다 시간을 누적
-        _elapsedTime += Time.deltaTime;
+        _playTime += Time.deltaTime;
+
+        // 플레이타임 UI 갱신
+        Refresh_PlayTimeUI(_playTime);
 
         // 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
         if (_curWaveIndex < _waveDatas.waveDataArr.Length)
@@ -58,7 +78,7 @@ public class WaveManager : MonoBehaviour
             float waveTargetTime = _waveDatas.waveDataArr[_curWaveIndex].WaveTime;
 
             // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
-            if (_elapsedTime >= waveTargetTime)
+            if (_playTime >= waveTargetTime)
             {
                 // 웨이브 이벤트 실행
                 WaveEvent(_waveDatas.waveDataArr[_curWaveIndex]);

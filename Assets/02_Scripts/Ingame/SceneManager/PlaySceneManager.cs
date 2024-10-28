@@ -46,28 +46,14 @@ public class PlaySceneManager : SerializedMonoBehaviour
     
     [SerializeField]
     public PlayAchivement PlayAchivement { get; set; }              // 플레이 통계, 업적
-
-    public int StageLevel { get; set; } = 1;                        // 스테이지 레벨 
-    public int MaxStageLevel { get; set; } = 4;                     // 최대 스테이지 레벨  
-    public float StageLevelUpIntervelTime { get; set; } = 10.0f;    // 스테이지 레벨업 간격
-
-    private float _playTime = 0.0f;                                 // 플레이타임
     
-   
+    
     /// <summary>
     /// Start 함수
     /// </summary>
     private void Start()
     {
         MyHeroObjSetting();
-    }
-
-    /// <summary>
-    /// Update 함수
-    /// </summary>
-    private void Update()
-    {        
-        PlayTimeCalculate_UIRefresh();
     }
 
     /// <summary>
@@ -88,23 +74,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         // 따라다닐 카메라 셋팅
         Camera.main.GetComponent<CameraFollow>().SetFollowTarget(MyHeroObj);
-    }
-
-    /// <summary>
-    /// 플레이타임 계산 + 갱신
-    /// </summary>
-    private void PlayTimeCalculate_UIRefresh()
-    {
-        if (IsGameStart == false)
-            return;
-
-        _playTime += Time.deltaTime;
-
-        int minute = Mathf.FloorToInt(_playTime / 60F);
-        int second = Mathf.FloorToInt(_playTime % 60F);
-
-        PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
-    }
+    }    
 
     /// <summary>
     /// 게임시작 bool 파라미터로 변경
