@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EXPObject : MonoBehaviour
+public class EXPItem : MonoBehaviour
 {
     // 경험치 획득했을 때 액션
     public static event Action OnGetExp;

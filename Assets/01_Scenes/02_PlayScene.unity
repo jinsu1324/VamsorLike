@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goldInvenUI: {fileID: 3060282619272963155}
-  _goldObject: {fileID: 8911249590401342717, guid: 4308a151fe4b9944b96852f05cee99c1, type: 3}
+  _goldItem: {fileID: 8911249590401342717, guid: 4308a151fe4b9944b96852f05cee99c1, type: 3}
 --- !u!4 &475695601
 Transform:
   m_ObjectHideFlags: 0
@@ -2521,124 +2521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d9542e7fd42fc4eaa0e573cd82f40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &887056843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 887056844}
-  - component: {fileID: 887056845}
-  m_Layer: 0
-  m_Name: '@_ResourceManager'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &887056844
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887056843}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &887056845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887056843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ba7a09ef8a284db604e9f9e3482ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
-    - {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
-    - {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _skillIconDict
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[UnityEngine.Sprite,
-        UnityEngine.CoreModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
 --- !u!224 &904805469 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8199284639101690258, guid: 19df9bcf78d7f6f4287d268578cd0852, type: 3}
@@ -3011,7 +2893,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: ExpObj
+    - Name: expItem
       Entry: 10
       Data: 0
     - Name: EXPBar
@@ -7143,7 +7025,6 @@ SceneRoots:
   - {fileID: 643147584}
   - {fileID: 749877191}
   - {fileID: 820484986}
-  - {fileID: 887056844}
   - {fileID: 495423375}
   - {fileID: 1156785497}
   - {fileID: 47021625}

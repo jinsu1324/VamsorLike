@@ -8,7 +8,7 @@ public class GoldManager : MonoBehaviour
     [SerializeField]
     private GoldInvenUI _goldInvenUI;       // ∞ÒµÂ ¿Œ∫•≈‰∏Æ UI
     [SerializeField]
-    private GoldObject _goldObject;         // ∞ÒµÂ ø¿∫Í¡ß∆Æ
+    private GoldItem _goldItem;         // ∞ÒµÂ ø¿∫Í¡ß∆Æ
 
     private int _earnedGold = 0;            // «√∑π¿Ãø°º≠ »πµÊ«— ∞ÒµÂ
 
@@ -19,7 +19,7 @@ public class GoldManager : MonoBehaviour
     {
         _goldInvenUI.RefreshGoldText(_earnedGold);
 
-        GoldObject.OnGetGold += GoldUp;
+        GoldItem.OnGetGold += GoldUp;
         Enemy.OnEnemyDead += InstantiateGoldObj;
     }
 
@@ -40,7 +40,7 @@ public class GoldManager : MonoBehaviour
         int randomGold = Random.Range(1, 4);
 
         if (randomGold == 1)
-            Instantiate(_goldObject, monster.transform.position, Quaternion.identity);
+            Instantiate(_goldItem, monster.transform.position, Quaternion.identity);
         else 
             return;
     }
@@ -51,7 +51,7 @@ public class GoldManager : MonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        GoldObject.OnGetGold -= GoldUp;
+        GoldItem.OnGetGold -= GoldUp;
         Enemy.OnEnemyDead -= InstantiateGoldObj;
     }
 }

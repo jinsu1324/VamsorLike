@@ -19,7 +19,7 @@ public class EXPBarUI : SerializedMonoBehaviour
     /// </summary>
     private void Start()
     {
-        EXPObject.OnGetExp += Update_EXPBarInfos;
+        EXPItem.OnGetExp += Update_EXPBarInfos;
     }
 
     /// <summary>
@@ -68,6 +68,6 @@ public class EXPBarUI : SerializedMonoBehaviour
     /// </summary>
     public void OnDisable()
     {
-        EXPObject.OnGetExp -= Update_EXPBarInfos;
+        EXPItem.OnGetExp -= Update_EXPBarInfos;
     }
 }

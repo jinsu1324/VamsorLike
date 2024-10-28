@@ -117,6 +117,7 @@ public class DataSettingEditorWindow : OdinEditorWindow
 
     [Button("보스 딕셔너리들 셋팅!", ButtonSizes.Large)]
     public void BossSettingButton()
+
     {
         if (_bossDataTextAsset == null)
             Debug.Log("몬스터 TextAsset이 null입니다.");

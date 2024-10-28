@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldObject : MonoBehaviour
+public class GoldItem : MonoBehaviour
 {
     // °ñµå È¹µæÇßÀ» ¶§ ¾×¼Ç
     public static event Action OnGetGold;

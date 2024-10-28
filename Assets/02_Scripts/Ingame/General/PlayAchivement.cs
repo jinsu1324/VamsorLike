@@ -18,7 +18,7 @@ public class PlayAchivement : MonoBehaviour
         TotalGold = 0;
 
         Enemy.OnEnemyDead += AddKillCount;
-        GoldObject.OnGetGold += AddGold;
+        GoldItem.OnGetGold += AddGold;
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class PlayAchivement : MonoBehaviour
     public void OnDisable()
     {
         Enemy.OnEnemyDead -= AddKillCount;
-        GoldObject.OnGetGold -= AddGold;
+        GoldItem.OnGetGold -= AddGold;
     }
 
 }

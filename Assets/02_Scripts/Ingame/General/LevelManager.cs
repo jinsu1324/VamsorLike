@@ -55,7 +55,7 @@ public class LevelManager : SerializedMonoBehaviour
 
     // 바닥에 떨어져있을 EXP 오브젝트
     [SerializeField]
-    public EXPObject ExpObj { get; set; }
+    public EXPItem expItem { get; set; }
 
     // UI EXP 게이지바
     [SerializeField]
@@ -69,7 +69,7 @@ public class LevelManager : SerializedMonoBehaviour
         EXPBar.Update_EXPBarInfos();
 
         Enemy.OnEnemyDead += InstantiateEXPObj;
-        EXPObject.OnGetExp += EXPUp;
+        EXPItem.OnGetExp += EXPUp;
     }
 
     /// <summary>
@@ -106,7 +106,7 @@ public class LevelManager : SerializedMonoBehaviour
     /// </summary>
     private void InstantiateEXPObj(Enemy monster)
     {
-        Instantiate(ExpObj, monster.transform.position, Quaternion.identity);
+        Instantiate(expItem, monster.transform.position, Quaternion.identity);
     }   
 
     /// <summary>
@@ -115,7 +115,7 @@ public class LevelManager : SerializedMonoBehaviour
     public void OnDisable()
     {
         Enemy.OnEnemyDead -= InstantiateEXPObj;
-        EXPObject.OnGetExp -= EXPUp;
+        EXPItem.OnGetExp -= EXPUp;
     }
 
 
