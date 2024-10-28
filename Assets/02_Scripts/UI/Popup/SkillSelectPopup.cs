@@ -78,15 +78,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     {
         SkillManager.Instance.AddSkill(skillID);
 
-        // 게임시작 안되어있었다면
+        // 게임시작 안되어있었다면 게임시작을 true로
         if (PlaySceneManager.Instance.IsGameStart == false)
-        {
-            // 게임시작을 true로
             PlaySceneManager.Instance.IsGameStartChange(true);
-
-            // 몬스터 스폰 시작
-            EnemySpawner.Instance.StartMonsterSpawn();
-        }
 
         ClosePopup();
     }

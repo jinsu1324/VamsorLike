@@ -104,10 +104,6 @@ public class PlaySceneManager : SerializedMonoBehaviour
         int second = Mathf.FloorToInt(_playTime % 60F);
 
         PlaySceneCanvas.PlayTimeUI.RefreshUIText(minute, second);
-
-        // 플레이타임 체크해서 스테이지 레벨업
-        if (_playTime >= StageLevel * StageLevelUpIntervelTime)
-            ChangeStageLevel();
     }
 
     /// <summary>
@@ -116,28 +112,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public void IsGameStartChange(bool state)
     {        
         IsGameStart = state;
-    }    
+    }  
 
-    /// <summary>
-    /// 스테이지 레벨업
-    /// </summary>
-    public void ChangeStageLevel()
-    {
-        if (StageLevel >= MaxStageLevel)
-        {
-            Debug.Log("최대 스테이지 레벨입니다.");
-            return;
-        }
-
-        StageLevel++;
-        Debug.Log($"스테이지 레벨업! : {StageLevel}");
-
-        if (StageLevel == 2)
-        {
-            PlaySceneCanvas.BossHPBarUI.initialize(BossID.FireDragon);
-            EnemySpawner.Instance.BossSpawn(BossID.FireDragon);
-        }        
-    }
 
 
     public void DeadCheat()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class WaveManager : MonoBehaviour
     private WaveDatas _waveDatas;                               // 웨이브 데이터
     
     private int _curWaveIndex = 0;                              // 현재 웨이브 인덱스
-    private TimeSpan _elapsedTime = TimeSpan.Zero;              // 경과시간
+    private float _elapsedTime = 0;                             // 경과시간
 
     /// <summary>
     /// Start
@@ -24,6 +25,9 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (PlaySceneManager.Instance.IsGameStart == false)
+            return;
+
         Check_WaveTime();
     }
 
@@ -44,22 +48,20 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void Check_WaveTime()
     {
-        // Time.deltaTime을 이용해 매 프레임마다 시간을 누적하고 TimeSpan으로 변환
-        _elapsedTime += TimeSpan.FromSeconds(Time.deltaTime);
+        // Time.deltaTime을 이용해 매 프레임마다 시간을 누적
+        _elapsedTime += Time.deltaTime;
 
         // 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
         if (_curWaveIndex < _waveDatas.waveDataArr.Length)
         {
             // 현재 웨이브의 목표 시간을 가져옴
-            TimeSpan waveTargetTime = TimeSpan.Parse(_waveDatas.waveDataArr[_curWaveIndex].Wave);
+            float waveTargetTime = _waveDatas.waveDataArr[_curWaveIndex].WaveTime;
 
             // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
             if (_elapsedTime >= waveTargetTime)
             {
                 // 웨이브 이벤트 실행
                 WaveEvent(_waveDatas.waveDataArr[_curWaveIndex]);
-
-                _elapsedTime = TimeSpan.Zero; // 경과 시간 초기화
 
                 // 다음 웨이브 인덱스로 이동
                 _curWaveIndex++;
@@ -72,16 +74,19 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void WaveEvent(WaveData waveData)
     {
-        Debug.Log($"{waveData.Wave} : 이벤트 발생!!!!!!!!!");
+        Debug.Log($"------{waveData.WaveTime} : 이벤트 발생!!!!!!!!!------");
 
-        //// 현재 웨이브의 몬스터 타입과 수량을 가져옴
-        //string[] monsterTypes = waveData.MonsterType;
-        //int[] quantities = waveData.Quantity;
+        // 몬스터 스폰 (해당 웨이브의 몬스터 종류만큼 반복)
+        for (int i = 0; i < waveData.MonsterType.Length; i++)
+        {
+            EnemySpawner.Instance.StartMonsterSpawn(waveData, i);
+        }
 
-        //// 몬스터 타입과 수량을 출력
-        //for (int i = 0; i < monsterTypes.Length; i++)
-        //{
-        //    Debug.Log($"Wave {_curWaveIndex + 1} - MonsterType: {monsterTypes[i]}, Quantity: {quantities[i]}");
-        //}
+        // 보스 있으면 보스 스폰
+        string waveBoss = waveData.BossType;
+        if (waveBoss != "None")
+        {
+            EnemySpawner.Instance.BossSpawn(waveData);
+        }
     }
 }

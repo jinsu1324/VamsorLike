@@ -6,11 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class WaveData
 {
-    public string Wave;
+    public float WaveTime;
     public string[] MonsterType;
-    public int[] Quantity;
-    public float SpawnInterval;
+    public int[] TotalSpawnCount;
+    public float[] SpawnInterval;
     public string BossType;
-    public string BossSpawnTime;
-    public string AdditionalNotes;
 }

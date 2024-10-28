@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -52,56 +53,46 @@ public class EnemySpawner : SerializedMonoBehaviour
     }
 
     /// <summary>
-    /// 몬스터 스폰 시작
+    /// 몬스터 스폰
     /// </summary>
-    public void StartMonsterSpawn()
+    public void StartMonsterSpawn(WaveData waveData, int index)
     {
-        StartCoroutine(MonsterRandomSpawn());
+        StartCoroutine(MonsterSpawn(waveData, index));
     }
 
+
     /// <summary>
-    /// 일정시간마다 몬스터 랜덤 스폰 코루틴
+    /// 몬스터 스폰 코루틴
     /// </summary>
-    private IEnumerator MonsterRandomSpawn()
+    private IEnumerator MonsterSpawn(WaveData waveData, int index)
     {
-        while (PlaySceneManager.Instance.IsGameStart)
+        // 몬스터 토탈 스폰 카운트 만큼 반복
+        for (int count = 0; count < waveData.TotalSpawnCount[index];)
         {
-            // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
+            MonsterID monsterID = Enum.Parse<MonsterID>(waveData.MonsterType[index]);
+            MonsterObj monsterObj = EnemyFactory.Instance.SettingMonster(monsterID);
+
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
+            monsterObj.transform.position = randomCirclePos;
 
-            // 스테이지 레벨에 맞게 몬스터 ID 가져오기
-            MonsterID monsterID_by_StageLevel = GetMonsterID_by_StageLevel(PlaySceneManager.Instance.StageLevel);
+            //Debug.Log($"{monsterObj.name} : {count + 1} / {waveData.TotalSpawnCount[index]}");
 
-            // 스테이지 레벨에 맞게 스폰딜레이 가져오기
-            float spawnDelay_by_StageLevel = GetSpawnDelay_by_StageLevel(PlaySceneManager.Instance.StageLevel);
-
-            // 팩도리에서 셋팅 + 풀에서 꺼내오기
-            MonsterObj monster = EnemyFactory.Instance.SettingMonster(monsterID_by_StageLevel);
-
-            // 랜덤 원형 포지션으로 위치 설정
-            monster.transform.position = randomCirclePos;
-
-            // 스폰 딜레이만큼 대기
-            yield return new WaitForSecondsRealtime(spawnDelay_by_StageLevel);
+            // 대기 후 카운트 올림
+            yield return new WaitForSeconds(waveData.SpawnInterval[index]);
+            count++;
         }
     }
 
     /// <summary>
     /// 보스 스폰
     /// </summary>
-    public void BossSpawn(BossID bossID)
+    public void BossSpawn(WaveData waveData)
     {
-        if (PlaySceneManager.Instance.StageLevel == 2)
-        {
-            // 영웅에서 원형으로 일정거리 떨어진 랜덤포지션
-            Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
+        BossID bossID = Enum.Parse<BossID>(waveData.BossType);     
+        BossObj boss = EnemyFactory.Instance.SettingMonster(bossID);
 
-            // 팩도리에서 셋팅 + 풀에서 꺼내오기
-            BossObj boss = EnemyFactory.Instance.SettingMonster(bossID);
-
-            // 랜덤 원형 포지션으로 위치 설정
-            boss.transform.position = randomCirclePos;
-        }
+        Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
+        boss.transform.position = randomCirclePos;
     }
 
     /// <summary>
@@ -113,52 +104,12 @@ public class EnemySpawner : SerializedMonoBehaviour
     }    
 
     /// <summary>
-    /// 스테이지 레벨에 따른 몬스터 아이디 반환
-    /// </summary>
-    private MonsterID GetMonsterID_by_StageLevel(int stageLevel)
-    {
-        switch (stageLevel)
-        {
-            case 1:
-                return MonsterID.Golem;
-            case 2:
-                return MonsterID.Skeleton;
-            case 3:
-                return MonsterID.Witch;
-            case 4:
-                return MonsterID.Dragon;
-            default:
-                return MonsterID.Golem;
-        }
-    }
-
-    /// <summary>
-    /// 몬스터 스폰 딜레이 줄임
-    /// </summary>
-    public float GetSpawnDelay_by_StageLevel(int stageLevel)
-    {
-        switch (stageLevel)
-        {
-            case 1:
-                return 1.0f;
-            case 2:
-                return 0.95f;
-            case 3:
-                return 0.9f;
-            case 4:
-                return 0.85f;
-            default:
-                return 1.0f;
-        }
-    }
-
-    /// <summary>
     /// targetPos에서 distance 만큼 떨어진 원의 표면중 랜덤한 포지션을 리턴해주는 함수
     /// </summary>
-    private Vector3 RandomCircleSurfacePos(Vector2 targetPos, float distance)
+    public Vector3 RandomCircleSurfacePos(Vector2 targetPos, float distance)
     {
         // 원형 내부 임의의 지점 얻어옴
-        Vector2 randomCirclePos = Random.insideUnitCircle;
+        Vector2 randomCirclePos = UnityEngine.Random.insideUnitCircle;
 
         //정규화해서 1로 만듦
         randomCirclePos.Normalize();
