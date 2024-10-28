@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 648826867}
   - component: {fileID: 648826870}
   m_Layer: 8
-  m_Name: Circle
+  m_Name: RewardBoxItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ Transform:
   m_GameObject: {fileID: 648826866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.59, y: 3.81, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1373,10 +1373,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 648826866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a669015acf3cb15418a7d5fa5a1d6366, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ce9077ef4c45fc43af4f92a0e296335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RewardBoxPopup: {fileID: 528836862}
 --- !u!1 &713830445
 GameObject:
   m_ObjectHideFlags: 0

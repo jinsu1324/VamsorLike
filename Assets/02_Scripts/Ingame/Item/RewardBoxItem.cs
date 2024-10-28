@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RewardBoxItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // 리워드상자 획득했을 때 액션
+    public static event Action OnGetRewardBox;
 
-    // Update is called once per frame
-    void Update()
+    // 상자에 닿았을때
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == Tag.Hero.ToString())
+        {
+            OnGetRewardBox?.Invoke();
+
+            Destroy(this.gameObject);
+        }
     }
 }
