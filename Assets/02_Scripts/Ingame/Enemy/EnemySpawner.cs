@@ -9,9 +9,50 @@ using UnityEngine;
 // 몬스터 스폰해주는 기계 : 일정 시간마다 랜덤 스폰 / 스폰 딜레이 / 스폰 거리
 public class EnemySpawner : SerializedMonoBehaviour
 {
+    // 몬스터 스폰 거리
     [SerializeField]
-    private float _spawnDistance;       // 몬스터 스폰 거리
+    private float _spawnDistance;       
 
+    // 몬스터 오브젝트 풀 딕셔너리
+    [SerializeField]
+    private Dictionary<MonsterID, ObjectPool> _monsterObjectPoolDict = new Dictionary<MonsterID, ObjectPool>();
+
+    // 보스 오브젝트 풀 딕셔너리
+    [SerializeField]
+    private Dictionary<BossID, ObjectPool> _bossObjectPoolDict = new Dictionary<BossID, ObjectPool>();
+
+
+    /// <summary>
+    /// 몬스터 데이터 셋팅해서 리턴
+    /// </summary>
+    public MonsterObj SettingMonster(MonsterID monsterID)
+    {
+        // 오브젝트 풀에서 몬스터 가져옴
+        GameObject go = _monsterObjectPoolDict[monsterID].GetObj();
+
+        // 몬스터 데이터 초기화 (셋팅)
+        MonsterObj monster = go.GetComponent<MonsterObj>();
+        monster.DataSetting();
+
+        // 그 몬스터를 반환
+        return monster;
+    }
+
+    /// <summary>
+    /// 보스 데이터 셋팅해서 리턴
+    /// </summary>
+    public BossObj SettingMonster(BossID bossID)
+    {
+        // 오브젝트 풀에서 보스 가져옴
+        GameObject go = _bossObjectPoolDict[bossID].GetObj();
+
+        // 보스 데이터 초기화 (셋팅)
+        BossObj boss = go.GetComponent<BossObj>();
+        boss.DataSetting();
+
+        // 그 보스를 반환
+        return boss;
+    }
 
     /// <summary>
     /// 몬스터 스폰
@@ -20,7 +61,6 @@ public class EnemySpawner : SerializedMonoBehaviour
     {
         StartCoroutine(MonsterSpawn(waveData, index));
     }
-
 
     /// <summary>
     /// 몬스터 스폰 코루틴
@@ -32,7 +72,7 @@ public class EnemySpawner : SerializedMonoBehaviour
         {
             // 팩토리에서 셋팅 + 풀에서 가져오기
             MonsterID monsterID = Enum.Parse<MonsterID>(waveData.MonsterType[index]);
-            MonsterObj monsterObj = PlaySceneManager.Instance.EnemyFactory.SettingMonster(monsterID);
+            MonsterObj monsterObj = SettingMonster(monsterID);
 
             // 스폰 위치 지정
             Vector2 randomCirclePos = RandomCircleSurfacePos(PlaySceneManager.Instance.MyHeroObj.transform.position, _spawnDistance);
@@ -52,7 +92,7 @@ public class EnemySpawner : SerializedMonoBehaviour
     {
         // 팩토리에서 셋팅 + 풀에서 가져오기
         BossID bossID = Enum.Parse<BossID>(waveData.BossType);     
-        BossObj boss = PlaySceneManager.Instance.EnemyFactory.SettingMonster(bossID);
+        BossObj boss = SettingMonster(bossID);
 
         // HP Bar UI 초기화
         PlaySceneCanvas.Instance.BossHPBarUI.initialize(bossID);

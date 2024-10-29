@@ -43,16 +43,13 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     [Title("Managers")]
     [SerializeField]
-    public AchivementManager AchivementManager { get; set; }       // 플레이 통계, 업적
-    
-    [SerializeField]
-    public EnemyManager EnemyManager { get; set; }                 // 적 매니저
-
-    [SerializeField]
-    public EnemyFactory EnemyFactory { get; set; }                 // 적 팩토리
+    public ItemSpawner ItemSpawner { get; set; }                   // 아이템 스포너
 
     [SerializeField]
     public EnemySpawner EnemySpawner { get; set; }                 // 적 스포너
+
+    [SerializeField]
+    public EnemyManager EnemyManager { get; set; }                 // 적 매니저
 
     [SerializeField]
     public WaveManager WaveManager { get; set; }                   // 웨이브매니저
@@ -67,8 +64,9 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public GoldManager GoldManager { get; set; }                   // 골드매니저
 
     [SerializeField]
-    public ItemManager ItemManager { get; set; }                   // 아이템매니저
-        
+    public AchivementManager AchivementManager { get; set; }       // 플레이 통계, 업적
+    
+    
     /// <summary>
     /// Start 함수
     /// </summary>

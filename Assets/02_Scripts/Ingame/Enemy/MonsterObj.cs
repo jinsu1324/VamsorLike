@@ -38,8 +38,8 @@ public class MonsterObj : Enemy
     /// </summary>
     public override void DropItem()
     {
-        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.EXP, transform.position);
-        PlaySceneManager.Instance.ItemManager.SpawnItem(ItemID.Gold, transform.position + new Vector3(0, 0.1f, 0));
+        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.EXP, transform.position);
+        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Gold, transform.position + new Vector3(0, 0.1f, 0));
     }
 
     /// <summary>

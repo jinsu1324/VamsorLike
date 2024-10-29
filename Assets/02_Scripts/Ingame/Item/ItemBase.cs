@@ -9,10 +9,8 @@ public enum ItemID
     RewardBox
 }
 
-public abstract class ItemBase : MonoBehaviour
+public abstract class ItemBase : ObjectPoolObject
 {
-    public ItemID Id;           // 아이템 ID 
-
     /// <summary>
     /// 아이템이 영웅에 닿으면 실행
     /// </summary>
