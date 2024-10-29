@@ -12,6 +12,6 @@ public class RewardBoxItem : ItemBase
     {        
         base.ItemPickUp(collision);
         Debug.Log($"보상상자를 획득했습니다.");
-        collision.GetComponent<HeroObj>().AcquireRewardBox_RequestRewardBoxPopup();        
+        collision.GetComponent<HeroObj>().AcquireRewardBox_and_Request();        
     }
 }

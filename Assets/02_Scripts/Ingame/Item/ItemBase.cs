@@ -6,7 +6,8 @@ public enum ItemID
 {
     EXP,
     Gold,
-    RewardBox
+    RewardBox,
+    Heal
 }
 
 public abstract class ItemBase : ObjectPoolObject

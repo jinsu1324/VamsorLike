@@ -136,7 +136,7 @@ public class HeroObj : SerializedMonoBehaviour
     {
         Hp -= atk;
 
-        Debug.Log("≥≤¿∫ HP : " + Hp);
+        Debug.Log($"«ˆ¿Á HP : {Hp} / {_baseHeroData.MaxHp}");
 
         // Ω∫«¡∂Û¿Ã∆Æ ±Ù∫˝¿Ã±‚
         BlinkSprite blinkSprite = new BlinkSprite();
@@ -144,7 +144,7 @@ public class HeroObj : SerializedMonoBehaviour
 
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
 
-        if (Hp < 0)
+        if (Hp <= 0)
             Death();
     }
 
@@ -160,22 +160,45 @@ public class HeroObj : SerializedMonoBehaviour
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
     }
 
-    
+    /// <summary>
+    /// »˙ æ∆¿Ã≈€ »πµÊ Ω√ »ø∞˙
+    /// </summary>
+    public void Heal(int amount)
+    {
+        if (Hp <= 0)
+            return;
 
+        Hp += amount;
 
+        if (Hp >= _baseHeroData.MaxHp)
+            Hp = _baseHeroData.MaxHp;
 
-    public void AcquireExp_RequestLevelManager(int amount)
+        Debug.Log($"«ˆ¿Á HP : {Hp} / {_baseHeroData.MaxHp}");
+
+        _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+    }
+
+    /// <summary>
+    /// EXP æ∆¿Ã≈€ »πµÊ (EXP Managerø° EXPUP ø‰√ª)
+    /// </summary>
+    public void AcquireExp_and_Request(int amount)
     {
         PlaySceneManager.Instance.EXPManager.EXPUp(amount);
     }
 
-    public void AcquireEXP_RequestGoldManager(int amount)
+    /// <summary>
+    /// ∞ÒµÂ æ∆¿Ã≈€ »πµÊ (Gold Managerø° GoldUP ø‰√ª)
+    /// </summary>
+    public void AcquireGold_and_Request(int amount)
     {
         PlaySceneManager.Instance.GoldManager.GoldUp(amount);
         PlaySceneManager.Instance.AchivementManager.AddGold(amount);
     }
 
-    public void AcquireRewardBox_RequestRewardBoxPopup()
+    /// <summary>
+    /// ∫∏ªÛªÛ¿⁄ æ∆¿Ã≈€ »πµÊ (Gold Managerø° GoldUP ø‰√ª)
+    /// </summary>
+    public void AcquireRewardBox_and_Request()
     {
         PlaySceneCanvas.Instance.RewardBoxPopup.Initialize_Popup();
     }

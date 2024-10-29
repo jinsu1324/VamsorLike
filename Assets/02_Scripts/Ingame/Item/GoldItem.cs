@@ -14,6 +14,6 @@ public class GoldItem : ItemBase
     {
         base.ItemPickUp(collision);
         Debug.Log($"{_goldAmount} ∞ÒµÂ∏¶ »πµÊ«ﬂΩ¿¥œ¥Ÿ.");
-        collision.GetComponent<HeroObj>().AcquireEXP_RequestGoldManager(_goldAmount);
+        collision.GetComponent<HeroObj>().AcquireGold_and_Request(_goldAmount);
     }
 }
