@@ -14,8 +14,10 @@ public class ItemSpawner : SerializedMonoBehaviour
     /// </summary>
     public void SpawnItem(ItemID itemID, Vector3 pos)
     {
-        GameObject item = _itemPoolDict[itemID].GetObj();
-        item.transform.position = pos;
+        GameObject go = _itemPoolDict[itemID].GetObj();
+        go.transform.position = pos;
 
+        ItemBase item = go.GetComponent<ItemBase>();
+        item.Initialized();
     }
 }

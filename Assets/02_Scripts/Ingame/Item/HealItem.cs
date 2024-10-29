@@ -7,12 +7,14 @@ public class HealItem : ItemBase
     private int _healAmount = 50;    // 힐량
 
     /// <summary>
-    /// EXP 획득 요청
+    /// Heal 획득 요청
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
     {
-        base.ItemPickUp(collision);
-        Debug.Log($"{_healAmount} 만큼 힐이 되었습니다.");
         collision.GetComponent<HeroObj>().Heal(_healAmount);
+
+        Debug.Log($"{_healAmount} 만큼 힐이 되었습니다.");
+
+        base.ItemPickUp(collision);
     }
 }

@@ -202,4 +202,12 @@ public class HeroObj : SerializedMonoBehaviour
     {
         PlaySceneCanvas.Instance.RewardBoxPopup.Initialize_Popup();
     }
+
+    /// <summary>
+    /// 자석 아이템 획득 (ItemManager에 요청)
+    /// </summary>
+    public void AcquireMagnet_and_Request()
+    {
+        PlaySceneManager.Instance.ItemManager.ActivateMagnet();
+    }
 }

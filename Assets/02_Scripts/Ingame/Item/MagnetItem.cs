@@ -1,18 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewardBoxItem : ItemBase
+public class MagnetItem : ItemBase
 {
     /// <summary>
-    /// 보상상자 획득 요청
+    /// 자석아이템 획득 요청
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
-    {        
-        collision.GetComponent<HeroObj>().AcquireRewardBox_and_Request();        
+    {
+        collision.GetComponent<HeroObj>().AcquireMagnet_and_Request();
 
-        Debug.Log($"보상상자를 획득했습니다.");
+        Debug.Log($" 자석 아이템을 획득하였습니다.");
 
         base.ItemPickUp(collision);
     }

@@ -43,13 +43,16 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     [Title("Managers")]
     [SerializeField]
-    public ItemSpawner ItemSpawner { get; set; }                   // 아이템 스포너
-
-    [SerializeField]
     public EnemySpawner EnemySpawner { get; set; }                 // 적 스포너
 
     [SerializeField]
+    public ItemSpawner ItemSpawner { get; set; }                   // 아이템 스포너
+
+    [SerializeField]
     public EnemyManager EnemyManager { get; set; }                 // 적 매니저
+
+    [SerializeField]
+    public ItemManager ItemManager { get; set; }                   // 아이템 매니저
 
     [SerializeField]
     public WaveManager WaveManager { get; set; }                   // 웨이브매니저

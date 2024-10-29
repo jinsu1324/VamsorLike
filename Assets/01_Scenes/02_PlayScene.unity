@@ -1024,6 +1024,50 @@ MonoBehaviour:
     - Name: DamageTextsPool
       Entry: 10
       Data: 9
+--- !u!1 &485791693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485791694}
+  - component: {fileID: 485791695}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485791694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485791693}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1156785497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485791695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485791693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fc83202d3d93a44bdab92069bd5806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &495423374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,6 +2322,7 @@ Transform:
   - {fileID: 449420185}
   - {fileID: 975037570}
   - {fileID: 373090641}
+  - {fileID: 1884017307}
   m_Father: {fileID: 1156785497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &925690592
@@ -2300,6 +2345,7 @@ MonoBehaviour:
     - {fileID: 449420186}
     - {fileID: 975037569}
     - {fileID: 373090642}
+    - {fileID: 1884017308}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2324,52 +2370,64 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
       Data: 4
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
     - Name: $v
       Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 10
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -3237,9 +3295,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 925690591}
   - {fileID: 220868468}
+  - {fileID: 925690591}
   - {fileID: 1698161015}
+  - {fileID: 485791694}
   - {fileID: 1488030861}
   - {fileID: 1343012851}
   - {fileID: 1005145210}
@@ -3263,9 +3322,10 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 925690592}
     - {fileID: 220868469}
+    - {fileID: 925690592}
     - {fileID: 1698161016}
+    - {fileID: 485791695}
     - {fileID: 1488030860}
     - {fileID: 1343012850}
     - {fileID: 1005145209}
@@ -3276,30 +3336,33 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: ItemSpawner
+    - Name: EnemySpawner
       Entry: 10
       Data: 0
-    - Name: EnemySpawner
+    - Name: ItemSpawner
       Entry: 10
       Data: 1
     - Name: EnemyManager
       Entry: 10
       Data: 2
-    - Name: WaveManager
+    - Name: ItemManager
       Entry: 10
       Data: 3
-    - Name: SkillManager
+    - Name: WaveManager
       Entry: 10
       Data: 4
-    - Name: EXPManager
+    - Name: SkillManager
       Entry: 10
       Data: 5
-    - Name: GoldManager
+    - Name: EXPManager
       Entry: 10
       Data: 6
-    - Name: AchivementManager
+    - Name: GoldManager
       Entry: 10
       Data: 7
+    - Name: AchivementManager
+      Entry: 10
+      Data: 8
 --- !u!1 &1196060216
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4660,52 @@ Transform:
   - {fileID: 1562161955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1884017306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884017307}
+  - component: {fileID: 1884017308}
+  m_Layer: 0
+  m_Name: ObjectPool_Magnet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1884017307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884017306}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 925690591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1884017308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884017306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfbf6a5a22a2fb42a295197a7a55e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 5592799359489288364, guid: 75a33e556f65aba41ab9045ef9ca4517, type: 3}
+  _count: 10
 --- !u!1 &2012150122
 GameObject:
   m_ObjectHideFlags: 0
