@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LobbyWarrior
+  m_Controller: {fileID: 9100000, guid: aa169b0afe38c2948aec1e81e6c11982, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6a88991c786eb00498aeb332d13ca702, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1ac0bae42fc59a946b32cefac39937a9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1d49c066152abec42bdf1dc9379cc586, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 44fe8797aeccbe24b8cbb79b3cf359e7, type: 2}
