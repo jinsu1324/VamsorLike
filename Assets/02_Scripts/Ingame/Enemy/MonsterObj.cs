@@ -38,10 +38,10 @@ public class MonsterObj : Enemy
     /// </summary>
     public override void DropItem()
     {
-        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.EXP, transform.position);
-        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Gold, transform.position);
-        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Heal, transform.position);
-        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Magnet, transform.position);
+        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.EXP, transform.position);
+        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Gold, transform.position);
+        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Heal, transform.position);
+        PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Magnet, transform.position);
     }
 
     /// <summary>
