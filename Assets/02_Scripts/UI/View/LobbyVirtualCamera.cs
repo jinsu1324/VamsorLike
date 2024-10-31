@@ -10,7 +10,7 @@ public class LobbyVirtualCamera : MonoBehaviour
 
     private CinemachineVirtualCamera _vitualCamera;             // Cinemachine 가상 카메라
 
-    private float _targetOrthoSize = 10.0f;                        // 목표로 할 OrthographicSize 값
+    private float _targetOrthoSize = 8.0f;                        // 목표로 할 OrthographicSize 값
     private float _smoothTime = 0.3f;                           // OrthographicSize 값을 부드럽게 변경할 시간
     private float _velocity = 0f;                               // OrthographicSize 값을 부드럽게 변경할 때 사용할 속도
 
