@@ -73,7 +73,6 @@ public class LobbyHeroStatPopup : MonoBehaviour
         _animator.Play(_showAnimClipName, 0, 1f);
         
         Invoke("PopupOFF", _showAnimClipLegth);
-        
     }
 
     /// <summary>
@@ -119,6 +118,4 @@ public class LobbyHeroStatPopup : MonoBehaviour
         Debug.Log("애니메이션 클립을 찾지 못했습니다.: " + clipName);
         return 0f;
     }
-
-    
 }

@@ -36,17 +36,15 @@ public class LobbySceneManager : MonoBehaviour
     }
     #endregion
 
-
     private LobbyVirtualCamera _virtualCamera;   // 버추얼 카메라 받아올 변수
     
-    
-
+    /// <summary>
+    /// Start 함수
+    /// </summary>
     private void Start()
     {
         _virtualCamera = FindObjectOfType<LobbyVirtualCamera>();
     }
-
-
 
     /// <summary>
     /// 영웅 미선택 기본 상태일때 호출되는 함수
