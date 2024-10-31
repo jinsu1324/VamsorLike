@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class LobbyVirtualCamera : MonoBehaviour
 {
@@ -10,10 +11,9 @@ public class LobbyVirtualCamera : MonoBehaviour
 
     private CinemachineVirtualCamera _vitualCamera;             // Cinemachine 가상 카메라
 
-    private float _baseOrthoSize = 14.0f;                       // 기본 OrthographicSize 값
-    private float _targetOrthoSize = 8.0f;                      // 목표로 할 OrthographicSize 값
-    private float _smoothTime = 0.3f;                           // OrthographicSize 값을 부드럽게 변경할 시간
-    private float _velocity = 0f;                               // OrthographicSize 값을 부드럽게 변경할 때 사용할 속도
+    private float _zoomOutOrthoSize = 12.0f;                    // 줌 아웃 값
+    private float _zoomInOrthoSize = 8.0f;                      // 줌 인 값
+    private float _smoothTime = 0.75f;                          // OrthographicSize 값을 부드럽게 변경할 시간
 
 
     /// <summary>
@@ -31,7 +31,7 @@ public class LobbyVirtualCamera : MonoBehaviour
     public void SnapCamera_To_Character(Transform target)
     {
         _vitualCamera.Follow = target;
-        StartCoroutine(ZoomIn_OrthoSize());
+        ZoomIn_OrthoSize();
     }
 
     /// <summary>
@@ -40,46 +40,34 @@ public class LobbyVirtualCamera : MonoBehaviour
     public void SanpCamera_To_DefaultPos()
     {
         _vitualCamera.Follow = _defaultCameraPos;
-        StartCoroutine(ZoomOut_OrthoSize());
+        ZoomOut_OrthoSize();
     }
 
     /// <summary>
     /// 카메라 줌 인
     /// </summary>
-    private IEnumerator ZoomIn_OrthoSize()
+    private void ZoomIn_OrthoSize()
     {
-        while (Mathf.Abs(_vitualCamera.m_Lens.OrthographicSize - _targetOrthoSize) > 0.01f)
-        {
-            _vitualCamera.m_Lens.OrthographicSize = Mathf.SmoothDamp(
-                _vitualCamera.m_Lens.OrthographicSize,
-                _targetOrthoSize,
-                ref _velocity,
-                _smoothTime
-            );
-            yield return null;
-        }
-
-        // 최종 목표 값으로 정확히 설정
-        _vitualCamera.m_Lens.OrthographicSize = _targetOrthoSize;
+        DOTween.To(
+            () => _vitualCamera.m_Lens.OrthographicSize,
+            x => _vitualCamera.m_Lens.OrthographicSize = x,
+            _zoomInOrthoSize,
+            _smoothTime)
+            .SetEase(Ease.OutSine)
+            .OnComplete(() => _vitualCamera.m_Lens.OrthographicSize = _zoomInOrthoSize);
     }
 
     /// <summary>
     /// 카메라 줌 아웃
     /// </summary>
-    private IEnumerator ZoomOut_OrthoSize()
+    private void ZoomOut_OrthoSize()
     {
-       while (Mathf.Abs(_vitualCamera.m_Lens.OrthographicSize - _baseOrthoSize) > 0.01f)
-        {
-            _vitualCamera.m_Lens.OrthographicSize = Mathf.SmoothDamp(
-                _vitualCamera.m_Lens.OrthographicSize,
-                _baseOrthoSize,
-                ref _velocity,
-                _smoothTime
-            );
-            yield return null;
-        }
-
-        // 최종 목표 값으로 정확히 설정
-        _vitualCamera.m_Lens.OrthographicSize = _baseOrthoSize;
+        DOTween.To(
+              () => _vitualCamera.m_Lens.OrthographicSize,
+              x => _vitualCamera.m_Lens.OrthographicSize = x,
+              _zoomOutOrthoSize,
+              _smoothTime)
+              .SetEase(Ease.OutSine)
+              .OnComplete(() => _vitualCamera.m_Lens.OrthographicSize = _zoomOutOrthoSize);
     }
 }
