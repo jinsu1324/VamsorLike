@@ -101,18 +101,28 @@ public class LobbyHeroStatPopup : MonoBehaviour
     /// </summary>
     public void OnClickGameStartButton()
     {
+        StartCoroutine(GameStart());
+    }
+
+    /// <summary>
+    /// 게임 시작 코루틴
+    /// </summary>
+    private IEnumerator GameStart()
+    {
         // 내가 이번 게임에 선택한 영웅 ID 셋팅
         GameManager.Instance.MyHeroIDSetting(_selectedHeroID);
 
         // 캐릭터 애니메이션
         _selectedLobbyHero.PlayAnimation_Ready();
 
-        HideAnim_PopupOFF();
+        // 대기
+        yield return new WaitForSeconds(0.5f);
 
-        // 씬 전환 애니메이션
+        // 로딩 애니메이션
+        LobbySceneCanvas.Instance.LoadingViews.InLoadingView_ON();
 
-
-        // 딜레이
+        // 대기
+        yield return new WaitForSeconds(4.0f);
 
         // 씬 전환
         SceneSwitcher.LoadScene("02_PlayScene");

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2978023211141967120}
-  _typingSpeed: 0.1
+  _typingSpeed: 0.15
 --- !u!1 &5996523552496638702
 GameObject:
   m_ObjectHideFlags: 0

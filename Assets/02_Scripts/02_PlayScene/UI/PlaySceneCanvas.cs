@@ -60,6 +60,10 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [SerializeField]
     public RewardBoxPopup RewardBoxPopup { get; set; }          // º¸»ó »óÀÚ ÆË¾÷
 
+    [Title("Views")]
+    [SerializeField]
+    public LoadingViews LoadingViews { get; set; }              // ·Îµù ºä
+
     [Title("Interactions")]
     [SerializeField]
     public Joystick Joystick { get; set; }                    // Á¶ÀÌ½ºÆ½

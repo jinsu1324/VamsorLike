@@ -39,7 +39,8 @@ public class LobbySceneCanvas : SerializedMonoBehaviour
     public LobbyTitleUI LobbyTitleUI { get; set; }               // Å¸ÀÌÆ² UI
 
     [SerializeField]
-    public LobbyHeroStatPopup LobbyHeroStatPopup { get; set; }   // ¿µ¿õ ½ºÅÈ ÆË¾÷
+    public LobbyHeroStatPopup LobbyHeroStatPopup { get; set; }   // ¿µ¿õ ½ºÅÈ Popup
 
-
+    [SerializeField]
+    public LoadingViews LoadingViews { get; set; }               // ·Îµù View
 }
