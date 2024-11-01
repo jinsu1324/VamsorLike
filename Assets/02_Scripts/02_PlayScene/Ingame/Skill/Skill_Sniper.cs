@@ -22,7 +22,7 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     public Skill_Sniper(SkillData_Sniper skillData_Sniper)
     {
-        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Sniper.Id);
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Sniper.ID);
         CurrentLevel = 0;
         MaxLevel = 2;
 
@@ -46,10 +46,11 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        SkillData_Sniper skillData_Sniper =
-            PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
+        // 수정필요!
+        //SkillData_Sniper skillData_Sniper =
+        //    PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
 
-        StatSetting(skillData_Sniper);
+        //StatSetting(skillData_Sniper);
     }
 
     /// <summary>

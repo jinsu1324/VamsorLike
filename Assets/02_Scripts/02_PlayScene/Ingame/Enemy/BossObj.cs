@@ -8,7 +8,9 @@ using Random = UnityEngine.Random;
 public class BossObj : Enemy
 {
     [SerializeField]
-    private readonly BossData _baseBossData;                    // 보스 데이터 원본
+    private BossID _bossID;                                     // 이 오브젝트의 보스 ID
+
+    private BossData _baseBossData;                    // 보스 데이터
 
     [SerializeField]
     private GroundSkill _groundSkillPrefab;                     // 원형 범위 스킬 프리팹
@@ -44,6 +46,8 @@ public class BossObj : Enemy
     /// </summary>
     public override void DataSetting()
     {
+        _baseBossData = DataManager.Instance.BossDatas.GetDataById(_bossID.ToString());
+
         _hp = _baseBossData.MaxHp;
         _atk = _baseBossData.Atk;
         _speed = _baseBossData.Speed;

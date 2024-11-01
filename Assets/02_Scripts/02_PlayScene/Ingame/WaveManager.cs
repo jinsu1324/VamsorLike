@@ -38,28 +38,29 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void Check_WaveTime()
     {
-        // Time.deltaTime을 이용해 매 프레임마다 시간을 누적
-        _playTime += Time.deltaTime;
+        // 수정필요!
+        //// Time.deltaTime을 이용해 매 프레임마다 시간을 누적
+        //_playTime += Time.deltaTime;
 
-        // 플레이타임 UI 갱신
-        Refresh_PlayTimeUI(_playTime);
+        //// 플레이타임 UI 갱신
+        //Refresh_PlayTimeUI(_playTime);
 
-        // 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
-        if (_curWaveIndex < DataManager.Instance.WaveDatas.waveDataArr.Length)
-        {
-            // 현재 웨이브의 목표 시간을 가져옴
-            float waveTargetTime = DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex].WaveTime;
+        //// 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
+        //if (_curWaveIndex < DataManager.Instance.WaveDatas.waveDataArr.Length)
+        //{
+        //    // 현재 웨이브의 목표 시간을 가져옴
+        //    float waveTargetTime = DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex].WaveTime;
 
-            // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
-            if (_playTime >= waveTargetTime)
-            {
-                // 웨이브 이벤트 실행
-                WaveEvent(DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex]);
+        //    // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
+        //    if (_playTime >= waveTargetTime)
+        //    {
+        //        // 웨이브 이벤트 실행
+        //        WaveEvent(DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex]);
 
-                // 다음 웨이브 인덱스로 이동
-                _curWaveIndex++;
-            }
-        }
+        //        // 다음 웨이브 인덱스로 이동
+        //        _curWaveIndex++;
+        //    }
+        //}
     }
 
     /// <summary>

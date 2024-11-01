@@ -25,7 +25,7 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     public Skill_Boomerang(SkillData_Boomerang skillData_Boomerang)
     {
-        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.Id);
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.ID);
         CurrentLevel = 0;
         MaxLevel = 2;
 
@@ -50,10 +50,11 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        SkillData_Boomerang skillData_Boomerang =
-           PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Boomerang>(Id, ++CurrentLevel);
+        // 수정필요!
+        //SkillData_Boomerang skillData_Boomerang =
+        //   PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Boomerang>(Id, ++CurrentLevel);
 
-        StatSetting(skillData_Boomerang);
+        //StatSetting(skillData_Boomerang);
     }
 
     /// <summary>

@@ -53,16 +53,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: b66e2647fff275941b6d8d9b6da1e32b, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseHeroData
-      Entry: 10
-      Data: 0
+    SerializationNodes: []
+  _heroID: 1
   _hpBar: {fileID: 2557690263671083713}
   _heroCanvas: {fileID: 6298390183330060267}
 --- !u!212 &5552972316452667015
@@ -236,7 +233,7 @@ MonoBehaviour:
   - {x: 0.06871505, y: 0.008317232, z: 0}
   m_ShapePathHash: 85298713
   m_Mesh: {fileID: 0}
-  m_InstanceId: 221096
+  m_InstanceId: 65076
   m_LocalBounds:
     m_Center: {x: -0.01111538, y: 0.17535165, z: 0}
     m_Extent: {x: 0.07983044, y: 0.1671214, z: 0}

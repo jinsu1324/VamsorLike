@@ -9,10 +9,13 @@ public enum HeroID
     Wizard
 }
 
-// 영웅 데이터
 [System.Serializable]
-public class HeroData : Creature
+public class HeroData : BaseData
 {
+    public string Name;
+    public float MaxHp;
+    public float Atk;
+    public float Speed;
     public string StartSkill;
     public string Desc;
 }

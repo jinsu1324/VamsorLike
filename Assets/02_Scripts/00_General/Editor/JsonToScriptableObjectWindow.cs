@@ -79,59 +79,61 @@ public class JsonToScriptableObjectWindow : OdinEditorWindow
     /// </summary>
     private void CreateWaveDataSO(string json)
     {
-        // JSON 데이터를 JsonFormat 객체로 디시리얼라이즈(문자열에서 객체로 변환)함.
-        var jsonData = JsonConvert.DeserializeObject<JsonFormat>(json);
+        // 수정필요!
+        //// JSON 데이터를 JsonFormat 객체로 디시리얼라이즈(문자열에서 객체로 변환)함.
+        //var jsonData = JsonConvert.DeserializeObject<JsonFormat>(json);
 
-        // 새로운 ScriptableObject를 생성. 여기에 파싱된 데이터를 저장할 것임.
-        WaveDatas waveDataSO = ScriptableObject.CreateInstance<WaveDatas>();
+        //// 새로운 ScriptableObject를 생성. 여기에 파싱된 데이터를 저장할 것임.
+        //WaveDatas waveDataSO = ScriptableObject.CreateInstance<WaveDatas>();
 
-        // JSON의 데이터에서 헤더(첫번째 배열)를 제외한 나머지 데이터를 파싱        
-        waveDataSO.waveDataArr = new WaveData[jsonData.values.Length - 2]; // 첫 번째는 빈 배열, 두 번째는 헤더이므로 무시
+        //// JSON의 데이터에서 헤더(첫번째 배열)를 제외한 나머지 데이터를 파싱        
+        //waveDataSO.waveDataArr = new WaveData[jsonData.values.Length - 2]; // 첫 번째는 빈 배열, 두 번째는 헤더이므로 무시
 
-        // 파싱된 JSON 데이터의 값들을 하나씩 ScriptableObject에 채움
-        for (int i = 2; i < jsonData.values.Length; i++) // 2번째 인덱스부터 데이터 시작
-        {
-            var values = jsonData.values[i]; // 현재 행의 데이터를 가져옴
+        //// 파싱된 JSON 데이터의 값들을 하나씩 ScriptableObject에 채움
+        //for (int i = 2; i < jsonData.values.Length; i++) // 2번째 인덱스부터 데이터 시작
+        //{
+        //    var values = jsonData.values[i]; // 현재 행의 데이터를 가져옴
 
-            // WaveData 객체를 생성하고 JSON의 값을 해당 필드에 할당
-            WaveData waveData = new WaveData
-            {
-                WaveTime = ConvertTimeStringToFloat(values[0]),                             
-                MonsterType = values[1].Split(','),                                         
-                TotalSpawnCount = Array.ConvertAll(values[2].Split(','), int.Parse),        
-                SpawnInterval = Array.ConvertAll(values[3].Split(','), float.Parse),        
-                BossType = values[4]
-            };
+        //    // WaveData 객체를 생성하고 JSON의 값을 해당 필드에 할당
+        //    WaveData waveData = new WaveData
+        //    {
+        //        //WaveTime = ConvertTimeStringToFloat(values[0]),                             
+        //        WaveTime = values[0],                             
+        //        MonsterType = values[1].Split(','),                                         
+        //        TotalSpawnCount = Array.ConvertAll(values[2].Split(','), int.Parse),        
+        //        SpawnInterval = Array.ConvertAll(values[3].Split(','), float.Parse),        
+        //        BossType = values[4]
+        //    };
 
-            // 만들어진 WaveData 객체를 ScriptableObject의 waves에 추가
-            waveDataSO.waveDataArr[i - 2] = waveData;
-        }
+        //    // 만들어진 WaveData 객체를 ScriptableObject의 waves에 추가
+        //    waveDataSO.waveDataArr[i - 2] = waveData;
+        //}
 
-        // ScriptableObject을 유니티 에셋으로 저장      
-        string assetPath = $"Assets/Resources/Data/Wave/WaveDatas.asset";
-        WaveDatas existingAsset = AssetDatabase.LoadAssetAtPath<WaveDatas>(assetPath);
+        //// ScriptableObject을 유니티 에셋으로 저장      
+        //string assetPath = $"Assets/Resources/Data/Wave/WaveDatas.asset";
+        //WaveDatas existingAsset = AssetDatabase.LoadAssetAtPath<WaveDatas>(assetPath);
 
-        if (existingAsset == null)
-        {
-            // 에셋이 없으면 새로 생성
-            AssetDatabase.CreateAsset(waveDataSO, assetPath);
-            Debug.Log($"새 스크립터블 오브젝트 생성! : {assetPath}");
-        }
-        else
-        {
-            // 에셋이 이미 존재하면 기존 에셋을 갱신
-            existingAsset.waveDataArr = waveDataSO.waveDataArr;
+        //if (existingAsset == null)
+        //{
+        //    // 에셋이 없으면 새로 생성
+        //    AssetDatabase.CreateAsset(waveDataSO, assetPath);
+        //    Debug.Log($"새 스크립터블 오브젝트 생성! : {assetPath}");
+        //}
+        //else
+        //{
+        //    // 에셋이 이미 존재하면 기존 에셋을 갱신
+        //    existingAsset.waveDataArr = waveDataSO.waveDataArr;
 
-            // 변경 사항을 유니티에 알림
-            EditorUtility.SetDirty(existingAsset);
-            Debug.Log($"기존 스크립터블 오브젝트 업데이트! :  {assetPath}");
-        }
+        //    // 변경 사항을 유니티에 알림
+        //    EditorUtility.SetDirty(existingAsset);
+        //    Debug.Log($"기존 스크립터블 오브젝트 업데이트! :  {assetPath}");
+        //}
 
-        // 에셋 저장
-        AssetDatabase.SaveAssets();
+        //// 에셋 저장
+        //AssetDatabase.SaveAssets();
 
-        // 에셋이 성공적으로 저장되었음을 알리는 메시지 박스를 띄움
-        EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {assetPath}", "OK");
+        //// 에셋이 성공적으로 저장되었음을 알리는 메시지 박스를 띄움
+        //EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {assetPath}", "OK");
     }
 
     /// <summary>

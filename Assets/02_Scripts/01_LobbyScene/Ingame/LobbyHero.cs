@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class LobbyHero : SerializedMonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
+    private HeroID _heroID;                          // 이 영웅 ID
     public HeroData BaseHeroData { get; set; }      // 영웅 정보 데이터
 
     private LobbyVirtualCamera _virtualCamera;      // 버추얼 카메라 받아올 변수
@@ -21,6 +22,8 @@ public class LobbyHero : SerializedMonoBehaviour, IPointerClickHandler, IPointer
     /// </summary>
     private void Start()
     {
+        BaseHeroData = DataManager.Instance.HeroDatas.GetDataById(_heroID.ToString());
+
         _virtualCamera = FindObjectOfType<LobbyVirtualCamera>();
         _outlineMaterial = GetComponent<SpriteRenderer>().material;
         _animator = GetComponent<Animator>();

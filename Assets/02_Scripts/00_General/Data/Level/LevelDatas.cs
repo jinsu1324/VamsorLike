@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class LevelDatas : ScriptableObject
+public class LevelDatas : DataListSO<LevelData>
 {
-    public List<LevelData> LevelDataList = new List<LevelData>();    
 
 }

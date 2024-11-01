@@ -13,13 +13,17 @@ using UnityEngine.UI;
 public class MonsterObj : Enemy
 {
     [SerializeField]
-    private readonly MonsterData _baseMonsterData;              // 몬스터 데이터 원본
+    private MonsterID _monsterID;                               // 이 오브젝트의 몬스터 ID
+
+    private MonsterData _baseMonsterData;                       // 몬스터 데이터
     
     /// <summary>
     /// 데이터 셋팅
     /// </summary>
     public override void DataSetting()
     {
+        _baseMonsterData = DataManager.Instance.MonsterDatas.GetDataById(_monsterID.ToString());
+
         _hp = _baseMonsterData.MaxHp;
         _atk = _baseMonsterData.Atk;
         _speed = _baseMonsterData.Speed;

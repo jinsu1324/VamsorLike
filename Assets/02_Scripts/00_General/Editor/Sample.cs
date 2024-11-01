@@ -18,29 +18,96 @@ public class Sample : OdinEditorWindow
     // Google 스프레드시트의 고유 ID. URL에서 찾을 수 있음.
     private readonly string _sheetId = "1_ksfuyQDI4muo28hC8nCtyjwMLohw3oOyGBk8CsqKZE";
 
-    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range = "HeroData!A1:G5";
-
     // Google Cloud Console에서 발급받은 API 키. 이 키를 통해 Google Sheets API에 접근할 수 있음.
     private readonly string _apiKey = "AIzaSyATyhPBwN65Vbkg9ppq6NBOo3nLwHuqkJU";
+
+
+    // HeroData
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_HeroData = "HeroData!A1:G5";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_HeroData = "HeroDatas";
+
+
+    // LevelData
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_LevelData = "LevelData!A1:C13";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_LevelData = "LevelDatas";
+
+
+    // WaveData
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_WaveData = "WaveData!A1:F7";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_WaveData = "WaveDatas";
+
+
+    // MonsterData
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_MonsterData = "MonsterData!A1:E6";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_MonsterData = "MonsterDatas";
+      
+
+    // BossData
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_BossData = "BossData!A1:M3";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_BossData = "BossDatas";
+
+
+    // SkillData_SlashAttack
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_SkillData_SlashAttack = "SkillData_SlashAttack!A1:F5";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_SkillData_SlashAttack = "SkillDatas_SlashAttack";
+
+
+    // SkillData_Boomerang
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_SkillData_Boomerang = "SkillData_Boomerang!A1:H5";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_SkillData_Boomerang = "SkillDatas_Boomerang";
+
+
+    // SkillData_Sniper
+    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    private readonly string _range_SkillData_Sniper = "SkillData_Sniper!A1:H5";
+    // 데이터를 저장할 경로와 이름
+    private readonly string _fileName_SkillData_Sniper = "SkillDatas_Sniper";
+
+
 
     /// <summary>
     /// 메뉴 생성
     /// </summary>
-    [MenuItem("임시 메뉴/Json -> ScriptableObject")]
+    [MenuItem("진수/데이터 최신화")]
     public static void OpenWindow()
     {
         GetWindow<Sample>().Show();
     }
 
+    [Button("데이터 최신화 하기!", ButtonSizes.Large)]
+    public void MyButton()
+    {
+        FetchAndConvertData<HeroData, HeroDatas>(_range_HeroData, _fileName_HeroData);
+        FetchAndConvertData<LevelData, LevelDatas>(_range_LevelData, _fileName_LevelData);
+        FetchAndConvertData<WaveData, WaveDatas>(_range_WaveData, _fileName_WaveData);
+        FetchAndConvertData<MonsterData, MonsterDatas>(_range_MonsterData, _fileName_MonsterData);
+        FetchAndConvertData<BossData, BossDatas>(_range_BossData, _fileName_BossData);
+        FetchAndConvertData<SkillData_SlashAttack, SkillDatas_SlashAttack>(_range_SkillData_SlashAttack, _fileName_SkillData_SlashAttack);
+        FetchAndConvertData<SkillData_Boomerang, SkillDatas_Boomerang>(_range_SkillData_Boomerang, _fileName_SkillData_Boomerang);
+        FetchAndConvertData<SkillData_Sniper, SkillDatas_Sniper>(_range_SkillData_Sniper, _fileName_SkillData_Sniper);
+    }
+
     /// <summary>
-    /// Odin 버튼 생성. 버튼을 누르면 FetchAndConvertWaveData 메서드가 실행되어 데이터가 가져와지고 변환됨.
+    /// 데이터가 가져오고 스크립터블 오브젝트로 변환
     /// </summary>
-    [Button("Fetch and Convert : HeroData", ButtonSizes.Large)]
-    public async void FetchAndConvertHeroData()
+    public async void FetchAndConvertData<Data, DatasSO>(string range, string fileName) where Data : BaseData, new() where DatasSO : DataListSO<Data>
     {
         // Google Sheets API에 데이터를 요청할 URL. 여기서 sheetId, range, apiKey를 사용하여 API 요청을 보낼 URL을 완성.
-        string url = $"https://sheets.googleapis.com/v4/spreadsheets/{_sheetId}/values/{_range}?key={_apiKey}";
+        string url = $"https://sheets.googleapis.com/v4/spreadsheets/{_sheetId}/values/{range}?key={_apiKey}";
 
         // HttpClient는 HTTP 요청을 보내고 응답을 받을 때 사용하는 클래스.
         using (HttpClient client = new HttpClient())
@@ -57,10 +124,10 @@ public class Sample : OdinEditorWindow
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     // 응답 결과를 콘솔에 출력해 확인.
-                    Debug.Log(responseBody);
+                    //Debug.Log(responseBody);
 
                     // 응답받은 JSON 데이터를 ScriptableObject로 변환하는 메서드를 호출.
-                    CreateHeroDataSO(responseBody);
+                    CreateDataListSO<Data, DatasSO>(responseBody, fileName);
                 }
                 else
                 {
@@ -79,156 +146,93 @@ public class Sample : OdinEditorWindow
     /// <summary>
     /// // JSON 데이터를 ScriptableObject로 변환하는 메서드.
     /// </summary>
-    private void CreateHeroDataSO(string json)
+    private void CreateDataListSO<Data, DatasSO>(string json, string fileName) where Data : BaseData, new() where DatasSO : DataListSO<Data>
     {
-        Debug.Log("1");
         // JSON 데이터를 JsonFormat 객체로 디시리얼라이즈(문자열에서 객체로 변환)함.
         var jsonData = JsonConvert.DeserializeObject<JsonFormat>(json);
 
-        Debug.Log("2");
         // 새로운 ScriptableObject를 생성. 여기에 파싱된 데이터를 저장할 것임.
-        //WaveDatas waveDataSO = ScriptableObject.CreateInstance<WaveDatas>();
-        //HeroData heroData = ScriptableObject.CreateInstance<HeroData>();
-
-        // ScriptableObject을 유니티 에셋으로 저장      
-        //string assetPath = $"Assets/Resources/Data/HeroDataSample/HeroDataSample.asset";
-
-
-        //// JSON의 데이터에서 헤더(첫번째 배열)를 제외한 나머지 데이터를 파싱        
-        //waveDataSO.waveDataArr = new WaveData[jsonData.values.Length - 2]; // 첫 번째는 빈 배열, 두 번째는 헤더이므로 무시
+        DatasSO datasSO = CreateInstance<DatasSO>();
+        datasSO.DataList = new List<Data>();
 
         // 헤더들
         var headerValues = jsonData.values[1];
 
-
-
-
-        // 파싱된 JSON 데이터의 값들을 하나씩 ScriptableObject에 채움
-        for (int i = 2; i < jsonData.values.Length; i++) // 2번째 인덱스부터 데이터 시작
+        // 파싱된 JSON 데이터의 값들을 하나씩 ScriptableObject에 채움 (2번째 인덱스부터 데이터 시작)
+        for (int i = 2; i < jsonData.values.Length; i++) 
         {
-            Debug.Log("3");
-            var values = jsonData.values[i]; // 현재 행의 데이터를 가져옴
+            // 현재 행의 데이터를 가져옴
+            var values = jsonData.values[i]; 
 
-            Type type = typeof(HeroData);
-            HeroData heroData = CreateInstance<HeroData>();
+            // 리플렉션 준비
+            Type type = typeof(Data);
+            Data data = new Data();
 
+            // 헤더와 데이터를 하나씩 매핑
             for (int h = 0; h < headerValues.Length; h++)
             {
                 FieldInfo fieldInfo = type.GetField(headerValues[h]);
 
                 if (fieldInfo.FieldType == typeof(int))
                 {
-                    int data_int = int.Parse(values[h]);
-                    fieldInfo.SetValue(heroData, data_int);
+                    fieldInfo.SetValue(data, int.Parse(values[h]));
                 }
                 else if (fieldInfo.FieldType == typeof(float))
                 {
-                    float data_float = float.Parse(values[h]);
-                    fieldInfo.SetValue(heroData, data_float);
+                    fieldInfo.SetValue(data, float.Parse(values[h]));
                 }
                 else if (fieldInfo.FieldType == typeof(string))
                 {
-                    fieldInfo.SetValue(heroData, values[h]);
+                    fieldInfo.SetValue(data, values[h]);
                 }
 
-                Debug.Log($" {i} 번째행 데이터 들어간 Id : {heroData.Id}");
-                Debug.Log($" {i} 번째행 데이터 들어간 Name : {heroData.Name}");
-                Debug.Log($" {i} 번째행 데이터 들어간 MaxHp : {heroData.MaxHp}");
-                Debug.Log($" {i} 번째행 데이터 들어간 Atk : {heroData.Atk}");
-                Debug.Log($" {i} 번째행 데이터 들어간 Speed : {heroData.Speed}");
-                Debug.Log($" {i} 번째행 데이터 들어간 StartSkill : {heroData.StartSkill}");
-                Debug.Log($" {i} 번째행 데이터 들어간 Desc : {heroData.Desc}");
+                else if (fieldInfo.FieldType == typeof(int[]))
+                {
+                    fieldInfo.SetValue(data, Array.ConvertAll(values[h].Split(','), int.Parse));
+                }
+                else if (fieldInfo.FieldType == typeof(float[]))
+                {
+                    fieldInfo.SetValue(data, Array.ConvertAll(values[h].Split(','), float.Parse));
+                }
+                else if (fieldInfo.FieldType == typeof(string[]))
+                {
+                    fieldInfo.SetValue(data, values[h].Split(','));
+                }
             }
 
+            // 데이터테이블에 있던 값들이 변수에 다 들어간 data를 -> datasSO DataList에 추가
+            datasSO.DataList.Add(data);
 
-            Debug.Log("4");
-            //HeroData heroData = CreateInstance<HeroData>();
-
-            //heroData.Id = values[0];
-            //heroData.Name = values[1];
-            //heroData.MaxHp = float.Parse(values[2]);
-            //heroData.Atk = float.Parse(values[3]);
-            //heroData.Speed = float.Parse(values[4]);
-            //heroData.StartSkill = values[5];
-            //heroData.Desc = values[6];
-
-            //Debug.Log($" {i} 번째 데이터 들어간 Id : {heroData.Id}");
-            //Debug.Log($" {i} 번째 데이터 들어간 Name : {heroData.Name}");
-            //Debug.Log($" {i} 번째 데이터 들어간 MaxHp : {heroData.MaxHp}");
-            //Debug.Log($" {i} 번째 데이터 들어간 Atk : {heroData.Atk}");
-            //Debug.Log($" {i} 번째 데이터 들어간 Speed : {heroData.Speed}");
-            //Debug.Log($" {i} 번째 데이터 들어간 StartSkill : {heroData.StartSkill}");
-            //Debug.Log($" {i} 번째 데이터 들어간 Desc : {heroData.Desc}");
-
-
-            //// WaveData 객체를 생성하고 JSON의 값을 해당 필드에 할당
-            //WaveData waveData = new WaveData
-            //{
-            //    WaveTime = ConvertTimeStringToFloat(values[0]),
-            //    MonsterType = values[1].Split(','),
-            //    TotalSpawnCount = Array.ConvertAll(values[2].Split(','), int.Parse),
-            //    SpawnInterval = Array.ConvertAll(values[3].Split(','), float.Parse),
-            //    BossType = values[4]
-            //};
-
-            //// 만들어진 WaveData 객체를 ScriptableObject의 waves에 추가
-            //waveDataSO.waveDataArr[i - 2] = waveData;
-            //heroData = data;
-
-
-            // ScriptableObject을 유니티 에셋으로 저장
-            Debug.Log("5");
-            string assetPath = $"Assets/Resources/Data/HeroDataSample/{heroData.Id}_HeroDataSample.asset";
-            HeroData existingAsset = AssetDatabase.LoadAssetAtPath<HeroData>(assetPath);
-
-            if (existingAsset == null)
-            {
-                // 에셋이 없으면 새로 생성
-                AssetDatabase.CreateAsset(heroData, assetPath);
-                Debug.Log($"새 스크립터블 오브젝트 생성! : {assetPath}");
-            }
-            else
-            {
-                // 에셋이 이미 존재하면 기존 에셋을 갱신
-                existingAsset = heroData;
-
-                // 변경 사항을 유니티에 알림
-                EditorUtility.SetDirty(existingAsset);
-                Debug.Log($"기존 스크립터블 오브젝트 업데이트! :  {assetPath}");
-            }
-
-            // 에셋 저장
-            Debug.Log("6");
-            AssetDatabase.SaveAssets();
+            // 변경 사항을 유니티에 알림
+            EditorUtility.SetDirty(datasSO);
         }
 
+        // ScriptableObject을 유니티 에셋으로 저장
+        string path = $"Assets/Resources/Data/{fileName}.asset";
+        DatasSO existingAsset = AssetDatabase.LoadAssetAtPath<DatasSO>(fileName);
 
-        Debug.Log("7");
-        // 에셋이 성공적으로 저장되었음을 알리는 메시지 박스를 띄움
-        //EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {assetPath}", "OK");
-        EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated", "OK");
-    }
-
-    /// <summary>
-    /// 00:00:00 같은 string 시간 형식을 TimeSpan을 통해 float로 변환
-    /// </summary>
-    private float ConvertTimeStringToFloat(string timeString)
-    {
-        if (string.IsNullOrEmpty(timeString))
+        if (existingAsset == null)
         {
-            return -1.0f;
-        }
+            // 에셋이 없으면 새로 생성
+            AssetDatabase.CreateAsset(datasSO, path);
 
-
-        if (TimeSpan.TryParse(timeString, out TimeSpan timeSpan))
-        {
-            return (float)timeSpan.TotalSeconds;
+            // 변경 사항을 유니티에 알림
+            EditorUtility.SetDirty(datasSO);
         }
         else
         {
-            Debug.LogError($"ConvertTimeStringToFloat 실패 : {timeString}");
-            return -1.0f;
+            // 에셋이 이미 존재하면 기존 에셋을 갱신
+            existingAsset = datasSO;
+
+            // 변경 사항을 유니티에 알림
+            EditorUtility.SetDirty(existingAsset);
         }
+
+        // 에셋 저장
+        AssetDatabase.SaveAssets();
+
+        // 에셋이 성공적으로 저장되었음을 알리는 메시지 박스를 띄움
+        EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {path}", "OK");
     }
 }
 

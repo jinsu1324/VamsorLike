@@ -44,89 +44,90 @@ public class SkillLevelDataSettingEditorWindow : OdinEditorWindow
     [Button("스킬 레벨 데이터 셋팅", ButtonSizes.Large)]
     public void SkillLevelDataSettingButton()
     {
-        CSV_Save_SkillLevelData<SkillData_SlashAttack>(TextAsset_SlashAttack, FILENAME_SlashAttack, SkillID.SlashAttack);
-        CSV_Save_SkillLevelData<SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
-        CSV_Save_SkillLevelData<SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
+        // 수정필요!
+        //CSV_Save_SkillLevelData<SkillData_SlashAttack>(TextAsset_SlashAttack, FILENAME_SlashAttack, SkillID.SlashAttack);
+        //CSV_Save_SkillLevelData<SkillData_Boomerang>(TextAsset_Boomerang, FILENAME_Boomerang, SkillID.Boomerang);
+        //CSV_Save_SkillLevelData<SkillData_Sniper>(TextAsset_Sniper, FILENAME_Sniper, SkillID.Sniper);
     }
 
 
-    // csv를 SkillLevelData 스크립터블로 저장
-    public static void CSV_Save_SkillLevelData<SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillData : SkillData_Base, new()
-    {
-        // 스크립터블 가져오는 부분
-        string path = $"Assets/Resources/Data/Skill/{fileName}.asset";
-        ScriptableObject so = AssetDatabase.LoadAssetAtPath<SkillLevelDataSO>(path);
+    //// csv를 SkillLevelData 스크립터블로 저장
+    //public static void CSV_Save_SkillLevelData<SkillData>(TextAsset textAsset, string fileName, SkillID skillID) where SkillData : SkillData_Base, new()
+    //{
+    //    // 스크립터블 가져오는 부분
+    //    string path = $"Assets/Resources/Data/Skill/{fileName}.asset";
+    //    ScriptableObject so = AssetDatabase.LoadAssetAtPath<SkillLevelDataSO>(path);
 
-        if (so == null)
-        {
-            so = ScriptableObject.CreateInstance<SkillLevelDataSO>();
+    //    if (so == null)
+    //    {
+    //        so = ScriptableObject.CreateInstance<SkillLevelDataSO>();
 
-            AssetDatabase.CreateAsset(so, path);
-            AssetDatabase.SaveAssets();
-        }
+    //        AssetDatabase.CreateAsset(so, path);
+    //        AssetDatabase.SaveAssets();
+    //    }
 
-        SkillLevelDataSO skillLevelDataSO = so as SkillLevelDataSO;
-        if (skillLevelDataSO.SkillDataList != null)
-            skillLevelDataSO.SkillDataList.Clear();
+    //    SkillLevelDataSO skillLevelDataSO = so as SkillLevelDataSO;
+    //    if (skillLevelDataSO.SkillDataList != null)
+    //        skillLevelDataSO.SkillDataList.Clear();
 
 
-        // 텍스트 쪼갬
-        string csv = textAsset.text;
-        string[] csvLines = csv.Split(System.Environment.NewLine);
+    //    // 텍스트 쪼갬
+    //    string csv = textAsset.text;
+    //    string[] csvLines = csv.Split(System.Environment.NewLine);
         
-        int headerIndex = 1;
-        string[] headers = csvLines[headerIndex].Split(',');
+    //    int headerIndex = 1;
+    //    string[] headers = csvLines[headerIndex].Split(',');
 
 
-        // 데이터 할당
-        for (int i = headerIndex + 1; i < csvLines.Length; i++)
-        {
-            // 리플렉션 준비
-            Type type = typeof(SkillData);
-            SkillData skillData = new SkillData();
+    //    // 데이터 할당
+    //    for (int i = headerIndex + 1; i < csvLines.Length; i++)
+    //    {
+    //        // 리플렉션 준비
+    //        Type type = typeof(SkillData);
+    //        SkillData skillData = new SkillData();
 
-            string[] datas = csvLines[i].Split(',');
+    //        string[] datas = csvLines[i].Split(',');
 
-            for (int k = 0; k < datas.Length; k++)
-            {
-                FieldInfo fieldInfo = type.GetField(headers[k]);
+    //        for (int k = 0; k < datas.Length; k++)
+    //        {
+    //            FieldInfo fieldInfo = type.GetField(headers[k]);
 
-                if (fieldInfo.FieldType == typeof(int))
-                    fieldInfo.SetValue(skillData, int.Parse(datas[k]));
+    //            if (fieldInfo.FieldType == typeof(int))
+    //                fieldInfo.SetValue(skillData, int.Parse(datas[k]));
 
-                else if (fieldInfo.FieldType == typeof(float))
-                    fieldInfo.SetValue(skillData, float.Parse(datas[k]));
+    //            else if (fieldInfo.FieldType == typeof(float))
+    //                fieldInfo.SetValue(skillData, float.Parse(datas[k]));
 
-                else if (fieldInfo.FieldType == typeof(string))
-                    fieldInfo.SetValue(skillData, datas[k]);
-            }            
+    //            else if (fieldInfo.FieldType == typeof(string))
+    //                fieldInfo.SetValue(skillData, datas[k]);
+    //        }            
 
-            skillLevelDataSO.SkillDataList.Add(skillData);
+    //        skillLevelDataSO.SkillDataList.Add(skillData);
 
-            // 클릭 및 저장
-            EditorUtility.SetDirty(skillLevelDataSO);
-            AssetDatabase.SaveAssets();
+    //        // 클릭 및 저장
+    //        EditorUtility.SetDirty(skillLevelDataSO);
+    //        AssetDatabase.SaveAssets();
 
 
 
-            // 데이터 매니저들 가져와서
-            DataManager dataManager = FindObjectOfType<DataManager>();
+    //        // 데이터 매니저들 가져와서
+    //        DataManager dataManager = FindObjectOfType<DataManager>();
 
-            // 딕셔너리 클리어
-            if (dataManager.SkillDataDict.ContainsKey(skillID))
-            {
-                dataManager.SkillDataDict.Remove(skillID);
-                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
-            }
-            else
-            {
-                dataManager.SkillDataDict[skillID] = skillLevelDataSO;
-            }
+    //        // 딕셔너리 클리어
+    //        if (dataManager.SkillDataDict.ContainsKey(skillID))
+    //        {
+    //            dataManager.SkillDataDict.Remove(skillID);
+    //            dataManager.SkillDataDict[skillID] = skillLevelDataSO;
+    //        }
+    //        else
+    //        {
+    //            dataManager.SkillDataDict[skillID] = skillLevelDataSO;
+    //        }
 
-            // 클릭 및 저장
-            EditorUtility.SetDirty(dataManager);
-            AssetDatabase.SaveAssets();
-        }
+    //        // 클릭 및 저장
+    //        EditorUtility.SetDirty(dataManager);
+    //        AssetDatabase.SaveAssets();
+    //    }
 
-    }
+    //}
 }

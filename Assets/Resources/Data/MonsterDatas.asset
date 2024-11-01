@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1ba983acdc05c4facec01075368694, type: 3}
+  m_Name: MonsterDatas
+  m_EditorClassIdentifier: 
+  DataList:
+  - ID: Golem
+    Name: Golem_Kid
+    MaxHp: 75
+    Atk: 10
+    Speed: 2
+  - ID: Skeleton
+    Name: Skeleton_Kid
+    MaxHp: 50
+    Atk: 20
+    Speed: 3
+  - ID: Witch
+    Name: Witch_Kid
+    MaxHp: 75
+    Atk: 30
+    Speed: 1.5
+  - ID: Dragon
+    Name: Dragon_Kid
+    MaxHp: 100
+    Atk: 40
+    Speed: 2.5

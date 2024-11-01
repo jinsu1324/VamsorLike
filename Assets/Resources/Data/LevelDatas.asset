@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b56debbad5aed94599ac9c9445a43a5, type: 3}
+  m_Name: LevelDatas
+  m_EditorClassIdentifier: 
+  DataList:
+  - ID: Level0
+    Level: 0
+    MaxExp: 100
+  - ID: Level1
+    Level: 1
+    MaxExp: 110
+  - ID: Level2
+    Level: 2
+    MaxExp: 120
+  - ID: Level3
+    Level: 3
+    MaxExp: 130
+  - ID: Level4
+    Level: 4
+    MaxExp: 140
+  - ID: Level5
+    Level: 5
+    MaxExp: 150
+  - ID: Level6
+    Level: 6
+    MaxExp: 160
+  - ID: Level7
+    Level: 7
+    MaxExp: 170
+  - ID: Level8
+    Level: 8
+    MaxExp: 180
+  - ID: Level9
+    Level: 9
+    MaxExp: 190
+  - ID: Level10
+    Level: 10
+    MaxExp: 200

@@ -19,7 +19,7 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
     {
-        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.Id);
+        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.ID);
         CurrentLevel = 0;
         MaxLevel = 2;
 
@@ -41,10 +41,11 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        SkillData_SlashAttack skillData_SlashAttack =
-            PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_SlashAttack>(Id, ++CurrentLevel);
+        // 수정필요!
+        //SkillData_SlashAttack skillData_SlashAttack =
+        //    PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_SlashAttack>(Id, ++CurrentLevel);
 
-        StatSetting(skillData_SlashAttack);
+        //StatSetting(skillData_SlashAttack);
     }
 
     /// <summary>

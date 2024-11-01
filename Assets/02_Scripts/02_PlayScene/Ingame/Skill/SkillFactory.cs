@@ -6,36 +6,39 @@ public static class SkillFactory
 {
     public static Skill_Base CreateSkillClass(SkillID skillID, int level)
     {
-        if (skillID == SkillID.SlashAttack)
-        {
-            SkillData_SlashAttack skillData_SlashAttack
-                = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_SlashAttack>(SkillID.SlashAttack, level);
+        // 수정필요!
+        //if (skillID == SkillID.SlashAttack)
+        //{
+        //    SkillData_SlashAttack skillData_SlashAttack
+        //        = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_SlashAttack>(SkillID.SlashAttack, level);
 
-            Skill_SlashAttack skill_SlashAttack = new Skill_SlashAttack(skillData_SlashAttack);
-            return skill_SlashAttack;
-        }
+        //    Skill_SlashAttack skill_SlashAttack = new Skill_SlashAttack(skillData_SlashAttack);
+        //    return skill_SlashAttack;
+        //}
 
-        else if (skillID == SkillID.Sniper)
-        {
-            SkillData_Sniper skillData_Sniper
-                = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(SkillID.Sniper, level);
+        //else if (skillID == SkillID.Sniper)
+        //{
+        //    SkillData_Sniper skillData_Sniper
+        //        = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(SkillID.Sniper, level);
 
-            Skill_Sniper skill_Sniper = new Skill_Sniper(skillData_Sniper);
-            return skill_Sniper;
-        }
+        //    Skill_Sniper skill_Sniper = new Skill_Sniper(skillData_Sniper);
+        //    return skill_Sniper;
+        //}
 
-        else if (skillID == SkillID.Boomerang)
-        {
-            SkillData_Boomerang skillData_Boomerang
-                = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Boomerang>(SkillID.Boomerang, level);
+        //else if (skillID == SkillID.Boomerang)
+        //{
+        //    SkillData_Boomerang skillData_Boomerang
+        //        = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Boomerang>(SkillID.Boomerang, level);
 
-            Skill_Boomerang skill_Boomerang = new Skill_Boomerang(skillData_Boomerang);
-            return skill_Boomerang;
-        }
+        //    Skill_Boomerang skill_Boomerang = new Skill_Boomerang(skillData_Boomerang);
+        //    return skill_Boomerang;
+        //}
 
-        else
-        {
-            return null;
-        }
+        //else
+        //{
+        //    return null;
+        //}
+
+        return null;
     }
 }

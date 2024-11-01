@@ -12,7 +12,11 @@ public enum MonsterID
 
 // 몬스터 데이터
 [System.Serializable]
-public class MonsterData : Creature
+public class MonsterData : BaseData
 {
-    public Sprite Sprite;
+    public string Name;
+    public float MaxHp;
+    public float Atk;
+    public float Speed;
+    //public Sprite Sprite;
 }

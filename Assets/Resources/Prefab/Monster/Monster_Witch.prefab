@@ -51,16 +51,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 14bc6baa1eaa22d4e9e29b7ec2f472f5, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseMonsterData
-      Entry: 10
-      Data: 0
+    SerializationNodes: []
+  _monsterID: 2
 --- !u!212 &9156713683305921239
 SpriteRenderer:
   m_ObjectHideFlags: 0

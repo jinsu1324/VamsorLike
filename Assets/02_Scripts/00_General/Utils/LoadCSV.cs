@@ -12,67 +12,68 @@ public class LoadCSV
 {    
     public static void CSV_to_DataList(TextAsset textAsset)
     {
-        // Scriptable Object로 저장하고 불러오는 부분
-        string path = $"Assets/Resources/Data/Level/LevelDataList.asset";
-        ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDatas>(path);
+        // 수정필요!
+        //// Scriptable Object로 저장하고 불러오는 부분
+        //string path = $"Assets/Resources/Data/Level/LevelDataList.asset";
+        //ScriptableObject so = AssetDatabase.LoadAssetAtPath<LevelDatas>(path);
 
-        if (so == null)
-        {
-            so = ScriptableObject.CreateInstance<LevelDatas>();
+        //if (so == null)
+        //{
+        //    so = ScriptableObject.CreateInstance<LevelDatas>();
 
-            AssetDatabase.CreateAsset(so, path);
-            AssetDatabase.SaveAssets();
-        }
+        //    AssetDatabase.CreateAsset(so, path);
+        //    AssetDatabase.SaveAssets();
+        //}
 
-        LevelDatas levelDatas = so as LevelDatas;
-        if (levelDatas.LevelDataList != null)
-            levelDatas.LevelDataList.Clear();
-
-
-        // TextAsset 분할하는 부분
-        string csv = textAsset.text;
-        string[] raws = csv.Split(System.Environment.NewLine);
-
-        int headerIndex = 1;
-        string[] headers = raws[headerIndex].Split(',');
+        //LevelDatas levelDatas = so as LevelDatas;
+        //if (levelDatas.LevelDataList != null)
+        //    levelDatas.LevelDataList.Clear();
 
 
+        //// TextAsset 분할하는 부분
+        //string csv = textAsset.text;
+        //string[] raws = csv.Split(System.Environment.NewLine);
 
-        // 전체 행 반복해서 데이터를 리스트에 넣어주는 부분
-        for (int i = headerIndex + 1; i < raws.Length; i++)
-        {
-            // 행을 , 로 자름 (이제 실제 데이터)
-            string[] datas = raws[i].Split(',');
+        //int headerIndex = 1;
+        //string[] headers = raws[headerIndex].Split(',');
 
 
-            // 리플렉션 활용해서 header == field 이름 통해 데이터 넣어줌
-            Type type = typeof(LevelData);
-            LevelData levelData = new LevelData();
 
-            for (int k = 0; k < datas.Length; k++)
-            {
-                //Debug.Log("header : " + headers[k] + " / data : " + datas[k]);
-                FieldInfo fieldInfo = type.GetField(headers[k]);
+        //// 전체 행 반복해서 데이터를 리스트에 넣어주는 부분
+        //for (int i = headerIndex + 1; i < raws.Length; i++)
+        //{
+        //    // 행을 , 로 자름 (이제 실제 데이터)
+        //    string[] datas = raws[i].Split(',');
 
-                if (fieldInfo.FieldType == typeof(int))
-                {
-                    int data_int = int.Parse(datas[k]);
-                    fieldInfo.SetValue(levelData, data_int);
-                }
-                else if (fieldInfo.FieldType == typeof(float))
-                {
-                    float data_float = float.Parse(datas[k]);
-                    fieldInfo.SetValue(levelData, data_float);
-                }
-                else if (fieldInfo.FieldType == typeof(string))
-                {
-                    fieldInfo.SetValue(levelData, datas[k]);
-                }
-            }
 
-            // 다 완성된 레벨데이터를 리스트에 넣어줌
-            levelDatas.LevelDataList.Add(levelData);
-        }
+        //    // 리플렉션 활용해서 header == field 이름 통해 데이터 넣어줌
+        //    Type type = typeof(LevelData);
+        //    LevelData levelData = new LevelData();
+
+        //    for (int k = 0; k < datas.Length; k++)
+        //    {
+        //        //Debug.Log("header : " + headers[k] + " / data : " + datas[k]);
+        //        FieldInfo fieldInfo = type.GetField(headers[k]);
+
+        //        if (fieldInfo.FieldType == typeof(int))
+        //        {
+        //            int data_int = int.Parse(datas[k]);
+        //            fieldInfo.SetValue(levelData, data_int);
+        //        }
+        //        else if (fieldInfo.FieldType == typeof(float))
+        //        {
+        //            float data_float = float.Parse(datas[k]);
+        //            fieldInfo.SetValue(levelData, data_float);
+        //        }
+        //        else if (fieldInfo.FieldType == typeof(string))
+        //        {
+        //            fieldInfo.SetValue(levelData, datas[k]);
+        //        }
+        //    }
+
+        //    // 다 완성된 레벨데이터를 리스트에 넣어줌
+        //    levelDatas.LevelDataList.Add(levelData);
+        //}
     }
 
 

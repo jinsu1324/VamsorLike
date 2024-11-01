@@ -12,7 +12,9 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class HeroObj : SerializedMonoBehaviour
 {
     [SerializeField]
-    private readonly HeroData _baseHeroData;        // 영웅 오브젝트에 들어갈 데이터
+    private HeroID _heroID;                         // 이 영웅오브젝트의 영웅 ID
+
+    private HeroData _baseHeroData;                 // 영웅 오브젝트에 들어갈 데이터
 
     public float Hp { get; set; }                   // 오브젝트 HP
     public float Atk { get; set; }                  // 오브젝트 Atk
@@ -48,6 +50,9 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void DataSetting()
     {
+        // 이 영웅 ID에 해당하는 데이터 할당
+        _baseHeroData = DataManager.Instance.HeroDatas.GetDataById(_heroID.ToString());
+
         // 데이터 넣어주기
         Hp = _baseHeroData.MaxHp;
         Atk = _baseHeroData.Atk;

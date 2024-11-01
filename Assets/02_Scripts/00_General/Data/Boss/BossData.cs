@@ -7,8 +7,13 @@ public enum BossID
     FireDragon
 }
 
-public class BossData : Creature
+[System.Serializable]
+public class BossData : BaseData
 {
+    public string Name;
+    public float MaxHp;
+    public float Atk;
+    public float Speed;
     public int AppearStageLevel;
     public float SkillDamage; 
     public float SkillRadius; 

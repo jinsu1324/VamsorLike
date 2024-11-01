@@ -21,8 +21,11 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public SkillData SkillData_as_Dict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
     {
-        SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
-        return skillData;
+        // 수정 필요!
+        //SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
+        //return skillData;
+
+        return null;
     }
 
     /// <summary>
@@ -96,8 +99,10 @@ public class SkillManager : SerializedMonoBehaviour
         }
         else
         {
-            Sprite icon = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Icon;
-            return icon;
+            // 수정필요!
+            //Sprite icon = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Icon;
+            //return icon;
+            return null;
         }
     }
 
@@ -115,7 +120,9 @@ public class SkillManager : SerializedMonoBehaviour
         }
         else
         {
-            string name = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Name;
+            // 수정필요!
+            //string name = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Name;
+            string name = "0000";
             return name;
         }
     }
@@ -134,8 +141,11 @@ public class SkillManager : SerializedMonoBehaviour
         }
         else
         {
-            string desc = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Desc;
-            return desc;
+            // 수정필요!
+            //string desc = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Desc;
+            //return desc;
+
+            return null;
         }
     }
 }

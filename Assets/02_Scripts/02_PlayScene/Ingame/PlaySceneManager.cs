@@ -91,10 +91,10 @@ public class PlaySceneManager : SerializedMonoBehaviour
         HeroID myHeroID = GameManager.Instance.myHeroID;
 
         // 선택한 영웅을 이번게임의 영웅으로 할당
-        MyHeroObj = ObjectManager.Instance.HeroObjectDict[myHeroID];
+        MyHeroObj = ResourceManager.Instance.HeroObjectDict[myHeroID];
 
         // 이번게임으로 선택된 영웅을 필드에 스폰
-        MyHeroObj = Instantiate(ObjectManager.Instance.HeroObjectDict[myHeroID], new Vector3(0, 0, 0), Quaternion.identity);
+        MyHeroObj = Instantiate(ResourceManager.Instance.HeroObjectDict[myHeroID], new Vector3(0, 0, 0), Quaternion.identity);
 
         // 이번게임으로 선택된 영웅 데이터 셋팅
         MyHeroObj.DataSetting();

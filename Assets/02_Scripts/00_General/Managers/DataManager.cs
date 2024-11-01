@@ -35,27 +35,35 @@ public class DataManager : SerializedMonoBehaviour
     }
     #endregion
 
-    // 영웅 데이터 딕셔너리
     [SerializeField]
-    public Dictionary<HeroID, HeroData> HeroDataDict { get; set; } = new Dictionary<HeroID, HeroData>();
+    public HeroDatas HeroDatas { get; set; }                           // 영웅 데이터
 
-    // 몬스터 데이터 딕셔너리
     [SerializeField]
-    public Dictionary<MonsterID, MonsterData> MonsterDataDict { get; set; } = new Dictionary<MonsterID, MonsterData>();
+    public LevelDatas LevelDatas { get; set; }                         // 레벨 데이터
 
-    // 보스 데이터 딕셔너리
     [SerializeField]
-    public Dictionary<BossID, BossData> BossDataDict { get; set; } = new Dictionary<BossID, BossData>();
+    public WaveDatas WaveDatas { get; set; }                           // 웨이브 데이터
 
-    // 스킬 데이터 딕셔너리
     [SerializeField]
-    public Dictionary<SkillID, SkillLevelDataSO> SkillDataDict { get; set; } = new Dictionary<SkillID, SkillLevelDataSO>();
+    public MonsterDatas MonsterDatas { get; set; }                     // 몬스터 데이터
 
-    // 레벨데이터 리스트
     [SerializeField]
-    public LevelDatas LevelDatas { get; set; }
+    public BossDatas BossDatas { get; set; }                            // 보스 데이터
 
-    // 웨이브 데이터
     [SerializeField]
-    public WaveDatas WaveDatas { get; set; }
+    public SkillDatas_SlashAttack SkillDatas_SlashAttack { get; set; } // 슬래시 어택 스킬 데이터
+
+    [SerializeField]
+    public SkillDatas_Boomerang SkillDatas_Boomerang { get; set; }     // 부메랑 스킬 데이터
+
+    [SerializeField]
+    public SkillDatas_Sniper SkillDatas_Sniper { get; set; }           // 스나이퍼 스킬 데이터
+
+
+
+
+    private void Start()
+    {
+        //Debug.Log(_heroDatas.GetDataById(HeroID.Wizard.ToString()).Desc);
+    }
 }

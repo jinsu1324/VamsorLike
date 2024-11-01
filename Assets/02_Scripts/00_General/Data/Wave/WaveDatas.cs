@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveDatas : ScriptableObject
+public class WaveDatas : DataListSO<WaveData>
 {
-    [SerializeReference]
-    public WaveData[] waveDataArr;
+    
 }

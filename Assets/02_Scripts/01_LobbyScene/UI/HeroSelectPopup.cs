@@ -23,13 +23,16 @@ public class HeroSelectPopup : SerializedMonoBehaviour
     /// </summary>
     private void HeroSlotsSetting()
     {
-        Dictionary<HeroID, HeroData> heroDataDict = DataManager.Instance.HeroDataDict;
 
-        for (int i = 0; i < _heroSlotArr.Length; i++)
-        {
-            // 영웅 선택 완료 상황일때, 호출할 ClosePopup도 함께 인자로 넘겨주기 
-            _heroSlotArr[i].UIInfoSetting(heroDataDict[(HeroID)i], ClosePopup);
-        }
+        //수정필요!
+
+        //Dictionary<HeroID, HeroData> heroDataDict = DataManager.Instance.HeroDataDict;
+
+        //for (int i = 0; i < _heroSlotArr.Length; i++)
+        //{
+        //    // 영웅 선택 완료 상황일때, 호출할 ClosePopup도 함께 인자로 넘겨주기 
+        //    _heroSlotArr[i].UIInfoSetting(heroDataDict[(HeroID)i], ClosePopup);
+        //}
     }
 
     /// <summary>

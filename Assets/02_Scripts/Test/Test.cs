@@ -6,23 +6,50 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Test : SerializedMonoBehaviour
 {
-    [SerializeField] Transform target;
 
-    UnityEngine.AI.NavMeshAgent agent;
+    #region ΩÃ±€≈Ê_æ¿¿Ãµø O
+    private static Test _instance;
 
-    private void Start()
+    private void Awake()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    private void Update()
+    public static Test Instance
     {
-        agent.SetDestination(target.position);
+        get
+        {
+            if (_instance == null)
+            {
+                return null;
+            }
+
+            return _instance;
+        }
     }
+    #endregion
+
+
+    //public HeroDatas HeroDatas;
+
+
+    //public HeroData GetHeroData(HeroID id)
+    //{
+    //    string searchId = id.ToString();
+
+    //    HeroData heroData = HeroDatas.DataList.Find(hero => hero.Id == searchId);
+    //    return heroData;
+    //}
 }
 
 

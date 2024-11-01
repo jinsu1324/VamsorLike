@@ -50,7 +50,7 @@ public class HeroSelectPopup_Slot : MonoBehaviour
     public void OnClickSelectCompleteButton()
     {       
         // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
-        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
+        HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.ID);
 
         // 내가 이번 게임에 선택한 영웅 ID 셋팅
         GameManager.Instance.MyHeroIDSetting(heroID);

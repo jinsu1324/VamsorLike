@@ -19,12 +19,13 @@ public class EXPBarUI : SerializedMonoBehaviour
     /// </summary>
     public void Update_EXPBarInfos()
     {
-        HeroLvExp heroLvExp = PlaySceneManager.Instance.EXPManager.MyHeroLvExp;
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+        // 수정필요!
+        //HeroLvExp heroLvExp = PlaySceneManager.Instance.EXPManager.MyHeroLvExp;
+        //List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
 
-        Update_LevelText(heroLvExp);
-        Update_ExpStateText(heroLvExp, levelDataList);
-        Update_EXPSlider(heroLvExp, levelDataList);
+        //Update_LevelText(heroLvExp);
+        //Update_ExpStateText(heroLvExp, levelDataList);
+        //Update_EXPSlider(heroLvExp, levelDataList);
     }
 
     /// <summary>

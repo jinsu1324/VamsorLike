@@ -37,15 +37,16 @@ public class EXPManager : SerializedMonoBehaviour
     /// </summary>
     public void EXPUp(int amount)
     {
-        MyHeroLvExp.EXP += amount;
-        RefreshEXPBarUI();
+        // 수정필요!
+        //MyHeroLvExp.EXP += amount;
+        //RefreshEXPBarUI();
 
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+        //List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
 
-        if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
-        {
-            LevelUp();
-        }
+        //if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
+        //{
+        //    LevelUp();
+        //}
     }
 
     /// <summary>

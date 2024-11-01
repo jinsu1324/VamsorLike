@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectManager : SerializedMonoBehaviour
+public class ResourceManager : SerializedMonoBehaviour
 {
     #region ΩÃ±€≈Ê_æ¿¿Ãµø O
-    private static ObjectManager _instance;
+    private static ResourceManager _instance;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class ObjectManager : SerializedMonoBehaviour
         }
     }
 
-    public static ObjectManager Instance
+    public static ResourceManager Instance
     {
         get
         {
