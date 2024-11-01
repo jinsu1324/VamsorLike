@@ -34,7 +34,7 @@ public class HeroSelectPopup_Slot : MonoBehaviour
         _HeroData = heroData;
         
         // UI 정보들 셋팅
-        _heroImage.sprite = heroData.Sprite;
+        //_heroImage.sprite = heroData.Sprite;
         _nameText.text = heroData.Name;
         _descText.text = heroData.Desc;
 
