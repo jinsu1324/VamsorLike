@@ -76,7 +76,7 @@ public class LobbySceneManager : MonoBehaviour
         _virtualCamera.SnapCamera_To_Character(clickedTransform);
 
         // ¿µ¿õ ½ºÅÈÆË¾÷ ÄÑ±â
-        LobbySceneCanvas.Instance.LobbyHeroStatPopup.ShowAnim_PopupON(lobbyHero.BaseHeroData);
+        LobbySceneCanvas.Instance.LobbyHeroStatPopup.ShowAnim_PopupON(lobbyHero);
 
         // Å¸ÀÌÆ² UI ²ô±â
         LobbySceneCanvas.Instance.LobbyTitleUI.PopupOFF();

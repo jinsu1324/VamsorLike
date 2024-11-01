@@ -52,7 +52,7 @@ public class HeroSelectPopup_Slot : MonoBehaviour
         // 이 슬롯영웅의 ID를 HeroID enum 값으로 변환
         HeroID heroID = (HeroID)Enum.Parse(typeof(HeroID), _HeroData.Id);
 
-        // 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
+        // 내가 이번 게임에 선택한 영웅 ID 셋팅
         GameManager.Instance.MyHeroIDSetting(heroID);
 
         // 영웅선택 팝업 닫기 + 이벤트 제거

@@ -83,6 +83,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     /// </summary>
     private void MyHeroObjSetting()
     {
+        // 내가 이번 게임에 선택한 영웅 ID 받아옴
         HeroID myHeroID = GameManager.Instance.myHeroID;
 
         // 선택한 영웅을 이번게임의 영웅으로 할당

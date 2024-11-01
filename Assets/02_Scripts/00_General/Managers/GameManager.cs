@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
 
     /// <summary>
-    /// 이번게임영웅으로 선택된 영웅 셋팅 및 스폰
+    /// 내가 이번 게임에 선택한 영웅 ID 셋팅
     /// </summary>
     public void MyHeroIDSetting(HeroID selectHeroID)
     {

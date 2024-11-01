@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,6 +31,9 @@ public class LobbyHeroStatPopup : MonoBehaviour
     [SerializeField]
     private Animator _animator;                     // 애니메이터 담을 변수
 
+    private HeroID _selectedHeroID;                 // 선택된 영웅 ID
+    private LobbyHero _selectedLobbyHero;           // 선택된 영웅 정보
+
     private string _showAnimClipName = "LobbyHeroStatPopup_Show";   // 팝업 켜기 애니메이션 이름 string
     private float _showAnimClipLegth;                               // 클립 길이 담을 변수
 
@@ -46,18 +50,27 @@ public class LobbyHeroStatPopup : MonoBehaviour
     /// <summary>
     /// UI 정보들 초기화
     /// </summary>
-    public void Initialized(HeroData heroData)
+    public void Initialized(LobbyHero lobbyHero)
     {
+        _selectedLobbyHero = lobbyHero;
+
+        HeroData heroData = _selectedLobbyHero.BaseHeroData;
+
         _nameText.text = heroData.Name;
-        _descText.text = heroData.Desc;      
+        _descText.text = heroData.Desc;
+        _atkSlider.value = (heroData.Atk / 500.0f) * 5.0f;
+        _hpSlider.value = (heroData.MaxHp / 500.0f) * 5.0f;
+        _speedSlider.value = (heroData.Speed / 5.0f) * 5.0f;
+
+        _selectedHeroID = (HeroID)Enum.Parse(typeof(HeroID), heroData.Id);
     }
 
     /// <summary>
     /// 팝업 켜는 애니메이션 실행 + 팝업 켜기
     /// </summary>
-    public void ShowAnim_PopupON(HeroData heroData)
+    public void ShowAnim_PopupON(LobbyHero lobbyHero)
     {
-        Initialized(heroData);
+        Initialized(lobbyHero);
         PopupON();
 
         _animator.SetFloat("Speed", 1.0f);
@@ -81,6 +94,28 @@ public class LobbyHeroStatPopup : MonoBehaviour
     public void OnClickExitButton()
     {
         LobbySceneManager.Instance.Change_DefaultState();
+    }
+
+    /// <summary>
+    /// GameStart 버튼 누르면 호출되는 함수
+    /// </summary>
+    public void OnClickGameStartButton()
+    {
+        // 내가 이번 게임에 선택한 영웅 ID 셋팅
+        GameManager.Instance.MyHeroIDSetting(_selectedHeroID);
+
+        // 캐릭터 애니메이션
+        _selectedLobbyHero.PlayAnimation_Ready();
+
+        HideAnim_PopupOFF();
+
+        // 씬 전환 애니메이션
+
+
+        // 딜레이
+
+        // 씬 전환
+        SceneSwitcher.LoadScene("02_PlayScene");
     }
 
     /// <summary>
