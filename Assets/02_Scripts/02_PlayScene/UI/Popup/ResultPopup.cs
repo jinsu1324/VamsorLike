@@ -33,6 +33,8 @@ public class ResultPopup : SerializedMonoBehaviour
     /// </summary>
     public void OpenPopup()
     {
+        PlaySceneManager.Instance.IsGameStartChange(false);
+
         InfoInitialize();
         gameObject.SetActive(true);
     }

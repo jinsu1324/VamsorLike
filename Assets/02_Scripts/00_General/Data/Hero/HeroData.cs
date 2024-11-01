@@ -16,5 +16,6 @@ public class HeroData : Creature
     public float Range;
     public float Delay;
     public string Desc;
+    public string StartSkill;
     public Sprite Sprite;
 }

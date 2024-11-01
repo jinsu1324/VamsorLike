@@ -21,4 +21,5 @@ MonoBehaviour:
   Delay: 0
   Desc: "\uC5B4\uB5A4 \uC2DC\uB828\uC5D0\uB3C4 \uAD73\uAC74\uD788 \uBC84\uD2F8 \uC218
     \uC788\uC2B5\uB2C8\uB2E4."
+  StartSkill: SlashAttack
   Sprite: {fileID: 21300000, guid: d8520eeb10d145b40ab58ea8edd59a38, type: 3}

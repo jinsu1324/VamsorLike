@@ -1,13 +1,13 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
-
 /// <summary>
-/// 영웅 게임오브젝트 : 영웅관련 데이터 / 본인 데이터 이닛 / 공격 / 이동 / HP감소 / 죽음
+/// 영웅 게임오브젝트
 /// </summary>
 public class HeroObj : SerializedMonoBehaviour
 {
@@ -64,6 +64,11 @@ public class HeroObj : SerializedMonoBehaviour
 
         // HP 바 업데이트
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+
+        SkillID startSkillID = (SkillID)Enum.Parse(typeof(SkillID), _baseHeroData.StartSkill); 
+
+        PlaySceneManager.Instance.SkillManager.AddSkill(startSkillID);
+
     }
 
     /// <summary>
@@ -156,7 +161,7 @@ public class HeroObj : SerializedMonoBehaviour
         Debug.Log("게임오버");
         _animator.SetTrigger("Dead");
 
-        PlaySceneManager.Instance.IsGameStartChange(false);
+        
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
     }
 

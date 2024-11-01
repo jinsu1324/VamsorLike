@@ -20,4 +20,5 @@ MonoBehaviour:
   Range: 0
   Delay: 0
   Desc: "\uB2E8 \uD55C\uBC29\uC774\uBA74 \uB429\uB2C8\uB2E4."
+  StartSkill: Boomerang
   Sprite: {fileID: 21300000, guid: 989e0840b74c4194bb8cd2e6f382c938, type: 3}

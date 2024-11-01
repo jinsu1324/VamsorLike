@@ -65,9 +65,7 @@ public class EXPManager : SerializedMonoBehaviour
         MyHeroLvExp.EXP = 0; 
 
         PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
-
         PlaySceneCanvas.Instance.SkillSelectPopup.OpenPopup();
-        PlaySceneManager.Instance.IsGameStartChange(false);
     }
 
 

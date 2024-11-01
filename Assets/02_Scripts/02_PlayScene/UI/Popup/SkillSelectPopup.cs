@@ -32,6 +32,8 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void OpenPopup()
     {
+        Debug.Log("OpenPopup");
+
         // 게임시작을 false로
         PlaySceneManager.Instance.IsGameStartChange(false);
 
@@ -90,6 +92,7 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void ClosePopup()
     {
+        Debug.Log("ClosePopup");
         gameObject.SetActive(false);
     }
 }

@@ -85,7 +85,7 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     /// </summary>
     private void PopupsInitialize()
     {
-        SkillSelectPopup.OpenPopup();
+        SkillSelectPopup.ClosePopup();
         ResultPopup.ClosePopup();
     }
 }

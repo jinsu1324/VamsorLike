@@ -78,6 +78,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
         PlaySceneCanvas.Instance.LoadingViews.OutLoadingView_ON();
 
         MyHeroObjSetting();
+
+        IsGameStartChange(true);
     }
 
     /// <summary>
