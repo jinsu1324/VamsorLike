@@ -23,8 +23,8 @@ public class Skill_Sniper : Skill_Base
     public Skill_Sniper(SkillData skillData_Sniper)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Sniper.ID);
-        CurrentLevel = 0;
-        MaxLevel = 2;
+        CurrentLevel = 1;
+        MaxLevel = 3;
 
         StatSetting(skillData_Sniper);
     }

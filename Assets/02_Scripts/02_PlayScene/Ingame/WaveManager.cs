@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {    
-    private int _curWaveIndex = 0;                              // 현재 웨이브 인덱스
+    private int _curWaveIndex = 1;                              // 현재 웨이브 인덱스
     private float _playTime = 0;                                // 게임플레이시간
 
     /// <summary>
@@ -45,17 +45,18 @@ public class WaveManager : MonoBehaviour
         Refresh_PlayTimeUI(_playTime);
 
         // 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
-        if (_curWaveIndex < DataManager.Instance.WaveDatas.DataList.Count)
+        if (_curWaveIndex < (DataManager.Instance.WaveDatas.DataList.Count + 1))
         {
             // 현재 웨이브의 목표 시간을 가져옴
-            float waveTargetTime = ConvertTimeStringToFloat(DataManager.Instance.WaveDatas.DataList[_curWaveIndex].WaveTime);
+            float waveTargetTime = ConvertTimeStringToFloat(
+                DataManager.Instance.WaveDatas.GetDataById(_curWaveIndex.ToString()).WaveTime);
             
 
             // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
             if (_playTime >= waveTargetTime)
             {
                 // 웨이브 이벤트 실행
-                WaveEvent(DataManager.Instance.WaveDatas.DataList[_curWaveIndex]);
+                WaveEvent(DataManager.Instance.WaveDatas.GetDataById(_curWaveIndex.ToString()));
 
                 // 다음 웨이브 인덱스로 이동
                 _curWaveIndex++;
@@ -68,7 +69,7 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void WaveEvent(WaveData waveData)
     {
-        Debug.Log($"------{waveData.WaveTime} : 이벤트 발생!!!!!!!!!------");
+        Debug.Log($"{waveData.ID} 웨이브 : {waveData.WaveTime}");
 
         // 몬스터 스폰 (해당 웨이브의 몬스터 종류만큼 반복)
         for (int i = 0; i < waveData.MonsterType.Length; i++)

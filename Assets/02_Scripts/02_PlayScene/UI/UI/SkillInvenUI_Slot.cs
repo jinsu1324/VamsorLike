@@ -19,7 +19,7 @@ public class SkillInvenUI_Slot : MonoBehaviour
     /// </summary>
     public void SetSlot(bool isOnOFF, int level, Sprite icon)
     {
-        _levelText.text = (level + 1).ToString();
+        _levelText.text = level.ToString();
         _icon.sprite = icon;
         gameObject.SetActive(isOnOFF);
     }

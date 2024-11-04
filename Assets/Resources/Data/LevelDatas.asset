@@ -13,36 +13,36 @@ MonoBehaviour:
   m_Name: LevelDatas
   m_EditorClassIdentifier: 
   DataList:
-  - ID: 0
-    Level: 0
-    MaxExp: 100
   - ID: 1
     Level: 1
-    MaxExp: 110
+    MaxExp: 100
   - ID: 2
     Level: 2
-    MaxExp: 120
+    MaxExp: 110
   - ID: 3
     Level: 3
-    MaxExp: 130
+    MaxExp: 120
   - ID: 4
     Level: 4
-    MaxExp: 140
+    MaxExp: 130
   - ID: 5
     Level: 5
-    MaxExp: 150
+    MaxExp: 140
   - ID: 6
     Level: 6
-    MaxExp: 160
+    MaxExp: 150
   - ID: 7
     Level: 7
-    MaxExp: 170
+    MaxExp: 160
   - ID: 8
     Level: 8
-    MaxExp: 180
+    MaxExp: 170
   - ID: 9
     Level: 9
-    MaxExp: 190
+    MaxExp: 180
   - ID: 10
     Level: 10
+    MaxExp: 190
+  - ID: 11
+    Level: 11
     MaxExp: 200

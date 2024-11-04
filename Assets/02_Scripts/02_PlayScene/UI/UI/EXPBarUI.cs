@@ -20,11 +20,11 @@ public class EXPBarUI : SerializedMonoBehaviour
     public void Update_EXPBarInfos()
     {
         HeroLvExp heroLvExp = PlaySceneManager.Instance.LevelManager.MyHeroLvExp;
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.DataList;
+        LevelData currentLevelData = DataManager.Instance.LevelDatas.GetDataById(heroLvExp.Level.ToString());
 
         Update_LevelText(heroLvExp);
-        Update_ExpStateText(heroLvExp, levelDataList);
-        Update_EXPSlider(heroLvExp, levelDataList);
+        Update_ExpStateText(heroLvExp, currentLevelData);
+        Update_EXPSlider(heroLvExp, currentLevelData);
     }
 
     /// <summary>
@@ -38,20 +38,20 @@ public class EXPBarUI : SerializedMonoBehaviour
     /// <summary>
     /// 경험치 상태 텍스트 업데이트
     /// </summary>
-    public void Update_ExpStateText(HeroLvExp heroLvExp, List<LevelData> levelDataList)
+    public void Update_ExpStateText(HeroLvExp heroLvExp, LevelData currentLevelData)
     {
         _expStateText.text = 
             $"{heroLvExp.EXP} / " +
-            $"{levelDataList[heroLvExp.Level].MaxExp}";
+            $"{currentLevelData.MaxExp}";
     }
 
     /// <summary>
     /// 경험치 슬라이더 게이지바 업데이트
     /// </summary>
-    public void Update_EXPSlider(HeroLvExp heroLvExp, List<LevelData> levelDataList)
+    public void Update_EXPSlider(HeroLvExp heroLvExp, LevelData currentLevelData)
     {       
         GetComponent<Slider>().value = 
             (float)heroLvExp.EXP /
-            (float)levelDataList[heroLvExp.Level].MaxExp;
+            (float)currentLevelData.MaxExp;
     }
 }

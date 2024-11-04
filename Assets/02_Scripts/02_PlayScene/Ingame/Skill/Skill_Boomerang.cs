@@ -26,8 +26,8 @@ public class Skill_Boomerang : Skill_Base
     public Skill_Boomerang(SkillData skillData_Boomerang)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.ID);
-        CurrentLevel = 0;
-        MaxLevel = 2;
+        CurrentLevel = 1;
+        MaxLevel = 3;
 
         StatSetting(skillData_Boomerang);
     }

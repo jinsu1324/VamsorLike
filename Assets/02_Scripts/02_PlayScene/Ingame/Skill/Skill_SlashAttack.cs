@@ -20,8 +20,8 @@ public class Skill_SlashAttack : Skill_Base
     public Skill_SlashAttack(SkillData skillData_SlashAttack)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.ID);
-        CurrentLevel = 0;
-        MaxLevel = 2;
+        CurrentLevel = 1;
+        MaxLevel = 3;
 
         StatSetting(skillData_SlashAttack);
     }

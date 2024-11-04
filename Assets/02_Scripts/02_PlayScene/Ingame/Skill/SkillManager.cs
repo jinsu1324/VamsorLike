@@ -61,7 +61,7 @@ public class SkillManager : SerializedMonoBehaviour
         // 가지고 있지 않다면 새로 추가
         else
         {
-            Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 0);
+            Skill_Base skill = SkillFactory.CreateSkillClass(newSkillID, 1);
             HaveSkillList.Add(skill);
         }
 
@@ -87,7 +87,7 @@ public class SkillManager : SerializedMonoBehaviour
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 레벨 반환
         Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
 
-        return foundSkill != null ? foundSkill.CurrentLevel : 0;
+        return foundSkill != null ? foundSkill.CurrentLevel : 1;
     }
 
     /// <summary>

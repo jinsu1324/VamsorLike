@@ -21,7 +21,7 @@ public class HeroLvExp
 public class LevelManager : SerializedMonoBehaviour
 {
     // 이번게임 영웅 레벨 경험치
-    public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 0);
+    public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 1);
         
 
     /// <summary>
@@ -37,13 +37,12 @@ public class LevelManager : SerializedMonoBehaviour
     /// </summary>
     public void EXPUp(int amount)
     {
-
         MyHeroLvExp.EXP += amount;
         RefreshEXPBarUI();
 
-        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.DataList;
+        LevelData currentLevelData = DataManager.Instance.LevelDatas.GetDataById(MyHeroLvExp.Level.ToString());
 
-        if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
+        if (MyHeroLvExp.EXP >= currentLevelData.MaxExp)
         {
             LevelUp();
         }
