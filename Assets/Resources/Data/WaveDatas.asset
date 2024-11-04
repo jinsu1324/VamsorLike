@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveDatas
   m_EditorClassIdentifier: 
   DataList:
-  - ID: Wave1
+  - ID: 0
     WaveTime: 00:00:05
     MonsterType:
     - Golem
@@ -21,7 +21,7 @@ MonoBehaviour:
     SpawnInterval:
     - 0.5
     BossType: None
-  - ID: Wave2
+  - ID: 1
     WaveTime: 00:00:10
     MonsterType:
     - Golem
@@ -29,7 +29,7 @@ MonoBehaviour:
     SpawnInterval:
     - 0.5
     BossType: FireDragon
-  - ID: Wave3
+  - ID: 2
     WaveTime: 00:00:15
     MonsterType:
     - Golem
@@ -39,7 +39,7 @@ MonoBehaviour:
     - 0.5
     - 0.5
     BossType: None
-  - ID: Wave4
+  - ID: 3
     WaveTime: 00:00:20
     MonsterType:
     - Skeleton
@@ -49,7 +49,7 @@ MonoBehaviour:
     - 0.5
     - 0.5
     BossType: None
-  - ID: Wave5
+  - ID: 4
     WaveTime: 00:00:25
     MonsterType:
     - Witch

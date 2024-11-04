@@ -23,8 +23,6 @@ MonoBehaviour:
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
-    Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-    Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
   - ID: SlashAttack
     Level: 1
     Name: "[\uC9C4] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
@@ -34,8 +32,6 @@ MonoBehaviour:
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
-    Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-    Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
   - ID: SlashAttack
     Level: 2
     Name: "[\uD608] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
@@ -46,8 +42,6 @@ MonoBehaviour:
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
-    Projectile: {fileID: 698400688330558955, guid: 732cf6d58f79928439e43f33a778e9fe, type: 3}
-    Icon: {fileID: 21300000, guid: 3806cb0d4d7dd3f4698b7098c7bacc4a, type: 3}
   - ID: Boomerang
     Level: 0
     Name: "\uD68C\uC804 \uBD80\uBA54\uB791"
@@ -58,8 +52,6 @@ MonoBehaviour:
     Range: 5
     ProjectileSpeed: 1
     ProjectileCount: 1
-    Projectile: {fileID: 8301173413366998324, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-    Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
   - ID: Boomerang
     Level: 1
     Name: "[\uC9C4] \uD68C\uC804 \uBD80\uBA54\uB791"
@@ -69,8 +61,6 @@ MonoBehaviour:
     Range: 5
     ProjectileSpeed: 1.5
     ProjectileCount: 1
-    Projectile: {fileID: 8301173413366998324, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-    Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
   - ID: Boomerang
     Level: 2
     Name: "[\uD608] \uD68C\uC804 \uBD80\uBA54\uB791"
@@ -80,8 +70,6 @@ MonoBehaviour:
     Range: 5
     ProjectileSpeed: 1.5
     ProjectileCount: 2
-    Projectile: {fileID: 8301173413366998324, guid: 4d3e9f6d18b1afb49a7b4aa73d5f9959, type: 3}
-    Icon: {fileID: 21300000, guid: 3f3f363dd3903a447976ed28026c9ba6, type: 3}
   - ID: Sniper
     Level: 0
     Name: "\uC2A4\uB098\uC774\uD37C \uCD1D"
@@ -92,8 +80,6 @@ MonoBehaviour:
     Range: 10
     ProjectileSpeed: 1
     ProjectileCount: 0
-    Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-    Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
   - ID: Sniper
     Level: 1
     Name: "[\uC9C4] \uC2A4\uB098\uC774\uD37C \uCD1D"
@@ -103,8 +89,6 @@ MonoBehaviour:
     Range: 10
     ProjectileSpeed: 1
     ProjectileCount: 0
-    Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-    Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}
   - ID: Sniper
     Level: 2
     Name: "[\uD608] \uC2A4\uB098\uC774\uD37C \uCD1D"
@@ -114,5 +98,3 @@ MonoBehaviour:
     Range: 10
     ProjectileSpeed: 1
     ProjectileCount: 0
-    Projectile: {fileID: 4066447221230318575, guid: d2fd2c5bc66981045b44c8fb63f93dc2, type: 3}
-    Icon: {fileID: 21300000, guid: 06dfee79b3ab0654abfab743e98c55e2, type: 3}

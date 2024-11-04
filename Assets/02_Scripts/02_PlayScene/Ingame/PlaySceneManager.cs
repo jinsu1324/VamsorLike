@@ -61,7 +61,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public SkillManager SkillManager { get; set; }                 // 스킬매니저
 
     [SerializeField]
-    public EXPManager EXPManager { get; set; }                     // 레벨매니저
+    public LevelManager LevelManager { get; set; }                 // 레벨매니저
 
     [SerializeField]
     public GoldManager GoldManager { get; set; }                   // 골드매니저

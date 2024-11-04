@@ -17,7 +17,7 @@ public class Skill_SlashAttack : Skill_Base
     /// <summary>
     /// 생성자
     /// </summary>
-    public Skill_SlashAttack(SkillData_SlashAttack skillData_SlashAttack)
+    public Skill_SlashAttack(SkillData skillData_SlashAttack)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.ID);
         CurrentLevel = 0;
@@ -29,11 +29,12 @@ public class Skill_SlashAttack : Skill_Base
     /// <summary>
     /// 스탯 셋팅
     /// </summary>
-    private void StatSetting(SkillData_SlashAttack skillData_SlashAttack)
+    private void StatSetting(SkillData skillData_SlashAttack)
     {
         _skillAtk = skillData_SlashAttack.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _delay = skillData_SlashAttack.Delay;
-        _projectile = skillData_SlashAttack.Projectile;
+
+        _projectile = ResourceManager.Instance.SkillProjectileDict[Id];
     }
 
     /// <summary>
@@ -41,11 +42,10 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        // 수정필요!
-        //SkillData_SlashAttack skillData_SlashAttack =
-        //    PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_SlashAttack>(Id, ++CurrentLevel);
+        SkillData skillData_SlashAttack =
+            PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(Id, ++CurrentLevel);
 
-        //StatSetting(skillData_SlashAttack);
+        StatSetting(skillData_SlashAttack);
     }
 
     /// <summary>

@@ -193,7 +193,7 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void AcquireExp_and_Request(int amount)
     {
-        PlaySceneManager.Instance.EXPManager.EXPUp(amount);
+        PlaySceneManager.Instance.LevelManager.EXPUp(amount);
     }
 
     /// <summary>

@@ -20,7 +20,7 @@ public class Skill_Sniper : Skill_Base
     /// <summary>
     /// 생성자
     /// </summary>
-    public Skill_Sniper(SkillData_Sniper skillData_Sniper)
+    public Skill_Sniper(SkillData skillData_Sniper)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Sniper.ID);
         CurrentLevel = 0;
@@ -32,13 +32,14 @@ public class Skill_Sniper : Skill_Base
     /// <summary>
     /// 스탯 셋팅
     /// </summary>
-    private void StatSetting(SkillData_Sniper skillData_Sniper)
+    private void StatSetting(SkillData skillData_Sniper)
     {
         _skillAtk = skillData_Sniper.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _projectileSpeed = skillData_Sniper.ProjectileSpeed;
         _range = skillData_Sniper.Range;
         _delay = skillData_Sniper.Delay;
-        _projectile = skillData_Sniper.Projectile;
+
+        _projectile = ResourceManager.Instance.SkillProjectileDict[Id];
     }
 
     /// <summary>
@@ -46,11 +47,10 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        // 수정필요!
-        //SkillData_Sniper skillData_Sniper =
-        //    PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Sniper>(Id, ++CurrentLevel);
+        SkillData skillData_Sniper =
+            PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(Id, ++CurrentLevel);
 
-        //StatSetting(skillData_Sniper);
+        StatSetting(skillData_Sniper);
     }
 
     /// <summary>

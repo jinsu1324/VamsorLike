@@ -60,7 +60,7 @@ public class LobbyHeroStatPopup : MonoBehaviour
         _descText.text = heroData.Desc;
         _atkSlider.value = (heroData.Atk / 500.0f) * 5.0f;
         _hpSlider.value = (heroData.MaxHp / 500.0f) * 5.0f;
-        _speedSlider.value = (heroData.Speed / 5.0f) * 5.0f;
+        _speedSlider.value = (heroData.Speed / 10.0f) * 5.0f;
 
         _selectedHeroID = (HeroID)Enum.Parse(typeof(HeroID), heroData.ID);
     }

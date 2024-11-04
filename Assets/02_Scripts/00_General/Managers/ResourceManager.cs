@@ -46,4 +46,13 @@ public class ResourceManager : SerializedMonoBehaviour
     // 보스 오브젝트들 딕셔너리
     [SerializeField]
     public Dictionary<BossID, BossObj> BossObjectDict { get; set; } = new Dictionary<BossID, BossObj>();
+
+    // 스킬 프로젝타일 딕셔너리
+    [SerializeField]
+    public Dictionary<SkillID, ProjectileBase> SkillProjectileDict { get; set; } = new Dictionary<SkillID, ProjectileBase>();
+
+    // 스킬 아이콘 딕셔너리
+    [SerializeField]
+    public Dictionary<SkillID, Sprite> SkillIconDict { get; set; } = new Dictionary<SkillID, Sprite>();
+
 }

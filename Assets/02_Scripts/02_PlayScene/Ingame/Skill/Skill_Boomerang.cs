@@ -23,7 +23,7 @@ public class Skill_Boomerang : Skill_Base
     /// <summary>
     /// 생성자
     /// </summary>
-    public Skill_Boomerang(SkillData_Boomerang skillData_Boomerang)
+    public Skill_Boomerang(SkillData skillData_Boomerang)
     {
         Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_Boomerang.ID);
         CurrentLevel = 0;
@@ -35,7 +35,7 @@ public class Skill_Boomerang : Skill_Base
     /// <summary>
     /// 스탯 셋팅
     /// </summary>
-    private void StatSetting(SkillData_Boomerang skillData_Boomerang)
+    private void StatSetting(SkillData skillData_Boomerang)
     {
         _skillAtk = skillData_Boomerang.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
         _projectileSpeed = skillData_Boomerang.ProjectileSpeed;
@@ -50,21 +50,20 @@ public class Skill_Boomerang : Skill_Base
     /// </summary>
     public override void LevelUp()
     {
-        // 수정필요!
-        //SkillData_Boomerang skillData_Boomerang =
-        //   PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Boomerang>(Id, ++CurrentLevel);
+        SkillData skillData_Boomerang =
+           PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(Id, ++CurrentLevel);
 
-        //StatSetting(skillData_Boomerang);
+        StatSetting(skillData_Boomerang);
     }
 
     /// <summary>
     /// 부메랑 프로젝타일 생성
     /// </summary>
-    private void CreateBoomerangProjectile(SkillData_Boomerang skillData_Boomerang)
+    private void CreateBoomerangProjectile(SkillData skillData_Boomerang)
     {
         // 프로젝타일 생성
         _spawnedProjectile = GameObject.Instantiate(
-                skillData_Boomerang.Projectile,
+                ResourceManager.Instance.SkillProjectileDict[Id],
                 PlaySceneManager.Instance.MyHeroObj.transform.position,
                 Quaternion.identity) as ProjectileBoomerang;
 

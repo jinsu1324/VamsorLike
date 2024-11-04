@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SkillID
+{
+    SlashAttack,
+    Boomerang,
+    Sniper
+}
+
 [System.Serializable]
 public class SkillData : BaseData
 {
@@ -12,7 +19,5 @@ public class SkillData : BaseData
     public float Delay;                    
     public float Range;                    
     public float ProjectileSpeed;          
-    public int ProjectileCount;            
-    public ProjectileBase Projectile;
-    public Sprite Icon;
+    public int ProjectileCount;       
 }

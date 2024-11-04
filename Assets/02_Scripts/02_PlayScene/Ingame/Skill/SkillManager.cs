@@ -32,27 +32,6 @@ public class SkillManager : SerializedMonoBehaviour
         return SkillData;
     }
 
-    /// <summary>
-    /// 스킬 데이터 딕셔너리에서 -> 원하는 스킬 + 레벨 로 형변환하여 반환해주는 함수
-    /// </summary>
-    public SkillData SkillData_as_Dict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
-    {
-        // 수정 필요!
-        //SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
-        //return skillData;
-
-
-
-        //DataManager.Instance.ss[skillID].
-
-
-        return null;
-    }
-
-
-
-
-
 
     /// <summary>
     /// 랜덤한 스킬ID를 반환해주는 함수
@@ -110,13 +89,6 @@ public class SkillManager : SerializedMonoBehaviour
 
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
     }
-    
-
-
-
-
-
-
 
     /// <summary>
     /// 스킬 아이콘 가져오는 함수
@@ -130,18 +102,9 @@ public class SkillManager : SerializedMonoBehaviour
             Debug.Log("GetSkillIcon Failed!");
             return null;
         }
-        else
-        {
-            // 수정필요!
 
-            //Sprite icon = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Icon;
-            //ISkill skill = DataManager.Instance.SkillDataDict[skillID];
-                       
-            
-
-            //return icon;
-            return null;
-        }
+        Sprite icon = ResourceManager.Instance.SkillIconDict[skillID];
+        return icon;
     }
 
     /// <summary>
@@ -156,13 +119,9 @@ public class SkillManager : SerializedMonoBehaviour
             Debug.Log("GetSkillName Failed!");
             return null;
         }
-        else
-        {
-            // 수정필요!
-            //string name = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Name;
-            string name = "0000";
-            return name;
-        }
+
+        SkillData skillData = GetSkillData_by_SkillIDLevel(skillID, GetSkillLevel(skillID));
+        return skillData.Name;
     }
 
     /// <summary>
@@ -177,13 +136,8 @@ public class SkillManager : SerializedMonoBehaviour
             Debug.Log("GetSkillDesc Failed!");
             return null;
         }
-        else
-        {
-            // 수정필요!
-            //string desc = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Desc;
-            //return desc;
 
-            return null;
-        }
+        SkillData skillData = GetSkillData_by_SkillIDLevel(skillID, GetSkillLevel(skillID));
+        return skillData.Desc;
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   DataList:
   - ID: FireDragon
     Name: FireDragonName
-    MaxHp: 200
+    MaxHp: 500
     Atk: 40
     Speed: 2
     AppearStageLevel: 2

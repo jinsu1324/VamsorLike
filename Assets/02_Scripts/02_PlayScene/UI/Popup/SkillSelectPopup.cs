@@ -47,7 +47,7 @@ public class SkillSelectPopup : SerializedMonoBehaviour
         foreach (SkillID skillID in _availableSkillList)
         {
             int skillLevel = PlaySceneManager.Instance.SkillManager.GetSkillLevel(skillID);
-            var skillData = PlaySceneManager.Instance.SkillManager.SkillData_as_Dict<SkillData_Base>(skillID, skillLevel);
+            var skillData = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(skillID, skillLevel);
 
             GameObject skillButtonPrefab = Instantiate(_skillButtonPrefab, _buttonParent);
             Button skillButton = skillButtonPrefab.GetComponent<Button>();
@@ -92,7 +92,6 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void ClosePopup()
     {
-        Debug.Log("ClosePopup");
         gameObject.SetActive(false);
     }
 }

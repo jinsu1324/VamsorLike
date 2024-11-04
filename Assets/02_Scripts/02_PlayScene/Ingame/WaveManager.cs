@@ -38,7 +38,6 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void Check_WaveTime()
     {
-        // 수정필요!
         // Time.deltaTime을 이용해 매 프레임마다 시간을 누적
         _playTime += Time.deltaTime;
 

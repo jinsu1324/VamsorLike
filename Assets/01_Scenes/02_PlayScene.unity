@@ -406,6 +406,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fe3f3b1fc778ab742b4199034c8cd70e, type: 2}
     - {fileID: 11400000, guid: 15a99b3af2f9fed46b8cf753c0eef0e3, type: 2}
     - {fileID: 11400000, guid: f1421a6a47ef69c41aa070259d004fcc, type: 2}
+    - {fileID: 11400000, guid: 986aa9712828c7e43a094c94ea94cb18, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -426,32 +427,9 @@ MonoBehaviour:
     - Name: BossDatas
       Entry: 10
       Data: 4
-    - Name: SkillDatasDict
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[DataListSO`1[[BaseData,
-        Assembly-CSharp]], Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    - Name: SkillDatas
+      Entry: 10
+      Data: 5
 --- !u!4 &62873004
 Transform:
   m_ObjectHideFlags: 0
@@ -2330,6 +2308,48 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: SkillProjectileDict
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[ProjectileBase,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 7|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SkillIconDict
+      Entry: 7
+      Data: 8|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 7
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!4 &977427319
 Transform:
   m_ObjectHideFlags: 0
@@ -2428,7 +2448,7 @@ GameObject:
   - component: {fileID: 1005145210}
   - component: {fileID: 1005145209}
   m_Layer: 0
-  m_Name: EXPManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2941,7 +2961,7 @@ MonoBehaviour:
     - Name: SkillManager
       Entry: 10
       Data: 5
-    - Name: EXPManager
+    - Name: LevelManager
       Entry: 10
       Data: 6
     - Name: GoldManager

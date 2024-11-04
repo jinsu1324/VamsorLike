@@ -14,6 +14,7 @@ public class SkillInvenUI : MonoBehaviour
     private void Start()
     {
         SlotDefaultOFF();
+        SlotRefresh(PlaySceneManager.Instance.SkillManager.HaveSkillList);
     }
 
     /// <summary>

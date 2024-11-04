@@ -18,7 +18,7 @@ public class HeroLvExp
     }
 }
 
-public class EXPManager : SerializedMonoBehaviour
+public class LevelManager : SerializedMonoBehaviour
 {
     // 이번게임 영웅 레벨 경험치
     public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 0);

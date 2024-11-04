@@ -14,7 +14,7 @@ using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
 
-public class Sample : OdinEditorWindow
+public class JINSU_DataTableToScriptableObject : OdinEditorWindow
 {
     // Google 스프레드시트의 고유 ID. URL에서 찾을 수 있음.
     private readonly string _sheetId = "1_ksfuyQDI4muo28hC8nCtyjwMLohw3oOyGBk8CsqKZE";
@@ -58,32 +58,6 @@ public class Sample : OdinEditorWindow
     private readonly string _fileName_BossData = "BossDatas";
 
 
-    //// SkillData_SlashAttack
-    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    //private readonly string _range_SkillData_SlashAttack = "SkillData_SlashAttack!A1:F5";
-    //// 데이터를 저장할 경로와 이름
-    //private readonly string _fileName_SkillData_SlashAttack = "SkillDatas_SlashAttack";
-
-
-    //// SkillData_Boomerang
-    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    //private readonly string _range_SkillData_Boomerang = "SkillData_Boomerang!A1:H5";
-    //// 데이터를 저장할 경로와 이름
-    //private readonly string _fileName_SkillData_Boomerang = "SkillDatas_Boomerang";
-
-
-    //// SkillData_Sniper
-    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    //private readonly string _range_SkillData_Sniper = "SkillData_Sniper!A1:H5";
-    //// 데이터를 저장할 경로와 이름
-    //private readonly string _fileName_SkillData_Sniper = "SkillDatas_Sniper";
-
-
-
-
-
-
-
 
     // SkillData
     // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
@@ -93,21 +67,25 @@ public class Sample : OdinEditorWindow
 
 
 
-
-
-
-
     /// <summary>
     /// 메뉴 생성
     /// </summary>
-    [MenuItem("진수/데이터 최신화")]
+    [MenuItem("My Menu/데이터 최신화")]
     public static void OpenWindow()
     {
-        GetWindow<Sample>().Show();
+        GetWindow<JINSU_DataTableToScriptableObject>().Show();
     }
 
-    [Button("데이터 최신화 하기!", ButtonSizes.Large)]
-    public void MyButton()
+
+    // 안내 인포박스
+    [InfoBox("데이터를 최신화하려면 아래 버튼을 순서대로 눌러주세요", InfoMessageType.Info)]
+
+
+    /// <summary>
+    /// 데이터 스크립터블 오브젝트 패치 버튼
+    /// </summary>
+    [Button("1. 데이터 스크립터블 오브젝트 최신화 하기!", ButtonSizes.Large)]
+    public void DataFetch()
     {
         FetchAndConvertData<HeroData, HeroDatas>(_range_HeroData, _fileName_HeroData);
         FetchAndConvertData<LevelData, LevelDatas>(_range_LevelData, _fileName_LevelData);
@@ -115,12 +93,33 @@ public class Sample : OdinEditorWindow
         FetchAndConvertData<MonsterData, MonsterDatas>(_range_MonsterData, _fileName_MonsterData);
         FetchAndConvertData<BossData, BossDatas>(_range_BossData, _fileName_BossData);
         FetchAndConvertData<SkillData, SkillDatas>(_range_SkillData, _fileName_SkillData);
-        
+    }
 
+    /// <summary>
+    /// 데이터 매니저에 링크 최신화 버튼
+    /// </summary>
+    [Button("2. 데이터 매니저 링크 최신화 하기!", ButtonSizes.Large)]
+    public void ManagerLinkFetch()
+    {
+        DataManager dataManager = FindObjectOfType<DataManager>();
+        if (dataManager == null)
+        {
+            Debug.LogError("DataManager가 씬에 없습니다.");
+            return;
+        }
+
+        dataManager.HeroDatas = Resources.Load<HeroDatas>($"Data/{_fileName_HeroData}"); 
+        dataManager.LevelDatas = Resources.Load<LevelDatas>($"Data/{_fileName_LevelData}");
+        dataManager.WaveDatas = Resources.Load<WaveDatas>($"Data/{_fileName_WaveData}");
+        dataManager.MonsterDatas = Resources.Load<MonsterDatas>($"Data/{_fileName_MonsterData}");
+        dataManager.BossDatas = Resources.Load<BossDatas>($"Data/{_fileName_BossData}");
+        dataManager.SkillDatas = Resources.Load<SkillDatas>($"Data/{_fileName_SkillData}");
         
-        // FetchAndConvertData<SkillData_SlashAttack, SkillDatas_SlashAttack>(_range_SkillData_SlashAttack, _fileName_SkillData_SlashAttack);
-        // FetchAndConvertData<SkillData_Boomerang, SkillDatas_Boomerang>(_range_SkillData_Boomerang, _fileName_SkillData_Boomerang);
-        // FetchAndConvertData<SkillData_Sniper, SkillDatas_Sniper>(_range_SkillData_Sniper, _fileName_SkillData_Sniper);
+        EditorUtility.SetDirty(dataManager);
+        AssetDatabase.SaveAssets();
+
+        // 성공 메시지 박스
+        EditorUtility.DisplayDialog("성공!", $"데이터 매니저 링크가 최신화되었습니다!", "확인");
     }
 
     /// <summary>
@@ -146,7 +145,7 @@ public class Sample : OdinEditorWindow
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     // 응답 결과를 콘솔에 출력해 확인.
-                    Debug.Log(responseBody);
+                    //Debug.Log(responseBody);
 
                     // 응답받은 JSON 데이터를 ScriptableObject로 변환하는 메서드를 호출.
                     CreateDataListSO<Data, DatasSO>(responseBody, fileName);
@@ -249,7 +248,7 @@ public class Sample : OdinEditorWindow
         else
         {
             // 에셋이 이미 존재하면 기존 에셋을 갱신
-            existingAsset = datasSO;
+            existingAsset= datasSO;
 
             // 변경 사항을 유니티에 알림
             EditorUtility.SetDirty(existingAsset);
@@ -259,7 +258,7 @@ public class Sample : OdinEditorWindow
         AssetDatabase.SaveAssets();
 
         // 에셋이 성공적으로 저장되었음을 알리는 메시지 박스를 띄움
-        EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {path}", "OK");
+        EditorUtility.DisplayDialog("성공!", $"스크립터블 오브젝트가 저장 or 업데이트 되었습니다! {path}", "확인");
     }
 }
 
