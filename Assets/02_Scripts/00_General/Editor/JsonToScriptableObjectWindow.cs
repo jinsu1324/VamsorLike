@@ -136,25 +136,5 @@ public class JsonToScriptableObjectWindow : OdinEditorWindow
         //EditorUtility.DisplayDialog("Success", $"ScriptableObject saved or updated at {assetPath}", "OK");
     }
 
-    /// <summary>
-    /// 00:00:00 같은 string 시간 형식을 TimeSpan을 통해 float로 변환
-    /// </summary>
-    private float ConvertTimeStringToFloat(string timeString)
-    {
-        if (string.IsNullOrEmpty(timeString))
-        {
-            return -1.0f;
-        }            
-
-
-        if (TimeSpan.TryParse(timeString, out TimeSpan timeSpan))
-        {
-            return (float)timeSpan.TotalSeconds;            
-        }
-        else
-        {
-            Debug.LogError($"ConvertTimeStringToFloat 실패 : {timeString}");
-            return -1.0f;
-        }
-    }
+    
 }

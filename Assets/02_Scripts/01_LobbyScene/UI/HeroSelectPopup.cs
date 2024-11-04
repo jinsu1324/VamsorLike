@@ -23,10 +23,11 @@ public class HeroSelectPopup : SerializedMonoBehaviour
     /// </summary>
     private void HeroSlotsSetting()
     {
-
-        //수정필요!
-
+        // 미사용
         //Dictionary<HeroID, HeroData> heroDataDict = DataManager.Instance.HeroDataDict;
+
+        //HeroDatas heroDatas = DataManager.Instance.HeroDatas;
+
 
         //for (int i = 0; i < _heroSlotArr.Length; i++)
         //{

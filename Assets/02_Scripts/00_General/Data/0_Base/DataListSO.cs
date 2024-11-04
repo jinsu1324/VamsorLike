@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class DataListSO<T> : ScriptableObject where T : BaseData
 {
@@ -39,6 +40,14 @@ public class DataListSO<T> : ScriptableObject where T : BaseData
 
         Debug.LogWarning($"{id} 데이터를 찾을 수 없습니다.");
         return null;
+    }
+
+    /// <summary>
+    /// 조건(condition)에 따라 데이터를 모두 찾아서 리스트로 반환
+    /// </summary>
+    public List<T> GetAllDataByCondition(Func<T, bool> condition)
+    {
+        return DataList.Where(condition).ToList();
     }
 
 }

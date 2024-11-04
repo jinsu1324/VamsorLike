@@ -75,10 +75,13 @@ public class PlaySceneManager : SerializedMonoBehaviour
     /// </summary>
     private void Start()
     {
+        // 페이드 아웃
         PlaySceneCanvas.Instance.LoadingViews.OutLoadingView_ON();
 
+        // 선택된 영웅 셋팅
         MyHeroObjSetting();
 
+        // 게임시작 true 로
         IsGameStartChange(true);
     }
 

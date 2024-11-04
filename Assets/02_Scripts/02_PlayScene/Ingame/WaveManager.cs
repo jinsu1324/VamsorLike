@@ -39,28 +39,29 @@ public class WaveManager : MonoBehaviour
     public void Check_WaveTime()
     {
         // 수정필요!
-        //// Time.deltaTime을 이용해 매 프레임마다 시간을 누적
-        //_playTime += Time.deltaTime;
+        // Time.deltaTime을 이용해 매 프레임마다 시간을 누적
+        _playTime += Time.deltaTime;
 
-        //// 플레이타임 UI 갱신
-        //Refresh_PlayTimeUI(_playTime);
+        // 플레이타임 UI 갱신
+        Refresh_PlayTimeUI(_playTime);
 
-        //// 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
-        //if (_curWaveIndex < DataManager.Instance.WaveDatas.waveDataArr.Length)
-        //{
-        //    // 현재 웨이브의 목표 시간을 가져옴
-        //    float waveTargetTime = DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex].WaveTime;
+        // 현재 웨이브 인덱스가 데이터 범위 내에 있는지 확인
+        if (_curWaveIndex < DataManager.Instance.WaveDatas.DataList.Count)
+        {
+            // 현재 웨이브의 목표 시간을 가져옴
+            float waveTargetTime = ConvertTimeStringToFloat(DataManager.Instance.WaveDatas.DataList[_curWaveIndex].WaveTime);
+            
 
-        //    // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
-        //    if (_playTime >= waveTargetTime)
-        //    {
-        //        // 웨이브 이벤트 실행
-        //        WaveEvent(DataManager.Instance.WaveDatas.waveDataArr[_curWaveIndex]);
+            // 경과 시간이 목표 웨이브 시간 이상이 되면 이벤트 발생
+            if (_playTime >= waveTargetTime)
+            {
+                // 웨이브 이벤트 실행
+                WaveEvent(DataManager.Instance.WaveDatas.DataList[_curWaveIndex]);
 
-        //        // 다음 웨이브 인덱스로 이동
-        //        _curWaveIndex++;
-        //    }
-        //}
+                // 다음 웨이브 인덱스로 이동
+                _curWaveIndex++;
+            }
+        }
     }
 
     /// <summary>
@@ -81,6 +82,28 @@ public class WaveManager : MonoBehaviour
         if (waveBoss != "None")
         {
             PlaySceneManager.Instance.EnemySpawner.BossSpawn(waveData);
+        }
+    }
+
+    /// <summary>
+    /// 00:00:00 같은 string 시간 형식을 TimeSpan을 통해 float로 변환
+    /// </summary>
+    private float ConvertTimeStringToFloat(string timeString)
+    {
+        if (string.IsNullOrEmpty(timeString))
+        {
+            return -1.0f;
+        }
+
+
+        if (TimeSpan.TryParse(timeString, out TimeSpan timeSpan))
+        {
+            return (float)timeSpan.TotalSeconds;
+        }
+        else
+        {
+            Debug.LogError($"ConvertTimeStringToFloat 실패 : {timeString}");
+            return -1.0f;
         }
     }
 }

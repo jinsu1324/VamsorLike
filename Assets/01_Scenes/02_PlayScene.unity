@@ -406,9 +406,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fe3f3b1fc778ab742b4199034c8cd70e, type: 2}
     - {fileID: 11400000, guid: 15a99b3af2f9fed46b8cf753c0eef0e3, type: 2}
     - {fileID: 11400000, guid: f1421a6a47ef69c41aa070259d004fcc, type: 2}
-    - {fileID: 11400000, guid: 2dba6ad3c9fcbda4580be40ca8e3f631, type: 2}
-    - {fileID: 11400000, guid: d3483a9a470fdd04c81e2f660d1b323b, type: 2}
-    - {fileID: 11400000, guid: 5530d30b2a2089e42a7c9fd54484e643, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -429,15 +426,32 @@ MonoBehaviour:
     - Name: BossDatas
       Entry: 10
       Data: 4
-    - Name: SkillDatas_SlashAttack
-      Entry: 10
-      Data: 5
-    - Name: SkillDatas_Boomerang
-      Entry: 10
-      Data: 6
-    - Name: SkillDatas_Sniper
-      Entry: 10
-      Data: 7
+    - Name: SkillDatasDict
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[SkillID, Assembly-CSharp],[DataListSO`1[[BaseData,
+        Assembly-CSharp]], Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[SkillID, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!4 &62873004
 Transform:
   m_ObjectHideFlags: 0

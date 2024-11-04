@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
+using Sirenix.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -57,25 +58,42 @@ public class Sample : OdinEditorWindow
     private readonly string _fileName_BossData = "BossDatas";
 
 
-    // SkillData_SlashAttack
+    //// SkillData_SlashAttack
+    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    //private readonly string _range_SkillData_SlashAttack = "SkillData_SlashAttack!A1:F5";
+    //// 데이터를 저장할 경로와 이름
+    //private readonly string _fileName_SkillData_SlashAttack = "SkillDatas_SlashAttack";
+
+
+    //// SkillData_Boomerang
+    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    //private readonly string _range_SkillData_Boomerang = "SkillData_Boomerang!A1:H5";
+    //// 데이터를 저장할 경로와 이름
+    //private readonly string _fileName_SkillData_Boomerang = "SkillDatas_Boomerang";
+
+
+    //// SkillData_Sniper
+    //// 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
+    //private readonly string _range_SkillData_Sniper = "SkillData_Sniper!A1:H5";
+    //// 데이터를 저장할 경로와 이름
+    //private readonly string _fileName_SkillData_Sniper = "SkillDatas_Sniper";
+
+
+
+
+
+
+
+
+    // SkillData
     // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_SkillData_SlashAttack = "SkillData_SlashAttack!A1:F5";
+    private readonly string _range_SkillData = "SkillData!A1:I11";
     // 데이터를 저장할 경로와 이름
-    private readonly string _fileName_SkillData_SlashAttack = "SkillDatas_SlashAttack";
+    private readonly string _fileName_SkillData = "SkillDatas";
 
 
-    // SkillData_Boomerang
-    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_SkillData_Boomerang = "SkillData_Boomerang!A1:H5";
-    // 데이터를 저장할 경로와 이름
-    private readonly string _fileName_SkillData_Boomerang = "SkillDatas_Boomerang";
 
 
-    // SkillData_Sniper
-    // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_SkillData_Sniper = "SkillData_Sniper!A1:H5";
-    // 데이터를 저장할 경로와 이름
-    private readonly string _fileName_SkillData_Sniper = "SkillDatas_Sniper";
 
 
 
@@ -96,9 +114,13 @@ public class Sample : OdinEditorWindow
         FetchAndConvertData<WaveData, WaveDatas>(_range_WaveData, _fileName_WaveData);
         FetchAndConvertData<MonsterData, MonsterDatas>(_range_MonsterData, _fileName_MonsterData);
         FetchAndConvertData<BossData, BossDatas>(_range_BossData, _fileName_BossData);
-        FetchAndConvertData<SkillData_SlashAttack, SkillDatas_SlashAttack>(_range_SkillData_SlashAttack, _fileName_SkillData_SlashAttack);
-        FetchAndConvertData<SkillData_Boomerang, SkillDatas_Boomerang>(_range_SkillData_Boomerang, _fileName_SkillData_Boomerang);
-        FetchAndConvertData<SkillData_Sniper, SkillDatas_Sniper>(_range_SkillData_Sniper, _fileName_SkillData_Sniper);
+        FetchAndConvertData<SkillData, SkillDatas>(_range_SkillData, _fileName_SkillData);
+        
+
+        
+        // FetchAndConvertData<SkillData_SlashAttack, SkillDatas_SlashAttack>(_range_SkillData_SlashAttack, _fileName_SkillData_SlashAttack);
+        // FetchAndConvertData<SkillData_Boomerang, SkillDatas_Boomerang>(_range_SkillData_Boomerang, _fileName_SkillData_Boomerang);
+        // FetchAndConvertData<SkillData_Sniper, SkillDatas_Sniper>(_range_SkillData_Sniper, _fileName_SkillData_Sniper);
     }
 
     /// <summary>
@@ -124,7 +146,7 @@ public class Sample : OdinEditorWindow
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     // 응답 결과를 콘솔에 출력해 확인.
-                    //Debug.Log(responseBody);
+                    Debug.Log(responseBody);
 
                     // 응답받은 JSON 데이터를 ScriptableObject로 변환하는 메서드를 호출.
                     CreateDataListSO<Data, DatasSO>(responseBody, fileName);
@@ -162,7 +184,7 @@ public class Sample : OdinEditorWindow
         for (int i = 2; i < jsonData.values.Length; i++) 
         {
             // 현재 행의 데이터를 가져옴
-            var values = jsonData.values[i]; 
+            var values = jsonData.values[i];
 
             // 리플렉션 준비
             Type type = typeof(Data);
@@ -173,6 +195,11 @@ public class Sample : OdinEditorWindow
             {
                 FieldInfo fieldInfo = type.GetField(headerValues[h]);
 
+                // 셀이 비어있을 경우 그냥 지나가고 다음으로 (-로 테이블에 표시해둠)
+                if (values[h] == "-")
+                    continue;
+
+                // 리플렉션으로 변수에 값 할당
                 if (fieldInfo.FieldType == typeof(int))
                 {
                     fieldInfo.SetValue(data, int.Parse(values[h]));

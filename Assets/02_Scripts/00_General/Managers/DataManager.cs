@@ -50,20 +50,23 @@ public class DataManager : SerializedMonoBehaviour
     [SerializeField]
     public BossDatas BossDatas { get; set; }                            // 보스 데이터
 
-    [SerializeField]
-    public SkillDatas_SlashAttack SkillDatas_SlashAttack { get; set; } // 슬래시 어택 스킬 데이터
 
-    [SerializeField]
-    public SkillDatas_Boomerang SkillDatas_Boomerang { get; set; }     // 부메랑 스킬 데이터
 
     [SerializeField]
-    public SkillDatas_Sniper SkillDatas_Sniper { get; set; }           // 스나이퍼 스킬 데이터
+    public SkillDatas SkillDatas { get; set; }                         // 스킬 데이터
+
+    //[Title("스킬 데이터")]
+    //[SerializeField]
+    //public SkillDatas_SlashAttack SkillDatas_SlashAttack { get; set; } // 슬래시 어택 스킬 데이터
+
+    //[SerializeField]
+    //public SkillDatas_Boomerang SkillDatas_Boomerang { get; set; }     // 부메랑 스킬 데이터
+
+    //[SerializeField]
+    //public SkillDatas_Sniper SkillDatas_Sniper { get; set; }           // 스나이퍼 스킬 데이터
 
 
 
-
-    private void Start()
-    {
-        //Debug.Log(_heroDatas.GetDataById(HeroID.Wizard.ToString()).Desc);
-    }
 }
+
+

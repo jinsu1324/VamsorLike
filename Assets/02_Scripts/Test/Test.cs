@@ -40,16 +40,23 @@ public class Test : SerializedMonoBehaviour
     #endregion
 
 
-    //public HeroDatas HeroDatas;
+    private void Start()
+    {
+        GetSkillData_bySkillIDLevel(SkillID.SlashAttack, 1);
+    }
 
 
-    //public HeroData GetHeroData(HeroID id)
-    //{
-    //    string searchId = id.ToString();
+    public void GetSkillData_bySkillIDLevel(SkillID skillID, int level)
+    {       
 
-    //    HeroData heroData = HeroDatas.DataList.Find(hero => hero.Id == searchId);
-    //    return heroData;
-    //}
+        List<SkillData> matchingData = 
+            DataManager.Instance.SkillDatas.GetAllDataByCondition(data => data.ID.Contains(skillID.ToString()));
+
+        SkillData go = matchingData.Find(x => x.Level == level);
+
+        Debug.Log(go.Delay);
+
+    }
 }
 
 

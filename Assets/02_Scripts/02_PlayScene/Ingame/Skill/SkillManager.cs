@@ -17,6 +17,22 @@ public class SkillManager : SerializedMonoBehaviour
 
 
     /// <summary>
+    /// 스킬ID와 Level로 스킬데이터 가져오는 함수
+    /// </summary>
+    public SkillData GetSkillData_by_SkillIDLevel(SkillID skillID, int level)
+    {
+        // 스킬ID에 해당하는 스킬 데이터를 모두 리스트 가져오기
+        List<SkillData> SkillDataList = DataManager.Instance.SkillDatas.GetAllDataByCondition(
+                skillData => skillData.ID.Contains(skillID.ToString()));
+
+        // 리스트에서 원하는 레벨의 스킬 데이터 가져오기
+        SkillData SkillData = SkillDataList.Find(x => x.Level == level);
+
+        // 그 스킬 데이터 반환
+        return SkillData;
+    }
+
+    /// <summary>
     /// 스킬 데이터 딕셔너리에서 -> 원하는 스킬 + 레벨 로 형변환하여 반환해주는 함수
     /// </summary>
     public SkillData SkillData_as_Dict<SkillData>(SkillID skillID, int skillLevelNum) where SkillData : SkillData_Base
@@ -25,8 +41,18 @@ public class SkillManager : SerializedMonoBehaviour
         //SkillData skillData = DataManager.Instance.SkillDataDict[skillID].SkillDataList[skillLevelNum] as SkillData;
         //return skillData;
 
+
+
+        //DataManager.Instance.ss[skillID].
+
+
         return null;
     }
+
+
+
+
+
 
     /// <summary>
     /// 랜덤한 스킬ID를 반환해주는 함수
@@ -85,6 +111,13 @@ public class SkillManager : SerializedMonoBehaviour
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
     }
     
+
+
+
+
+
+
+
     /// <summary>
     /// 스킬 아이콘 가져오는 함수
     /// </summary>
@@ -100,7 +133,12 @@ public class SkillManager : SerializedMonoBehaviour
         else
         {
             // 수정필요!
+
             //Sprite icon = DataManager.Instance.SkillDataDict[skillID].SkillDataList[foundSkill.CurrentLevel].Icon;
+            //ISkill skill = DataManager.Instance.SkillDataDict[skillID];
+                       
+            
+
             //return icon;
             return null;
         }

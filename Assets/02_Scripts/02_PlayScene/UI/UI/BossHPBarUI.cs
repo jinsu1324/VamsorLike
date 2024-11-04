@@ -18,15 +18,12 @@ public class BossHPBarUI : MonoBehaviour
     /// </summary>
     public void initialize(BossID bossID)
     {
+        BossData bossData = DataManager.Instance.BossDatas.GetDataById(bossID.ToString());
 
-        // 수정필요!
+        _bossNameText.text = bossData.Name;
+        Refresh_BossHPBar(bossData.MaxHp, bossData.MaxHp);
 
-        //BossData bossData = DataManager.Instance.BossDataDict[bossID];
-                
-        //_bossNameText.text = bossData.Name;
-        //Refresh_BossHPBar(bossData.MaxHp, bossData.MaxHp);
-
-        //gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     /// <summary>

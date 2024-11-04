@@ -37,16 +37,16 @@ public class EXPManager : SerializedMonoBehaviour
     /// </summary>
     public void EXPUp(int amount)
     {
-        // 수정필요!
-        //MyHeroLvExp.EXP += amount;
-        //RefreshEXPBarUI();
 
-        //List<LevelData> levelDataList = DataManager.Instance.LevelDatas.LevelDataList;
+        MyHeroLvExp.EXP += amount;
+        RefreshEXPBarUI();
 
-        //if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
-        //{
-        //    LevelUp();
-        //}
+        List<LevelData> levelDataList = DataManager.Instance.LevelDatas.DataList;
+
+        if (MyHeroLvExp.EXP >= levelDataList[MyHeroLvExp.Level].MaxExp)
+        {
+            LevelUp();
+        }
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public class EXPManager : SerializedMonoBehaviour
     private void LevelUp()
     {
         MyHeroLvExp.Level++;
-        MyHeroLvExp.EXP = 0; 
+        MyHeroLvExp.EXP -= 100; 
 
         PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
         PlaySceneCanvas.Instance.SkillSelectPopup.OpenPopup();
