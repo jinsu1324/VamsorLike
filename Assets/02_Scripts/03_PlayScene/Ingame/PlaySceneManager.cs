@@ -68,21 +68,23 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
     [SerializeField]
     public AchivementManager AchivementManager { get; set; }       // 플레이 통계, 업적
-    
-    
+
+    [SerializeField]
+    public InfiniteMapController InfiniteMapController { get; set; }// 무한맵 컨트롤러
+
     /// <summary>
     /// Start 함수
     /// </summary>
     private void Start()
     {
-        // 페이드 아웃
-        PlaySceneCanvas.Instance.LoadingViews.FadeOut();
-
         // 선택된 영웅 셋팅
         MyHeroObjSetting();
 
         // 게임시작 true 로
         IsGameStartChange(true);
+
+        // 페이드 아웃
+        PlaySceneCanvas.Instance.LoadingViews.FadeOut();
     }
 
     /// <summary>
@@ -104,6 +106,9 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         // 따라다닐 카메라 셋팅
         Camera.main.GetComponent<CameraFollow>().SetFollowTarget(MyHeroObj);
+
+        // 맵 이닛
+        InfiniteMapController.InitMap();
     }    
 
     /// <summary>

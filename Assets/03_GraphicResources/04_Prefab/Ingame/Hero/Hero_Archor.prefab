@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8687524959983968984}
   - component: {fileID: 5138826497306880006}
   - component: {fileID: 7037680032270668457}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Hero_Archor
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -100,8 +100,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1590701243
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1522595559704042168, guid: 59e085629a28b8249a2b570d56227b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.010966346, y: 0.17352805}
@@ -206,7 +206,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7037680032270668457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,11 +247,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1337096595769009893, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500824351904044506, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4357414221122982406, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -263,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766085038670375930, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Name
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Pivot.x
@@ -355,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641829200255241583, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212760384277597813, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: serializationData.Prefab

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4640628741191171972}
   - component: {fileID: 5201473650890920090}
   - component: {fileID: 7161424573565925507}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1194069547
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.062015556, b: 0, a: 0.21568628}
   m_FlipX: 0
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2595732413485779126}
   - component: {fileID: 2609857050320320455}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ChangeCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,9 +186,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1194069547
+  m_SortingLayer: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.0670706, b: 0, a: 0.4627451}
   m_FlipX: 0
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945538305681346880}
   - component: {fileID: 3335889421476236739}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BaseCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,9 +270,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1194069547
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.062015556, b: 0, a: 0.21568628}
   m_FlipX: 0

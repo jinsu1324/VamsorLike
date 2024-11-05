@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8445952988725121507}
   - component: {fileID: 7452402949985050037}
   - component: {fileID: 728994601631824}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Monster_Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -51,16 +51,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 5314aa37166af0a48b0ac75d74153f7d, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseMonsterData
-      Entry: 10
-      Data: 0
+    SerializationNodes: []
+  _monsterID: 0
 --- !u!212 &7404919397918585516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,8 +96,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1590701243
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be614356a3ce4874bb59e2cd9885ac73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!195 &728994601631824
 NavMeshAgent:
   m_ObjectHideFlags: 0

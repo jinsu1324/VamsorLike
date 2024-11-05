@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3065971047073138123}
   - component: {fileID: 4322474735086839742}
   - component: {fileID: 2479029061349610}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Hero_Warrior
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -53,16 +53,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 23d9fdc483a5fd248818f4112ec93325, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _baseHeroData
-      Entry: 10
-      Data: 0
+    SerializationNodes: []
+  _heroID: 0
   _hpBar: {fileID: 1475540970768844320}
   _heroCanvas: {fileID: 6948193925694964490}
 --- !u!212 &5031101564520488128
@@ -103,8 +100,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1590701243
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3318188226485093758, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -167,7 +164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.16237824}
@@ -209,7 +206,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2479029061349610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,11 +247,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1337096595769009893, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500824351904044506, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4357414221122982406, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -266,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766085038670375930, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Name
@@ -274,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199336570192295850, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5716111506923956597, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Pivot.x
@@ -358,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641829200255241583, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212760384277597813, guid: f34b100e23d687644a6daa0b69700db5, type: 3}
       propertyPath: serializationData.Prefab

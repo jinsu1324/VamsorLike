@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hero
   - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -13,13 +14,13 @@ TagManager:
   - 
   - Water
   - UI
-  - BG
-  - GroundEft
-  - Item
-  - Enemy
-  - Hero
-  - Projectile
-  - Light
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 3175747307
+    locked: 0
+  - name: GroundObjs
+    uniqueID: 3100897749
+    locked: 0
+  - name: Characters
+    uniqueID: 2704266053
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3335134517
+    locked: 0
+  - name: Fronts
+    uniqueID: 3851378369
     locked: 0

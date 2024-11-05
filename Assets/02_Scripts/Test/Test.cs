@@ -1,62 +1,30 @@
-using Sirenix.OdinInspector;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class Test : SerializedMonoBehaviour
+public class Test : MonoBehaviour
 {
+    public Transform player;
+    public float speed = 5f;
 
-    #region 싱글톤_씬이동 O
-    private static Test _instance;
+    private Vector3 direction;
 
-    private void Awake()
+    void Start()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        UpdateDirectionToPlayer();
     }
 
-    public static Test Instance
+    private void FixedUpdate()
     {
-        get
-        {
-            if (_instance == null)
-            {
-                return null;
-            }
+        // 플레이어를 향해 이동
+        transform.position += direction * speed * Time.fixedDeltaTime;
 
-            return _instance;
-        }
-    }
-    #endregion
-
-
-    private void Start()
-    {
-        GetSkillData_bySkillIDLevel(SkillID.SlashAttack, 1);
+        // 방향 업데이트
+        UpdateDirectionToPlayer();
     }
 
-
-    public void GetSkillData_bySkillIDLevel(SkillID skillID, int level)
-    {       
-
-        List<SkillData> matchingData = 
-            DataManager.Instance.SkillDatas.GetAllDataByCondition(data => data.ID.Contains(skillID.ToString()));
-
-        SkillData go = matchingData.Find(x => x.Level == level);
-
-        Debug.Log(go.Delay);
-
+    private void UpdateDirectionToPlayer()
+    {
+        direction = (player.position - transform.position).normalized;
     }
 }
-
-

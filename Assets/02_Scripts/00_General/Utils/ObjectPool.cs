@@ -7,6 +7,7 @@ public class ObjectPool : MonoBehaviour
     // 오브젝트 풀에 생성할 프리팹
     [SerializeField]
     private ObjectPoolObject _prefab;
+       
 
     // 한번에 생성할 갯수
     [SerializeField]

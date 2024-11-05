@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1320357497387708828}
   - component: {fileID: 8162403765342507943}
   - component: {fileID: 8301173413366998324}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Projectile_Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -959832779
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 405c703ab4ad06c4fa117870330938ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
