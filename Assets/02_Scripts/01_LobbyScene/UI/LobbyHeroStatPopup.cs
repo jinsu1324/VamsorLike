@@ -119,13 +119,13 @@ public class LobbyHeroStatPopup : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // 로딩 애니메이션
-        LobbySceneCanvas.Instance.LoadingViews.InLoadingView_ON();
+        LobbySceneCanvas.Instance.LoadingViews.FadeIn();
 
         // 대기
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(1.0f);
 
         // 씬 전환
-        SceneSwitcher.LoadScene("02_PlayScene");
+        SceneLoader.LoadScene("03_PlayScene");
     }
 
     /// <summary>
