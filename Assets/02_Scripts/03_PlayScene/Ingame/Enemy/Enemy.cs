@@ -41,9 +41,9 @@ public abstract class Enemy : ObjectPoolObject
     }
       
     /// <summary>
-    /// 공격 (영웅 충돌 감지로 인해)
+    /// 영웅에 닿고 있으면 계속 공격
     /// </summary>
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Hero.ToString()))
         {

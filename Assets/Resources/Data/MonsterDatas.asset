@@ -16,20 +16,20 @@ MonoBehaviour:
   - ID: Golem
     Name: Golem_Kid
     MaxHp: 75
-    Atk: 10
+    Atk: 2
     Speed: 0.2
   - ID: Skeleton
     Name: Skeleton_Kid
     MaxHp: 50
-    Atk: 20
+    Atk: 3
     Speed: 0.3
   - ID: Witch
     Name: Witch_Kid
     MaxHp: 75
-    Atk: 30
+    Atk: 4
     Speed: 0.15
   - ID: Dragon
     Name: Dragon_Kid
     MaxHp: 100
-    Atk: 40
+    Atk: 5
     Speed: 0.25
