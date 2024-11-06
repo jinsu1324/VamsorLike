@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7505413587143967236}
   - component: {fileID: 4281732553191502038}
   - component: {fileID: 8980046272923496052}
-  - component: {fileID: 2416991225896588881}
   - component: {fileID: -2442880241450747781}
   m_Layer: 0
   m_Name: Tilemap_02_Flat
@@ -1192,22 +1191,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &2416991225896588881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971258509079817855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!114 &-2442880241450747781
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DataList:
   - ID: 1
-    WaveTime: 00:00:05
+    WaveTime: 00:00:02
     MonsterType:
     - Golem
-    TotalSpawnCount: 05000000
+    TotalSpawnCount: 1e000000
     SpawnInterval:
-    - 0.5
+    - 0.1
     BossType: None
   - ID: 2
     WaveTime: 00:00:10

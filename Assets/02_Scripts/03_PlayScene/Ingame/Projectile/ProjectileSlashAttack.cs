@@ -13,14 +13,15 @@ public class ProjectileSlashAttack : ProjectileBase
         Destroy(gameObject, 0.1f);
     }
 
+
     /// <summary>
     /// 몬스터와 충돌했을 때, 공격력만큼 몬스터의 HP를 깎음
     /// </summary>
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Enemy.ToString())
+        if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Enemy.ToString()))
         {
-            collision.GetComponent<Enemy>().HPMinus(_atk);
+            collision.gameObject.GetComponent<Enemy>().HPMinus(_atk);
         }
     }
 

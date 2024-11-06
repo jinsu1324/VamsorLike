@@ -12,7 +12,7 @@ public class EXPItem : ItemBase
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
     {
-        collision.GetComponent<HeroObj>().AcquireExp_and_Request(_expAmount);
+        collision.gameObject.GetComponent<HeroObj>().AcquireExp_and_Request(_expAmount);
         
         Debug.Log($"{_expAmount} 경험치를 획득했습니다.");
         

@@ -15,11 +15,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hero
+  - Enemy
+  - Obstacle
+  - Item
+  - FX
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Fronts
     uniqueID: 3851378369
+    locked: 0
+  - name: UI
+    uniqueID: 2680943709
     locked: 0

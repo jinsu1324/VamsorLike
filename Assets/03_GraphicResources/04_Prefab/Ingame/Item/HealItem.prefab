@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3657480042651229983}
   - component: {fileID: 1844030593101345802}
   - component: {fileID: 6191050431470423125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5936092362015543055}
   - component: {fileID: 190022890381404125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947921273556296949}
   - component: {fileID: 1095046907814454771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

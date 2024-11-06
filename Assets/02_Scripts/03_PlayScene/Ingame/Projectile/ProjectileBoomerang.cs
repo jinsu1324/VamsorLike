@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileBoomerang : ProjectileBase
 {
     private float _radius = 2.0f; // 반지름
@@ -15,12 +16,13 @@ public class ProjectileBoomerang : ProjectileBase
         transform.position = pos + new Vector3(Mathf.Cos(_angle), Mathf.Sin(_angle), 0) * _radius;
     }
 
+
     // 몬스터와 충돌했을때 공격력만큼 몬스터 체력깎기
-    protected void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Enemy.ToString())
+        if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Enemy.ToString()))
         {
-            collision.GetComponent<MonsterObj>().HPMinus(_atk);
+            collision.gameObject.GetComponent<MonsterObj>().HPMinus(_atk);
         }
     }
 }

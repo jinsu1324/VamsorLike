@@ -4,27 +4,59 @@ using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-    public Transform player;
-    public float speed = 5f;
-
-    private Vector3 direction;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        UpdateDirectionToPlayer();
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("Trigger Enemy와 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Debug.Log("Trigger Obstacler과 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Item"))
+        {
+            Debug.Log("Trigger Item 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("FX"))
+        {
+            Debug.Log("Trigger FX 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Hero"))
+        {
+            Debug.Log("Trigger Hero 충돌했습니다.");
+        }
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 플레이어를 향해 이동
-        transform.position += direction * speed * Time.fixedDeltaTime;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("collision Enemy와 충돌했습니다.");
+        }
 
-        // 방향 업데이트
-        UpdateDirectionToPlayer();
-    }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Debug.Log("collision Obstacler과 충돌했습니다.");
+        }
 
-    private void UpdateDirectionToPlayer()
-    {
-        direction = (player.position - transform.position).normalized;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Item"))
+        {
+            Debug.Log("collision Item 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("FX"))
+        {
+            Debug.Log("collision FX 충돌했습니다.");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Hero"))
+        {
+            Debug.Log("collision Hero 충돌했습니다.");
+        }
     }
 }

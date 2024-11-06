@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 4196653945634274972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -2.97, z: 0}
+  m_LocalPosition: {x: -0.29, y: -2.71, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 7363620342719836923}
   - component: {fileID: 977875228465847804}
   - component: {fileID: 4296872141924238295}
-  - component: {fileID: 2145770852158624449}
   - component: {fileID: 2960233603564350872}
   m_Layer: 0
   m_Name: Tilemap_08_Obstacle
@@ -1349,22 +1348,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &2145770852158624449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209792103163513040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!114 &2960233603564350872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,8 +1381,7 @@ GameObject:
   - component: {fileID: 3920951472355390633}
   - component: {fileID: 2579453772614906532}
   - component: {fileID: 4749121018503777295}
-  - component: {fileID: 4949934496650030226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BloodPool
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1415,7 +1397,7 @@ Transform:
   m_GameObject: {fileID: 8748916433537753291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -3.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: -3.25, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1505,7 +1487,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.023021042, y: 0.036176085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1516,7 +1498,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1.8094841, y: 2.2962148}
   m_EdgeRadius: 0
 --- !u!114 &4749121018503777295
 MonoBehaviour:
@@ -1530,22 +1512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c1865c4436c78488b4c8ad5fa38725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!208 &4949934496650030226
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748916433537753291}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1.5000001, y: 1.5000001, z: 0.1}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &9153697098563431100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1539,7 @@ Transform:
   m_GameObject: {fileID: 9153697098563431100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13, y: -4.17, z: 0}
+  m_LocalPosition: {x: -1.013, y: -3.437, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []

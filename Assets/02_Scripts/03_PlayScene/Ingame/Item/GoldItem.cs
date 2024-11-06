@@ -12,7 +12,7 @@ public class GoldItem : ItemBase
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
     {
-        collision.GetComponent<HeroObj>().AcquireGold_and_Request(_goldAmount);
+        collision.gameObject.GetComponent<HeroObj>().AcquireGold_and_Request(_goldAmount);
         
         Debug.Log($"{_goldAmount} ∞ÒµÂ∏¶ »πµÊ«ﬂΩ¿¥œ¥Ÿ.");
         

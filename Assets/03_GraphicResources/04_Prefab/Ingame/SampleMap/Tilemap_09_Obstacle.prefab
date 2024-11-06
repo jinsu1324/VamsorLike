@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4898061088127539187}
   - component: {fileID: 3705897391115132336}
   - component: {fileID: 7765275535956615345}
-  - component: {fileID: 8320566209623252576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireStone
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 736654176526006981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: 2.5, y: -1.25, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -144,22 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c1865c4436c78488b4c8ad5fa38725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!208 &8320566209623252576
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736654176526006981}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.1}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &3784573928173022476
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +154,6 @@ GameObject:
   - component: {fileID: 3059875860997337826}
   - component: {fileID: 3430483999402312375}
   - component: {fileID: 4324594290792787992}
-  - component: {fileID: 4013538768777909381}
   - component: {fileID: -5000011300110560160}
   m_Layer: 0
   m_Name: Tilemap_09_Obstacle
@@ -1354,22 +1336,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &4013538768777909381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3784573928173022476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!114 &-5000011300110560160
 MonoBehaviour:
   m_ObjectHideFlags: 0

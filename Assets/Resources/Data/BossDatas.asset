@@ -17,7 +17,7 @@ MonoBehaviour:
     Name: FireDragonName
     MaxHp: 500
     Atk: 40
-    Speed: 2
+    Speed: 0.2
     AppearStageLevel: 2
     SkillDamage: 80
     SkillRadius: 3

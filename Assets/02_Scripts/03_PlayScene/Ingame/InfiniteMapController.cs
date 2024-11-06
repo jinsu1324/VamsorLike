@@ -12,9 +12,6 @@ public class InfiniteMapController : MonoBehaviour
     [SerializeField]
     private Grid _parentGrid;                       // 부모가 될 그리드
 
-    [SerializeField]
-    private NavMeshSurface _surface;                // NavMeshSurface
-
     private GameObject[,] _tiles;                   // 생성된 타일들 담을 2차원 배열
     private Vector3 _lastPlayerPosition;            // 타일 재배치 되었을 때 플레이어 위치 저장할 변수
 
@@ -114,8 +111,6 @@ public class InfiniteMapController : MonoBehaviour
                 }
             }
         }
-
-        _surface.BuildNavMesh();
     }
 
     /// <summary>

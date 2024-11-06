@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 817160721930687063}
   - component: {fileID: 2876836231631748149}
   - component: {fileID: 5592799359489288364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MagnetItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4533790941824761070}
   - component: {fileID: 5867892905896494002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

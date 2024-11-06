@@ -25,12 +25,13 @@ public abstract class ItemBase : ObjectPoolObject
         PlaySceneManager.Instance.ItemManager.AddFieldItemList(this);
     }
 
+   
     /// <summary>
     /// 아이템이 영웅에 닿으면 실행
     /// </summary>
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == Tag.Hero.ToString())
+        if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Hero.ToString()))
         {
             ItemPickUp(collision);
         }

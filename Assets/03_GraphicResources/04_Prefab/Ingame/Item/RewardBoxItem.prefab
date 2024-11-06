@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6610742994065215740}
   - component: {fileID: 4138697991076770432}
   - component: {fileID: 1220689970370432733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RewardBoxItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

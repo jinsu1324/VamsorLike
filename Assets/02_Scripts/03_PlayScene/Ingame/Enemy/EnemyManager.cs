@@ -13,10 +13,7 @@ public class EnemyManager : SerializedMonoBehaviour
     private void Update()
     {
         if (PlaySceneManager.Instance.IsGameStart == false)
-        {
-            Stop_AllEnemys();
             return;
-        }            
 
         FollowHero_AllEnemys();
     }    
@@ -96,14 +93,5 @@ public class EnemyManager : SerializedMonoBehaviour
     {
         foreach (Enemy enemy in _fieldEnemyList)
             enemy.FollowHero();
-    }
-
-    /// <summary>
-    /// 필드 적들 전부 멈추도록
-    /// </summary>
-    private void Stop_AllEnemys()
-    {
-        foreach (Enemy enemy in _fieldEnemyList)
-            enemy.Stop();
     }
 }

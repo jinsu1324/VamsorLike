@@ -10,7 +10,7 @@ public class BossObj : Enemy
     [SerializeField]
     private BossID _bossID;                                     // 이 오브젝트의 보스 ID
 
-    private BossData _baseBossData;                    // 보스 데이터
+    private BossData _baseBossData;                             // 보스 데이터
 
     [SerializeField]
     private GroundSkill _groundSkillPrefab;                     // 원형 범위 스킬 프리팹
@@ -62,10 +62,6 @@ public class BossObj : Enemy
         _skillCoolTime = _baseBossData.SkillCoolTime;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _navMeshAgent.updateRotation = false;
-        _navMeshAgent.updateUpAxis = false;
-        _navMeshAgent.speed = _speed;
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
     }

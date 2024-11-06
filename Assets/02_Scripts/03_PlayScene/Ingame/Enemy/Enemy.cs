@@ -11,8 +11,6 @@ public abstract class Enemy : ObjectPoolObject
     protected float _speed;                           // 오브젝트 Speed
 
     protected SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러  
-    protected NavMeshAgent _navMeshAgent;             // 네비메쉬 에이전트
-
 
     /// <summary>
     /// 데이터 셋팅
@@ -41,13 +39,13 @@ public abstract class Enemy : ObjectPoolObject
         // 아이템 드랍
         DropItem();
     }
-
+      
     /// <summary>
     /// 공격 (영웅 충돌 감지로 인해)
     /// </summary>
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == Tag.Hero.ToString())
+        if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Hero.ToString()))
         {
             collision.gameObject.GetComponent<HeroObj>().HPMinus(_atk);
         }
@@ -91,15 +89,9 @@ public abstract class Enemy : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
-        _navMeshAgent.isStopped = false;
-        _navMeshAgent.SetDestination(PlaySceneManager.Instance.MyHeroObj.transform.position);
-    }
-
-    /// <summary>
-    /// 따라다니는것 멈추기
-    /// </summary>
-    public void Stop()
-    {
-        _navMeshAgent.isStopped = true;
+        transform.position = Vector2.MoveTowards(
+            transform.position, 
+            PlaySceneManager.Instance.MyHeroObj.transform.position, 
+            _speed * Time.fixedDeltaTime);
     }
 }

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 태그
-public enum Tag
+public enum Layer
 {
+    Hero,
     Enemy,
-    Hero
+    Obstacle,
+    Item,
+    FX
 }
 
 // 저장폴더 이름

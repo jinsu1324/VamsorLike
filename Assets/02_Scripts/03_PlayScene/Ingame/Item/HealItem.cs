@@ -11,7 +11,7 @@ public class HealItem : ItemBase
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
     {
-        collision.GetComponent<HeroObj>().Heal(_healAmount);
+        collision.gameObject.GetComponent<HeroObj>().Heal(_healAmount);
 
         Debug.Log($"{_healAmount} 만큼 힐이 되었습니다.");
 

@@ -29,10 +29,6 @@ public class MonsterObj : Enemy
         _speed = _baseMonsterData.Speed;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _navMeshAgent.updateRotation = false;
-        _navMeshAgent.updateUpAxis = false;
-        _navMeshAgent.speed = _speed;
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
     }
