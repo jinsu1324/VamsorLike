@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Test2 : MonoBehaviour
 {
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    HeroData heroData = Test.Instance.GetHeroData(HeroID.Warrior);
+    public GameObject monster;
+    private void Start()
+    {
+        StartCoroutine(DD());
+    }
 
-    //    Debug.Log(heroData.Name);
-    //}
+    private void Update()
+    {
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+    }
+
+    IEnumerator DD()
+    {
+        int count = 0;
+
+        while (count < 10)
+        {
+            Instantiate(monster, new Vector3(-1.1f, 2.36f, 0), Quaternion.identity);
+            count++;
+            yield return new WaitForSeconds(1.0f);
+        }
+
+    }
 }
