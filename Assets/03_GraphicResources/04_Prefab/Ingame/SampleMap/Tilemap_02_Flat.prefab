@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4281732553191502038}
   - component: {fileID: 8980046272923496052}
   - component: {fileID: 2416991225896588881}
+  - component: {fileID: -2442880241450747781}
   m_Layer: 0
   m_Name: Tilemap_02_Flat
   m_TagString: Untagged
@@ -1207,3 +1208,24 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &-2442880241450747781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971258509079817855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060d50b406faf4d48a96b7fe0dbea260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []

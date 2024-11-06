@@ -2,27 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NavMeshPlus.Components;
+using UnityEngine.UIElements;
 
 public class InfiniteMapController : MonoBehaviour
 {
-    private GameObject[,] _tiles;             // 생성된 타일들 담을 2차원 배열
-    
     [SerializeField]
-    private GameObject[] _tilePrefabs;        // 다양한 타일 프리팹들 배열
-
-    private int _gridWidth = 3;               // 가로 타일 개수
-    private int _gridHeight = 3;              // 세로 타일 개수
-    private float _tileSize = 10f;            // 타일 한 변의 길이
-    private float _gridScale = 2f;            // 그리드 스케일
+    private List<ObjectPool> _tileObjectPoolList;   // 타일 오브젝트 풀 리스트
 
     [SerializeField]
-    private Grid _parentGrid;                 // 부모가 될 그리드
-   
-    [SerializeField]
-    private NavMeshSurface _surface;            // NavMeshSurface
-    
-    private Vector3 _lastPlayerPosition;       // 타일 재배치 되었을 때 플레이어 위치 저장할 변수
+    private Grid _parentGrid;                       // 부모가 될 그리드
 
+    [SerializeField]
+    private NavMeshSurface _surface;                // NavMeshSurface
+
+    private GameObject[,] _tiles;                   // 생성된 타일들 담을 2차원 배열
+    private Vector3 _lastPlayerPosition;            // 타일 재배치 되었을 때 플레이어 위치 저장할 변수
+
+    private int _gridWidth = 3;                     // 가로 타일 개수
+    private int _gridHeight = 3;                    // 세로 타일 개수
+    private float _tileSize = 10f;                  // 타일 한 변의 길이
+    private float _gridScale = 2f;                  // 그리드 스케일
+
+    /// <summary>
+    /// Update
+    /// </summary>
+    private void Update()
+    {
+        TileMove();
+    }
 
     /// <summary>
     /// 맵 초기화
@@ -35,14 +42,6 @@ public class InfiniteMapController : MonoBehaviour
         _lastPlayerPosition = PlaySceneManager.Instance.MyHeroObj.transform.position;
 
         TileMove(true);
-    }
-   
-    /// <summary>
-    /// Update
-    /// </summary>
-    void Update()
-    {
-        TileMove();
     }
 
     /// <summary>
@@ -61,11 +60,8 @@ public class InfiniteMapController : MonoBehaviour
                 // 타일 위치 설정
                 Vector3 position = new Vector3(x * _tileSize, y * _tileSize, 0);
                 
-                // 랜덤 픽
-                GameObject tilePrefab = _tilePrefabs[Random.Range(0, _tilePrefabs.Length)];
-
-                // 타일 생성하고 배열에 저장 (부모는 그리드로 설정)
-                _tiles[x, y] = Instantiate(tilePrefab, position, Quaternion.identity, _parentGrid.transform);
+                // 랜덤타일 픽 및 셋팅, 스폰
+                SpawnRandomTile(x, y, position);
             }
         }
     }
@@ -96,7 +92,6 @@ public class InfiniteMapController : MonoBehaviour
                 // 플레이어의 x 위치와 비교하여 타일을 반대쪽으로 이동
                 if (Mathf.Abs(playerPosition.x - tilePosition.x) > ((_tileSize * _gridWidth) / 2))
                 {
-                    Debug.Log("Move X!");
                     tilePosition.x += _tileSize * _gridWidth * Mathf.Sign(playerPosition.x - tilePosition.x);
                     isTileMoved = true;
                 }
@@ -104,7 +99,6 @@ public class InfiniteMapController : MonoBehaviour
                 // 플레이어의 y 위치와 비교하여 타일을 반대쪽으로 이동
                 if (Mathf.Abs(playerPosition.y - tilePosition.y) > ((_tileSize * _gridWidth) / 2))
                 {
-                    Debug.Log("Move Y!");
                     tilePosition.y += _tileSize * _gridWidth * Mathf.Sign(playerPosition.y - tilePosition.y);
                     isTileMoved = true;
                 }
@@ -113,16 +107,41 @@ public class InfiniteMapController : MonoBehaviour
                 if (isTileMoved)
                 {
                     // 기존 타일 제거
-                    Destroy(_tiles[x, y]);
+                    _tiles[x, y].GetComponent<ObjectPoolObject>().BackTrans();
 
-                    // 새로운 랜덤 타일 생성
-                    GameObject newTilePrefab = _tilePrefabs[Random.Range(0, _tilePrefabs.Length)];
-                    _tiles[x, y] = Instantiate(newTilePrefab, tilePosition, Quaternion.identity, _parentGrid.transform);
+                    // 새로운 랜덤타일 픽 및 셋팅, 스폰
+                    SpawnRandomTile(x, y, tilePosition);
                 }
             }
         }
 
         _surface.BuildNavMesh();
-        Debug.Log("SurFace Build~!!");
+    }
+
+    /// <summary>
+    /// 랜덤 타일 반환 (타일 오브젝트 풀들 중에서 랜덤으로)
+    /// </summary>
+    private GameObject GetRandomTile()
+    {
+        ObjectPool tileObjectPool = _tileObjectPoolList[Random.Range(0, _tileObjectPoolList.Count)];
+        GameObject tile = tileObjectPool.GetObj();
+
+        return tile;
+    }
+
+    /// <summary>
+    /// 랜덤타일 스폰 함수
+    /// </summary>
+    private void SpawnRandomTile(int x, int y, Vector3 pos)
+    {
+        // 랜덤 픽
+        GameObject tilePrefab = GetRandomTile();
+
+        // 셋팅
+        tilePrefab.transform.position = pos;
+        tilePrefab.transform.SetParent(_parentGrid.transform);
+
+        // 타일 생성하고 배열에 저장 (부모는 그리드로 설정)
+        _tiles[x, y] = tilePrefab;
     }
 }
