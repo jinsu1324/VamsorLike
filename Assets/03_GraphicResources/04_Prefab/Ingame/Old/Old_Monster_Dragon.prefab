@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &432054109156213965
+--- !u!1 &101983611531628861
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8044806612036673611}
-  - component: {fileID: 1289704635950418708}
-  - component: {fileID: 9156713683305921239}
-  - component: {fileID: 6638139934168087472}
-  - component: {fileID: 6059670099297528020}
+  - component: {fileID: 1140795801144116867}
+  - component: {fileID: 5403375094377357267}
+  - component: {fileID: 8918829551441420933}
+  - component: {fileID: 7632657457653049158}
+  - component: {fileID: 2293250492530393761}
   m_Layer: 8
-  m_Name: Monster_Witch
-  m_TagString: Enemy
+  m_Name: Old_Monster_Dragon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8044806612036673611
+  m_IsActive: 0
+--- !u!4 &1140795801144116867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432054109156213965}
+  m_GameObject: {fileID: 101983611531628861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289704635950418708
+--- !u!114 &5403375094377357267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432054109156213965}
+  m_GameObject: {fileID: 101983611531628861}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75a2ae8078acc3f479ae4364e43737c3, type: 3}
@@ -56,14 +56,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _monsterID: 2
---- !u!212 &9156713683305921239
+  _monsterID: 3
+--- !u!212 &8918829551441420933
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432054109156213965}
+  m_GameObject: {fileID: 101983611531628861}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingLayerID: -1590701243
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5fecb929642b43f47a2698d30fd5ce4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a953e7452bee1e4da4e41ef49ae1a35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,13 +109,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6638139934168087472
+--- !u!61 &7632657457653049158
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432054109156213965}
+  m_GameObject: {fileID: 101983611531628861}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0033200383, y: -0.06118369}
+  m_Offset: {x: 0.0064105093, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,16 +152,16 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.67445445, y: 1.8523674}
+  m_Size: {x: 1.6302519, y: 1.55}
   m_EdgeRadius: 0
---- !u!50 &6059670099297528020
+--- !u!50 &2293250492530393761
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432054109156213965}
+  m_GameObject: {fileID: 101983611531628861}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0

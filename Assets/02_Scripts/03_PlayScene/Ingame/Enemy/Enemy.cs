@@ -10,6 +10,7 @@ public abstract class Enemy : ObjectPoolObject
     protected float _atk;                             // 오브젝트 Atk
     protected float _speed;                           // 오브젝트 Speed
 
+    protected Animator _animator;                     // 애니메이터
     protected SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러  
 
     /// <summary>
@@ -25,8 +26,14 @@ public abstract class Enemy : ObjectPoolObject
     /// <summary>
     /// 죽음
     /// </summary>
-    public virtual void Death()
+    public virtual void Death() 
     {
+        // 애니메이션 재생
+        _animator.SetTrigger("isDead");
+
+        // 아이템 드랍
+        DropItem();
+
         // 필드 적 목록에서 제거
         PlaySceneManager.Instance.EnemyManager.RemoveFieldEnemyList(this);
 
@@ -35,9 +42,6 @@ public abstract class Enemy : ObjectPoolObject
 
         // 토탈 적 죽인횟수 증가
         PlaySceneManager.Instance.AchivementManager.AddKillCount();
-        
-        // 아이템 드랍
-        DropItem();
     }
       
     /// <summary>
@@ -89,9 +93,21 @@ public abstract class Enemy : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
-        transform.position = Vector2.MoveTowards(
-            transform.position, 
-            PlaySceneManager.Instance.MyHeroObj.transform.position, 
-            _speed * Time.fixedDeltaTime);
+        Vector2 targetPos = PlaySceneManager.Instance.MyHeroObj.transform.position;
+
+        // 현재 위치에서 타겟위치로 이동
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, _speed * Time.fixedDeltaTime);
+
+        // 타겟보다 나 자신(몬스터)가 오른쪽에 있으면
+        if (targetPos.x < transform.position.x)
+        {
+            // 왼쪽 바라보게
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            // 나머지는 오른쪽 바라보게
+            _spriteRenderer.flipX = false;
+        }
     }
 }

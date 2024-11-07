@@ -35,7 +35,7 @@ public class LobbyHeroStatPopup : MonoBehaviour
     private LobbyHero _selectedLobbyHero;           // 선택된 영웅 정보
 
     private string _showAnimClipName = "LobbyHeroStatPopup_Show";   // 팝업 켜기 애니메이션 이름 string
-    private float _showAnimClipLegth;                               // 클립 길이 담을 변수
+    private float _showAnimClipLength;                               // 클립 길이 담을 변수
 
 
     /// <summary>
@@ -44,7 +44,7 @@ public class LobbyHeroStatPopup : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _showAnimClipLegth = GetAnimationClipLengh(_showAnimClipName);
+        _showAnimClipLength = AnimSupporter.GetAnimationClipLength(_showAnimClipName, _animator);
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ public class LobbyHeroStatPopup : MonoBehaviour
         _animator.SetFloat("Speed", -1.0f);
         _animator.Play(_showAnimClipName, 0, 1f);
         
-        Invoke("PopupOFF", _showAnimClipLegth);
+        Invoke("PopupOFF", _showAnimClipLength);
     }
 
     /// <summary>
@@ -142,25 +142,5 @@ public class LobbyHeroStatPopup : MonoBehaviour
     private void PopupOFF()
     {
         gameObject.SetActive(false);
-    }
-
-    /// <summary>
-    /// 애니메이션 클릭 길이 를 반환해주는 함스
-    /// </summary>
-    private float GetAnimationClipLengh(string clipName)
-    {
-        // Animator의 RuntimeAnimatorController에서 모든 애니메이션 클립 검색
-        foreach (var clip in _animator.runtimeAnimatorController.animationClips)
-        {
-            if (clip.name == clipName)
-            {
-                // 일치하는 클립의 길이를 반환
-                return clip.length;
-            }
-        }
-
-        // 일치하는 클립을 찾지 못하면 0 반환
-        Debug.Log("애니메이션 클립을 찾지 못했습니다.: " + clipName);
-        return 0f;
     }
 }

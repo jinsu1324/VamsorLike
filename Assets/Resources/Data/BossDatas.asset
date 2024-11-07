@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: BossDatas
   m_EditorClassIdentifier: 
   DataList:
-  - ID: FireDragon
-    Name: FireDragonName
-    MaxHp: 500
-    Atk: 40
-    Speed: 0.2
+  - ID: Ogre
+    Name: "\uC624\uC6B0\uAC70"
+    MaxHp: 1000
+    Atk: 2.8
+    Speed: 0.38
     AppearStageLevel: 2
-    SkillDamage: 80
-    SkillRadius: 3
-    SkillDuration: 3
-    SkillRangeMin: 5
-    SkillRangeMax: 10
-    SkillCount: 2
-    SkillCoolTime: 5
+    SkillDamage: 0
+    SkillRadius: 0
+    SkillDuration: 0
+    SkillRangeMin: 0
+    SkillRangeMax: 0
+    SkillCount: 0
+    SkillCoolTime: 0

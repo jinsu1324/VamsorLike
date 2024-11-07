@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum BossID
 {
-    FireDragon
+    Ogre
 }
 
 [System.Serializable]

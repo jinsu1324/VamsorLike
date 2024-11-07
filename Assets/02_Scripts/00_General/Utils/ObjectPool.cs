@@ -51,7 +51,7 @@ public class ObjectPool : MonoBehaviour
             returnObj = transform.GetChild(count).gameObject;
         }
 
-        returnObj.transform.localScale = Vector3.one;
+        //returnObj.transform.localScale = Vector3.one;
 
         returnObj.GetComponent<ObjectPoolObject>().Spawn();
 

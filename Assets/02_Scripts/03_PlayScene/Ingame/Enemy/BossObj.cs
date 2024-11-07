@@ -61,6 +61,7 @@ public class BossObj : Enemy
         _skillCount = _baseBossData.SkillCount;
         _skillCoolTime = _baseBossData.SkillCoolTime;
 
+        _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
@@ -95,9 +96,8 @@ public class BossObj : Enemy
     public override void Death()
     {
         base.Death();
-        PlaySceneCanvas.Instance.BossHPBarUI.Popup_OFF();
 
-        Destroy(this.gameObject);
+        PlaySceneCanvas.Instance.BossHPBarUI.Popup_OFF();
     }
 
     /// <summary>
@@ -122,7 +122,9 @@ public class BossObj : Enemy
     /// 랜덤한 위치에 _skillCount만큼 갯수의 원형범위 스킬 생성
     /// </summary>
     private void SkillStart()
-    {        
+    {
+        _animator.SetTrigger("isSkill");
+
         for (int i = 0; i < _skillCount; i++)
         {
             Vector3 randomPos = GetRandomPositionAroundBoss();

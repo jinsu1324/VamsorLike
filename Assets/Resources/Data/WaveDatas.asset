@@ -16,25 +16,27 @@ MonoBehaviour:
   - ID: 1
     WaveTime: 00:00:02
     MonsterType:
-    - Golem
-    TotalSpawnCount: 1e000000
+    - Bat1
+    - ' Bat2'
+    TotalSpawnCount: 0a0000000a000000
     SpawnInterval:
-    - 0.1
+    - 0.5
+    - 0.5
     BossType: None
   - ID: 2
     WaveTime: 00:00:10
     MonsterType:
-    - Golem
-    TotalSpawnCount: 05000000
+    - Viper
+    TotalSpawnCount: 0a000000
     SpawnInterval:
     - 0.5
-    BossType: FireDragon
+    BossType: Ogre
   - ID: 3
     WaveTime: 00:00:15
     MonsterType:
-    - Golem
-    - ' Skeleton'
-    TotalSpawnCount: 0500000002000000
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 0a0000000a000000
     SpawnInterval:
     - 0.5
     - 0.5
@@ -42,9 +44,9 @@ MonoBehaviour:
   - ID: 4
     WaveTime: 00:00:20
     MonsterType:
-    - Skeleton
-    - ' Witch'
-    TotalSpawnCount: 0500000002000000
+    - Skeleton1
+    - ' Skeleton2'
+    TotalSpawnCount: 0a0000000a000000
     SpawnInterval:
     - 0.5
     - 0.5
@@ -52,10 +54,8 @@ MonoBehaviour:
   - ID: 5
     WaveTime: 00:00:25
     MonsterType:
-    - Witch
-    - ' Dragon'
-    TotalSpawnCount: 0500000002000000
+    - OrcAssassin
+    TotalSpawnCount: 0a000000
     SpawnInterval:
-    - 0.5
     - 0.5
     BossType: None

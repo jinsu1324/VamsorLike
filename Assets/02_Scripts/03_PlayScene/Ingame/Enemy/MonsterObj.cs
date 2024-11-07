@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -28,6 +29,7 @@ public class MonsterObj : Enemy
         _atk = _baseMonsterData.Atk;
         _speed = _baseMonsterData.Speed;
 
+        _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
@@ -61,7 +63,5 @@ public class MonsterObj : Enemy
     public override void Death()
     {
         base.Death();
-
-        Destroy(this.gameObject);
-    }    
+    }
 }

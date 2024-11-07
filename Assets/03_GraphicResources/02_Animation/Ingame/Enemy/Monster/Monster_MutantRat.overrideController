@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Monster_MutantRat
+  m_Controller: {fileID: 9100000, guid: 1a9da746d199fdf4d82a9386b6974e84, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5dc89de6949acfa46b2fd84e0a140fe8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dbbe92595342da04ca510469f200ea19, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8557214839b3c75488db4dab9eb321fe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b53d2ac5f3bd3be4893265ff3da0a8eb, type: 2}

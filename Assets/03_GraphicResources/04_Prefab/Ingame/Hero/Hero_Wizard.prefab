@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 6891989612063910491}
   m_Layer: 7
   m_Name: Hero_Wizard
-  m_TagString: Hero
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17464118}
+  m_Offset: {x: 0.0005249679, y: 0.09116957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.35, y: 0}
@@ -345,7 +345,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16712941, y: 0.34928235}
+  m_Size: {x: 0.1303809, y: 0.16763975}
   m_EdgeRadius: 0
 --- !u!50 &6891989612063910491
 Rigidbody2D:

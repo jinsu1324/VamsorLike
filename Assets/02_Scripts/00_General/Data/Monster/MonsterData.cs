@@ -4,10 +4,15 @@ using UnityEngine;
 
 public enum MonsterID
 {
-    Golem,
-    Skeleton,
-    Witch,
-    Dragon,
+    Bat1,
+    Bat2,
+    Viper,
+    Spider1,
+    Spider2,
+    Skeleton1,
+    Skeleton2,
+    OrcAssassin,
+    MutantRat
 }
 
 // 몬스터 데이터

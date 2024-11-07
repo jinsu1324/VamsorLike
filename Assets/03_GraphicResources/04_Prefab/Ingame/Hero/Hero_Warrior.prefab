@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4322474735086839742}
   m_Layer: 7
   m_Name: Hero_Warrior
-  m_TagString: Hero
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.16237824}
+  m_Offset: {x: -0.012074515, y: 0.09150612}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4, y: 0}
@@ -179,7 +179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1399739, y: 0.32475647}
+  m_Size: {x: 0.11582488, y: 0.14941362}
   m_EdgeRadius: 0
 --- !u!50 &4322474735086839742
 Rigidbody2D:

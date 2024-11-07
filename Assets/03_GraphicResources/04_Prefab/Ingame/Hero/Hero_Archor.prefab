@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5138826497306880006}
   m_Layer: 7
   m_Name: Hero_Archor
-  m_TagString: Hero
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010966346, y: 0.17352805}
+  m_Offset: {x: -0.0114913285, y: 0.094781265}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4, y: 0}
@@ -345,7 +345,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15474129, y: 0.3470561}
+  m_Size: {x: 0.14319174, y: 0.16016373}
   m_EdgeRadius: 0
 --- !u!50 &5138826497306880006
 Rigidbody2D:
