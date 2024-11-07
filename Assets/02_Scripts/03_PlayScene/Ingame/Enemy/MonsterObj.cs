@@ -54,7 +54,7 @@ public class MonsterObj : Enemy
         base.HPMinus(atk);
 
         if (_hp <= 0)
-            Death();
+            PlayDeathAnim();
     }
 
     /// <summary>

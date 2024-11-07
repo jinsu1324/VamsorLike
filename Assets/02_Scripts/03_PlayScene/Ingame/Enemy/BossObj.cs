@@ -87,7 +87,7 @@ public class BossObj : Enemy
         PlaySceneCanvas.Instance.BossHPBarUI.Refresh_BossHPBar(_hp, _baseBossData.MaxHp);
 
         if (_hp <= 0)
-            Death();
+            PlayDeathAnim();
     }
 
     /// <summary>

@@ -13,6 +13,8 @@ public abstract class Enemy : ObjectPoolObject
     protected Animator _animator;                     // 애니메이터
     protected SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러  
 
+    protected bool _isDead = false;                   // 적이 죽었는지 
+
     /// <summary>
     /// 데이터 셋팅
     /// </summary>
@@ -24,13 +26,10 @@ public abstract class Enemy : ObjectPoolObject
     public abstract void DropItem();
 
     /// <summary>
-    /// 죽음
+    /// 죽음 처리
     /// </summary>
-    public virtual void Death() 
+    public virtual void Death()
     {
-        // 애니메이션 재생
-        _animator.SetTrigger("isDead");
-
         // 아이템 드랍
         DropItem();
 
@@ -42,6 +41,18 @@ public abstract class Enemy : ObjectPoolObject
 
         // 토탈 적 죽인횟수 증가
         PlaySceneManager.Instance.AchivementManager.AddKillCount();
+    }
+
+    /// <summary>
+    /// 죽는 애니메이션 재생
+    /// </summary>
+    public void PlayDeathAnim() 
+    {
+        // 죽었음을 true 로
+        _isDead = true;
+
+        // 애니메이션 재생
+        _animator.SetTrigger("isDead");
     }
       
     /// <summary>
@@ -93,6 +104,14 @@ public abstract class Enemy : ObjectPoolObject
     /// </summary>
     public void FollowHero()
     {
+        // 적이 죽었으면 따라다니지 않고 그냥 리턴
+        if (_isDead == true)
+        {
+            Debug.Log("죽음!");
+            return;
+        }
+            
+
         Vector2 targetPos = PlaySceneManager.Instance.MyHeroObj.transform.position;
 
         // 현재 위치에서 타겟위치로 이동
