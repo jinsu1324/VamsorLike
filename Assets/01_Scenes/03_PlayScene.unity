@@ -139,10 +139,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_02_Flat
       objectReference: {fileID: 0}
-    - target: {fileID: 971258509079817855, guid: 1b9e972847bcd83449d6c7748fd32a6b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7505413587143967236, guid: 1b9e972847bcd83449d6c7748fd32a6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1057,10 +1053,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_05_Flat
       objectReference: {fileID: 0}
-    - target: {fileID: 5767765853034511690, guid: fd9be9a9f677f364e952bb7bdd5fa61d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1119,7 +1111,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.67057586, g: 0.6580189, b: 0.8773585, a: 1}
+  m_Color: {r: 0.8440775, g: 0.8349056, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -2065,10 +2057,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_04_Flat
       objectReference: {fileID: 0}
-    - target: {fileID: 8776149423162413698, guid: dd6098c355187da4b8815a86e2f503af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2308,10 +2296,6 @@ PrefabInstance:
     - target: {fileID: 1541233863551075659, guid: 2db60a26282fb4b4ab6fed698f840ced, type: 3}
       propertyPath: m_Name
       value: Tilemap_10_Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1541233863551075659, guid: 2db60a26282fb4b4ab6fed698f840ced, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8314097417199000973, guid: 2db60a26282fb4b4ab6fed698f840ced, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2888,10 +2872,6 @@ PrefabInstance:
     - target: {fileID: 113660271826992343, guid: 1fc10b4cd5695cc428c817ddf3a53292, type: 3}
       propertyPath: m_Name
       value: Tilemap_07_Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 113660271826992343, guid: 1fc10b4cd5695cc428c817ddf3a53292, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6601728034434194109, guid: 1fc10b4cd5695cc428c817ddf3a53292, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3668,7 +3648,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4034,10 +4014,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_08_Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 8209792103163513040, guid: 9f46e816a5df365419fbd82095e44ad3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4250,10 +4226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_09_Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 3784573928173022476, guid: 8f380fea5f3f2a1439dde34aab09f91b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4365,10 +4337,6 @@ PrefabInstance:
     - target: {fileID: 8818319054639010163, guid: 8d1fd5fb693a6a445a8e2345d1161edf, type: 3}
       propertyPath: m_Name
       value: Tilemap_01_Flat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818319054639010163, guid: 8d1fd5fb693a6a445a8e2345d1161edf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4957,10 +4925,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap_03_Flat
       objectReference: {fileID: 0}
-    - target: {fileID: 7384545162165172732, guid: 2d516f448c94dd44d8d74902c7e6026f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5249,7 +5213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1911268038
 Transform:
   m_ObjectHideFlags: 0
@@ -5281,7 +5245,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a41e89833177df240b0083cc793bec00, type: 2}
+  sharedProfile: {fileID: 11400000, guid: eac34630cfdb70c4b806cf0db251d464, type: 2}
 --- !u!1 &1924149613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,10 +5405,6 @@ PrefabInstance:
     - target: {fileID: 5281861912570547387, guid: 3520451530ac6ef40bb4df34c6c15700, type: 3}
       propertyPath: m_Name
       value: Tilemap_06_Flat
-      objectReference: {fileID: 0}
-    - target: {fileID: 5281861912570547387, guid: 3520451530ac6ef40bb4df34c6c15700, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8365318321938525028, guid: 3520451530ac6ef40bb4df34c6c15700, type: 3}
       propertyPath: m_LocalPosition.x
