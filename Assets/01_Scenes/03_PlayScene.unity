@@ -2650,7 +2650,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effectPrefabList:
   - {fileID: 3064669377093385499, guid: 47c4a16764f4ea844bfdfab4ef930fb2, type: 3}
-  - {fileID: 7214184882704422444, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
 --- !u!1 &888387613
 GameObject:
   m_ObjectHideFlags: 0
@@ -6802,7 +6801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1484412224462052385, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.054
       objectReference: {fileID: 0}
     - target: {fileID: 1484412224462052385, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6835,6 +6834,10 @@ PrefabInstance:
     - target: {fileID: 1484412224462052385, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319113168411713916, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7214184882704422444, guid: bc07e2ea1abf028439ba08d15f111fb5, type: 3}
       propertyPath: m_Name

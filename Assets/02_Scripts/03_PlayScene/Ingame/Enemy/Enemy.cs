@@ -62,8 +62,27 @@ public abstract class Enemy : ObjectPoolObject
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Hero.ToString()))
         {
-            collision.gameObject.GetComponent<HeroObj>().HPMinus(_atk);
+            HeroObj hero = collision.gameObject.GetComponent<HeroObj>();
+
+            if (hero == null)
+                return;
+
+            hero.HPMinus(_atk);
+            hero.ActivateDamagedEffect();
         }
+    }
+
+    /// <summary>
+    /// ¿µ¿õ¿¡¼­ ¹þ¾î³ª¸é ¿µ¿õ µ¥¹ÌÁö ÀÌÆåÆ® ²ô±â
+    /// </summary>
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        HeroObj hero = collision.gameObject.GetComponent<HeroObj>();
+
+        if (hero == null)
+            return;
+        
+        hero.DeactivateDamageEffect();
     }
 
     /// <summary>

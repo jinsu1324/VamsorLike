@@ -26,6 +26,9 @@ public class HeroObj : SerializedMonoBehaviour
     [SerializeField]
     private Canvas _heroCanvas;                     // 영웅 UI 캔버스
 
+    [SerializeField]
+    private GameObject _damagedEffect;              // 데미지 받을 때 나타날 이펙트
+
     private Rigidbody2D _rigid;                     // 리지드바디
     private SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러
     private Animator _animator;                     // 애니메이터
@@ -69,6 +72,9 @@ public class HeroObj : SerializedMonoBehaviour
 
         // HP 바 업데이트
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+
+        // 데미지 이펙트 꺼놓기
+        DeactivateDamageEffect();
 
         SkillID startSkillID = (SkillID)Enum.Parse(typeof(SkillID), _baseHeroData.StartSkill); 
 
@@ -149,8 +155,8 @@ public class HeroObj : SerializedMonoBehaviour
         Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
 
         // 스프라이트 깜빡이기
-        BlinkSprite blinkSprite = new BlinkSprite();
-        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
+        //BlinkSprite blinkSprite = new BlinkSprite();
+        //StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
 
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
 
@@ -168,6 +174,24 @@ public class HeroObj : SerializedMonoBehaviour
 
         
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
+    }
+
+    /// <summary>
+    /// 맞는 데미지 이펙트 활성화
+    /// </summary>
+    public void ActivateDamagedEffect()
+    {
+        _damagedEffect.SetActive(true);
+        _spriteRenderer.color = Color.red;
+    }
+
+    /// <summary>
+    /// 데미지 이펙트 비활성화
+    /// </summary>
+    public void DeactivateDamageEffect()
+    {
+        _damagedEffect.SetActive(false);
+        _spriteRenderer.color = Color.white;
     }
 
     /// <summary>
