@@ -67,12 +67,6 @@ public class PlaySceneManager : SerializedMonoBehaviour
     public EffectManager EffectManager { get; set; }               // 이펙트매니저
 
     [SerializeField]
-    public GoldManager GoldManager { get; set; }                   // 골드매니저
-
-    [SerializeField]
-    public AchivementManager AchivementManager { get; set; }       // 플레이 통계, 업적
-
-    [SerializeField]
     public InfiniteMapController InfiniteMapController { get; set; }// 무한맵 컨트롤러
 
     /// <summary>

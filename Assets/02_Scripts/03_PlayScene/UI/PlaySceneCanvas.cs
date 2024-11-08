@@ -35,6 +35,10 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     }
     #endregion
 
+    [Title("UICam")]
+    [SerializeField]
+    public Camera UICamera { get; set; }                      // UI 카메라
+
     [Title("Popups")]
     [SerializeField]
     public SkillSelectPopup SkillSelectPopup { get; set; }    // 스킬 선택 팝업    
@@ -49,7 +53,7 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     public SkillInvenUI SkillInvenUI { get; set; }              // 스킬 인벤토리 UI
 
     [SerializeField]
-    public GoldInvenUI GoldInvenUI { get; set; }                // 골드 인벤토리 UI
+    public PlayAchivementUI PlayAchivementUI { get; set; }          // 플레이 성과 UI
 
     [SerializeField]
     public EXPBarUI EXPBarUI { get; set; }                        // EXP 게이지바 UI

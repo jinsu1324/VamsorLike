@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GoldItem : ItemBase
 {
-    private int _goldAmount = 1;    // °ñµå ¾ç
+    private int _goldAmount = 10;    // °ñµå ¾ç
 
     /// <summary>
     /// Gold È¹µæ ¿äÃ»

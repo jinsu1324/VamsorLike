@@ -193,7 +193,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _killCountText: {fileID: 8132458343369096403}
-  _earnedGoldText: {fileID: 5966277846467826948}
+  _goldText: {fileID: 5966277846467826948}
   _playTimeText: {fileID: 8041750757174568111}
   _lobbyButton: {fileID: 5676350962269029236}
 --- !u!1 &3433442525714978618

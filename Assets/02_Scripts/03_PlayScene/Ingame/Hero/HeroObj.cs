@@ -225,8 +225,7 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void AcquireGold_and_Request(int amount)
     {
-        PlaySceneManager.Instance.GoldManager.GoldUp(amount);
-        PlaySceneManager.Instance.AchivementManager.AddGold(amount);
+        PlaySceneCanvas.Instance.PlayAchivementUI.AddGold(amount);
     }
 
     /// <summary>

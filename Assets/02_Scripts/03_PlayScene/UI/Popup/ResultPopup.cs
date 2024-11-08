@@ -10,7 +10,7 @@ public class ResultPopup : SerializedMonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _killCountText;             // Å³ Ä«¿îÆ®
     [SerializeField]
-    private TextMeshProUGUI _earnedGoldText;            // È¹µæÇÑ °ñµå
+    private TextMeshProUGUI _goldText;                  // È¹µæÇÑ °ñµå
     [SerializeField]
     private TextMeshProUGUI _playTimeText;              // ÇÃ·¹ÀÌ ½Ã°£
 
@@ -23,8 +23,8 @@ public class ResultPopup : SerializedMonoBehaviour
     /// </summary>
     private void InfoInitialize()
     {
-        _killCountText.text = PlaySceneManager.Instance.AchivementManager.TotalKillCount.ToString();
-        _earnedGoldText.text = PlaySceneManager.Instance.AchivementManager.TotalGold.ToString();
+        _killCountText.text = PlaySceneCanvas.Instance.PlayAchivementUI.KillCount.ToString();
+        _goldText.text = PlaySceneCanvas.Instance.PlayAchivementUI.Gold.ToString();
         _playTimeText.text = PlaySceneCanvas.Instance.PlayTimeUI.PlayTimeText.text;
     }
 

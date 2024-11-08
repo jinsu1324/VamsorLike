@@ -39,8 +39,8 @@ public abstract class Enemy : ObjectPoolObject
         // 다시 오브젝트 풀로 돌려보내기
         PlaySceneManager.Instance.EnemySpawner.EnemyBackTrans(this);
 
-        // 토탈 적 죽인횟수 증가
-        PlaySceneManager.Instance.AchivementManager.AddKillCount();
+        // 적 죽인횟수 증가
+        PlaySceneCanvas.Instance.PlayAchivementUI.AddKillCount();
     }
 
     /// <summary>
