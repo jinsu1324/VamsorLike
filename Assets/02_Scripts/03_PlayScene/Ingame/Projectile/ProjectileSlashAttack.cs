@@ -22,6 +22,10 @@ public class ProjectileSlashAttack : ProjectileBase
         if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Enemy.ToString()))
         {
             collision.gameObject.GetComponent<Enemy>().HPMinus(_atk);
+
+            PlaySceneManager.Instance.EffectManager.GetEffect(
+                EffectName.FX_Hit.ToString(),
+                collision.gameObject.transform.position);
         }
     }
 

@@ -106,11 +106,7 @@ public abstract class Enemy : ObjectPoolObject
     {
         // 적이 죽었으면 따라다니지 않고 그냥 리턴
         if (_isDead == true)
-        {
-            Debug.Log("죽음!");
             return;
-        }
-            
 
         Vector2 targetPos = PlaySceneManager.Instance.MyHeroObj.transform.position;
 
