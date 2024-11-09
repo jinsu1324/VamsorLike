@@ -75,7 +75,7 @@ public class LevelManager : SerializedMonoBehaviour
     // ġƮ
     public void OnClickExpUpCheatButton()
     {
-        EXPUp(10);
+        EXPUp(100);
         PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
     }
 }
