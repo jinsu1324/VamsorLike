@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,22 @@ using UnityEngine.UI;
 /// </summary>
 public class SkillManager : SerializedMonoBehaviour
 {
-    [HideInInspector]
-    public Action<List<Skill_Base>> OnRefreshHaveSkillUI;                           // 가지고 있는 스킬 UI 갱신 이벤트                    
+    // 가지고 있는 스킬들  
+    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();
 
-    public List<Skill_Base> HaveSkillList { get; set; } = new List<Skill_Base>();   // 가지고 있는 스킬들      
+    // 겹치지 않는 랜덤한 스킬ID를 반환에 사용할 스킬ID들 리스트
+    private List<SkillID> _remainSkillIDList;
+    
+    // 남은 스킬 개수를 반환하는 프로퍼티
+    public int RemainSkillCount => _remainSkillIDList.Count;
 
+    /// <summary>
+    /// Awake
+    /// </summary>
+    private void Awake()
+    {
+        ResetRemainSkillIDList();
+    }
 
     /// <summary>
     /// 스킬ID와 Level로 스킬데이터 가져오는 함수
@@ -43,6 +55,40 @@ public class SkillManager : SerializedMonoBehaviour
 
         SkillID randomSkillID = skillIDs[randomIndex];
         return randomSkillID;
+    }
+
+    /// <summary>
+    /// 겹치지 않는 랜덤한 스킬ID를 반환해주는 함수
+    /// </summary>
+    public SkillID RandomUniqueSkillID()
+    {
+        // 랜덤 인덱스 선택
+        int randomIndex = UnityEngine.Random.Range(0, _remainSkillIDList.Count);
+
+        // 선택된 SkillID를 저장하고, 리스트에서 제거하여 중복 방지
+        SkillID randomSkillID = _remainSkillIDList[randomIndex];
+        _remainSkillIDList.RemoveAt(randomIndex);
+
+        return randomSkillID;
+    }
+
+    /// <summary>
+    /// 전체 SkillID 리스트를 다시 초기화
+    /// </summary>
+    public void ResetRemainSkillIDList()
+    {
+        Debug.Log("전체 SkillID 리스트를 초기화");
+        _remainSkillIDList = new List<SkillID>();
+
+        foreach (SkillID skillID in (SkillID[])Enum.GetValues(typeof(SkillID)))
+        {
+            bool isSkillMaxLevel = IsSkillMaxLevel(skillID);
+
+            if (isSkillMaxLevel == false)
+            {
+                _remainSkillIDList.Add(skillID);
+            }
+        }
     }
 
     /// <summary>
@@ -87,7 +133,30 @@ public class SkillManager : SerializedMonoBehaviour
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 레벨 반환
         Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
 
-        return foundSkill != null ? foundSkill.CurrentLevel : 1;
+        return foundSkill != null ? foundSkill.CurrentLevel : 0;
+    }
+
+    /// <summary>
+    /// 가지고 있는 스킬이 맥스레벨인지 확인해주는 함수
+    /// </summary>
+    public bool IsSkillMaxLevel(SkillID skillID)
+    {
+        // 스킬ID에 해당하는 스킬 데이터를 모두 리스트 가져오기
+        List<SkillData> SkillDataList = DataManager.Instance.SkillDatas.GetAllDataByCondition(
+                skillData => skillData.ID.Contains(skillID.ToString()));
+
+        // 레벨 오름차순 정렬
+        SkillDataList = SkillDataList.OrderBy(skillData => skillData.Level).ToList();
+
+        // 가장 마지막 레벨을 최대레벨 변수에 담음
+        int count = SkillDataList.Count;
+        int maxLevel = SkillDataList[count - 1].Level;
+
+        // 현재레벨 알아옴
+        int skillLevel = GetSkillLevel(skillID);
+
+        // true false 리턴
+        return skillLevel >= maxLevel;
     }
 
     /// <summary>

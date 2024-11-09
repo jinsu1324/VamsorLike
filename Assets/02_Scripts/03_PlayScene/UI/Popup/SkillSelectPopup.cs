@@ -10,21 +10,36 @@ using UnityEngine.UI;
 /// </summary>
 public class SkillSelectPopup : SerializedMonoBehaviour
 {
-    // 스킬 버튼 프리팹
-    [SerializeField]
-    private GameObject _skillButtonPrefab;
-    
-    // 버튼 부모
-    [SerializeField]
-    private Transform _buttonParent;
 
-    // 사용 가능한 스킬 리스트
-    private List<SkillID> _availableSkillList = new List<SkillID>()
+    [SerializeField]
+    private List<SkillSelectPopup_Slot> _slotList;
+
+   
+
+    public void InitSlotList()
     {
-        SkillID.SlashAttack,
-        SkillID.Boomerang,
-        SkillID.Sniper
-    };
+        foreach (SkillSelectPopup_Slot slot in _slotList) 
+        {
+
+            // 슬롯 초기화중 슬롯을 채우다가 남은 스킬 ID가 없으면 슬롯 초기화를 건너뜀
+            if (PlaySceneManager.Instance.SkillManager.RemainSkillCount == 0)
+            {
+                Debug.LogWarning("모든 스킬이 선택되어 더 이상 슬롯을 초기화할 수 없습니다.");
+                slot.HideSlot();
+                break;
+            }
+            else
+            {
+                SkillID randomSkillID = PlaySceneManager.Instance.SkillManager.RandomUniqueSkillID();
+
+                slot.Initialize(randomSkillID, this);
+            }
+
+
+            
+        }
+        
+    }
 
 
     /// <summary>
@@ -32,59 +47,21 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void OpenPopup()
     {
-        Debug.Log("OpenPopup");
+        // 슬롯 1개 채울 남은스킬도 없으면 팝업을 열지 않음
+        if (PlaySceneManager.Instance.SkillManager.RemainSkillCount == 0)
+        {
+            Debug.LogWarning("모든 스킬을 획득하여 팝업을 생략합니다.");
+            // 다른 보상 해주면 될듯?
+            // 주석은 내일 달자...
+            return;
+        }
 
-        // 게임시작을 false로
+
         PlaySceneManager.Instance.IsGameStartChange(false);
 
-        // 자식 버튼들 삭제
-        foreach (Transform child in _buttonParent)
-        {
-            Destroy(child.gameObject);
-        }
+        InitSlotList();
 
-        // 사용 가능한 스킬들을 버튼으로 생성
-        foreach (SkillID skillID in _availableSkillList)
-        {
-            int skillLevel = PlaySceneManager.Instance.SkillManager.GetSkillLevel(skillID);
-            var skillData = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(skillID, skillLevel);
-
-            GameObject skillButtonPrefab = Instantiate(_skillButtonPrefab, _buttonParent);
-            Button skillButton = skillButtonPrefab.GetComponent<Button>();
-            TextMeshProUGUI skillText = skillButtonPrefab.GetComponentInChildren<TextMeshProUGUI>();
-
-            // 이미 스킬을 가지고 있다면 레벨 표시
-            if (PlaySceneManager.Instance.SkillManager.HasSkill(skillID))
-            {
-                int currentLevel = PlaySceneManager.Instance.SkillManager.GetSkillLevel(skillID);
-                skillText.text = $"{skillData.Name} (Level {currentLevel + 1})";
-            }
-            // 가지고 있지 않다면 스킬 이름만 표시
-            else
-            {
-                skillText.text = skillData.Name;
-            }
-
-            // 버튼 클릭 시 스킬 선택
-            skillButton.onClick.AddListener(() => OnSkillSelected(skillID));
-
-            // 팝업 켜기
-            gameObject.SetActive(true);
-        }
-    }
-
-    /// <summary>
-    /// 스킬 선택 시 호출되는 함수
-    /// </summary>
-    public void OnSkillSelected(SkillID skillID)
-    {
-        PlaySceneManager.Instance.SkillManager.AddSkill(skillID);
-
-        // 게임시작 안되어있었다면 게임시작을 true로
-        if (PlaySceneManager.Instance.IsGameStart == false)
-            PlaySceneManager.Instance.IsGameStartChange(true);
-
-        ClosePopup();
+        gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -92,6 +69,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     /// </summary>
     public void ClosePopup()
     {
+        // 랜덤 스킬ID 선택지 다시 초기화
+        PlaySceneManager.Instance.SkillManager.ResetRemainSkillIDList();
+
         gameObject.SetActive(false);
     }
 }
