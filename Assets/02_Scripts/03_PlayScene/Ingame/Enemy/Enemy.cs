@@ -12,8 +12,10 @@ public abstract class Enemy : ObjectPoolObject
 
     protected Animator _animator;                     // 애니메이터
     protected SpriteRenderer _spriteRenderer;         // 스프라이트 렌더러  
+    protected BoxCollider2D _boxCollider2D;           // 콜라이더
 
     protected bool _isDead = false;                   // 적이 죽었는지 
+    public bool IsDead => _isDead;                    // 적이 죽었는지 여부 외부에서 확인만 가능하게 프로퍼티
 
     /// <summary>
     /// 데이터 셋팅
@@ -26,35 +28,36 @@ public abstract class Enemy : ObjectPoolObject
     public abstract void DropItem();
 
     /// <summary>
-    /// 죽음 처리
+    /// 죽음
     /// </summary>
-    public virtual void Death()
-    {
-        // 아이템 드랍
-        DropItem();
-
-        // 필드 적 목록에서 제거
-        PlaySceneManager.Instance.EnemyManager.RemoveFieldEnemyList(this);
-
-        // 다시 오브젝트 풀로 돌려보내기
-        PlaySceneManager.Instance.EnemySpawner.EnemyBackTrans(this);
-
-        // 적 죽인횟수 증가
-        PlaySceneCanvas.Instance.PlayAchivementUI.AddKillCount();
-    }
-
-    /// <summary>
-    /// 죽는 애니메이션 재생
-    /// </summary>
-    public void PlayDeathAnim() 
+    public virtual void Death() 
     {
         // 죽었음을 true 로
         _isDead = true;
 
         // 애니메이션 재생
         _animator.SetTrigger("isDead");
+        
+        // 아이템 드랍
+        DropItem();
+
+        // 적 죽인횟수 증가
+        PlaySceneCanvas.Instance.PlayAchivementUI.AddKillCount();
+
+        // 필드 적 목록에서 제거
+        PlaySceneManager.Instance.EnemyManager.RemoveFieldEnemyList(this);
+
     }
-      
+
+    /// <summary>
+    /// 죽음 애니메이션 후 처리할 것들
+    /// </summary>
+    public void AfterDeathAnimTask()
+    {
+        // 다시 오브젝트 풀로 돌려보내기
+        PlaySceneManager.Instance.EnemySpawner.EnemyBackTrans(this);
+    }
+
     /// <summary>
     /// 영웅에 닿고 있으면 계속 공격
     /// </summary>

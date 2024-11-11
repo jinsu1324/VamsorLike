@@ -21,6 +21,12 @@ public class ProjectileSlashAttack : ProjectileBase
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Enemy.ToString()))
         {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+            // 적이 죽었으면 그냥 리턴
+            if (enemy.IsDead == true)
+                return;
+
             collision.gameObject.GetComponent<Enemy>().HPMinus(_atk);
 
             PlaySceneManager.Instance.EffectManager.GetEffect(

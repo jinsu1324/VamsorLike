@@ -63,6 +63,7 @@ public class BossObj : Enemy
 
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _boxCollider2D = GetComponent<BoxCollider2D>(); 
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
     }
@@ -87,7 +88,7 @@ public class BossObj : Enemy
         PlaySceneCanvas.Instance.BossHPBarUI.Refresh_BossHPBar(_hp, _baseBossData.MaxHp);
 
         if (_hp <= 0)
-            PlayDeathAnim();
+            Death();
     }
 
     /// <summary>

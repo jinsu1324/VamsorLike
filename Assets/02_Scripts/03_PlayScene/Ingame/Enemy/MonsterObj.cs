@@ -31,6 +31,7 @@ public class MonsterObj : Enemy
 
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _boxCollider2D = GetComponent<BoxCollider2D>();
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
     }
@@ -54,14 +55,6 @@ public class MonsterObj : Enemy
         base.HPMinus(atk);
 
         if (_hp <= 0)
-            PlayDeathAnim();
-    }
-
-    /// <summary>
-    /// Á×À½
-    /// </summary>
-    public override void Death()
-    {
-        base.Death();
+            Death();
     }
 }
