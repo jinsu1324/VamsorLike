@@ -14,6 +14,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
     [SerializeField]
     private List<SkillSelectPopup_Slot> _slotList;              // 스킬 슬롯 리스트
 
+    [SerializeField]
+    private GameObject _firstPopParticle;                       // 처음 뜰 이펙트
+
     /// <summary>
     /// 스킬슬롯 리스트 초기화
     /// </summary>
@@ -60,6 +63,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
 
         // 팝업 켜기
         gameObject.SetActive(true);
+
+        // 파티클 오브젝트 켜기
+        _firstPopParticle.SetActive(true);
     }
 
     /// <summary>
