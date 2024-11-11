@@ -171,13 +171,20 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void Death()
     {
-        Debug.Log("게임오버");
+        PlaySceneManager.Instance.IsGameStartChange(false);
+        
         _animator.SetTrigger("Dead");
+    }
 
+    /// <summary>
+    /// 죽음 애니메이션 후 처리할 것들
+    /// </summary>
+    public void AfterDeathAnimTask()
+    {
         PlaySceneCanvas.Instance.CautionView.CloseCautionView();
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
-
     }
+
 
     /// <summary>
     /// 맞는 데미지 이펙트 활성화
