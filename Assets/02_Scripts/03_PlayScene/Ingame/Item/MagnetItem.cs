@@ -10,9 +10,7 @@ public class MagnetItem : ItemBase
     protected override void ItemPickUp(Collider2D collision)
     {
         collision.gameObject.GetComponent<HeroObj>().AcquireMagnet_and_Request();
-
-        Debug.Log($" 자석 아이템을 획득하였습니다.");
-
+        
         base.ItemPickUp(collision);
     }
 }

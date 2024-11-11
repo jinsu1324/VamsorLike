@@ -10,10 +10,8 @@ public class RewardBoxItem : ItemBase
     /// </summary>
     protected override void ItemPickUp(Collider2D collision)
     {        
-        collision.gameObject.GetComponent<HeroObj>().AcquireRewardBox_and_Request();        
-
-        Debug.Log($"보상상자를 획득했습니다.");
-
+        collision.gameObject.GetComponent<HeroObj>().AcquireRewardBox_and_Request();
+        
         base.ItemPickUp(collision);
     }
 }

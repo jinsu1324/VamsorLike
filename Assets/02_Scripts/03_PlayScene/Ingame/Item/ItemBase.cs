@@ -13,15 +13,23 @@ public enum ItemID
 
 public abstract class ItemBase : ObjectPoolObject
 {
-    private bool _isItemPickUp = false;    // 아이템을 주웠는지 여부
+    private bool _isItemPickUp = false;              // 아이템을 주웠는지 여부
 
+    [SerializeField]
+    private Animator _animator;                      // 애니메이터
+
+    protected string _pickUpAnimClipName = "PickUp";   // 픽업 애니메이션 이름 string
+    protected float _pickUpAnimClipLength;             // 픽업 클립 길이 담을 변수
 
     /// <summary>
     /// 초기화
     /// </summary>
     public void Initialized()
     {
+        _pickUpAnimClipLength = AnimSupporter.GetAnimationClipLength(_pickUpAnimClipName, _animator);
+
         _isItemPickUp = false;
+
         PlaySceneManager.Instance.ItemManager.AddFieldItemList(this);
     }
 
@@ -42,9 +50,13 @@ public abstract class ItemBase : ObjectPoolObject
     /// </summary>
     protected virtual void ItemPickUp(Collider2D collision)
     {
+        _animator.SetTrigger("isPickUp");
+
         _isItemPickUp = true;
+        
         PlaySceneManager.Instance.ItemManager.RemoveFieldItemList(this);
-        Destroy(this.gameObject);
+
+        BackTrans_AfterTime(_pickUpAnimClipLength);
     }
     
     /// <summary>

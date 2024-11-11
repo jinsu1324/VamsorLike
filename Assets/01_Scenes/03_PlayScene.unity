@@ -7376,15 +7376,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179851686069704759, guid: 4b1f990d481e79449bd837cf7bcebb0d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7016479784431525861, guid: 4b1f990d481e79449bd837cf7bcebb0d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.633
       objectReference: {fileID: 0}
     - target: {fileID: 7016479784431525861, guid: 4b1f990d481e79449bd837cf7bcebb0d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8183880381438343996, guid: 4b1f990d481e79449bd837cf7bcebb0d, type: 3}
       propertyPath: serializationData.Prefab

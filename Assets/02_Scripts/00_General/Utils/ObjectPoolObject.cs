@@ -30,5 +30,12 @@ public class ObjectPoolObject : SerializedMonoBehaviour
             transform.SetParent(_parent);
 
         transform.SetAsFirstSibling();
-    }    
+    }
+
+
+    // 사용안하게 되었을때 일정시간 이후에 다시 돌려보내기
+    public virtual void BackTrans_AfterTime(float time)
+    {
+        Invoke("BackTrans", time);
+    }
 }
