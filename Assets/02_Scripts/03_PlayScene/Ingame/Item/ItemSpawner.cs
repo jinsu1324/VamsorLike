@@ -18,6 +18,6 @@ public class ItemSpawner : SerializedMonoBehaviour
         go.transform.position = pos;
 
         ItemBase item = go.GetComponent<ItemBase>();
-        item.Initialized();
+        item.Initialize();
     }
 }

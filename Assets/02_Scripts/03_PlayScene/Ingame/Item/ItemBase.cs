@@ -22,18 +22,18 @@ public abstract class ItemBase : ObjectPoolObject
     protected float _pickUpAnimClipLength;             // 픽업 클립 길이 담을 변수
 
     /// <summary>
-    /// 초기화
+    /// 스폰 시 초기화
     /// </summary>
-    public void Initialized()
+    public void Initialize()
     {
-        _pickUpAnimClipLength = AnimSupporter.GetAnimationClipLength(_pickUpAnimClipName, _animator);
-
+        _animator.SetBool("isPickUp", false);
         _isItemPickUp = false;
 
+        _pickUpAnimClipLength = AnimSupporter.GetAnimationClipLength(_pickUpAnimClipName, _animator);
+        
         PlaySceneManager.Instance.ItemManager.AddFieldItemList(this);
     }
 
-   
     /// <summary>
     /// 아이템이 영웅에 닿으면 실행
     /// </summary>
@@ -50,7 +50,7 @@ public abstract class ItemBase : ObjectPoolObject
     /// </summary>
     protected virtual void ItemPickUp(Collider2D collision)
     {
-        _animator.SetTrigger("isPickUp");
+        _animator.SetBool("isPickUp", true);
 
         _isItemPickUp = true;
         
