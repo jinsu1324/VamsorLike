@@ -57,7 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1614023587
   m_SortingOrder: 0
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696180730444004147, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6696180730444004147, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696180730444004147, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6696180730444004147, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -221,6 +221,10 @@ PrefabInstance:
     - target: {fileID: 7096426383748284937, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: m_Name
       value: HPBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096426383748284937, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7659548947330973971, guid: 5fc917fa5c7512240b8939067dd4a0a4, type: 3}
       propertyPath: serializationData.Prefab
