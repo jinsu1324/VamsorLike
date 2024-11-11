@@ -66,7 +66,10 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
 
     [Title("Views")]
     [SerializeField]
-    public FadeInOutController LoadingViews { get; set; }              // ·Îµù ºä
+    public FadeInOutController FadeInOutController { get; set; }              // ·Îµù ºä
+
+    [SerializeField]
+    public CautionView CautionView { get; set; }                // CautionView
 
     [Title("Interactions")]
     [SerializeField]

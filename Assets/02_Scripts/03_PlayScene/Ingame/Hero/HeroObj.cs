@@ -36,6 +36,8 @@ public class HeroObj : SerializedMonoBehaviour
     private Vector2 _moveDir;                       // 이동에 사용할 vector2 dir    
     private float _lastHorizontalDirection = 1.0f;  // 마지막으로 바라본 방향 (기본적으로 오른쪽을 본 상태로 시작)
 
+    private float _cautionLimitHP;                  // 위험표시 할 리미트 HP
+
     /// <summary>
     /// FixedUpdate
     /// </summary>
@@ -72,6 +74,7 @@ public class HeroObj : SerializedMonoBehaviour
 
         // HP 바 업데이트
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+        _cautionLimitHP = _baseHeroData.MaxHp / 4;
 
         // 데미지 이펙트 꺼놓기
         DeactivateDamageEffect();
@@ -154,11 +157,10 @@ public class HeroObj : SerializedMonoBehaviour
 
         Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
 
-        // 스프라이트 깜빡이기
-        //BlinkSprite blinkSprite = new BlinkSprite();
-        //StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
-
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+
+        if (Hp < _cautionLimitHP)
+            PlaySceneCanvas.Instance.CautionView.OpenCautionView();
 
         if (Hp <= 0)
             Death();
@@ -172,8 +174,9 @@ public class HeroObj : SerializedMonoBehaviour
         Debug.Log("게임오버");
         _animator.SetTrigger("Dead");
 
-        
+        PlaySceneCanvas.Instance.CautionView.CloseCautionView();
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
+
     }
 
     /// <summary>

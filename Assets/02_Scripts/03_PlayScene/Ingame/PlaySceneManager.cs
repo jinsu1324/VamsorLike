@@ -81,7 +81,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
         IsGameStartChange(true);
 
         // 페이드 아웃
-        PlaySceneCanvas.Instance.LoadingViews.FadeOut();
+        PlaySceneCanvas.Instance.FadeInOutController.FadeOut();
     }
 
     /// <summary>

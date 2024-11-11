@@ -119,7 +119,7 @@ public class LobbyHeroStatPopup : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // 로딩 애니메이션
-        LobbySceneCanvas.Instance.LoadingViews.FadeIn();
+        LobbySceneCanvas.Instance.FadeInOutController.FadeIn();
 
         // 대기
         yield return new WaitForSeconds(1.0f);

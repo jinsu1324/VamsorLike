@@ -60,6 +60,10 @@ public abstract class Enemy : ObjectPoolObject
     /// </summary>
     public void OnCollisionStay2D(Collision2D collision)
     {
+        // 이미 죽었으면 아무것도 하지않고 리턴
+        if (_isDead)
+            return;
+
         if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Hero.ToString()))
         {
             HeroObj hero = collision.gameObject.GetComponent<HeroObj>();

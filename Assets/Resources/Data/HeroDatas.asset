@@ -31,7 +31,7 @@ MonoBehaviour:
       \uC788\uC744\uAE4C\uC694?"
   - ID: Wizard
     Name: "\uC774\uADF8\uB098\uB974"
-    MaxHp: 100
+    MaxHp: 200
     Atk: 500
     Speed: 3
     StartSkill: Boomerang

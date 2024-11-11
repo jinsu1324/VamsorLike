@@ -44,53 +44,6 @@ public class SkillManager : SerializedMonoBehaviour
         return SkillData;
     }
 
-
-    /// <summary>
-    /// 랜덤한 스킬ID를 반환해주는 함수
-    /// </summary>
-    public SkillID RandomSkillID()
-    {
-        SkillID[] skillIDs = (SkillID[])Enum.GetValues(typeof(SkillID));
-        int randomIndex = UnityEngine.Random.Range(0, skillIDs.Length);
-
-        SkillID randomSkillID = skillIDs[randomIndex];
-        return randomSkillID;
-    }
-
-    /// <summary>
-    /// 겹치지 않는 랜덤한 스킬ID를 반환해주는 함수
-    /// </summary>
-    public SkillID RandomUniqueSkillID()
-    {
-        // 랜덤 인덱스 선택
-        int randomIndex = UnityEngine.Random.Range(0, _remainSkillIDList.Count);
-
-        // 선택된 SkillID를 저장하고, 리스트에서 제거하여 중복 방지
-        SkillID randomSkillID = _remainSkillIDList[randomIndex];
-        _remainSkillIDList.RemoveAt(randomIndex);
-
-        return randomSkillID;
-    }
-
-    /// <summary>
-    /// 전체 SkillID 리스트를 다시 초기화
-    /// </summary>
-    public void ResetRemainSkillIDList()
-    {
-        Debug.Log("전체 SkillID 리스트를 초기화");
-        _remainSkillIDList = new List<SkillID>();
-
-        foreach (SkillID skillID in (SkillID[])Enum.GetValues(typeof(SkillID)))
-        {
-            bool isSkillMaxLevel = IsSkillMaxLevel(skillID);
-
-            if (isSkillMaxLevel == false)
-            {
-                _remainSkillIDList.Add(skillID);
-            }
-        }
-    }
-
     /// <summary>
     /// 스킬 인벤토리에 스킬 추가해주는 함수
     /// </summary>
@@ -208,5 +161,53 @@ public class SkillManager : SerializedMonoBehaviour
 
         SkillData skillData = GetSkillData_by_SkillIDLevel(skillID, GetSkillLevel(skillID));
         return skillData.Desc;
+    }
+
+    /// <summary>
+    /// 랜덤한 스킬ID를 반환해주는 함수
+    /// </summary>
+    public SkillID RandomSkillID()
+    {
+        SkillID[] skillIDs = (SkillID[])Enum.GetValues(typeof(SkillID));
+        int randomIndex = UnityEngine.Random.Range(0, skillIDs.Length);
+
+        SkillID randomSkillID = skillIDs[randomIndex];
+        return randomSkillID;
+    }
+
+    /// <summary>
+    /// 겹치지 않는 랜덤한 스킬ID를 반환해주는 함수
+    /// </summary>
+    public SkillID RandomUniqueSkillID()
+    {
+        // 랜덤 인덱스 선택
+        int randomIndex = UnityEngine.Random.Range(0, _remainSkillIDList.Count);
+
+        // 선택된 SkillID를 저장하고, 리스트에서 제거하여 중복 방지
+        SkillID randomSkillID = _remainSkillIDList[randomIndex];
+        _remainSkillIDList.RemoveAt(randomIndex);
+
+        return randomSkillID;
+    }
+
+    /// <summary>
+    /// 전체 SkillID 리스트를 다시 리셋
+    /// </summary>
+    public void ResetRemainSkillIDList()
+    {
+        Debug.Log("전체 SkillID 리스트 리셋");
+
+        _remainSkillIDList = new List<SkillID>();
+        
+        foreach (SkillID skillID in (SkillID[])Enum.GetValues(typeof(SkillID)))
+        {
+            bool isSkillMaxLevel = IsSkillMaxLevel(skillID);
+
+            // 리셋 중 maxLevel에 도달한 스킬을 제외한 것들만 다시 리스트에 담음 
+            if (isSkillMaxLevel == false)
+            {
+                _remainSkillIDList.Add(skillID);
+            }
+        }
     }
 }

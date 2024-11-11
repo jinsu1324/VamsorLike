@@ -42,5 +42,5 @@ public class LobbySceneCanvas : SerializedMonoBehaviour
     public LobbyHeroStatPopup LobbyHeroStatPopup { get; set; }   // ¿µ¿õ ½ºÅÈ Popup
 
     [SerializeField]
-    public FadeInOutController LoadingViews { get; set; }               // ·Îµù View
+    public FadeInOutController FadeInOutController { get; set; }               // ·Îµù View
 }
