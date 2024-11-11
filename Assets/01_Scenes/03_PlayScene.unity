@@ -11461,6 +11461,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 112.81
       objectReference: {fileID: 0}
+    - target: {fileID: 2022338798204771424, guid: ffb5b8d861dd0bd4f9b42a1a1f70cd3f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3254182781483248755, guid: ffb5b8d861dd0bd4f9b42a1a1f70cd3f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11631,6 +11635,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7603478802151059689, guid: ffb5b8d861dd0bd4f9b42a1a1f70cd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323707243413481751, guid: ffb5b8d861dd0bd4f9b42a1a1f70cd3f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12461,6 +12469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUIButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1931840428420966520, guid: 94a27a7bc77ff0943aa17be94db65afa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -59.900024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13187,11 +13199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438334358812554302, guid: 9cac7b12d8be1eb41bd952a84c81b13a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21.330017
+      value: 21.330078
       objectReference: {fileID: 0}
     - target: {fileID: 8438334358812554302, guid: 9cac7b12d8be1eb41bd952a84c81b13a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -94.880005
+      value: -94.87988
       objectReference: {fileID: 0}
     - target: {fileID: 8438334358812554302, guid: 9cac7b12d8be1eb41bd952a84c81b13a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
