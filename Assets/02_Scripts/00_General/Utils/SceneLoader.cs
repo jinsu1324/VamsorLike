@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class SceneLoader 
 {
-    public static string LoadSceneName;         // 이동할 씬 이름을 임시저장
+    public static string LoadSceneName;         // 이동할 씬 이름을 저장
 
     /// <summary>
     /// 이동할 씬 이름 할당하고 로딩씬으로 이동

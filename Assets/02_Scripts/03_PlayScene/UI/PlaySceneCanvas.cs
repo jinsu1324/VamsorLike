@@ -45,6 +45,9 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [SerializeField]
     public ResultPopup ResultPopup { get; set; }              // 결과 팝업
 
+    [SerializeField]
+    public PausePopup PausePopup { get; set; }                // 일시정지 팝업
+
     [Title("UIs")]    
     [SerializeField]
     public PlayTimeUI PlayTimeUI { get; set; }                  // 플레이 타임 UI
