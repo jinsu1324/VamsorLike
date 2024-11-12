@@ -114,15 +114,13 @@ public abstract class Enemy : ObjectPoolObject
     {
         // 데미지 텍스트 오브젝트 풀에서 가져와 생성하기
         GameObject go = PlaySceneCanvas.Instance.DamageTextsPool.GetObj();
-        DamageText damageTextUI = go.GetComponent<DamageText>();
+        DamageText damageText = go.GetComponent<DamageText>();
 
-        // 생성 포지션 설정
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        RectTransform rectTransform = damageTextUI.GetComponent<RectTransform>();
-        rectTransform.position = screenPosition;
+        // 데미지 텍스트 위치 몬스터 위치로 설정
+        damageText.transform.position = transform.position;
 
         // 데미지 텍스트 초기화
-        damageTextUI.Init(atk);
+        damageText.Init(atk);
     }
 
     /// <summary>

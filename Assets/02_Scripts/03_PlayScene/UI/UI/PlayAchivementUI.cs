@@ -11,6 +11,8 @@ public class PlayAchivementUI : SerializedMonoBehaviour
     [SerializeField]
     public MoveIconManager MoveIconManager { get; set; }    // 아이콘 움직이게 할 매니저
 
+  
+
     [SerializeField]
     private TextMeshProUGUI _killCountText;         // 킬 수 텍스트
     [SerializeField]
