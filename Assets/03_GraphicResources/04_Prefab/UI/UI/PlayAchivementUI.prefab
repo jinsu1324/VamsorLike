@@ -796,5 +796,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2596777539315998755, guid: 992b156e6d2dd1b4d8077df363eab284, type: 3}
   _count: 10
-  _moveDuration: 1
   _targetGoldIcon: {fileID: 1107059892373750770}
+  _fx_GoldIconMoveComplete: {fileID: 4237039415507599950, guid: bdf8d7ff67a16f046bee34187d3d9630, type: 3}

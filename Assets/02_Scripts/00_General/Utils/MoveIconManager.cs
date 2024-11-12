@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,17 +7,16 @@ using Random = UnityEngine.Random;
 
 public class MoveIconManager : ObjectPool
 {
+    [SerializeField]
+    private RectTransform _targetGoldIcon;               // 타겟 골드아이콘
+
+    [SerializeField]
+    private GameObject _fx_GoldIconMoveComplete;          // 골드아이콘 움직임 끝났을때 나타날 이펙트
+
+    private float _moveDuration = 1.0f;                  // 이동에 걸리는 시간
     private Camera _mainCamera;                          // 메인카메라
     private Camera _uiCamera;                            // UI카메라
 
-    [Title("General")]
-    [SerializeField]
-    private float _moveDuration = 2.0f;                  // 이동에 걸리는 시간
-
-    [Title("Gold Move")]
-    [SerializeField]
-    private RectTransform _targetGoldIcon;               // 타겟 골드아이콘
-  
     /// <summary>
     /// Start
     /// </summary>
@@ -55,7 +55,7 @@ public class MoveIconManager : ObjectPool
         // 4. 곡선의 정점으로 사용할 중간 지점 설정 (중간에서 랜덤한 높이로 위로 올림)
         Vector2 centerControlPoint =
             (startScreenPosition + endScreenPosition) / 2
-            + Vector2.up * Random.Range(200f, 500f);
+            + Vector2.up * Random.Range(250f, 500f);
 
         // 경과 시간을 저장할 변수 초기화
         float time = 0f;
@@ -95,5 +95,14 @@ public class MoveIconManager : ObjectPool
 
         // 10. 다 이동했으면 풀로 돌려보내기
         icon.gameObject.GetComponent<ObjectPoolObject>().BackTrans();
+
+        // 타겟 골드아이콘 위치를 부모로 하는 이펙트 생성
+        Instantiate(_fx_GoldIconMoveComplete, targetIcon);
+
+        // 타겟 아이콘 스케일 애니메이션
+        targetIcon.DOKill();
+        targetIcon.DOScale(0.7f, 0.1f).
+            SetEase(Ease.InOutQuad).
+            OnComplete(() => targetIcon.DOScale(1f, 0.1f).SetEase(Ease.InOutQuad));
     }
 }
