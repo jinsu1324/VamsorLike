@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,15 +6,18 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayAchivementUI : MonoBehaviour
+public class PlayAchivementUI : SerializedMonoBehaviour
 {
+    [SerializeField]
+    public MoveIconManager MoveIconManager { get; set; }    // 아이콘 움직이게 할 매니저
+
     [SerializeField]
     private TextMeshProUGUI _killCountText;         // 킬 수 텍스트
     [SerializeField]
     private TextMeshProUGUI _goldText;              // 획득한 골드 텍스트
 
-    public int KillCount { get; set; }                // 킬 수
-    public int Gold { get; set; }                     // 획득한 골드
+    public int KillCount { get; set; }              // 킬 수
+    public int Gold { get; set; }                   // 획득한 골드
 
     /// <summary>
     /// Start 함수

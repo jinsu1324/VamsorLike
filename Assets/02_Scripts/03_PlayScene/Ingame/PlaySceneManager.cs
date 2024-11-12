@@ -69,6 +69,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
     [SerializeField]
     public InfiniteMapController InfiniteMapController { get; set; }// 무한맵 컨트롤러
 
+
     /// <summary>
     /// Start 함수
     /// </summary>

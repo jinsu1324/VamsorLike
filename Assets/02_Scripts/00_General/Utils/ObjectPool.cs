@@ -14,7 +14,7 @@ public class ObjectPool : MonoBehaviour
     private int _count = 10;
 
 
-    private void Awake()
+    protected void Awake()
     {
         CreateObjs();
     }

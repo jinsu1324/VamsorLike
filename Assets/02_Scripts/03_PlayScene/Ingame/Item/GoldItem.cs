@@ -13,7 +13,9 @@ public class GoldItem : ItemBase
     protected override void ItemPickUp(Collider2D collision)
     {
         collision.gameObject.GetComponent<HeroObj>().AcquireGold_and_Request(_goldAmount);
-        
+
+        PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(this.gameObject.transform);
+
         base.ItemPickUp(collision);
     }
 }

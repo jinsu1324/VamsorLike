@@ -5380,7 +5380,7 @@ Transform:
   m_GameObject: {fileID: 89910428}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6631,8 +6631,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 481769592}
   - {fileID: 89910431}
+  - {fileID: 481769592}
   - {fileID: 816344414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11654,22 +11654,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 622214700}
     m_Modifications:
-    - target: {fileID: 2675967011767737492, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -33.399902
-      objectReference: {fileID: 0}
-    - target: {fileID: 2675967011767737492, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -187.69995
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839161410608257688, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -33.399902
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839161410608257688, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -95.05762
-      objectReference: {fileID: 0}
     - target: {fileID: 6174492223448549187, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11750,6 +11734,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"MoveIconManager","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.ReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259481363472776165, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2989475829417307224}
     - target: {fileID: 6769647692701300595, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
       propertyPath: m_Name
       value: PlayAchivementUI
@@ -11763,6 +11771,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+--- !u!114 &2989475829417307224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 82771231885220664, guid: f4cf7695762d3bb448cd614446583d6d, type: 3}
+  m_PrefabInstance: {fileID: 2989475829417307223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a5c7f8c862f94684091336e17b9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3204192283081888553
 PrefabInstance:
   m_ObjectHideFlags: 0
