@@ -213,6 +213,7 @@ public class HeroObj : SerializedMonoBehaviour
             return;
 
         Hp += amount;
+        PlaySceneManager.Instance.EffectManager.GetEffect(EffectName.FX_Heal.ToString(), this.transform.position);
 
         if (Hp >= _baseHeroData.MaxHp)
             Hp = _baseHeroData.MaxHp;

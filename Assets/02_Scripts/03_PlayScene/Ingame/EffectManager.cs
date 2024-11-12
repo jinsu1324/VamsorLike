@@ -5,7 +5,8 @@ using UnityEngine;
 
 public enum EffectName
 {
-    FX_Hit
+    FX_Hit,
+    FX_Heal
 }
 
 public class EffectManager : MonoBehaviour
