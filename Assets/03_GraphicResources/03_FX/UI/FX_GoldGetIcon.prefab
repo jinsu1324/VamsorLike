@@ -9709,7 +9709,7 @@ GameObject:
   - component: {fileID: 1759731428148107672}
   - component: {fileID: 7130743231442824883}
   m_Layer: 5
-  m_Name: FX_GoldGet
+  m_Name: FX_GoldGetIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
