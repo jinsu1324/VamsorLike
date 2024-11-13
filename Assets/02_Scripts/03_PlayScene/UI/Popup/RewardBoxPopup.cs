@@ -24,6 +24,24 @@ public class RewardBoxPopup : MonoBehaviour
     /// </summary>
     public void Initialize()
     {
+        // 남은 스킬이 1개도 없으면 팝업을 열지 않음
+        if (PlaySceneManager.Instance.SkillManager.RemainSkillCount == 0)
+        {
+            Debug.Log("모든 스킬을 획득하여 팝업을 생략합니다.");
+
+            // 골드 보상으로 일단
+            PlaySceneCanvas.Instance.PlayAchivementUI.AddGold(5);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+
+            return;
+        }
+
+
+
         PlaySceneManager.Instance.IsGameStartChange(false);
 
         SettingRewardSkill();

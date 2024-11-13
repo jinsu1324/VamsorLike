@@ -49,9 +49,15 @@ public class SkillSelectPopup : SerializedMonoBehaviour
         if (PlaySceneManager.Instance.SkillManager.RemainSkillCount == 0)
         {
             Debug.Log("모든 스킬을 획득하여 팝업을 생략합니다.");
-            
-            // 다른 보상
-            
+
+            // 골드 보상으로 일단
+            PlaySceneCanvas.Instance.PlayAchivementUI.AddGold(5);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+            PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
+
             return;
         }
 

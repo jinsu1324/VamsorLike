@@ -46,6 +46,7 @@ public class MonsterObj : Enemy
         //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Gold, transform.position);
         //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Heal, transform.position);
         //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Magnet, transform.position);
+        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.RewardBox, transform.position);
     }
 
     /// <summary>

@@ -73,8 +73,6 @@ public class BossObj : Enemy
     /// </summary>
     public override void DropItem()
     {
-        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.EXP, transform.position);
-        //PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.Gold, transform.position);
         PlaySceneManager.Instance.ItemSpawner.SpawnItem(ItemID.RewardBox, transform.position);
     }
 
