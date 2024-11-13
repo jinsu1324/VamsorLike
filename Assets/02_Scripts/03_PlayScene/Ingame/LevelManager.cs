@@ -20,9 +20,10 @@ public class HeroLvExp
 
 public class LevelManager : SerializedMonoBehaviour
 {
-    // 이번게임 영웅 레벨 경험치
-    public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 1);
-        
+    public HeroLvExp MyHeroLvExp { get; set; } = new HeroLvExp(0, 1);   // 이번게임 영웅 레벨 경험치
+
+    private Queue<int> _levelUpQueue = new Queue<int>();                // 레벨업 처리 누적할 Queue
+    private bool _isSkillSelectPopupOpen = false;                       // 팝업 열렸는지 확인할 변수
 
     /// <summary>
     /// Start 함수
@@ -33,40 +34,70 @@ public class LevelManager : SerializedMonoBehaviour
     }
 
     /// <summary>
-    /// 경험치 증가
+    /// 경험치를 획득할 때 호출되는 함수
     /// </summary>
     public void EXPUp(int amount)
     {
         MyHeroLvExp.EXP += amount;
-        RefreshEXPBarUI();
+        PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
 
+        CheckLevelUp();
+    }
+
+    /// <summary>
+    /// 경험치가 일정 기준을 넘으면 레벨업 처리
+    /// </summary>
+    private void CheckLevelUp()
+    {
+        // 레벨업 할수있으면 계속 반복해서 레벨업 후 Queue에 넣음
         LevelData currentLevelData = DataManager.Instance.LevelDatas.GetDataById(MyHeroLvExp.Level.ToString());
-
-        if (MyHeroLvExp.EXP >= currentLevelData.MaxExp)
+        while (MyHeroLvExp.EXP >= currentLevelData.MaxExp)
         {
-            LevelUp();
+            MyHeroLvExp.Level++;
+            MyHeroLvExp.EXP -= currentLevelData.MaxExp;
+            _levelUpQueue.Enqueue(MyHeroLvExp.Level);
+
+            currentLevelData = DataManager.Instance.LevelDatas.GetDataById(MyHeroLvExp.Level.ToString());
+        }
+
+        // 레벨업 팝업을 아직 열지 않았다면 큐 처리 시작
+        if (_isSkillSelectPopupOpen == false && _levelUpQueue.Count > 0)
+        {
+            StartCoroutine(ProcessLevelUpQueue());
         }
     }
 
     /// <summary>
-    /// EXP 바 UI 새로고침
+    /// 레벨업 큐 처리 코루틴
     /// </summary>
-    public void RefreshEXPBarUI()
+    private IEnumerator ProcessLevelUpQueue()
     {
-        PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
+        // Queue Count가 0이 될때까지 반복
+        while (_levelUpQueue.Count > 0)
+        {
+            _isSkillSelectPopupOpen = true;
+            int level = _levelUpQueue.Dequeue();
+
+            // 팝업 열기
+            PlaySceneCanvas.Instance.SkillSelectPopup.OpenPopup();
+
+            // 주어진 조건이 true일때까지 기다림 (팝업이 닫히기를 기다림)
+            yield return new WaitUntil(() => _isSkillSelectPopupOpen == false);
+        }
     }
 
     /// <summary>
-    /// 레벨 증가
+    /// 팝업이 닫힐 때 IsSkillSelectPopupOpen을 false로 만들어주는 함수
     /// </summary>
-    private void LevelUp()
+    public void ChangeFalse_IsSkillSelectPopupOpen()
     {
-        MyHeroLvExp.Level++;
-        MyHeroLvExp.EXP -= 100; 
-
-        PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
-        PlaySceneCanvas.Instance.SkillSelectPopup.OpenPopup();
+        _isSkillSelectPopupOpen = false;
     }
+
+
+
+
+
 
 
 
@@ -75,7 +106,7 @@ public class LevelManager : SerializedMonoBehaviour
     // 치트
     public void OnClickExpUpCheatButton()
     {
-        EXPUp(100);
+        EXPUp(450);
         PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
     }
 }

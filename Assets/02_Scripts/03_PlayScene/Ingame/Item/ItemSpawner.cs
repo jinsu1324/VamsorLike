@@ -11,9 +11,9 @@ public class ItemSpawner : SerializedMonoBehaviour
 
     // 아이템 등장 확률 가중치 딕셔너리
     private Dictionary<ItemID, int> _itenWeightDict = new Dictionary<ItemID, int>
-    {   {ItemID.EXP, 90 },
-        {ItemID.Gold, 30 },
-        {ItemID.Heal, 10 },
+    {   {ItemID.EXP, 100 },
+        {ItemID.Gold, 50 },
+        {ItemID.Heal, 5 },
         {ItemID.Magnet, 5 },
     };
 

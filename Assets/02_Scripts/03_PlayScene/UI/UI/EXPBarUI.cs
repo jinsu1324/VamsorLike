@@ -62,14 +62,4 @@ public class EXPBarUI : SerializedMonoBehaviour
             DOFade(1, _duration).
             OnComplete(() => { _blinkImage.DOFade(0, _duration); });
     }
-
-    // °æÇèÄ¡ È¹µæ ½Ã ±ôºıÀÌ±â
-    public IEnumerator Blink(SpriteRenderer spriteRenderer, float blinkTime)
-    {
-        spriteRenderer.color = Color.red;
-
-        yield return new WaitForSeconds(blinkTime);
-
-        spriteRenderer.color = Color.white;
-    }
 }

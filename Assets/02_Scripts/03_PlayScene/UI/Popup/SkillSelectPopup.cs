@@ -58,6 +58,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
             PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
             PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(PlaySceneManager.Instance.MyHeroObj.transform);
 
+            // ÆË¾÷ ´ÝÇûÀ½À» Àü´Þ
+            PlaySceneManager.Instance.LevelManager.ChangeFalse_IsSkillSelectPopupOpen();
+
             return;
         }
 
@@ -84,5 +87,8 @@ public class SkillSelectPopup : SerializedMonoBehaviour
 
         // ÆË¾÷ ´Ý±â
         gameObject.SetActive(false);
+
+        // ÆË¾÷ ´ÝÇûÀ½À» Àü´Þ
+        PlaySceneManager.Instance.LevelManager.ChangeFalse_IsSkillSelectPopupOpen();
     }
 }
