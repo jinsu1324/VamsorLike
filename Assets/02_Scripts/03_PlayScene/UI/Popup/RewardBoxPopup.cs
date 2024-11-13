@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class RewardBoxPopup : MonoBehaviour
 {
-    private Animator _animator;                     // 애니메이터
-
     [SerializeField]
     private Image _skillIconImage;                  // 스킬 아이콘
     [SerializeField]
@@ -17,33 +15,40 @@ public class RewardBoxPopup : MonoBehaviour
     private TextMeshProUGUI _skillLevelText;        // 스킬 레벨 텍스트
     [SerializeField]
     private TextMeshProUGUI _skillDescText;         // 스킬 설명 텍스트
+    [SerializeField]
+    private GameObject _rewardGO;                   // 보상 게임오브젝트
+
     
     /// <summary>
     /// 팝업 시작 시 초기화
     /// </summary>
-    public void Initialize_Popup()
+    public void Initialize()
     {
         PlaySceneManager.Instance.IsGameStartChange(false);
 
-        _animator = GetComponent<Animator>();
-        SetAndAdd_RandomRewardSkill();
+        SettingRewardSkill();
+
+        _rewardGO.SetActive(false);
+
         gameObject.SetActive(true);
     }
 
     /// <summary>
-    /// 애니메이터 IsOpenReady true로 변경
+    /// 보상 게임오브젝트 열기
     /// </summary>
-    public void ReadyComplete()
+    public void OpenRewardGO()
     {
-        _animator.SetBool("isOpenReady", true);
+        _rewardGO.SetActive(true);
+
+        Invoke("ClosePopup", 3.0f);
     }
 
     /// <summary>
-    /// 팝업 끄기 + isOpenReady false로 변경하는 함수
+    /// 팝업 끄기
     /// </summary>
-    public void End_Popup()
+    public void ClosePopup()
     {
-        _animator.SetBool("isOpenReady", false);
+        _rewardGO.SetActive(false);
         gameObject.SetActive(false);
 
         PlaySceneManager.Instance.IsGameStartChange(true);
@@ -52,25 +57,37 @@ public class RewardBoxPopup : MonoBehaviour
     /// <summary>
     /// 랜덤스킬 가져오고 인벤에 추가 및 UI에 정보 셋팅하는 함수
     /// </summary>
-    private void SetAndAdd_RandomRewardSkill()
+    private void SettingRewardSkill()
     {
         SkillManager skillManager = PlaySceneManager.Instance.SkillManager;
 
-        // 랜덤한 스킬ID를 받아옴
-        SkillID randomSkillID = skillManager.RandomSkillID();
-        
-        // 받아온 스킬 인벤토리에 추가
-        skillManager.AddSkill(randomSkillID);
-        
-        // 받아온 스킬로 팝업 UI들 정보 셋팅 
-        Sprite skillIcon = skillManager.GetSkillIcon(randomSkillID);
-        string skillName = skillManager.GetSkillName(randomSkillID);
-        int skillLevel = skillManager.GetSkillLevel(randomSkillID);
-        string skillDesc = skillManager.GetSkillDesc(randomSkillID);
+        // 겹치지 않는 랜덤한 스킬ID를 받아옴
+        SkillID skillID = skillManager.RandomUniqueSkillID();
 
-        _skillIconImage.sprite = skillIcon;
-        _skillNameText.text = skillName;
-        _skillLevelText.text = $"Level {skillLevel}";
-        _skillDescText.text = skillDesc;
+        // 해당스킬 레벨과 다음레벨 계산
+        int skillLevel = skillManager.GetSkillLevel(skillID);
+        int nextLevel = skillLevel + 1;
+
+        // 그 값에 따라 스킬데이터 가져오기
+        SkillData skillData = skillManager.GetSkillData_by_SkillIDLevel(skillID, nextLevel);
+
+        // UI에 표시
+        _skillIconImage.sprite = ResourceManager.Instance.SkillIconDict[skillID];
+        _skillNameText.text = skillData.Name;
+        _skillDescText.text = skillData.Desc;
+        if (nextLevel == 1)
+        {
+            _skillLevelText.text = "신규!";
+        }
+        else
+        {
+            _skillLevelText.text = $"Lv.{nextLevel.ToString()}";
+        }
+
+        // 받아온 스킬 인벤토리에 추가
+        skillManager.AddSkill(skillID);
+
+        // 스킬 풀 초기화
+        skillManager.ResetRemainSkillIDList();
     }
 }

@@ -244,7 +244,7 @@ public class HeroObj : SerializedMonoBehaviour
     /// </summary>
     public void AcquireRewardBox_and_Request()
     {
-        PlaySceneCanvas.Instance.RewardBoxPopup.Initialize_Popup();
+        PlaySceneCanvas.Instance.RewardBoxPopup.Initialize();
     }
 
     /// <summary>
