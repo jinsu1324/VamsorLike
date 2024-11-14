@@ -2,10 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D.IK;
-using static UnityEditor.LightingExplorerTableColumn;
+
 
 
 public class LoadCSV

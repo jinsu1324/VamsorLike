@@ -3,10 +3,8 @@ using Sirenix.OdinInspector.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.TerrainTools;
 using UnityEngine;
-using static UnityEditor.LightingExplorerTableColumn;
+
 
 // 데이터 셋팅 바로 가능하도록 에디터 윈도우
 public class DataSettingEditorWindow : OdinEditorWindow

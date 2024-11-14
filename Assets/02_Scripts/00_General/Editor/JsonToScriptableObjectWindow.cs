@@ -8,7 +8,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Reflection;
-using UnityEditor;
 using UnityEngine;
 
 public class JsonToScriptableObjectWindow : OdinEditorWindow

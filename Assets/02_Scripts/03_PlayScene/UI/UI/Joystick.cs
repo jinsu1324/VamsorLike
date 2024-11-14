@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
 
 /// <summary>
 /// ¡∂¿ÃΩ∫∆Ω 

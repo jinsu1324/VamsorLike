@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 /// <summary>
 /// SlashAttack 스킬 클래스 : 쿨타임 bool 판별 / 공격로직
