@@ -7,12 +7,24 @@ using UnityEngine;
 /// </summary>
 public class ProjectileSlashAttack : ProjectileBase
 {
+    [SerializeField]
+    private BoxCollider2D _boxCollider2D;           // 몬스터 접촉 판별 콜라이더
+
+    /// <summary>
+    /// Start
+    /// </summary>
     private void Start()
     {
-        // 0.1초 후에 파괴
-        Destroy(gameObject, 0.1f);
+        Invoke("OFF_Collider", 0.1f);
     }
 
+    /// <summary>
+    /// 콜라이더 끄기
+    /// </summary>
+    private void OFF_Collider()
+    {
+        _boxCollider2D.enabled = false;
+    }
 
     /// <summary>
     /// 몬스터와 충돌했을 때, 공격력만큼 몬스터의 HP를 깎음
