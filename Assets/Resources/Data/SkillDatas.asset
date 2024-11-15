@@ -15,89 +15,236 @@ MonoBehaviour:
   DataList:
   - ID: SlashAttack
     Level: 1
-    Name: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-    AtkPercentage: 1.25
-    Desc: "\uB290\uB9AC\uACE0 \uC0AC\uAC70\uB9AC\uAC00 \uC9E7\uC9C0\uB9CC <color
-      #FFBD43>\uADFC\uCC98 \uC720\uB2DB \uBAA8\uB450</color>\uB97C \uBCB1\uB2C8\uB2E4."
-    Delay: 1
+    Name: "\uC6D4\uAD11\uCC38"
+    AtkPercentage: 1
+    Desc: "\uADFC\uCC98 \uC720\uB2DB \uBAA8\uB450\uB97C <color #FFBD43>100% \uB370\uBBF8\uC9C0</color>\uB85C
+      \uBCB1\uB2C8\uB2E4."
+    Delay: 1.5
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
   - ID: SlashAttack
     Level: 2
-    Name: "[\uC9C4] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-    AtkPercentage: 1.75
-    Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 <color #FFBD43>\uB370\uBBF8\uC9C0\uAC00
-      200%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4"
-    Delay: 1
+    Name: "\uC6D4\uAD11\uCC38"
+    AtkPercentage: 1.5
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 1.5
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
   - ID: SlashAttack
     Level: 3
-    Name: "[\uD608] \uC2AC\uB798\uC2DC \uC5B4\uD0DD"
-    AtkPercentage: 2.5
-    Desc: "\uC2AC\uB798\uC2DC \uC5B4\uD0DD\uC758 <color #FFBD43>\uACF5\uACA9\uBE48\uB3C4\uAC00
-      1.25\uBC30</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4"
+    Name: "\uC6D4\uAD11\uCC38"
+    AtkPercentage: 1.5
+    Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>30%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
+    Delay: 1
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 0
+  - ID: SlashAttack
+    Level: 4
+    Name: "\uC6D4\uAD11\uCC38"
+    AtkPercentage: 2
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>30%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 1
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 0
+  - ID: SlashAttack
+    Level: 5
+    Name: "\uC6D4\uAD11\uCC38"
+    AtkPercentage: 2
+    Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>25%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
     Delay: 0.75
     Range: 0
     ProjectileSpeed: 0
     ProjectileCount: 0
   - ID: Boomerang
     Level: 1
-    Name: "\uD68C\uC804 \uBD80\uBA54\uB791"
+    Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
     AtkPercentage: 0.2
-    Desc: "\uC601\uC6C5 <color #FFBD43>\uC8FC\uBCC0\uC744 \uD68C\uC804\uD558\uBA74\uC11C
-      \uACF5\uACA9</color>\uD558\uB294 \uBD80\uBA54\uB791\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4."
+    Desc: "\uC601\uC6C5 \uC8FC\uBCC0\uC744 \uD68C\uC804\uD558\uBA74\uC11C <color
+      #FFBD43>20% \uB370\uBBF8\uC9C0</color>\uB85C \uACF5\uACA9\uD558\uB294 \uC601\uD63C\uC744
+      \uC18C\uD658\uD569\uB2C8\uB2E4."
     Delay: 0
     Range: 3
     ProjectileSpeed: 200
     ProjectileCount: 1
   - ID: Boomerang
     Level: 2
-    Name: "[\uC9C4] \uD68C\uC804 \uBD80\uBA54\uB791"
+    Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
     AtkPercentage: 0.2
-    Desc: "\uBD80\uBA54\uB791\uC758 <color #FFBD43>\uAC2F\uC218\uAC00 2\uAC1C</color>\uB85C
-      \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Desc: "\uC601\uD63C \uD68C\uC624\uB9AC\uC758 <color #FFBD43>\uAC2F\uC218\uAC00
+      2\uAC1C</color>\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
     Delay: 0
     Range: 3
     ProjectileSpeed: 200
     ProjectileCount: 2
   - ID: Boomerang
     Level: 3
-    Name: "[\uD608] \uD68C\uC804 \uBD80\uBA54\uB791"
-    AtkPercentage: 0.2
-    Desc: "\uBD80\uBA54\uB791\uC758 <color #FFBD43>\uAC2F\uC218\uAC00 3\uAC1C</color>\uB85C
-      \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
+    AtkPercentage: 0.3
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 0
+    Range: 3
+    ProjectileSpeed: 200
+    ProjectileCount: 2
+  - ID: Boomerang
+    Level: 4
+    Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
+    AtkPercentage: 0.3
+    Desc: "\uC601\uD63C \uD68C\uC624\uB9AC\uC758 <color #FFBD43>\uAC2F\uC218\uAC00
+      3\uAC1C</color>\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 0
+    Range: 3
+    ProjectileSpeed: 200
+    ProjectileCount: 3
+  - ID: Boomerang
+    Level: 5
+    Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
+    AtkPercentage: 0.4
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>30%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
     Delay: 0
     Range: 3
     ProjectileSpeed: 200
     ProjectileCount: 3
   - ID: Sniper
     Level: 1
-    Name: "\uC2A4\uB098\uC774\uD37C \uCD1D"
+    Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
     AtkPercentage: 2
-    Desc: "\uB290\uB9AC\uC9C0\uB9CC \uC0AC\uAC70\uB9AC\uAC00 \uAE38\uACE0 <color
-      #FFBD43>\uB2E8\uC77C \uD55C\uBA85</color>\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
-    Delay: 2
-    Range: 10
+    Desc: "\uAC00\uAE4C\uC6B4 \uC801 1\uB9C8\uB9AC\uB97C <color #FFBD43>200% \uB370\uBBF8\uC9C0</color>\uB85C
+      \uACF5\uACA9\uD569\uB2C8\uB2E4."
+    Delay: 1
+    Range: 4
     ProjectileSpeed: 1
     ProjectileCount: 0
   - ID: Sniper
     Level: 2
-    Name: "[\uC9C4] \uC2A4\uB098\uC774\uD37C \uCD1D"
+    Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
     AtkPercentage: 3
-    Desc: "<color #FFBD43>\uACF5\uACA9\uB825\uC774 130%</color>\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    Delay: 2
-    Range: 10
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 1
+    Range: 4
     ProjectileSpeed: 1
     ProjectileCount: 0
   - ID: Sniper
     Level: 3
-    Name: "[\uD608] \uC2A4\uB098\uC774\uD37C \uCD1D"
-    AtkPercentage: 4
-    Desc: "<color #FFBD43>\uC5F0\uC0AC\uB825\uC774 2\uBC30</color> \uC0C1\uC2B9\uD569\uB2C8\uB2E4!"
-    Delay: 1
-    Range: 10
+    Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
+    AtkPercentage: 3
+    Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>25%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
+    Delay: 0.75
+    Range: 4
     ProjectileSpeed: 1
     ProjectileCount: 0
+  - ID: Sniper
+    Level: 4
+    Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
+    AtkPercentage: 3
+    Desc: "\uC0AC\uAC70\uB9AC\uAC00 <color #FFBD43>25%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 0.75
+    Range: 5
+    ProjectileSpeed: 1
+    ProjectileCount: 0
+  - ID: Sniper
+    Level: 5
+    Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
+    AtkPercentage: 3
+    Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>33%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
+    Delay: 0.5
+    Range: 5
+    ProjectileSpeed: 1
+    ProjectileCount: 0
+  - ID: Meteor
+    Level: 1
+    Name: "\uBA54\uD14C\uC624"
+    AtkPercentage: 1
+    Desc: "\uADFC\uCC98 \uBB34\uC791\uC704 \uC704\uCE58\uC5D0 <color #FFBD43>100%
+      \uB370\uBBF8\uC9C0</color>\uC758 \uBA54\uD14C\uC624\uB97C 2\uAC1C \uB5A8\uC5B4\uB728\uB9BD\uB2C8\uB2E4. "
+    Delay: 2
+    Range: 6
+    ProjectileSpeed: 0
+    ProjectileCount: 2
+  - ID: Meteor
+    Level: 2
+    Name: "\uBA54\uD14C\uC624"
+    AtkPercentage: 1.5
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 6
+    ProjectileSpeed: 0
+    ProjectileCount: 3
+  - ID: Meteor
+    Level: 3
+    Name: "\uBA54\uD14C\uC624"
+    AtkPercentage: 1.5
+    Desc: "\uBA54\uD14C\uC624\uAC00 <color #FFBD43>3\uAC1C\uB85C</color>\uB85C \uB298\uC5B4\uB0A9\uB2C8\uB2E4."
+    Delay: 2
+    Range: 6
+    ProjectileSpeed: 0
+    ProjectileCount: 3
+  - ID: Meteor
+    Level: 4
+    Name: "\uBA54\uD14C\uC624"
+    AtkPercentage: 2.25
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 6
+    ProjectileSpeed: 0
+    ProjectileCount: 4
+  - ID: Meteor
+    Level: 5
+    Name: "\uBA54\uD14C\uC624"
+    AtkPercentage: 2.25
+    Desc: "\uBA54\uD14C\uC624\uAC00 <color #FFBD43>4\uAC1C\uB85C</color>\uB85C \uB298\uC5B4\uB0A9\uB2C8\uB2E4."
+    Delay: 2
+    Range: 6
+    ProjectileSpeed: 0
+    ProjectileCount: 4
+  - ID: Axe
+    Level: 1
+    Name: "\uBC14\uC774\uD0B9 \uB3C4\uB07C"
+    AtkPercentage: 0.5
+    Desc: "<color #FFBD43>50%\uB370\uBBF8\uC9C0</color>\uC758 \uBC14\uC774\uD0B9
+      \uB3C4\uB07C\uB97C \uC9D1\uC5B4\uB358\uC9D1\uB2C8\uB2E4."
+    Delay: 2
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 1
+  - ID: Axe
+    Level: 2
+    Name: "\uBC14\uC774\uD0B9 \uB3C4\uB07C"
+    AtkPercentage: 0.5
+    Desc: "\uBC14\uC774\uD0B9 \uB3C4\uB07C\uC758 <color #FFBD43>\uAC2F\uC218\uAC00
+      2\uAC1C</color>\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 2
+  - ID: Axe
+    Level: 3
+    Name: "\uBC14\uC774\uD0B9 \uB3C4\uB07C"
+    AtkPercentage: 0.75
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 2
+  - ID: Axe
+    Level: 4
+    Name: "\uBC14\uC774\uD0B9 \uB3C4\uB07C"
+    AtkPercentage: 0.75
+    Desc: "\uBC14\uC774\uD0B9 \uB3C4\uB07C\uC758 <color #FFBD43>\uAC2F\uC218\uAC00
+      3\uAC1C</color>\uB85C \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 3
+  - ID: Axe
+    Level: 5
+    Name: "\uBC14\uC774\uD0B9 \uB3C4\uB07C"
+    AtkPercentage: 1
+    Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>33%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 2
+    Range: 0
+    ProjectileSpeed: 0
+    ProjectileCount: 3

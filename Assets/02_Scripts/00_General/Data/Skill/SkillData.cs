@@ -6,7 +6,9 @@ public enum SkillID
 {
     SlashAttack,
     Boomerang,
-    Sniper
+    Sniper,
+    Meteor,
+    Axe
 }
 
 [System.Serializable]
@@ -19,5 +21,5 @@ public class SkillData : BaseData
     public float Delay;                    
     public float Range;                    
     public float ProjectileSpeed;          
-    public int ProjectileCount;       
+    public int ProjectileCount;
 }

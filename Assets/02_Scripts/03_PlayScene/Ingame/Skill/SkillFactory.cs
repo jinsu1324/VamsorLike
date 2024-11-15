@@ -33,6 +33,24 @@ public static class SkillFactory
             return skill_Boomerang;
         }
 
+        else if (skillID == SkillID.Meteor)
+        {
+            SkillData skillData
+                = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(SkillID.Meteor, level);
+
+            Skill_Meteor skill_Meteor = new Skill_Meteor(skillData);
+            return skill_Meteor;
+        }
+
+        else if (skillID == SkillID.Axe)
+        {
+            SkillData skillData
+                = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(SkillID.Axe, level);
+
+            Skill_Axe skill_Axe = new Skill_Axe(skillData);
+            return skill_Axe;
+        }
+
         else
         {
             return null;

@@ -61,7 +61,7 @@ public class JINSU_DataTableToScriptableObject : OdinEditorWindow
 
     // SkillData
     // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_SkillData = "SkillData!A1:I11";
+    private readonly string _range_SkillData = "SkillData!A1:I27";
     // 데이터를 저장할 경로와 이름
     private readonly string _fileName_SkillData = "SkillDatas";
 

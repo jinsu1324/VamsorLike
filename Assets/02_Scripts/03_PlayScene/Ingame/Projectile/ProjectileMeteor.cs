@@ -1,32 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public struct ProjectileSlashAttackStatArgs
+public struct ProjectileMeteorArgs
 {
     public float Atk;
 }
 
-
-public class ProjectileSlashAttack : ProjectileBase
+public class ProjectileMeteor : ProjectileBase
 {
     [SerializeField]
     private BoxCollider2D _boxCollider2D;           // 몬스터 접촉 판별 콜라이더
 
     /// <summary>
-    /// Start
-    /// </summary>
-    private void Start()
-    {
-        Invoke("OFF_Collider", 0.1f);
-    }
-
-    /// <summary>
     /// 스탯 셋팅
     /// </summary>
-    public void SetStats(ProjectileSlashAttackStatArgs statArgs)
+    public void SetStats(ProjectileMeteorArgs statArgs)
     {
         _atk = statArgs.Atk;
+        _boxCollider2D.enabled = false;
     }
 
     /// <summary>
@@ -40,11 +31,27 @@ public class ProjectileSlashAttack : ProjectileBase
     }
 
     /// <summary>
+    /// 콜라이더 켜기
+    /// </summary>
+    public void OnCollider()
+    {
+        _boxCollider2D.enabled = true;
+        Invoke("OFFCollider", 0.1f);
+    }
+
+    /// <summary>
     /// 콜라이더 끄기
     /// </summary>
-    private void OFF_Collider()
+    private void OFFCollider()
     {
         _boxCollider2D.enabled = false;
     }
 
+    /// <summary>
+    /// 게임오브젝트 파괴
+    /// </summary>
+    public void DestroyGO()
+    {
+        Destroy(gameObject);
+    }
 }

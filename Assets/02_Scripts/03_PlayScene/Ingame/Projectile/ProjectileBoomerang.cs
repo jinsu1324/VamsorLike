@@ -19,11 +19,11 @@ public class ProjectileBoomerang : ProjectileBase
     /// <summary>
     /// ½ºÅÈ ¼ÂÆÃ
     /// </summary>
-    public void SetStats(ProjectileBoomerangStatArgs projectileBoomerangStatArgs)
+    public void SetStats(ProjectileBoomerangStatArgs statArgs)
     {
-        _atk = projectileBoomerangStatArgs.Atk;
-        _range = projectileBoomerangStatArgs.Range;
-        _speed = projectileBoomerangStatArgs.Speed;
+        _atk = statArgs.Atk;
+        _range = statArgs.Range;
+        _speed = statArgs.Speed;
     }
 
     /// <summary>
