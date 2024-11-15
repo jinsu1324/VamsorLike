@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// SlashAttack 스킬의 프로젝타일
-/// </summary>
+public struct ProjectileSlashAttackStatArgs
+{
+    public float Atk;
+}
+
+
 public class ProjectileSlashAttack : ProjectileBase
 {
     [SerializeField]
@@ -19,32 +22,29 @@ public class ProjectileSlashAttack : ProjectileBase
     }
 
     /// <summary>
+    /// 스탯 셋팅
+    /// </summary>
+    public void SetStats(ProjectileSlashAttackStatArgs projectileSlashAttackStatArgs)
+    {
+        _atk = projectileSlashAttackStatArgs.Atk;
+    }
+
+    /// <summary>
+    /// 이펙트 재생
+    /// </summary>
+    protected override void PlayEffect(Collider2D collision)
+    {
+        PlaySceneManager.Instance.EffectManager.GetEffect(
+            EffectName.FX_Hit.ToString(),
+            collision.gameObject.transform.position);
+    }
+
+    /// <summary>
     /// 콜라이더 끄기
     /// </summary>
     private void OFF_Collider()
     {
         _boxCollider2D.enabled = false;
-    }
-
-    /// <summary>
-    /// 몬스터와 충돌했을 때, 공격력만큼 몬스터의 HP를 깎음
-    /// </summary>
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer(Layer.Enemy.ToString()))
-        {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
-            // 적이 죽었으면 그냥 리턴
-            if (enemy.IsDead == true)
-                return;
-
-            collision.gameObject.GetComponent<Enemy>().HPMinus(_atk);
-
-            PlaySceneManager.Instance.EffectManager.GetEffect(
-                EffectName.FX_Hit.ToString(),
-                collision.gameObject.transform.position);
-        }
     }
 
 }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public struct SkillAttackArgs
 {
@@ -14,9 +13,11 @@ public struct SkillAttackArgs
 /// </summary>
 public abstract class Skill_Base
 {
-    public SkillID Id;
+    public SkillID ID;
     public int CurrentLevel;
     public int MaxLevel;
+
+
 
     protected float _time;    
 

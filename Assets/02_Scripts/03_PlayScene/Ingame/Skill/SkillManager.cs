@@ -50,7 +50,7 @@ public class SkillManager : SerializedMonoBehaviour
     public void AddSkill(SkillID newSkillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인
-        Skill_Base foundSkill = HaveSkillList.Find(skill => skill.Id == newSkillID);
+        Skill_Base foundSkill = HaveSkillList.Find(skill => skill.ID == newSkillID);
 
         // 이미 가지고 있는 스킬이라면 레벨업
         if (foundSkill != null)
@@ -75,7 +75,7 @@ public class SkillManager : SerializedMonoBehaviour
     public bool HasSkill(SkillID skillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 bool 반환
-        return HaveSkillList.Exists(x => x.Id == skillID);
+        return HaveSkillList.Exists(x => x.ID == skillID);
     }
 
     /// <summary>
@@ -84,15 +84,15 @@ public class SkillManager : SerializedMonoBehaviour
     public int GetSkillLevel(SkillID skillID)
     {
         // 리스트에서 이미 가지고 있는 스킬인지 확인해서 레벨 반환
-        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.ID == skillID);
 
         return foundSkill != null ? foundSkill.CurrentLevel : 0;
     }
 
     /// <summary>
-    /// 가지고 있는 스킬이 맥스레벨인지 확인해주는 함수
+    /// 스킬의 맥스레벨 가져오는 함수
     /// </summary>
-    public bool IsSkillMaxLevel(SkillID skillID)
+    public int GetSkillMaxLevel(SkillID skillID)
     {
         // 스킬ID에 해당하는 스킬 데이터를 모두 리스트 가져오기
         List<SkillData> SkillDataList = DataManager.Instance.SkillDatas.GetAllDataByCondition(
@@ -104,6 +104,17 @@ public class SkillManager : SerializedMonoBehaviour
         // 가장 마지막 레벨을 최대레벨 변수에 담음
         int count = SkillDataList.Count;
         int maxLevel = SkillDataList[count - 1].Level;
+
+        return maxLevel;
+    }
+
+    /// <summary>
+    /// 가지고 있는 스킬이 맥스레벨인지 확인해주는 함수
+    /// </summary>
+    public bool IsSkillMaxLevel(SkillID skillID)
+    {
+        // 맥스레벨 알아옴   
+        int maxLevel = GetSkillMaxLevel(skillID);
 
         // 현재레벨 알아옴
         int skillLevel = GetSkillLevel(skillID);
@@ -117,7 +128,7 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public Sprite GetSkillIcon(SkillID skillID)
     {
-        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.ID == skillID);
 
         if (foundSkill == null)
         {
@@ -134,7 +145,7 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public string GetSkillName(SkillID skillID)
     {
-        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.ID == skillID);
 
         if (foundSkill == null)
         {
@@ -151,7 +162,7 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public string GetSkillDesc(SkillID skillID)
     {
-        Skill_Base foundSkill = HaveSkillList.Find(x => x.Id == skillID);
+        Skill_Base foundSkill = HaveSkillList.Find(x => x.ID == skillID);
 
         if (foundSkill == null)
         {

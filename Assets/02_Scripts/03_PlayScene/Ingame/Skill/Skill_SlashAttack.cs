@@ -3,52 +3,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// SlashAttack 스킬 클래스 : 쿨타임 bool 판별 / 공격로직
-/// </summary>
 public class Skill_SlashAttack : Skill_Base
 {
-    // 스킬 데이터 변수
-    private float _skillAtk;
-    private float _delay;
-    private ProjectileBase _projectile;
+    private ProjectileSlashAttackStatArgs _statArgs = new ProjectileSlashAttackStatArgs();      // 프로젝타일 슬래시어택에 필요한 스탯들
+    private float _delay;                                                                       // 스킬 딜레이
+    private ProjectileSlashAttack _projectile;                                                  // 스킬 프로젝타일
 
     /// <summary>
     /// 생성자
     /// </summary>
-    public Skill_SlashAttack(SkillData skillData_SlashAttack)
+    public Skill_SlashAttack(SkillData skillData)
     {
-        Id = (SkillID)Enum.Parse(typeof(SkillID), skillData_SlashAttack.ID);
+        // 기본 정보 할당
+        ID = (SkillID)Enum.Parse(typeof(SkillID), skillData.ID);
         CurrentLevel = 1;
-        MaxLevel = 3;
+        MaxLevel = PlaySceneManager.Instance.SkillManager.GetSkillMaxLevel(ID);
+        _projectile = ResourceManager.Instance.SkillProjectileDict[ID] as ProjectileSlashAttack;
 
-        StatSetting(skillData_SlashAttack);
+        // 스탯 셋팅
+        StatSetting(skillData);
     }
 
     /// <summary>
     /// 스탯 셋팅
     /// </summary>
-    private void StatSetting(SkillData skillData_SlashAttack)
+    private void StatSetting(SkillData skillData)
     {
-        _skillAtk = skillData_SlashAttack.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
-        _delay = skillData_SlashAttack.Delay;
-
-        _projectile = ResourceManager.Instance.SkillProjectileDict[Id];
+        // 스탯 셋팅
+        _statArgs.Atk = skillData.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
+        _delay = skillData.Delay;
     }
 
     /// <summary>
-    /// 레벨업 함수 : 생성되어있는 얘를 다른 데이터로 덮어씌우기 위함
+    /// 스킬 레벨업
     /// </summary>
     public override void LevelUp()
     {
-        SkillData skillData_SlashAttack =
-            PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(Id, ++CurrentLevel);
+        // 현재레벨을 1 증가시키고, 그 값으로 스킬데이터를 다시 가져옴
+        SkillData skillData =
+            PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(ID, ++CurrentLevel);
 
-        StatSetting(skillData_SlashAttack);
+        // 레벨업된 스탯으로 다시 셋팅
+        StatSetting(skillData);
     }
 
     /// <summary>
-    /// 스킬 쿨타임 관리 (시간 지남에 따라 스킬 공격 가능한지 true false 반환)
+    /// 스킬 쿨타임 관리
     /// </summary>
     public override bool SkillCooltime()
     {
@@ -70,11 +70,10 @@ public class Skill_SlashAttack : Skill_Base
     /// </summary>
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
-        ProjectileSlashAttack projectile =
-            GameObject.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity)
-            as ProjectileSlashAttack;
-
-        // 프로젝타일에 공격력 건네줌
-        projectile.SetAtk(_skillAtk);
+        // 프로젝타일 생성
+        ProjectileSlashAttack projectile = GameObject.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity);
+        
+        // 생성한 프로젝타일 스탯 셋팅
+        projectile.SetStats(_statArgs);
     }
 }

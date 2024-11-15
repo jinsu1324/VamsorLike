@@ -8,28 +8,28 @@ public static class SkillFactory
     {
         if (skillID == SkillID.SlashAttack)
         {
-            SkillData skillData_SlashAttack
+            SkillData skillData
                 = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(SkillID.SlashAttack, level);
 
-            Skill_SlashAttack skill_SlashAttack = new Skill_SlashAttack(skillData_SlashAttack);
+            Skill_SlashAttack skill_SlashAttack = new Skill_SlashAttack(skillData);
             return skill_SlashAttack;
         }
 
         else if (skillID == SkillID.Sniper)
         {
-            SkillData skillData_Sniper
+            SkillData skillData
                 = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(SkillID.Sniper, level);
 
-            Skill_Sniper skill_Sniper = new Skill_Sniper(skillData_Sniper);
+            Skill_Sniper skill_Sniper = new Skill_Sniper(skillData);
             return skill_Sniper;
         }
 
         else if (skillID == SkillID.Boomerang)
         {
-            SkillData skillData_Boomerang
+            SkillData skillData
                 = PlaySceneManager.Instance.SkillManager.GetSkillData_by_SkillIDLevel(SkillID.Boomerang, level);
 
-            Skill_Boomerang skill_Boomerang = new Skill_Boomerang(skillData_Boomerang);
+            Skill_Boomerang skill_Boomerang = new Skill_Boomerang(skillData);
             return skill_Boomerang;
         }
 
