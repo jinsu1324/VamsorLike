@@ -155,8 +155,10 @@ public class HeroObj : SerializedMonoBehaviour
         Hp -= atk;
 
         Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
-
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
+
+        // 오디오 재생
+        //AudioManager.Instance.PlaySFX(SFXType.HeroDamaged);
 
         if (Hp < _cautionLimitHP)
             PlaySceneCanvas.Instance.CautionView.OpenCautionView();
@@ -173,6 +175,9 @@ public class HeroObj : SerializedMonoBehaviour
         PlaySceneManager.Instance.IsGameStartChange(false);
         
         _animator.SetTrigger("Dead");
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.GameOver);
     }
 
     /// <summary>
@@ -183,7 +188,6 @@ public class HeroObj : SerializedMonoBehaviour
         PlaySceneCanvas.Instance.CautionView.CloseCautionView();
         PlaySceneCanvas.Instance.ResultPopup.OpenPopup();
     }
-
 
     /// <summary>
     /// 맞는 데미지 이펙트 활성화

@@ -87,7 +87,7 @@ public class PlaySceneManager : SerializedMonoBehaviour
         // 오디오 재생
         AudioManager.Instance.PlayBGM(BGMType.PlayScnene);
         AudioManager.Instance.StartFadeInBGM(1f, 0.5f);
-        AudioManager.Instance.SetSFXVolume(0.5f);
+        AudioManager.Instance.SetSFXVolume(1f);
     }
 
     /// <summary>

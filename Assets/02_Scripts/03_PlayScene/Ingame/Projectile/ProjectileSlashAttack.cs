@@ -27,6 +27,7 @@ public class ProjectileSlashAttack : ProjectileBase
     public void SetStats(ProjectileSlashAttackStatArgs statArgs)
     {
         _atk = statArgs.Atk;
+        _isAudioPlayed = false;
     }
 
     /// <summary>
@@ -37,6 +38,18 @@ public class ProjectileSlashAttack : ProjectileBase
         PlaySceneManager.Instance.EffectManager.GetEffect(
             EffectName.FX_Hit.ToString(),
             collision.gameObject.transform.position);
+    }
+
+    /// <summary>
+    /// 오디오 재생
+    /// </summary>
+    protected override void PlayAudio()
+    {
+        if (_isAudioPlayed == false)
+        {
+            AudioManager.Instance.PlaySFX(SFXType.Melee_Hit);
+            _isAudioPlayed = true;
+        }
     }
 
     /// <summary>

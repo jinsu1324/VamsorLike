@@ -78,6 +78,9 @@ public class SkillSelectPopup_Slot : MonoBehaviour
 
         // 스킬선택 팝업 닫기
         _skillSelectPopup.ClosePopup();
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.ButtonClick);
     }
 
     /// <summary>

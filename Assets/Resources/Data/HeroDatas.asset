@@ -18,7 +18,7 @@ MonoBehaviour:
     MaxHp: 500
     Atk: 300
     Speed: 5
-    StartSkill: Meteor
+    StartSkill: SlashAttack
     Desc: "\uC5B4\uB5A4 \uC2DC\uB828\uC5D0\uB3C4 \uAD73\uAC74\uD788 \uBC84\uD2F8
       \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   - ID: Archor

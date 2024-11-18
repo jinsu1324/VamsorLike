@@ -16,5 +16,8 @@ public class EXPItem : ItemBase
         collision.gameObject.GetComponent<HeroObj>().AcquireExp_and_Request(_expAmount);
 
         base.ItemPickUp(collision);
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.GetEXPItem);
     }
 }

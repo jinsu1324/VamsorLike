@@ -75,5 +75,8 @@ public class Skill_SlashAttack : Skill_Base
         
         // 생성한 프로젝타일 스탯 셋팅
         projectile.SetStats(_statArgs);
+
+        // 사운드 재생
+        AudioManager.Instance.PlaySFX(SFXType.Melee_Attack);
     }
 }

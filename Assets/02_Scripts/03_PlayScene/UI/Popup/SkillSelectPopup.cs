@@ -75,6 +75,9 @@ public class SkillSelectPopup : SerializedMonoBehaviour
 
         // 파티클 오브젝트 켜기
         _firstPopParticle.SetActive(true);
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.LevelUp);
     }
 
     /// <summary>

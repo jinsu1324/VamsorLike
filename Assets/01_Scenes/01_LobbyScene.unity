@@ -2959,10 +2959,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 16518eb09583c5b4a9fcc4046fb82fb1, type: 3}
     - {fileID: 8300000, guid: 5c2b9f4c0c717ed48b7325085e3b68a3, type: 3}
     - {fileID: 8300000, guid: 58b5c4d988a6a8646b931affebb48c4a, type: 3}
-    - {fileID: 8300000, guid: b4504f1e5dd27e746be6888598bc8351, type: 3}
-    - {fileID: 8300000, guid: aa9b1c641aeef8646be21e83c57914bc, type: 3}
+    - {fileID: 8300000, guid: dd920baf45da71f47820145f56ec0aa6, type: 3}
+    - {fileID: 8300000, guid: 409dc6989b5455243a1c600b651e4cd8, type: 3}
     - {fileID: 8300000, guid: c7400ce32b303a9428e80d5940e75336, type: 3}
     - {fileID: 8300000, guid: 902b2298eb0b2cd4dbdbb514d6cb58b0, type: 3}
+    - {fileID: 8300000, guid: 4b4f16dbb25d76b4ab037a11dfe4794b, type: 3}
+    - {fileID: 8300000, guid: 840dd574f57d7004a9e230937bcb2e74, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3037,7 +3039,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 17
+      Data: 19
     - Name: 
       Entry: 7
       Data: 
@@ -3239,6 +3241,30 @@ MonoBehaviour:
     - Name: $v
       Entry: 10
       Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 17
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 18
+    - Name: $v
+      Entry: 10
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -4286,8 +4312,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1194069547
-  m_SortingLayer: 2
+  m_SortingLayerID: -443588927
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -617387134, guid: a2eb8713d9357394e947a406c78206f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

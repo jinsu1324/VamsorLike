@@ -5,12 +5,18 @@ using UnityEngine;
 
 public abstract class ProjectileBase : ObjectPoolObject
 {   
-    protected float _atk;           // 스킬 공격력
+    protected float _atk;               // 스킬 공격력
+    protected bool _isAudioPlayed;      // 한 프로젝타일에서의 오디오 재생 여부
 
     /// <summary>
     /// 이펙트 재생
     /// </summary>
     protected abstract void PlayEffect(Collider2D collision);
+
+    /// <summary>
+    /// 오디오 재생
+    /// </summary>
+    protected abstract void PlayAudio();
     
     /// <summary>
     /// 적 감지 및 공격
@@ -29,6 +35,9 @@ public abstract class ProjectileBase : ObjectPoolObject
 
             // 이펙트 재생
             PlayEffect(collision);
+
+            // 오디오 재생
+            PlayAudio();
         }
     }
 

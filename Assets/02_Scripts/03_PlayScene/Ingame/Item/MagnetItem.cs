@@ -12,5 +12,8 @@ public class MagnetItem : ItemBase
         collision.gameObject.GetComponent<HeroObj>().AcquireMagnet_and_Request();
         
         base.ItemPickUp(collision);
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.GetMagnetItem);
     }
 }

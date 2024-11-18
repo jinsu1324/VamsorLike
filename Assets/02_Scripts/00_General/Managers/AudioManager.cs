@@ -10,7 +10,7 @@ public enum SFXType
     ButtonClick,
     CampFire,
     GameOver,
-    GetGoldItem,
+    GetEXPItem,
     GetHealItem,
     GetMagnetItem,
     HeroDamaged,
@@ -24,6 +24,8 @@ public enum SFXType
     MagicWideArea_Hit,
     Melee_Attack,
     Melee_Hit,
+    HeroMovement,
+    GetGoldItem
 }
 
 public enum BGMType

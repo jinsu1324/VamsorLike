@@ -14,5 +14,8 @@ public class HealItem : ItemBase
         collision.gameObject.GetComponent<HeroObj>().Heal(_healAmount);
 
         base.ItemPickUp(collision);
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.GetHealItem);
     }
 }

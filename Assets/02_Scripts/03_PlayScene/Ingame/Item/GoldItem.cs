@@ -17,5 +17,8 @@ public class GoldItem : ItemBase
         PlaySceneCanvas.Instance.PlayAchivementUI.MoveIconManager.StartMove_IconToTargetIcon(this.gameObject.transform);
 
         base.ItemPickUp(collision);
+
+        // 오디오 재생
+        AudioManager.Instance.PlaySFX(SFXType.GetGoldItem);
     }
 }

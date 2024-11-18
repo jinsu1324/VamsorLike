@@ -37,6 +37,14 @@ public class ProjectileBoomerang : ProjectileBase
     }
 
     /// <summary>
+    /// 오디오 재생
+    /// </summary>
+    protected override void PlayAudio()
+    {
+        AudioManager.Instance.PlaySFX(SFXType.Magic_Hit);
+    }
+
+    /// <summary>
     /// 부메랑 영웅 주변으로 회전
     /// </summary>
     public void AroundBoomerang(Vector3 centerPos, float angleOffset)

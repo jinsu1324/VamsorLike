@@ -18,6 +18,7 @@ public class ProjectileMeteor : ProjectileBase
     {
         _atk = statArgs.Atk;
         _boxCollider2D.enabled = false;
+        _isAudioPlayed = false;
     }
 
     /// <summary>
@@ -28,6 +29,18 @@ public class ProjectileMeteor : ProjectileBase
         PlaySceneManager.Instance.EffectManager.GetEffect(
             EffectName.FX_Hit.ToString(),
             collision.gameObject.transform.position);
+    }
+
+    /// <summary>
+    /// 오디오 재생
+    /// </summary>
+    protected override void PlayAudio()
+    {
+        if (_isAudioPlayed == false)
+        {
+            AudioManager.Instance.PlaySFX(SFXType.MagicWideArea_Hit);
+            _isAudioPlayed = true;
+        }
     }
 
     /// <summary>
@@ -54,4 +67,6 @@ public class ProjectileMeteor : ProjectileBase
     {
         Destroy(gameObject);
     }
+
+    
 }

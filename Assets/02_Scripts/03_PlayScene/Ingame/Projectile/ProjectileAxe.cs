@@ -81,4 +81,12 @@ public class ProjectileAxe : ProjectileBase
             EffectName.FX_Hit.ToString(),
             collision.gameObject.transform.position);
     }
+
+    /// <summary>
+    /// 오디오 재생
+    /// </summary>
+    protected override void PlayAudio()
+    {
+        AudioManager.Instance.PlaySFX(SFXType.Melee_Hit);
+    }
 }
