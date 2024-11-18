@@ -109,6 +109,9 @@ public class LobbyHeroStatPopup : MonoBehaviour
     /// </summary>
     private IEnumerator GameStart()
     {
+        // 선택완료 효과음 재생
+        AudioManager.Instance.PlaySFX(SFXType.HeroSelectComplete);
+
         // 내가 이번 게임에 선택한 영웅 ID 셋팅
         GameManager.Instance.MyHeroIDSetting(_selectedHeroID);
 

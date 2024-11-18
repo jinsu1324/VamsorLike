@@ -83,6 +83,8 @@ public class PlaySceneManager : SerializedMonoBehaviour
 
         // 페이드 아웃
         PlaySceneCanvas.Instance.FadeInOutController.FadeOut();
+
+        // 오디오 재생
     }
 
     /// <summary>

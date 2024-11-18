@@ -7,15 +7,17 @@ using UnityEngine.Audio;
 
 public enum SFXType
 {
-    Select
+    CampFire,
+    HeroSelect_FireSpell,
+    HeroSelect_SlashSword,
+    HeroSelectComplete,
+    Hit
 }
 
 public enum BGMType
 {
-    Lobby_CampFire,
-    Lobby_Bird,
-    Lobby_BaseMusic,
-    Play_BaseMusic
+    LobbyScene,
+    PlayScnene
 }
 
 public class AudioManager : SerializedMonoBehaviour
@@ -59,11 +61,6 @@ public class AudioManager : SerializedMonoBehaviour
     [SerializeField]
     private AudioSource _bgmSource;                                             // BGM 오디오소스
     [SerializeField]
-    private Transform _bgmPoolParent;                                           // BGM 풀 부모
-    [SerializeField]
-    private int _maxBGMCount = 2;                                               // BGM 오디오소스 풀링할 갯수
-    private Queue<AudioSource> _bgmSourcePool = new Queue<AudioSource>();       // SFX 오디오소스 풀
-    [SerializeField]
     private Dictionary<BGMType, AudioClip> _bgmClipDict = new Dictionary<BGMType, AudioClip>(); // BGM 오디오 클립들
 
     [Header("SFX")]
@@ -84,7 +81,6 @@ public class AudioManager : SerializedMonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        FillBGMPool();
         FillSFXPool();
     }
 
@@ -98,45 +94,12 @@ public class AudioManager : SerializedMonoBehaviour
         if (_bgmClipDict.ContainsKey(bgmType) == false) 
             return;
 
-        // 풀 카운트가 1개라도 차있으면 그 풀에서 빼서 쓰고, 아니면 풀을 채우고 사용
-        AudioSource bgmSource = _bgmSourcePool.Count > 0 ? _bgmSourcePool.Dequeue() : FillBGMPool();
-        bgmSource.outputAudioMixerGroup = _bgmMixerGroup;
-        bgmSource.clip = _bgmClipDict[bgmType];
-        bgmSource.loop = true;
-        bgmSource.gameObject.SetActive(true);
-        bgmSource.Play();
-
+        // 오디오 소스에 클립 찾아넣고 플레이
+        _bgmSource.outputAudioMixerGroup = _bgmMixerGroup;
+        _bgmSource.clip = _bgmClipDict[bgmType];
+        _bgmSource.loop = true;
+        _bgmSource.Play();
     }
-
-    /// <summary>
-    /// BGM 오브젝트 풀 채우기
-    /// </summary>
-    private AudioSource FillBGMPool()
-    {
-        for (int i = 0; i < _maxBGMCount; i++)
-        {
-            AudioSource bgmSource = Instantiate(_bgmSource, _bgmPoolParent);
-            bgmSource.outputAudioMixerGroup = _bgmMixerGroup;
-            bgmSource.gameObject.SetActive(false);
-            _bgmSourcePool.Enqueue(bgmSource);
-        }
-
-        return _bgmSourcePool.Dequeue();
-    }
-
-    /// <summary>
-    /// 오디오 소스 다시 풀에 반환
-    /// </summary>
-    private IEnumerator ReturnBGMAsync(AudioSource audioSource)
-    {
-        // 재생한 오디오 클립 길이 만큼 대기
-        yield return new WaitForSeconds(audioSource.clip.length);
-
-        // 풀로 다시 반환
-        audioSource.gameObject.SetActive(false);
-        _bgmSourcePool.Enqueue(audioSource);
-    }
-
 
     /// <summary>
     /// 0~1의 매개변수값을 데시벨로 변환 후 bgm에 적용
@@ -168,11 +131,11 @@ public class AudioManager : SerializedMonoBehaviour
         sfxSource.clip = _sfxClipDict[sfxType];
         sfxSource.gameObject.SetActive(true);
         sfxSource.Play();
-
+       
         // 오디오 다 사용하고나면 반환하는 코루틴도 시작
         StartCoroutine(ReturnSFXAsync(sfxSource));
     }
-
+        
     /// <summary>
     /// SFX 오브젝트 풀 채우기
     /// </summary>

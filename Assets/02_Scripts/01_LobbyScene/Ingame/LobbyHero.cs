@@ -9,13 +9,13 @@ using UnityEngine.EventSystems;
 public class LobbyHero : SerializedMonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private HeroID _heroID;                          // 이 영웅 ID
-    public HeroData BaseHeroData { get; set; }      // 영웅 정보 데이터
+    protected HeroID _heroID;                         // 이 영웅 ID
+    public HeroData BaseHeroData { get; set; }        // 영웅 정보 데이터
 
-    private LobbyVirtualCamera _virtualCamera;      // 버추얼 카메라 받아올 변수
-    private Material _outlineMaterial;              // 아웃라인 마테리얼 담을 변수 
-    private Animator _animator;                     // 애니메이터 담을 변수
-    private Transform _cameraSnapPos;               // 카메라 스냅할 위치
+    protected LobbyVirtualCamera _virtualCamera;      // 버추얼 카메라 받아올 변수
+    protected Material _outlineMaterial;              // 아웃라인 마테리얼 담을 변수 
+    protected Animator _animator;                     // 애니메이터 담을 변수
+    protected Transform _cameraSnapPos;               // 카메라 스냅할 위치
 
     /// <summary>
     /// Start
@@ -67,7 +67,7 @@ public class LobbyHero : SerializedMonoBehaviour, IPointerClickHandler, IPointer
     /// <summary>
     /// 아웃라인 마테리얼 ON/OFF (value가 1이면 ON / 0 이면 OFF)
     /// </summary>
-    private void OutlineMaterialONOFF(string paramName, float value)
+    public void OutlineMaterialONOFF(string paramName, float value)
     {
         _outlineMaterial.SetFloat(paramName, value);
     }

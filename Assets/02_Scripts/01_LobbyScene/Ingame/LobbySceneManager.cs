@@ -44,16 +44,11 @@ public class LobbySceneManager : MonoBehaviour
     private void Start()
     {
         _virtualCamera = FindObjectOfType<LobbyVirtualCamera>();
-        PlayLobbyBGM();
-    }
 
-    /// <summary>
-    /// 로비 BGM 재생
-    /// </summary>
-    private void PlayLobbyBGM()
-    {
-        AudioManager.Instance.PlayBGM(BGMType.Lobby_BaseMusic);
-        AudioManager.Instance.PlayBGM(BGMType.Lobby_CampFire);
+        AudioManager audioManager = AudioManager.Instance;
+        audioManager.PlayBGM(BGMType.LobbyScene);
+        audioManager.SetBGMVolume(0.5f);
+        audioManager.PlaySFX(SFXType.CampFire);
     }
 
     /// <summary>
@@ -90,8 +85,5 @@ public class LobbySceneManager : MonoBehaviour
 
         // 타이틀 UI 끄기
         LobbySceneCanvas.Instance.LobbyTitleUI.PopupOFF();
-
-        // 사운드 실행
-        AudioManager.Instance.PlaySFX(SFXType.Select);
     }
 }
