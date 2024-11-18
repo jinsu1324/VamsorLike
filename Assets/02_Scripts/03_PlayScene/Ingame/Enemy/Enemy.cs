@@ -135,7 +135,7 @@ public abstract class Enemy : ObjectPoolObject
         Vector2 targetPos = PlaySceneManager.Instance.MyHeroObj.transform.position;
 
         // 현재 위치에서 타겟위치로 이동
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, _speed * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, _speed * Time.deltaTime);
 
         // 타겟보다 나 자신(몬스터)가 오른쪽에 있으면
         if (targetPos.x < transform.position.x)

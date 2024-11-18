@@ -43,6 +43,8 @@ public class LobbySceneManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        Application.targetFrameRate = 60;
+
         _virtualCamera = FindObjectOfType<LobbyVirtualCamera>();
 
         AudioManager.Instance.PlayBGM(BGMType.LobbyScene);
