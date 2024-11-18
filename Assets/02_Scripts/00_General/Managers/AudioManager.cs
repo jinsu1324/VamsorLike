@@ -7,11 +7,23 @@ using UnityEngine.Audio;
 
 public enum SFXType
 {
+    ButtonClick,
     CampFire,
+    GameOver,
+    GetGoldItem,
+    GetHealItem,
+    GetMagnetItem,
+    HeroDamaged,
     HeroSelect_FireSpell,
     HeroSelect_SlashSword,
     HeroSelectComplete,
-    Hit
+    Hit,
+    LevelUp,
+    Magic_Attack,
+    Magic_Hit,
+    MagicWideArea_Hit,
+    Melee_Attack,
+    Melee_Hit,
 }
 
 public enum BGMType
@@ -107,11 +119,82 @@ public class AudioManager : SerializedMonoBehaviour
     /// <param name="volume"> volume은 0~1의 값만 지정 </param>
     public void SetBGMVolume(float volume)
     {
-        // 데시벨로 변환 (공식임) 
-        float db = Mathf.Log10(volume) * 20; 
+        float db;
+
+        if (volume <= 0)
+        {
+            // 음소거 처리 (AudioMixer의 최소값 (무음))
+            db = -80f;
+        }
+        else
+        {
+            // 데시벨로 변환 (공식임) 
+            db = Mathf.Log10(volume) * 20;
+        }
 
         // BGM그룹으로 설정된 오디오들 볼륨을 조절
         _baseMixer.SetFloat("BGMVolume", db);
+    }
+
+    /// <summary>
+    /// BGM 볼륨 점점 줄이기
+    /// </summary>
+    public void StartFadeOutBGM(float duration)
+    {
+        StartCoroutine(FadeOutBGM(duration));
+    }
+
+    /// <summary>
+    /// BGM 볼륨 점점 키우기
+    /// </summary>
+    public void StartFadeInBGM(float duration, float targetVolume)
+    {
+        StartCoroutine(FadeInBGM(duration, targetVolume));
+    }
+
+    /// <summary>
+    /// BGM 볼륨 점점 줄이기
+    /// </summary>
+    private IEnumerator FadeOutBGM(float duration)
+    {
+        float currentTime = 0;
+        float startVolume = 0f;
+
+        // 현재 볼륨 가져오기
+        _baseMixer.GetFloat("BGMVolume", out float currentDB);
+        startVolume = Mathf.Pow(10, currentDB / 20); // 데시벨에서 0~1 범위로 변환
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVolume = Mathf.Lerp(startVolume, 0f, currentTime / duration);
+            SetBGMVolume(newVolume); // 볼륨 적용
+            yield return null;
+        }
+
+        SetBGMVolume(0f); // 최종적으로 0으로 설정
+    }
+
+    /// <summary>
+    /// BGM 볼륨 점점 키우기
+    /// </summary>
+    private IEnumerator FadeInBGM(float duration, float targetVolume)
+    {
+        float currentTime = 0;
+
+        // 현재 볼륨 가져오기
+        _baseMixer.GetFloat("BGMVolume", out float currentDB);
+        float startVolume = Mathf.Pow(10, currentDB / 20); // 데시벨에서 0~1 범위로 변환
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVolume = Mathf.Lerp(startVolume, targetVolume, currentTime / duration);
+            SetBGMVolume(newVolume); // 볼륨 적용
+            yield return null;
+        }
+
+        SetBGMVolume(targetVolume); // 최종적으로 목표 볼륨으로 설정
     }
     #endregion
 
@@ -166,13 +249,39 @@ public class AudioManager : SerializedMonoBehaviour
     }
 
     /// <summary>
+    /// 전체 SFX들 풀로 다시 리턴
+    /// </summary>
+    public void AllReturnSFXPool()
+    {
+        int childCount = _sfxPoolParent.childCount;
+
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            AudioSource child = _sfxPoolParent.GetChild(i).GetComponent<AudioSource>();
+
+            child.gameObject.SetActive(false);
+            _sfxSourcePool.Enqueue(child);
+        }
+    }
+
+    /// <summary>
     /// 0~1의 매개변수값을 데시벨로 변환 후 sfx에 적용
     /// </summary>
     /// <param name="volume"> volume은 0~1의 값만 지정 </param>
-    public void SetSFXVolume(AudioSource audioSource, float volume)
+    public void SetSFXVolume(float volume)
     {
-        // 데시벨로 변환 (공식임) 
-        float db = Mathf.Log10(volume) * 20;
+        float db;
+
+        if (volume <= 0)
+        {
+            // 음소거 처리 (AudioMixer의 최소값 (무음))
+            db = -80f;
+        }
+        else
+        {
+            // 데시벨로 변환 (공식임) 
+            db = Mathf.Log10(volume) * 20;
+        }
 
         // SFX그룹으로 설정된 오디오들 볼륨을 조절
         _baseMixer.SetFloat("SFXVolume", db);

@@ -45,10 +45,10 @@ public class LobbySceneManager : MonoBehaviour
     {
         _virtualCamera = FindObjectOfType<LobbyVirtualCamera>();
 
-        AudioManager audioManager = AudioManager.Instance;
-        audioManager.PlayBGM(BGMType.LobbyScene);
-        audioManager.SetBGMVolume(0.5f);
-        audioManager.PlaySFX(SFXType.CampFire);
+        AudioManager.Instance.PlayBGM(BGMType.LobbyScene);
+        AudioManager.Instance.SetBGMVolume(0.5f);
+        AudioManager.Instance.PlaySFX(SFXType.CampFire);
+        AudioManager.Instance.SetSFXVolume(1f);
     }
 
     /// <summary>

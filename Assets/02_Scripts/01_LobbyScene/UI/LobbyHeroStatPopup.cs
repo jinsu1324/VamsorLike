@@ -112,6 +112,9 @@ public class LobbyHeroStatPopup : MonoBehaviour
         // 선택완료 효과음 재생
         AudioManager.Instance.PlaySFX(SFXType.HeroSelectComplete);
 
+        // BGM 점점 줄이기
+        AudioManager.Instance.StartFadeOutBGM(1.0f);
+
         // 내가 이번 게임에 선택한 영웅 ID 셋팅
         GameManager.Instance.MyHeroIDSetting(_selectedHeroID);
 

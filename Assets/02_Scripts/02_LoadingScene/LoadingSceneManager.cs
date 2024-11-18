@@ -23,6 +23,10 @@ public class LoadingSceneManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        AudioManager.Instance.SetBGMVolume(0f);
+        AudioManager.Instance.SetSFXVolume(0f);
+        AudioManager.Instance.AllReturnSFXPool();
+
         StartCoroutine(LoadSceneWithProgress());
     }
 

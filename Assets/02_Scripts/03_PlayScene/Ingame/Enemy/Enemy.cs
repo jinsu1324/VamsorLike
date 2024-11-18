@@ -104,7 +104,7 @@ public abstract class Enemy : ObjectPoolObject
 
         // Ω∫«¡∂Û¿Ã∆Æ ±Ù∫˝¿Ã±‚
         BlinkSprite blinkSprite = new BlinkSprite();
-        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));        
+        StartCoroutine(blinkSprite.Blink(_spriteRenderer, 0.1f));
     }
 
     /// <summary>
