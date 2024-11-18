@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Skill_Meteor : Skill_Base
 {
-    private ProjectileMeteorArgs _statArgs;             // 프로젝타일 메테오에 필요한 스탯들
-    private int _projectileCount;                       // 프로젝타일 갯수
-    private float _delay;                               // 딜레이
-    private float _range;                               // 범위
-    private ProjectileMeteor _projectile;               // 프로젝타일
+    private ProjectileMeteorArgs _statArgs = new ProjectileMeteorArgs();    // 프로젝타일 메테오에 필요한 스탯들
+    private int _projectileCount;                                           // 프로젝타일 갯수
+    private float _delay;                                                   // 딜레이
+    private float _range;                                                   // 범위
+    private ProjectileMeteor _projectile;                                   // 프로젝타일
 
     /// <summary>
     /// 생성자
@@ -84,6 +84,9 @@ public class Skill_Meteor : Skill_Base
     {
         List<Enemy> targetEnemyList = PlaySceneManager.Instance.EnemyManager.Get_RandomEnemys_In_Distance(
             skillAttackArgs.StartSkillPos, _range, _projectileCount);
+        
+        if (targetEnemyList.Count == 0)
+            yield break;
 
         for (int i = 0; i < targetEnemyList.Count; i++)
         {

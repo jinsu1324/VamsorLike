@@ -111,48 +111,49 @@ MonoBehaviour:
   - ID: Sniper
     Level: 1
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
-    AtkPercentage: 2
-    Desc: "\uAC00\uAE4C\uC6B4 \uC801 1\uB9C8\uB9AC\uB97C <color #FFBD43>200% \uB370\uBBF8\uC9C0</color>\uB85C
-      \uACF5\uACA9\uD569\uB2C8\uB2E4."
-    Delay: 1
-    Range: 4
-    ProjectileSpeed: 1
+    AtkPercentage: 0.5
+    Desc: "\uC0AC\uAC70\uB9AC \uB0B4 \uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801 \uBC29\uD5A5\uC73C\uB85C
+      <color #FFBD43>200% \uB370\uBBF8\uC9C0</color>\uC758 \uAD00\uD1B5 \uB9C8\uBC95\uBBF8\uC0AC\uC77C\uC744
+      \uB0A0\uB9BD\uB2C8\uB2E4."
+    Delay: 2
+    Range: 7
+    ProjectileSpeed: 5
     ProjectileCount: 0
   - ID: Sniper
     Level: 2
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
-    AtkPercentage: 3
+    AtkPercentage: 0.75
     Desc: "\uACF5\uACA9\uB825\uC774 <color #FFBD43>50%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    Delay: 1
-    Range: 4
-    ProjectileSpeed: 1
+    Delay: 2
+    Range: 7
+    ProjectileSpeed: 5
     ProjectileCount: 0
   - ID: Sniper
     Level: 3
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
-    AtkPercentage: 3
+    AtkPercentage: 0.75
     Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>25%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
-    Delay: 0.75
-    Range: 4
-    ProjectileSpeed: 1
+    Delay: 1.5
+    Range: 7
+    ProjectileSpeed: 5
     ProjectileCount: 0
   - ID: Sniper
     Level: 4
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
-    AtkPercentage: 3
-    Desc: "\uC0AC\uAC70\uB9AC\uAC00 <color #FFBD43>25%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    Delay: 0.75
-    Range: 5
-    ProjectileSpeed: 1
+    AtkPercentage: 0.75
+    Desc: "\uC0AC\uAC70\uB9AC\uAC00 <color #FFBD43>15%</color> \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    Delay: 1.5
+    Range: 8
+    ProjectileSpeed: 5
     ProjectileCount: 0
   - ID: Sniper
     Level: 5
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
-    AtkPercentage: 3
+    AtkPercentage: 0.75
     Desc: "\uACF5\uACA9\uC18D\uB3C4\uAC00 <color #FFBD43>33%</color> \uBE68\uB77C\uC9D1\uB2C8\uB2E4."
-    Delay: 0.5
-    Range: 5
-    ProjectileSpeed: 1
+    Delay: 1
+    Range: 8
+    ProjectileSpeed: 5
     ProjectileCount: 0
   - ID: Meteor
     Level: 1

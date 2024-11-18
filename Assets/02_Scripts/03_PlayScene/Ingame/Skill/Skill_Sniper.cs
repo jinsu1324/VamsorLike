@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Skill_Sniper : Skill_Base
 {
-    private float _skillAtk;                // 스킬 공격력
-    private float _projectileSpeed;         // 프로젝타일 스피드
-    private float _range;                   // 범위
-    private float _delay;                   // 딜레이
-    private ProjectileBase _projectile;     // 스킬 프로젝타일
+    private ProjectileSniperArgs _statArgs = new ProjectileSniperArgs();    // 프로젝타일 스나이퍼에 필요한 스탯들
+    private float _range;                                                   // 투사체 인지 범위
+    private float _delay;                                                   // 딜레이
+    private ProjectileSniper _projectile;                                   // 스킬 프로젝타일
 
     /// <summary>
     /// 생성자
@@ -20,6 +21,7 @@ public class Skill_Sniper : Skill_Base
         ID = (SkillID)Enum.Parse(typeof(SkillID), skillData.ID);
         CurrentLevel = 1;
         MaxLevel = PlaySceneManager.Instance.SkillManager.GetSkillMaxLevel(ID);
+        _projectile = ResourceManager.Instance.SkillProjectileDict[ID] as ProjectileSniper;
 
         // 스킬 스탯 셋팅
         StatSetting(skillData);
@@ -30,11 +32,10 @@ public class Skill_Sniper : Skill_Base
     /// </summary>
     private void StatSetting(SkillData skillData)
     {
-        _skillAtk = skillData.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
-        _projectileSpeed = skillData.ProjectileSpeed;
+        _statArgs.Atk = skillData.AtkPercentage * PlaySceneManager.Instance.MyHeroObj.Atk;
+        _statArgs.Speed = skillData.ProjectileSpeed;
         _range = skillData.Range;
         _delay = skillData.Delay;
-        _projectile = ResourceManager.Instance.SkillProjectileDict[ID];
     }
 
     /// <summary>
@@ -68,24 +69,31 @@ public class Skill_Sniper : Skill_Base
         }
     }
 
-
     /// <summary>
     /// 스킬 공격
     /// </summary>
     public override void UseSkill(SkillAttackArgs skillAttackArgs)
     {
-        //// 사거리 내 가장 가까운 몬스터 찾기
-        //Enemy closestTargetMonster =
-        //    PlaySceneManager.Instance.EnemyManager.Get_ClosestEnemy_In_Distance(skillAttackArgs.StartSkillPos, _range);
+        // 사거리 내 가장 가까운 몬스터 1마리 찾기
+        List<Enemy> targetEnemyList =
+            PlaySceneManager.Instance.EnemyManager.Get_ClosestEnemys_In_Distance(
+                skillAttackArgs.StartSkillPos, 
+                _range, 
+                1);
 
-        //// 프로젝타일 생성
-        //ProjectileSniper _spawnedProjectile =
-        //    GameObject.Instantiate(_projectile, skillAttackArgs.StartSkillPos, Quaternion.identity) as ProjectileSniper;
+        if (targetEnemyList.Count == 0)
+            return;
 
-        //// 공격력 건네줌
-        //_spawnedProjectile.SetAtk(_skillAtk);
+        // 투사체 날릴 방향 설정
+        Vector3 dir = targetEnemyList[0].transform.position - skillAttackArgs.StartSkillPos;
+        dir.Normalize();
+        _statArgs.Dir = dir;
 
-        //// 프로젝타일 타겟몬스터로 이동
-        //_spawnedProjectile.SettingProjectileInfo(closestTargetMonster);
+        // 프로젝타일 생성
+        ProjectileSniper projectile = GameObject.Instantiate(
+            _projectile, skillAttackArgs.StartSkillPos, Quaternion.identity);
+
+        // 프로젝타일 스탯 셋팅
+        projectile.SetStats(_statArgs);
     }
 }

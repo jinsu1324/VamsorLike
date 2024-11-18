@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Skill_Axe : Skill_Base
 {
-    private ProjectileAxeArgs _statArgs;                                        // 프로젝타일 엑스에 필요한 스탯들
+    private ProjectileAxeArgs _statArgs = new ProjectileAxeArgs();              // 프로젝타일 엑스에 필요한 스탯들
     private int _projectileCount;                                               // 프로젝타일 갯수
     private float _delay;                                                       // 딜레이
     private ProjectileAxe _projectile;                                          // 프로젝타일
