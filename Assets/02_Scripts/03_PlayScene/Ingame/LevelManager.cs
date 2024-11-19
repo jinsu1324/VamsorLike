@@ -55,6 +55,7 @@ public class LevelManager : SerializedMonoBehaviour
         {
             MyHeroLvExp.Level++;
             MyHeroLvExp.EXP -= currentLevelData.MaxExp;
+            PlaySceneCanvas.Instance.EXPBarUI.Update_EXPBarInfos();
             _levelUpQueue.Enqueue(MyHeroLvExp.Level);
 
             currentLevelData = DataManager.Instance.LevelDatas.GetDataById(MyHeroLvExp.Level.ToString());

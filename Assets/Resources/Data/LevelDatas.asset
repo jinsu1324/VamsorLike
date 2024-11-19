@@ -18,118 +18,118 @@ MonoBehaviour:
     MaxExp: 100
   - ID: 2
     Level: 2
-    MaxExp: 110
+    MaxExp: 150
   - ID: 3
     Level: 3
-    MaxExp: 120
+    MaxExp: 170
   - ID: 4
     Level: 4
-    MaxExp: 130
+    MaxExp: 190
   - ID: 5
     Level: 5
-    MaxExp: 140
+    MaxExp: 210
   - ID: 6
     Level: 6
-    MaxExp: 150
+    MaxExp: 230
   - ID: 7
     Level: 7
-    MaxExp: 160
+    MaxExp: 250
   - ID: 8
     Level: 8
-    MaxExp: 170
+    MaxExp: 270
   - ID: 9
     Level: 9
-    MaxExp: 180
+    MaxExp: 290
   - ID: 10
     Level: 10
-    MaxExp: 190
+    MaxExp: 310
   - ID: 11
     Level: 11
-    MaxExp: 200
+    MaxExp: 330
   - ID: 12
     Level: 12
-    MaxExp: 210
+    MaxExp: 350
   - ID: 13
     Level: 13
-    MaxExp: 220
+    MaxExp: 370
   - ID: 14
     Level: 14
-    MaxExp: 230
+    MaxExp: 390
   - ID: 15
     Level: 15
-    MaxExp: 240
+    MaxExp: 410
   - ID: 16
     Level: 16
-    MaxExp: 250
+    MaxExp: 430
   - ID: 17
     Level: 17
-    MaxExp: 260
+    MaxExp: 450
   - ID: 18
     Level: 18
-    MaxExp: 270
+    MaxExp: 470
   - ID: 19
     Level: 19
-    MaxExp: 280
+    MaxExp: 490
   - ID: 20
     Level: 20
-    MaxExp: 290
+    MaxExp: 510
   - ID: 21
     Level: 21
-    MaxExp: 300
+    MaxExp: 530
   - ID: 22
     Level: 22
-    MaxExp: 310
+    MaxExp: 550
   - ID: 23
     Level: 23
-    MaxExp: 320
+    MaxExp: 570
   - ID: 24
     Level: 24
-    MaxExp: 330
+    MaxExp: 590
   - ID: 25
     Level: 25
-    MaxExp: 340
+    MaxExp: 610
   - ID: 26
     Level: 26
-    MaxExp: 350
+    MaxExp: 630
   - ID: 27
     Level: 27
-    MaxExp: 360
+    MaxExp: 650
   - ID: 28
     Level: 28
-    MaxExp: 370
+    MaxExp: 670
   - ID: 29
     Level: 29
-    MaxExp: 380
+    MaxExp: 690
   - ID: 30
     Level: 30
-    MaxExp: 390
+    MaxExp: 710
   - ID: 31
     Level: 31
-    MaxExp: 400
+    MaxExp: 730
   - ID: 32
     Level: 32
-    MaxExp: 410
+    MaxExp: 750
   - ID: 33
     Level: 33
-    MaxExp: 420
+    MaxExp: 770
   - ID: 34
     Level: 34
-    MaxExp: 430
+    MaxExp: 790
   - ID: 35
     Level: 35
-    MaxExp: 440
+    MaxExp: 810
   - ID: 36
     Level: 36
-    MaxExp: 450
+    MaxExp: 830
   - ID: 37
     Level: 37
-    MaxExp: 460
+    MaxExp: 850
   - ID: 38
     Level: 38
-    MaxExp: 470
+    MaxExp: 870
   - ID: 39
     Level: 39
-    MaxExp: 480
+    MaxExp: 890
   - ID: 40
     Level: 40
-    MaxExp: 490
+    MaxExp: 910
