@@ -11,8 +11,6 @@ public class PlayAchivementUI : SerializedMonoBehaviour
     [SerializeField]
     public MoveIconManager MoveIconManager { get; set; }    // 아이콘 움직이게 할 매니저
 
-  
-
     [SerializeField]
     private TextMeshProUGUI _killCountText;         // 킬 수 텍스트
     [SerializeField]
@@ -38,6 +36,12 @@ public class PlayAchivementUI : SerializedMonoBehaviour
     {
         KillCount++;
         UIRefresh();
+
+        if (KillCount % 100 == 0)
+        {
+            PlaySceneCanvas.Instance.ToastMessageUI.Initialize(KillCount);
+            AddGold(10);
+        }
     }
 
     /// <summary>

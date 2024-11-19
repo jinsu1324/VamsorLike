@@ -154,7 +154,7 @@ public class HeroObj : SerializedMonoBehaviour
     {
         Hp -= atk;
 
-        Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
+        //Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
 
         // 오디오 재생
@@ -221,7 +221,7 @@ public class HeroObj : SerializedMonoBehaviour
         if (Hp >= _baseHeroData.MaxHp)
             Hp = _baseHeroData.MaxHp;
 
-        Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
+        //Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
 
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
     }

@@ -48,6 +48,9 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     [SerializeField]
     public PausePopup PausePopup { get; set; }                // 일시정지 팝업
 
+    [SerializeField]
+    public RewardBoxPopup RewardBoxPopup { get; set; }          // 보상 상자 팝업
+
     [Title("UIs")]    
     [SerializeField]
     public PlayTimeUI PlayTimeUI { get; set; }                  // 플레이 타임 UI
@@ -65,7 +68,8 @@ public class PlaySceneCanvas : SerializedMonoBehaviour
     public BossHPBarUI BossHPBarUI { get; set; }                // 보스 HP 바 UI
 
     [SerializeField]
-    public RewardBoxPopup RewardBoxPopup { get; set; }          // 보상 상자 팝업
+    public ToastMessageUI ToastMessageUI { get; set; }           // 토스트메시지 UI
+    
 
     [Title("Views")]
     [SerializeField]

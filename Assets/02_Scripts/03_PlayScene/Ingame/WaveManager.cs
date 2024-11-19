@@ -69,7 +69,7 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     private void WaveEvent(WaveData waveData)
     {
-        Debug.Log($"{waveData.ID} 웨이브 : {waveData.WaveTime}");
+        //Debug.Log($"{waveData.ID} 웨이브 : {waveData.WaveTime}");
 
         // 몬스터 스폰 (해당 웨이브의 몬스터 종류만큼 반복)
         for (int i = 0; i < waveData.MonsterType.Length; i++)

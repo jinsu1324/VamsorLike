@@ -14,56 +14,302 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DataList:
   - ID: 1
-    WaveTime: 00:00:02
+    WaveTime: 00:00:01
     MonsterType:
     - Bat1
     - ' Bat2'
-    TotalSpawnCount: 0a0000000a000000
+    TotalSpawnCount: 1900000019000000
     SpawnInterval:
-    - 0.5
-    - 0.5
+    - 1
+    - 1
     BossType: None
   - ID: 2
-    WaveTime: 00:00:10
+    WaveTime: 00:00:30
+    MonsterType:
+    - Bat2
+    - ' Viper'
+    TotalSpawnCount: 1900000019000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 3
+    WaveTime: 00:01:00
     MonsterType:
     - Viper
-    TotalSpawnCount: 0a000000
+    - ' Spider1'
+    TotalSpawnCount: 1e0000001e000000
     SpawnInterval:
-    - 0.5
+    - 1
+    - 1
     BossType: Ogre
-  - ID: 3
-    WaveTime: 00:00:15
+  - ID: 4
+    WaveTime: 00:01:30
+    MonsterType:
+    - Bat1
+    - ' Skeleton1'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 5
+    WaveTime: 00:02:00
     MonsterType:
     - Spider1
     - ' Spider2'
-    TotalSpawnCount: 0a0000000a000000
+    TotalSpawnCount: 1900000019000000
     SpawnInterval:
-    - 0.5
-    - 0.5
+    - 1
+    - 1
     BossType: None
-  - ID: 4
-    WaveTime: 00:00:20
+  - ID: 6
+    WaveTime: 00:02:30
+    MonsterType:
+    - Bat1
+    - ' Skeleton1'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 7
+    WaveTime: 00:03:00
+    MonsterType:
+    - Viper
+    - ' OrcAssassin'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 8
+    WaveTime: 00:03:30
     MonsterType:
     - Skeleton1
     - ' Skeleton2'
-    TotalSpawnCount: 0a0000000a000000
+    TotalSpawnCount: 1e0000001e000000
     SpawnInterval:
-    - 0.5
-    - 0.5
+    - 1
+    - 1
     BossType: None
-  - ID: 5
-    WaveTime: 00:00:25
+  - ID: 9
+    WaveTime: 00:04:00
+    MonsterType:
+    - Bat2
+    - ' Skeleton2'
+    TotalSpawnCount: 190000001b000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 10
+    WaveTime: 00:04:30
     MonsterType:
     - OrcAssassin
-    TotalSpawnCount: 0a000000
+    - ' MutantRat'
+    TotalSpawnCount: 190000001b000000
     SpawnInterval:
-    - 0.5
+    - 1
+    - 1
     BossType: None
-  - ID: 6
-    WaveTime: 00:00:30
+  - ID: 11
+    WaveTime: 00:05:00
     MonsterType:
-    - MutantRat
-    TotalSpawnCount: 0a000000
+    - Skeleton1
+    - ' Skeleton2'
+    TotalSpawnCount: 1e0000001e000000
     SpawnInterval:
-    - 0.5
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 12
+    WaveTime: 00:05:30
+    MonsterType:
+    - Viper
+    - ' OrcAssassin'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 13
+    WaveTime: 00:06:00
+    MonsterType:
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 190000001c000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 14
+    WaveTime: 00:06:30
+    MonsterType:
+    - Viper
+    - ' Spider1'
+    TotalSpawnCount: 190000001c000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 15
+    WaveTime: 00:07:00
+    MonsterType:
+    - OrcAssassin
+    - ' MutantRat'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 16
+    WaveTime: 00:07:30
+    MonsterType:
+    - Viper
+    - ' Spider1'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 17
+    WaveTime: 00:08:00
+    MonsterType:
+    - Viper
+    - ' Spider2'
+    TotalSpawnCount: 190000001d000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 18
+    WaveTime: 00:08:30
+    MonsterType:
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 190000001d000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 19
+    WaveTime: 00:09:00
+    MonsterType:
+    - Bat1
+    - ' Skeleton1'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 20
+    WaveTime: 00:09:30
+    MonsterType:
+    - Bat2
+    - ' Skeleton2'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 21
+    WaveTime: 00:10:00
+    MonsterType:
+    - OrcAssassin
+    - ' MutantRat'
+    TotalSpawnCount: 190000001c000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 22
+    WaveTime: 00:10:30
+    MonsterType:
+    - Skeleton1
+    - ' Skeleton2'
+    TotalSpawnCount: 190000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 23
+    WaveTime: 00:11:00
+    MonsterType:
+    - Viper
+    - ' OrcAssassin'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 24
+    WaveTime: 00:11:30
+    MonsterType:
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 25
+    WaveTime: 00:12:00
+    MonsterType:
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 26
+    WaveTime: 00:12:30
+    MonsterType:
+    - Viper
+    - ' Spider1'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 27
+    WaveTime: 00:13:00
+    MonsterType:
+    - OrcAssassin
+    - ' MutantRat'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: Ogre
+  - ID: 28
+    WaveTime: 00:13:30
+    MonsterType:
+    - Spider1
+    - ' Spider2'
+    TotalSpawnCount: 190000001c000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 29
+    WaveTime: 00:14:00
+    MonsterType:
+    - Viper
+    - ' OrcAssassin'
+    TotalSpawnCount: 190000001d000000
+    SpawnInterval:
+    - 1
+    - 1
+    BossType: None
+  - ID: 30
+    WaveTime: 00:14:30
+    MonsterType:
+    - Skeleton1
+    - ' Skeleton2'
+    TotalSpawnCount: 1e0000001e000000
+    SpawnInterval:
+    - 1
+    - 1
     BossType: None

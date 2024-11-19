@@ -63,9 +63,8 @@ MonoBehaviour:
     Level: 1
     Name: "\uC601\uD63C \uD68C\uC624\uB9AC"
     AtkPercentage: 0.2
-    Desc: "\uC601\uC6C5 \uC8FC\uBCC0\uC744 \uD68C\uC804\uD558\uBA74\uC11C <color
-      #FFBD43>20% \uB370\uBBF8\uC9C0</color>\uB85C \uACF5\uACA9\uD558\uB294 \uC601\uD63C\uC744
-      \uC18C\uD658\uD569\uB2C8\uB2E4."
+    Desc: "\uD68C\uC804\uD558\uBA74\uC11C <color #FFBD43>20% \uB370\uBBF8\uC9C0</color>\uB85C
+      \uACF5\uACA9\uD558\uB294 \uC601\uD63C\uC744 \uC18C\uD658\uD569\uB2C8\uB2E4."
     Delay: 0
     Range: 3
     ProjectileSpeed: 200
@@ -112,8 +111,7 @@ MonoBehaviour:
     Level: 1
     Name: "\uB9C8\uBC95 \uBBF8\uC0AC\uC77C"
     AtkPercentage: 0.5
-    Desc: "\uC0AC\uAC70\uB9AC \uB0B4 \uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801 \uBC29\uD5A5\uC73C\uB85C
-      <color #FFBD43>200% \uB370\uBBF8\uC9C0</color>\uC758 \uAD00\uD1B5 \uB9C8\uBC95\uBBF8\uC0AC\uC77C\uC744
+    Desc: "<color #FFBD43>200% \uB370\uBBF8\uC9C0</color>\uC758 \uAD00\uD1B5 \uB9C8\uBC95\uBBF8\uC0AC\uC77C\uC744
       \uB0A0\uB9BD\uB2C8\uB2E4."
     Delay: 2
     Range: 7
@@ -159,8 +157,8 @@ MonoBehaviour:
     Level: 1
     Name: "\uBA54\uD14C\uC624"
     AtkPercentage: 1
-    Desc: "\uADFC\uCC98 \uBB34\uC791\uC704 \uC704\uCE58\uC5D0 <color #FFBD43>100%
-      \uB370\uBBF8\uC9C0</color>\uC758 \uBA54\uD14C\uC624\uB97C 2\uAC1C \uB5A8\uC5B4\uB728\uB9BD\uB2C8\uB2E4. "
+    Desc: "\uADFC\uCC98\uC5D0 <color #FFBD43>100% \uB370\uBBF8\uC9C0</color>\uC758
+      \uBA54\uD14C\uC624\uB97C 2\uAC1C \uB5A8\uC5B4\uB728\uB9BD\uB2C8\uB2E4. "
     Delay: 2
     Range: 6
     ProjectileSpeed: 0

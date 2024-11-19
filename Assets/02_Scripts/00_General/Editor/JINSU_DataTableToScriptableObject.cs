@@ -32,14 +32,14 @@ public class JINSU_DataTableToScriptableObject : OdinEditorWindow
 
     // LevelData
     // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_LevelData = "LevelData!A1:C13";
+    private readonly string _range_LevelData = "LevelData!A1:C42";
     // 데이터를 저장할 경로와 이름
     private readonly string _fileName_LevelData = "LevelDatas";
 
 
     // WaveData
     // 데이터를 가져올 시트 이름과 범위 (예: "Sheet1!A1:G7").
-    private readonly string _range_WaveData = "WaveData!A1:F8";
+    private readonly string _range_WaveData = "WaveData!A1:F32";
     // 데이터를 저장할 경로와 이름
     private readonly string _fileName_WaveData = "WaveDatas";
 

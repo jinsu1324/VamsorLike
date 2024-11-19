@@ -206,7 +206,7 @@ public class SkillManager : SerializedMonoBehaviour
     /// </summary>
     public void ResetRemainSkillIDList()
     {
-        Debug.Log("전체 SkillID 리스트 리셋");
+        //Debug.Log("전체 SkillID 리스트 리셋");
 
         _remainSkillIDList = new List<SkillID>();
         
