@@ -24,5 +24,5 @@ MonoBehaviour:
     SkillDuration: 3
     SkillRangeMin: 5
     SkillRangeMax: 10
-    SkillCount: 2
+    SkillCount: 1
     SkillCoolTime: 5

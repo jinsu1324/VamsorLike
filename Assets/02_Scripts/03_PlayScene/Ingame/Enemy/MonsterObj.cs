@@ -31,6 +31,7 @@ public class MonsterObj : Enemy
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
+        _boxCollider2D.enabled = true;
 
         PlaySceneManager.Instance.EnemyManager.AddFieldEnemyList(this);
     }

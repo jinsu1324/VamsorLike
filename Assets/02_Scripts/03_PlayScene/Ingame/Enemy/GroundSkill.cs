@@ -29,6 +29,9 @@ public class GroundSkill : SerializedMonoBehaviour
     [SerializeField]
     public GameObject ChangeCircle { get; set; }
 
+    [SerializeField]
+    private GameObject explosionFX;             
+
     /// <summary>
     /// FixedUpdate
     /// </summary>

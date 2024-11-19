@@ -14,7 +14,7 @@ public class ItemSpawner : SerializedMonoBehaviour
     {   {ItemID.EXP, 100 },
         {ItemID.Gold, 50 },
         {ItemID.Heal, 5 },
-        {ItemID.Magnet, 5 },
+        {ItemID.Magnet, 1 },
     };
 
     // 총 가중치 계산을 위한 변수

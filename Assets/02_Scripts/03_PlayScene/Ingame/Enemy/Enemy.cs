@@ -47,6 +47,9 @@ public abstract class Enemy : ObjectPoolObject
         // 필드 적 목록에서 제거
         PlaySceneManager.Instance.EnemyManager.RemoveFieldEnemyList(this);
 
+        // 콜라이더 끄기
+        _boxCollider2D.enabled = false;
+
     }
 
     /// <summary>
