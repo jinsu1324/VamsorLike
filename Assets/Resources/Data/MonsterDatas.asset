@@ -17,44 +17,44 @@ MonoBehaviour:
     Name: "\uBC15\uC9501"
     MaxHp: 300
     Atk: 2
-    Speed: 0.3
+    Speed: 1.5
   - ID: Bat2
     Name: "\uBC15\uC9502"
     MaxHp: 350
     Atk: 2.1
-    Speed: 0.31
+    Speed: 1.5
   - ID: Viper
     Name: "\uB3C5\uC0AC"
     MaxHp: 400
     Atk: 2.2
-    Speed: 0.32
+    Speed: 1.5
   - ID: Spider1
     Name: "\uAC70\uBBF81"
     MaxHp: 450
     Atk: 2.3
-    Speed: 0.33
+    Speed: 1.5
   - ID: Spider2
     Name: "\uAC70\uBBF82"
     MaxHp: 500
     Atk: 2.4
-    Speed: 0.34
+    Speed: 1.5
   - ID: Skeleton1
     Name: "\uD574\uACE81"
     MaxHp: 550
     Atk: 2.5
-    Speed: 0.35
+    Speed: 1.5
   - ID: Skeleton2
     Name: "\uD574\uACE82"
     MaxHp: 600
     Atk: 2.6
-    Speed: 0.36
+    Speed: 1.5
   - ID: OrcAssassin
     Name: "\uC624\uD06C\uC5B4\uC314\uC2E0"
     MaxHp: 650
     Atk: 2.7
-    Speed: 0.37
+    Speed: 1.5
   - ID: MutantRat
     Name: "\uB3CC\uC5F0\uBCC0\uC774\uC950"
     MaxHp: 700
     Atk: 2.8
-    Speed: 0.38
+    Speed: 1.5

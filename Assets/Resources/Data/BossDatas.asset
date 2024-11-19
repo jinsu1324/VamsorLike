@@ -17,7 +17,7 @@ MonoBehaviour:
     Name: "\uC624\uC6B0\uAC70"
     MaxHp: 1000
     Atk: 2.8
-    Speed: 0.38
+    Speed: 1.5
     AppearStageLevel: 2
     SkillDamage: 0
     SkillRadius: 0
