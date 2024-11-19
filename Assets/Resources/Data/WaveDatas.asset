@@ -59,3 +59,11 @@ MonoBehaviour:
     SpawnInterval:
     - 0.5
     BossType: None
+  - ID: 6
+    WaveTime: 00:00:30
+    MonsterType:
+    - MutantRat
+    TotalSpawnCount: 0a000000
+    SpawnInterval:
+    - 0.5
+    BossType: None

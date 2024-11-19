@@ -19,10 +19,10 @@ MonoBehaviour:
     Atk: 2.8
     Speed: 1.5
     AppearStageLevel: 2
-    SkillDamage: 0
-    SkillRadius: 0
-    SkillDuration: 0
-    SkillRangeMin: 0
-    SkillRangeMax: 0
-    SkillCount: 0
-    SkillCoolTime: 0
+    SkillDamage: 80
+    SkillRadius: 3
+    SkillDuration: 3
+    SkillRangeMin: 5
+    SkillRangeMax: 10
+    SkillCount: 2
+    SkillCoolTime: 5

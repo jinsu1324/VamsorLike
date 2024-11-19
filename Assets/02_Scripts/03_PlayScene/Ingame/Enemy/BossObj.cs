@@ -26,13 +26,13 @@ public class BossObj : Enemy
 
     private List<GroundSkill> _activeGroundSkillsList = new List<GroundSkill>();  // 활성화된 원형범위 스킬 리스트
 
-    private float _time;                                        // 스킬 쿨타임 계산할 시간 변수
+    private float _time = 0f;                                   // 스킬 쿨타임 계산할 시간 변수
 
     
     /// <summary>
-    /// FixedUpdate
+    /// Update
     /// </summary>
-    private void FixedUpdate()
+    private void Update()
     {
         if (PlaySceneManager.Instance.IsGameStart == false)
             return;
@@ -104,7 +104,9 @@ public class BossObj : Enemy
     /// </summary>
     private bool SkillCooltime()
     {
-        _time += Time.fixedDeltaTime;
+        _time += Time.deltaTime;
+
+        Debug.Log(_time);
 
         if (_time > _skillCoolTime)
         {
@@ -122,6 +124,8 @@ public class BossObj : Enemy
     /// </summary>
     private void SkillStart()
     {
+        Debug.Log("스킬썼다!!");
+
         _animator.SetTrigger("isSkill");
 
         for (int i = 0; i < _skillCount; i++)
