@@ -160,11 +160,21 @@ public class HeroObj : SerializedMonoBehaviour
         // 오디오 재생
         //AudioManager.Instance.PlaySFX(SFXType.HeroDamaged);
 
-        if (Hp < _cautionLimitHP)
-            PlaySceneCanvas.Instance.CautionView.OpenCautionView();
+        CheckCautionViewOnOFF();
 
         if (Hp <= 0)
             Death();
+    }
+
+    /// <summary>
+    /// 화면 붉은색 위험표시 ON OFF
+    /// </summary>
+    private void CheckCautionViewOnOFF()
+    {
+        if (Hp < _cautionLimitHP)
+            PlaySceneCanvas.Instance.CautionView.OpenCautionView();
+        else
+            PlaySceneCanvas.Instance.CautionView.CloseCautionView();
     }
 
     /// <summary>
@@ -221,6 +231,7 @@ public class HeroObj : SerializedMonoBehaviour
         if (Hp >= _baseHeroData.MaxHp)
             Hp = _baseHeroData.MaxHp;
 
+        CheckCautionViewOnOFF();
         //Debug.Log($"현재 HP : {Hp} / {_baseHeroData.MaxHp}");
 
         _hpBar.Update_HPSlider(Hp, _baseHeroData.MaxHp);
