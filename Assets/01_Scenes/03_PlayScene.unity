@@ -627,6 +627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6209960881585437402, guid: 7bbca394c972769419ff9c40e66fc8a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

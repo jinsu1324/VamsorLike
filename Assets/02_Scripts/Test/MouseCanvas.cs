@@ -13,7 +13,7 @@ public class MouseCanvas : MonoBehaviour
     void Start()
     {
         cursorImage.gameObject.SetActive(true);    
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     void Update()
